@@ -25,14 +25,14 @@
      COLORES
   ===================================================== */
 
-  --color-primary: #0057c8;
+  --color-primary: #e71803 ;
   --color-primary-dark: #0044a0;
   --color-primary-light: #4c9dff;
 
-  --color-accent: #c69a54;
-  --color-accent-dark: #b98a43;
+  --color-accent: #e71803 ;
+  --color-accent-dark: #e71803;
 
-  --color-text: #24385a;
+  --color-text: #000;
   --color-text-muted: #626a74;
   --color-text-light: #6d737c;
   --color-placeholder: #999999;
@@ -43,17 +43,43 @@
   --color-background: #ffffff;
   --color-background-soft: #f7f8fb;
 
-  --color-border: #dfe3ea;
+  --color-border: #e71803;
   --color-border-hover: #bcc8d8;
   --color-border-card: #dddddd;
+
 
   /* =====================================================
      FOOTER
   ===================================================== */
 
-  --color-footer-start: #00152f;
-  --color-footer-end: #003b7a;
-  --color-footer-text: #d9e6ff;
+
+  --color-footer-background: #ffffff;
+
+
+  --color-footer-company-background: #ffffff;
+  --color-footer-company-text: #000000;
+
+
+  --color-footer-title: #e71803;
+  --color-footer-text: #111111;
+  --color-footer-text-muted: #444444;
+
+
+  --color-footer-accent: #e71803;
+  --color-footer-accent-hover: #e71803;
+
+
+  --color-footer-border: rgba(255, 0, 0);
+
+
+  --color-footer-bottom-background: #f5f5f5;
+  --color-footer-bottom-text: #333333;
+
+
+
+
+
+
 
   /* =====================================================
      TIPOGRAFÍA

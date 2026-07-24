@@ -43,9 +43,15 @@
 }
 
 .logo img {
-  width: 58px;
+  display: block;
+  width: auto;
+  height: 55px;
   object-fit: contain;
 }
+
+
+
+
 
 /* =====================================================
    SEARCH
