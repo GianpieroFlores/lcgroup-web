@@ -1,0 +1,226 @@
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer {
+  background: radial-gradient(
+    circle at center,
+    #142231 0%,
+    #0d1721 62%,
+    #080f16 100%
+  );
+
+  color: #fff;
+}
+
+/* =====================================================
+   GRID
+===================================================== */
+
+.footer-grid {
+  width: min(1280px, calc(100% - 80px));
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    1.4fr
+    1fr
+    1fr
+    1.1fr
+    1fr;
+
+  gap: 50px;
+
+  padding: 45px 0;
+}
+
+/* =====================================================
+   EMPRESA
+===================================================== */
+
+.footer-company {
+  padding-right: 35px;
+
+  border-right: 1px solid rgba(255,255,255,.12);
+}
+
+.footer-logo {
+  width: 120px;
+
+  margin-bottom: 22px;
+
+  object-fit: contain;
+}
+
+.footer-company p {
+
+  max-width: 240px;
+
+  color: rgba(255,255,255,.75);
+
+  font-size: 13px;
+
+  line-height: 1.7;
+
+  margin-bottom: 22px;
+}
+
+/* =====================================================
+   REDES
+===================================================== */
+
+.footer-socials {
+
+  display:flex;
+
+  gap:12px;
+}
+
+.footer-socials a{
+
+  width:34px;
+  height:34px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border:1px solid var(--color-accent);
+
+  border-radius:50%;
+
+  color:var(--color-accent);
+
+  transition:var(--transition-normal);
+}
+
+.footer-socials a:hover{
+
+  background:var(--color-accent);
+
+  color:#111;
+
+  transform:translateY(-3px);
+}
+
+/* =====================================================
+   COLUMNAS
+===================================================== */
+
+.footer-column h3{
+
+  position:relative;
+
+  margin-bottom:28px;
+
+  color:var(--color-accent);
+
+  font-size:13px;
+
+  text-transform:uppercase;
+
+  letter-spacing:.5px;
+}
+
+.footer-column h3::after{
+
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  bottom:-10px;
+
+  width:28px;
+
+  height:2px;
+
+  background:var(--color-accent);
+}
+
+.footer-column ul{
+
+  list-style:none;
+}
+
+.footer-column li{
+
+  margin-bottom:12px;
+}
+
+.footer-column a{
+
+    color:rgba(255,255,255,.78);
+
+    font-family:var(--font-main);
+
+    font-size:12px;
+
+    text-decoration:none;
+
+    transition:color .25s ease;
+}
+
+.footer-column a:hover{
+
+  color:var(--color-accent);
+}
+
+/* =====================================================
+   CONTACTO
+===================================================== */
+
+.footer-contact-list li{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:12px;
+
+    color:rgba(255,255,255,.78);
+
+    font-size:12px;
+
+    line-height:1.55;
+}
+
+.footer-contact-list .material-symbols-outlined{
+
+  color:var(--color-accent);
+
+  font-size:18px;
+}
+
+/* =====================================================
+   FOOTER INFERIOR
+===================================================== */
+
+.footer-bottom{
+
+  margin-top:40px;
+
+  border-top:1px solid rgba(255,255,255,.12);
+
+  background:rgba(0,0,0,.15);
+}
+
+.footer-bottom-content{
+
+  height:48px;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+}
+
+.footer-bottom-content p{
+
+  color:rgba(255,255,255,.70);
+
+  font-size:12px;
+}

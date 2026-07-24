@@ -1,0 +1,242 @@
+/* =====================================================
+   GOOGLE FONTS
+===================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@300;400;500;600;700&display=swap");
+
+/* =====================================================
+   FUENTE LOCAL
+===================================================== */
+
+@font-face {
+  font-family: "Futura-light-bt";
+  src: url("/src/assets/fonts/FuturaBT-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* =====================================================
+   VARIABLES GLOBALES
+===================================================== */
+
+:root {
+  /* =====================================================
+     COLORES
+  ===================================================== */
+
+  --color-primary: #0057c8;
+  --color-primary-dark: #0044a0;
+  --color-primary-light: #4c9dff;
+
+  --color-accent: #c69a54;
+  --color-accent-dark: #b98a43;
+
+  --color-text: #24385a;
+  --color-text-muted: #626a74;
+  --color-text-light: #6d737c;
+  --color-placeholder: #999999;
+
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  --color-background: #ffffff;
+  --color-background-soft: #f7f8fb;
+
+  --color-border: #dfe3ea;
+  --color-border-hover: #bcc8d8;
+  --color-border-card: #dddddd;
+
+  /* =====================================================
+     FOOTER
+  ===================================================== */
+
+  --color-footer-start: #00152f;
+  --color-footer-end: #003b7a;
+  --color-footer-text: #d9e6ff;
+
+  /* =====================================================
+     TIPOGRAFÍA
+  ===================================================== */
+
+  --font-main: "Futura-light-bt", "Instrument Sans", sans-serif;
+  --font-fallback: "Instrument Sans", sans-serif;
+
+  --font-size-xs: 10px;
+  --font-size-small: 11px;
+  --font-size-base: 14px;
+  --font-size-medium: 18px;
+  --font-size-title: 31px;
+  --font-size-title-large: 35px;
+
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* =====================================================
+     ESPACIADOS
+  ===================================================== */
+
+  --page-padding: 7%;
+  --section-padding: 35px 7%;
+  --section-padding-large: 38px 7%;
+
+  --grid-gap: 18px;
+  --carousel-gap: 15px;
+
+  /* =====================================================
+     BORDES
+  ===================================================== */
+
+  --radius-small: 6px;
+  --radius-medium: 10px;
+  --radius-large: 18px;
+  --radius-pill: 50px;
+  --radius-circle: 50%;
+
+  /* =====================================================
+     SOMBRAS
+  ===================================================== */
+
+  --shadow-header: 0 2px 10px rgba(0, 0, 0, 0.05);
+  --shadow-card: 0 8px 22px rgba(19, 35, 61, 0.07);
+  --shadow-card-hover: 0 15px 30px rgba(0, 0, 0, 0.15);
+  --shadow-focus: 0 0 0 4px rgba(0, 87, 200, 0.05);
+
+  /* =====================================================
+     TRANSICIONES
+  ===================================================== */
+
+  --transition-fast: 0.25s ease;
+  --transition-normal: 0.3s ease;
+  --transition-medium: 0.45s ease;
+  --transition-slow: 0.8s ease;
+
+  /* =====================================================
+     HERO
+  ===================================================== */
+
+  --hero-height: 430px;
+
+  /* =====================================================
+     CARRUSELES
+  ===================================================== */
+
+  --brand-animation-duration: 28s;
+  --carousel-transition: 0.45s ease;
+
+  /* =====================================================
+     ICONOS
+  ===================================================== */
+
+  --icon-size: 34px;
+  --icon-font-size: 20px;
+
+  /* =====================================================
+     SECCIONES
+  ===================================================== */
+
+  --section-content-height: 285px;
+  --catalog-feature-height: 440px;
+}
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+
+  overflow-x: hidden;
+
+  background: var(--color-background);
+
+  color: var(--color-text);
+
+  font-family: var(--font-main);
+
+  padding-top: 105px;
+}
+
+/* =====================================================
+   ELEMENTOS BASE
+===================================================== */
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+picture {
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button {
+  border: none;
+
+  outline: none;
+
+  background: none;
+
+  cursor: pointer;
+
+  font: inherit;
+}
+
+input,
+textarea,
+select {
+  font: inherit;
+
+  outline: none;
+}
+
+/* =====================================================
+   CONTENEDOR GLOBAL
+===================================================== */
+
+.container {
+  width: min(var(--container-width), 100% - 80px);
+
+  margin-inline: auto;
+}
+
+/* =====================================================
+   UTILIDADES
+===================================================== */
+
+.hidden {
+  display: none !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.section {
+  padding: var(--section-padding);
+}

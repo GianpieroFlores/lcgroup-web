@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>LCGROUP</title>
+
+    <meta
+      name="description"
+      content="Venta de cristalería, copas, vasos y accesorios."
+    />
+
+    <meta name="keywords" content="copas, vasos, cristalería, Perú" />
+
+    <meta name="author" content="LCGROUP" />
+    <meta name="theme-color" content="#0F6B4B" />
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- ==========================
+         MATERIAL SYMBOLS
+    =========================== -->
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,300,0,0"
+      rel="stylesheet"
+    />
+
+    <!-- ==========================
+         FONT AWESOME
+    =========================== -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div id="header-container"></div>
+
+    <main>
+      <!-- ==========================================
+     HERO
+========================================== -->
+
+      <section class="hero">
+        <div class="slider">
+          <!-- SLIDES -->
+
+          <div class="slides">
+            <div class="slide active">
+              <img
+                src="/src/assets/images/banner-home-01.jpg"
+                alt="Colección de cristalería premium"
+              />
+            </div>
+
+            <div class="slide">
+              <img
+                src="/src/assets/images/banner-home-02.png"
+                alt="Copas de cristal"
+              />
+            </div>
+
+            <div class="slide">
+              <img
+                src="/src/assets/images/banner-home-03.png"
+                alt="Vasos de vidrio"
+              />
+            </div>
+
+            <div class="slide">
+              <img
+                src="/src/assets/images/banner-home-04.png"
+                alt="Jarras de vidrio"
+              />
+            </div>
+
+            <div class="slide">
+              <img
+                src="/src/assets/images/banner-home-05.png"
+                alt="Cristalería para el hogar"
+              />
+            </div>
+
+            <div class="slide">
+              <img
+                src="/src/assets/images/banner-home-06.png"
+                alt="Accesorios de cristalería"
+              />
+            </div>
+          </div>
+
+          <!-- BOTÓN ANTERIOR -->
+
+          <button class="arrow prev" type="button" aria-label="Banner anterior">
+            <span class="material-symbols-outlined"> chevron_left </span>
+          </button>
+
+          <!-- BOTÓN SIGUIENTE -->
+
+          <button
+            class="arrow next"
+            type="button"
+            aria-label="Banner siguiente"
+          >
+            <span class="material-symbols-outlined"> chevron_right </span>
+          </button>
+
+          <!-- INDICADORES -->
+
+          <div class="dots"></div>
+        </div>
+      </section>
+      <!-- ==========================================
+     CATEGORÍAS
+========================================== -->
+
+      <section class="categories">
+        <!-- INTRODUCCIÓN -->
+
+        <div class="categories-intro">
+          <span class="subtitle"> Explora </span>
+
+          <h2>
+            Nuestras<br />
+            categorías
+          </h2>
+
+          <p>
+            Descubre nuestra colección de cristalería para el hogar,
+            restaurantes, hoteles y eventos.
+          </p>
+
+          <a href="/catalogo/">
+            Ver todo el catálogo
+
+            <span>→</span>
+          </a>
+        </div>
+
+        <!-- COPAS -->
+
+        <article class="category-card">
+          <div class="category-icon">
+            <span class="material-symbols-outlined"> wine_bar </span>
+          </div>
+
+          <h3>Copas</h3>
+
+          <p>Copas elegantes para vino, champagne, gin y mucho más.</p>
+
+          <a href="/catalogo/?categoria=copas"> Ver más </a>
+
+          <img src="/src/assets/images/categories/copas.webp" alt="Copas" />
+        </article>
+
+        <!-- VASOS -->
+
+        <article class="category-card">
+          <div class="category-icon">
+            <span class="material-symbols-outlined"> local_bar </span>
+          </div>
+
+          <h3>Vasos</h3>
+
+          <p>Vasos para whisky, agua, jugos, cócteles y bebidas.</p>
+
+          <a href="/catalogo/?categoria=vasos"> Ver más </a>
+
+          <img src="/src/assets/images/categories/vasos.webp" alt="Vasos" />
+        </article>
+
+        <!-- JARRAS -->
+
+        <article class="category-card">
+          <div class="category-icon">
+            <span class="material-symbols-outlined"> sports_bar </span>
+          </div>
+
+          <h3>Jarras</h3>
+
+          <p>Jarras de vidrio ideales para cerveza, agua y bebidas.</p>
+
+          <a href="/catalogo/?categoria=jarras"> Ver más </a>
+
+          <img src="/src/assets/images/categories/jarras.webp" alt="Jarras" />
+        </article>
+
+        <!-- ACCESORIOS -->
+
+        <article class="category-card">
+          <div class="category-icon">
+            <span class="material-symbols-outlined"> inventory_2 </span>
+          </div>
+
+          <h3>Accesorios</h3>
+
+          <p>Complementos para servir, organizar y cuidar tu cristalería.</p>
+
+          <a href="/catalogo/?categoria=accesorios"> Ver más </a>
+
+          <img
+            src="/src/assets/images/categories/accesorios.webp"
+            alt="Accesorios"
+          />
+        </article>
+      </section>
+      <!-- ==========================================
+     BANNER INSTITUCIONAL
+========================================== -->
+
+      <section class="featured-banner">
+        <!-- IMAGEN -->
+
+        <div class="featured-image">
+          <img
+            src="/src/assets/images/banners/banner-quality.webp"
+            alt="Colección de cristalería premium"
+          />
+        </div>
+
+        <!-- CONTENIDO -->
+
+        <div class="featured-content">
+          <span class="featured-subtitle"> CALIDAD • DISEÑO • ELEGANCIA </span>
+
+          <h2>
+            Cristalería<br />
+            para cada ocasión
+          </h2>
+
+          <p>
+            Descubre una selección de copas, vasos, jarras y accesorios
+            fabricados con materiales de alta calidad, ideales para el hogar,
+            restaurantes, hoteles y eventos especiales.
+          </p>
+
+          <a href="/catalogo/"> Explorar catálogo </a>
+        </div>
+      </section>
+      <!-- ==========================================
+     COLECCIÓN DESTACADA
+========================================== -->
+
+      <section class="catalog-showcase">
+        <!-- CATEGORÍAS -->
+
+        <aside class="catalog-types">
+          <span class="catalog-eyebrow"> Explora nuestras categorías </span>
+
+          <h2>Colecciones</h2>
+
+          <nav class="catalog-type-list" aria-label="Colecciones">
+            <a
+              href="/catalogo/?categoria=copas"
+              class="catalog-type-item active"
+            >
+              <span class="catalog-type-icon material-symbols-outlined">
+                wine_bar
+              </span>
+
+              <span class="catalog-type-name"> Copas </span>
+
+              <span class="catalog-type-arrow material-symbols-outlined">
+                chevron_right
+              </span>
+            </a>
+
+            <a href="/catalogo/?categoria=vasos" class="catalog-type-item">
+              <span class="catalog-type-icon material-symbols-outlined">
+                local_bar
+              </span>
+
+              <span class="catalog-type-name"> Vasos </span>
+
+              <span class="catalog-type-arrow material-symbols-outlined">
+                chevron_right
+              </span>
+            </a>
+
+            <a href="/catalogo/?categoria=jarras" class="catalog-type-item">
+              <span class="catalog-type-icon material-symbols-outlined">
+                sports_bar
+              </span>
+
+              <span class="catalog-type-name"> Jarras </span>
+
+              <span class="catalog-type-arrow material-symbols-outlined">
+                chevron_right
+              </span>
+            </a>
+
+            <a href="/catalogo/?categoria=tazas" class="catalog-type-item">
+              <span class="catalog-type-icon material-symbols-outlined">
+                coffee
+              </span>
+
+              <span class="catalog-type-name"> Tazas </span>
+
+              <span class="catalog-type-arrow material-symbols-outlined">
+                chevron_right
+              </span>
+            </a>
+
+            <a href="/catalogo/?categoria=botellas" class="catalog-type-item">
+              <span class="catalog-type-icon material-symbols-outlined">
+                liquor
+              </span>
+
+              <span class="catalog-type-name"> Botellas </span>
+
+              <span class="catalog-type-arrow material-symbols-outlined">
+                chevron_right
+              </span>
+            </a>
+
+            <a href="/catalogo/?categoria=accesorios" class="catalog-type-item">
+              <span class="catalog-type-icon material-symbols-outlined">
+                inventory_2
+              </span>
+
+              <span class="catalog-type-name"> Accesorios </span>
+
+              <span class="catalog-type-arrow material-symbols-outlined">
+                chevron_right
+              </span>
+            </a>
+          </nav>
+
+          <a href="/catalogo/" class="catalog-types-link">
+            Ver todas las categorías
+
+            <span>→</span>
+          </a>
+        </aside>
+
+        <!-- IMAGEN DESTACADA -->
+
+        <div class="catalog-feature">
+          <img
+            id="catalog-feature-image"
+            src="/src/assets/images/showcase/featured-collection.webp"
+            alt="Colección destacada"
+          />
+
+          <div class="catalog-feature-overlay">
+            <span id="catalog-feature-brand" class="catalog-feature-brand">
+              COLECCIÓN PREMIUM
+            </span>
+
+            <h3 id="catalog-feature-title" class="catalog-feature-title">
+              Cristalería para cada ocasión
+            </h3>
+
+            <p
+              id="catalog-feature-description"
+              class="catalog-feature-description"
+            >
+              Descubre una colección cuidadosamente seleccionada para compartir
+              momentos especiales con elegancia y calidad.
+            </p>
+          </div>
+        </div>
+
+        <!-- PRODUCTOS DESTACADOS -->
+
+        <div class="catalog-products">
+          <div class="catalog-products-header">
+            <h2>Productos destacados</h2>
+
+            <a href="/catalogo/">
+              Ver todos
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+
+          <div class="catalog-product-slider">
+            <!-- FLECHA ANTERIOR -->
+
+            <button
+              class="catalog-product-arrow catalog-product-prev"
+              type="button"
+              aria-label="Ver productos anteriores"
+            >
+              <span class="material-symbols-outlined"> chevron_left </span>
+            </button>
+
+            <!-- VENTANA DEL CARRUSEL -->
+
+            <div class="catalog-product-window">
+              <div id="featured-products" class="catalog-product-track">
+                <!--
+          JavaScript insertará aquí las tarjetas
+          creadas desde products.json
+        -->
+              </div>
+            </div>
+
+            <!-- FLECHA SIGUIENTE -->
+
+            <button
+              class="catalog-product-arrow catalog-product-next"
+              type="button"
+              aria-label="Ver más productos"
+            >
+              <span class="material-symbols-outlined"> chevron_right </span>
+            </button>
+
+            <!-- INDICADORES -->
+
+            <div class="catalog-product-dots"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,197 @@
+/* =====================================================
+   PRODUCT CARD
+===================================================== */
+
+.catalog-product-card {
+
+  flex: 0 0 calc((100% - 24px) / 3);
+
+  min-width: 0;
+
+  height: 100%;
+
+  padding: 13px 12px 12px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  background: var(--color-white);
+
+  border: 1px solid var(--color-border-card);
+
+  border-radius: var(--radius-small);
+
+  transition:
+    transform var(--transition-normal),
+    box-shadow var(--transition-normal);
+}
+
+.catalog-product-card:hover {
+
+  transform: translateY(-3px);
+
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* =====================================================
+   IMAGEN
+===================================================== */
+
+.catalog-product-image {
+
+  width: 100%;
+
+  height: 185px;
+
+  margin-bottom: 14px;
+}
+
+.catalog-product-image img {
+
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit: contain;
+
+  transition: transform var(--transition-normal);
+}
+
+.catalog-product-card:hover
+.catalog-product-image img {
+
+  transform: scale(1.04);
+}
+
+/* =====================================================
+   INFORMACIÓN
+===================================================== */
+
+.catalog-product-info {
+
+  display: flex;
+
+  flex-direction: column;
+
+  flex: 1;
+}
+
+.catalog-product-brand {
+
+  margin-bottom: 6px;
+
+  color: var(--color-accent);
+
+  font-size: 10px;
+
+  font-weight: var(--font-weight-bold);
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+.catalog-product-name {
+
+  min-height: 36px;
+
+  margin-bottom: 10px;
+
+  color: var(--color-text);
+
+  font-family: var(--font-main);
+
+  font-size: 11px;
+
+  line-height: 1.35;
+
+  font-weight: var(--font-weight-semibold);
+
+  text-transform: uppercase;
+}
+
+.catalog-product-variant {
+
+  margin-bottom: 14px;
+
+  color: var(--color-text-light);
+
+  font-size: 10px;
+
+  line-height: 1.4;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.catalog-product-footer {
+
+  margin-top: auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 12px;
+}
+
+.catalog-product-price {
+
+  color: var(--color-text);
+
+  font-size: 13px;
+
+  font-weight: var(--font-weight-bold);
+}
+
+/* =====================================================
+   BOTÓN
+===================================================== */
+
+.catalog-cart-button {
+
+  width: 28px;
+
+  height: 28px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid var(--color-accent);
+
+  border-radius: var(--radius-small);
+
+  background: var(--color-white);
+
+  color: var(--color-accent);
+
+  cursor: pointer;
+
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.catalog-cart-button:hover {
+
+  background: var(--color-accent);
+
+  color: var(--color-white);
+
+  transform: scale(1.05);
+}
+
+.catalog-cart-button .material-symbols-outlined {
+
+  font-size: 17px;
+}

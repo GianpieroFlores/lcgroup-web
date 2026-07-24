@@ -1,0 +1,33 @@
+<!-- ==========================================
+     PRODUCT CARD
+========================================== -->
+
+<article class="catalog-product-card" data-product-id="{{id}}">
+  <!-- IMAGEN -->
+
+  <div class="catalog-product-image">
+    <img src="{{image}}" alt="{{name}}" />
+  </div>
+
+  <!-- INFORMACIÓN -->
+
+  <div class="catalog-product-info">
+    <span class="catalog-product-brand"> {{brand}} </span>
+
+    <h3 class="catalog-product-name">{{name}}</h3>
+
+    <p class="catalog-product-variant">{{variant}}</p>
+
+    <div class="catalog-product-footer">
+      <strong class="catalog-product-price"> S/ {{price}} </strong>
+
+      <button
+        class="catalog-cart-button"
+        type="button"
+        aria-label="Agregar al carrito"
+      >
+        <span class="material-symbols-outlined"> shopping_bag </span>
+      </button>
+    </div>
+  </div>
+</article>
