@@ -1,66 +1,475 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
 
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>LCGROUP</title>
 
     <meta
-        name="description"
-        content="Venta de cristalería, copas, vasos y accesorios.">
+      name="description"
+      content="Venta de cristalería, copas, vasos y accesorios."
+    />
 
-    <meta
-        name="keywords"
-        content="copas, vasos, cristalería, Perú">
+    <meta name="keywords" content="copas, vasos, cristalería, Perú" />
 
-    <meta
-        name="author"
-        content="LCGROUP">
-        <meta
-    name="theme-color"
-    content="#0F6B4B">
-    <link
-        rel="icon"
-        href="/favicon.ico">
+    <meta name="author" content="LCGROUP" />
+    <meta name="theme-color" content="#0F6B4B" />
+    <link rel="icon" href="/favicon.ico" />
 
     <!-- ==========================
          MATERIAL SYMBOLS
     =========================== -->
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,300,0,0"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,300,0,0"
+      rel="stylesheet"
+    />
 
     <!-- ==========================
          FONT AWESOME
     =========================== -->
 
     <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
 
-</head>
-
-<body>
-
+  <body>
     <div id="header-container"></div>
 
-    <main>
+    <main class="about-page">
+      <!-- =====================================================
+       PRESENTACIÓN PRINCIPAL
+  ====================================================== -->
 
+      <section class="about-intro">
+        <div class="about-intro__media">
+          <img
+            src="/src/assets/images/nosotros/about-main.jpg"
+            alt="Selección de cristalería y productos de LC Group"
+          />
+        </div>
+
+        <div class="about-intro__content">
+          <span class="about-eyebrow"> Calidad para cada ocasión </span>
+
+          <h1>Productos seleccionados para acompañar grandes momentos</h1>
+
+          <p>
+            En LC Group reunimos cristalería, licores, conservas y artículos
+            cuidadosamente seleccionados para hogares, restaurantes y negocios.
+            Nuestro propósito es ofrecer productos que combinen diseño,
+            funcionalidad y una presentación de alta calidad.
+          </p>
+
+          <a href="/catalogo/" class="about-link">
+            Descubrir nuestro catálogo
+
+            <span class="material-symbols-outlined"> arrow_forward </span>
+          </a>
+        </div>
+      </section>
+
+      <!-- =====================================================
+       SEGUNDA PRESENTACIÓN
+  ====================================================== -->
+
+      <section class="about-presentation">
+        <div class="about-presentation__content">
+          <span class="about-eyebrow"> Sobre nosotros </span>
+
+          <h2>Una selección pensada para distintos estilos y necesidades</h2>
+
+          <p>
+            Trabajamos con productos destinados tanto al uso diario como a
+            celebraciones, reuniones y espacios profesionales. Nuestro catálogo
+            reúne opciones para servir, compartir, conservar y presentar cada
+            producto de una manera especial.
+          </p>
+
+          <p>
+            Buscamos que cada cliente encuentre alternativas adecuadas para su
+            hogar, restaurante, bar, hotel o negocio, manteniendo un equilibrio
+            entre calidad, diseño y precio.
+          </p>
+        </div>
+
+        <div class="about-presentation__media">
+          <img
+            src="/src/assets/images/nosotros/about-selection.jpg"
+            alt="Cristalería seleccionada para hogares y negocios"
+          />
+        </div>
+      </section>
+
+      <!-- =====================================================
+       CATEGORÍAS
+  ====================================================== -->
+
+      <section class="about-categories">
+        <div class="about-section-heading">
+          <span class="about-eyebrow"> Nuestras categorías </span>
+
+          <h2>Encuentra productos para cada ocasión</h2>
+
+          <p>
+            Explora una selección de categorías pensadas para complementar
+            reuniones, celebraciones, experiencias gastronómicas y momentos
+            cotidianos.
+          </p>
+        </div>
+
+        <div class="about-categories__grid">
+          <article class="about-category-card">
+            <a href="/catalogo/?category=cristaleria">
+              <div class="about-category-card__image">
+                <img
+                  src="/src/assets/images/nosotros/category-cristaleria.jpg"
+                  alt="Cristalería"
+                />
+              </div>
+
+              <div class="about-category-card__content">
+                <h3>Cristalería</h3>
+
+                <p>
+                  Copas, vasos, jarras y accesorios para diferentes bebidas.
+                </p>
+
+                <span> Explorar categoría </span>
+              </div>
+            </a>
+          </article>
+
+          <article class="about-category-card">
+            <a href="/catalogo/?category=licores">
+              <div class="about-category-card__image">
+                <img
+                  src="/src/assets/images/nosotros/category-licores.jpg"
+                  alt="Licores"
+                />
+              </div>
+
+              <div class="about-category-card__content">
+                <h3>Licores</h3>
+
+                <p>
+                  Alternativas para compartir, regalar y acompañar momentos
+                  especiales.
+                </p>
+
+                <span> Explorar categoría </span>
+              </div>
+            </a>
+          </article>
+
+          <article class="about-category-card">
+            <a href="/catalogo/?category=conservas">
+              <div class="about-category-card__image">
+                <img
+                  src="/src/assets/images/nosotros/category-conservas.jpg"
+                  alt="Conservas"
+                />
+              </div>
+
+              <div class="about-category-card__content">
+                <h3>Conservas</h3>
+
+                <p>
+                  Productos seleccionados para complementar distintas
+                  preparaciones.
+                </p>
+
+                <span> Explorar categoría </span>
+              </div>
+            </a>
+          </article>
+
+          <article class="about-category-card">
+            <a href="/catalogo/?category=articulos">
+              <div class="about-category-card__image">
+                <img
+                  src="/src/assets/images/nosotros/category-articulos.jpg"
+                  alt="Artículos"
+                />
+              </div>
+
+              <div class="about-category-card__content">
+                <h3>Artículos</h3>
+
+                <p>
+                  Complementos funcionales para el hogar y el servicio
+                  profesional.
+                </p>
+
+                <span> Explorar categoría </span>
+              </div>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <!-- =====================================================
+       CALIDAD Y SELECCIÓN
+  ====================================================== -->
+
+      <section class="about-quality">
+        <div class="about-quality__media">
+          <img
+            src="/src/assets/images/nosotros/about-quality.jpg"
+            alt="Detalle de cristalería de calidad"
+          />
+        </div>
+
+        <div class="about-quality__content">
+          <span class="about-eyebrow"> Nuestra selección </span>
+
+          <h2>Calidad, presentación y funcionalidad</h2>
+
+          <p>
+            Cada producto incorporado a nuestro catálogo es evaluado
+            considerando su utilidad, presentación, resistencia y capacidad para
+            responder a diferentes formas de uso.
+          </p>
+
+          <p>
+            De esta manera, ofrecemos alternativas para quienes buscan renovar
+            su mesa, equipar un negocio o encontrar productos adecuados para una
+            ocasión especial.
+          </p>
+
+          <ul class="about-quality__list">
+            <li>
+              <span class="material-symbols-outlined"> check_circle </span>
+
+              Productos seleccionados
+            </li>
+
+            <li>
+              <span class="material-symbols-outlined"> check_circle </span>
+
+              Opciones para hogares y negocios
+            </li>
+
+            <li>
+              <span class="material-symbols-outlined"> check_circle </span>
+
+              Variedad de estilos y presentaciones
+            </li>
+
+            <li>
+              <span class="material-symbols-outlined"> check_circle </span>
+
+              Atención durante el proceso de compra
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- =====================================================
+       VALORES
+  ====================================================== -->
+
+      <section class="about-values">
+        <div class="about-section-heading">
+          <span class="about-eyebrow"> Lo que nos representa </span>
+
+          <h2>Una experiencia basada en confianza y buen servicio</h2>
+        </div>
+
+        <div class="about-values__grid">
+          <article class="about-value-card">
+            <span class="material-symbols-outlined"> verified </span>
+
+            <h3>Calidad</h3>
+
+            <p>
+              Seleccionamos productos que respondan adecuadamente a su finalidad
+              y presentación.
+            </p>
+          </article>
+
+          <article class="about-value-card">
+            <span class="material-symbols-outlined"> diamond </span>
+
+            <h3>Diseño</h3>
+
+            <p>
+              Buscamos propuestas que combinen estética, utilidad y
+              versatilidad.
+            </p>
+          </article>
+
+          <article class="about-value-card">
+            <span class="material-symbols-outlined"> handshake </span>
+
+            <h3>Confianza</h3>
+
+            <p>Promovemos una relación clara y responsable con cada cliente.</p>
+          </article>
+
+          <article class="about-value-card">
+            <span class="material-symbols-outlined"> support_agent </span>
+
+            <h3>Atención</h3>
+
+            <p>
+              Orientamos a nuestros clientes para encontrar productos adecuados
+              para sus necesidades.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- =====================================================
+       MARCAS
+  ====================================================== -->
+
+      <section class="about-brands">
+        <div class="about-brands__content">
+          <span class="about-eyebrow"> Marcas y productos </span>
+
+          <h2>Un catálogo construido a partir de propuestas reconocidas</h2>
+
+          <p>
+            Nuestro catálogo reúne productos de diferentes marcas y líneas,
+            permitiendo comparar estilos, capacidades, formatos y precios dentro
+            de una misma tienda.
+          </p>
+        </div>
+
+        <div class="about-brands__logos">
+          <div class="about-brand">
+            <img
+              src="/src/assets/images/brands/spiegelau.png"
+              alt="Spiegelau"
+            />
+          </div>
+
+          <div class="about-brand">
+            <img src="/src/assets/images/brands/bohemia.png" alt="Bohemia" />
+          </div>
+
+          <div class="about-brand">
+            <img src="/src/assets/images/brands/luminarc.png" alt="Luminarc" />
+          </div>
+
+          <div class="about-brand">
+            <img
+              src="/src/assets/images/brands/pasabahce.png"
+              alt="Pasabahce"
+            />
+          </div>
+
+          <div class="about-brand">
+            <img src="/src/assets/images/brands/arcoroc.png" alt="Arcoroc" />
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+       EXPERIENCIA DE COMPRA
+  ====================================================== -->
+
+      <section class="about-service">
+        <div class="about-section-heading">
+          <span class="about-eyebrow"> Nuestra atención </span>
+
+          <h2>Te acompañamos antes y después de tu compra</h2>
+
+          <p>
+            Queremos que elegir un producto sea un proceso claro, sencillo y
+            confiable.
+          </p>
+        </div>
+
+        <div class="about-service__grid">
+          <article class="about-service-card">
+            <span class="about-service-card__number"> 01 </span>
+
+            <h3>Explora</h3>
+
+            <p>
+              Revisa productos organizados por categoría, marca y
+              características.
+            </p>
+          </article>
+
+          <article class="about-service-card">
+            <span class="about-service-card__number"> 02 </span>
+
+            <h3>Compara</h3>
+
+            <p>
+              Evalúa diferentes opciones según el uso, diseño, formato y precio.
+            </p>
+          </article>
+
+          <article class="about-service-card">
+            <span class="about-service-card__number"> 03 </span>
+
+            <h3>Consulta</h3>
+
+            <p>Solicita orientación cuando necesites información adicional.</p>
+          </article>
+
+          <article class="about-service-card">
+            <span class="about-service-card__number"> 04 </span>
+
+            <h3>Elige</h3>
+
+            <p>
+              Encuentra una alternativa adecuada para tu hogar, evento o
+              negocio.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- =====================================================
+       BLOQUE EDITORIAL FINAL
+  ====================================================== -->
+
+      <section class="about-final">
+        <div class="about-final__content">
+          <span class="about-eyebrow"> Para cada espacio y ocasión </span>
+
+          <h2>
+            Productos que forman parte de la mesa y de los momentos compartidos
+          </h2>
+
+          <p>
+            Desde una copa para una celebración hasta artículos destinados al
+            uso diario, buscamos ofrecer opciones que aporten funcionalidad,
+            presencia y una buena experiencia.
+          </p>
+
+          <div class="about-final__actions">
+            <a href="/catalogo/" class="button button--primary">
+              Ver catálogo
+            </a>
+
+            <a href="/contacto/" class="button button--outline">
+              Contáctanos
+            </a>
+          </div>
+        </div>
+
+        <div class="about-final__media">
+          <img
+            src="/src/assets/images/nosotros/about-final.jpg"
+            alt="Productos seleccionados para diferentes ocasiones"
+          />
+        </div>
+      </section>
     </main>
 
     <div id="footer-container"></div>
 
-    <script
-        type="module"
-        src="/src/main.js">
-    </script>
-
-</body>
-
+    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/nosotros/nosotros.js"></script>
+  </body>
 </html>

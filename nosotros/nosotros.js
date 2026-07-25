@@ -1,0 +1,1 @@
+import "./nosotros.css"

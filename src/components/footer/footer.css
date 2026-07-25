@@ -2,35 +2,26 @@
    FOOTER
 ===================================================== */
 
-
 .footer {
   width: 100%;
 
-
   background: var(--color-footer-background);
-
 
   color: var(--color-footer-text);
 
-
   border-top: 1px solid var(--color-footer-border);
 }
-
 
 /* =====================================================
    GRID
 ===================================================== */
 
-
 .footer-grid {
   width: min(1280px, calc(100% - 80px));
 
-
   margin: 0 auto;
 
-
   display: grid;
-
 
   grid-template-columns:
     1.4fr
@@ -39,96 +30,72 @@
     1.1fr
     1fr;
 
-
   gap: 50px;
-
 
   padding: 45px 0;
 }
-
 
 /* =====================================================
    EMPRESA
 ===================================================== */
 
-
 .footer-company {
   padding: 30px;
 
-
   background: var(--color-footer-company-background);
-
 
   border-radius: var(--radius-medium);
 }
-
 
 .footer-logo {
   width: 150px;
   height: auto;
 
-
   display: block;
 
-
   margin-bottom: 22px;
-
 
   object-fit: contain;
 }
 
-
 /* Descripción debajo del logo */
-
 
 .footer-company p {
   max-width: 240px;
 
-
   margin-bottom: 22px;
 
-
   color: var(--color-footer-company-text);
-
 
   font-size: 13px;
   line-height: 1.7;
 }
 
-
 /* =====================================================
    REDES SOCIALES
 ===================================================== */
-
 
 .footer-socials {
   display: flex;
   align-items: center;
 
-
   gap: 12px;
 }
-
 
 .footer-socials a {
   width: 36px;
   height: 36px;
 
-
   display: flex;
   align-items: center;
   justify-content: center;
 
-
   border: 1px solid var(--color-footer-accent);
   border-radius: 50%;
 
-
   color: var(--color-footer-accent);
 
-
   text-decoration: none;
-
 
   transition:
     background-color var(--transition-normal),
@@ -137,255 +104,193 @@
     transform var(--transition-normal);
 }
 
-
 .footer-socials a:hover {
   background: var(--color-footer-accent);
   border-color: var(--color-footer-accent);
 
-
   color: #ffffff;
-
 
   transform: translateY(-3px);
 }
-
 
 /* =====================================================
    COLUMNAS
 ===================================================== */
 
-
 .footer-column h3 {
   position: relative;
 
-
   margin: 0 0 28px;
 
-
   color: var(--color-footer-title);
-
 
   font-size: 13px;
   font-weight: var(--font-weight-bold);
 
-
   text-transform: uppercase;
-
 
   letter-spacing: 0.5px;
 }
 
-
 .footer-column h3::after {
   content: "";
 
-
   position: absolute;
-
 
   left: 0;
   bottom: -10px;
 
-
   width: 28px;
   height: 2px;
 
-
   background: var(--color-footer-accent);
 }
-
 
 .footer-column ul {
   margin: 0;
   padding: 0;
 
-
   list-style: none;
 }
-
 
 .footer-column li {
   margin-bottom: 12px;
 }
 
-
 .footer-column a {
   color: var(--color-footer-text);
-
 
   font-family: var(--font-main);
   font-size: 12px;
 
-
   text-decoration: none;
-
 
   transition:
     color var(--transition-normal),
     transform var(--transition-normal);
 }
 
-
 .footer-column a:hover {
   color: var(--color-footer-accent);
 }
-
 
 /* =====================================================
    CONTACTO
 ===================================================== */
 
-
 .footer-contact-list li {
   display: flex;
   align-items: flex-start;
 
-
   gap: 12px;
 
-
   color: var(--color-footer-text);
-
 
   font-size: 12px;
   line-height: 1.55;
 }
 
-
 .footer-contact-list .material-symbols-outlined {
   flex-shrink: 0;
 
-
   color: var(--color-footer-accent);
-
 
   font-size: 18px;
 }
 
-
 /* Enlaces dentro de contacto */
-
 
 .footer-contact-list a {
   color: var(--color-footer-text);
 }
 
-
 .footer-contact-list a:hover {
   color: var(--color-footer-accent);
 }
-
 
 /* =====================================================
    FOOTER INFERIOR
 ===================================================== */
 
-
 .footer-bottom {
   margin-top: 0;
 
-
   background: var(--color-footer-bottom-background);
-
 
   border-top: 1px solid var(--color-footer-border);
 }
-
 
 .footer-bottom-content {
   width: min(1280px, calc(100% - 80px));
   min-height: 48px;
 
-
   margin: 0 auto;
-
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-
   padding: 10px 0;
-
 
   text-align: center;
 }
 
-
 .footer-bottom-content p {
   margin: 0;
 
-
   color: var(--color-footer-bottom-text);
-
 
   font-size: 12px;
 }
 
-
 /* =====================================================
    RESPONSIVE
 ===================================================== */
-
 
 @media (max-width: 1100px) {
   .footer-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 
-
   .footer-company {
     grid-column: span 3;
   }
-
 
   .footer-company p {
     max-width: 500px;
   }
 }
 
-
 @media (max-width: 768px) {
   .footer-grid {
     width: min(100% - 40px, 1280px);
 
-
     grid-template-columns: repeat(2, 1fr);
 
-
     gap: 35px 25px;
-
 
     padding: 35px 0;
   }
 
-
   .footer-company {
     grid-column: span 2;
   }
-
 
   .footer-bottom-content {
     width: min(100% - 40px, 1280px);
   }
 }
 
-
 @media (max-width: 480px) {
   .footer-grid {
     grid-template-columns: 1fr;
   }
 
-
   .footer-company {
     grid-column: auto;
   }
-
 
   .footer-column {
     text-align: left;
   }
 }
-
-
-

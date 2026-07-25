@@ -41,7 +41,7 @@
     <div id="header-container"></div>
 
     <main>
- <!-- =====================================================
+      <!-- =====================================================
      HERO ACTUAL (SLIDER)
      Se deja comentado por si se desea volver a utilizar.
 ======================================================
@@ -109,30 +109,23 @@
 </section>
 
 -->
-<section class="hero hero-video">
+      <section class="hero hero-video">
+        <video
+          class="hero-video__media"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+        >
+          <source src="/src/assets/images/banner-video.mp4" type="video/mp4" />
 
-  <video
-    class="hero-video__media"
-    autoplay
-    muted
-    loop
-    playsinline
-    preload="auto"
-  >
-    <source
-      src="/src/assets/images/banner-video.mp4"
-      type="video/mp4"
-    />
+          Tu navegador no soporta video HTML5.
+        </video>
 
-    Tu navegador no soporta video HTML5.
-  </video>
-
-  <!-- Opcional: capa oscura para mejorar contraste -->
-  <div class="hero-video__overlay"></div>
-
-</section>
-
-
+        <!-- Opcional: capa oscura para mejorar contraste -->
+        <div class="hero-video__overlay"></div>
+      </section>
 
       <!-- ==========================================
      CATEGORÍAS
@@ -174,7 +167,7 @@
 
           <a href="/catalogo/?categoria=copas"> Ver más </a>
 
-          <img src="/src/assets/images/copas.jpg" alt="Copas" />
+          <img src="/src/assets/images/copas.webp" alt="Copas" />
         </article>
 
         <!-- VASOS -->
@@ -190,7 +183,7 @@
 
           <a href="/catalogo/?categoria=vasos"> Ver más </a>
 
-          <img src="/src/assets/images/vasos.jpg" alt="Vasos" />
+          <img src="/src/assets/images/vasos.webp" alt="Vasos" />
         </article>
 
         <!-- JARRAS -->
@@ -206,7 +199,7 @@
 
           <a href="/catalogo/?categoria=jarras"> Ver más </a>
 
-          <img src="/src/assets/images/jaras.jpg" alt="Jarras" />
+          <img src="/src/assets/images/decantadores.webp" alt="Jarras" />
         </article>
 
         <!-- ACCESORIOS -->
@@ -222,10 +215,7 @@
 
           <a href="/catalogo/?categoria=accesorios"> Ver más </a>
 
-          <img
-            src="/src/assets/images/kits.jpg"
-            alt="Accesorios"
-          />
+          <img src="/src/assets/images/kits.webp" alt="Accesorios" />
         </article>
       </section>
       <!-- ==========================================
@@ -237,7 +227,7 @@
 
         <div class="featured-image">
           <img
-            src="/src/assets/images/banner-copas.jpg"
+            src="/src/assets/images/banner-copas.webp"
             alt="Colección de cristalería premium"
           />
         </div>

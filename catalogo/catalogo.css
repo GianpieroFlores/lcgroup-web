@@ -166,8 +166,7 @@
   margin-top: 16px;
 }
 
-.filter-group-title[aria-expanded="false"]
-  + .filter-group-content {
+.filter-group-title[aria-expanded="false"] + .filter-group-content {
   display: none;
 }
 

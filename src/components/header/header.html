@@ -3,115 +3,102 @@
 ========================= -->
 
 <header class="header">
-
-    <!-- TOP HEADER -->
-    <div class="header-top">
-
-        <!-- LOGO -->
-        <div class="logo">
-            <a href="/">
-                <img
-                    src="/src/assets/images/logo-header.jpg"
-                    alt="LC GROUP">
-            </a>
-        </div>
-
-        <!-- SEARCH -->
-        <div class="search">
-
-            <button
-                type="submit"
-                aria-label="Buscar">
-
-                <i class="fa-solid fa-magnifying-glass"></i>
-
-            </button>
-
-            <input
-                type="search"
-                placeholder="Buscar productos...">
-
-        </div>
-
+  <!-- TOP HEADER -->
+  <div class="header-top">
+    <!-- LOGO -->
+    <div class="logo">
+      <a href="/">
+        <img src="/src/assets/images/logo-header.jpg" alt="LC GROUP" />
+      </a>
     </div>
 
-    <!-- NAVIGATION -->
-    <nav class="nav">
+    <!-- SEARCH -->
+    <div class="search" id="header-search">
+      <form class="search-form" id="header-search-form" role="search">
+        <button
+          class="search-button"
+          type="submit"
+          aria-label="Buscar productos"
+        >
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
 
-        <ul class="nav-list">
+        <input
+          class="search-input"
+          id="header-search-input"
+          type="search"
+          name="search"
+          placeholder="Buscar productos..."
+          autocomplete="off"
+          aria-label="Buscar productos"
+          aria-controls="header-search-results"
+          aria-expanded="false"
+        />
+      </form>
 
-            <li class="nav-item">
-                <a href="/">Inicio</a>
-            </li>
+      <!-- RESULTADOS DEL BUSCADOR -->
+      <div
+        class="search-results"
+        id="header-search-results"
+        role="listbox"
+        aria-label="Resultados de búsqueda"
+        hidden
+      ></div>
+    </div>
+  </div>
 
-            <li class="nav-item dropdown">
+  <!-- NAVIGATION -->
+  <nav class="nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="/">Inicio</a>
+      </li>
 
-                <a href="/catalogo/" class="dropdown-link">
+      <li class="nav-item dropdown">
+        <a href="/catalogo/" class="dropdown-link">
+          Productos
 
-                    Productos
+          <i class="fa-solid fa-chevron-down"></i>
+        </a>
 
-                    <i class="fa-solid fa-chevron-down"></i>
+        <ul class="dropdown-menu">
+          <li>
+            <a href="/catalogo/"> Todos los productos </a>
+          </li>
 
-                </a>
+          <li>
+            <a href="/catalogo/?categoria=copas"> Copas </a>
+          </li>
 
-                <ul class="dropdown-menu">
+          <li>
+            <a href="/catalogo/?categoria=vasos"> Vasos </a>
+          </li>
 
-                    <li>
-                        <a href="/catalogo/">
-                            Todos los productos
-                        </a>
-                    </li>
+          <li>
+            <a href="/catalogo/?categoria=jarras"> Jarras </a>
+          </li>
 
-                    <li>
-                        <a href="/catalogo/?categoria=copas">
-                            Copas
-                        </a>
-                    </li>
+          <li>
+            <a href="/catalogo/?categoria=tazas"> Tazas </a>
+          </li>
 
-                    <li>
-                        <a href="/catalogo/?categoria=vasos">
-                            Vasos
-                        </a>
-                    </li>
+          <li>
+            <a href="/catalogo/?categoria=botellas"> Botellas </a>
+          </li>
 
-                    <li>
-                        <a href="/catalogo/?categoria=jarras">
-                            Jarras
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="/catalogo/?categoria=tazas">
-                            Tazas
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="/catalogo/?categoria=botellas">
-                            Botellas
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="/catalogo/?categoria=accesorios">
-                            Accesorios
-                        </a>
-                    </li>
-
-                </ul>
-
-            </li>
-
-            <li class="nav-item">
-                <a href="/nosotros/">Nosotros</a>
-            </li>
-
-            <li class="nav-item">
-                <a href="/contacto/">Contacto</a>
-            </li>
-
+          <li>
+            <a href="/catalogo/?categoria=accesorios"> Accesorios </a>
+          </li>
         </ul>
+      </li>
 
-    </nav>
+      <li class="nav-item">
+        <a href="/nosotros/">Nosotros</a>
+      </li>
 
+      <li class="nav-item">
+        <a href="/contacto/">Contacto</a>
+      </li>
+    </ul>
+  </nav>
 </header>

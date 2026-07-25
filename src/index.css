@@ -159,7 +159,6 @@
 
 */
 
-
 /* =====================================================
    NUEVO HERO CON VIDEO
 ===================================================== */
@@ -257,14 +256,11 @@
   line-height: 1.6;
 }
 
-
-
 /* =====================================================
    CATEGORÍAS
 ===================================================== */
 
 .categories {
-
   width: 100%;
 
   padding: var(--section-padding-large);
@@ -285,7 +281,6 @@
 ===================================================== */
 
 .categories-intro {
-
   min-height: 310px;
 
   padding: 26px 24px 24px 0;
@@ -300,7 +295,6 @@
 }
 
 .categories-intro .subtitle {
-
   display: block;
 
   margin-bottom: 12px;
@@ -319,7 +313,6 @@
 }
 
 .categories-intro h2 {
-
   margin: 0 0 20px;
 
   color: var(--color-text);
@@ -328,15 +321,14 @@
 
   font-size: var(--font-size-title-large);
 
-  line-height: .98;
+  line-height: 0.98;
 
   font-weight: var(--font-weight-bold);
 
-  letter-spacing: -.7px;
+  letter-spacing: -0.7px;
 }
 
 .categories-intro p {
-
   max-width: 220px;
 
   margin-bottom: 22px;
@@ -348,8 +340,7 @@
   line-height: 1.65;
 }
 
-.categories-intro>a {
-
+.categories-intro > a {
   display: inline-flex;
 
   align-items: center;
@@ -367,8 +358,7 @@
   transition: color var(--transition-fast);
 }
 
-.categories-intro>a span {
-
+.categories-intro > a span {
   color: var(--color-accent);
 
   font-size: 16px;
@@ -376,13 +366,11 @@
   transition: transform var(--transition-fast);
 }
 
-.categories-intro>a:hover {
-
+.categories-intro > a:hover {
   color: var(--color-accent);
 }
 
-.categories-intro>a:hover span {
-
+.categories-intro > a:hover span {
   transform: translateX(4px);
 }
 
@@ -391,7 +379,6 @@
 ===================================================== */
 
 .category-card {
-
   position: relative;
 
   min-height: 310px;
@@ -414,24 +401,24 @@
 
   isolation: isolate;
 
+  background: var(--color-black);
+
   transition:
     transform var(--transition-normal),
     box-shadow var(--transition-normal);
 }
 
 .category-card:hover {
-
   transform: translateY(-6px);
 
   box-shadow: var(--shadow-card-hover);
 }
 
 /* =====================================================
-   OVERLAY
+   OVERLAY OSCURO
 ===================================================== */
 
 .category-card::before {
-
   content: "";
 
   position: absolute;
@@ -442,20 +429,32 @@
 
   background: linear-gradient(
     180deg,
-    rgba(255,255,255,.05) 0%,
-    rgba(255,255,255,.18) 55%,
-    rgba(255,255,255,.72) 100%
+    rgba(0, 0, 0, 0.66) 0%,
+    rgba(0, 0, 0, 0.5) 48%,
+    rgba(0, 0, 0, 0.62) 100%
   );
 
   pointer-events: none;
+
+  transition: background var(--transition-normal);
+}
+
+/* El overlay aumenta ligeramente al pasar el mouse */
+
+.category-card:hover::before {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.72) 0%,
+    rgba(0, 0, 0, 0.56) 48%,
+    rgba(0, 0, 0, 0.68) 100%
+  );
 }
 
 /* =====================================================
    IMAGEN
 ===================================================== */
 
-.category-card>img {
-
+.category-card > img {
   position: absolute;
 
   inset: 0;
@@ -471,15 +470,14 @@
   object-position: center;
 
   transition:
-    transform .6s ease,
-    filter .35s ease;
+    transform 0.6s ease,
+    filter 0.35s ease;
 }
 
-.category-card:hover>img {
-
+.category-card:hover > img {
   transform: scale(1.06);
 
-  filter: brightness(.95);
+  filter: brightness(0.82);
 }
 
 /* =====================================================
@@ -489,8 +487,7 @@
 .category-icon,
 .category-card h3,
 .category-card p,
-.category-card>a {
-
+.category-card > a {
   position: relative;
 
   z-index: 2;
@@ -501,7 +498,6 @@
 ===================================================== */
 
 .category-icon {
-
   width: var(--icon-size);
 
   height: var(--icon-size);
@@ -522,7 +518,6 @@
 }
 
 .category-icon .material-symbols-outlined {
-
   color: var(--color-white);
 
   font-size: var(--icon-font-size);
@@ -539,12 +534,11 @@
 ===================================================== */
 
 .category-card h3 {
-
   max-width: 150px;
 
   margin-bottom: 10px;
 
-  color: var(--color-text);
+  color: var(--color-white);
 
   font-family: var(--font-main);
 
@@ -553,6 +547,8 @@
   line-height: 1.08;
 
   font-weight: var(--font-weight-bold);
+
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
 }
 
 /* =====================================================
@@ -560,25 +556,25 @@
 ===================================================== */
 
 .category-card p {
-
   max-width: 150px;
 
   margin-bottom: 14px;
 
-  color: var(--color-text-light);
+  color: rgba(255, 255, 255, 0.88);
 
   font-size: var(--font-size-small);
 
   line-height: 1.55;
+
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
 }
 
 /* =====================================================
    ENLACE
 ===================================================== */
 
-.category-card>a {
-
-  color: var(--color-text);
+.category-card > a {
+  color: var(--color-white);
 
   font-size: var(--font-size-xs);
 
@@ -586,20 +582,20 @@
 
   text-transform: uppercase;
 
-  letter-spacing: .45px;
+  letter-spacing: 0.45px;
+
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
 
   transition: color var(--transition-fast);
 }
 
-.category-card>a::after {
-
+.category-card > a::after {
   content: " →";
 
   color: var(--color-accent);
 }
 
-.category-card>a:hover {
-
+.category-card > a:hover {
   color: var(--color-accent);
 }
 
@@ -608,7 +604,6 @@
 ===================================================== */
 
 .featured-banner {
-
   width: 100%;
 
   padding: var(--section-padding-large);
@@ -629,7 +624,6 @@
 ===================================================== */
 
 .featured-image {
-
   position: relative;
 
   width: 100%;
@@ -644,7 +638,6 @@
 }
 
 .featured-image img {
-
   width: 100%;
 
   height: 100%;
@@ -656,15 +649,14 @@
   object-position: center;
 
   transition:
-    transform .7s ease,
-    filter .35s ease;
+    transform 0.7s ease,
+    filter 0.35s ease;
 }
 
 .featured-image:hover img {
-
   transform: scale(1.05);
 
-  filter: brightness(.96);
+  filter: brightness(0.96);
 }
 
 /* =====================================================
@@ -672,7 +664,6 @@
 ===================================================== */
 
 .featured-content {
-
   display: flex;
 
   flex-direction: column;
@@ -683,7 +674,6 @@
 }
 
 .featured-subtitle {
-
   margin-bottom: 12px;
 
   color: var(--color-accent);
@@ -700,7 +690,6 @@
 }
 
 .featured-content h2 {
-
   margin: 0 0 18px;
 
   color: var(--color-text);
@@ -713,11 +702,10 @@
 
   font-weight: var(--font-weight-bold);
 
-  letter-spacing: -.6px;
+  letter-spacing: -0.6px;
 }
 
 .featured-content p {
-
   max-width: 390px;
 
   margin-bottom: 26px;
@@ -734,7 +722,6 @@
 ===================================================== */
 
 .featured-content a {
-
   min-width: 165px;
 
   height: 44px;
@@ -759,7 +746,7 @@
 
   font-weight: var(--font-weight-bold);
 
-  letter-spacing: .4px;
+  letter-spacing: 0.4px;
 
   text-transform: uppercase;
 
@@ -770,7 +757,6 @@
 }
 
 .featured-content a:hover {
-
   background: var(--color-accent);
 
   color: var(--color-white);

@@ -1,8 +1,6 @@
 import "./catalogo.css";
 
-import {
-  createProductCard,
-} from "../src/components/product-card/product-card.js";
+import { createProductCard } from "../src/components/product-card/product-card.js";
 
 /* ==========================================
    ESTADO DEL CATÁLOGO
@@ -22,70 +20,37 @@ let sortValue = "default";
    ELEMENTOS DEL DOM
 ========================================== */
 
-const productGrid = document.getElementById(
-  "catalog-product-grid",
-);
+const productGrid = document.getElementById("catalog-product-grid");
 
-const categoryFilters = document.getElementById(
-  "category-filters",
-);
+const categoryFilters = document.getElementById("category-filters");
 
-const brandFilters = document.getElementById(
-  "brand-filters",
-);
+const brandFilters = document.getElementById("brand-filters");
 
-const brandSearch = document.getElementById(
-  "brand-search",
-);
+const brandSearch = document.getElementById("brand-search");
 
-const minimumPriceInput = document.getElementById(
-  "minimum-price",
-);
+const minimumPriceInput = document.getElementById("minimum-price");
 
-const maximumPriceInput = document.getElementById(
-  "maximum-price",
-);
+const maximumPriceInput = document.getElementById("maximum-price");
 
-const applyPriceButton = document.getElementById(
-  "apply-price-filter",
-);
+const applyPriceButton = document.getElementById("apply-price-filter");
 
-const clearFiltersButton = document.getElementById(
-  "clear-filters",
-);
+const clearFiltersButton = document.getElementById("clear-filters");
 
-const emptyClearFiltersButton =
-  document.getElementById(
-    "empty-clear-filters",
-  );
+const emptyClearFiltersButton = document.getElementById("empty-clear-filters");
 
-const sortSelect = document.getElementById(
-  "catalog-sort-select",
-);
+const sortSelect = document.getElementById("catalog-sort-select");
 
-const resultsCount = document.getElementById(
-  "catalog-results-count",
-);
+const resultsCount = document.getElementById("catalog-results-count");
 
-const emptyState = document.getElementById(
-  "catalog-empty-state",
-);
+const emptyState = document.getElementById("catalog-empty-state");
 
-const sidebar = document.getElementById(
-  "catalog-sidebar",
-);
+const sidebar = document.getElementById("catalog-sidebar");
 
-const filterOpenButton = document.querySelector(
-  ".catalog-filter-button",
-);
+const filterOpenButton = document.querySelector(".catalog-filter-button");
 
-const filterCloseButton = document.querySelector(
-  ".catalog-filter-close",
-);
+const filterCloseButton = document.querySelector(".catalog-filter-close");
 
-const filterBackdrop = document.querySelector(
-  ".catalog-filter-backdrop",
-);
+const filterBackdrop = document.querySelector(".catalog-filter-backdrop");
 
 /* ==========================================
    UTILIDADES
@@ -102,9 +67,7 @@ function normalizeText(value) {
 function formatLabel(value) {
   return String(value)
     .replaceAll("-", " ")
-    .replace(/\b\w/g, (letter) =>
-      letter.toUpperCase(),
-    );
+    .replace(/\b\w/g, (letter) => letter.toUpperCase());
 }
 
 function countByProperty(property) {
@@ -126,14 +89,10 @@ function countByProperty(property) {
 ========================================== */
 
 async function loadProducts() {
-  const response = await fetch(
-    "/src/data/products.json",
-  );
+  const response = await fetch("/src/data/products.json");
 
   if (!response.ok) {
-    throw new Error(
-      "No se pudieron cargar los productos.",
-    );
+    throw new Error("No se pudieron cargar los productos.");
   }
 
   products = await response.json();
@@ -154,12 +113,9 @@ function generateCategoryFilters() {
     return;
   }
 
-  const categoryCounts =
-    countByProperty("category");
+  const categoryCounts = countByProperty("category");
 
-  const categories = Object.keys(
-    categoryCounts,
-  ).sort((a, b) =>
+  const categories = Object.keys(categoryCounts).sort((a, b) =>
     a.localeCompare(b, "es", {
       sensitivity: "base",
     }),
@@ -199,9 +155,7 @@ function generateBrandFilters() {
 
   const brandCounts = countByProperty("brand");
 
-  const brands = Object.keys(
-    brandCounts,
-  ).sort((a, b) =>
+  const brands = Object.keys(brandCounts).sort((a, b) =>
     a.localeCompare(b, "es", {
       sensitivity: "base",
     }),
@@ -239,35 +193,23 @@ function generateBrandFilters() {
 ========================================== */
 
 function configurePriceLimits() {
-  if (
-    !minimumPriceInput ||
-    !maximumPriceInput ||
-    products.length === 0
-  ) {
+  if (!minimumPriceInput || !maximumPriceInput || products.length === 0) {
     return;
   }
 
-  const prices = products.map(
-    (product) => Number(product.price),
-  );
+  const prices = products.map((product) => Number(product.price));
 
-  const lowestPrice = Math.floor(
-    Math.min(...prices),
-  );
+  const lowestPrice = Math.floor(Math.min(...prices));
 
-  const highestPrice = Math.ceil(
-    Math.max(...prices),
-  );
+  const highestPrice = Math.ceil(Math.max(...prices));
 
   minimumPriceInput.min = String(lowestPrice);
   minimumPriceInput.max = String(highestPrice);
-  minimumPriceInput.placeholder =
-    lowestPrice.toFixed(2);
+  minimumPriceInput.placeholder = lowestPrice.toFixed(2);
 
   maximumPriceInput.min = String(lowestPrice);
   maximumPriceInput.max = String(highestPrice);
-  maximumPriceInput.placeholder =
-    highestPrice.toFixed(2);
+  maximumPriceInput.placeholder = highestPrice.toFixed(2);
 }
 
 /* ==========================================
@@ -275,36 +217,21 @@ function configurePriceLimits() {
 ========================================== */
 
 function applyFilters() {
-  filteredProducts = products.filter(
-    (product) => {
-      const categoryMatches =
-        selectedCategories.size === 0 ||
-        selectedCategories.has(
-          product.category,
-        );
+  filteredProducts = products.filter((product) => {
+    const categoryMatches =
+      selectedCategories.size === 0 || selectedCategories.has(product.category);
 
-      const brandMatches =
-        selectedBrands.size === 0 ||
-        selectedBrands.has(product.brand);
+    const brandMatches =
+      selectedBrands.size === 0 || selectedBrands.has(product.brand);
 
-      const price = Number(product.price);
+    const price = Number(product.price);
 
-      const minimumMatches =
-        minimumPrice === null ||
-        price >= minimumPrice;
+    const minimumMatches = minimumPrice === null || price >= minimumPrice;
 
-      const maximumMatches =
-        maximumPrice === null ||
-        price <= maximumPrice;
+    const maximumMatches = maximumPrice === null || price <= maximumPrice;
 
-      return (
-        categoryMatches &&
-        brandMatches &&
-        minimumMatches &&
-        maximumMatches
-      );
-    },
-  );
+    return categoryMatches && brandMatches && minimumMatches && maximumMatches;
+  });
 
   sortProducts();
   renderProducts();
@@ -317,17 +244,11 @@ function applyFilters() {
 function sortProducts() {
   switch (sortValue) {
     case "price-asc":
-      filteredProducts.sort(
-        (a, b) =>
-          Number(a.price) - Number(b.price),
-      );
+      filteredProducts.sort((a, b) => Number(a.price) - Number(b.price));
       break;
 
     case "price-desc":
-      filteredProducts.sort(
-        (a, b) =>
-          Number(b.price) - Number(a.price),
-      );
+      filteredProducts.sort((a, b) => Number(b.price) - Number(a.price));
       break;
 
     case "name-asc":
@@ -357,10 +278,7 @@ function sortProducts() {
       break;
 
     default:
-      filteredProducts.sort(
-        (a, b) =>
-          Number(a.id) - Number(b.id),
-      );
+      filteredProducts.sort((a, b) => Number(a.id) - Number(b.id));
   }
 }
 
@@ -369,20 +287,12 @@ function sortProducts() {
 ========================================== */
 
 async function renderProducts() {
-  if (
-    !productGrid ||
-    !resultsCount ||
-    !emptyState
-  ) {
+  if (!productGrid || !resultsCount || !emptyState) {
     return;
   }
 
-  resultsCount.textContent = `Mostrando ${
-    filteredProducts.length
-  } producto${
-    filteredProducts.length === 1
-      ? ""
-      : "s"
+  resultsCount.textContent = `Mostrando ${filteredProducts.length} producto${
+    filteredProducts.length === 1 ? "" : "s"
   }`;
 
   if (filteredProducts.length === 0) {
@@ -395,9 +305,7 @@ async function renderProducts() {
   emptyState.hidden = true;
 
   const cards = await Promise.all(
-    filteredProducts.map((product) =>
-      createProductCard(product),
-    ),
+    filteredProducts.map((product) => createProductCard(product)),
   );
 
   productGrid.innerHTML = cards.join("");
@@ -407,142 +315,93 @@ async function renderProducts() {
    EVENTOS DE CATEGORÍAS
 ========================================== */
 
-categoryFilters?.addEventListener(
-  "change",
-  (event) => {
-    const checkbox = event.target.closest(
-      'input[name="category"]',
-    );
+categoryFilters?.addEventListener("change", (event) => {
+  const checkbox = event.target.closest('input[name="category"]');
 
-    if (!checkbox) {
-      return;
-    }
+  if (!checkbox) {
+    return;
+  }
 
-    if (checkbox.checked) {
-      selectedCategories.add(
-        checkbox.value,
-      );
-    } else {
-      selectedCategories.delete(
-        checkbox.value,
-      );
-    }
+  if (checkbox.checked) {
+    selectedCategories.add(checkbox.value);
+  } else {
+    selectedCategories.delete(checkbox.value);
+  }
 
-    applyFilters();
-  },
-);
+  applyFilters();
+});
 
 /* ==========================================
    EVENTOS DE MARCAS
 ========================================== */
 
-brandFilters?.addEventListener(
-  "change",
-  (event) => {
-    const checkbox = event.target.closest(
-      'input[name="brand"]',
-    );
+brandFilters?.addEventListener("change", (event) => {
+  const checkbox = event.target.closest('input[name="brand"]');
 
-    if (!checkbox) {
-      return;
-    }
+  if (!checkbox) {
+    return;
+  }
 
-    if (checkbox.checked) {
-      selectedBrands.add(checkbox.value);
-    } else {
-      selectedBrands.delete(
-        checkbox.value,
-      );
-    }
+  if (checkbox.checked) {
+    selectedBrands.add(checkbox.value);
+  } else {
+    selectedBrands.delete(checkbox.value);
+  }
 
-    applyFilters();
-  },
-);
+  applyFilters();
+});
 
 /* ==========================================
    BUSCAR MARCAS
 ========================================== */
 
-brandSearch?.addEventListener(
-  "input",
-  () => {
-    const searchValue = normalizeText(
-      brandSearch.value,
-    );
+brandSearch?.addEventListener("input", () => {
+  const searchValue = normalizeText(brandSearch.value);
 
-    brandFilters
-      ?.querySelectorAll(
-        "[data-brand-option]",
-      )
-      .forEach((option) => {
-        const brandName =
-          option.dataset.brandName || "";
+  brandFilters?.querySelectorAll("[data-brand-option]").forEach((option) => {
+    const brandName = option.dataset.brandName || "";
 
-        option.hidden =
-          !brandName.includes(searchValue);
-      });
-  },
-);
+    option.hidden = !brandName.includes(searchValue);
+  });
+});
 
 /* ==========================================
    FILTRO DE PRECIO
 ========================================== */
 
-applyPriceButton?.addEventListener(
-  "click",
-  () => {
-    const minimumValue =
-      minimumPriceInput?.value.trim();
+applyPriceButton?.addEventListener("click", () => {
+  const minimumValue = minimumPriceInput?.value.trim();
 
-    const maximumValue =
-      maximumPriceInput?.value.trim();
+  const maximumValue = maximumPriceInput?.value.trim();
 
-    minimumPrice =
-      minimumValue === ""
-        ? null
-        : Number(minimumValue);
+  minimumPrice = minimumValue === "" ? null : Number(minimumValue);
 
-    maximumPrice =
-      maximumValue === ""
-        ? null
-        : Number(maximumValue);
+  maximumPrice = maximumValue === "" ? null : Number(maximumValue);
 
-    if (
-      minimumPrice !== null &&
-      maximumPrice !== null &&
-      minimumPrice > maximumPrice
-    ) {
-      [
-        minimumPrice,
-        maximumPrice,
-      ] = [
-        maximumPrice,
-        minimumPrice,
-      ];
+  if (
+    minimumPrice !== null &&
+    maximumPrice !== null &&
+    minimumPrice > maximumPrice
+  ) {
+    [minimumPrice, maximumPrice] = [maximumPrice, minimumPrice];
 
-      minimumPriceInput.value =
-        String(minimumPrice);
+    minimumPriceInput.value = String(minimumPrice);
 
-      maximumPriceInput.value =
-        String(maximumPrice);
-    }
+    maximumPriceInput.value = String(maximumPrice);
+  }
 
-    applyFilters();
-  },
-);
+  applyFilters();
+});
 
 /* ==========================================
    ORDENAMIENTO
 ========================================== */
 
-sortSelect?.addEventListener(
-  "change",
-  () => {
-    sortValue = sortSelect.value;
+sortSelect?.addEventListener("change", () => {
+  sortValue = sortSelect.value;
 
-    applyFilters();
-  },
-);
+  applyFilters();
+});
 
 /* ==========================================
    LIMPIAR FILTROS
@@ -557,9 +416,7 @@ function clearFilters() {
   sortValue = "default";
 
   document
-    .querySelectorAll(
-      '.catalog-sidebar input[type="checkbox"]',
-    )
+    .querySelectorAll('.catalog-sidebar input[type="checkbox"]')
     .forEach((checkbox) => {
       checkbox.checked = false;
     });
@@ -580,56 +437,34 @@ function clearFilters() {
     sortSelect.value = "default";
   }
 
-  brandFilters
-    ?.querySelectorAll(
-      "[data-brand-option]",
-    )
-    .forEach((option) => {
-      option.hidden = false;
-    });
+  brandFilters?.querySelectorAll("[data-brand-option]").forEach((option) => {
+    option.hidden = false;
+  });
 
   applyFilters();
 }
 
-clearFiltersButton?.addEventListener(
-  "click",
-  clearFilters,
-);
+clearFiltersButton?.addEventListener("click", clearFilters);
 
-emptyClearFiltersButton?.addEventListener(
-  "click",
-  clearFilters,
-);
+emptyClearFiltersButton?.addEventListener("click", clearFilters);
 
 /* ==========================================
    ACORDEÓN DE FILTROS
 ========================================== */
 
-document
-  .querySelectorAll(".filter-group-title")
-  .forEach((button) => {
-    button.addEventListener("click", () => {
-      const isExpanded =
-        button.getAttribute(
-          "aria-expanded",
-        ) === "true";
+document.querySelectorAll(".filter-group-title").forEach((button) => {
+  button.addEventListener("click", () => {
+    const isExpanded = button.getAttribute("aria-expanded") === "true";
 
-      button.setAttribute(
-        "aria-expanded",
-        String(!isExpanded),
-      );
+    button.setAttribute("aria-expanded", String(!isExpanded));
 
-      const icon = button.querySelector(
-        ".material-symbols-outlined",
-      );
+    const icon = button.querySelector(".material-symbols-outlined");
 
-      if (icon) {
-        icon.textContent = isExpanded
-          ? "add"
-          : "remove";
-      }
-    });
+    if (icon) {
+      icon.textContent = isExpanded ? "add" : "remove";
+    }
   });
+});
 
 /* ==========================================
    FILTROS EN MÓVIL
@@ -639,10 +474,7 @@ function openMobileFilters() {
   sidebar?.classList.add("open");
   filterBackdrop?.classList.add("open");
 
-  filterOpenButton?.setAttribute(
-    "aria-expanded",
-    "true",
-  );
+  filterOpenButton?.setAttribute("aria-expanded", "true");
 
   document.body.style.overflow = "hidden";
 }
@@ -651,28 +483,16 @@ function closeMobileFilters() {
   sidebar?.classList.remove("open");
   filterBackdrop?.classList.remove("open");
 
-  filterOpenButton?.setAttribute(
-    "aria-expanded",
-    "false",
-  );
+  filterOpenButton?.setAttribute("aria-expanded", "false");
 
   document.body.style.overflow = "";
 }
 
-filterOpenButton?.addEventListener(
-  "click",
-  openMobileFilters,
-);
+filterOpenButton?.addEventListener("click", openMobileFilters);
 
-filterCloseButton?.addEventListener(
-  "click",
-  closeMobileFilters,
-);
+filterCloseButton?.addEventListener("click", closeMobileFilters);
 
-filterBackdrop?.addEventListener(
-  "click",
-  closeMobileFilters,
-);
+filterBackdrop?.addEventListener("click", closeMobileFilters);
 
 /* ==========================================
    INICIALIZAR
@@ -682,14 +502,10 @@ async function initializeCatalog() {
   try {
     await loadProducts();
   } catch (error) {
-    console.error(
-      "Error al inicializar el catálogo:",
-      error,
-    );
+    console.error("Error al inicializar el catálogo:", error);
 
     if (resultsCount) {
-      resultsCount.textContent =
-        "No se pudieron cargar los productos";
+      resultsCount.textContent = "No se pudieron cargar los productos";
     }
   }
 }
@@ -709,22 +525,17 @@ productGrid?.addEventListener("click", (event) => {
     return;
   }
 
-  const card = event.target.closest(
-    ".catalog-product-card",
-  );
+  const card = event.target.closest(".catalog-product-card");
 
   if (!card) {
     return;
   }
 
-  const productId = Number(
-    card.dataset.productId,
-  );
+  const productId = Number(card.dataset.productId);
 
   if (!Number.isInteger(productId)) {
     return;
   }
 
-  window.location.href =
-    `/catalogo/producto/?id=${productId}`;
+  window.location.href = `/catalogo/producto/?id=${productId}`;
 });

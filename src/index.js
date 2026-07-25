@@ -375,41 +375,36 @@ function initializeProductCarousel() {
   ========================================== */
 
   function normalizePhysicalPosition() {
-  /*
-   * Si estamos en los clones del final,
-   * retrocedemos exactamente una vuelta completa,
-   * conservando el producto seleccionado.
-   */
-  if (
-    physicalIndex >=
-    cloneCount + totalProducts
-  ) {
-    physicalIndex -= totalProducts;
+    /*
+     * Si estamos en los clones del final,
+     * retrocedemos exactamente una vuelta completa,
+     * conservando el producto seleccionado.
+     */
+    if (physicalIndex >= cloneCount + totalProducts) {
+      physicalIndex -= totalProducts;
+    }
+
+    /*
+     * Si estamos en los clones del inicio,
+     * avanzamos exactamente una vuelta completa,
+     * conservando el producto seleccionado.
+     */
+    if (physicalIndex < cloneCount) {
+      physicalIndex += totalProducts;
+    }
+
+    currentIndex = normalizeIndex(physicalIndex - cloneCount);
+
+    setTrackPosition({
+      animate: false,
+    });
+
+    forceTrackReflow();
+
+    updateProductDots();
+
+    isAnimating = false;
   }
-
-  /*
-   * Si estamos en los clones del inicio,
-   * avanzamos exactamente una vuelta completa,
-   * conservando el producto seleccionado.
-   */
-  if (physicalIndex < cloneCount) {
-    physicalIndex += totalProducts;
-  }
-
-  currentIndex = normalizeIndex(
-    physicalIndex - cloneCount,
-  );
-
-  setTrackPosition({
-    animate: false,
-  });
-
-  forceTrackReflow();
-
-  updateProductDots();
-
-  isAnimating = false;
-}
 
   function handleTransitionEnd(event) {
     if (event.target !== productTrack || event.propertyName !== "transform") {
