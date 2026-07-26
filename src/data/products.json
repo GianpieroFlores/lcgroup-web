@@ -1,18 +1,18 @@
 [
   {
     "id": 1,
-    "sku": "COP-001",
-    "brand": "Bohemia",
-    "name": "Copa Bordeaux",
-    "variant": "650 ml",
+    "sku": "MECOSP53",
+    "brand": "Lifestyle Pro",
+    "name": "SPIEGELAU VINO BLANCO STYLE",
+    "variant": "Una caja contiene 12 unidades.",
     "category": "copas",
-    "description": "Copa de cristal de 650 ml diseñada para vinos tintos, con cáliz amplio que favorece la oxigenación y resalta los aromas.",
+    "description": "La copa SPIEGELAU Vino Blanco Style está diseñada para realzar los aromas, la frescura y el equilibrio de los vinos blancos. Fabricada en cristal de alta calidad, combina elegancia, resistencia y brillo, siendo ideal para uso diario o profesional.",
     "price": 39.9,
-    "stock": 24,
+    "stock": 48,
     "featured": true,
     "new": true,
     "offer": false,
-    "image": "/src/assets/images/product01.png"
+    "image": "/src/assets/images/product01.jpg"
   },
   {
     "id": 2,
