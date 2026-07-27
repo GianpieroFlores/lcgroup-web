@@ -118,6 +118,58 @@ function initializeHeroSlider() {
 
   restart();
 }
+
+/* ==========================================
+   CARGA DE COLECCIONES
+========================================== */
+
+function renderCollections(products) {
+  const collectionList = document.getElementById(
+    "catalog-collection-list",
+  );
+
+  if (!collectionList) {
+    return;
+  }
+
+  const collections = [
+    ...new Set(
+      products
+        .map((product) => product.brand?.trim())
+        .filter(Boolean),
+    ),
+  ]
+    .sort((brandA, brandB) =>
+      brandA.localeCompare(brandB, "es", {
+        sensitivity: "base",
+      }),
+    )
+    .slice(0, 6);
+
+  collectionList.innerHTML = collections
+    .map(
+      (brand, index) => `
+        <a
+          href="/catalogo/?marca=${encodeURIComponent(brand)}"
+          class="catalog-type-item${index === 0 ? " active" : ""}"
+        >
+          <span class="catalog-type-icon material-symbols-outlined">
+            wine_bar
+          </span>
+
+          <span class="catalog-type-name">
+            ${brand}
+          </span>
+
+          <span class="catalog-type-arrow material-symbols-outlined">
+            chevron_right
+          </span>
+        </a>
+      `,
+    )
+    .join("");
+}
+
 /* ==========================================
    CARRUSEL INFINITO DE PRODUCTOS
 ========================================== */
@@ -605,7 +657,7 @@ function initializeFeaturedProduct() {
 
       featureTitle.textContent = product.name;
 
-      featureDescription.textContent = product.description;
+      featureDescription.textContent = product.shortDescription;
 
       feature.classList.add("product-selected");
 
@@ -633,6 +685,7 @@ async function initializeIndex() {
   initializeHeroSlider();
 
   await loadFeaturedProducts();
+  renderCollections(products);
   initializeProductCarousel();
   initializeFeaturedProduct();
 }

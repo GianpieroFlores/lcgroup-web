@@ -5,17 +5,22 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>LCGROUP</title>
+    <title>Nosotros | Spiegelau</title>
 
     <meta
       name="description"
-      content="Venta de cristalería, copas, vasos y accesorios."
+      content="Conoce Spiegelau, especialistas en la distribución de cristalería premium para hogares, hoteles, restaurantes, bares y negocios."
     />
 
-    <meta name="keywords" content="copas, vasos, cristalería, Perú" />
+    <meta
+      name="keywords"
+      content="Spiegelau, cristalería premium, copas, vasos, decantadores, distribución de cristalería, Perú"
+    />
 
-    <meta name="author" content="LCGROUP" />
-    <meta name="theme-color" content="#0F6B4B" />
+    <meta name="author" content="Spiegelau" />
+
+    <meta name="theme-color" content="#0f6b4b" />
+
     <link rel="icon" href="/favicon.ico" />
 
     <!-- ==========================
@@ -42,409 +47,414 @@
 
     <main class="about-page">
       <!-- =====================================================
-       PRESENTACIÓN PRINCIPAL
-  ====================================================== -->
+           PRESENTACIÓN PRINCIPAL
+      ====================================================== -->
 
       <section class="about-intro">
         <div class="about-intro__media">
           <img
             src="/src/assets/images/nosotros/about-main.jpg"
-            alt="Selección de cristalería y productos de LC Group"
+            alt="Colección de cristalería premium Spiegelau"
           />
         </div>
 
         <div class="about-intro__content">
-          <span class="about-eyebrow"> Calidad para cada ocasión </span>
+          <span class="about-eyebrow">
+            Cristalería premium
+          </span>
 
-          <h1>Productos seleccionados para acompañar grandes momentos</h1>
+          <h1>
+            Distribuimos colecciones Spiegelau para transformar cada experiencia
+          </h1>
 
           <p>
-            En LC Group reunimos cristalería, licores, conservas y artículos
-            cuidadosamente seleccionados para hogares, restaurantes y negocios.
-            Nuestro propósito es ofrecer productos que combinen diseño,
-            funcionalidad y una presentación de alta calidad.
+            En Spiegelau nos especializamos en la distribución de cristalería
+            premium para hogares, restaurantes, hoteles, bares y negocios.
+            Nuestro catálogo reúne colecciones diseñadas para brindar elegancia,
+            funcionalidad y una experiencia superior en cada bebida.
           </p>
 
           <a href="/catalogo/" class="about-link">
             Descubrir nuestro catálogo
 
-            <span class="material-symbols-outlined"> arrow_forward </span>
+            <span class="material-symbols-outlined">
+              arrow_forward
+            </span>
           </a>
         </div>
       </section>
 
       <!-- =====================================================
-       SEGUNDA PRESENTACIÓN
-  ====================================================== -->
+           SEGUNDA PRESENTACIÓN
+      ====================================================== -->
 
       <section class="about-presentation">
         <div class="about-presentation__content">
-          <span class="about-eyebrow"> Sobre nosotros </span>
+          <span class="about-eyebrow">
+            Sobre nosotros
+          </span>
 
-          <h2>Una selección pensada para distintos estilos y necesidades</h2>
+          <h2>
+            Especialistas en distribución de cristalería premium
+          </h2>
 
           <p>
-            Trabajamos con productos destinados tanto al uso diario como a
-            celebraciones, reuniones y espacios profesionales. Nuestro catálogo
-            reúne opciones para servir, compartir, conservar y presentar cada
-            producto de una manera especial.
+            Nuestro catálogo reúne colecciones Spiegelau pensadas para
+            diferentes bebidas, estilos de servicio y ocasiones. Ofrecemos
+            copas, vasos, decantadores, jarras y otros productos destinados
+            tanto al uso doméstico como profesional.
           </p>
 
           <p>
-            Buscamos que cada cliente encuentre alternativas adecuadas para su
-            hogar, restaurante, bar, hotel o negocio, manteniendo un equilibrio
-            entre calidad, diseño y precio.
+            Trabajamos para brindar una experiencia de compra confiable,
+            acompañada de una amplia variedad de diseños y presentaciones para
+            hogares, restaurantes, bares, hoteles y negocios especializados.
           </p>
         </div>
 
         <div class="about-presentation__media">
           <img
             src="/src/assets/images/nosotros/about-selection.jpg"
-            alt="Cristalería seleccionada para hogares y negocios"
+            alt="Selección de cristalería Spiegelau para hogares y negocios"
           />
         </div>
       </section>
 
       <!-- =====================================================
-       CATEGORÍAS
-  ====================================================== -->
+           CATEGORÍAS DINÁMICAS
+           Se generan desde category en products.json
+      ====================================================== -->
 
       <section class="about-categories">
         <div class="about-section-heading">
-          <span class="about-eyebrow"> Nuestras categorías </span>
+          <span class="about-eyebrow">
+            Nuestras categorías
+          </span>
 
-          <h2>Encuentra productos para cada ocasión</h2>
+          <h2>
+            Cristalería para diferentes bebidas y ocasiones
+          </h2>
 
           <p>
-            Explora una selección de categorías pensadas para complementar
-            reuniones, celebraciones, experiencias gastronómicas y momentos
-            cotidianos.
+            Explora nuestras categorías y encuentra productos diseñados para
+            mejorar la presentación, el servicio y la experiencia de cada
+            bebida.
           </p>
         </div>
 
-        <div class="about-categories__grid">
-          <article class="about-category-card">
-            <a href="/catalogo/?category=cristaleria">
-              <div class="about-category-card__image">
-                <img
-                  src="/src/assets/images/nosotros/category-cristaleria.jpg"
-                  alt="Cristalería"
-                />
-              </div>
+        <div
+          id="about-categories-grid"
+          class="about-categories__grid"
+          aria-live="polite"
+        >
+          <!--
+            JavaScript generará aquí las categorías encontradas
+            en products.json.
 
-              <div class="about-category-card__content">
-                <h3>Cristalería</h3>
+            Cada tarjeta tendrá una estructura similar a:
 
-                <p>
-                  Copas, vasos, jarras y accesorios para diferentes bebidas.
-                </p>
+            <article class="about-category-card">
+              <a href="/catalogo/?categoria=copas">
+                <div class="about-category-card__image">
+                  <img src="..." alt="Copas" />
+                </div>
 
-                <span> Explorar categoría </span>
-              </div>
-            </a>
-          </article>
-
-          <article class="about-category-card">
-            <a href="/catalogo/?category=licores">
-              <div class="about-category-card__image">
-                <img
-                  src="/src/assets/images/nosotros/category-licores.jpg"
-                  alt="Licores"
-                />
-              </div>
-
-              <div class="about-category-card__content">
-                <h3>Licores</h3>
-
-                <p>
-                  Alternativas para compartir, regalar y acompañar momentos
-                  especiales.
-                </p>
-
-                <span> Explorar categoría </span>
-              </div>
-            </a>
-          </article>
-
-          <article class="about-category-card">
-            <a href="/catalogo/?category=conservas">
-              <div class="about-category-card__image">
-                <img
-                  src="/src/assets/images/nosotros/category-conservas.jpg"
-                  alt="Conservas"
-                />
-              </div>
-
-              <div class="about-category-card__content">
-                <h3>Conservas</h3>
-
-                <p>
-                  Productos seleccionados para complementar distintas
-                  preparaciones.
-                </p>
-
-                <span> Explorar categoría </span>
-              </div>
-            </a>
-          </article>
-
-          <article class="about-category-card">
-            <a href="/catalogo/?category=articulos">
-              <div class="about-category-card__image">
-                <img
-                  src="/src/assets/images/nosotros/category-articulos.jpg"
-                  alt="Artículos"
-                />
-              </div>
-
-              <div class="about-category-card__content">
-                <h3>Artículos</h3>
-
-                <p>
-                  Complementos funcionales para el hogar y el servicio
-                  profesional.
-                </p>
-
-                <span> Explorar categoría </span>
-              </div>
-            </a>
-          </article>
+                <div class="about-category-card__content">
+                  <h3>Copas</h3>
+                  <p>Explora los productos disponibles en esta categoría.</p>
+                  <span>Explorar categoría</span>
+                </div>
+              </a>
+            </article>
+          -->
         </div>
       </section>
 
       <!-- =====================================================
-       CALIDAD Y SELECCIÓN
-  ====================================================== -->
+           CALIDAD Y SELECCIÓN
+      ====================================================== -->
 
       <section class="about-quality">
         <div class="about-quality__media">
           <img
             src="/src/assets/images/nosotros/about-quality.jpg"
-            alt="Detalle de cristalería de calidad"
+            alt="Detalle de cristalería premium Spiegelau"
           />
         </div>
 
         <div class="about-quality__content">
-          <span class="about-eyebrow"> Nuestra selección </span>
+          <span class="about-eyebrow">
+            Nuestra selección
+          </span>
 
-          <h2>Calidad, presentación y funcionalidad</h2>
+          <h2>
+            Colecciones diseñadas para destacar cada detalle
+          </h2>
 
           <p>
-            Cada producto incorporado a nuestro catálogo es evaluado
-            considerando su utilidad, presentación, resistencia y capacidad para
-            responder a diferentes formas de uso.
+            Distribuimos colecciones Spiegelau que combinan diseño, precisión y
+            funcionalidad, ofreciendo cristalería adecuada para las exigencias
+            del servicio profesional y para quienes buscan una presentación
+            especial en el hogar.
           </p>
 
           <p>
-            De esta manera, ofrecemos alternativas para quienes buscan renovar
-            su mesa, equipar un negocio o encontrar productos adecuados para una
-            ocasión especial.
+            Nuestro objetivo es acercar productos que aporten elegancia,
+            versatilidad y una mejor experiencia al momento de servir y
+            disfrutar cada bebida.
           </p>
 
           <ul class="about-quality__list">
             <li>
-              <span class="material-symbols-outlined"> check_circle </span>
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
 
-              Productos seleccionados
+              Colecciones Spiegelau
             </li>
 
             <li>
-              <span class="material-symbols-outlined"> check_circle </span>
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
 
-              Opciones para hogares y negocios
+              Cristalería para uso profesional y doméstico
             </li>
 
             <li>
-              <span class="material-symbols-outlined"> check_circle </span>
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
 
-              Variedad de estilos y presentaciones
+              Diseños para diferentes tipos de bebidas
             </li>
 
             <li>
-              <span class="material-symbols-outlined"> check_circle </span>
+              <span class="material-symbols-outlined">
+                check_circle
+              </span>
 
-              Atención durante el proceso de compra
+              Orientación durante el proceso de compra
             </li>
           </ul>
         </div>
       </section>
 
       <!-- =====================================================
-       VALORES
-  ====================================================== -->
+           VALORES
+      ====================================================== -->
 
       <section class="about-values">
         <div class="about-section-heading">
-          <span class="about-eyebrow"> Lo que nos representa </span>
+          <span class="about-eyebrow">
+            Lo que nos representa
+          </span>
 
-          <h2>Una experiencia basada en confianza y buen servicio</h2>
+          <h2>
+            Una experiencia basada en calidad, confianza y buen servicio
+          </h2>
         </div>
 
         <div class="about-values__grid">
           <article class="about-value-card">
-            <span class="material-symbols-outlined"> verified </span>
+            <span class="material-symbols-outlined">
+              verified
+            </span>
 
             <h3>Calidad</h3>
 
             <p>
-              Seleccionamos productos que respondan adecuadamente a su finalidad
-              y presentación.
+              Distribuimos colecciones que destacan por su diseño, funcionalidad
+              y desempeño en diferentes formas de uso.
             </p>
           </article>
 
           <article class="about-value-card">
-            <span class="material-symbols-outlined"> diamond </span>
+            <span class="material-symbols-outlined">
+              diamond
+            </span>
 
             <h3>Diseño</h3>
 
             <p>
-              Buscamos propuestas que combinen estética, utilidad y
-              versatilidad.
+              Cada colección combina elegancia, precisión y versatilidad para
+              acompañar diferentes bebidas y ocasiones.
             </p>
           </article>
 
           <article class="about-value-card">
-            <span class="material-symbols-outlined"> handshake </span>
+            <span class="material-symbols-outlined">
+              handshake
+            </span>
 
             <h3>Confianza</h3>
 
-            <p>Promovemos una relación clara y responsable con cada cliente.</p>
+            <p>
+              Promovemos una atención transparente, responsable y orientada a
+              las necesidades de cada cliente.
+            </p>
           </article>
 
           <article class="about-value-card">
-            <span class="material-symbols-outlined"> support_agent </span>
+            <span class="material-symbols-outlined">
+              support_agent
+            </span>
 
             <h3>Atención</h3>
 
             <p>
-              Orientamos a nuestros clientes para encontrar productos adecuados
-              para sus necesidades.
+              Brindamos orientación para encontrar la colección y el producto
+              adecuado para cada necesidad.
             </p>
           </article>
         </div>
       </section>
 
       <!-- =====================================================
-       MARCAS
-  ====================================================== -->
+           COLECCIONES DINÁMICAS
+           Se generan desde brand en products.json
+      ====================================================== -->
 
       <section class="about-brands">
         <div class="about-brands__content">
-          <span class="about-eyebrow"> Marcas y productos </span>
+          <span class="about-eyebrow">
+            Nuestras colecciones
+          </span>
 
-          <h2>Un catálogo construido a partir de propuestas reconocidas</h2>
+          <h2>
+            Colecciones Spiegelau para cada experiencia
+          </h2>
 
           <p>
-            Nuestro catálogo reúne productos de diferentes marcas y líneas,
-            permitiendo comparar estilos, capacidades, formatos y precios dentro
-            de una misma tienda.
+            Descubre líneas de cristalería creadas para diferentes tipos de
+            bebidas, estilos de servicio y ocasiones. Cada colección presenta
+            características propias de diseño, capacidad y funcionalidad.
           </p>
+
+          <a href="/catalogo/" class="about-link">
+            Ver todas las colecciones
+
+            <span class="material-symbols-outlined">
+              arrow_forward
+            </span>
+          </a>
         </div>
 
-        <div class="about-brands__logos">
-          <div class="about-brand">
-            <img
-              src="/src/assets/images/brands/spiegelau.png"
-              alt="Spiegelau"
-            />
-          </div>
+        <div
+          id="about-collections-list"
+          class="about-brands__logos"
+          aria-live="polite"
+        >
+          <!--
+            JavaScript insertará aquí las colecciones únicas
+            obtenidas desde el campo brand de products.json.
 
-          <div class="about-brand">
-            <img src="/src/assets/images/brands/bohemia.png" alt="Bohemia" />
-          </div>
+            Ejemplo:
 
-          <div class="about-brand">
-            <img src="/src/assets/images/brands/luminarc.png" alt="Luminarc" />
-          </div>
-
-          <div class="about-brand">
-            <img
-              src="/src/assets/images/brands/pasabahce.png"
-              alt="Pasabahce"
-            />
-          </div>
-
-          <div class="about-brand">
-            <img src="/src/assets/images/brands/arcoroc.png" alt="Arcoroc" />
-          </div>
+            <a
+              href="/catalogo/?marca=Authentis%20Casual%20Pro"
+              class="about-brand"
+            >
+              <span>Authentis Casual Pro</span>
+            </a>
+          -->
         </div>
       </section>
 
       <!-- =====================================================
-       EXPERIENCIA DE COMPRA
-  ====================================================== -->
+           EXPERIENCIA DE COMPRA
+      ====================================================== -->
 
       <section class="about-service">
         <div class="about-section-heading">
-          <span class="about-eyebrow"> Nuestra atención </span>
+          <span class="about-eyebrow">
+            Nuestra atención
+          </span>
 
-          <h2>Te acompañamos antes y después de tu compra</h2>
+          <h2>
+            Te acompañamos durante todo el proceso de compra
+          </h2>
 
           <p>
-            Queremos que elegir un producto sea un proceso claro, sencillo y
-            confiable.
+            Nuestro objetivo es ayudarte a encontrar la colección Spiegelau que
+            mejor se adapte a tu espacio, tipo de servicio y necesidades.
           </p>
         </div>
 
         <div class="about-service__grid">
           <article class="about-service-card">
-            <span class="about-service-card__number"> 01 </span>
+            <span class="about-service-card__number">
+              01
+            </span>
 
             <h3>Explora</h3>
 
             <p>
-              Revisa productos organizados por categoría, marca y
+              Descubre productos organizados por categoría, colección y
               características.
             </p>
           </article>
 
           <article class="about-service-card">
-            <span class="about-service-card__number"> 02 </span>
+            <span class="about-service-card__number">
+              02
+            </span>
 
             <h3>Compara</h3>
 
             <p>
-              Evalúa diferentes opciones según el uso, diseño, formato y precio.
+              Evalúa diseños, capacidades y presentaciones para encontrar la
+              opción adecuada.
             </p>
           </article>
 
           <article class="about-service-card">
-            <span class="about-service-card__number"> 03 </span>
+            <span class="about-service-card__number">
+              03
+            </span>
 
             <h3>Consulta</h3>
 
-            <p>Solicita orientación cuando necesites información adicional.</p>
+            <p>
+              Solicita orientación cuando necesites información adicional sobre
+              una colección o producto.
+            </p>
           </article>
 
           <article class="about-service-card">
-            <span class="about-service-card__number"> 04 </span>
+            <span class="about-service-card__number">
+              04
+            </span>
 
             <h3>Elige</h3>
 
             <p>
-              Encuentra una alternativa adecuada para tu hogar, evento o
-              negocio.
+              Encuentra cristalería adecuada para tu hogar, restaurante, hotel,
+              bar o negocio.
             </p>
           </article>
         </div>
       </section>
 
       <!-- =====================================================
-       BLOQUE EDITORIAL FINAL
-  ====================================================== -->
+           BLOQUE EDITORIAL FINAL
+      ====================================================== -->
 
       <section class="about-final">
         <div class="about-final__content">
-          <span class="about-eyebrow"> Para cada espacio y ocasión </span>
+          <span class="about-eyebrow">
+            Para cada espacio y ocasión
+          </span>
 
           <h2>
-            Productos que forman parte de la mesa y de los momentos compartidos
+            La cristalería adecuada transforma cada experiencia
           </h2>
 
           <p>
-            Desde una copa para una celebración hasta artículos destinados al
-            uso diario, buscamos ofrecer opciones que aporten funcionalidad,
-            presencia y una buena experiencia.
+            En Spiegelau creemos que cada detalle marca la diferencia. Por ello,
+            ponemos a disposición de nuestros clientes colecciones de
+            cristalería premium que combinan diseño, precisión y funcionalidad
+            para acompañar cada bebida y momento.
           </p>
 
           <div class="about-final__actions">
@@ -461,7 +471,7 @@
         <div class="about-final__media">
           <img
             src="/src/assets/images/nosotros/about-final.jpg"
-            alt="Productos seleccionados para diferentes ocasiones"
+            alt="Cristalería Spiegelau para diferentes ocasiones"
           />
         </div>
       </section>
@@ -470,6 +480,7 @@
     <div id="footer-container"></div>
 
     <script type="module" src="/src/main.js"></script>
+
     <script type="module" src="/nosotros/nosotros.js"></script>
   </body>
 </html>

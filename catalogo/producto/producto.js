@@ -60,14 +60,34 @@ function renderProduct(products) {
   document.getElementById("product-price").textContent =
     `S/ ${product.price.toFixed(2)}`;
 
-  document.getElementById("product-description").textContent =
-    product.description;
+  document.getElementById("product-short-description").textContent =
+    product.shortDescription;
 
   document.getElementById("product-image").src = product.image;
 
   document.getElementById("product-image").alt = product.name;
 
+  document.getElementById("tab-description").textContent = product.description;
+
   const stock = document.getElementById("product-stock");
+
+  const specificationsContainer = document.getElementById("tab-specifications");
+
+  specificationsContainer.innerHTML = product.specifications
+    .map(
+      (specification) => `
+        <div class="product-specification-row">
+          <span class="product-specification-label">
+            ${specification.label}
+          </span>
+
+          <span class="product-specification-value">
+            ${specification.value}
+          </span>
+        </div>
+      `,
+    )
+    .join("");
 
   if (product.stock > 0) {
     stock.textContent = `${product.stock} disponibles`;

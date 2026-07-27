@@ -6,7 +6,12 @@
     "name": "SPIEGELAU VINO BLANCO STYLE",
     "variant": "Una caja contiene 12 unidades.",
     "category": "copas",
-    "description": "La copa SPIEGELAU Vino Blanco Style está diseñada para realzar los aromas, la frescura y el equilibrio de los vinos blancos. Fabricada en cristal de alta calidad, combina elegancia, resistencia y brillo, siendo ideal para uso diario o profesional.",
+    "shortDescription": "La copa SPIEGELAU Vino Blanco Style está diseñada para realzar los aromas, la frescura y el equilibrio de los vinos blancos. Fabricada en cristal de alta calidad, combina elegancia, resistencia y brillo, siendo ideal para uso diario o profesional.",
+    "description": "...",
+
+    "specifications": [
+      
+    ],
     "price": 39.9,
     "stock": 48,
     "featured": true,
@@ -21,7 +26,12 @@
     "name": "SPIEGELAU Definition Pro Copa Burdeos",
     "variant": "Una caja contiene 6 unidades.",
     "category": "copas",
-    "description": "La SPIEGELAU Definition Pro Copa Burdeos está diseñada para potenciar la estructura, los aromas y la complejidad de los vinos tintos tipo Burdeos. Fabricada en cristal premium de alta transparencia y resistencia, ofrece una experiencia de degustación elegante.",
+    "shortDescription": "La SPIEGELAU Definition Pro Copa Burdeos está diseñada para potenciar la estructura, los aromas y la complejidad de los vinos tintos tipo Burdeos. Fabricada en cristal premium de alta transparencia y resistencia, ofrece una experiencia de degustación elegante.",
+    "description": "...",
+
+    "specifications": [
+      
+    ],
     "price": 34.9,
     "stock": 31,
     "featured": true,
@@ -36,7 +46,12 @@
     "name": "SPIEGELAU Grand Glass Copa vino 3,5l",
     "variant": "Una caja contiene 1 unidades.",
     "category": "copas",
-    "description": "La SPIEGELAU Grand Glass Copa Vino 3.5 L es una copa artesanal de cristal premium, diseñada para ofrecer una presentación elegante y una experiencia de degustación excepcional. Su gran capacidad y acabado hecho a mano la convierten en una pieza única para ocasiones especiales.",
+    "shortDescription": "La SPIEGELAU Grand Glass Copa Vino 3.5 L es una copa artesanal de cristal premium, diseñada para ofrecer una presentación elegante y una experiencia de degustación excepcional. Su gran capacidad y acabado hecho a mano la convierten en una pieza única para ocasiones especiales.",
+    "description": "...",
+
+    "specifications": [
+      
+    ],
     "price": 22.9,
     "stock": 42,
     "featured": true,
@@ -51,7 +66,12 @@
     "name": "SPIEGELAU Salute Pro Copa Burdeos",
     "variant": "Una caja contiene 12 unidades.",
     "category": "copas",
-    "description": "La SPIEGELAU Salute Pro Copa Burdeos está diseñada para realzar la intensidad, estructura y aromas de los vinos Burdeos. Fabricada en cristal de alta calidad, combina elegancia, resistencia y excelente rendimiento para uso profesional o diario.",
+    "shortDescription": "La SPIEGELAU Salute Pro Copa Burdeos está diseñada para realzar la intensidad, estructura y aromas de los vinos Burdeos. Fabricada en cristal de alta calidad, combina elegancia, resistencia y excelente rendimiento para uso profesional o diario.",
+    "description": "...",
+
+    "specifications": [
+      
+    ],
     "price": 24.9,
     "stock": 1,
     "featured": true,
@@ -66,7 +86,12 @@
     "name": "SPIEGELAU Salute Pro Copa Borgoña",
     "variant": "Una caja contiene 12 unidades.",
     "category": "copas",
-    "description": "La SPIEGELAU Salute Pro Copa Borgoña está diseñada para resaltar los aromas, la suavidad y la complejidad de los vinos Borgoña. Fabricada en cristal de alta calidad, ofrece elegancia, resistencia y un excelente desempeño para uso profesional o diario. Caja de 12 unidades, apta para lavavajillas.",
+    "shortDescription": "La SPIEGELAU Salute Pro Copa Borgoña está diseñada para resaltar los aromas, la suavidad y la complejidad de los vinos Borgoña. Fabricada en cristal de alta calidad, ofrece elegancia, resistencia y un excelente desempeño para uso profesional o diario. Caja de 12 unidades, apta para lavavajillas.",
+    "description": "...",
+
+    "specifications": [
+      
+    ],
     "price": 49.9,
     "stock": 20,
     "featured": true,
@@ -81,7 +106,12 @@
     "name": "SPIEGELAU Style Pro Copa Borgoña",
     "variant": "Una caja contiene 12 unidades.",
     "category": "copas",
-    "description": "La SPIEGELAU Style Pro Copa Borgoña está diseñada para realzar los aromas, la suavidad y la complejidad de los vinos Borgoña. Fabricada en cristal de alta calidad, combina un diseño moderno, resistencia y excelente rendimiento para uso profesional o diario.",
+    "shortDescription": "La SPIEGELAU Style Pro Copa Borgoña está diseñada para realzar los aromas, la suavidad y la complejidad de los vinos Borgoña. Fabricada en cristal de alta calidad, combina un diseño moderno, resistencia y excelente rendimiento para uso profesional o diario.",
+    "description": "...",
+
+    "specifications": [
+      
+    ],
     "price": 29.9,
     "stock": 19,
     "featured": true,
@@ -96,10 +126,15 @@
     "name": "SPIEGELAU Vino Grande Pro Copa Martini",
     "variant": "Una caja contiene 12 unidades.",
     "category": "copas",
-    "description": "La SPIEGELAU Vino Grande Pro Copa Martini combina un diseño elegante con cristal de alta calidad para realzar la presentación de martinis y cócteles clásicos. Resistente y versátil, es ideal para bares, restaurantes o el hogar.",
+    "shortDescription": "La SPIEGELAU Vino Grande Pro Copa Martini combina un diseño elegante con cristal de alta calidad para realzar la presentación de martinis y cócteles clásicos. Resistente y versátil, es ideal para bares, restaurantes o el hogar.",
+    "description": "...",
+
+    "specifications": [
+      
+    ],
     "price": 18.9,
     "stock": 6,
-    "featured": false,
+    "featured": true,
     "new": false,
     "offer": false,
     "image": "/src/assets/images/product07.jpg"
@@ -111,7 +146,12 @@
     "name": "SPIEGELAU Apero Pro Copa Spritz",
     "variant": "Una caja contiene 12 unidades.",
     "category": "copas",
-    "description": "La SPIEGELAU Apero Pro Copa Spritz está diseñada para realzar la presentación y el disfrute de spritz y otros cócteles refrescantes. Fabricada en cristal de alta calidad, ofrece elegancia, resistencia y un excelente desempeño para uso profesional o diario.",
+    "shortDescription": "La SPIEGELAU Apero Pro Copa Spritz está diseñada para realzar la presentación y el disfrute de spritz y otros cócteles refrescantes. Fabricada en cristal de alta calidad, ofrece elegancia, resistencia y un excelente desempeño para uso profesional o diario.",
+    "description": "...",
+
+    "specifications": [
+      
+    ],
     "price": 44.9,
     "stock": 30,
     "featured": false,
@@ -126,7 +166,12 @@
     "name": "SPIEGELAU Apero Pro Copa de vino universal / vino blanco",
     "variant": "Una caja contiene 12 unidades.",
     "category": "copas",
-    "description": "La SPIEGELAU Apero Pro Copa de Vino Universal está diseñada para realzar los aromas y sabores de vinos tintos y blancos. Fabricada en cristal de alta calidad, combina versatilidad, elegancia y resistencia para una experiencia de degustación superior.",
+    "shortDescription": "La SPIEGELAU Apero Pro Copa de Vino Universal está diseñada para realzar los aromas y sabores de vinos tintos y blancos. Fabricada en cristal de alta calidad, combina versatilidad, elegancia y resistencia para una experiencia de degustación superior.",
+    "description": "...",
+
+    "specifications": [
+      
+    ],
     "price": 42.9,
     "stock": 38,
     "featured": false,
@@ -141,7 +186,12 @@
     "name": "SPIEGELAU Vino Grande Pro Copa Digestivo",
     "variant": "Una caja contiene 12 unidades.",
     "category": "copas",
-    "description": "La SPIEGELAU Vino Grande Pro Copa Digestivo está diseñada para servir licores y digestivos con elegancia, realzando sus aromas y sabores. Fabricada en cristal de alta calidad, combina resistencia, brillo y un diseño refinado para uso profesional o diario.",
+    "shortDescription": "La SPIEGELAU Vino Grande Pro Copa Digestivo está diseñada para servir licores y digestivos con elegancia, realzando sus aromas y sabores. Fabricada en cristal de alta calidad, combina resistencia, brillo y un diseño refinado para uso profesional o diario.",
+    "description": "...",
+
+    "specifications": [
+      
+    ],
     "price": 19.9,
     "stock": 20,
     "featured": false,
@@ -156,7 +206,12 @@
     "name": "SPIEGELAU Style Pro Flûte Champagne",
     "variant": "Una caja contiene 12 unidades.",
     "category": "copas",
-    "description": "La SPIEGELAU Style Pro Flûte Champagne está diseñada para realzar la efervescencia, frescura y elegancia del champán y los vinos espumosos. Fabricada en cristal de alta calidad, combina un diseño refinado, resistencia y excelente rendimiento para uso profesional o diario.",
+    "shortDescription": "La SPIEGELAU Style Pro Flûte Champagne está diseñada para realzar la efervescencia, frescura y elegancia del champán y los vinos espumosos. Fabricada en cristal de alta calidad, combina un diseño refinado, resistencia y excelente rendimiento para uso profesional o diario.",
+    "description": "...",
+
+    "specifications": [
+      
+    ],
     "price": 36.9,
     "stock": 22,
     "featured": false,
@@ -171,7 +226,12 @@
     "name": "SPIEGELAU Special Glasses Pro Copa Gin & Tonic",
     "variant": "Una caja contiene 12 unidades.",
     "category": "copas",
-    "description": "La SPIEGELAU Special Glasses Pro Copa Gin & Tonic está diseñada para realzar los aromas y la presentación de gin tonics y cócteles premium. Fabricada en cristal de alta calidad, ofrece elegancia, resistencia y un excelente desempeño para uso profesional o diario.",
+    "shortDescription": "La SPIEGELAU Special Glasses Pro Copa Gin & Tonic está diseñada para realzar los aromas y la presentación de gin tonics y cócteles premium. Fabricada en cristal de alta calidad, ofrece elegancia, resistencia y un excelente desempeño para uso profesional o diario.",
+    "description": "...",
+
+    "specifications": [
+      
+    ],
     "price": 54.9,
     "stock": 64,
     "featured": false,
@@ -186,7 +246,12 @@
     "name": "SPIEGELAU Grand Glass Copa Nebuchadnezzar 15l",
     "variant": "Una caja contiene 1 unidades.",
     "category": "copas",
-    "description": "La SPIEGELAU Grand Glass Copa Nebuchadnezzar 15 L es una pieza artesanal de cristal premium, diseñada para ofrecer una presentación imponente y elegante en eventos y ocasiones especiales. Su gran capacidad y acabado hecho a mano la convierten en una pieza exclusiva y de colección.",
+    "shortDescription": "La SPIEGELAU Grand Glass Copa Nebuchadnezzar 15 L es una pieza artesanal de cristal premium, diseñada para ofrecer una presentación imponente y elegante en eventos y ocasiones especiales. Su gran capacidad y acabado hecho a mano la convierten en una pieza exclusiva y de colección.",
+    "description": "...",
+
+    "specifications": [
+      
+    ],
     "price": 32.9,
     "stock": 1,
     "featured": false,
@@ -201,7 +266,12 @@
     "name": "SPIEGELAU Perfect Serve Pro Perfect Coupette Glass",
     "variant": "Una caja contiene 12 unidades.",
     "category": "copas",
-    "description": "La SPIEGELAU Perfect Serve Pro Perfect Coupette Glass está diseñada para realzar la presentación y los aromas de cócteles y bebidas espumosas. Fabricada en cristal de alta calidad, combina elegancia, resistencia y un diseño clásico para uso profesional o diario",
+    "shortDescription": "La SPIEGELAU Perfect Serve Pro Perfect Coupette Glass está diseñada para realzar la presentación y los aromas de cócteles y bebidas espumosas. Fabricada en cristal de alta calidad, combina elegancia, resistencia y un diseño clásico para uso profesional o diario",
+    "description": "...",
+
+    "specifications": [
+      
+    ],
     "price": 21.9,
     "stock": 46,
     "featured": false,
@@ -216,7 +286,12 @@
     "name": "SPIEGELAU Definition Pro Copa de Vino Universal",
     "variant": "Una caja contiene 6 unidades.",
     "category": "copas",
-    "description": "La SPIEGELAU Definition Pro Copa de Vino Universal está diseñada para realzar los aromas y sabores de vinos tintos y blancos. Fabricada en cristal premium de alta calidad, ofrece un diseño ligero, elegante y resistente para una experiencia de degustación excepcional.",
+    "shortDescription": "La SPIEGELAU Definition Pro Copa de Vino Universal está diseñada para realzar los aromas y sabores de vinos tintos y blancos. Fabricada en cristal premium de alta calidad, ofrece un diseño ligero, elegante y resistente para una experiencia de degustación excepcional.",
+    "description": "...",
+
+    "specifications": [
+      
+    ],
     "price": 27.9,
     "stock": 74,
     "featured": false,
@@ -231,7 +306,12 @@
     "name": "SPIEGELAU Festino Pro Copa de vino universal",
     "variant": "Una caja contiene 6 unidades.",
     "category": "copas",
-    "description": "La SPIEGELAU Festino Pro Copa de Vino Universal está diseñada para realzar los aromas y sabores de vinos tintos y blancos. Fabricada en cristal de alta calidad, combina elegancia, resistencia y versatilidad para disfrutar de cualquier ocasión.",
+    "shortDescription": "La SPIEGELAU Festino Pro Copa de Vino Universal está diseñada para realzar los aromas y sabores de vinos tintos y blancos. Fabricada en cristal de alta calidad, combina elegancia, resistencia y versatilidad para disfrutar de cualquier ocasión.",
+    "description": "...",
+
+    "specifications": [
+      
+    ],
     "price": 89.9,
     "stock": 1113,
     "featured": false,
@@ -246,7 +326,12 @@
     "name": "SPIEGELAU Winelovers Pro Copa Bordeaux",
     "variant": "Una caja contiene 12 unidades.",
     "category": "copas",
-    "description": "La SPIEGELAU Winelovers Pro Copa Bordeaux está diseñada para realzar la estructura, los aromas y la complejidad de los vinos Burdeos. Fabricada en cristal de alta calidad, combina un diseño atemporal, resistencia y excelente rendimiento para uso profesional o diario.",
+    "shortDescription": "La SPIEGELAU Winelovers Pro Copa Bordeaux está diseñada para realzar la estructura, los aromas y la complejidad de los vinos Burdeos. Fabricada en cristal de alta calidad, combina un diseño atemporal, resistencia y excelente rendimiento para uso profesional o diario.",
+    "description": "...",
+
+    "specifications": [
+      
+    ],
     "price": 59.9,
     "stock": 327,
     "featured": false,
@@ -261,7 +346,12 @@
     "name": "SPIEGELAU Salute Pro Copa de Vino Tinto",
     "variant": "Una caja contiene 12 unidades.",
     "category": "copas",
-    "description": "La SPIEGELAU Salute Pro Copa de Vino Tinto está diseñada para realzar los aromas, sabores y la complejidad de los vinos tintos. Fabricada en cristal de alta calidad, combina elegancia, resistencia y excelente rendimiento para uso profesional o diario.",
+    "shortDescription": "La SPIEGELAU Salute Pro Copa de Vino Tinto está diseñada para realzar los aromas, sabores y la complejidad de los vinos tintos. Fabricada en cristal de alta calidad, combina elegancia, resistencia y excelente rendimiento para uso profesional o diario.",
+    "description": "...",
+
+    "specifications": [
+      
+    ],
     "price": 23.9,
     "stock": 415,
     "featured": false,
@@ -276,7 +366,12 @@
     "name": "SPIEGELAU Style Pro Copa de vino tinto / agua",
     "variant": "Una caja contiene 12 unidades.",
     "category": "copas",
-    "description": "La SPIEGELAU Style Pro Copa de Vino Tinto / Agua ofrece un diseño versátil y elegante, ideal para servir vino tinto o agua con la misma sofisticación. Fabricada en cristal de alta calidad, combina resistencia, estilo y excelente rendimiento para uso profesional o diario.",
+    "shortDescription": "La SPIEGELAU Style Pro Copa de Vino Tinto / Agua ofrece un diseño versátil y elegante, ideal para servir vino tinto o agua con la misma sofisticación. Fabricada en cristal de alta calidad, combina resistencia, estilo y excelente rendimiento para uso profesional o diario.",
+    "description": "...",
+
+    "specifications": [
+      
+    ],
     "price": 46.9,
     "stock": 169,
     "featured": false,
@@ -286,467 +381,432 @@
   },
   {
     "id": 20,
-    "sku": "BOT-003",
-    "brand": "Bormioli",
-    "name": "Botella Officina",
-    "variant": "1.2 L",
-    "category": "botellas",
-    "description": "Botella decorativa con tapa hermética, útil para agua, refrescos y bebidas caseras.",
-    "price": 35.9,
-    "stock": 22,
+    "sku": "MECOSP08",
+    "brand": "Winelovers Pro",
+    "name": "SPIEGELAU VINO TINTO/AGUA",
+    "variant": "Una caja contiene 12 unidades.",
+    "category": "Kits",
+
+    "shortDescription": "El set SPIEGELAU Winelovers Vino Tinto/Agua incluye 12 copas de cristal de alta calidad, diseñadas para realzar los aromas y sabores del vino tinto y ofrecer una presentación elegante para agua. Combina brillo, resistencia y un diseño atemporal, ideal para el hogar y uso profesional.",
+
+    "description": "El vino tinto es más que una mera bebida: es una celebración de la tradición, del terruño y de la pasión. La copa de vino tinto adecuada transforma la experiencia de disfrute al permitir que los aromas y los sabores del vino se desplieguen en su totalidad. Incluso el sorbo más sencillo se convierte en una invitación para descubrir la profundidad, la elegancia y el carácter. No solamente nos lleva a elegir la copa perfecta la función, sino también el homenaje a la artesanía y al interés por convertir cada instante de cata en un verdadero ritual.\n\nPura y elegante, la cristalería transparente atrae todas las miradas. Hecho de cristal que combina brillo, claridad y durabilidad con un diseño perdurable. Se convierte así en una elección elegante para el entretenimiento, la comida y la vida cotidiana.\n\nLa colección SPIEGELAU Winelovers destaca por sus líneas limpias, su gran funcionalidad y su diseño atemporal. Es la introducción perfecta al mundo del cristal de alta calidad: ideal tanto para el hogar como para el sector profesional. Con formas funcionales para diferentes bebidas y ocasiones, esta serie garantiza una presentación nítida y elegante. La cristalería elaborada a máquina aporta una calidad uniforme, durabilidad y una relación extraordinaria de calidad-precio. Estos vasos y estas copas ofrecen un rendimiento fiable y son perfectos para el disfrute diario.\n\nEste set incluye doce artículos a juego, diseñados para reuniones más grandes, catas o usos profesionales. Elaborado para una calidad duradera y una experiencia uniforme. Este artículo es apto para lavavajillas. Diseñado para ofrecer una durabilidad prolongada, resiste los lavados frecuentes conservando su brillo, combinando un cuidado sencillo con un rendimiento fiable día tras día.\n\nInformación importante:\n\n• Este producto está hecho de vidrio, que puede romperse y crear fragmentos afilados si se vuelca o se cae.",
+
+    "specifications": [
+      {
+        "label": "Opciones de color",
+        "value": "Cristal claro"
+      },
+      {
+        "label": "Fabricación",
+        "value": "Hecho a máquina"
+      },
+      {
+        "label": "Colección",
+        "value": "Winelovers Pro"
+      },
+      {
+        "label": "Material",
+        "value": "Cristal"
+      },
+      {
+        "label": "Recomendado para limpiabotellas",
+        "value": "No"
+      },
+      {
+        "label": "Diámetro máximo",
+        "value": "3.386 in"
+      },
+      {
+        "label": "Altura",
+        "value": "8.543 in"
+      }
+    ],
+
+    "price": 33.9,
+    "stock": 106,
     "featured": false,
     "new": false,
     "offer": false,
-    "image": "/src/assets/images/product02.png"
+    "image": "/src/assets/images/product20.webp"
   },
   {
     "id": 21,
-    "sku": "TAZ-003",
-    "brand": "Nadir",
-    "name": "Taza Café",
-    "variant": "240 ml",
-    "category": "tazas",
-    "description": "Taza de vidrio transparente de tamaño compacto, perfecta para café, cappuccino o infusiones.",
-    "price": 16.9,
-    "stock": 48,
+    "sku": "MECOSP67",
+    "brand": "SPIEGELAU Definition",
+    "name": "SPIEGELAU BORDEAUX DEFINITION",
+    "variant": "Una caja contiene 2 unidades.",
+    "category": "copas",
+    "shortDescription": "El set SPIEGELAU Definition Bordeaux incluye 2 copas de cristal de alta calidad, diseñadas para realzar la estructura, los aromas y la complejidad de los vinos de Burdeos. Su diseño ligero, elegante y perfectamente equilibrado ofrece una experiencia de degustación superior, ideal para el hogar o uso profesional.",
+    "description": "...",
+
+    "specifications": [
+      
+    ],
+    "price": 33.9,
+    "stock": 5,
     "featured": false,
     "new": false,
     "offer": true,
-    "image": "/src/assets/images/product03.png"
+    "image": "/src/assets/images/product21.webp"
   },
   {
     "id": 22,
-    "sku": "ACC-003",
-    "brand": "Vacu Vin",
-    "name": "Bomba de Vacío",
-    "variant": "Manual",
-    "category": "accesorios",
-    "description": "Bomba manual para extraer el aire de botellas abiertas y prolongar la conservación del vino.",
-    "price": 69.9,
-    "stock": 10,
+    "sku": "MECOSP21",
+    "brand": "Winelovers",
+    "name": "SPIEGELAU BORDEAUX WINELOVERS",
+    "variant": "Una caja contiene 4 unidades.",
+    "category": "copas",
+    "shortDescription": "El set SPIEGELAU Winelovers Bordeaux incluye 4 copas de cristal de alta calidad, diseñadas para realzar la estructura, los aromas y la complejidad de los vinos de Burdeos. Su diseño elegante, resistente y funcional ofrece una experiencia de degustación superior, ideal para el hogar o uso profesional.",
+    "description": "...",
+
+    "specifications": [
+      
+    ],
+    "price": 18.9,
+    "stock": 134,
     "featured": false,
     "new": true,
     "offer": false,
-    "image": "/src/assets/images/product04.png"
+    "image": "/src/assets/images/product22.webp"
   },
   {
     "id": 23,
-    "sku": "JAR-003",
-    "brand": "Libbey",
-    "name": "Jarra Pitcher",
-    "variant": "1.7 L",
-    "category": "jarras",
-    "description": "Jarra robusta con pico vertedor y asa cómoda para servir agua, limonadas y refrescos.",
-    "price": 52.9,
-    "stock": 20,
+    "sku": "MECOSP46",
+    "brand": "Style",
+    "name": "SPIEGELAU FLAUTE DE CHAMPAN STYLE",
+    "variant": "Una caja contiene 4 unidades.",
+    "category": "copas",
+    "shortDescription": "El set SPIEGELAU Style Flauta de Champán incluye 4 copas de cristal de alta calidad, diseñadas para preservar la efervescencia y realzar la frescura de champán, prosecco y vinos espumosos. Su diseño elegante, resistente y perfectamente equilibrado ofrece una experiencia de degustación refinada, ideal para el hogar o uso profesional.",
+    "description": "...",
+
+    "specifications": [
+      
+    ],
+    "price": 51.9,
+    "stock": 73,
     "featured": false,
     "new": false,
-    "offer": false,
-    "image": "/src/assets/images/product05.png"
+    "offer": true,
+    "image": "/src/assets/images/product23.webp"
   },
   {
     "id": 24,
-    "sku": "VAS-005",
-    "brand": "Luminarc",
-    "name": "Vaso Granity",
-    "variant": "350 ml",
-    "category": "vasos",
-    "description": "Vaso facetado resistente y apilable, apropiado para uso doméstico o comercial.",
-    "price": 20.9,
-    "stock": 41,
+    "sku": "MECOSP04",
+    "brand": "Salute",
+    "name": "SPIEGELAU PARA VINO TINTO",
+    "variant": "Una caja contiene 4 unidades.",
+    "category": "copas",
+    "shortDescription": "El set SPIEGELAU Salute para Vino Tinto incluye 4 copas de cristal de alta calidad, diseñadas para realzar los aromas, sabores y la estructura de los vinos tintos. Su diseño elegante, resistente y perfectamente equilibrado ofrece una experiencia de degustación superior, ideal para el hogar o uso profesional.",
+    "description": "...",
+
+    "specifications": [
+      
+    ],
+    "price": 35.9,
+    "stock": 18,
     "featured": false,
-    "new": false,
-    "offer": true,
-    "image": "/src/assets/images/product06.png"
+    "new": true,
+    "offer": false,
+    "image": "/src/assets/images/product24.webp"
   },
   {
     "id": 25,
-    "sku": "COP-006",
-    "brand": "Ocean",
-    "name": "Copa Vino Blanco",
-    "variant": "350 ml",
+    "sku": "MECOSP45",
+    "brand": "Style",
+    "name": "SPIEGELAU VINO BLANCO STYLE",
+    "variant": "Una caja contiene 4 unidades.",
     "category": "copas",
-    "description": "Copa de cáliz mediano pensada para mantener frescos los vinos blancos y concentrar sus aromas.",
-    "price": 31.9,
-    "stock": 29,
-    "featured": false,
-    "new": true,
-    "offer": false,
-    "image": "/src/assets/images/product01.png"
-  },
-  {
-    "id": 26,
-    "sku": "DEC-002",
-    "brand": "Bohemia",
-    "name": "Decantador Curvo",
-    "variant": "1.3 L",
-    "category": "decantadores",
-    "description": "Decantador de forma curva y elegante que permite airear el vino y mejorar su presentación.",
-    "price": 94.9,
-    "stock": 7,
-    "featured": false,
-    "new": false,
-    "offer": true,
-    "image": "/src/assets/images/product02.png"
-  },
-  {
-    "id": 27,
-    "sku": "HIE-002",
-    "brand": "Pasabahce",
-    "name": "Hielera Toscana",
-    "variant": "1 L",
-    "category": "hieleras",
-    "description": "Hielera compacta de vidrio con diseño texturizado para mantener el hielo durante el servicio.",
-    "price": 49.9,
-    "stock": 13,
-    "featured": false,
-    "new": false,
-    "offer": false,
-    "image": "/src/assets/images/product03.png"
-  },
-  {
-    "id": 28,
-    "sku": "BOT-004",
-    "brand": "Bormioli",
-    "name": "Botella Giara",
-    "variant": "750 ml",
-    "category": "botellas",
-    "description": "Botella cilíndrica con cierre metálico y sello de goma para conservar bebidas frescas.",
-    "price": 28.9,
-    "stock": 34,
-    "featured": false,
-    "new": true,
-    "offer": false,
-    "image": "/src/assets/images/product04.png"
-  },
-  {
-    "id": 29,
-    "sku": "TAZ-004",
-    "brand": "Luminarc",
-    "name": "Mug Transparente",
-    "variant": "400 ml",
-    "category": "tazas",
-    "description": "Mug de vidrio de gran capacidad con asa ancha, ideal para bebidas calientes o frías.",
-    "price": 24.9,
-    "stock": 39,
-    "featured": false,
-    "new": false,
-    "offer": true,
-    "image": "/src/assets/images/product05.png"
-  },
-  {
-    "id": 30,
-    "sku": "ACC-004",
-    "brand": "Vacu Vin",
-    "name": "Enfriador de Botella",
-    "variant": "Flexible",
-    "category": "accesorios",
-    "description": "Funda enfriadora reutilizable que mantiene la botella fría sin necesidad de hielo.",
-    "price": 58.9,
-    "stock": 16,
-    "featured": false,
-    "new": false,
-    "offer": false,
-    "image": "/src/assets/images/product06.png"
-  },
-  {
-    "id": 31,
-    "sku": "VAS-006",
-    "brand": "Libbey",
-    "name": "Vaso Cooler",
-    "variant": "500 ml",
-    "category": "vasos",
-    "description": "Vaso alto de gran capacidad para refrescos, cervezas, cócteles y bebidas con abundante hielo.",
-    "price": 26.9,
-    "stock": 26,
-    "featured": false,
-    "new": true,
-    "offer": false,
-    "image": "/src/assets/images/product01.png"
-  },
-  {
-    "id": 32,
-    "sku": "COP-007",
-    "brand": "Bohemia",
-    "name": "Copa Cognac",
-    "variant": "450 ml",
-    "category": "copas",
-    "description": "Copa de balón corto que permite apreciar mejor los aromas de coñac, brandy y otros destilados.",
-    "price": 38.9,
-    "stock": 18,
-    "featured": false,
-    "new": false,
-    "offer": true,
-    "image": "/src/assets/images/product02.png"
-  },
-  {
-    "id": 33,
-    "sku": "JAR-004",
-    "brand": "Ocean",
-    "name": "Jarra Aqua",
-    "variant": "2 L",
-    "category": "jarras",
-    "description": "Jarra de gran capacidad con diseño sencillo para servir agua y bebidas familiares.",
-    "price": 57.9,
-    "stock": 12,
-    "featured": false,
-    "new": false,
-    "offer": false,
-    "image": "/src/assets/images/product03.png"
-  },
-  {
-    "id": 34,
-    "sku": "BOT-005",
-    "brand": "Bormioli",
-    "name": "Botella Futura",
-    "variant": "500 ml",
-    "category": "botellas",
-    "description": "Botella compacta de vidrio con tapa hermética para jugos, salsas y bebidas artesanales.",
-    "price": 24.9,
-    "stock": 40,
-    "featured": false,
-    "new": true,
-    "offer": false,
-    "image": "/src/assets/images/product04.png"
-  },
-  {
-    "id": 35,
-    "sku": "TAZ-005",
-    "brand": "Nadir",
-    "name": "Taza Capuccino",
-    "variant": "300 ml",
-    "category": "tazas",
-    "description": "Taza de vidrio con forma redondeada, ideal para cappuccino, chocolate caliente y té.",
-    "price": 19.9,
-    "stock": 44,
-    "featured": false,
-    "new": false,
-    "offer": true,
-    "image": "/src/assets/images/product05.png"
-  },
-  {
-    "id": 36,
-    "sku": "ACC-005",
-    "brand": "Vacu Vin",
-    "name": "Vertedor Antigoteo",
-    "variant": "Set de 2",
-    "category": "accesorios",
-    "description": "Vertedores flexibles que evitan derrames al servir vino y mantienen limpia la botella.",
-    "price": 22.9,
-    "stock": 37,
-    "featured": false,
-    "new": false,
-    "offer": false,
-    "image": "/src/assets/images/product06.png"
-  },
-  {
-    "id": 37,
-    "sku": "DEC-003",
-    "brand": "Pasabahce",
-    "name": "Decantador Village",
-    "variant": "1.4 L",
-    "category": "decantadores",
-    "description": "Decantador de vidrio con cuello estrecho y base ancha para vinos tintos jóvenes.",
-    "price": 79.9,
-    "stock": 8,
-    "featured": false,
-    "new": true,
-    "offer": false,
-    "image": "/src/assets/images/product01.png"
-  },
-  {
-    "id": 38,
-    "sku": "HIE-003",
-    "brand": "Libbey",
-    "name": "Hielera Diamond",
-    "variant": "1.3 L",
-    "category": "hieleras",
-    "description": "Hielera de vidrio con relieve geométrico y asas integradas para un servicio elegante.",
-    "price": 64.9,
-    "stock": 10,
-    "featured": false,
-    "new": false,
-    "offer": true,
-    "image": "/src/assets/images/product02.png"
-  },
-  {
-    "id": 39,
-    "sku": "VAS-007",
-    "brand": "Ocean",
-    "name": "Vaso Shot",
-    "variant": "60 ml",
-    "category": "vasos",
-    "description": "Vaso pequeño de base gruesa para servir shots de tequila, pisco, ron y otros destilados.",
-    "price": 9.9,
-    "stock": 65,
-    "featured": false,
-    "new": false,
-    "offer": false,
-    "image": "/src/assets/images/product03.png"
-  },
-  {
-    "id": 40,
-    "sku": "COP-008",
-    "brand": "Bohemia",
-    "name": "Copa Porto",
-    "variant": "190 ml",
-    "category": "copas",
-    "description": "Copa de tamaño reducido para vinos fortificados, licores y degustaciones.",
-    "price": 27.9,
-    "stock": 30,
-    "featured": false,
-    "new": true,
-    "offer": false,
-    "image": "/src/assets/images/product04.png"
-  },
-  {
-    "id": 41,
-    "sku": "BOT-006",
-    "brand": "Bormioli",
-    "name": "Botella Moresca",
-    "variant": "1 L",
-    "category": "botellas",
-    "description": "Botella de vidrio decorativa con cierre hermético para agua, jugos y bebidas infusionadas.",
-    "price": 33.9,
-    "stock": 25,
-    "featured": false,
-    "new": false,
-    "offer": true,
-    "image": "/src/assets/images/product05.png"
-  },
-  {
-    "id": 42,
-    "sku": "TAZ-006",
-    "brand": "Luminarc",
-    "name": "Taza Té",
-    "variant": "250 ml",
-    "category": "tazas",
-    "description": "Taza ligera de vidrio templado para té, infusiones y bebidas calientes de consumo diario.",
-    "price": 17.9,
+    "shortDescription": "El set SPIEGELAU Style para Vino Blanco incluye 4 copas de cristal de alta calidad, diseñadas para realzar los aromas, la frescura y el equilibrio de los vinos blancos. Su diseño elegante, resistente y perfectamente equilibrado ofrece una experiencia de degustación superior, ideal para el hogar o uso profesional.",
+    "description": "...",
+
+    "specifications": [
+      
+    ],
+    "price": 109.9,
     "stock": 52,
     "featured": false,
     "new": false,
-    "offer": false,
-    "image": "/src/assets/images/product06.png"
+    "offer": true,
+    "image": "/src/assets/images/product25.webp"
   },
   {
-    "id": 43,
-    "sku": "ACC-006",
-    "brand": "Vacu Vin",
-    "name": "Cortacápsulas",
-    "variant": "Plástico",
-    "category": "accesorios",
-    "description": "Accesorio compacto con cuchillas internas para retirar fácilmente la cápsula de botellas de vino.",
-    "price": 18.9,
-    "stock": 28,
+    "id": 26,
+    "sku": "MECOSP22",
+    "brand": "Winelovers",
+    "name": "SPIEGELAU VINO BLANCO WINELOVERS",
+    "variant": "Una caja contiene 4 unidades.",
+    "category": "copas",
+    "shortDescription": "El set SPIEGELAU Winelovers para Vino Blanco incluye 4 copas de cristal de alta calidad, diseñadas para realzar los aromas, la frescura y el equilibrio de los vinos blancos. Su diseño elegante, resistente y funcional ofrece una experiencia de degustación superior, ideal para el hogar o uso profesional.",
+    "description": "...",
+
+    "specifications": [
+      
+    ],
+    "price": 45.9,
+    "stock": 64,
+    "featured": false,
+    "new": false,
+    "offer": false,
+    "image": "/src/assets/images/product26.webp"
+  },
+  {
+    "id": 27,
+    "sku": "MECOSP47",
+    "brand": "Salute",
+    "name": "SPIEGELAU BURGUNDY SALUTE",
+    "variant": "Una caja contiene 4 unidades.",
+    "category": "copas",
+    "shortDescription": "El set SPIEGELAU Salute Burgundy incluye 4 copas de cristal de alta calidad, diseñadas para realzar los aromas, la textura y la complejidad de los vinos de Borgoña. Su diseño elegante, resistente y perfectamente equilibrado ofrece una experiencia de degustación superior, ideal para el hogar o uso profesional.",
+    "description": "...",
+
+    "specifications": [
+      
+    ],
+    "price": 30.9,
+    "stock": 63,
     "featured": false,
     "new": true,
     "offer": false,
-    "image": "/src/assets/images/product01.png"
+    "image": "/src/assets/images/product27.webp"
   },
   {
-    "id": 44,
-    "sku": "JAR-005",
-    "brand": "Pasabahce",
-    "name": "Jarra Luna",
-    "variant": "1.6 L",
-    "category": "jarras",
-    "description": "Jarra de vidrio con silueta curva y pico definido para servir bebidas sin derrames.",
-    "price": 51.9,
+    "id": 28,
+    "sku": "MECOSP48",
+    "brand": "Style",
+    "name": "SPIEGELAU BURGUNDY STYLE",
+    "variant": "Una caja contiene 4 unidades.",
+    "category": "copas",
+    "shortDescription": "El set SPIEGELAU Style Burgundy incluye 4 copas de cristal de alta calidad, diseñadas para realzar los aromas, la textura y la complejidad de los vinos de Borgoña. Su diseño elegante, resistente y perfectamente equilibrado ofrece una experiencia de degustación superior, ideal para el hogar o uso profesional.",
+    "description": "...",
+
+    "specifications": [
+      
+    ],
+    "price": 29.9,
+    "stock": 23,
+    "featured": false,
+    "new": false,
+    "offer": true,
+    "image": "/src/assets/images/product28.webp"
+  },
+  {
+    "id": 29,
+    "sku": "MECOSP27",
+    "brand": "Winelovers",
+    "name": "SPIEGELAU CHAMPAGNE WINELOVERS",
+    "variant": "Una caja contiene 4 unidades.",
+    "category": "copas",
+    "shortDescription": "El set SPIEGELAU Winelovers Champagne incluye 4 copas de cristal de alta calidad, diseñadas para preservar la efervescencia y realzar la frescura de champán, prosecco y vinos espumosos. Su diseño elegante, resistente y funcional ofrece una experiencia de degustación superior, ideal para el hogar o uso profesional.",
+    "description": "...",
+
+    "specifications": [
+      
+    ],
+    "price": 29.9,
     "stock": 19,
     "featured": false,
     "new": false,
     "offer": true,
-    "image": "/src/assets/images/product02.png"
+    "image": "/src/assets/images/product29.webp"
   },
   {
-    "id": 45,
-    "sku": "VAS-008",
-    "brand": "Nadir",
-    "name": "Vaso Long Drink",
-    "variant": "410 ml",
-    "category": "vasos",
-    "description": "Vaso alto y resistente para combinados, cócteles y bebidas refrescantes.",
-    "price": 21.9,
-    "stock": 43,
-    "featured": false,
-    "new": false,
-    "offer": false,
-    "image": "/src/assets/images/product03.png"
-  },
-  {
-    "id": 46,
-    "sku": "COP-009",
-    "brand": "Ocean",
-    "name": "Copa Margarita",
-    "variant": "300 ml",
+    "id": 30,
+    "sku": "MECOSP14",
+    "brand": "Special Glasses",
+    "name": "SPIEGELAU DIGESTIVE / PISCO",
+    "variant": "Una caja contiene 4 unidades.",
     "category": "copas",
-    "description": "Copa de boca amplia y forma escalonada para margaritas y cócteles frozen.",
-    "price": 35.9,
-    "stock": 23,
-    "featured": false,
-    "new": true,
-    "offer": false,
-    "image": "/src/assets/images/product04.png"
-  },
-  {
-    "id": 47,
-    "sku": "DEC-004",
-    "brand": "Bohemia",
-    "name": "Decantador Reserva",
-    "variant": "1.8 L",
-    "category": "decantadores",
-    "description": "Decantador de cristal de gran capacidad para airear vinos de guarda y mejorar su servicio.",
-    "price": 109.9,
-    "stock": 6,
-    "featured": false,
-    "new": false,
-    "offer": true,
-    "image": "/src/assets/images/product05.png"
-  },
-  {
-    "id": 48,
-    "sku": "HIE-004",
-    "brand": "Ocean",
-    "name": "Hielera Frost",
-    "variant": "900 ml",
-    "category": "hieleras",
-    "description": "Hielera compacta de vidrio resistente con acabado texturizado para uso frecuente.",
-    "price": 45.9,
-    "stock": 17,
-    "featured": false,
-    "new": false,
-    "offer": false,
-    "image": "/src/assets/images/product06.png"
-  },
-  {
-    "id": 49,
-    "sku": "BOT-007",
-    "brand": "Bormioli",
-    "name": "Botella Oxford",
-    "variant": "750 ml",
-    "category": "botellas",
-    "description": "Botella cuadrada de vidrio con tapa hermética para presentar y almacenar bebidas.",
-    "price": 30.9,
-    "stock": 32,
-    "featured": false,
-    "new": true,
-    "offer": false,
-    "image": "/src/assets/images/product01.png"
-  },
-  {
-    "id": 50,
-    "sku": "TAZ-007",
-    "brand": "Libbey",
-    "name": "Mug Cerveza",
-    "variant": "500 ml",
-    "category": "tazas",
-    "description": "Mug de vidrio grueso con asa reforzada para cerveza y bebidas frías.",
+    "shortDescription": "El set SPIEGELAU Style Digestive/Pisco incluye 4 copas de cristal de alta calidad, diseñadas para realzar los aromas y sabores de licores digestivos y pisco. Su diseño elegante, resistente y perfectamente equilibrado ofrece una experiencia de degustación refinada, ideal para el hogar o uso profesional.",
+    "description": "...",
+
+    "specifications": [
+      
+    ],
     "price": 29.9,
-    "stock": 35,
+    "stock": 20,
     "featured": false,
     "new": false,
     "offer": true,
-    "image": "/src/assets/images/product02.png"
+    "image": "/src/assets/images/product30.webp"
+  },
+  {
+    "id": 31,
+    "sku": "MECOSP12",
+    "brand": "Special Glasses",
+    "name": "SPIEGELAU PARA GIN & TONIC",
+    "variant": "Una caja contiene 4 unidades.",
+    "category": "copas",
+    "shortDescription": "El set SPIEGELAU Special Glasses para Gin & Tonic incluye 4 copas de cristal de alta calidad, diseñadas para realzar los aromas y sabores del gin & tonic y otros cócteles. Su diseño elegante, resistente y perfectamente equilibrado ofrece una experiencia de degustación superior, ideal para el hogar o uso profesional.",
+    "description": "...",
+
+    "specifications": [
+      
+    ],
+    "price": 29.9,
+    "stock": 64,
+    "featured": false,
+    "new": false,
+    "offer": true,
+    "image": "/src/assets/images/product31.webp"
+  },
+  {
+    "id": 32,
+    "sku": "MECOSP54",
+    "brand": "Special Glasses",
+    "name": "SPIEGELAU PARA GIN & TONIC SIN TALLO",
+    "variant": "Una caja contiene 4 unidades.",
+    "category": "vasos",
+    "shortDescription": "El set SPIEGELAU Special Glasses para Gin & Tonic sin tallo incluye 4 vasos de cristal de alta calidad, diseñados para realzar los aromas y sabores del gin & tonic y otros cócteles. Su diseño moderno, resistente y funcional ofrece una experiencia de degustación refinada, ideal para el hogar o uso profesional.",
+    "description": "...",
+
+    "specifications": [
+      
+    ],
+    "price": 29.9,
+    "stock": 63,
+    "featured": false,
+    "new": false,
+    "offer": true,
+    "image": "/src/assets/images/product32.webp"
+  },
+  {
+    "id": 33,
+    "sku": "MECOSP33",
+    "brand": "Salute",
+    "name": "SPIEGELAU PARA VINO TINTO BORDEUX",
+    "variant": "Una caja contiene 4 unidades.",
+    "category": "copas",
+    "shortDescription": "El set SPIEGELAU Salute para Vino Tinto Bordeaux incluye 4 copas de cristal de alta calidad, diseñadas para realzar la estructura, los aromas y la complejidad de los vinos de Burdeos. Su diseño elegante, resistente y perfectamente equilibrado ofrece una experiencia de degustación superior, ideal para el hogar o uso profesional.",
+    "description": "...",
+
+    "specifications": [
+      
+    ],
+    "price": 29.9,
+    "stock": 4,
+    "featured": false,
+    "new": false,
+    "offer": true,
+    "image": "/src/assets/images/product33.webp"
+  },
+  {
+    "id": 34,
+    "sku": "MECOSP15",
+    "brand": "Perfect Serve Collection",
+    "name": "SPIEGELAU PERFECT COCKTAIL MARTINI",
+    "variant": "Una caja contiene 4 unidades.",
+    "category": "copas",
+    "shortDescription": "El set SPIEGELAU Perfect Serve Cocktail Martini incluye 4 copas de cristal de alta calidad, diseñadas para realzar la presentación y el disfrute de martinis y otros cócteles clásicos. Su diseño elegante, resistente y perfectamente equilibrado ofrece una experiencia de servicio premium, ideal para el hogar o uso profesional.",
+    "description": "...",
+
+    "specifications": [
+      
+    ],
+    "price": 29.9,
+    "stock": 19,
+    "featured": false,
+    "new": false,
+    "offer": true,
+    "image": "/src/assets/images/product34.webp"
+  },
+  {
+    "id": 35,
+    "sku": "MECOSP17",
+    "brand": "Perfect Serve Collection",
+    "name": "SPIEGELAU PERFECT COUPETTE MARGARITA",
+    "variant": "Una caja contiene 4 unidades.",
+    "category": "copas",
+    "shortDescription": "El set SPIEGELAU Perfect Serve Coupette Margarita incluye 4 copas de cristal de alta calidad, diseñadas para realzar la presentación y los aromas de margaritas, cócteles clásicos y bebidas espumosas. Su diseño elegante, resistente y perfectamente equilibrado ofrece una experiencia de servicio premium, ideal para el hogar o uso profesional.",
+    "description": "...",
+
+    "specifications": [
+      
+    ],
+    "price": 29.9,
+    "stock": 2,
+    "featured": false,
+    "new": false,
+    "offer": true,
+    "image": "/src/assets/images/product35.webp"
+  },
+  {
+    "id": 36,
+    "sku": "MECOSP56",
+    "brand": "Special Glasses",
+    "name": "SPIEGELAU PROSECCO",
+    "variant": "Una caja contiene 4 unidades.",
+    "category": "copas",
+    "shortDescription": "El set SPIEGELAU Special Glasses Prosecco incluye 4 copas de cristal de alta calidad, diseñadas para preservar la efervescencia y realzar los aromas frescos del prosecco y otros vinos espumosos. Su diseño elegante, resistente y perfectamente equilibrado ofrece una experiencia de degustación refinada, ideal para el hogar o uso profesional.",
+    "description": "...",
+
+    "specifications": [
+      
+    ],
+    "price": 29.9,
+    "stock": 21,
+    "featured": false,
+    "new": false,
+    "offer": true,
+    "image": "/src/assets/images/product36.webp"
+  },
+  {
+    "id": 37,
+    "sku": "MECOSP23",
+    "brand": "Classic Bar",
+    "name": "SPIEGELAU TUMBLER CLASSIC BAR",
+    "variant": "Una caja contiene 4 unidades.",
+    "category": "vasos",
+    "shortDescription": "El set SPIEGELAU Classic Bar Tumbler incluye 4 vasos de cristal de alta calidad, diseñados para servir cócteles, combinados y bebidas sin alcohol con elegancia. Su diseño moderno, resistente y versátil ofrece una experiencia de servicio refinada, ideal para el hogar o uso profesional.",
+    "description": "...",
+
+    "specifications": [
+      
+    ],
+    "price": 29.9,
+    "stock": 38,
+    "featured": false,
+    "new": false,
+    "offer": true,
+    "image": "/src/assets/images/product37.webp"
+  },
+  {
+    "id": 38,
+    "sku": "MECOSP62",
+    "brand": "SPIEGELAU Definition Pro",
+    "name": "SPIEGELAU DIGESTIVO PIZA",
+    "variant": "Una caja contiene 6 unidades.",
+    "category": "copas",
+    "shortDescription": "El set SPIEGELAU Definition Pro Digestivo Piza incluye 6 copas de cristal premium de alta calidad, fabricadas con tecnología de precisión para ofrecer ligereza, brillo y durabilidad. Su diseño elegante y perfectamente equilibrado brinda una experiencia de servicio refinada, ideal para el hogar o uso profesional.",
+    "description": "...",
+
+    "specifications": [
+      
+    ],
+    "price": 29.9,
+    "stock": 24,
+    "featured": false,
+    "new": false,
+    "offer": true,
+    "image": "/src/assets/images/product38.webp"
+  },
+  {
+    "id": 39,
+    "sku": "MECOSP02",
+    "brand": "Authentis Casual Pro",
+    "name": "SPIEGELAU TUMBLER L",
+    "variant": "Una caja contiene 12 unidades.",
+    "category": "vasos",
+    "shortDescription": "El set SPIEGELAU Authentis Casual Pro Tumbler L incluye 12 vasos de cristal de alta calidad, diseñados para combinar practicidad, elegancia y durabilidad en el uso diario. Su diseño moderno sin tallo ofrece una experiencia de servicio refinada, ideal para el hogar o uso profesional.",
+    "description": "...",
+
+    "specifications": [
+      
+    ],
+    "price": 29.9,
+    "stock": 0,
+    "featured": false,
+    "new": false,
+    "offer": true,
+    "image": "/src/assets/images/product39.webp"
   }
 ]
