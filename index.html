@@ -40,92 +40,82 @@
   <body>
     <div id="header-container"></div>
 
-    <main hidden>
-      <!-- =====================================================
-     HERO ACTUAL (SLIDER)
-     Se deja comentado por si se desea volver a utilizar.
-======================================================
+    
+<main class="home-page">
+  <!-- =====================================================
+       HERO PRINCIPAL
+  ====================================================== -->
 
-<section class="hero">
-  <div class="slider">
-
-    <div class="slides">
-
-      <div class="slide active">
-        <img
-          src="/src/assets/images/banner-home-01.jpg"
-          alt="Colección de cristalería premium"
+  <section class="home-hero" aria-labelledby="home-hero-title">
+    <div class="home-hero__video" aria-hidden="true">
+      <video
+        class="home-hero__video-element"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        poster="/src/assets/images/home/hero-poster.jpg"
+      >
+        <source
+          src="/src/assets/images/banner-video.mp4"
+          type="video/mp4"
         />
-      </div>
 
-      <div class="slide">
-        <img
-          src="/src/assets/images/banner-home-02.png"
-          alt="Copas de cristal"
-        />
-      </div>
-
-      <div class="slide">
-        <img
-          src="/src/assets/images/banner-home-03.png"
-          alt="Vasos de vidrio"
-        />
-      </div>
-
-      <div class="slide">
-        <img
-          src="/src/assets/images/banner-home-04.png"
-          alt="Jarras de vidrio"
-        />
-      </div>
-
-      <div class="slide">
-        <img
-          src="/src/assets/images/banner-home-05.png"
-          alt="Cristalería para el hogar"
-        />
-      </div>
-
-      <div class="slide">
-        <img
-          src="/src/assets/images/banner-home-06.png"
-          alt="Accesorios de cristalería"
-        />
-      </div>
-
+        Tu navegador no admite la reproducción de video.
+      </video>
     </div>
 
-    <button class="arrow prev" type="button" aria-label="Banner anterior">
-      <span class="material-symbols-outlined">chevron_left</span>
-    </button>
+    <div class="home-hero__overlay"></div>
 
-    <button class="arrow next" type="button" aria-label="Banner siguiente">
-      <span class="material-symbols-outlined">chevron_right</span>
-    </button>
+    <div class="home-hero__container">
+      <div class="home-hero__content">
+        <span class="home-eyebrow">
+          Cristalería premium
+        </span>
 
-    <div class="dots"></div>
+        <h1 id="home-hero-title">
+          Una experiencia diferente comienza con la copa adecuada
+        </h1>
 
-  </div>
-</section>
+        <p>
+          Descubre copas, vasos y colecciones Spiegelau diseñadas para
+          realzar la presentación y el disfrute de cada bebida.
+        </p>
 
--->
-      <section class="hero hero-video">
-        <video
-          class="hero-video__media"
-          autoplay
-          muted
-          loop
-          playsinline
-          preload="auto"
-        >
-          <source src="/src/assets/images/banner-video.mp4" type="video/mp4" />
+        <div class="home-hero__actions">
+          <a
+            href="/catalogo/"
+            class="button button--primary"
+          >
+            Comprar productos
+          </a>
 
-          Tu navegador no soporta video HTML5.
-        </video>
+          <a
+            href="#home-featured-products"
+            class="button button--outline"
+          >
+            Ver destacados
+          </a>
+        </div>
+      </div>
+    </div>
 
-        <!-- Opcional: capa oscura para mejorar contraste -->
-        <div class="hero-video__overlay"></div>
-      </section>
+    <a
+      href="#home-categories"
+      class="home-hero__scroll"
+      aria-label="Ir a las categorías"
+    >
+      <span>Descubrir</span>
+
+      <span
+        class="material-symbols-outlined"
+        aria-hidden="true"
+      >
+        keyboard_arrow_down
+      </span>
+    </a>
+  </section>
 
       <!-- ==========================================
      CATEGORÍAS
@@ -218,307 +208,6 @@
           <img src="/src/assets/images/kits.webp" alt="Accesorios" />
         </article>
       </section>
-      <!-- ==========================================
-     BANNER INSTITUCIONAL
-========================================== -->
-
-      <section class="featured-banner">
-        <!-- IMAGEN -->
-
-        <div class="featured-image">
-          <img
-            src="/src/assets/images/banner-copas.webp"
-            alt="Colección de cristalería premium"
-          />
-        </div>
-
-        <!-- CONTENIDO -->
-
-        <div class="featured-content">
-          <span class="featured-subtitle"> CALIDAD • DISEÑO • ELEGANCIA </span>
-
-          <h2>
-            Cristalería<br />
-            para cada ocasión
-          </h2>
-
-          <p>
-            Descubre una selección de copas, vasos, jarras y accesorios
-            fabricados con materiales de alta calidad, ideales para el hogar,
-            restaurantes, hoteles y eventos especiales.
-          </p>
-
-          <a href="/catalogo/"> Explorar catálogo </a>
-        </div>
-      </section>
-      <!-- ==========================================
-     COLECCIÓN DESTACADA
-========================================== -->
-
-      <section class="catalog-showcase">
-        <!-- CATEGORÍAS -->
-
-        <aside class="catalog-types">
-          <span class="catalog-eyebrow"> Explora nuestras colecciones </span>
-
-          <h2>Colecciones</h2>
-
-          <nav
-            id="catalog-collection-list"
-            class="catalog-type-list"
-            aria-label="Colecciones"
-          >
-            <!-- JavaScript -->
-          </nav>
-
-          <a href="/catalogo/" class="catalog-types-link">
-            Ver todas las colecciones
-
-            <span>→</span>
-          </a>
-        </aside>
-
-        <!-- IMAGEN DESTACADA -->
-
-        <div class="catalog-feature">
-          <img
-            id="catalog-feature-image"
-            src="/src/assets/images/showcase/featured-collection.webp"
-            alt="Colección destacada"
-          />
-
-          <div class="catalog-feature-overlay">
-            <span id="catalog-feature-brand" class="catalog-feature-brand">
-              COLECCIÓN PREMIUM
-            </span>
-
-            <h3 id="catalog-feature-title" class="catalog-feature-title">
-              Cristalería para cada ocasión
-            </h3>
-
-            <p
-              id="catalog-feature-description"
-              class="catalog-feature-description"
-            >
-              Descubre una colección cuidadosamente seleccionada para compartir
-              momentos especiales con elegancia y calidad.
-            </p>
-          </div>
-        </div>
-
-        <!-- PRODUCTOS DESTACADOS -->
-
-        <div class="catalog-products">
-          <div class="catalog-products-header">
-            <h2>Productos destacados</h2>
-
-            <a href="/catalogo/">
-              Ver todos
-              <span aria-hidden="true">→</span>
-            </a>
-          </div>
-
-          <div class="catalog-product-slider">
-            <!-- FLECHA ANTERIOR -->
-
-            <button
-              class="catalog-product-arrow catalog-product-prev"
-              type="button"
-              aria-label="Ver productos anteriores"
-            >
-              <span class="material-symbols-outlined"> chevron_left </span>
-            </button>
-
-            <!-- VENTANA DEL CARRUSEL -->
-
-            <div class="catalog-product-window">
-              <div id="featured-products" class="catalog-product-track">
-                <!--
-          JavaScript insertará aquí las tarjetas
-          creadas desde products.json
-        -->
-              </div>
-            </div>
-
-            <!-- FLECHA SIGUIENTE -->
-
-            <button
-              class="catalog-product-arrow catalog-product-next"
-              type="button"
-              aria-label="Ver más productos"
-            >
-              <span class="material-symbols-outlined"> chevron_right </span>
-            </button>
-
-            <!-- INDICADORES -->
-
-            <div class="catalog-product-dots"></div>
-          </div>
-        </div>
-      </section>
-    </main>
-<main class="home-page">
-  <!-- =====================================================
-       HERO PRINCIPAL
-  ====================================================== -->
-
-  <section class="home-hero" aria-labelledby="home-hero-title">
-    <div class="home-hero__video" aria-hidden="true">
-      <video
-        class="home-hero__video-element"
-        autoplay
-        muted
-        loop
-        playsinline
-        preload="metadata"
-        poster="/src/assets/images/home/hero-poster.jpg"
-      >
-        <source
-          src="/src/assets/images/banner-video.mp4"
-          type="video/mp4"
-        />
-
-        Tu navegador no admite la reproducción de video.
-      </video>
-    </div>
-
-    <div class="home-hero__overlay"></div>
-
-    <div class="home-hero__container">
-      <div class="home-hero__content">
-        <span class="home-eyebrow">
-          Cristalería premium
-        </span>
-
-        <h1 id="home-hero-title">
-          Una experiencia diferente comienza con la copa adecuada
-        </h1>
-
-        <p>
-          Descubre copas, vasos y colecciones Spiegelau diseñadas para
-          realzar la presentación y el disfrute de cada bebida.
-        </p>
-
-        <div class="home-hero__actions">
-          <a
-            href="/catalogo/"
-            class="button button--primary"
-          >
-            Comprar productos
-          </a>
-
-          <a
-            href="#home-featured-products"
-            class="button button--outline"
-          >
-            Ver destacados
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <a
-      href="#home-categories"
-      class="home-hero__scroll"
-      aria-label="Ir a las categorías"
-    >
-      <span>Descubrir</span>
-
-      <span
-        class="material-symbols-outlined"
-        aria-hidden="true"
-      >
-        keyboard_arrow_down
-      </span>
-    </a>
-  </section>
-
-  <!-- =====================================================
-       ACCESOS RÁPIDOS A CATEGORÍAS
-       Se generan desde product.category
-  ====================================================== -->
-
-  <section
-    id="home-categories"
-    class="home-categories"
-    aria-labelledby="home-categories-title"
-  >
-    <div class="home-section-heading home-section-heading--center">
-      <span class="home-eyebrow">
-        Compra por categoría
-      </span>
-
-      <h2 id="home-categories-title">
-        Encuentra la cristalería indicada
-      </h2>
-
-      <p>
-        Explora nuestro catálogo según el tipo de producto que estás buscando.
-      </p>
-    </div>
-
-    <div
-      id="home-categories-grid"
-      class="home-categories__grid"
-      aria-live="polite"
-    >
-      <!--
-        index.js generará las categorías únicas encontradas
-        en product.category.
-
-        Estructura esperada:
-
-        <article class="home-category-card">
-          <a href="/catalogo/?categoria=copas">
-            <div class="home-category-card__media">
-              <img
-                src="..."
-                alt="Copas"
-                loading="lazy"
-                width="600"
-                height="750"
-              />
-            </div>
-
-            <div class="home-category-card__overlay"></div>
-
-            <div class="home-category-card__content">
-              <span class="home-category-card__number">
-                01
-              </span>
-
-              <h3>Copas</h3>
-
-              <span class="home-category-card__action">
-                Ver productos
-
-                <span class="material-symbols-outlined">
-                  arrow_forward
-                </span>
-              </span>
-            </div>
-          </a>
-        </article>
-      -->
-    </div>
-
-    <div class="home-categories__action">
-      <a
-        href="/catalogo/"
-        class="home-link"
-      >
-        Explorar todo el catálogo
-
-        <span
-          class="material-symbols-outlined"
-          aria-hidden="true"
-        >
-          arrow_forward
-        </span>
-      </a>
-    </div>
-  </section>
-
   <!-- =====================================================
        CARRUSEL DE PRODUCTOS DESTACADOS
        El producto central tendrá mayor tamaño
@@ -715,469 +404,132 @@
     </div>
   </section>
 
-  <!-- =====================================================
-       BLOQUE COMERCIAL
-  ====================================================== -->
+<!-- =====================================================
+     BANNER + COMPRA SEGÚN TU BEBIDA
+====================================================== -->
 
-  <section
-    class="home-shop-banner"
-    aria-labelledby="home-shop-banner-title"
-  >
-    <div class="home-shop-banner__media">
-      <img
-        src="/src/assets/images/home/home-shop-banner.jpg"
-        alt="Colección de copas Spiegelau sobre una mesa"
-        loading="lazy"
-        width="1920"
-        height="1100"
-      />
-    </div>
 
-    <div class="home-shop-banner__overlay"></div>
+<section class="featured-showcase">
+  <!-- IMAGEN -->
 
-    <div class="home-shop-banner__container">
-      <div class="home-shop-banner__content">
-        <span class="home-eyebrow">
-          Para cada bebida
-        </span>
 
-        <h2 id="home-shop-banner-title">
-          Elige una cristalería que complemente cada experiencia
-        </h2>
+  <div class="featured-showcase__image">
+    <img
+      src="/src/assets/images/banner-copas.webp"
+      alt="Colección de cristalería premium"
+    />
+  </div>
 
-        <p>
-          Encuentra alternativas para vino tinto, vino blanco, champagne,
-          agua, cócteles y otras bebidas.
-        </p>
 
-        <a
-          href="/catalogo/"
-          class="button button--light"
-        >
-          Encontrar mi cristalería
-        </a>
-      </div>
-    </div>
-  </section>
+  <!-- CONTENIDO -->
 
-  <!-- =====================================================
-       NOVEDADES Y OFERTAS
-  ====================================================== -->
 
-  <section
-    class="home-discover"
-    aria-labelledby="home-discover-title"
-  >
-    <div class="home-section-heading home-section-heading--horizontal">
-      <div>
-        <span class="home-eyebrow">
-          Más para descubrir
-        </span>
+  <div class="featured-showcase__content">
+    <span class="featured-showcase__subtitle">
+      CALIDAD • DISEÑO • ELEGANCIA
+    </span>
 
-        <h2 id="home-discover-title">
-          Encuentra algo nuevo para tu colección
-        </h2>
-      </div>
 
-      <p>
-        Explora las novedades y productos especiales disponibles en nuestro
-        catálogo.
-      </p>
-    </div>
+    <h2>
+      Cristalería para
+      <br />
+      cada ocasión
+    </h2>
 
-    <div class="home-discover__grid">
-      <article class="home-discover-card home-discover-card--new">
-        <a href="/catalogo/?nuevos=true">
-          <div class="home-discover-card__media">
-            <img
-              src="/src/assets/images/home/home-new-products.jpg"
-              alt="Nuevos productos Spiegelau"
-              loading="lazy"
-              width="1200"
-              height="900"
-            />
-          </div>
 
-          <div class="home-discover-card__overlay"></div>
+    <p>
+      Descubre una selección de copas, vasos, jarras y accesorios diseñados
+      para realzar cada bebida y convertir cada momento en una experiencia
+      elegante.
+    </p>
 
-          <div class="home-discover-card__content">
-            <span>
-              Novedades
-            </span>
 
-            <h3>
-              Nuevos productos
-            </h3>
-
-            <p>
-              Descubre las incorporaciones más recientes de nuestro catálogo.
-            </p>
-
-            <strong>
-              Ver novedades
-
-              <span class="material-symbols-outlined">
-                arrow_forward
-              </span>
-            </strong>
-          </div>
-        </a>
-      </article>
-
-      <article class="home-discover-card home-discover-card--offers">
-        <a href="/catalogo/?ofertas=true">
-          <div class="home-discover-card__media">
-            <img
-              src="/src/assets/images/home/home-special-products.jpg"
-              alt="Productos Spiegelau en oferta"
-              loading="lazy"
-              width="1200"
-              height="900"
-            />
-          </div>
-
-          <div class="home-discover-card__overlay"></div>
-
-          <div class="home-discover-card__content">
-            <span>
-              Selección especial
-            </span>
-
-            <h3>
-              Ofertas disponibles
-            </h3>
-
-            <p>
-              Encuentra productos seleccionados con condiciones especiales.
-            </p>
-
-            <strong>
-              Ver ofertas
-
-              <span class="material-symbols-outlined">
-                arrow_forward
-              </span>
-            </strong>
-          </div>
-        </a>
-      </article>
-    </div>
-  </section>
-
-  <!-- =====================================================
-       COLECCIONES DINÁMICAS
-       Se generan desde product.brand
-  ====================================================== -->
-
-  <section
-    id="home-collections"
-    class="home-collections"
-    aria-labelledby="home-collections-title"
-  >
-    <div class="home-collections__header">
-      <div class="home-collections__heading">
-        <span class="home-eyebrow">
-          Colecciones Spiegelau
-        </span>
-
-        <h2 id="home-collections-title">
-          Explora diferentes estilos de cristalería
-        </h2>
-      </div>
-
-      <div class="home-collections__description">
-        <p>
-          Descubre colecciones diseñadas para diferentes bebidas, ocasiones
-          y estilos de presentación.
-        </p>
-
-        <a
-          href="/catalogo/"
-          class="home-link"
-        >
-          Ver todas las colecciones
-
-          <span
-            class="material-symbols-outlined"
-            aria-hidden="true"
-          >
-            arrow_forward
-          </span>
-        </a>
-      </div>
-    </div>
-
-    <div
-      id="home-collections-grid"
-      class="home-collections__grid"
-      aria-live="polite"
+    <a
+      href="/catalogo/"
+      class="featured-showcase__button"
     >
-      <!--
-        index.js generará hasta 6 colecciones únicas
-        obtenidas desde product.brand.
+      Explorar catálogo
+    </a>
+  </div>
 
-        Estructura esperada:
 
-        <article class="home-collection-card">
-          <a href="/catalogo/?marca=Definition">
-            <div class="home-collection-card__media">
-              <img
-                src="..."
-                alt="Colección Definition"
-                loading="lazy"
-                width="800"
-                height="1000"
-              />
-            </div>
+  <!-- PANEL DE BEBIDAS -->
 
-            <div class="home-collection-card__overlay"></div>
 
-            <div class="home-collection-card__content">
-              <span>Colección</span>
+  <aside class="featured-showcase__drinks">
+    <div class="featured-showcase__drinks-header">
+      <span>Compra según tu bebida</span>
 
-              <h3>Definition</h3>
 
-              <strong>
-                Explorar colección
-
-                <span class="material-symbols-outlined">
-                  arrow_forward
-                </span>
-              </strong>
-            </div>
-          </a>
-        </article>
-      -->
-    </div>
-  </section>
-
-  <!-- =====================================================
-       COMPRA SEGÚN EL TIPO DE BEBIDA
-  ====================================================== -->
-
-  <section
-    class="home-drinks"
-    aria-labelledby="home-drinks-title"
-  >
-    <div class="home-drinks__header">
-      <span class="home-eyebrow">
-        Compra según tu bebida
-      </span>
-
-      <h2 id="home-drinks-title">
-        Cada bebida tiene una forma especial de disfrutarse
-      </h2>
-
-      <p>
-        Encuentra opciones pensadas para resaltar la presentación y el
-        carácter de tus bebidas favoritas.
-      </p>
+      <h3>
+        Encuentra la copa ideal
+      </h3>
     </div>
 
-    <div class="home-drinks__list">
-      <a
-        href="/catalogo/?bebida=vino-tinto"
-        class="home-drink-link"
-      >
-        <span class="home-drink-link__number">
-          01
-        </span>
 
-        <span class="home-drink-link__name">
-          Vino tinto
-        </span>
+    <nav class="featured-showcase__links">
+      <a href="/catalogo/?bebida=vino-tinto">
+        <span>01</span>
+        <strong>Vino tinto</strong>
 
-        <span
-          class="home-drink-link__icon material-symbols-outlined"
-          aria-hidden="true"
-        >
+
+        <i class="material-symbols-outlined">
           north_east
-        </span>
+        </i>
       </a>
 
-      <a
-        href="/catalogo/?bebida=vino-blanco"
-        class="home-drink-link"
-      >
-        <span class="home-drink-link__number">
-          02
-        </span>
 
-        <span class="home-drink-link__name">
-          Vino blanco
-        </span>
+      <a href="/catalogo/?bebida=vino-blanco">
+        <span>02</span>
+        <strong>Vino blanco</strong>
 
-        <span
-          class="home-drink-link__icon material-symbols-outlined"
-          aria-hidden="true"
-        >
+
+        <i class="material-symbols-outlined">
           north_east
-        </span>
+        </i>
       </a>
 
-      <a
-        href="/catalogo/?bebida=champagne"
-        class="home-drink-link"
-      >
-        <span class="home-drink-link__number">
-          03
-        </span>
 
-        <span class="home-drink-link__name">
-          Champagne
-        </span>
+      <a href="/catalogo/?bebida=champagne">
+        <span>03</span>
+        <strong>Champagne</strong>
 
-        <span
-          class="home-drink-link__icon material-symbols-outlined"
-          aria-hidden="true"
-        >
+
+        <i class="material-symbols-outlined">
           north_east
-        </span>
+        </i>
       </a>
 
-      <a
-        href="/catalogo/?bebida=cocteles"
-        class="home-drink-link"
-      >
-        <span class="home-drink-link__number">
-          04
-        </span>
 
-        <span class="home-drink-link__name">
-          Cócteles
-        </span>
+      <a href="/catalogo/?bebida=cocteles">
+        <span>04</span>
+        <strong>Cócteles</strong>
 
-        <span
-          class="home-drink-link__icon material-symbols-outlined"
-          aria-hidden="true"
-        >
+
+        <i class="material-symbols-outlined">
           north_east
-        </span>
+        </i>
       </a>
 
-      <a
-        href="/catalogo/?bebida=agua"
-        class="home-drink-link"
-      >
-        <span class="home-drink-link__number">
-          05
-        </span>
 
-        <span class="home-drink-link__name">
-          Agua y bebidas
-        </span>
+      <a href="/catalogo/?bebida=agua">
+        <span>05</span>
+        <strong>Agua y bebidas</strong>
 
-        <span
-          class="home-drink-link__icon material-symbols-outlined"
-          aria-hidden="true"
-        >
+
+        <i class="material-symbols-outlined">
           north_east
-        </span>
+        </i>
       </a>
-    </div>
-  </section>
+    </nav>
+  </aside>
+</section>
 
-  <!-- =====================================================
-       AYUDA PARA ELEGIR
-  ====================================================== -->
 
-  <section
-    class="home-assistance"
-    aria-labelledby="home-assistance-title"
-  >
-    <div class="home-assistance__container">
-      <div class="home-assistance__content">
-        <span class="home-eyebrow">
-          ¿Necesitas orientación?
-        </span>
 
-        <h2 id="home-assistance-title">
-          Te ayudamos a elegir la cristalería adecuada
-        </h2>
 
-        <p>
-          Cuéntanos qué producto, bebida o tipo de servicio necesitas y recibe
-          orientación antes de realizar tu compra.
-        </p>
-      </div>
 
-      <div class="home-assistance__actions">
-        <a
-          href="/contacto/"
-          class="button button--primary"
-        >
-          Solicitar asesoría
-        </a>
 
-        <a
-          href="/catalogo/"
-          class="home-link"
-        >
-          Revisar catálogo
-
-          <span
-            class="material-symbols-outlined"
-            aria-hidden="true"
-          >
-            arrow_forward
-          </span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- =====================================================
-       CTA FINAL
-  ====================================================== -->
-
-  <section
-    class="home-cta"
-    aria-labelledby="home-cta-title"
-  >
-    <div class="home-cta__media">
-      <img
-        src="/src/assets/images/home/home-cta.jpg"
-        alt="Cristalería Spiegelau presentada elegantemente"
-        loading="lazy"
-        width="1920"
-        height="1000"
-      />
-    </div>
-
-    <div class="home-cta__overlay"></div>
-
-    <div class="home-cta__container">
-      <div class="home-cta__content">
-        <span class="home-eyebrow">
-          Descubre Spiegelau
-        </span>
-
-        <h2 id="home-cta-title">
-          Encuentra la pieza indicada para tu próxima experiencia
-        </h2>
-
-        <p>
-          Explora nuestro catálogo de copas, vasos y colecciones disponibles.
-        </p>
-
-        <div class="home-cta__actions">
-          <a
-            href="/catalogo/"
-            class="button button--primary"
-          >
-            Comprar ahora
-          </a>
-
-          <a
-            href="/contacto/"
-            class="button button--outline"
-          >
-            Contáctanos
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
 </main>
     
     <div id="footer-container"></div>
