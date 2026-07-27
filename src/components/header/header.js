@@ -41,12 +41,88 @@ export async function loadHeader() {
     const html = await response.text();
 
     headerContainer.innerHTML = html;
+    await loadCategories(); 
+
 
     initHeaderSearch();
   } catch (error) {
     console.error("Error al cargar el header:", error);
   }
 }
+
+/* ==========================================
+   CARGAR CATEGORÍAS
+========================================== */
+
+
+async function loadCategories() {
+  const menu = document.getElementById(
+    "header-categories-menu",
+  );
+
+
+  if (!menu) {
+    return;
+  }
+
+
+  const response = await fetch(
+    "/src/data/products.json",
+  );
+
+
+  const products = await response.json();
+
+
+  const categories = [
+    ...new Set(
+      products.map((product) => product.category),
+    ),
+  ].sort();
+
+
+  menu.innerHTML = `
+    <li>
+      <a href="/catalogo/">
+        Todos los productos
+      </a>
+    </li>
+  `;
+
+
+  categories.forEach((category) => {
+    menu.insertAdjacentHTML(
+      "beforeend",
+      `
+        <li>
+          <a href="/catalogo/?categoria=${category}">
+            ${formatCategory(category)}
+          </a>
+        </li>
+      `,
+    );
+  });
+}
+
+/* ==========================================
+   FORMATEAR CATEGORÍA
+========================================== */
+
+
+function formatCategory(category) {
+  return category
+    .split("-")
+    .map((word) => {
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    })
+    .join(" ");
+}
+
+
+
+
+
+
 
 /* =====================================================
    INICIALIZAR BUSCADOR

@@ -1,5 +1,8 @@
 import "./producto.css";
 import { createProductCard } from "../../src/components/product-card/product-card.js";
+import { addProductToCart } from "../../src/components/cart/cart.js";
+
+
 let product = null;
 
 /*=========================================
@@ -93,10 +96,26 @@ function renderProduct(products) {
     stock.textContent = `${product.stock} disponibles`;
 
     stock.classList.remove("out-of-stock");
+    addCartButton.disabled = false;
+    quantityInput.disabled = false;
+    increaseButton.disabled = false;
+    decreaseButton.disabled = false;
+
+
+
+
   } else {
     stock.textContent = "Sin stock";
 
     stock.classList.add("out-of-stock");
+    addCartButton.disabled = true;
+    quantityInput.disabled = true;
+    increaseButton.disabled = true;
+    decreaseButton.disabled = true;
+
+
+
+
   }
 
   renderRelatedProducts(products);
@@ -130,4 +149,119 @@ async function renderRelatedProducts(products) {
   relatedContainer.innerHTML = relatedCards.join("");
 }
 
+/*=========================================
+=            CANTIDAD PRODUCTO            =
+=========================================*/
+
+
+const quantityInput = document.getElementById("product-quantity");
+
+
+const decreaseButton = document.getElementById("decrease-quantity");
+
+
+const increaseButton = document.getElementById("increase-quantity");
+
+
+const addCartButton = document.getElementById("add-cart-button");
+
+
+/*=========================================
+=            VALIDAR CANTIDAD             =
+=========================================*/
+
+
+function normalizeQuantity() {
+  let quantity = Number(quantityInput.value);
+
+
+  if (Number.isNaN(quantity) || quantity < 1) {
+    quantity = 1;
+  }
+
+
+  if (product && quantity > product.stock) {
+    quantity = product.stock;
+  }
+
+
+  quantityInput.value = quantity;
+
+
+  return quantity;
+}
+
+
+/*=========================================
+=            BOTÓN MENOS                  =
+=========================================*/
+
+
+decreaseButton.addEventListener("click", () => {
+  const quantity = normalizeQuantity();
+
+
+  quantityInput.value = Math.max(1, quantity - 1);
+});
+
+
+/*=========================================
+=            BOTÓN MÁS                    =
+=========================================*/
+
+
+increaseButton.addEventListener("click", () => {
+  const quantity = normalizeQuantity();
+
+
+  if (product && quantity >= product.stock) {
+    return;
+  }
+
+
+  quantityInput.value = quantity + 1;
+});
+
+
+/*=========================================
+=            INPUT MANUAL                 =
+=========================================*/
+
+
+quantityInput.addEventListener("change", () => {
+  normalizeQuantity();
+});
+
+
+quantityInput.addEventListener("blur", () => {
+  normalizeQuantity();
+});
+
+
+/*=========================================
+=            AGREGAR AL CARRITO           =
+=========================================*/
+
+
+addCartButton.addEventListener("click", () => {
+  if (!product) {
+    return;
+  }
+
+
+  const quantity = normalizeQuantity();
+
+
+  addProductToCart(product, quantity);
+
+
+  quantityInput.value = 1;
+});
+
+
+
+
+
+
 loadProduct();
+

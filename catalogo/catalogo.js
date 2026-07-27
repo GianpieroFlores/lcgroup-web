@@ -539,3 +539,40 @@ productGrid?.addEventListener("click", (event) => {
 
   window.location.href = `/catalogo/producto/?id=${productId}`;
 });
+
+
+/* =====================================================
+   OBTENER CATEGORÍA DESDE LA URL
+===================================================== */
+
+
+function getCategoryFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+
+
+  return params.get("categoria");
+}
+
+
+
+/* =====================================================
+   FILTRAR PRODUCTOS POR CATEGORÍA
+===================================================== */
+
+
+function filterProductsByCategory(products) {
+  const selectedCategory = getCategoryFromUrl();
+
+
+  if (!selectedCategory) {
+    return products;
+  }
+
+
+  return products.filter((product) => {
+    return product.category === selectedCategory;
+  });
+}
+
+
+

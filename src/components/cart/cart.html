@@ -1,0 +1,347 @@
+<!-- =====================================================
+     FONDO OSCURO DEL CARRITO
+===================================================== -->
+
+
+<div
+  class="cart-overlay"
+  id="cart-overlay"
+  aria-hidden="true"
+></div>
+
+
+<!-- =====================================================
+     PANEL LATERAL DEL CARRITO
+===================================================== -->
+
+
+<aside
+  class="cart-panel"
+  id="cart-panel"
+  aria-hidden="true"
+  aria-labelledby="cart-title"
+>
+  <!-- ===================================================
+       ENCABEZADO
+  ==================================================== -->
+
+
+  <header class="cart-header">
+    <div class="cart-header__title">
+      <span
+        class="material-symbols-outlined"
+        aria-hidden="true"
+      >
+        shopping_bag
+      </span>
+
+
+      <div>
+        <h2 id="cart-title">
+          Mi carrito
+        </h2>
+
+
+        <p>
+          <span id="cart-total-items">0</span>
+          productos
+        </p>
+      </div>
+    </div>
+
+
+    <button
+      class="cart-close-button"
+      id="cart-close-button"
+      type="button"
+      aria-label="Cerrar carrito"
+    >
+      <span
+        class="material-symbols-outlined"
+        aria-hidden="true"
+      >
+        close
+      </span>
+    </button>
+  </header>
+
+
+  <!-- ===================================================
+       CONTENIDO
+  ==================================================== -->
+
+
+  <div class="cart-content">
+    <!-- ===============================================
+         ESTADO VACÍO
+    ================================================ -->
+
+
+    <div
+      class="cart-empty"
+      id="cart-empty"
+    >
+      <span
+        class="material-symbols-outlined cart-empty__icon"
+        aria-hidden="true"
+      >
+        shopping_bag
+      </span>
+
+
+      <h3>
+        Tu carrito está vacío
+      </h3>
+
+
+      <p>
+        Agrega productos para comenzar tu pedido.
+      </p>
+
+
+      <button
+        class="cart-empty__button"
+        id="cart-continue-shopping"
+        type="button"
+      >
+        Seguir comprando
+      </button>
+    </div>
+
+
+    <!-- ===============================================
+         LISTA DE PRODUCTOS
+    ================================================ -->
+
+
+    <div
+      class="cart-products"
+      id="cart-products"
+      aria-live="polite"
+    ></div>
+  </div>
+
+
+  <!-- ===================================================
+       PIE DEL CARRITO
+  ==================================================== -->
+
+
+  <footer
+    class="cart-footer"
+    id="cart-footer"
+  >
+    <div class="cart-summary">
+      <div class="cart-summary__row">
+        <span>
+          Productos
+        </span>
+
+
+        <strong id="cart-summary-items">
+          0
+        </strong>
+      </div>
+
+
+      <div class="cart-summary__row cart-summary__row--total">
+        <span>
+          Total
+        </span>
+
+
+        <strong id="cart-total-price">
+          S/ 0.00
+        </strong>
+      </div>
+    </div>
+
+
+    <a
+      class="cart-whatsapp-button"
+      id="cart-whatsapp-button"
+      href="https://wa.me/51955730008?text=Hola%2C%20quiero%20realizar%20un%20pedido."
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-disabled="true"
+    >
+      <i
+        class="fa-brands fa-whatsapp"
+        aria-hidden="true"
+      ></i>
+
+
+      Finalizar pedido por WhatsApp
+    </a>
+
+
+    <p class="cart-footer__note">
+      Serás dirigido a WhatsApp para confirmar tu pedido.
+    </p>
+  </footer>
+</aside>
+
+
+<!-- =====================================================
+     PLANTILLA DE PRODUCTO DEL CARRITO
+===================================================== -->
+
+
+<template id="cart-product-template">
+  <article
+    class="cart-product"
+    data-cart-product-id=""
+  >
+    <!-- IMAGEN -->
+
+
+    <a
+      class="cart-product__image"
+      data-cart-product-link
+      href="#"
+      aria-label="Ver producto"
+    >
+      <img
+        data-cart-product-image
+        src="/src/assets/images/product-placeholder.png"
+        alt="Producto"
+        width="110"
+        height="130"
+        loading="lazy"
+        decoding="async"
+      />
+    </a>
+
+
+    <!-- INFORMACIÓN -->
+
+
+    <div class="cart-product__information">
+      <div class="cart-product__top">
+        <div class="cart-product__details">
+          <span
+            class="cart-product__brand"
+            data-cart-product-brand
+          >
+            Marca
+          </span>
+                    <span
+            class="cart-product__sku"
+            data-cart-product-sku
+            >
+            SKU: COP-001
+            </span>
+
+          <a
+            class="cart-product__name"
+            data-cart-product-name
+            data-cart-product-link
+            href="#"
+          >
+            Nombre del producto
+          </a>
+
+
+          <span
+            class="cart-product__variant"
+            data-cart-product-variant
+          >
+            Presentación del producto
+          </span>
+        </div>
+        
+
+        <!-- ELIMINAR -->
+
+
+        <button
+          class="cart-product__delete"
+          data-cart-product-delete
+          type="button"
+          aria-label="Eliminar producto del carrito"
+        >
+          <span
+            class="material-symbols-outlined"
+            aria-hidden="true"
+          >
+            delete
+          </span>
+        </button>
+      </div>
+
+
+      <div class="cart-product__bottom">
+        <!-- CONTADOR DE CANTIDAD -->
+
+
+        <div
+          class="cart-quantity"
+          aria-label="Seleccionar cantidad"
+        >
+          <button
+            class="cart-quantity__button"
+            data-cart-product-decrease
+            type="button"
+            aria-label="Disminuir cantidad"
+          >
+            <span
+              class="material-symbols-outlined"
+              aria-hidden="true"
+            >
+              remove
+            </span>
+          </button>
+
+
+          <span
+            class="cart-quantity__value"
+            data-cart-product-quantity
+            aria-live="polite"
+          >
+            1
+          </span>
+
+
+          <button
+            class="cart-quantity__button"
+            data-cart-product-increase
+            type="button"
+            aria-label="Aumentar cantidad"
+          >
+            <span
+              class="material-symbols-outlined"
+              aria-hidden="true"
+            >
+              add
+            </span>
+          </button>
+        </div>
+
+
+        <!-- PRECIOS -->
+
+
+        <div class="cart-product__prices">
+          <span
+            class="cart-product__unit-price"
+            data-cart-product-unit-price
+          >
+            S/ 0.00 c/u
+          </span>
+
+
+          <strong
+            class="cart-product__total-price"
+            data-cart-product-total-price
+          >
+            S/ 0.00
+          </strong>
+        </div>
+      </div>
+    </div>
+  </article>
+  
+</template>
+
+<script type="module" src="./cart.js"></script>
+

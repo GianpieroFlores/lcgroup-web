@@ -418,3 +418,87 @@
 .dropdown:hover .dropdown-link i {
   transform: rotate(180deg);
 }
+
+/* =====================================================
+   CARRITO DE COMPRA
+===================================================== */
+.header-top {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+
+.search {
+  flex: 1;
+}
+
+
+.header-cart-button {
+  position: relative;
+
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+  width: 52px;
+  height: 52px;
+
+
+  border: 1px solid var(--color-border-card);
+  border-radius: var(--radius-circle);
+  background: var(--color-white);
+
+
+  cursor: pointer;
+
+
+  transition: var(--transition-normal);
+}
+
+
+.header-cart-button:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+
+
+  box-shadow: var(--shadow-card);
+}
+
+
+.header-cart-button .material-symbols-outlined {
+  font-size: 25px;
+}
+
+
+.header-cart-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+
+
+  border-radius: 999px;
+
+
+  background: var(--color-primary);
+  color: var(--color-white);
+
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+
+
