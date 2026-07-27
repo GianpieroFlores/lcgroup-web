@@ -66,15 +66,78 @@
       <section class="product-detail">
         <!-- GALERÍA -->
 
-        <div class="product-gallery">
-          <div id="product-thumbnails" class="product-thumbnails">
-            <!-- JS -->
-          </div>
+        <!-- ==========================================
+     GALERÍA DEL PRODUCTO
+=========================================== -->
 
-          <div class="product-main-image">
-            <img id="product-image" src="" alt="" />
-          </div>
-        </div>
+<div class="product-gallery">
+  <!-- MINIATURAS -->
+
+  <div
+    id="product-thumbnails"
+    class="product-thumbnails"
+    aria-label="Imágenes del producto"
+  >
+    <!--
+      JavaScript generará aquí una miniatura
+      por cada imagen disponible en el JSON.
+    -->
+  </div>
+
+  <!-- IMAGEN PRINCIPAL -->
+
+  <div class="product-main-image">
+    <button
+      id="product-image-previous"
+      class="product-gallery-control product-gallery-control--previous"
+      type="button"
+      aria-label="Mostrar imagen anterior"
+    >
+      <span
+        class="material-symbols-outlined"
+        aria-hidden="true"
+      >
+        chevron_left
+      </span>
+    </button>
+
+    <img
+      id="product-image"
+      src=""
+      alt=""
+      width="900"
+      height="900"
+    />
+
+    <button
+      id="product-image-next"
+      class="product-gallery-control product-gallery-control--next"
+      type="button"
+      aria-label="Mostrar imagen siguiente"
+    >
+      <span
+        class="material-symbols-outlined"
+        aria-hidden="true"
+      >
+        chevron_right
+      </span>
+    </button>
+
+    <!-- CONTADOR DE IMÁGENES -->
+
+    <div
+      id="product-gallery-counter"
+      class="product-gallery-counter"
+      aria-live="polite"
+    >
+      <span id="product-gallery-current">01</span>
+
+      <span aria-hidden="true">/</span>
+
+      <span id="product-gallery-total">01</span>
+    </div>
+  </div>
+</div>
 
         <!-- INFORMACIÓN -->
 

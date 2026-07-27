@@ -539,7 +539,20 @@
     "featured": false,
     "new": false,
     "offer": false,
-    "image": "/src/assets/images/product20.webp"
+    "gallery": [
+    {
+      "image": "/src/assets/images/product20.webp",
+      "alt": "Vista principal de la Copa Bordeaux"
+    },
+    {
+      "image": "/src/assets/images/product22.webp",
+      "alt": "Vista lateral de la Copa Bordeaux"
+    },
+    {
+      "image": "/src/assets/images/product39.webp",
+      "alt": "Detalle de la Copa Bordeaux"
+    }
+  ]
   },
   {
     "id": 21,

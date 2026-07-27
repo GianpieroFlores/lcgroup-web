@@ -66,9 +66,7 @@ function renderProduct(products) {
   document.getElementById("product-short-description").textContent =
     product.shortDescription;
 
-  document.getElementById("product-image").src = product.image;
-
-  document.getElementById("product-image").alt = product.name;
+  initializeProductGallery(product);
 
   document.getElementById("tab-description").textContent = product.description;
 
@@ -258,10 +256,371 @@ addCartButton.addEventListener("click", () => {
   quantityInput.value = 1;
 });
 
+/* ==========================================
+   ELEMENTOS DE LA GALERÍA
+========================================== */
 
+const productGallery = document.querySelector(
+  ".product-gallery",
+);
 
+const productThumbnails = document.getElementById(
+  "product-thumbnails",
+);
 
+const productImage = document.getElementById(
+  "product-image",
+);
 
+const previousImageButton = document.getElementById(
+  "product-image-previous",
+);
 
+const nextImageButton = document.getElementById(
+  "product-image-next",
+);
+
+const galleryCounter = document.getElementById(
+  "product-gallery-counter",
+);
+
+const galleryCurrent = document.getElementById(
+  "product-gallery-current",
+);
+
+const galleryTotal = document.getElementById(
+  "product-gallery-total",
+);
+
+/* ==========================================
+   ESTADO DE LA GALERÍA
+========================================== */
+
+let currentGallery = [];
+let currentImageIndex = 0;
+
+/* ==========================================
+   OBTENER IMÁGENES DEL PRODUCTO
+========================================== */
+
+function getProductGallery(product) {
+  if (!product) {
+    return [];
+  }
+
+  /*
+   * Formato recomendado:
+   *
+   * gallery: [
+   *   {
+   *     image: "...",
+   *     alt: "..."
+   *   }
+   * ]
+   */
+  if (
+    Array.isArray(product.gallery) &&
+    product.gallery.length > 0
+  ) {
+    return product.gallery
+      .map((item, index) => {
+        /*
+         * También acepta temporalmente:
+         *
+         * gallery: ["imagen1.webp", "imagen2.webp"]
+         */
+        if (typeof item === "string") {
+          return {
+            image: item,
+            alt: `${product.name} - imagen ${index + 1}`,
+          };
+        }
+
+        return {
+          image: item?.image || "",
+          alt:
+            item?.alt ||
+            `${product.name} - imagen ${index + 1}`,
+        };
+      })
+      .filter((item) => item.image);
+  }
+
+  /*
+   * Compatibilidad con el JSON antiguo.
+   */
+  if (product.image) {
+    return [
+      {
+        image: product.image,
+        alt: product.name || "Imagen del producto",
+      },
+    ];
+  }
+
+  return [];
+}
+
+/* ==========================================
+   MOSTRAR IMAGEN SELECCIONADA
+========================================== */
+
+function showGalleryImage(index) {
+  if (
+    currentGallery.length === 0 ||
+    !productImage
+  ) {
+    return;
+  }
+
+  /*
+   * Permite que el carrusel sea circular.
+   */
+  if (index < 0) {
+    currentImageIndex = currentGallery.length - 1;
+  } else if (index >= currentGallery.length) {
+    currentImageIndex = 0;
+  } else {
+    currentImageIndex = index;
+  }
+
+  const selectedImage =
+    currentGallery[currentImageIndex];
+
+  productImage.src = selectedImage.image;
+  productImage.alt = selectedImage.alt;
+
+  updateActiveThumbnail();
+  updateGalleryCounter();
+}
+
+/* ==========================================
+   ACTUALIZAR MINIATURA ACTIVA
+========================================== */
+
+function updateActiveThumbnail() {
+  if (!productThumbnails) {
+    return;
+  }
+
+  const thumbnails =
+    productThumbnails.querySelectorAll(
+      ".product-thumbnail",
+    );
+
+  thumbnails.forEach((thumbnail, index) => {
+    const isActive = index === currentImageIndex;
+
+    thumbnail.classList.toggle(
+      "active",
+      isActive,
+    );
+
+    if (isActive) {
+      thumbnail.setAttribute(
+        "aria-current",
+        "true",
+      );
+    } else {
+      thumbnail.removeAttribute(
+        "aria-current",
+      );
+    }
+  });
+}
+
+/* ==========================================
+   ACTUALIZAR CONTADOR
+========================================== */
+
+function updateGalleryCounter() {
+  if (galleryCurrent) {
+    galleryCurrent.textContent = String(
+      currentImageIndex + 1,
+    ).padStart(2, "0");
+  }
+
+  if (galleryTotal) {
+    galleryTotal.textContent = String(
+      currentGallery.length,
+    ).padStart(2, "0");
+  }
+}
+
+/* ==========================================
+   GENERAR MINIATURAS
+========================================== */
+
+function renderProductThumbnails() {
+  if (!productThumbnails) {
+    return;
+  }
+
+  productThumbnails.innerHTML = currentGallery
+    .map(
+      (item, index) => `
+        <button
+          class="product-thumbnail ${
+            index === 0 ? "active" : ""
+          }"
+          type="button"
+          data-gallery-index="${index}"
+          aria-label="Mostrar imagen ${index + 1} de ${
+            currentGallery.length
+          }"
+          ${
+            index === 0
+              ? 'aria-current="true"'
+              : ""
+          }
+        >
+          <img
+            src="${item.image}"
+            alt="${item.alt}"
+            loading="${index === 0 ? "eager" : "lazy"}"
+          />
+        </button>
+      `,
+    )
+    .join("");
+}
+
+/* ==========================================
+   CONFIGURAR CONTROLES DE LA GALERÍA
+========================================== */
+
+function configureGalleryControls() {
+  const hasMultipleImages =
+    currentGallery.length > 1;
+
+  productGallery?.classList.toggle(
+    "is-single-image",
+    !hasMultipleImages,
+  );
+
+  if (previousImageButton) {
+    previousImageButton.hidden =
+      !hasMultipleImages;
+  }
+
+  if (nextImageButton) {
+    nextImageButton.hidden =
+      !hasMultipleImages;
+  }
+
+  if (galleryCounter) {
+    galleryCounter.hidden =
+      !hasMultipleImages;
+  }
+}
+
+/* ==========================================
+   INICIALIZAR GALERÍA
+========================================== */
+
+function initializeProductGallery(product) {
+  currentGallery = getProductGallery(product);
+  currentImageIndex = 0;
+
+  if (currentGallery.length === 0) {
+    if (productImage) {
+      productImage.removeAttribute("src");
+      productImage.alt =
+        "Imagen no disponible";
+    }
+
+    if (productThumbnails) {
+      productThumbnails.innerHTML = "";
+    }
+
+    productGallery?.classList.add(
+      "is-single-image",
+    );
+
+    return;
+  }
+
+  renderProductThumbnails();
+  configureGalleryControls();
+  showGalleryImage(0);
+}
+
+/* ==========================================
+   EVENTOS DE LAS MINIATURAS
+========================================== */
+
+productThumbnails?.addEventListener(
+  "click",
+  (event) => {
+    const thumbnail = event.target.closest(
+      ".product-thumbnail",
+    );
+
+    if (!thumbnail) {
+      return;
+    }
+
+    const imageIndex = Number(
+      thumbnail.dataset.galleryIndex,
+    );
+
+    if (!Number.isInteger(imageIndex)) {
+      return;
+    }
+
+    showGalleryImage(imageIndex);
+  },
+);
+
+/* ==========================================
+   EVENTOS DE LOS CONTROLES
+========================================== */
+
+previousImageButton?.addEventListener(
+  "click",
+  () => {
+    showGalleryImage(currentImageIndex - 1);
+  },
+);
+
+nextImageButton?.addEventListener(
+  "click",
+  () => {
+    showGalleryImage(currentImageIndex + 1);
+  },
+);
+
+/* ==========================================
+   NAVEGACIÓN CON TECLADO
+========================================== */
+
+document.addEventListener("keydown", (event) => {
+  if (currentGallery.length <= 1) {
+    return;
+  }
+
+  /*
+   * No cambia la galería mientras el usuario
+   * escribe en un input o textarea.
+   */
+  const activeElement = document.activeElement;
+
+  const isWriting =
+    activeElement?.matches(
+      "input, textarea, select",
+    );
+
+  if (isWriting) {
+    return;
+  }
+
+  if (event.key === "ArrowLeft") {
+    showGalleryImage(currentImageIndex - 1);
+  }
+
+  if (event.key === "ArrowRight") {
+    showGalleryImage(currentImageIndex + 1);
+  }
+});
 loadProduct();
 

@@ -11,9 +11,22 @@
 >
   <!-- IMAGEN -->
 
-  <div class="catalog-product-image">
-    <img src="{{image}}" alt="{{name}}" />
-  </div>
+<div class="catalog-product-image">
+  <img
+    class="catalog-product-image__primary"
+    src="{{primaryImage}}"
+    alt="{{name}}"
+    loading="lazy"
+  />
+
+  <img
+    class="catalog-product-image__secondary"
+    src="{{secondaryImage}}"
+    alt=""
+    loading="lazy"
+    aria-hidden="true"
+  />
+</div>
 
   <!-- INFORMACIÓN -->
 

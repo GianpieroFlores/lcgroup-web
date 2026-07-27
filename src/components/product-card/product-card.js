@@ -29,17 +29,27 @@ async function loadTemplate() {
 export async function createProductCard(product) {
   let html = await loadTemplate();
 
+  const primaryImage =
+    product.gallery?.[0]?.image || "";
+
+  const secondaryImage =
+    product.gallery?.[1]?.image || primaryImage;
+
   html = html
-  .replace("{{id}}", product.id)
-  .replace(
-  "{{url}}",
-  `/catalogo/producto/?id=${product.id}`,
-)
-  .replace("{{image}}", product.image)
-  .replaceAll("{{name}}", product.name)
-  .replace("{{brand}}", product.brand)
-  .replace("{{variant}}", product.variant)
-  .replace("{{price}}", Number(product.price).toFixed(2));
+    .replace("{{id}}", product.id)
+    .replace(
+      "{{url}}",
+      `/catalogo/producto/?id=${product.id}`,
+    )
+    .replace("{{primaryImage}}", primaryImage)
+    .replace("{{secondaryImage}}", secondaryImage)
+    .replaceAll("{{name}}", product.name)
+    .replace("{{brand}}", product.brand)
+    .replace("{{variant}}", product.variant)
+    .replace(
+      "{{price}}",
+      Number(product.price).toFixed(2),
+    );
 
   return html;
 }

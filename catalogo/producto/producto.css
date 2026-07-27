@@ -93,15 +93,27 @@
   align-items: start;
 }
 
+/* =====================================================
+   MINIATURAS
+===================================================== */
+
 .product-thumbnails {
   display: flex;
   flex-direction: column;
   gap: 12px;
+
+  max-height: 540px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color:
+    var(--color-border-card)
+    transparent;
 }
 
 .product-thumbnail {
   width: 76px;
   height: 86px;
+  flex-shrink: 0;
 
   display: flex;
   align-items: center;
@@ -109,19 +121,21 @@
 
   padding: 7px;
 
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-border-card);
   border-radius: var(--radius-small);
 
-  background: var(--color-white);
+  background-color: var(--color-white);
   cursor: pointer;
 
   transition:
     border-color var(--transition-fast),
-    box-shadow var(--transition-fast);
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
 }
 
 .product-thumbnail:hover {
   border-color: var(--color-border-hover);
+  transform: translateY(-2px);
 }
 
 .product-thumbnail.active,
@@ -130,13 +144,26 @@
   box-shadow: var(--shadow-focus);
 }
 
+.product-thumbnail:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
 .product-thumbnail img {
   width: 100%;
   height: 100%;
+
+  display: block;
   object-fit: contain;
 }
 
+/* =====================================================
+   IMAGEN PRINCIPAL
+===================================================== */
+
 .product-main-image {
+  position: relative;
+
   width: 100%;
   min-height: 540px;
 
@@ -146,26 +173,260 @@
 
   padding: clamp(35px, 5vw, 70px);
 
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-border-card);
   border-radius: var(--radius-medium);
 
-  background: var(--color-white);
+  background-color: var(--color-white);
   overflow: hidden;
 }
 
 .product-main-image img {
   display: block;
+
   width: 100%;
   max-width: 500px;
   height: 470px;
 
   object-fit: contain;
+  object-position: center;
 
-  transition: transform var(--transition-medium);
+  transition:
+    transform var(--transition-medium),
+    opacity var(--transition-fast);
 }
 
-.product-main-image:hover img {
+.product-main-image:hover > img {
   transform: scale(1.025);
+}
+
+/* =====================================================
+   CONTROLES DE LA GALERÍA
+===================================================== */
+
+.product-gallery-control {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+
+  padding: 0;
+
+  border: 1px solid var(--color-border-card);
+  border-radius: var(--radius-circle);
+
+  background-color: rgba(255, 255, 255, 0.92);
+  color: var(--color-text);
+
+  box-shadow: var(--shadow-card);
+  cursor: pointer;
+
+  transform: translateY(-50%);
+
+  transition:
+    color var(--transition-fast),
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    transform var(--transition-fast),
+    opacity var(--transition-fast);
+}
+
+.product-gallery-control--previous {
+  left: 18px;
+}
+
+.product-gallery-control--next {
+  right: 18px;
+}
+
+.product-gallery-control .material-symbols-outlined {
+  font-size: 22px;
+}
+
+.product-gallery-control:hover {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.product-gallery-control--previous:hover {
+  transform: translateY(-50%) translateX(-2px);
+}
+
+.product-gallery-control--next:hover {
+  transform: translateY(-50%) translateX(2px);
+}
+
+.product-gallery-control:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.product-gallery-control:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* =====================================================
+   CONTADOR DE IMÁGENES
+===================================================== */
+
+.product-gallery-counter {
+  position: absolute;
+  right: 18px;
+  bottom: 16px;
+  z-index: 3;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  padding: 8px 12px;
+
+  border: 1px solid var(--color-border-card);
+  border-radius: var(--radius-pill);
+
+  background-color: rgba(255, 255, 255, 0.92);
+  color: var(--color-text-muted);
+
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 1px;
+
+  box-shadow: var(--shadow-card);
+}
+
+#product-gallery-current {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* =====================================================
+   GALERÍA CON UNA SOLA IMAGEN
+===================================================== */
+
+.product-gallery.is-single-image {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.product-gallery.is-single-image .product-thumbnails,
+.product-gallery.is-single-image .product-gallery-control,
+.product-gallery.is-single-image .product-gallery-counter {
+  display: none;
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 950px) {
+  .product-gallery {
+    grid-template-columns: 66px minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .product-thumbnails {
+    max-height: 470px;
+  }
+
+  .product-thumbnail {
+    width: 66px;
+    height: 76px;
+  }
+
+  .product-main-image {
+    min-height: 470px;
+    padding: 35px;
+  }
+
+  .product-main-image img {
+    height: 400px;
+  }
+}
+
+/* =====================================================
+   MÓVIL
+===================================================== */
+
+@media (max-width: 700px) {
+  .product-gallery {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 14px;
+  }
+
+  .product-thumbnails {
+    width: 100%;
+    max-height: none;
+
+    flex-direction: row;
+    gap: 10px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    padding-bottom: 5px;
+  }
+
+  .product-thumbnail {
+    width: 68px;
+    height: 76px;
+  }
+
+  .product-main-image {
+    min-height: 420px;
+    padding: 30px;
+  }
+
+  .product-main-image img {
+    height: 350px;
+  }
+
+  .product-gallery-control {
+    width: 38px;
+    height: 38px;
+  }
+
+  .product-gallery-control--previous {
+    left: 12px;
+  }
+
+  .product-gallery-control--next {
+    right: 12px;
+  }
+
+  .product-gallery-counter {
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .product-gallery.is-single-image {
+    display: block;
+  }
+}
+
+/* =====================================================
+   MÓVIL PEQUEÑO
+===================================================== */
+
+@media (max-width: 480px) {
+  .product-main-image {
+    min-height: 360px;
+    padding: 24px;
+  }
+
+  .product-main-image img {
+    height: 300px;
+  }
+
+  .product-thumbnail {
+    width: 62px;
+    height: 70px;
+  }
 }
 
 /* =====================================================
