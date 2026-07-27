@@ -83,6 +83,71 @@ function countByProperty(property) {
     return counts;
   }, {});
 }
+/* ==========================================
+   CARGAR CATEGORÍAS DESDE LA URL
+========================================== */
+
+function loadCategoriesFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+
+  const categoryParameter = params.get("categoria");
+
+  selectedCategories.clear();
+
+  if (!categoryParameter) {
+    return;
+  }
+
+  const availableCategories = new Set(
+    products.map((product) => product.category),
+  );
+
+  const urlCategories = categoryParameter
+    .split(",")
+    .map((category) => category.trim())
+    .filter(Boolean);
+
+  urlCategories.forEach((category) => {
+    if (availableCategories.has(category)) {
+      selectedCategories.add(category);
+    }
+  });
+}
+/* ==========================================
+   SINCRONIZAR CHECKBOX DE CATEGORÍAS
+========================================== */
+
+function syncCategoryCheckboxes() {
+  categoryFilters
+    ?.querySelectorAll('input[name="category"]')
+    .forEach((checkbox) => {
+      checkbox.checked = selectedCategories.has(
+        checkbox.value,
+      );
+    });
+}
+/* ==========================================
+   ACTUALIZAR CATEGORÍAS EN LA URL
+========================================== */
+
+function updateCategoryUrl() {
+  const url = new URL(window.location.href);
+
+  if (selectedCategories.size === 0) {
+    url.searchParams.delete("categoria");
+  } else {
+    url.searchParams.set(
+      "categoria",
+      [...selectedCategories].join(","),
+    );
+  }
+
+  window.history.replaceState(
+    {},
+    "",
+    `${url.pathname}${url.search}`,
+  );
+}
 
 /* ==========================================
    CARGAR PRODUCTOS
@@ -97,11 +162,14 @@ async function loadProducts() {
 
   products = await response.json();
 
-  generateCategoryFilters();
-  generateBrandFilters();
-  configurePriceLimits();
+generateCategoryFilters();
+generateBrandFilters();
+configurePriceLimits();
 
-  applyFilters();
+loadCategoriesFromUrl();
+syncCategoryCheckboxes();
+
+applyFilters();
 }
 
 /* ==========================================
@@ -316,7 +384,9 @@ async function renderProducts() {
 ========================================== */
 
 categoryFilters?.addEventListener("change", (event) => {
-  const checkbox = event.target.closest('input[name="category"]');
+  const checkbox = event.target.closest(
+    'input[name="category"]',
+  );
 
   if (!checkbox) {
     return;
@@ -327,6 +397,8 @@ categoryFilters?.addEventListener("change", (event) => {
   } else {
     selectedCategories.delete(checkbox.value);
   }
+
+  updateCategoryUrl();
 
   applyFilters();
 });
@@ -440,7 +512,7 @@ function clearFilters() {
   brandFilters?.querySelectorAll("[data-brand-option]").forEach((option) => {
     option.hidden = false;
   });
-
+updateCategoryUrl();
   applyFilters();
 }
 
@@ -545,29 +617,22 @@ productGrid?.addEventListener("click", (event) => {
    OBTENER CATEGORÍA DESDE LA URL
 ===================================================== */
 
-
 function getCategoryFromUrl() {
   const params = new URLSearchParams(window.location.search);
 
-
   return params.get("categoria");
 }
-
-
 
 /* =====================================================
    FILTRAR PRODUCTOS POR CATEGORÍA
 ===================================================== */
 
-
 function filterProductsByCategory(products) {
   const selectedCategory = getCategoryFromUrl();
-
 
   if (!selectedCategory) {
     return products;
   }
-
 
   return products.filter((product) => {
     return product.category === selectedCategory;

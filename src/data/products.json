@@ -549,11 +549,38 @@
     "variant": "Una caja contiene 2 unidades.",
     "category": "copas",
     "shortDescription": "El set SPIEGELAU Definition Bordeaux incluye 2 copas de cristal de alta calidad, diseñadas para realzar la estructura, los aromas y la complejidad de los vinos de Burdeos. Su diseño ligero, elegante y perfectamente equilibrado ofrece una experiencia de degustación superior, ideal para el hogar o uso profesional.",
-    "description": "...",
+    "description": "Los vinos de Burdeos son aclamados por su estructura, su profundidad y su potencial de envejecimiento. La copa de Burdeos resalta estas cualidades porque permite que la fruta oscura y los taninos firmes se desplieguen con elegancia. Cada sorbo se convierte en una expresión refinada de equilibrio y sofisticación.\n\nPura y elegante, la cristalería transparente atrae todas las miradas. Hecho de cristal que combina brillo, claridad y durabilidad con un diseño perdurable. Se convierte así en una elección elegante para el entretenimiento, la comida y la vida cotidiana.\n\nLa colección SPIEGELAU Definition representa la evolución de dos líneas icónicas de la marca, combinando tecnología innovadora con un diseño ligero y perfectamente equilibrado. Fabricadas en cristal premium mediante un avanzado proceso de producción a máquina, estas copas ofrecen una precisión sensorial excepcional para realzar al máximo los aromas y sabores del vino.\n\nEste set incluye dos copas presentadas en la icónica caja premium roja de SPIEGELAU, ideal para regalo o uso personal. Este artículo es apto para lavavajillas. Diseñado para ofrecer una durabilidad prolongada, resiste los lavados frecuentes conservando su brillo, combinando un cuidado sencillo con un rendimiento fiable día tras día.\n\nInformación importante:\n\n• Este producto está hecho de vidrio, que puede romperse y crear fragmentos afilados si se vuelca o se cae.",
 
-    "specifications": [
-      
-    ],
+"specifications": [
+  {
+    "label": "Opciones de color",
+    "value": "Cristal claro"
+  },
+  {
+    "label": "Fabricación",
+    "value": "Producción a máquina premium"
+  },
+  {
+    "label": "Colección",
+    "value": "SPIEGELAU Definition"
+  },
+  {
+    "label": "Material",
+    "value": "Cristal"
+  },
+  {
+    "label": "Recomendado para limpiabotellas",
+    "value": "No"
+  },
+  {
+    "label": "Diámetro máximo",
+    "value": "4.252 in"
+  },
+  {
+    "label": "Altura",
+    "value": "9.567 in"
+  }
+],
     "price": 33.9,
     "stock": 5,
     "featured": false,
@@ -569,11 +596,38 @@
     "variant": "Una caja contiene 4 unidades.",
     "category": "copas",
     "shortDescription": "El set SPIEGELAU Winelovers Bordeaux incluye 4 copas de cristal de alta calidad, diseñadas para realzar la estructura, los aromas y la complejidad de los vinos de Burdeos. Su diseño elegante, resistente y funcional ofrece una experiencia de degustación superior, ideal para el hogar o uso profesional.",
-    "description": "...",
+    "description": "Los vinos de Burdeos son aclamados por su estructura, su profundidad y su potencial de envejecimiento. La copa de Burdeos resalta estas cualidades porque permite que la fruta oscura y los taninos firmes se desplieguen con elegancia. Cada sorbo se convierte en una expresión refinada de equilibrio y sofisticación.\n\nPura y elegante, la cristalería transparente atrae todas las miradas. Hecho de cristal que combina brillo, claridad y durabilidad con un diseño perdurable. Se convierte así en una elección elegante para el entretenimiento, la comida y la vida cotidiana.\n\nLa colección SPIEGELAU Winelovers destaca por sus líneas limpias, su gran funcionalidad y su diseño atemporal. Es la introducción perfecta al mundo del cristal de alta calidad, ideal tanto para el hogar como para el sector profesional. Con formas funcionales para diferentes bebidas y ocasiones, esta serie garantiza una presentación nítida y elegante. La cristalería elaborada a máquina aporta una calidad uniforme, durabilidad y una relación extraordinaria de calidad-precio. Estos vasos y estas copas ofrecen un rendimiento fiable y son perfectos para el disfrute diario.\n\nEste set incluye cuatro copas presentadas en un embalaje distintivo de SPIEGELAU, ideal para uso personal, el bar en casa o como regalo. Este artículo es apto para lavavajillas. Diseñado para ofrecer una durabilidad prolongada, resiste los lavados frecuentes conservando su brillo, combinando un cuidado sencillo con un rendimiento fiable día tras día.\n\nInformación importante:\n\n• Este producto está hecho de vidrio, que puede romperse y crear fragmentos afilados si se vuelca o se cae.",
 
-    "specifications": [
-      
-    ],
+"specifications": [
+  {
+    "label": "Opciones de color",
+    "value": "Cristal claro"
+  },
+  {
+    "label": "Fabricación",
+    "value": "Hecho a máquina"
+  },
+  {
+    "label": "Colección",
+    "value": "Winelovers"
+  },
+  {
+    "label": "Material",
+    "value": "Cristal"
+  },
+  {
+    "label": "Recomendado para limpiabotellas",
+    "value": "No"
+  },
+  {
+    "label": "Diámetro máximo",
+    "value": "3.622 in"
+  },
+  {
+    "label": "Altura",
+    "value": "8.898 in"
+  }
+],
     "price": 18.9,
     "stock": 134,
     "featured": false,
