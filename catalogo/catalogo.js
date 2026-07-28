@@ -11,6 +11,7 @@ let filteredProducts = [];
 
 const selectedCategories = new Set();
 const selectedBrands = new Set();
+const selectedDrinks = new Set();
 
 let minimumPrice = null;
 let maximumPrice = null;
@@ -25,6 +26,8 @@ const productGrid = document.getElementById("catalog-product-grid");
 const categoryFilters = document.getElementById("category-filters");
 
 const brandFilters = document.getElementById("brand-filters");
+
+const drinkFilters = document.getElementById("drink-filters");
 
 const brandSearch = document.getElementById("brand-search");
 
@@ -70,6 +73,24 @@ function formatLabel(value) {
     .replace(/\b\w/g, (letter) => letter.toUpperCase());
 }
 
+function formatDrinkLabel(value) {
+  const labels = {
+    "vino-tinto": "Vino tinto",
+    "vino-blanco": "Vino blanco",
+    champagne: "Champagne",
+    cocteles: "Cócteles",
+    agua: "Agua y bebidas",
+    cerveza: "Cerveza",
+    whisky: "Whisky",
+    pisco: "Pisco",
+    gin: "Gin",
+    digestivos: "Digestivos",
+    espumosos: "Vinos espumosos",
+  };
+
+  return labels[value] || formatLabel(value);
+}
+
 function countByProperty(property) {
   return products.reduce((counts, product) => {
     const value = product[property];
@@ -79,6 +100,26 @@ function countByProperty(property) {
     }
 
     counts[value] = (counts[value] || 0) + 1;
+
+    return counts;
+  }, {});
+}
+
+function countRecommendedDrinks() {
+  return products.reduce((counts, product) => {
+    if (!Array.isArray(product.recommendedFor)) {
+      return counts;
+    }
+
+    product.recommendedFor.forEach((drink) => {
+      const drinkValue = String(drink).trim();
+
+      if (!drinkValue) {
+        return;
+      }
+
+      counts[drinkValue] = (counts[drinkValue] || 0) + 1;
+    });
 
     return counts;
   }, {});
@@ -113,6 +154,42 @@ function loadCategoriesFromUrl() {
     }
   });
 }
+
+/* ==========================================
+   CARGAR BEBIDAS DESDE LA URL
+========================================== */
+
+function loadDrinksFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+
+  const drinkParameter = params.get("bebida");
+
+  selectedDrinks.clear();
+
+  if (!drinkParameter) {
+    return;
+  }
+
+  const availableDrinks = new Set(
+    products.flatMap((product) => {
+      return Array.isArray(product.recommendedFor)
+        ? product.recommendedFor
+        : [];
+    }),
+  );
+
+  const urlDrinks = drinkParameter
+    .split(",")
+    .map((drink) => drink.trim())
+    .filter(Boolean);
+
+  urlDrinks.forEach((drink) => {
+    if (availableDrinks.has(drink)) {
+      selectedDrinks.add(drink);
+    }
+  });
+}
+
 /* ==========================================
    SINCRONIZAR CHECKBOX DE CATEGORÍAS
 ========================================== */
@@ -121,11 +198,20 @@ function syncCategoryCheckboxes() {
   categoryFilters
     ?.querySelectorAll('input[name="category"]')
     .forEach((checkbox) => {
-      checkbox.checked = selectedCategories.has(
-        checkbox.value,
-      );
+      checkbox.checked = selectedCategories.has(checkbox.value);
     });
 }
+
+/* ==========================================
+   SINCRONIZAR CHECKBOX DE BEBIDAS
+========================================== */
+
+function syncDrinkCheckboxes() {
+  drinkFilters?.querySelectorAll('input[name="drink"]').forEach((checkbox) => {
+    checkbox.checked = selectedDrinks.has(checkbox.value);
+  });
+}
+
 /* ==========================================
    ACTUALIZAR CATEGORÍAS EN LA URL
 ========================================== */
@@ -136,17 +222,26 @@ function updateCategoryUrl() {
   if (selectedCategories.size === 0) {
     url.searchParams.delete("categoria");
   } else {
-    url.searchParams.set(
-      "categoria",
-      [...selectedCategories].join(","),
-    );
+    url.searchParams.set("categoria", [...selectedCategories].join(","));
   }
 
-  window.history.replaceState(
-    {},
-    "",
-    `${url.pathname}${url.search}`,
-  );
+  window.history.replaceState({}, "", `${url.pathname}${url.search}`);
+}
+
+/* ==========================================
+   ACTUALIZAR BEBIDAS EN LA URL
+========================================== */
+
+function updateDrinkUrl() {
+  const url = new URL(window.location.href);
+
+  if (selectedDrinks.size === 0) {
+    url.searchParams.delete("bebida");
+  } else {
+    url.searchParams.set("bebida", [...selectedDrinks].join(","));
+  }
+
+  window.history.replaceState({}, "", `${url.pathname}${url.search}`);
 }
 
 /* ==========================================
@@ -162,14 +257,18 @@ async function loadProducts() {
 
   products = await response.json();
 
-generateCategoryFilters();
-generateBrandFilters();
-configurePriceLimits();
+  generateCategoryFilters();
+  generateBrandFilters();
+  generateDrinkFilters();
+  configurePriceLimits();
 
-loadCategoriesFromUrl();
-syncCategoryCheckboxes();
+  loadCategoriesFromUrl();
+  loadDrinksFromUrl();
 
-applyFilters();
+  syncCategoryCheckboxes();
+  syncDrinkCheckboxes();
+
+  applyFilters();
 }
 
 /* ==========================================
@@ -205,6 +304,46 @@ function generateCategoryFilters() {
 
           <small>
             (${categoryCounts[category]})
+          </small>
+        </label>
+      `,
+    )
+    .join("");
+}
+
+/* ==========================================
+   GENERAR FILTROS DE BEBIDAS
+========================================== */
+
+function generateDrinkFilters() {
+  if (!drinkFilters) {
+    return;
+  }
+
+  const drinkCounts = countRecommendedDrinks();
+
+  const drinks = Object.keys(drinkCounts).sort((a, b) => {
+    return formatDrinkLabel(a).localeCompare(formatDrinkLabel(b), "es", {
+      sensitivity: "base",
+    });
+  });
+
+  drinkFilters.innerHTML = drinks
+    .map(
+      (drink) => `
+        <label class="filter-option">
+          <input
+            type="checkbox"
+            name="drink"
+            value="${drink}"
+          />
+
+          <span>
+            ${formatDrinkLabel(drink)}
+          </span>
+
+          <small>
+            (${drinkCounts[drink]})
           </small>
         </label>
       `,
@@ -292,13 +431,29 @@ function applyFilters() {
     const brandMatches =
       selectedBrands.size === 0 || selectedBrands.has(product.brand);
 
+    const productDrinks = Array.isArray(product.recommendedFor)
+      ? product.recommendedFor
+      : [];
+
+    const drinkMatches =
+      selectedDrinks.size === 0 ||
+      [...selectedDrinks].some((drink) => {
+        return productDrinks.includes(drink);
+      });
+
     const price = Number(product.price);
 
     const minimumMatches = minimumPrice === null || price >= minimumPrice;
 
     const maximumMatches = maximumPrice === null || price <= maximumPrice;
 
-    return categoryMatches && brandMatches && minimumMatches && maximumMatches;
+    return (
+      categoryMatches &&
+      brandMatches &&
+      drinkMatches &&
+      minimumMatches &&
+      maximumMatches
+    );
   });
 
   sortProducts();
@@ -384,9 +539,7 @@ async function renderProducts() {
 ========================================== */
 
 categoryFilters?.addEventListener("change", (event) => {
-  const checkbox = event.target.closest(
-    'input[name="category"]',
-  );
+  const checkbox = event.target.closest('input[name="category"]');
 
   if (!checkbox) {
     return;
@@ -420,6 +573,27 @@ brandFilters?.addEventListener("change", (event) => {
     selectedBrands.delete(checkbox.value);
   }
 
+  applyFilters();
+});
+
+/* ==========================================
+   EVENTOS DE BEBIDAS
+========================================== */
+
+drinkFilters?.addEventListener("change", (event) => {
+  const checkbox = event.target.closest('input[name="drink"]');
+
+  if (!checkbox) {
+    return;
+  }
+
+  if (checkbox.checked) {
+    selectedDrinks.add(checkbox.value);
+  } else {
+    selectedDrinks.delete(checkbox.value);
+  }
+
+  updateDrinkUrl();
   applyFilters();
 });
 
@@ -482,6 +656,7 @@ sortSelect?.addEventListener("change", () => {
 function clearFilters() {
   selectedCategories.clear();
   selectedBrands.clear();
+  selectedDrinks.clear();
 
   minimumPrice = null;
   maximumPrice = null;
@@ -512,7 +687,8 @@ function clearFilters() {
   brandFilters?.querySelectorAll("[data-brand-option]").forEach((option) => {
     option.hidden = false;
   });
-updateCategoryUrl();
+  updateCategoryUrl();
+  updateDrinkUrl();
   applyFilters();
 }
 
@@ -611,33 +787,3 @@ productGrid?.addEventListener("click", (event) => {
 
   window.location.href = `/catalogo/producto/?id=${productId}`;
 });
-
-
-/* =====================================================
-   OBTENER CATEGORÍA DESDE LA URL
-===================================================== */
-
-function getCategoryFromUrl() {
-  const params = new URLSearchParams(window.location.search);
-
-  return params.get("categoria");
-}
-
-/* =====================================================
-   FILTRAR PRODUCTOS POR CATEGORÍA
-===================================================== */
-
-function filterProductsByCategory(products) {
-  const selectedCategory = getCategoryFromUrl();
-
-  if (!selectedCategory) {
-    return products;
-  }
-
-  return products.filter((product) => {
-    return product.category === selectedCategory;
-  });
-}
-
-
-

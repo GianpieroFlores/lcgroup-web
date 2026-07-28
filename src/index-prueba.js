@@ -27,7 +27,7 @@ const homeState = {
 const homeElements = {
   categoriesGrid: null,
   collectionsGrid: null,
-
+  drinksLinks: null,
   featuredCarousel: null,
   featuredViewport: null,
   featuredTrack: null,
@@ -60,7 +60,7 @@ async function initHomePage() {
 
     renderHomeCategories(products);
     renderHomeCollections(products);
-
+    renderHomeDrinks(products);
     await renderFeaturedProducts(products);
 
     initFeaturedCarousel();
@@ -81,7 +81,9 @@ function getHomeElements() {
   homeElements.collectionsGrid = document.querySelector(
     "#home-collections-grid",
   );
-
+  homeElements.drinksLinks = document.querySelector(
+    "#featured-showcase-drinks",
+  );
   homeElements.featuredCarousel = document.querySelector(
     "#home-featured-carousel",
   );
@@ -121,6 +123,7 @@ function isHomePage() {
   return Boolean(
     homeElements.categoriesGrid ||
     homeElements.collectionsGrid ||
+    homeElements.drinksLinks ||
     homeElements.featuredTrack,
   );
 }
@@ -188,6 +191,13 @@ function showInitialLoadingStates() {
     );
   }
 
+  if (homeElements.drinksLinks) {
+    homeElements.drinksLinks.innerHTML = createStatusMarkup(
+      "home-loading",
+      "Cargando tipos de bebida...",
+    );
+  }
+
   if (homeElements.featuredTrack) {
     homeElements.featuredTrack.innerHTML = createStatusMarkup(
       "home-loading",
@@ -213,6 +223,13 @@ function showHomeLoadingError() {
 
   if (homeElements.collectionsGrid) {
     homeElements.collectionsGrid.innerHTML = createStatusMarkup(
+      "home-error",
+      message,
+    );
+  }
+
+  if (homeElements.drinksLinks) {
+    homeElements.drinksLinks.innerHTML = createStatusMarkup(
       "home-error",
       message,
     );
@@ -483,6 +500,123 @@ function createCollectionCard(collection) {
       </a>
     </article>
   `;
+}
+
+/* =====================================================
+   TIPOS DE BEBIDA
+===================================================== */
+
+function renderHomeDrinks(products) {
+  if (!homeElements.drinksLinks) {
+    return;
+  }
+
+  const drinks = getUniqueRecommendedDrinks(products);
+
+  if (drinks.length === 0) {
+    homeElements.drinksLinks.innerHTML = createStatusMarkup(
+      "home-empty",
+      "No hay tipos de bebida disponibles por el momento.",
+    );
+
+    return;
+  }
+
+  homeElements.drinksLinks.innerHTML = drinks
+    .map((drink, index) => {
+      return createDrinkLink(drink, index);
+    })
+    .join("");
+}
+
+/* =====================================================
+   OBTENER TIPOS DE BEBIDA ÚNICOS
+===================================================== */
+
+function getUniqueRecommendedDrinks(products) {
+  const drinksMap = new Map();
+
+  products.forEach((product) => {
+    if (!Array.isArray(product.recommendedFor)) {
+      return;
+    }
+
+    product.recommendedFor.forEach((drinkValue) => {
+      const normalizedDrink = normalizeText(drinkValue);
+
+      if (!normalizedDrink) {
+        return;
+      }
+
+      const drinkSlug = slugify(normalizedDrink);
+
+      if (!drinkSlug || drinksMap.has(drinkSlug)) {
+        return;
+      }
+
+      drinksMap.set(drinkSlug, {
+        slug: drinkSlug,
+        name: formatDrinkName(drinkSlug),
+      });
+    });
+  });
+
+  return Array.from(drinksMap.values());
+}
+
+/* =====================================================
+   CREAR ENLACE DE BEBIDA
+===================================================== */
+
+function createDrinkLink(drink, index) {
+  const drinkNumber = formatCounter(index + 1);
+
+  const drinkURL = createCatalogURL({
+    bebida: drink.slug,
+  });
+
+  return `
+    <a href="${escapeAttribute(drinkURL)}">
+      <span>${drinkNumber}</span>
+
+      <strong>
+        ${escapeHTML(drink.name)}
+      </strong>
+
+      <i
+        class="material-symbols-outlined"
+        aria-hidden="true"
+      >
+        north_east
+      </i>
+    </a>
+  `;
+}
+
+/* =====================================================
+   FORMATEAR NOMBRE DE BEBIDA
+===================================================== */
+
+function formatDrinkName(drinkSlug) {
+  const specialNames = {
+    "vino-tinto": "Vino tinto",
+    "vino-blanco": "Vino blanco",
+    champagne: "Champagne",
+    cocteles: "Cócteles",
+    agua: "Agua y bebidas",
+    cerveza: "Cerveza",
+    whisky: "Whisky",
+    pisco: "Pisco",
+    gin: "Gin",
+    digestivos: "Digestivos",
+    espumosos: "Vinos espumosos",
+  };
+
+  if (specialNames[drinkSlug]) {
+    return specialNames[drinkSlug];
+  }
+
+  return formatDisplayText(drinkSlug.replace(/-/g, " "));
 }
 
 /* =====================================================
@@ -1265,20 +1399,10 @@ function createProductURL(productId) {
 ===================================================== */
 
 function getProductImage(product) {
-  const possibleImages = [
-    product.image,
-    product.imageUrl,
-    product.thumbnail,
-    Array.isArray(product.images) ? product.images[0] : null,
-  ];
-
-  const validImage = possibleImages.find((image) => {
-    return typeof image === "string" && image.trim() !== "";
-  });
-
-  return validImage
-    ? validImage.trim()
-    : "/src/assets/images/product-placeholder.png";
+  return (
+    product.gallery?.[0]?.image ||
+    "/src/assets/images/product-placeholder.png"
+  );
 }
 
 /* =====================================================
