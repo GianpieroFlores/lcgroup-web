@@ -1208,3 +1208,515 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ==========================================
+   PANTALLAS GRANDES
+========================================== */
+
+.about-intro,
+.about-quality,
+.about-final {
+  padding-inline: max(
+    0px,
+    calc((100% - 1600px) / 2)
+  );
+}
+
+.about-presentation,
+.about-brands {
+  max-width: 1600px;
+}
+
+.about-categories,
+.about-values,
+.about-service {
+  padding-inline: max(
+    var(--page-padding),
+    calc((100% - 1600px) / 2)
+  );
+}
+
+.about-intro__content,
+.about-quality__content,
+.about-final__content {
+  padding: clamp(38px, 5vw, 80px);
+}
+
+/* ==========================================
+   ESCRITORIO REDUCIDO
+========================================== */
+
+@media (max-width: 1200px) {
+  .about-intro {
+    grid-template-columns:
+      minmax(0, 1.1fr)
+      minmax(340px, 0.9fr);
+  }
+
+  .about-presentation {
+    gap: 28px;
+  }
+
+  .about-quality {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(340px, 1fr);
+  }
+
+  .about-brands {
+    grid-template-columns:
+      minmax(250px, 0.8fr)
+      minmax(0, 1.2fr);
+
+    gap: 28px;
+  }
+
+  .about-final {
+    grid-template-columns:
+      minmax(340px, 0.9fr)
+      minmax(0, 1.1fr);
+  }
+
+  .about-service-card {
+    padding: 28px 20px;
+  }
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1024px) {
+  .about-intro,
+  .about-presentation,
+  .about-quality,
+  .about-brands,
+  .about-final {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .about-intro,
+  .about-final {
+    min-height: 0;
+  }
+
+  .about-intro__media,
+  .about-final__media {
+    min-height: 400px;
+  }
+
+  .about-intro__content,
+  .about-quality__content,
+  .about-final__content {
+    padding: 48px var(--page-padding);
+  }
+
+  .about-intro__content h1,
+  .about-intro__content p,
+  .about-quality__content h2,
+  .about-quality__content > p,
+  .about-final__content h2,
+  .about-final__content p {
+    max-width: 720px;
+  }
+
+  .about-presentation {
+    gap: 24px;
+  }
+
+  .about-presentation__content {
+    padding: 20px 0 10px;
+  }
+
+  .about-presentation__content h2,
+  .about-presentation__content p {
+    max-width: 720px;
+  }
+
+  .about-presentation__media {
+    min-height: 400px;
+  }
+
+  .about-presentation__media img {
+    min-height: 400px;
+  }
+
+  .about-quality {
+    min-height: 0;
+  }
+
+  .about-quality__media {
+    min-height: 400px;
+  }
+
+  .about-quality__media::after {
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.36) 0%,
+      transparent 45%
+    );
+  }
+
+  .about-brands {
+    align-items: start;
+  }
+
+  .about-brands__content h2,
+  .about-brands__content p {
+    max-width: 720px;
+  }
+
+  .about-brands__logos {
+    margin-top: 8px;
+  }
+
+  .about-final__media::after {
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.3) 0%,
+      transparent 40%
+    );
+  }
+}
+
+/* ==========================================
+   TABLET VERTICAL
+========================================== */
+
+@media (max-width: 768px) {
+  .about-section-heading {
+    margin-bottom: 30px;
+  }
+
+  .about-section-heading h2,
+  .about-intro__content h1,
+  .about-presentation__content h2,
+  .about-quality__content h2,
+  .about-brands__content h2,
+  .about-final__content h2 {
+    font-size: clamp(29px, 5.5vw, var(--font-size-title-large));
+  }
+
+  .about-intro__media,
+  .about-presentation__media,
+  .about-presentation__media img,
+  .about-quality__media,
+  .about-final__media {
+    min-height: 360px;
+  }
+
+  .about-intro__content,
+  .about-quality__content,
+  .about-final__content {
+    padding: 40px 20px;
+  }
+
+  .about-presentation,
+  .about-brands {
+    width: calc(100% - 40px);
+
+    margin-block: 34px;
+  }
+
+  .about-categories,
+  .about-values,
+  .about-service {
+    padding: 36px 20px;
+  }
+
+  .about-categories__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+  }
+
+  .about-category-card {
+    max-width: none;
+  }
+
+  .about-category-card__image {
+    height: 260px;
+  }
+
+  .about-quality__list {
+    gap: 14px 18px;
+  }
+
+  .about-values__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-value-card {
+    min-height: 250px;
+
+    padding: 30px 22px;
+  }
+
+  .about-value-card:nth-child(2n) {
+    border-right: none;
+  }
+
+  .about-value-card:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--color-border-card);
+  }
+
+  .about-brands {
+    padding: 34px;
+  }
+
+  .about-service__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-service-card {
+    min-height: 250px;
+  }
+}
+
+/* ==========================================
+   MÓVIL
+========================================== */
+
+@media (max-width: 600px) {
+  .about-intro__media,
+  .about-presentation__media,
+  .about-presentation__media img,
+  .about-quality__media,
+  .about-final__media {
+    min-height: 330px;
+  }
+
+  .about-intro__content,
+  .about-quality__content,
+  .about-final__content {
+    padding: 36px 16px;
+  }
+
+  .about-presentation,
+  .about-brands {
+    width: calc(100% - 32px);
+
+    margin-block: 30px;
+  }
+
+  .about-categories,
+  .about-values,
+  .about-service {
+    padding: 32px 16px;
+  }
+
+  .about-section-heading {
+    margin-bottom: 26px;
+  }
+
+  .about-presentation__content {
+    padding-top: 14px;
+  }
+
+  .about-category-card__image {
+    height: 235px;
+  }
+
+  .about-quality__list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .about-value-card {
+    min-height: 235px;
+  }
+
+  .about-brands {
+    padding: 28px;
+  }
+
+  .about-brands__logos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-brand {
+    min-width: 0;
+
+    padding: 15px;
+  }
+
+  .about-brand span {
+    overflow-wrap: anywhere;
+  }
+
+  .about-service-card {
+    min-height: 235px;
+
+    padding: 26px 20px;
+  }
+
+  .about-service-card__number {
+    margin-bottom: 44px;
+  }
+
+  .about-final__content p {
+    margin-bottom: 28px;
+  }
+}
+
+/* ==========================================
+   MÓVIL PEQUEÑO
+========================================== */
+
+@media (max-width: 480px) {
+  .about-intro__media,
+  .about-presentation__media,
+  .about-presentation__media img,
+  .about-quality__media,
+  .about-final__media {
+    min-height: 290px;
+  }
+
+  .about-intro__content,
+  .about-quality__content,
+  .about-final__content {
+    padding: 32px 14px;
+  }
+
+  .about-intro__content h1,
+  .about-presentation__content h2,
+  .about-quality__content h2,
+  .about-brands__content h2,
+  .about-final__content h2,
+  .about-section-heading h2 {
+    font-size: clamp(27px, 7vw, 32px);
+  }
+
+  .about-intro__content p,
+  .about-presentation__content p,
+  .about-quality__content > p,
+  .about-brands__content p,
+  .about-final__content p,
+  .about-section-heading p {
+    line-height: 1.68;
+  }
+
+  .about-presentation,
+  .about-brands {
+    width: calc(100% - 28px);
+
+    margin-block: 27px;
+  }
+
+  .about-categories,
+  .about-values,
+  .about-service {
+    padding: 28px 14px;
+  }
+
+  .about-categories__grid,
+  .about-values__grid,
+  .about-service__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .about-category-card {
+    max-width: 380px;
+  }
+
+  .about-category-card__image {
+    height: 250px;
+  }
+
+  .about-value-card,
+  .about-value-card:nth-child(2n) {
+    min-height: 0;
+
+    border-right: none;
+    border-bottom: 1px solid var(--color-border-card);
+  }
+
+  .about-value-card:last-child {
+    border-bottom: none;
+  }
+
+  .about-brands {
+    padding: 24px;
+  }
+
+  .about-service-card {
+    min-height: 220px;
+  }
+
+  .about-final__actions {
+    width: 100%;
+  }
+
+  .about-page .button {
+    flex: 1 1 180px;
+  }
+}
+
+/* ==========================================
+   MÓVIL MUY PEQUEÑO
+========================================== */
+
+@media (max-width: 380px) {
+  .about-intro__media,
+  .about-presentation__media,
+  .about-presentation__media img,
+  .about-quality__media,
+  .about-final__media {
+    min-height: 260px;
+  }
+
+  .about-intro__content,
+  .about-quality__content,
+  .about-final__content {
+    padding: 28px 12px;
+  }
+
+  .about-presentation,
+  .about-brands {
+    width: calc(100% - 24px);
+
+    margin-block: 24px;
+  }
+
+  .about-categories,
+  .about-values,
+  .about-service {
+    padding: 24px 12px;
+  }
+
+  .about-eyebrow {
+    letter-spacing: 1.4px;
+  }
+
+  .about-category-card__image {
+    height: 225px;
+  }
+
+  .about-brands {
+    padding: 20px;
+  }
+
+  .about-brands__logos {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .about-brand {
+    min-height: 70px;
+  }
+
+  .about-value-card,
+  .about-service-card {
+    padding: 24px 18px;
+  }
+
+  .about-page .button {
+    width: 100%;
+    min-width: 0;
+    min-height: 46px;
+
+    flex-basis: 100%;
+  }
+
+  .about-link {
+    min-height: 44px;
+  }
+}

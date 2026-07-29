@@ -69,6 +69,19 @@
       0
     </span>
   </button>
+
+  <button
+    class="mobile-menu-toggle"
+    id="mobile-menu-toggle"
+    type="button"
+    aria-label="Abrir menú de navegación"
+    aria-expanded="false"
+    aria-controls="mobile-menu-panel"
+  >
+    <span class="material-symbols-outlined" aria-hidden="true">
+      menu
+    </span>
+  </button>
 </div>
 
 
@@ -106,6 +119,75 @@
       </li>
 
       <li class="nav-item">
+        <a href="/contacto/">Contacto</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div
+    class="mobile-menu-overlay"
+    id="mobile-menu-overlay"
+    aria-hidden="true"
+  ></div>
+
+  <nav
+    class="mobile-menu-panel"
+    id="mobile-menu-panel"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Navegación móvil"
+    aria-hidden="true"
+    tabindex="-1"
+  >
+    <div class="mobile-menu-header">
+      <span>Menú</span>
+
+      <button
+        class="mobile-menu-close"
+        id="mobile-menu-close"
+        type="button"
+        aria-label="Cerrar menú de navegación"
+      >
+        <span class="material-symbols-outlined" aria-hidden="true">
+          close
+        </span>
+      </button>
+    </div>
+
+    <ul class="mobile-menu-list">
+      <li>
+        <a href="/">Inicio</a>
+      </li>
+
+      <li class="mobile-products">
+        <button
+          class="mobile-products-toggle"
+          id="mobile-products-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobile-header-categories-menu"
+        >
+          <span>Productos</span>
+
+          <span class="material-symbols-outlined" aria-hidden="true">
+            expand_more
+          </span>
+        </button>
+
+        <ul
+          class="mobile-categories-menu"
+          id="mobile-header-categories-menu"
+          hidden
+        >
+          <!-- JS -->
+        </ul>
+      </li>
+
+      <li>
+        <a href="/nosotros/">Nosotros</a>
+      </li>
+
+      <li>
         <a href="/contacto/">Contacto</a>
       </li>
     </ul>

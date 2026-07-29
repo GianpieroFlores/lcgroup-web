@@ -5,18 +5,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@300;400;500;600;700&display=swap");
 
 /* =====================================================
-   FUENTE LOCAL
-===================================================== */
-
-@font-face {
-  font-family: "Futura-light-bt";
-  src: url("/src/assets/fonts/FuturaBT-Light.woff2") format("woff2");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* =====================================================
    VARIABLES GLOBALES
 ===================================================== */
 
@@ -27,8 +15,6 @@
 
   --color-primary: #e71803;
   --color-primary-dark: #0044a0;
-  --color-primary-light: #4c9dff;
-
   --color-accent: #e71803;
   --color-accent-dark: #e71803;
 
@@ -58,10 +44,7 @@
 
   --color-footer-title: #e71803;
   --color-footer-text: #111111;
-  --color-footer-text-muted: #444444;
-
   --color-footer-accent: #e71803;
-  --color-footer-accent-hover: #e71803;
 
   --color-footer-border: rgba(255, 0, 0);
 
@@ -72,7 +55,7 @@
      TIPOGRAFÍA
   ===================================================== */
 
-  --font-main: "Futura-light-bt", "Instrument Sans", sans-serif;
+  --font-main: "Instrument Sans", sans-serif;
   --font-fallback: "Instrument Sans", sans-serif;
 
   --font-size-xs: 10px;
@@ -134,13 +117,6 @@
   --hero-height: 430px;
 
   /* =====================================================
-     CARRUSELES
-  ===================================================== */
-
-  --brand-animation-duration: 28s;
-  --carousel-transition: 0.45s ease;
-
-  /* =====================================================
      ICONOS
   ===================================================== */
 
@@ -153,6 +129,8 @@
 
   --section-content-height: 285px;
   --catalog-feature-height: 440px;
+
+  --header-offset: 105px;
 }
 
 /* =====================================================
@@ -182,7 +160,7 @@ body {
 
   font-family: var(--font-main);
 
-  padding-top: 105px;
+  padding-top: var(--header-offset);
 }
 
 /* =====================================================
@@ -233,8 +211,6 @@ select {
 ===================================================== */
 
 .container {
-  width: min(var(--container-width), 100% - 80px);
-
   margin-inline: auto;
 }
 
@@ -246,10 +222,24 @@ select {
   display: none !important;
 }
 
-.text-center {
-  text-align: center;
-}
-
 .section {
   padding: var(--section-padding);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --header-offset: 112px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --header-offset: 108px;
+  }
+}
+
+@media (max-width: 380px) {
+  :root {
+    --header-offset: 106px;
+  }
 }

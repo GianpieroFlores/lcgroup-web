@@ -1,4 +1,6 @@
 import "./nosotros.css"
+import { escapeHTML } from "../src/utils/escape.js";
+import { createCatalogUrl } from "../src/utils/urls.js";
 
 /* =====================================================
    PÁGINA NOSOTROS
@@ -131,14 +133,16 @@ function getUniqueCategories(products) {
 
 function createCategoryCard(category) {
   const categoryName = formatDisplayName(category.name);
-  const categoryParameter = encodeURIComponent(category.name);
+  const categoryUrl = createCatalogUrl({
+    categoria: category.name,
+  });
   const categoryImage =
     category.image || "/src/assets/images/product-placeholder.png";
 
   return `
     <article class="about-category-card">
       <a
-        href="/catalogo/?categoria=${categoryParameter}"
+        href="${categoryUrl}"
         aria-label="Explorar categoría ${escapeHTML(categoryName)}"
       >
         <div class="about-category-card__image">
@@ -270,11 +274,13 @@ function getUniqueCollections(products) {
 
 function createCollectionCard(collection) {
   const collectionName = formatDisplayName(collection.name);
-  const collectionParameter = encodeURIComponent(collection.name);
+  const collectionUrl = createCatalogUrl({
+    marca: collection.name,
+  });
 
   return `
     <a
-      href="/catalogo/?marca=${collectionParameter}"
+      href="${collectionUrl}"
       class="about-brand"
       aria-label="Explorar colección ${escapeHTML(collectionName)}"
     >
@@ -362,13 +368,4 @@ function formatDisplayName(value) {
       );
     })
     .join(" ");
-}
-
-function escapeHTML(value) {
-  return String(value)
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
 }

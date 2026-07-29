@@ -1,5 +1,17 @@
 import "./header.css";
 import products from "../../data/products.json";
+import { escapeAttribute, escapeHTML } from "../../utils/escape.js";
+import {
+  getPrimaryProductImage,
+} from "../../utils/products.js";
+import {
+  getProductSearchText,
+  normalizeSearchText,
+} from "../../utils/search.js";
+import {
+  createCatalogUrl,
+  createProductUrl,
+} from "../../utils/urls.js";
 
 /* =====================================================
    CONFIGURACIÓN DEL BUSCADOR
@@ -7,15 +19,15 @@ import products from "../../data/products.json";
 
 const MAX_RESULTS = 6;
 
-const PRODUCT_PAGE_URL = "/catalogo/producto/";
-const CATALOG_PAGE_URL = "/catalogo/";
-
 const priceFormatter = new Intl.NumberFormat("es-PE", {
   style: "currency",
   currency: "PEN",
   minimumFractionDigits: 2,
   maximumFractionDigits: 2,
 });
+
+let mobileMenuAbortController = null;
+let headerSearchAbortController = null;
 
 /* =====================================================
    CARGAR HEADER
@@ -45,6 +57,7 @@ export async function loadHeader() {
 
 
     initHeaderSearch();
+    initMobileMenu();
   } catch (error) {
     console.error("Error al cargar el header:", error);
   }
@@ -55,23 +68,15 @@ export async function loadHeader() {
 ========================================== */
 
 
-async function loadCategories() {
-  const menu = document.getElementById(
-    "header-categories-menu",
+function loadCategories() {
+  const menus = document.querySelectorAll(
+    "#header-categories-menu, #mobile-header-categories-menu",
   );
 
 
-  if (!menu) {
+  if (menus.length === 0) {
     return;
   }
-
-
-  const response = await fetch(
-    "/src/data/products.json",
-  );
-
-
-  const products = await response.json();
 
 
   const categories = [
@@ -81,26 +86,30 @@ async function loadCategories() {
   ].sort();
 
 
-  menu.innerHTML = `
+  const categoryItems = categories
+    .map(
+      (category) => `
+        <li>
+          <a href="${escapeAttribute(
+            createCatalogUrl({ categoria: category }),
+          )}">
+            ${escapeHTML(formatCategory(category))}
+          </a>
+        </li>
+      `,
+    )
+    .join("");
+
+
+  menus.forEach((menu) => {
+    menu.innerHTML = `
     <li>
       <a href="/catalogo/">
         Todos los productos
       </a>
     </li>
+    ${categoryItems}
   `;
-
-
-  categories.forEach((category) => {
-    menu.insertAdjacentHTML(
-      "beforeend",
-      `
-        <li>
-          <a href="/catalogo/?categoria=${category}">
-            ${formatCategory(category)}
-          </a>
-        </li>
-      `,
-    );
   });
 }
 
@@ -116,6 +125,221 @@ function formatCategory(category) {
       return word.charAt(0).toUpperCase() + word.slice(1);
     })
     .join(" ");
+}
+
+/* =====================================================
+   MENÚ MÓVIL
+===================================================== */
+
+function initMobileMenu() {
+  const menuToggle = document.getElementById("mobile-menu-toggle");
+  const menuPanel = document.getElementById("mobile-menu-panel");
+  const menuOverlay = document.getElementById("mobile-menu-overlay");
+  const menuClose = document.getElementById("mobile-menu-close");
+  const productsToggle = document.getElementById("mobile-products-toggle");
+  const categoriesMenu = document.getElementById(
+    "mobile-header-categories-menu",
+  );
+
+  if (
+    !menuToggle ||
+    !menuPanel ||
+    !menuOverlay ||
+    !menuClose ||
+    !productsToggle ||
+    !categoriesMenu
+  ) {
+    return;
+  }
+
+  mobileMenuAbortController?.abort();
+  mobileMenuAbortController = new AbortController();
+
+  const { signal } = mobileMenuAbortController;
+
+  const focusableSelector = [
+    'a[href]:not([tabindex="-1"])',
+    'button:not([disabled]):not([tabindex="-1"])',
+    'input:not([disabled]):not([tabindex="-1"])',
+    'select:not([disabled]):not([tabindex="-1"])',
+    'textarea:not([disabled]):not([tabindex="-1"])',
+    '[tabindex]:not([tabindex="-1"])',
+  ].join(",");
+
+  function isMobileMenuOpen() {
+    return menuPanel.classList.contains("is-open");
+  }
+
+  function closeProductsMenu() {
+    productsToggle.setAttribute("aria-expanded", "false");
+    categoriesMenu.hidden = true;
+  }
+
+  function getMobileMenuFocusableElements() {
+    return Array.from(
+      menuPanel.querySelectorAll(focusableSelector),
+    ).filter((element) => {
+      return (
+        element instanceof HTMLElement &&
+        !element.hidden &&
+        element.getAttribute("aria-hidden") !== "true" &&
+        element.getClientRects().length > 0
+      );
+    });
+  }
+
+  function openMobileMenu() {
+    if (
+      isMobileMenuOpen() ||
+      !window.matchMedia("(max-width: 768px)").matches
+    ) {
+      return;
+    }
+
+    menuPanel.classList.add("is-open");
+    menuOverlay.classList.add("is-open");
+
+    menuPanel.setAttribute("aria-hidden", "false");
+    menuOverlay.setAttribute("aria-hidden", "false");
+    menuToggle.setAttribute("aria-expanded", "true");
+    menuToggle.setAttribute("aria-label", "Cerrar menú de navegación");
+
+    document.body.classList.add("mobile-menu-open");
+
+    window.requestAnimationFrame(() => {
+      menuClose.focus();
+    });
+  }
+
+  function closeMobileMenu({ restoreFocus = true } = {}) {
+    const menuWasOpen = isMobileMenuOpen();
+
+    menuPanel.classList.remove("is-open");
+    menuOverlay.classList.remove("is-open");
+
+    menuPanel.setAttribute("aria-hidden", "true");
+    menuOverlay.setAttribute("aria-hidden", "true");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Abrir menú de navegación");
+
+    document.body.classList.remove("mobile-menu-open");
+    closeProductsMenu();
+
+    if (menuWasOpen && restoreFocus && menuToggle.isConnected) {
+      window.requestAnimationFrame(() => {
+        menuToggle.focus();
+      });
+    }
+  }
+
+  function toggleMobileMenu() {
+    if (isMobileMenuOpen()) {
+      closeMobileMenu();
+      return;
+    }
+
+    openMobileMenu();
+  }
+
+  function handleMobileMenuKeydown(event) {
+    if (!isMobileMenuOpen()) {
+      return;
+    }
+
+    if (event.key === "Escape") {
+      event.preventDefault();
+      closeMobileMenu();
+      return;
+    }
+
+    if (event.key !== "Tab") {
+      return;
+    }
+
+    const focusableElements = getMobileMenuFocusableElements();
+
+    if (focusableElements.length === 0) {
+      event.preventDefault();
+      menuPanel.focus();
+      return;
+    }
+
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements.at(-1);
+    const activeElement = document.activeElement;
+
+    if (!menuPanel.contains(activeElement)) {
+      event.preventDefault();
+      (event.shiftKey ? lastElement : firstElement).focus();
+      return;
+    }
+
+    if (event.shiftKey && activeElement === firstElement) {
+      event.preventDefault();
+      lastElement.focus();
+      return;
+    }
+
+    if (!event.shiftKey && activeElement === lastElement) {
+      event.preventDefault();
+      firstElement.focus();
+    }
+  }
+
+  menuToggle.addEventListener("click", toggleMobileMenu, { signal });
+  menuClose.addEventListener("click", () => closeMobileMenu(), { signal });
+  menuOverlay.addEventListener("click", () => closeMobileMenu(), { signal });
+
+  productsToggle.addEventListener(
+    "click",
+    () => {
+      const isExpanded =
+        productsToggle.getAttribute("aria-expanded") === "true";
+
+      productsToggle.setAttribute("aria-expanded", String(!isExpanded));
+      categoriesMenu.hidden = isExpanded;
+    },
+    { signal },
+  );
+
+  menuPanel.addEventListener(
+    "click",
+    (event) => {
+      if (event.target.closest("a[href]")) {
+        closeMobileMenu();
+      }
+    },
+    { signal },
+  );
+
+  document.addEventListener(
+    "click",
+    (event) => {
+      if (
+        isMobileMenuOpen() &&
+        !menuPanel.contains(event.target) &&
+        !menuToggle.contains(event.target)
+      ) {
+        closeMobileMenu();
+      }
+    },
+    { signal },
+  );
+
+  document.addEventListener("keydown", handleMobileMenuKeydown, { signal });
+
+  window.addEventListener(
+    "resize",
+    () => {
+      if (
+        isMobileMenuOpen() &&
+        !window.matchMedia("(max-width: 768px)").matches
+      ) {
+        closeMobileMenu({ restoreFocus: false });
+      }
+    },
+    { signal },
+  );
 }
 
 
@@ -138,6 +362,11 @@ function initHeaderSearch() {
     console.error("No se encontraron los elementos del buscador.");
     return;
   }
+
+  headerSearchAbortController?.abort();
+  headerSearchAbortController = new AbortController();
+
+  const { signal } = headerSearchAbortController;
 
   let activeResultIndex = -1;
   let visibleProducts = [];
@@ -236,136 +465,162 @@ function initHeaderSearch() {
      BUSCAR MIENTRAS SE ESCRIBE
   =================================================== */
 
-  searchInput.addEventListener("input", () => {
-    renderResults(searchInput.value);
-  });
+  searchInput.addEventListener(
+    "input",
+    () => {
+      renderResults(searchInput.value);
+    },
+    { signal },
+  );
 
   /* ===================================================
      MOSTRAR RESULTADOS AL ENFOCAR
   =================================================== */
 
-  searchInput.addEventListener("focus", () => {
-    if (searchInput.value.trim()) {
-      renderResults(searchInput.value);
-    }
-  });
+  searchInput.addEventListener(
+    "focus",
+    () => {
+      if (searchInput.value.trim()) {
+        renderResults(searchInput.value);
+      }
+    },
+    { signal },
+  );
 
   /* ===================================================
      NAVEGACIÓN CON TECLADO
   =================================================== */
 
-  searchInput.addEventListener("keydown", (event) => {
-    const resultElements = getResultElements();
+  searchInput.addEventListener(
+    "keydown",
+    (event) => {
+      const resultElements = getResultElements();
 
-    if (event.key === "Escape") {
-      closeResults();
-      searchInput.blur();
-      return;
-    }
-
-    if (resultElements.length === 0) {
-      return;
-    }
-
-    if (event.key === "ArrowDown") {
-      event.preventDefault();
-
-      activeResultIndex =
-        activeResultIndex < resultElements.length - 1
-          ? activeResultIndex + 1
-          : 0;
-
-      updateActiveResult();
-      return;
-    }
-
-    if (event.key === "ArrowUp") {
-      event.preventDefault();
-
-      activeResultIndex =
-        activeResultIndex > 0
-          ? activeResultIndex - 1
-          : resultElements.length - 1;
-
-      updateActiveResult();
-      return;
-    }
-
-    if (event.key === "Enter" && activeResultIndex >= 0) {
-      event.preventDefault();
-
-      const selectedResult = resultElements[activeResultIndex];
-
-      if (selectedResult) {
-        selectedResult.click();
+      if (event.key === "Escape") {
+        closeResults();
+        searchInput.blur();
+        return;
       }
-    }
-  });
+
+      if (resultElements.length === 0) {
+        return;
+      }
+
+      if (event.key === "ArrowDown") {
+        event.preventDefault();
+
+        activeResultIndex =
+          activeResultIndex < resultElements.length - 1
+            ? activeResultIndex + 1
+            : 0;
+
+        updateActiveResult();
+        return;
+      }
+
+      if (event.key === "ArrowUp") {
+        event.preventDefault();
+
+        activeResultIndex =
+          activeResultIndex > 0
+            ? activeResultIndex - 1
+            : resultElements.length - 1;
+
+        updateActiveResult();
+        return;
+      }
+
+      if (event.key === "Enter" && activeResultIndex >= 0) {
+        event.preventDefault();
+
+        const selectedResult = resultElements[activeResultIndex];
+
+        if (selectedResult) {
+          selectedResult.click();
+        }
+      }
+    },
+    { signal },
+  );
 
   /* ===================================================
      ENVIAR FORMULARIO
   =================================================== */
 
-  searchForm.addEventListener("submit", (event) => {
-    event.preventDefault();
+  searchForm.addEventListener(
+    "submit",
+    (event) => {
+      event.preventDefault();
 
-    const query = searchInput.value.trim();
-    const resultElements = getResultElements();
+      const query = searchInput.value.trim();
+      const resultElements = getResultElements();
 
-    if (!query) {
-      searchInput.focus();
-      return;
-    }
+      if (!query) {
+        searchInput.focus();
+        return;
+      }
 
     /*
      * Si se seleccionó un producto usando las flechas,
      * se abre dicho producto.
      */
-    if (activeResultIndex >= 0 && resultElements[activeResultIndex]) {
-      resultElements[activeResultIndex].click();
-      return;
-    }
+      if (activeResultIndex >= 0 && resultElements[activeResultIndex]) {
+        resultElements[activeResultIndex].click();
+        return;
+      }
 
     /*
      * Si solo existe un resultado, se abre directamente.
      */
-    if (visibleProducts.length === 1) {
-      goToProduct(visibleProducts[0].id);
-      return;
-    }
+      if (visibleProducts.length === 1) {
+        goToProduct(visibleProducts[0].id);
+        return;
+      }
 
     /*
      * Si existen varios resultados, se dirige al catálogo
      * con el texto buscado.
      */
-    window.location.href = `${CATALOG_PAGE_URL}?search=${encodeURIComponent(query)}`;
-  });
+      window.location.href = createCatalogUrl({
+        search: query,
+      });
+    },
+    { signal },
+  );
 
   /* ===================================================
      SELECCIÓN CON EL MOUSE
   =================================================== */
 
-  searchResults.addEventListener("mouseover", (event) => {
-    const resultElement = event.target.closest(".search-result");
+  searchResults.addEventListener(
+    "mouseover",
+    (event) => {
+      const resultElement = event.target.closest(".search-result");
 
-    if (!resultElement) {
-      return;
-    }
+      if (!resultElement) {
+        return;
+      }
 
-    activeResultIndex = Number(resultElement.dataset.resultIndex);
+      activeResultIndex = Number(resultElement.dataset.resultIndex);
 
-    updateActiveResult();
-  });
+      updateActiveResult();
+    },
+    { signal },
+  );
 
   /* ===================================================
      CERRAR AL HACER CLIC FUERA
   =================================================== */
 
-  document.addEventListener("click", (event) => {
-    if (!searchContainer.contains(event.target)) {
-      closeResults();
-    }
-  });
+  document.addEventListener(
+    "click",
+    (event) => {
+      if (!searchContainer.contains(event.target)) {
+        closeResults();
+      }
+    },
+    { signal },
+  );
 }
 
 /* =====================================================
@@ -373,7 +628,7 @@ function initHeaderSearch() {
 ===================================================== */
 
 function searchProducts(query) {
-  const normalizedQuery = normalizeText(query);
+  const normalizedQuery = normalizeSearchText(query);
 
   if (!normalizedQuery) {
     return [];
@@ -390,11 +645,11 @@ function searchProducts(query) {
       });
     })
     .sort((productA, productB) => {
-      const nameA = normalizeText(productA.name);
-      const nameB = normalizeText(productB.name);
+      const nameA = normalizeSearchText(productA.name);
+      const nameB = normalizeSearchText(productB.name);
 
-      const brandA = normalizeText(productA.brand);
-      const brandB = normalizeText(productB.brand);
+      const brandA = normalizeSearchText(productA.brand);
+      const brandB = normalizeSearchText(productB.brand);
 
       const nameStartsA = nameA.startsWith(normalizedQuery);
       const nameStartsB = nameB.startsWith(normalizedQuery);
@@ -438,21 +693,11 @@ function searchProducts(query) {
    TEXTO UTILIZADO PARA BUSCAR
 ===================================================== */
 
-function getProductSearchText(product) {
-  return normalizeText(
-    [product.name, product.brand, product.sku].filter(Boolean).join(" "),
-  );
-}
-
-/* =====================================================
-   CREAR RESULTADO DE PRODUCTO
-===================================================== */
-
 function createSearchResult(product, index) {
   const resultLink = document.createElement("a");
 
   resultLink.className = "search-result";
-  resultLink.href = `${PRODUCT_PAGE_URL}?id=${encodeURIComponent(product.id)}`;
+  resultLink.href = createProductUrl(product.id);
 
   resultLink.dataset.resultIndex = String(index);
 
@@ -464,9 +709,10 @@ function createSearchResult(product, index) {
   const image = document.createElement("img");
 
   image.className = "search-result-image";
-  image.src =
-  product.gallery?.[0]?.image ||
-  "/src/assets/images/product-placeholder.png";
+  image.src = getPrimaryProductImage(
+    product,
+    "/src/assets/images/product-placeholder.png",
+  );
   image.alt = product.name || "Producto";
   image.width = 52;
   image.height = 52;
@@ -538,18 +784,6 @@ function createEmptyMessage(query) {
 }
 
 /* =====================================================
-   NORMALIZAR TEXTO
-===================================================== */
-
-function normalizeText(value = "") {
-  return String(value)
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase()
-    .trim();
-}
-
-/* =====================================================
    FORMATEAR PRECIO
 ===================================================== */
 
@@ -568,5 +802,5 @@ function formatPrice(price) {
 ===================================================== */
 
 function goToProduct(productId) {
-  window.location.href = `${PRODUCT_PAGE_URL}?id=${encodeURIComponent(productId)}`;
+  window.location.href = createProductUrl(productId);
 }

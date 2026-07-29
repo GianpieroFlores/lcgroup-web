@@ -1,5 +1,11 @@
 import "./index-prueba.css";
 import { createProductCard } from "./components/product-card/product-card.js";
+import { escapeAttribute, escapeHTML } from "./utils/escape.js";
+import {
+  formatDrinkLabel,
+  getPrimaryProductImage,
+} from "./utils/products.js";
+import { createCatalogUrl } from "./utils/urls.js";
 /* =====================================================
    PÁGINA DE INICIO
 ===================================================== */
@@ -25,6 +31,7 @@ const homeState = {
 ===================================================== */
 
 const homeElements = {
+  heroVideo: null,
   categoriesGrid: null,
   collectionsGrid: null,
   drinksLinks: null,
@@ -51,6 +58,7 @@ async function initHomePage() {
     return;
   }
 
+  initializeHeroVideoMotionPreference();
   showInitialLoadingStates();
 
   try {
@@ -76,6 +84,8 @@ async function initHomePage() {
 ===================================================== */
 
 function getHomeElements() {
+  homeElements.heroVideo = document.querySelector(".home-hero__video-element");
+
   homeElements.categoriesGrid = document.querySelector("#home-categories-grid");
 
   homeElements.collectionsGrid = document.querySelector(
@@ -113,6 +123,39 @@ function getHomeElements() {
   );
 
   homeElements.featuredTotal = document.querySelector("#home-featured-total");
+}
+
+/* =====================================================
+   PREFERENCIA DE MOVIMIENTO DEL VIDEO
+===================================================== */
+
+function initializeHeroVideoMotionPreference() {
+  if (!homeElements.heroVideo) {
+    return;
+  }
+
+  const reducedMotionQuery = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  );
+
+  const updateVideoPlayback = () => {
+    if (reducedMotionQuery.matches) {
+      homeElements.heroVideo.pause();
+      return;
+    }
+
+    const playPromise = homeElements.heroVideo.play();
+
+    playPromise?.catch(() => {
+      /*
+       * El navegador puede bloquear la reproduccion automatica.
+       * El video permanece disponible sin alterar el contenido.
+       */
+    });
+  };
+
+  updateVideoPlayback();
+  reducedMotionQuery.addEventListener("change", updateVideoPlayback);
 }
 
 /* =====================================================
@@ -334,7 +377,7 @@ function getUniqueCategories(products) {
 function createCategoryCard(category, index) {
   const categoryNumber = formatCounter(index + 1);
   const categoryName = formatDisplayText(category.name);
-  const categoryURL = createCatalogURL({
+  const categoryURL = createCatalogUrl({
     categoria: category.slug,
   });
 
@@ -389,22 +432,28 @@ function renderHomeCollections(products) {
     return;
   }
 
-  const collections = getUniqueCollections(products).slice(0, 6);
+  const collections =
+    getUniqueCollections(products).slice(0, 6);
 
   if (collections.length === 0) {
-    homeElements.collectionsGrid.innerHTML = createStatusMarkup(
-      "home-empty",
-      "No hay colecciones disponibles por el momento.",
-    );
+    homeElements.collectionsGrid.innerHTML =
+      createStatusMarkup(
+        "home-empty",
+        "No hay colecciones disponibles por el momento.",
+      );
 
     return;
   }
 
-  homeElements.collectionsGrid.innerHTML = collections
-    .map((collection) => {
-      return createCollectionCard(collection);
-    })
-    .join("");
+  homeElements.collectionsGrid.innerHTML =
+    collections
+      .map((collection, index) => {
+        return createCollectionCard(
+          collection,
+          index,
+        );
+      })
+      .join("");
 }
 
 /* =====================================================
@@ -450,58 +499,63 @@ function getUniqueCollections(products) {
 }
 
 /* =====================================================
-   CREAR TARJETA DE COLECCIÓN
+   CREAR COLECCIÓN EDITORIAL
 ===================================================== */
 
-function createCollectionCard(collection) {
-  const collectionName = formatDisplayText(collection.name);
+function createCollectionCard(collection, index) {
+  const collectionName = formatDisplayText(
+    collection.name,
+  );
 
-  const collectionURL = createCatalogURL({
+  const collectionURL = createCatalogUrl({
     marca: collection.name,
   });
 
-  const imageMarkup = createImageMarkup({
-    src: collection.image,
-    alt: `Colección ${collectionName}`,
-    width: 800,
-    height: 1000,
-    loading: "lazy",
-  });
+  const productCount =
+    Number(collection.productCount) || 0;
+
+  const productCountText =
+    productCount === 1
+      ? "1 producto"
+      : `${productCount} productos`;
 
   return `
-    <article class="home-collection-card">
-      <a href="${escapeAttribute(collectionURL)}">
-        <div class="home-collection-card__media">
-          ${imageMarkup}
-        </div>
+    <a
+      href="${escapeAttribute(collectionURL)}"
+      class="home-collection-editorial"
+      aria-label="Explorar colección ${escapeAttribute(
+        collectionName,
+      )}"
+    >
+      <span class="home-collection-editorial__number">
+        ${formatCounter(index + 1)}
+      </span>
 
-        <div class="home-collection-card__overlay"></div>
+      <div class="home-collection-editorial__content">
+        <span class="home-collection-editorial__label">
+          Colección Spiegelau
+        </span>
 
-        <div class="home-collection-card__content">
-          <span>
-            Colección
-          </span>
+        <h3>
+          ${escapeHTML(collectionName)}
+        </h3>
+      </div>
 
-          <h3>
-            ${escapeHTML(collectionName)}
-          </h3>
+      <span class="home-collection-editorial__count">
+        ${escapeHTML(productCountText)}
+      </span>
 
-          <strong>
-            Explorar colección
-
-            <span
-              class="material-symbols-outlined"
-              aria-hidden="true"
-            >
-              arrow_forward
-            </span>
-          </strong>
-        </div>
-      </a>
-    </article>
+      <span
+        class="home-collection-editorial__arrow"
+        aria-hidden="true"
+      >
+        <span class="material-symbols-outlined">
+          arrow_forward
+        </span>
+      </span>
+    </a>
   `;
 }
-
 /* =====================================================
    TIPOS DE BEBIDA
 ===================================================== */
@@ -571,7 +625,7 @@ function getUniqueRecommendedDrinks(products) {
 function createDrinkLink(drink, index) {
   const drinkNumber = formatCounter(index + 1);
 
-  const drinkURL = createCatalogURL({
+  const drinkURL = createCatalogUrl({
     bebida: drink.slug,
   });
 
@@ -598,25 +652,9 @@ function createDrinkLink(drink, index) {
 ===================================================== */
 
 function formatDrinkName(drinkSlug) {
-  const specialNames = {
-    "vino-tinto": "Vino tinto",
-    "vino-blanco": "Vino blanco",
-    champagne: "Champagne",
-    cocteles: "Cócteles",
-    agua: "Agua y bebidas",
-    cerveza: "Cerveza",
-    whisky: "Whisky",
-    pisco: "Pisco",
-    gin: "Gin",
-    digestivos: "Digestivos",
-    espumosos: "Vinos espumosos",
-  };
-
-  if (specialNames[drinkSlug]) {
-    return specialNames[drinkSlug];
-  }
-
-  return formatDisplayText(drinkSlug.replace(/-/g, " "));
+  return formatDrinkLabel(drinkSlug, (value) => {
+    return formatDisplayText(value.replace(/-/g, " "));
+  });
 }
 
 /* =====================================================
@@ -993,7 +1031,6 @@ function getCarouselMeasurements(slides) {
   let sideScale;
   let farScale;
   let sideRotation;
-  let visibleDistance;
 
   /*
    * Escritorio grande.
@@ -1004,7 +1041,6 @@ function getCarouselMeasurements(slides) {
     sideScale = 0.82;
     farScale = 0.68;
     sideRotation = 7;
-    visibleDistance = 2;
   } else if (viewportWidth >= 768) {
     /*
      * Escritorio y tablet horizontal.
@@ -1014,7 +1050,6 @@ function getCarouselMeasurements(slides) {
     sideScale = 0.8;
     farScale = 0.65;
     sideRotation = 6;
-    visibleDistance = 2;
   } else {
     /*
      * Teléfonos.
@@ -1024,7 +1059,6 @@ function getCarouselMeasurements(slides) {
     sideScale = 0.78;
     farScale = 0.62;
     sideRotation = 4;
-    visibleDistance = 1;
   }
 
   return {
@@ -1034,7 +1068,6 @@ function getCarouselMeasurements(slides) {
     sideScale,
     farScale,
     sideRotation,
-    visibleDistance,
   };
 }
 
@@ -1046,8 +1079,6 @@ function positionFeaturedSlide(slide, distance, measurements, animate) {
   const absoluteDistance = Math.abs(distance);
 
   const isActive = distance === 0;
-
-  const isVisible = absoluteDistance <= measurements.visibleDistance;
 
   let translateX = 0;
   let translateY = 0;
@@ -1368,40 +1399,14 @@ function circularModulo(value, divisor) {
    CREAR URL DEL CATÁLOGO
 ===================================================== */
 
-function createCatalogURL(filters = {}) {
-  const url = new URL("/catalogo/", window.location.origin);
-
-  Object.entries(filters).forEach(([key, value]) => {
-    if (value === undefined || value === null || String(value).trim() === "") {
-      return;
-    }
-
-    url.searchParams.set(key, String(value).trim());
-  });
-
-  return `${url.pathname}${url.search}`;
-}
-
-/* =====================================================
-   CREAR URL DEL PRODUCTO
-===================================================== */
-
-function createProductURL(productId) {
-  const url = new URL("/producto/", window.location.origin);
-
-  url.searchParams.set("id", String(productId));
-
-  return `${url.pathname}${url.search}`;
-}
-
 /* =====================================================
    OBTENER IMAGEN DEL PRODUCTO
 ===================================================== */
 
 function getProductImage(product) {
-  return (
-    product.gallery?.[0]?.image ||
-    "/src/assets/images/product-placeholder.png"
+  return getPrimaryProductImage(
+    product,
+    "/src/assets/images/product-placeholder.png",
   );
 }
 
@@ -1433,52 +1438,6 @@ function createImageMarkup({
       decoding="async"
     />
   `;
-}
-
-/* =====================================================
-   FORMATEAR PRECIO
-===================================================== */
-
-function formatPrice(price) {
-  const numericPrice = parsePrice(price);
-
-  if (numericPrice === null) {
-    return "Consultar";
-  }
-
-  return new Intl.NumberFormat("es-PE", {
-    style: "currency",
-    currency: "PEN",
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  }).format(numericPrice);
-}
-
-/* =====================================================
-   CONVERTIR PRECIO A NÚMERO
-===================================================== */
-
-function parsePrice(price) {
-  if (typeof price === "number") {
-    return Number.isFinite(price) ? price : null;
-  }
-
-  if (typeof price !== "string") {
-    return null;
-  }
-
-  const cleanedPrice = price
-    .trim()
-    .replace(/[^\d,.-]/g, "")
-    .replace(",", ".");
-
-  if (!cleanedPrice) {
-    return null;
-  }
-
-  const numericPrice = Number(cleanedPrice);
-
-  return Number.isFinite(numericPrice) ? numericPrice : null;
 }
 
 /* =====================================================
@@ -1536,28 +1495,6 @@ function formatDisplayText(value) {
 }
 
 /* =====================================================
-   ACORTAR TEXTO
-===================================================== */
-
-function truncateText(text, maximumLength = 125) {
-  const normalizedText = normalizeText(text);
-
-  if (normalizedText.length <= maximumLength) {
-    return normalizedText;
-  }
-
-  const shortenedText = normalizedText.slice(0, maximumLength).trim();
-
-  const lastSpaceIndex = shortenedText.lastIndexOf(" ");
-
-  if (lastSpaceIndex <= 0) {
-    return `${shortenedText}…`;
-  }
-
-  return `${shortenedText.slice(0, lastSpaceIndex)}…`;
-}
-
-/* =====================================================
    FORMATEAR CONTADOR
 ===================================================== */
 
@@ -1565,38 +1502,3 @@ function formatCounter(number) {
   return String(number).padStart(2, "0");
 }
 
-/* =====================================================
-   LIMITAR NÚMERO
-===================================================== */
-
-function clamp(value, minimum, maximum) {
-  return Math.min(Math.max(value, minimum), maximum);
-}
-
-/* =====================================================
-   ESCAPAR HTML
-===================================================== */
-
-function escapeHTML(value) {
-  const text = String(value ?? "");
-
-  return text.replace(/[&<>"']/g, (character) => {
-    const entities = {
-      "&": "&amp;",
-      "<": "&lt;",
-      ">": "&gt;",
-      '"': "&quot;",
-      "'": "&#039;",
-    };
-
-    return entities[character];
-  });
-}
-
-/* =====================================================
-   ESCAPAR ATRIBUTOS
-===================================================== */
-
-function escapeAttribute(value) {
-  return escapeHTML(value);
-}

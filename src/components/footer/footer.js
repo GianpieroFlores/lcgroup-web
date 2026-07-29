@@ -1,4 +1,6 @@
 import "./footer.css";
+import { escapeAttribute, escapeHTML } from "../../utils/escape.js";
+import { createCatalogUrl } from "../../utils/urls.js";
 
 const FOOTER_PRODUCTS_URL = "/src/data/products.json";
 
@@ -40,20 +42,16 @@ function renderFooterCategories(products) {
 
   categoryList.innerHTML = categories
     .map((category) => {
-      const categoryUrl = new URL(
-        "/catalogo/",
-        window.location.origin,
-      );
-
-      categoryUrl.searchParams.set(
-        "categoria",
-        category,
-      );
+      const categoryUrl = createCatalogUrl({
+        categoria: category,
+      });
 
       return `
         <li>
-          <a href="${categoryUrl.pathname}${categoryUrl.search}">
-            ${formatFooterCategory(category)}
+          <a href="${escapeAttribute(
+            categoryUrl,
+          )}">
+            ${escapeHTML(formatFooterCategory(category))}
           </a>
         </li>
       `;

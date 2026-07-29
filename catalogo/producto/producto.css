@@ -38,7 +38,6 @@
 
 .product-breadcrumb-container a {
   color: var(--color-text-light);
-  text-decoration: none;
   transition: color var(--transition-fast);
 }
 
@@ -213,8 +212,6 @@
   height: 42px;
   place-items: center;
 
-  padding: 0;
-
   border: 1px solid var(--color-border-card);
   border-radius: var(--radius-circle);
 
@@ -317,116 +314,6 @@
 .product-gallery.is-single-image .product-gallery-control,
 .product-gallery.is-single-image .product-gallery-counter {
   display: none;
-}
-
-/* =====================================================
-   TABLET
-===================================================== */
-
-@media (max-width: 950px) {
-  .product-gallery {
-    grid-template-columns: 66px minmax(0, 1fr);
-    gap: 14px;
-  }
-
-  .product-thumbnails {
-    max-height: 470px;
-  }
-
-  .product-thumbnail {
-    width: 66px;
-    height: 76px;
-  }
-
-  .product-main-image {
-    min-height: 470px;
-    padding: 35px;
-  }
-
-  .product-main-image img {
-    height: 400px;
-  }
-}
-
-/* =====================================================
-   MÓVIL
-===================================================== */
-
-@media (max-width: 700px) {
-  .product-gallery {
-    display: flex;
-    flex-direction: column-reverse;
-    gap: 14px;
-  }
-
-  .product-thumbnails {
-    width: 100%;
-    max-height: none;
-
-    flex-direction: row;
-    gap: 10px;
-
-    overflow-x: auto;
-    overflow-y: hidden;
-
-    padding-bottom: 5px;
-  }
-
-  .product-thumbnail {
-    width: 68px;
-    height: 76px;
-  }
-
-  .product-main-image {
-    min-height: 420px;
-    padding: 30px;
-  }
-
-  .product-main-image img {
-    height: 350px;
-  }
-
-  .product-gallery-control {
-    width: 38px;
-    height: 38px;
-  }
-
-  .product-gallery-control--previous {
-    left: 12px;
-  }
-
-  .product-gallery-control--next {
-    right: 12px;
-  }
-
-  .product-gallery-counter {
-    right: 12px;
-    bottom: 12px;
-  }
-
-  .product-gallery.is-single-image {
-    display: block;
-  }
-}
-
-/* =====================================================
-   MÓVIL PEQUEÑO
-===================================================== */
-
-@media (max-width: 480px) {
-  .product-main-image {
-    min-height: 360px;
-    padding: 24px;
-  }
-
-  .product-main-image img {
-    height: 300px;
-  }
-
-  .product-thumbnail {
-    width: 62px;
-    height: 70px;
-  }
 }
 
 /* =====================================================
@@ -568,17 +455,12 @@
   align-items: center;
   justify-content: center;
 
-  padding: 0;
-  border: none;
-
-  background: transparent;
   color: var(--color-text);
 
   font-family: var(--font-main);
   font-size: 20px;
   font-weight: var(--font-weight-light);
 
-  cursor: pointer;
   transition:
     background var(--transition-fast),
     color var(--transition-fast);
@@ -593,9 +475,7 @@
   width: 100%;
   min-width: 0;
 
-  padding: 0;
   border: none;
-  outline: none;
 
   background: transparent;
   color: var(--color-text);
@@ -747,10 +627,6 @@
   line-height: 1.75;
 }
 
-#tab-description p {
-  margin: 0;
-}
-
 #tab-description {
   max-width: 900px;
   padding: 2px 0 28px;
@@ -798,8 +674,6 @@
 }
 
 .related-products .section-header h2 {
-  margin: 0;
-
   color: var(--color-text);
   font-size: var(--font-size-title);
   font-weight: var(--font-weight-medium);
@@ -843,4 +717,504 @@
 
 .product-page.is-loading .product-main-image img {
   opacity: 0;
+}
+
+/* ==========================================
+   ESCRITORIO REDUCIDO
+========================================== */
+
+@media (max-width: 1200px) {
+  .product-detail {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(340px, 0.9fr);
+
+    gap: 48px;
+
+    padding-top: 58px;
+    padding-bottom: 68px;
+  }
+
+  .product-gallery {
+    grid-template-columns: 72px minmax(0, 1fr);
+
+    gap: 16px;
+  }
+
+  .product-thumbnail {
+    width: 72px;
+    height: 82px;
+  }
+
+  .product-main-image {
+    min-height: 500px;
+  }
+
+  .product-main-image img {
+    height: 430px;
+  }
+
+  .related-products-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1024px) {
+  .product-detail {
+    grid-template-columns: minmax(0, 1fr);
+
+    gap: 42px;
+
+    padding-top: 48px;
+    padding-bottom: 58px;
+  }
+
+  .product-gallery,
+  .product-information {
+    width: 100%;
+    max-width: 900px;
+
+    margin-inline: auto;
+  }
+
+  .product-main-image {
+    min-height: 520px;
+  }
+
+  .product-main-image img {
+    height: 450px;
+  }
+
+  .product-information {
+    padding-top: 0;
+  }
+
+  .product-name,
+  .product-description {
+    max-width: 720px;
+  }
+
+  .product-information-tabs {
+    margin-bottom: 68px;
+  }
+
+  .related-products {
+    padding-top: 48px;
+    padding-bottom: 68px;
+  }
+}
+
+/* ==========================================
+   TABLET VERTICAL
+========================================== */
+
+@media (max-width: 768px) {
+  .product-breadcrumb-container {
+    min-height: 54px;
+
+    flex-wrap: wrap;
+
+    padding: 10px 20px;
+  }
+
+  .product-breadcrumb-container > span:last-child {
+    max-width: min(360px, 60vw);
+  }
+
+  .product-detail {
+    gap: 34px;
+
+    padding: 38px 20px 48px;
+  }
+
+  .product-gallery {
+    grid-template-columns: minmax(0, 1fr);
+
+    gap: 14px;
+  }
+
+  .product-main-image {
+    grid-row: 1;
+
+    min-height: 0;
+    height: clamp(330px, 72vw, 500px);
+
+    padding: clamp(24px, 6vw, 48px);
+  }
+
+  .product-main-image img {
+    width: 100%;
+    height: auto;
+    max-height: clamp(270px, 62vw, 420px);
+  }
+
+  .product-thumbnails {
+    grid-row: 2;
+
+    flex-direction: row;
+
+    max-width: 100%;
+    max-height: none;
+
+    padding: 3px 2px 7px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .product-thumbnail {
+    width: 76px;
+    height: 82px;
+  }
+
+  .product-gallery.is-single-image {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .product-name {
+    font-size: clamp(28px, 5.5vw, 38px);
+  }
+
+  .product-description {
+    margin-bottom: 27px;
+  }
+
+  .product-information-tabs {
+    width: calc(100% - 40px);
+    max-width: 1410px;
+
+    margin-bottom: 56px;
+  }
+
+  .related-products {
+    padding: 42px 20px 56px;
+  }
+
+  .related-products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 18px 16px;
+  }
+
+  .related-products .section-header h2 {
+    font-size: clamp(27px, 5vw, var(--font-size-title));
+  }
+}
+
+/* ==========================================
+   MÓVIL
+========================================== */
+
+@media (max-width: 600px) {
+  .product-breadcrumb-container {
+    padding-inline: 16px;
+  }
+
+  .product-breadcrumb-container > span:last-child {
+    max-width: 100%;
+
+    overflow: visible;
+
+    text-overflow: clip;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .product-detail {
+    gap: 30px;
+
+    padding: 32px 16px 42px;
+  }
+
+  .product-main-image {
+    height: clamp(310px, 78vw, 430px);
+
+    padding: 26px;
+  }
+
+  .product-main-image img {
+    max-height: clamp(250px, 64vw, 360px);
+  }
+
+  .product-gallery-control {
+    width: 44px;
+    height: 44px;
+  }
+
+  .product-gallery-control--previous {
+    left: 12px;
+  }
+
+  .product-gallery-control--next {
+    right: 12px;
+  }
+
+  .product-gallery-counter {
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .product-brand {
+    margin-bottom: 10px;
+  }
+
+  .product-name {
+    font-size: clamp(27px, 7vw, 34px);
+  }
+
+  .product-sku {
+    margin-bottom: 23px;
+  }
+
+  .product-price {
+    margin-bottom: 15px;
+  }
+
+  .product-stock {
+    margin-bottom: 20px;
+  }
+
+  .product-description {
+    margin-bottom: 24px;
+  }
+
+  .product-actions {
+    grid-template-columns:
+      minmax(120px, 130px)
+      minmax(0, 1fr);
+  }
+
+  .product-information-tabs {
+    width: calc(100% - 32px);
+
+    margin-bottom: 48px;
+  }
+
+  .product-information-tabs summary {
+    min-height: 60px;
+  }
+
+  #tab-description {
+    padding-bottom: 24px;
+  }
+
+  .product-specification-row {
+    grid-template-columns:
+      minmax(125px, 170px)
+      minmax(0, 1fr);
+
+    gap: 18px;
+  }
+
+  .product-specification-value {
+    min-width: 0;
+
+    overflow-wrap: anywhere;
+  }
+
+  .related-products {
+    padding: 36px 16px 48px;
+  }
+
+  .related-products .section-header {
+    margin-bottom: 22px;
+  }
+}
+
+/* ==========================================
+   MÓVIL PEQUEÑO
+========================================== */
+
+@media (max-width: 480px) {
+  .product-breadcrumb-container {
+    padding-inline: 14px;
+  }
+
+  .product-detail {
+    padding: 28px 14px 38px;
+  }
+
+  .product-main-image {
+    height: clamp(290px, 84vw, 390px);
+
+    padding: 22px;
+  }
+
+  .product-main-image img {
+    max-height: clamp(230px, 68vw, 325px);
+  }
+
+  .product-thumbnail {
+    width: 70px;
+    height: 76px;
+  }
+
+  .product-gallery-control--previous {
+    left: 8px;
+  }
+
+  .product-gallery-control--next {
+    right: 8px;
+  }
+
+  .product-name {
+    font-size: clamp(26px, 7.5vw, 32px);
+  }
+
+  .product-price {
+    font-size: 27px;
+  }
+
+  .product-actions {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .product-quantity {
+    width: 140px;
+    height: 48px;
+
+    grid-template-columns: 44px minmax(44px, 1fr) 44px;
+  }
+
+  .product-quantity button {
+    min-width: 44px;
+  }
+
+  .product-cart-button {
+    width: 100%;
+    min-height: 48px;
+  }
+
+  .product-information-tabs {
+    width: calc(100% - 28px);
+
+    margin-bottom: 42px;
+  }
+
+  .product-information-tabs summary {
+    min-height: 56px;
+
+    padding-right: 38px;
+
+    font-size: 17px;
+  }
+
+  .product-specification-row {
+    grid-template-columns: minmax(0, 1fr);
+
+    gap: 5px;
+
+    padding: 12px 0;
+  }
+
+  .product-specification-label {
+    color: var(--color-text);
+    font-weight: var(--font-weight-medium);
+  }
+
+  .related-products {
+    padding: 32px 14px 42px;
+  }
+
+  .related-products-grid {
+    grid-template-columns: minmax(0, 380px);
+    justify-content: center;
+
+    gap: 18px;
+  }
+}
+
+/* ==========================================
+   MÓVIL MUY PEQUEÑO
+========================================== */
+
+@media (max-width: 380px) {
+  .product-breadcrumb-container {
+    min-height: 50px;
+
+    gap: 4px;
+
+    padding-inline: 12px;
+  }
+
+  .product-detail {
+    gap: 26px;
+
+    padding: 24px 12px 34px;
+  }
+
+  .product-main-image {
+    height: clamp(270px, 88vw, 340px);
+
+    padding: 18px;
+  }
+
+  .product-main-image img {
+    max-height: clamp(215px, 70vw, 285px);
+  }
+
+  .product-thumbnail {
+    width: 66px;
+    height: 72px;
+  }
+
+  .product-gallery-counter {
+    padding: 7px 10px;
+  }
+
+  .product-name {
+    font-size: clamp(25px, 8vw, 30px);
+  }
+
+  .product-variant,
+  .product-description {
+    overflow-wrap: anywhere;
+  }
+
+  .product-information-tabs {
+    width: calc(100% - 24px);
+
+    margin-bottom: 38px;
+  }
+
+  .related-products {
+    padding: 28px 12px 38px;
+  }
+
+  .related-products-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ==========================================
+   PANTALLAS DE POCA ALTURA
+========================================== */
+
+@media (max-width: 1024px) and (max-height: 600px) and (orientation: landscape) {
+  .product-detail {
+    gap: 32px;
+
+    padding-top: 30px;
+  }
+
+  .product-gallery {
+    max-width: 780px;
+  }
+
+  .product-main-image {
+    min-height: 0;
+    height: min(68vh, 380px);
+
+    padding: 24px;
+  }
+
+  .product-main-image img {
+    width: 100%;
+    height: auto;
+    max-height: calc(68vh - 48px);
+  }
 }

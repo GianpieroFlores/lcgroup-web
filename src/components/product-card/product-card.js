@@ -1,4 +1,7 @@
 import "./product-card.css";
+import { escapeAttribute, escapeHTML } from "../../utils/escape.js";
+import { getPrimaryProductImage } from "../../utils/products.js";
+import { createProductUrl } from "../../utils/urls.js";
 
 let template = null;
 
@@ -29,26 +32,30 @@ async function loadTemplate() {
 export async function createProductCard(product) {
   let html = await loadTemplate();
 
-  const primaryImage =
-    product.gallery?.[0]?.image || "";
+  const primaryImage = getPrimaryProductImage(product);
 
   const secondaryImage =
     product.gallery?.[1]?.image || primaryImage;
 
+  const productName = escapeHTML(product.name);
+
   html = html
-    .replace("{{id}}", product.id)
+    .replace("{{id}}", () => escapeAttribute(product.id))
     .replace(
       "{{url}}",
-      `/catalogo/producto/?id=${product.id}`,
+      () =>
+        escapeAttribute(
+          createProductUrl(product.id),
+        ),
     )
-    .replace("{{primaryImage}}", primaryImage)
-    .replace("{{secondaryImage}}", secondaryImage)
-    .replaceAll("{{name}}", product.name)
-    .replace("{{brand}}", product.brand)
-    .replace("{{variant}}", product.variant)
+    .replace("{{primaryImage}}", () => escapeAttribute(primaryImage))
+    .replace("{{secondaryImage}}", () => escapeAttribute(secondaryImage))
+    .replaceAll("{{name}}", () => productName)
+    .replace("{{brand}}", () => escapeHTML(product.brand))
+    .replace("{{variant}}", () => escapeHTML(product.variant))
     .replace(
       "{{price}}",
-      Number(product.price).toFixed(2),
+      () => Number(product.price).toFixed(2),
     );
 
   return html;
@@ -87,6 +94,14 @@ export function initProductCardNavigation(container = document) {
 
   container.addEventListener("keydown", (event) => {
     if (event.key !== "Enter") {
+      return;
+    }
+
+    if (
+      event.target.closest(
+        "button, input, a, select, textarea",
+      )
+    ) {
       return;
     }
 

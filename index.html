@@ -16,7 +16,11 @@
 
     <meta name="author" content="LCGROUP" />
     <meta name="theme-color" content="#0F6B4B" />
-    <link rel="icon" href="/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/jpeg"
+      href="/src/assets/images/logo-header.jpg"
+    />
 
     <!-- ==========================
          MATERIAL SYMBOLS
@@ -49,7 +53,6 @@
         <div class="home-hero__video" aria-hidden="true">
           <video
             class="home-hero__video-element"
-            autoplay
             muted
             loop
             playsinline
@@ -93,97 +96,244 @@
         </div>
       </section>
 
-      <!-- ==========================================
+<!-- =====================================================
      CATEGORÍAS
-========================================== -->
+====================================================== -->
 
-      <section class="categories">
-        <!-- INTRODUCCIÓN -->
+<section class="home-categories">
+  <!-- INTRODUCCIÓN -->
 
-        <div class="categories-intro">
-          <span class="subtitle"> Explora </span>
+  <div class="home-categories__intro">
+    <span class="home-categories__eyebrow">
+      Explora
+    </span>
 
-          <h2>
-            Nuestras<br />
-            categorías
-          </h2>
+    <h2>
+      Nuestras
+      <br />
+      categorías
+    </h2>
 
-          <p>
-            Descubre nuestra colección de cristalería para el hogar,
-            restaurantes, hoteles y eventos.
-          </p>
+    <p>
+      Descubre nuestra colección de cristalería para el hogar,
+      restaurantes, hoteles y eventos.
+    </p>
 
-          <a href="/catalogo/">
-            Ver todo el catálogo
+    <a
+      href="/catalogo/"
+      class="home-categories__link"
+    >
+      Ver todo el catálogo
 
-            <span>→</span>
-          </a>
-        </div>
+      <span
+        class="material-symbols-outlined"
+        aria-hidden="true"
+      >
+        arrow_forward
+      </span>
+    </a>
+  </div>
 
-        <!-- COPAS -->
+  <!-- COPAS -->
 
-        <article class="category-card">
-          <div class="category-icon">
-            <span class="material-symbols-outlined"> wine_bar </span>
-          </div>
+  <article class="home-category-card">
+    <a
+      href="/catalogo/?categoria=copas"
+      class="home-category-card__link"
+      aria-label="Explorar categoría Copas"
+    >
+      <div class="home-category-card__icon">
+        <span
+          class="material-symbols-outlined"
+          aria-hidden="true"
+        >
+          wine_bar
+        </span>
+      </div>
 
-          <h3>Copas</h3>
+      <div class="home-category-card__content">
+        <h3>
+          Copas
+        </h3>
 
-          <p>Copas elegantes para vino, champagne, gin y mucho más.</p>
+        <p>
+          Copas elegantes para vino, champagne, gin y mucho más.
+        </p>
 
-          <a href="/catalogo/?categoria=copas"> Ver más </a>
+        <span class="home-category-card__action">
+          Ver categoría
 
-          <img src="/src/assets/images/copas.webp" alt="Copas" />
-        </article>
+          <span
+            class="material-symbols-outlined"
+            aria-hidden="true"
+          >
+            arrow_forward
+          </span>
+        </span>
+      </div>
 
-        <!-- VASOS -->
+      <div class="home-category-card__media">
+        <img
+          src="/src/assets/images/copas.webp"
+          alt="Colección de copas"
+          width="600"
+          height="700"
+          loading="lazy"
+        />
+      </div>
+    </a>
+  </article>
 
-        <article class="category-card">
-          <div class="category-icon">
-            <span class="material-symbols-outlined"> local_bar </span>
-          </div>
+  <!-- VASOS -->
 
-          <h3>Vasos</h3>
+  <article class="home-category-card">
+    <a
+      href="/catalogo/?categoria=vasos"
+      class="home-category-card__link"
+      aria-label="Explorar categoría Vasos"
+    >
+      <div class="home-category-card__icon">
+        <span
+          class="material-symbols-outlined"
+          aria-hidden="true"
+        >
+          local_bar
+        </span>
+      </div>
 
-          <p>Vasos para whisky, agua, jugos, cócteles y bebidas.</p>
+      <div class="home-category-card__content">
+        <h3>
+          Vasos
+        </h3>
 
-          <a href="/catalogo/?categoria=vasos"> Ver más </a>
+        <p>
+          Vasos para whisky, agua, jugos, cócteles y otras bebidas.
+        </p>
 
-          <img src="/src/assets/images/vasos.webp" alt="Vasos" />
-        </article>
+        <span class="home-category-card__action">
+          Ver categoría
 
-        <!-- JARRAS -->
+          <span
+            class="material-symbols-outlined"
+            aria-hidden="true"
+          >
+            arrow_forward
+          </span>
+        </span>
+      </div>
 
-        <article class="category-card">
-          <div class="category-icon">
-            <span class="material-symbols-outlined"> sports_bar </span>
-          </div>
+      <div class="home-category-card__media">
+        <img
+          src="/src/assets/images/vasos.webp"
+          alt="Colección de vasos"
+          width="600"
+          height="700"
+          loading="lazy"
+        />
+      </div>
+    </a>
+  </article>
 
-          <h3>Decantadores</h3>
+  <!-- DECANTADORES -->
 
-          <p>Jarras de vidrio ideales para cerveza, agua y bebidas.</p>
+  <article class="home-category-card">
+    <a
+      href="/catalogo/?categoria=decantadores"
+      class="home-category-card__link"
+      aria-label="Explorar categoría Decantadores"
+    >
+      <div class="home-category-card__icon">
+        <span
+          class="material-symbols-outlined"
+          aria-hidden="true"
+        >
+          wine_bar
+        </span>
+      </div>
 
-          <a href="/catalogo/?categoria=decantadores"> Ver más </a>
+      <div class="home-category-card__content">
+        <h3>
+          Decantadores
+        </h3>
 
-          <img src="/src/assets/images/decantadores.webp" alt="Decantadores" />
-        </article>
+        <p>
+          Diseños elegantes para airear el vino y mejorar su presentación.
+        </p>
 
-        <!-- ACCESORIOS -->
+        <span class="home-category-card__action">
+          Ver categoría
 
-        <article class="category-card">
-          <div class="category-icon">
-            <span class="material-symbols-outlined"> inventory_2 </span>
-          </div>
+          <span
+            class="material-symbols-outlined"
+            aria-hidden="true"
+          >
+            arrow_forward
+          </span>
+        </span>
+      </div>
 
-          <h3>Kits</h3>
+      <div class="home-category-card__media">
+        <img
+          src="/src/assets/images/decantadores.webp"
+          alt="Colección de decantadores"
+          width="600"
+          height="700"
+          loading="lazy"
+        />
+      </div>
+    </a>
+  </article>
 
-          <p>Complementos para servir, organizar y cuidar tu cristalería.</p>
+  <!-- KITS -->
 
-          <a href="/catalogo/?categoria=kits"> Ver más </a>
+  <article class="home-category-card">
+    <a
+      href="/catalogo/?categoria=kits"
+      class="home-category-card__link"
+      aria-label="Explorar categoría Kits"
+    >
+      <div class="home-category-card__icon">
+        <span
+          class="material-symbols-outlined"
+          aria-hidden="true"
+        >
+          inventory_2
+        </span>
+      </div>
 
-          <img src="/src/assets/images/kits.webp" alt="Kits" />
-        </article>
-      </section>
+      <div class="home-category-card__content">
+        <h3>
+          Kits
+        </h3>
+
+        <p>
+          Conjuntos de cristalería preparados para diferentes ocasiones.
+        </p>
+
+        <span class="home-category-card__action">
+          Ver categoría
+
+          <span
+            class="material-symbols-outlined"
+            aria-hidden="true"
+          >
+            arrow_forward
+          </span>
+        </span>
+      </div>
+
+      <div class="home-category-card__media">
+        <img
+          src="/src/assets/images/kits.webp"
+          alt="Colección de kits de cristalería"
+          width="600"
+          height="700"
+          loading="lazy"
+        />
+      </div>
+    </a>
+  </article>
+</section>
       <!-- =====================================================
        CARRUSEL DE PRODUCTOS DESTACADOS
        El producto central tendrá mayor tamaño
@@ -339,6 +489,54 @@
           </nav>
         </aside>
       </section>
+<!-- =====================================================
+     COLECCIONES EDITORIALES
+====================================================== -->
+
+<section class="home-collections-editorial">
+  <div class="home-collections-editorial__layout">
+    <!-- CONTENIDO -->
+
+    <div class="home-collections-editorial__intro">
+      <span class="home-collections-editorial__eyebrow">
+        Nuestras colecciones
+      </span>
+
+      <h2>
+        Una colección para cada forma de disfrutar
+      </h2>
+
+      <p>
+        Explora las distintas líneas Spiegelau y encuentra cristalería
+        diseñada para cada bebida, ocasión y estilo de servicio.
+      </p>
+
+      <a
+        href="/catalogo/"
+        class="home-collections-editorial__link"
+      >
+        Ver catálogo completo
+
+        <span
+          class="material-symbols-outlined"
+          aria-hidden="true"
+        >
+          north_east
+        </span>
+      </a>
+    </div>
+
+    <!-- COLECCIONES DINÁMICAS -->
+
+    <div
+      id="home-collections-grid"
+      class="home-collections-editorial__list"
+      aria-live="polite"
+    >
+      <!-- JavaScript -->
+    </div>
+  </div>
+</section>
     </main>
 
     <div id="footer-container"></div>

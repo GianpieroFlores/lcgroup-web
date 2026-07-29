@@ -1,6 +1,12 @@
 import "./catalogo.css";
 
 import { createProductCard } from "../src/components/product-card/product-card.js";
+import { escapeAttribute, escapeHTML } from "../src/utils/escape.js";
+import { formatDrinkLabel } from "../src/utils/products.js";
+import {
+  getProductSearchText,
+  normalizeSearchText,
+} from "../src/utils/search.js";
 
 /* ==========================================
    ESTADO DEL CATÁLOGO
@@ -16,6 +22,7 @@ const selectedDrinks = new Set();
 let minimumPrice = null;
 let maximumPrice = null;
 let sortValue = "default";
+let searchQuery = "";
 
 /* ==========================================
    ELEMENTOS DEL DOM
@@ -55,40 +62,25 @@ const filterCloseButton = document.querySelector(".catalog-filter-close");
 
 const filterBackdrop = document.querySelector(".catalog-filter-backdrop");
 
+let mobileFilterTriggerElement = null;
+
+const FILTER_FOCUSABLE_SELECTOR = [
+  'a[href]:not([tabindex="-1"])',
+  'button:not([disabled]):not([tabindex="-1"])',
+  'input:not([disabled]):not([tabindex="-1"])',
+  'select:not([disabled]):not([tabindex="-1"])',
+  'textarea:not([disabled]):not([tabindex="-1"])',
+  '[tabindex]:not([tabindex="-1"])',
+].join(",");
+
 /* ==========================================
    UTILIDADES
 ========================================== */
-
-function normalizeText(value) {
-  return String(value)
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase()
-    .trim();
-}
 
 function formatLabel(value) {
   return String(value)
     .replaceAll("-", " ")
     .replace(/\b\w/g, (letter) => letter.toUpperCase());
-}
-
-function formatDrinkLabel(value) {
-  const labels = {
-    "vino-tinto": "Vino tinto",
-    "vino-blanco": "Vino blanco",
-    champagne: "Champagne",
-    cocteles: "Cócteles",
-    agua: "Agua y bebidas",
-    cerveza: "Cerveza",
-    whisky: "Whisky",
-    pisco: "Pisco",
-    gin: "Gin",
-    digestivos: "Digestivos",
-    espumosos: "Vinos espumosos",
-  };
-
-  return labels[value] || formatLabel(value);
 }
 
 function countByProperty(property) {
@@ -128,117 +120,62 @@ function countRecommendedDrinks() {
    CARGAR CATEGORÍAS DESDE LA URL
 ========================================== */
 
-function loadCategoriesFromUrl() {
-  const params = new URLSearchParams(window.location.search);
+function loadSetFromUrl(
+  params,
+  parameterName,
+  selectedValues,
+  availableValues,
+) {
+  const parameterValue = params.get(parameterName);
 
-  const categoryParameter = params.get("categoria");
+  selectedValues.clear();
 
-  selectedCategories.clear();
-
-  if (!categoryParameter) {
+  if (!parameterValue) {
     return;
   }
 
-  const availableCategories = new Set(
-    products.map((product) => product.category),
-  );
-
-  const urlCategories = categoryParameter
+  parameterValue
     .split(",")
-    .map((category) => category.trim())
-    .filter(Boolean);
-
-  urlCategories.forEach((category) => {
-    if (availableCategories.has(category)) {
-      selectedCategories.add(category);
-    }
-  });
+    .map((value) => value.trim())
+    .filter(Boolean)
+    .forEach((value) => {
+      if (availableValues.has(value)) {
+        selectedValues.add(value);
+      }
+    });
 }
 
 /* ==========================================
-   CARGAR BEBIDAS DESDE LA URL
+   CARGAR BUSQUEDA DESDE LA URL
 ========================================== */
 
-function loadDrinksFromUrl() {
-  const params = new URLSearchParams(window.location.search);
-
-  const drinkParameter = params.get("bebida");
-
-  selectedDrinks.clear();
-
-  if (!drinkParameter) {
-    return;
-  }
-
-  const availableDrinks = new Set(
-    products.flatMap((product) => {
-      return Array.isArray(product.recommendedFor)
-        ? product.recommendedFor
-        : [];
-    }),
-  );
-
-  const urlDrinks = drinkParameter
-    .split(",")
-    .map((drink) => drink.trim())
-    .filter(Boolean);
-
-  urlDrinks.forEach((drink) => {
-    if (availableDrinks.has(drink)) {
-      selectedDrinks.add(drink);
-    }
-  });
+function loadSearchFromUrl(params) {
+  searchQuery = normalizeSearchText(params.get("search") || "");
 }
 
 /* ==========================================
    SINCRONIZAR CHECKBOX DE CATEGORÍAS
 ========================================== */
 
-function syncCategoryCheckboxes() {
-  categoryFilters
-    ?.querySelectorAll('input[name="category"]')
+function syncCheckboxes(container, inputName, selectedValues) {
+  container
+    ?.querySelectorAll(`input[name="${inputName}"]`)
     .forEach((checkbox) => {
-      checkbox.checked = selectedCategories.has(checkbox.value);
+      checkbox.checked = selectedValues.has(checkbox.value);
     });
-}
-
-/* ==========================================
-   SINCRONIZAR CHECKBOX DE BEBIDAS
-========================================== */
-
-function syncDrinkCheckboxes() {
-  drinkFilters?.querySelectorAll('input[name="drink"]').forEach((checkbox) => {
-    checkbox.checked = selectedDrinks.has(checkbox.value);
-  });
 }
 
 /* ==========================================
    ACTUALIZAR CATEGORÍAS EN LA URL
 ========================================== */
 
-function updateCategoryUrl() {
+function updateSetParameter(parameterName, selectedValues) {
   const url = new URL(window.location.href);
 
-  if (selectedCategories.size === 0) {
-    url.searchParams.delete("categoria");
+  if (selectedValues.size === 0) {
+    url.searchParams.delete(parameterName);
   } else {
-    url.searchParams.set("categoria", [...selectedCategories].join(","));
-  }
-
-  window.history.replaceState({}, "", `${url.pathname}${url.search}`);
-}
-
-/* ==========================================
-   ACTUALIZAR BEBIDAS EN LA URL
-========================================== */
-
-function updateDrinkUrl() {
-  const url = new URL(window.location.href);
-
-  if (selectedDrinks.size === 0) {
-    url.searchParams.delete("bebida");
-  } else {
-    url.searchParams.set("bebida", [...selectedDrinks].join(","));
+    url.searchParams.set(parameterName, [...selectedValues].join(","));
   }
 
   window.history.replaceState({}, "", `${url.pathname}${url.search}`);
@@ -262,11 +199,40 @@ async function loadProducts() {
   generateDrinkFilters();
   configurePriceLimits();
 
-  loadCategoriesFromUrl();
-  loadDrinksFromUrl();
+  const params = new URLSearchParams(window.location.search);
 
-  syncCategoryCheckboxes();
-  syncDrinkCheckboxes();
+  loadSetFromUrl(
+    params,
+    "categoria",
+    selectedCategories,
+    new Set(products.map((product) => product.category)),
+  );
+
+  loadSetFromUrl(
+    params,
+    "marca",
+    selectedBrands,
+    new Set(products.map((product) => product.brand)),
+  );
+
+  loadSetFromUrl(
+    params,
+    "bebida",
+    selectedDrinks,
+    new Set(
+      products.flatMap((product) => {
+        return Array.isArray(product.recommendedFor)
+          ? product.recommendedFor
+          : [];
+      }),
+    ),
+  );
+
+  loadSearchFromUrl(params);
+
+  syncCheckboxes(categoryFilters, "category", selectedCategories);
+  syncCheckboxes(brandFilters, "brand", selectedBrands);
+  syncCheckboxes(drinkFilters, "drink", selectedDrinks);
 
   applyFilters();
 }
@@ -295,11 +261,11 @@ function generateCategoryFilters() {
           <input
             type="checkbox"
             name="category"
-            value="${category}"
+            value="${escapeAttribute(category)}"
           />
 
           <span>
-            ${formatLabel(category)}
+            ${escapeHTML(formatLabel(category))}
           </span>
 
           <small>
@@ -323,9 +289,13 @@ function generateDrinkFilters() {
   const drinkCounts = countRecommendedDrinks();
 
   const drinks = Object.keys(drinkCounts).sort((a, b) => {
-    return formatDrinkLabel(a).localeCompare(formatDrinkLabel(b), "es", {
-      sensitivity: "base",
-    });
+    return formatDrinkLabel(a, formatLabel).localeCompare(
+      formatDrinkLabel(b, formatLabel),
+      "es",
+      {
+        sensitivity: "base",
+      },
+    );
   });
 
   drinkFilters.innerHTML = drinks
@@ -335,11 +305,11 @@ function generateDrinkFilters() {
           <input
             type="checkbox"
             name="drink"
-            value="${drink}"
+            value="${escapeAttribute(drink)}"
           />
 
           <span>
-            ${formatDrinkLabel(drink)}
+            ${escapeHTML(formatDrinkLabel(drink, formatLabel))}
           </span>
 
           <small>
@@ -374,16 +344,16 @@ function generateBrandFilters() {
         <label
           class="filter-option"
           data-brand-option
-          data-brand-name="${normalizeText(brand)}"
+          data-brand-name="${escapeAttribute(normalizeSearchText(brand))}"
         >
           <input
             type="checkbox"
             name="brand"
-            value="${brand}"
+            value="${escapeAttribute(brand)}"
           />
 
           <span>
-            ${brand}
+            ${escapeHTML(brand)}
           </span>
 
           <small>
@@ -424,6 +394,8 @@ function configurePriceLimits() {
 ========================================== */
 
 function applyFilters() {
+  const searchWords = searchQuery.split(/\s+/).filter(Boolean);
+
   filteredProducts = products.filter((product) => {
     const categoryMatches =
       selectedCategories.size === 0 || selectedCategories.has(product.category);
@@ -447,12 +419,19 @@ function applyFilters() {
 
     const maximumMatches = maximumPrice === null || price <= maximumPrice;
 
+    const productSearchText = getProductSearchText(product);
+
+    const searchMatches =
+      searchWords.length === 0 ||
+      searchWords.every((word) => productSearchText.includes(word));
+
     return (
       categoryMatches &&
       brandMatches &&
       drinkMatches &&
       minimumMatches &&
-      maximumMatches
+      maximumMatches &&
+      searchMatches
     );
   });
 
@@ -538,71 +517,57 @@ async function renderProducts() {
    EVENTOS DE CATEGORÍAS
 ========================================== */
 
-categoryFilters?.addEventListener("change", (event) => {
-  const checkbox = event.target.closest('input[name="category"]');
+function setupSetFilter(
+  container,
+  inputName,
+  parameterName,
+  selectedValues,
+) {
+  container?.addEventListener("change", (event) => {
+    const checkbox = event.target.closest(`input[name="${inputName}"]`);
 
-  if (!checkbox) {
-    return;
-  }
+    if (!checkbox) {
+      return;
+    }
 
-  if (checkbox.checked) {
-    selectedCategories.add(checkbox.value);
-  } else {
-    selectedCategories.delete(checkbox.value);
-  }
+    if (checkbox.checked) {
+      selectedValues.add(checkbox.value);
+    } else {
+      selectedValues.delete(checkbox.value);
+    }
 
-  updateCategoryUrl();
+    updateSetParameter(parameterName, selectedValues);
+    applyFilters();
+  });
+}
 
-  applyFilters();
-});
+setupSetFilter(
+  categoryFilters,
+  "category",
+  "categoria",
+  selectedCategories,
+);
 
-/* ==========================================
-   EVENTOS DE MARCAS
-========================================== */
+setupSetFilter(
+  brandFilters,
+  "brand",
+  "marca",
+  selectedBrands,
+);
 
-brandFilters?.addEventListener("change", (event) => {
-  const checkbox = event.target.closest('input[name="brand"]');
-
-  if (!checkbox) {
-    return;
-  }
-
-  if (checkbox.checked) {
-    selectedBrands.add(checkbox.value);
-  } else {
-    selectedBrands.delete(checkbox.value);
-  }
-
-  applyFilters();
-});
-
-/* ==========================================
-   EVENTOS DE BEBIDAS
-========================================== */
-
-drinkFilters?.addEventListener("change", (event) => {
-  const checkbox = event.target.closest('input[name="drink"]');
-
-  if (!checkbox) {
-    return;
-  }
-
-  if (checkbox.checked) {
-    selectedDrinks.add(checkbox.value);
-  } else {
-    selectedDrinks.delete(checkbox.value);
-  }
-
-  updateDrinkUrl();
-  applyFilters();
-});
+setupSetFilter(
+  drinkFilters,
+  "drink",
+  "bebida",
+  selectedDrinks,
+);
 
 /* ==========================================
    BUSCAR MARCAS
 ========================================== */
 
 brandSearch?.addEventListener("input", () => {
-  const searchValue = normalizeText(brandSearch.value);
+  const searchValue = normalizeSearchText(brandSearch.value);
 
   brandFilters?.querySelectorAll("[data-brand-option]").forEach((option) => {
     const brandName = option.dataset.brandName || "";
@@ -661,6 +626,7 @@ function clearFilters() {
   minimumPrice = null;
   maximumPrice = null;
   sortValue = "default";
+  searchQuery = "";
 
   document
     .querySelectorAll('.catalog-sidebar input[type="checkbox"]')
@@ -687,8 +653,14 @@ function clearFilters() {
   brandFilters?.querySelectorAll("[data-brand-option]").forEach((option) => {
     option.hidden = false;
   });
-  updateCategoryUrl();
-  updateDrinkUrl();
+  updateSetParameter("categoria", selectedCategories);
+  updateSetParameter("marca", selectedBrands);
+  updateSetParameter("bebida", selectedDrinks);
+
+  const url = new URL(window.location.href);
+  url.searchParams.delete("search");
+  window.history.replaceState({}, "", `${url.pathname}${url.search}`);
+
   applyFilters();
 }
 
@@ -719,19 +691,131 @@ document.querySelectorAll(".filter-group-title").forEach((button) => {
 ========================================== */
 
 function openMobileFilters() {
+  const activeElement = document.activeElement;
+
+  if (activeElement instanceof HTMLElement) {
+    mobileFilterTriggerElement = activeElement;
+  }
+
   sidebar?.classList.add("open");
   filterBackdrop?.classList.add("open");
 
+  sidebar?.setAttribute("role", "dialog");
+  sidebar?.setAttribute("aria-modal", "true");
+  sidebar?.setAttribute("aria-hidden", "false");
+
+  filterBackdrop?.setAttribute("aria-hidden", "false");
   filterOpenButton?.setAttribute("aria-expanded", "true");
 
   document.body.style.overflow = "hidden";
+
+  window.requestAnimationFrame(() => {
+    filterCloseButton?.focus();
+  });
 }
 
 function closeMobileFilters() {
+  const filtersWereOpen = sidebar?.classList.contains("open");
+
   sidebar?.classList.remove("open");
   filterBackdrop?.classList.remove("open");
 
+  sidebar?.setAttribute("aria-hidden", "true");
+  sidebar?.removeAttribute("aria-modal");
+
+  filterBackdrop?.setAttribute("aria-hidden", "true");
   filterOpenButton?.setAttribute("aria-expanded", "false");
+
+  document.body.style.overflow = "";
+
+  if (filtersWereOpen && mobileFilterTriggerElement?.isConnected) {
+    const elementToFocus = mobileFilterTriggerElement;
+
+    mobileFilterTriggerElement = null;
+
+    window.requestAnimationFrame(() => {
+      elementToFocus.focus();
+    });
+  }
+}
+
+function getMobileFilterFocusableElements() {
+  if (!sidebar) {
+    return [];
+  }
+
+  return Array.from(
+    sidebar.querySelectorAll(FILTER_FOCUSABLE_SELECTOR),
+  ).filter((element) => {
+    return (
+      element instanceof HTMLElement &&
+      !element.hidden &&
+      element.getAttribute("aria-hidden") !== "true" &&
+      element.getClientRects().length > 0
+    );
+  });
+}
+
+function keepFocusInsideMobileFilters(event) {
+  if (event.key !== "Tab" || !sidebar?.classList.contains("open")) {
+    return;
+  }
+
+  const focusableElements = getMobileFilterFocusableElements();
+
+  if (focusableElements.length === 0) {
+    event.preventDefault();
+    sidebar.focus();
+    return;
+  }
+
+  const firstElement = focusableElements[0];
+  const lastElement = focusableElements.at(-1);
+  const activeElement = document.activeElement;
+
+  if (!sidebar.contains(activeElement)) {
+    event.preventDefault();
+    (event.shiftKey ? lastElement : firstElement).focus();
+    return;
+  }
+
+  if (event.shiftKey && activeElement === firstElement) {
+    event.preventDefault();
+    lastElement.focus();
+    return;
+  }
+
+  if (!event.shiftKey && activeElement === lastElement) {
+    event.preventDefault();
+    firstElement.focus();
+  }
+}
+
+function syncMobileFilterAccessibility() {
+  if (!sidebar || !filterOpenButton) {
+    return;
+  }
+
+  const mobileFiltersAreAvailable =
+    window.getComputedStyle(filterOpenButton).display !== "none";
+
+  if (mobileFiltersAreAvailable) {
+    sidebar.setAttribute("role", "dialog");
+    sidebar.setAttribute(
+      "aria-hidden",
+      String(!sidebar.classList.contains("open")),
+    );
+    return;
+  }
+
+  sidebar.classList.remove("open");
+  sidebar.removeAttribute("role");
+  sidebar.removeAttribute("aria-modal");
+  sidebar.removeAttribute("aria-hidden");
+
+  filterBackdrop?.classList.remove("open");
+  filterBackdrop?.setAttribute("aria-hidden", "true");
+  filterOpenButton.setAttribute("aria-expanded", "false");
 
   document.body.style.overflow = "";
 }
@@ -741,6 +825,24 @@ filterOpenButton?.addEventListener("click", openMobileFilters);
 filterCloseButton?.addEventListener("click", closeMobileFilters);
 
 filterBackdrop?.addEventListener("click", closeMobileFilters);
+
+document.addEventListener("keydown", (event) => {
+  if (!sidebar?.classList.contains("open")) {
+    return;
+  }
+
+  if (event.key === "Escape") {
+    event.preventDefault();
+    closeMobileFilters();
+    return;
+  }
+
+  keepFocusInsideMobileFilters(event);
+});
+
+window.addEventListener("resize", syncMobileFilterAccessibility);
+
+syncMobileFilterAccessibility();
 
 /* ==========================================
    INICIALIZAR
@@ -759,31 +861,3 @@ async function initializeCatalog() {
 }
 
 initializeCatalog();
-
-/* ==========================================
-   ABRIR DETALLE DEL PRODUCTO
-========================================== */
-
-productGrid?.addEventListener("click", (event) => {
-  /*
-   * Evita abrir el detalle cuando se presiona
-   * directamente el botón del carrito.
-   */
-  if (event.target.closest(".catalog-cart-button")) {
-    return;
-  }
-
-  const card = event.target.closest(".catalog-product-card");
-
-  if (!card) {
-    return;
-  }
-
-  const productId = Number(card.dataset.productId);
-
-  if (!Number.isInteger(productId)) {
-    return;
-  }
-
-  window.location.href = `/catalogo/producto/?id=${productId}`;
-});

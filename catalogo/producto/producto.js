@@ -1,6 +1,8 @@
 import "./producto.css";
 import { createProductCard } from "../../src/components/product-card/product-card.js";
 import { addProductToCart } from "../../src/components/cart/cart.js";
+import { escapeAttribute, escapeHTML } from "../../src/utils/escape.js";
+import { findProductById } from "../../src/utils/products.js";
 
 
 let product = null;
@@ -32,7 +34,7 @@ async function loadProduct() {
 
   const products = await response.json();
 
-  product = products.find((item) => item.id === id);
+  product = findProductById(products, id);
 
   if (!product) {
     window.location.href = "/catalogo/";
@@ -79,11 +81,11 @@ function renderProduct(products) {
       (specification) => `
         <div class="product-specification-row">
           <span class="product-specification-label">
-            ${specification.label}
+            ${escapeHTML(specification.label)}
           </span>
 
           <span class="product-specification-value">
-            ${specification.value}
+            ${escapeHTML(specification.value)}
           </span>
         </div>
       `,
@@ -475,8 +477,8 @@ function renderProductThumbnails() {
           }
         >
           <img
-            src="${item.image}"
-            alt="${item.alt}"
+            src="${escapeAttribute(item.image)}"
+            alt="${escapeAttribute(item.alt)}"
             loading="${index === 0 ? "eager" : "lazy"}"
           />
         </button>
