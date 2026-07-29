@@ -294,46 +294,6 @@
   margin-top: 22px;
 }
 
-.home-hero__scroll {
-  position: absolute;
-
-  right: var(--page-padding);
-  bottom: 24px;
-
-  display: inline-flex;
-
-  align-items: center;
-
-  gap: 8px;
-
-  color: rgba(255, 255, 255, 0.7);
-
-  font-size: var(--font-size-small);
-
-  font-weight: var(--font-weight-medium);
-
-  letter-spacing: 1.7px;
-
-  text-transform: uppercase;
-}
-
-.home-hero__scroll .material-symbols-outlined {
-  font-size: var(--icon-font-size);
-
-  animation: home-scroll-indicator 1.8s ease-in-out infinite;
-}
-
-@keyframes home-scroll-indicator {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(7px);
-  }
-}
-
 /* =====================================================
    PRODUCTOS DESTACADOS
 ===================================================== */

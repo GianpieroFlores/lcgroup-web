@@ -138,7 +138,7 @@ function createCategoryCard(category) {
   return `
     <article class="about-category-card">
       <a
-        href="/catalogo/?category=${categoryParameter}"
+        href="/catalogo/?categoria=${categoryParameter}"
         aria-label="Explorar categoría ${escapeHTML(categoryName)}"
       >
         <div class="about-category-card__image">

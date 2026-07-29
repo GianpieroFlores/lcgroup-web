@@ -464,7 +464,9 @@ function createSearchResult(product, index) {
   const image = document.createElement("img");
 
   image.className = "search-result-image";
-  image.src = product.image;
+  image.src =
+  product.gallery?.[0]?.image ||
+  "/src/assets/images/product-placeholder.png";
   image.alt = product.name || "Producto";
   image.width = 52;
   image.height = 52;
