@@ -22,7 +22,6 @@ const TEXT_ITEM_SELECTOR = [
   ":scope > .home-categories__link",
   ":scope > .featured-showcase__button",
   ":scope > .about-link",
-  ":scope > .about-final__actions",
   ":scope > .product-actions",
   ":scope > .contact-form",
   ":scope > .catalog-toolbar-left",
@@ -78,16 +77,12 @@ const REVEAL_GROUPS = [
   },
   {
     selector:
-      ".about-categories > .about-section-heading, .about-values > .about-section-heading, .about-service > .about-section-heading",
+      ".about-values > .about-section-heading, .about-service > .about-section-heading",
     variant: "motion-card-up",
   },
   {
     selector: ".about-quality__content",
     variant: "motion-section-right",
-  },
-  {
-    selector: ".about-final__content",
-    variant: "motion-section-left",
   },
   {
     selector: ".contact-hero .container",
@@ -174,18 +169,8 @@ const STAGGER_GROUPS = [
     variant: "motion-product-card",
   },
   {
-    container: ".about-categories__grid",
-    items: ".about-category-card",
-    variant: "motion-card-up",
-  },
-  {
     container: ".about-values__grid",
     items: ".about-value-card",
-    variant: "motion-card-up",
-  },
-  {
-    container: ".about-brands__logos",
-    items: ".about-brand",
     variant: "motion-card-up",
   },
   {
