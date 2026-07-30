@@ -2,11 +2,11 @@
   {
     "id": 1,
     "sku": "MECOSP53",
-    "brand": "Lifestyle Pro",
-    "name": "SPIEGELAU VINO BLANCO STYLE",
+    "brand": "",
+    "name": " SPIEGELAU VINO BLANCO STYLE",
     "variant": "Una caja contiene 12 unidades.",
     "category": "copas",
-    "shortDescription": "La copa SPIEGELAU Vino Blanco Style está diseñada para realzar los aromas, la frescura y el equilibrio de los vinos blancos. Fabricada en cristal de alta calidad, combina elegancia, resistencia y brillo, siendo ideal para uso diario o profesional.",
+    "shortDescription": " ",
     "description": "...",
     "specifications": [],
     "price": 39.9,
@@ -19,6 +19,10 @@
       {
         "image": "/src/assets/images/product01.jpg",
         "alt": "Vista principal"
+      },
+      {
+        "image": "/src/assets/images/product01-1.jpg",
+        "alt": "Vista total de la Copa Bordeaux"
       }
     ]
   },
@@ -98,7 +102,15 @@
     "new": false,
     "offer": false,
     "recommendedFor": [],
-    "gallery": []
+    "gallery": [{
+        "image": "/src/assets/images/product03.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/src/assets/images/product03-1.jpg",
+        "alt": "Vista total de la Copa Bordeaux"
+      }
+    ]
   },
   {
     "id": 4,
@@ -236,7 +248,11 @@
     "new": false,
     "offer": false,
     "recommendedFor": [],
-    "gallery": []
+    "gallery": [{
+        "image": "/src/assets/images/product06.jpg",
+        "alt": "Vista principal"
+      }
+    ]
   },
   {
     "id": 7,
@@ -374,7 +390,11 @@
     "new": false,
     "offer": false,
     "recommendedFor": [],
-    "gallery": []
+    "gallery": [{
+        "image": "/src/assets/images/product09.jpg",
+        "alt": "Vista principal"
+      }
+    ]
   },
   {
     "id": 10,
@@ -398,7 +418,7 @@
     "id": 11,
     "sku": "MECOSP10",
     "brand": "",
-    "name": "SPIEGELAU CHAMPAGNE  (WINELOVERS)",
+    "name": "SPIEGELAU CHAMPAGNE (WINELOVERS)",
     "variant": "",
     "category": "",
     "shortDescription": "",
@@ -410,7 +430,15 @@
     "new": false,
     "offer": false,
     "recommendedFor": [],
-    "gallery": []
+    "gallery": [
+      {
+        "image": "/src/assets/images/product11.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/src/assets/images/product11-1.jpg",
+        "alt": "Vista lateral"
+      }]
   },
   {
     "id": 12,
@@ -608,7 +636,11 @@
     "new": false,
     "offer": false,
     "recommendedFor": [],
-    "gallery": []
+    "gallery": [{
+        "image": "/src/assets/images/product15.jpg",
+        "alt": "Vista principal"
+      }
+    ]
   },
   {
     "id": 16,
@@ -926,7 +958,15 @@
     "new": false,
     "offer": false,
     "recommendedFor": [],
-    "gallery": []
+    "gallery": [{
+        "image": "/src/assets/images/product21.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/src/assets/images/product21-1.jpg",
+        "alt": "Vista principal"
+      }
+    ]
   },
   {
     "id": 22,
@@ -1064,7 +1104,15 @@
     "new": false,
     "offer": false,
     "recommendedFor": [],
-    "gallery": []
+    "gallery": [{
+        "image": "/src/assets/images/product24.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/src/assets/images/product24-1.jpg",
+        "alt": "Vista principal"
+      }
+    ]
   },
   {
     "id": 25,
@@ -1336,7 +1384,19 @@
     "new": false,
     "offer": false,
     "recommendedFor": [],
-    "gallery": []
+    "gallery": [{
+        "image": "/src/assets/images/product30.jpg",
+        "alt": "Vista principal"
+      },
+    {
+        "image": "/src/assets/images/product30-1.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/src/assets/images/product30-2.jpg",
+        "alt": "Vista principal"
+      }
+    ]
   },
   {
     "id": 31,
@@ -1354,7 +1414,16 @@
     "new": false,
     "offer": false,
     "recommendedFor": [],
-    "gallery": []
+    "gallery": [{
+        "image": "/src/assets/images/product31.jpg",
+        "alt": "Vista principal"
+      },
+    {
+        "image": "/src/assets/images/product31-1.jpg",
+        "alt": "Vista principal"
+      }
+      
+    ]
   },
   {
     "id": 32,
@@ -1372,7 +1441,15 @@
     "new": false,
     "offer": false,
     "recommendedFor": [],
-    "gallery": []
+    "gallery": [{
+        "image": "/src/assets/images/product32.jpg",
+        "alt": "Vista principal"
+      },
+    {
+        "image": "/src/assets/images/product32-1.jpg",
+        "alt": "Vista principal"
+      }
+    ]
   },
   {
     "id": 33,
@@ -1390,7 +1467,15 @@
     "new": false,
     "offer": false,
     "recommendedFor": [],
-    "gallery": []
+    "gallery": [{
+        "image": "/src/assets/images/product33.jpg",
+        "alt": "Vista principal"
+      },
+    {
+        "image": "/src/assets/images/product33-1.jpg",
+        "alt": "Vista principal"
+      }
+    ]
   },
   {
     "id": 34,
@@ -1554,7 +1639,19 @@
     "new": false,
     "offer": false,
     "recommendedFor": [],
-    "gallery": []
+    "gallery": [{
+        "image": "/src/assets/images/product37.jpg",
+        "alt": "Vista principal"
+      },
+    {
+        "image": "/src/assets/images/product37-1.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/src/assets/images/product37-2.jpg",
+        "alt": "Vista principal"
+      }
+    ]
   },
   {
     "id": 38,
@@ -1572,7 +1669,12 @@
     "new": false,
     "offer": false,
     "recommendedFor": [],
-    "gallery": []
+    "gallery": [
+      {
+        "image": "/src/assets/images/product38.jpg",
+        "alt": "Vista principal"
+      }
+    ]
   },
   {
     "id": 39,
@@ -1590,7 +1692,24 @@
     "new": false,
     "offer": false,
     "recommendedFor": [],
-    "gallery": []
+    "gallery": [
+      {
+        "image": "/src/assets/images/product39.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/src/assets/images/product39-1.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/src/assets/images/product39-2.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/src/assets/images/product39-3.jpg",
+        "alt": "Vista principal"
+      }
+    ]
   },
   {
     "id": 40,
@@ -1608,7 +1727,20 @@
     "new": false,
     "offer": false,
     "recommendedFor": [],
-    "gallery": []
+    "gallery": [
+      {
+        "image": "/src/assets/images/product40.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/src/assets/images/product40-1.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/src/assets/images/product40-2.jpg",
+        "alt": "Vista principal"
+      }
+    ]
   },
   {
     "id": 41,
@@ -1626,7 +1758,20 @@
     "new": false,
     "offer": false,
     "recommendedFor": [],
-    "gallery": []
+    "gallery": [
+      {
+        "image": "/src/assets/images/product41.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/src/assets/images/product41-1.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/src/assets/images/product41-2.jpg",
+        "alt": "Vista principal"
+      }
+    ]
   },
   {
     "id": 42,
@@ -1643,8 +1788,17 @@
     "featured": false,
     "new": false,
     "offer": false,
-    "recommendedFor": [],
-    "gallery": []
+    "recommendedFor": ["cocteles"],
+    "gallery": [
+      {
+        "image": "/src/assets/images/product42.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/src/assets/images/product42-1.jpg",
+        "alt": "Vista principal"
+      }
+    ]
   },
   {
     "id": 43,
@@ -1722,7 +1876,16 @@
     "new": false,
     "offer": false,
     "recommendedFor": [],
-    "gallery": []
+    "gallery": [
+      {
+        "image": "/src/assets/images/product44.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/src/assets/images/product44-1.webp",
+        "alt": "Vista en uso del producto"
+      }
+    ]
   },
   {
     "id": 45,
@@ -1920,7 +2083,23 @@
     "new": false,
     "offer": false,
     "recommendedFor": [],
-    "gallery": []
+    "gallery": [{
+        "image": "/src/assets/images/product48.jpg",
+        "alt": "Detalle del vaso"
+      },
+      {
+        "image": "/src/assets/images/product48-1.jpg",
+        "alt": "Detalle del vaso"
+      },
+      {
+        "image": "/src/assets/images/product48-2.jpg",
+        "alt": "Detalle del vaso"
+      },
+      {
+        "image": "/src/assets/images/product48-3.jpg",
+        "alt": "Detalle del vaso"
+      }
+    ]
   },
   {
     "id": 49,
@@ -2123,7 +2302,7 @@
   {
     "id": 53,
     "sku": "MECOSP05",
-    "brand": "",
+    "brand": "Salute",
     "name": "SPIEGELAU PAR VINO BLANCO (SALUTE) ",
     "variant": "Una caja contiene 4 unidades.",
     "category": "",
@@ -2136,7 +2315,20 @@
     "new": false,
     "offer": false,
     "recommendedFor": [],
-    "gallery": []
+    "gallery": [
+      {
+        "image": "/src/assets/images/product53.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/src/assets/images/product53-1.jpg",
+        "alt": "Vista lateral"
+      },
+      {
+        "image": "/src/assets/images/product53-2.jpg",
+        "alt": "Detalle de la copa"
+      }
+    ]
   },
   {
     "id": 54,
@@ -2575,7 +2767,20 @@
     "new": false,
     "offer": false,
     "recommendedFor": [],
-    "gallery": []
+    "gallery": [
+      {
+        "image": "/src/assets/images/product61.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/src/assets/images/product61-1.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/src/assets/images/product61-2.jpg",
+        "alt": "Vista principal"
+      }
+    ]
   },
   {
     "id": 62,
@@ -2896,7 +3101,20 @@
     "new": false,
     "offer": false,
     "recommendedFor": [],
-    "gallery": []
+    "gallery": [
+      {
+        "image": "/src/assets/images/product67.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/src/assets/images/product67-1.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/src/assets/images/product67-2.jpg",
+        "alt": "Vista principal"
+      }
+    ]
   },
   {
     "id": 68,
@@ -2975,7 +3193,20 @@
     "new": false,
     "offer": false,
     "recommendedFor": [],
-    "gallery": []
+    "gallery": [
+      {
+        "image": "/src/assets/images/product69.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/src/assets/images/product69-1.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/src/assets/images/product69-2.jpg",
+        "alt": "Vista principal"
+      }
+    ]
   },
   {
     "id": 70,
@@ -2993,7 +3224,16 @@
     "new": false,
     "offer": false,
     "recommendedFor": [],
-    "gallery": []
+    "gallery": [
+      {
+        "image": "/src/assets/images/product70.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/src/assets/images/product70-1.jpg",
+        "alt": "Vista principal"
+      }
+    ]
   },
   {
     "id": 71,
@@ -3011,15 +3251,24 @@
     "new": false,
     "offer": false,
     "recommendedFor": [],
-    "gallery": []
+    "gallery": [
+      {
+        "image": "/src/assets/images/product71.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/src/assets/images/product71-1.jpg",
+        "alt": "Vista principal"
+      }
+    ]
   },
   {
     "id": 72,
     "sku": "MEVASP08",
-    "brand": "",
+    "brand": "Beer Classics",
     "name": "SPIEGELAU KIT CERVEZA SURTIDO",
     "variant": "",
-    "category": "",
+    "category": "kits",
     "shortDescription": "",
     "description": "",
     "specifications": [],
@@ -3029,7 +3278,12 @@
     "new": false,
     "offer": false,
     "recommendedFor": [],
-    "gallery": []
+    "gallery": [
+      {
+        "image": "/src/assets/images/product72.jpg",
+        "alt": "Vista principal"
+      }
+    ]
   },
   {
     "id": 73,
@@ -3047,7 +3301,23 @@
     "new": false,
     "offer": false,
     "recommendedFor": [],
-    "gallery": []
+    "gallery": [{
+        "image": "/src/assets/images/product73.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/src/assets/images/product73-1.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/src/assets/images/product73-2.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/src/assets/images/product73-3.jpg",
+        "alt": "Vista principal"
+      }
+    ]
   },
   {
     "id": 74,
@@ -3132,7 +3402,7 @@
     "sku": "MEVASP09",
     "brand": "",
     "name": "SPIEGELAU PARA CERVEZA IPA",
-    "variant": "",
+    "variant": "Una caja contiene 4 unidades.",
     "category": "",
     "shortDescription": "",
     "description": "",
@@ -3143,14 +3413,18 @@
     "new": false,
     "offer": false,
     "recommendedFor": [],
-    "gallery": []
+    "gallery": [{
+        "image": "/src/assets/images/product76.jpg",
+        "alt": "Vista principal"
+      }
+    ]
   },
   {
     "id": 77,
     "sku": "MEVASP10",
     "brand": "",
     "name": "SPIEGELAU PARA CERVEZA STOUT",
-    "variant": "",
+    "variant": "Una caja contiene 4 unidades.",
     "category": "",
     "shortDescription": "",
     "description": "",
@@ -3161,7 +3435,11 @@
     "new": false,
     "offer": false,
     "recommendedFor": [],
-    "gallery": []
+    "gallery": [{
+        "image": "/src/assets/images/product77.webp",
+        "alt": "Vista principal"
+      }
+    ]
   },
   {
     "id": 78,
@@ -3289,7 +3567,7 @@
     "sku": "MEVASP07",
     "brand": "",
     "name": "SPIEGELAU TUMBLER L ",
-    "variant": "",
+    "variant": "Una caja contiene 4 unidades.",
     "category": "",
     "shortDescription": "",
     "description": "",
@@ -3300,7 +3578,23 @@
     "new": false,
     "offer": false,
     "recommendedFor": [],
-    "gallery": []
+    "gallery": [{
+        "image": "/src/assets/images/product80.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/src/assets/images/product80-1.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/src/assets/images/product80-2.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/src/assets/images/product80-3.jpg",
+        "alt": "Vista principal"
+      }
+    ]
   },
   {
     "id": 81,
@@ -3429,7 +3723,7 @@
     "sku": "MECOSP34",
     "brand": "",
     "name": "SPIEGELAU BBQ & DRINKS GIN TONIC",
-    "variant": "",
+    "variant": "Una caja contiene 6 unidades.",
     "category": "",
     "shortDescription": "",
     "description": "",
@@ -3440,14 +3734,22 @@
     "new": false,
     "offer": false,
     "recommendedFor": [],
-    "gallery": []
+    "gallery": [{
+        "image": "/src/assets/images/product83.jpg",
+        "alt": "Vista principal"
+      },
+    {
+        "image": "/src/assets/images/product83-1.jpg",
+        "alt": "Vista principal"
+      }
+    ]
   },
   {
     "id": 84,
     "sku": "MECOSP49",
     "brand": "",
     "name": "SPIEGELAU BURGUNDY DEFINITION",
-    "variant": "",
+    "variant": "Una caja contiene 6 unidades.",
     "category": "",
     "shortDescription": "",
     "description": "",
@@ -3458,14 +3760,27 @@
     "new": false,
     "offer": false,
     "recommendedFor": [],
-    "gallery": []
+    "gallery": [{
+        "image": "/src/assets/images/product84.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/src/assets/images/product84-1.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/src/assets/images/product84-2.jpg",
+        "alt": "Vista principal"
+      }
+    
+    ]
   },
   {
     "id": 85,
     "sku": "MECOSP52",
     "brand": "",
     "name": "SPIEGELAU CHAMPAN DEFINITION",
-    "variant": "",
+    "variant": "Una caja contiene 6 unidades.",
     "category": "",
     "shortDescription": "",
     "description": "",
@@ -3476,7 +3791,19 @@
     "new": false,
     "offer": false,
     "recommendedFor": [],
-    "gallery": []
+    "gallery": [{
+        "image": "/src/assets/images/product85.jpg",
+        "alt": "Vista principal"
+      },
+    {
+        "image": "/src/assets/images/product85-1.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/src/assets/images/product85-2.jpg",
+        "alt": "Vista principal"
+      }
+    ]
   },
   {
     "id": 86,
@@ -3544,7 +3871,7 @@
     "sku": "MEVASP32",
     "brand": "",
     "name": "SPIEGELAU BBQ & DRINKS SOFT DRINK",
-    "variant": "",
+    "variant": "Una caja contiene 6 unidades.",
     "category": "",
     "shortDescription": "",
     "description": "",
@@ -3555,7 +3882,16 @@
     "new": false,
     "offer": false,
     "recommendedFor": [],
-    "gallery": []
+    "gallery": [
+      {
+        "image": "/src/assets/images/product87.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/src/assets/images/product87-1.jpg",
+        "alt": "Vista principal"
+      }
+    ]
   },
   {
     "id": 88,
@@ -3686,8 +4022,8 @@
     "sku": "MEVASP41",
     "brand": "",
     "name": "SPIEGELAU (TUMB+ LONG D) BECHER ELEGANCE",
-    "variant": "",
-    "category": "",
+    "variant": "Una caja contiene 8 unidades.",
+    "category": "kits",
     "shortDescription": "",
     "description": "",
     "specifications": [],
@@ -3697,15 +4033,35 @@
     "new": false,
     "offer": false,
     "recommendedFor": [],
-    "gallery": []
+    "gallery": [{
+        "image": "/src/assets/images/product90.jpg",
+        "alt": "Vista principal"
+      },
+    {
+        "image": "/src/assets/images/product90-1.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/src/assets/images/product90-2.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/src/assets/images/product90-3.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/src/assets/images/product90-4.jpg",
+        "alt": "Vista principal"
+      }
+    ]
   },
   {
     "id": 91,
     "sku": "MEVASP37",
     "brand": "",
     "name": "SPIEGELAU CERVEZA IPA C/E",
-    "variant": "",
-    "category": "",
+    "variant": "Una caja contiene 12 unidades.",
+    "category": "vasos",
     "shortDescription": "",
     "description": "",
     "specifications": [],
@@ -3715,15 +4071,19 @@
     "new": false,
     "offer": false,
     "recommendedFor": [],
-    "gallery": []
+    "gallery": [{
+        "image": "/src/assets/images/product91.jpg",
+        "alt": "Vista principal"
+      }
+    ]
   },
   {
     "id": 92,
     "sku": "MEVASP25",
     "brand": "",
     "name": "SPIEGELAU CERVEZA IPA XXL",
-    "variant": "",
-    "category": "",
+    "variant": "Una caja contiene 12 unidades.",
+    "category": "vasos",
     "shortDescription": "",
     "description": "",
     "specifications": [],
@@ -3876,8 +4236,8 @@
     "sku": "MEVASP29",
     "brand": "",
     "name": "SPIEGELAU PARA CERVEZA TULIP",
-    "variant": "",
-    "category": "",
+    "variant": "Una caja contiene 12 unidades.",
+    "category": "copas",
     "shortDescription": "",
     "description": "",
     "specifications": [],
@@ -3887,15 +4247,19 @@
     "new": false,
     "offer": false,
     "recommendedFor": [],
-    "gallery": []
+    "gallery": [{
+        "image": "/src/assets/images/product96.jpg",
+        "alt": "Vista principal"
+      }
+    ]
   },
   {
     "id": 97,
     "sku": "MEVASP21",
     "brand": "",
     "name": "SPIEGELAU PERFECT LONDRINK",
-    "variant": "",
-    "category": "",
+    "variant": "Una caja contiene 12 unidades.",
+    "category": "vasos",
     "shortDescription": "",
     "description": "",
     "specifications": [],
@@ -3905,14 +4269,22 @@
     "new": false,
     "offer": false,
     "recommendedFor": [],
-    "gallery": []
+    "gallery": [{
+        "image": "/src/assets/images/product97.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/src/assets/images/product97-1.jpg",
+        "alt": "Vista principal"
+      }
+    ]
   },
   {
     "id": 98,
     "sku": "MEVASP23",
     "brand": "",
     "name": "SPIEGELAU PERFECT MIXING",
-    "variant": "",
+    "variant": "Una caja contiene 1 unidad.",
     "category": "",
     "shortDescription": "",
     "description": "",
@@ -3923,7 +4295,19 @@
     "new": false,
     "offer": false,
     "recommendedFor": [],
-    "gallery": []
+    "gallery": [{
+        "image": "/src/assets/images/product98.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/src/assets/images/product98-1.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/src/assets/images/product98-2.jpg",
+        "alt": "Vista principal"
+      }
+    ]
   },
   {
     "id": 99,
@@ -4050,8 +4434,8 @@
     "sku": "MEVASP27",
     "brand": "",
     "name": "SPIEGELAU SHOT VINO GRANDE",
-    "variant": "",
-    "category": "",
+    "variant": "Una caja contiene 12 unidades.",
+    "category": "vasos",
     "shortDescription": "",
     "description": "",
     "specifications": [],
@@ -4061,7 +4445,11 @@
     "new": false,
     "offer": false,
     "recommendedFor": [],
-    "gallery": []
+    "gallery": [{
+        "image": "/src/assets/images/product101.jpg",
+        "alt": "Vista principal"
+      }
+    ]
   },
   {
     "id": 102,
@@ -4186,8 +4574,8 @@
     "sku": "MEVASP02",
     "brand": "",
     "name": "SPIEGELAU TUMBLER XL",
-    "variant": "",
-    "category": "",
+    "variant": "Una caja contiene 12 unidades.",
+    "category": "vasos",
     "shortDescription": "",
     "description": "",
     "specifications": [],
@@ -4197,7 +4585,12 @@
     "new": false,
     "offer": false,
     "recommendedFor": [],
-    "gallery": []
+    "gallery": [
+      {
+        "image": "/src/assets/images/product104.jpg",
+        "alt": "Vista principal"
+      }
+    ]
   },
   {
     "id": 105,
@@ -4277,7 +4670,16 @@
     "new": false,
     "offer": false,
     "recommendedFor": [],
-    "gallery": []
+    "gallery": [
+      {
+        "image": "/src/assets/images/product106.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/src/assets/images/product106-1.jpg",
+        "alt": "Vista principal"
+      }
+    ]
   },
   {
     "id": 107,
