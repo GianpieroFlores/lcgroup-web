@@ -695,10 +695,6 @@
       {
         "image": "/src/assets/images/product16-1.jpg",
         "alt": "Vista lateral"
-      },
-      {
-        "image": "/src/assets/images/product16-2.jpg",
-        "alt": "Detalle de la copa"
       }
     ]
   },
@@ -1882,7 +1878,7 @@
         "alt": "Vista principal"
       },
       {
-        "image": "/src/assets/images/product44-1.webp",
+        "image": "/src/assets/images/product44-1.jpg",
         "alt": "Vista en uso del producto"
       }
     ]
@@ -3436,7 +3432,7 @@
     "offer": false,
     "recommendedFor": [],
     "gallery": [{
-        "image": "/src/assets/images/product77.webp",
+        "image": "/src/assets/images/product77.jpg",
         "alt": "Vista principal"
       }
     ]
