@@ -1,0 +1,264 @@
+/* ==========================================
+   SISTEMA GLOBAL DE MOVIMIENTO
+========================================== */
+
+:root {
+  --motion-duration-fast: 1500ms;
+  --motion-duration-base: 1500ms;
+  --motion-duration-card: 1500ms;
+  --motion-duration-image: 1500ms;
+  --motion-duration-hero: 1500ms;
+  --motion-easing: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-delay: 0ms;
+}
+
+.motion-reveal,
+.motion-load {
+  --motion-from-translate: 0 0;
+  --motion-from-scale: 1;
+  transition:
+    opacity var(--motion-duration-base) var(--motion-easing),
+    translate var(--motion-duration-base) var(--motion-easing),
+    scale var(--motion-duration-base) var(--motion-easing);
+  transition-delay: var(--motion-delay);
+}
+
+.motion-reveal.is-motion-animating,
+.motion-load.is-motion-animating {
+  animation: motion-reveal-in
+    var(--motion-duration-base)
+    var(--motion-easing)
+    var(--motion-delay)
+    both;
+}
+
+@keyframes motion-reveal-in {
+  from {
+    opacity: 0;
+    translate: var(--motion-from-translate);
+    scale: var(--motion-from-scale);
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+    scale: 1;
+  }
+}
+
+.motion-ready
+  .motion-reveal:not(.is-motion-visible),
+.motion-ready
+  .motion-load:not(.is-motion-visible) {
+  opacity: 0;
+}
+
+/* Variantes heredadas para elementos declarados manualmente */
+.motion-fade-up {
+  --motion-from-translate: 0 40px;
+}
+
+.motion-fade-left {
+  --motion-from-translate: -60px 0;
+}
+
+.motion-fade-right {
+  --motion-from-translate: 60px 0;
+}
+
+.motion-fade-scale {
+  --motion-from-scale: 0.975;
+}
+
+.motion-product {
+  --motion-from-translate: 0 45px;
+  --motion-from-scale: 0.975;
+}
+
+.motion-ready
+  .motion-fade-up:not(.is-motion-visible) {
+  --motion-from-translate: 0 40px;
+  translate: 0 40px;
+}
+
+.motion-ready
+  .motion-fade-left:not(.is-motion-visible) {
+  --motion-from-translate: -60px 0;
+  translate: -60px 0;
+}
+
+.motion-ready
+  .motion-fade-right:not(.is-motion-visible) {
+  --motion-from-translate: 60px 0;
+  translate: 60px 0;
+}
+
+.motion-ready
+  .motion-fade-scale:not(.is-motion-visible) {
+  --motion-from-scale: 0.975;
+  scale: 0.975;
+}
+
+.motion-ready
+  .motion-product:not(.is-motion-visible) {
+  --motion-from-translate: 0 45px;
+  --motion-from-scale: 0.975;
+  translate: 0 45px;
+  scale: 0.975;
+}
+
+/* Hero y textos laterales */
+.motion-hero-left {
+  --motion-duration-base: var(--motion-duration-hero);
+  --motion-from-translate: -140px 0;
+}
+
+.motion-section-left {
+  --motion-from-translate: -60px 0;
+}
+
+.motion-section-right {
+  --motion-from-translate: 60px 0;
+}
+
+.motion-ready
+  .motion-hero-left:not(.is-motion-visible) {
+  --motion-from-translate: -140px 0;
+  translate: -140px 0;
+}
+
+.motion-ready
+  .motion-section-left:not(.is-motion-visible) {
+  --motion-from-translate: -60px 0;
+  translate: -60px 0;
+}
+
+.motion-ready
+  .motion-section-right:not(.is-motion-visible) {
+  --motion-from-translate: 60px 0;
+  translate: 60px 0;
+}
+
+/* Cards y productos */
+.motion-card-up,
+.motion-product-card {
+  --motion-duration-base: var(--motion-duration-card);
+}
+
+.motion-card-up {
+  --motion-from-translate: 0 42px;
+}
+
+.motion-product-card {
+  --motion-from-translate: 0 46px;
+  --motion-from-scale: 0.975;
+}
+
+.motion-ready
+  .motion-card-up:not(.is-motion-visible) {
+  --motion-from-translate: 0 42px;
+  translate: 0 42px;
+}
+
+.motion-ready
+  .motion-product-card:not(.is-motion-visible) {
+  --motion-from-translate: 0 46px;
+  --motion-from-scale: 0.975;
+  translate: 0 46px;
+  scale: 0.975;
+}
+
+/* Imágenes y contenido multimedia */
+.motion-image-scale,
+.motion-image-up {
+  --motion-duration-base: var(--motion-duration-image);
+}
+
+.motion-image-scale {
+  --motion-from-scale: 0.965;
+}
+
+.motion-image-up {
+  --motion-from-translate: 0 28px;
+}
+
+.motion-ready
+  .motion-image-scale:not(.is-motion-visible) {
+  --motion-from-scale: 0.965;
+  scale: 0.965;
+}
+
+.motion-ready
+  .motion-image-up:not(.is-motion-visible) {
+  --motion-from-translate: 0 28px;
+  translate: 0 28px;
+}
+
+/* Componentes globales */
+.motion-footer {
+  --motion-duration-base: 750ms;
+  --motion-from-translate: 0 35px;
+}
+
+.motion-ready
+  .motion-footer:not(.is-motion-visible) {
+  --motion-from-translate: 0 35px;
+  translate: 0 35px;
+}
+
+.motion-load-from-top {
+  --motion-duration-base: 700ms;
+  --motion-from-translate: 0 -32px;
+}
+
+.motion-ready
+  .motion-load-from-top:not(.is-motion-visible) {
+  --motion-from-translate: 0 -32px;
+  translate: 0 -32px;
+}
+
+.motion-reveal.is-motion-visible,
+.motion-load.is-motion-visible {
+  opacity: 1;
+  translate: 0 0;
+  scale: 1;
+}
+
+/* ==========================================
+   INTERACCIONES
+========================================== */
+
+.motion-interactive {
+  transition:
+    color var(--transition-normal),
+    background-color var(--transition-normal),
+    border-color var(--transition-normal),
+    box-shadow var(--transition-normal),
+    transform var(--transition-normal),
+    translate var(--transition-fast),
+    scale var(--transition-fast);
+}
+
+.motion-interactive:hover {
+  translate: 0 -2px;
+}
+
+.motion-interactive:active {
+  scale: 0.98;
+}
+
+/* ==========================================
+   MOVIMIENTO REDUCIDO
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-reveal,
+  .motion-load,
+  .motion-interactive {
+    opacity: 1 !important;
+    translate: none !important;
+    scale: 1 !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}

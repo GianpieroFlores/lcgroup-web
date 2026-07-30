@@ -1170,28 +1170,6 @@
    ANIMACIONES DE ENTRADA OPCIONALES
 ===================================================== */
 
-.about-intro__content,
-.about-presentation__content,
-.about-quality__content,
-.about-brands__content,
-.about-final__content {
-  animation: aboutFadeUp 0.8s ease both;
-}
-
-@keyframes aboutFadeUp {
-  from {
-    opacity: 0;
-
-    transform: translateY(25px);
-  }
-
-  to {
-    opacity: 1;
-
-    transform: translateY(0);
-  }
-}
-
 /* =====================================================
    REDUCCIÓN DE MOVIMIENTO
 ===================================================== */
