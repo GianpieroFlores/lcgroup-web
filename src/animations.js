@@ -20,7 +20,6 @@ const TEXT_ITEM_SELECTOR = [
   ":scope > .products-breadcrumb",
   ":scope > .home-link",
   ":scope > .home-categories__link",
-  ":scope > .home-collections-editorial__link",
   ":scope > .featured-showcase__button",
   ":scope > .about-link",
   ":scope > .about-final__actions",
@@ -53,10 +52,6 @@ const REVEAL_GROUPS = [
   },
   {
     selector: ".featured-showcase__drinks-header",
-    variant: "motion-section-left",
-  },
-  {
-    selector: ".home-collections-editorial__intro",
     variant: "motion-section-left",
   },
   {
@@ -167,11 +162,6 @@ const STAGGER_GROUPS = [
     container: ".featured-showcase__links",
     items: ":scope > a, :scope > button",
     variant: "motion-card-up",
-  },
-  {
-    container: ".home-collections-editorial__list",
-    items: ".home-collection-editorial",
-    variant: "motion-section-right",
   },
   {
     container: ".catalog-product-grid",

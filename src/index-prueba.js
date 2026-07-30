@@ -33,7 +33,6 @@ const homeState = {
 const homeElements = {
   heroVideo: null,
   categoriesGrid: null,
-  collectionsGrid: null,
   drinksLinks: null,
   featuredCarousel: null,
   featuredViewport: null,
@@ -67,7 +66,6 @@ async function initHomePage() {
     homeState.products = products;
 
     renderHomeCategories(products);
-    renderHomeCollections(products);
     renderHomeDrinks(products);
     await renderFeaturedProducts(products);
 
@@ -88,9 +86,6 @@ function getHomeElements() {
 
   homeElements.categoriesGrid = document.querySelector("#home-categories-grid");
 
-  homeElements.collectionsGrid = document.querySelector(
-    "#home-collections-grid",
-  );
   homeElements.drinksLinks = document.querySelector(
     "#featured-showcase-drinks",
   );
@@ -165,7 +160,6 @@ function initializeHeroVideoMotionPreference() {
 function isHomePage() {
   return Boolean(
     homeElements.categoriesGrid ||
-    homeElements.collectionsGrid ||
     homeElements.drinksLinks ||
     homeElements.featuredTrack,
   );
@@ -227,13 +221,6 @@ function showInitialLoadingStates() {
     );
   }
 
-  if (homeElements.collectionsGrid) {
-    homeElements.collectionsGrid.innerHTML = createStatusMarkup(
-      "home-loading",
-      "Cargando colecciones...",
-    );
-  }
-
   if (homeElements.drinksLinks) {
     homeElements.drinksLinks.innerHTML = createStatusMarkup(
       "home-loading",
@@ -259,13 +246,6 @@ function showHomeLoadingError() {
 
   if (homeElements.categoriesGrid) {
     homeElements.categoriesGrid.innerHTML = createStatusMarkup(
-      "home-error",
-      message,
-    );
-  }
-
-  if (homeElements.collectionsGrid) {
-    homeElements.collectionsGrid.innerHTML = createStatusMarkup(
       "home-error",
       message,
     );
@@ -424,139 +404,6 @@ function createCategoryCard(category, index) {
 }
 
 /* =====================================================
-   COLECCIONES
-===================================================== */
-
-function renderHomeCollections(products) {
-  if (!homeElements.collectionsGrid) {
-    return;
-  }
-
-  const collections =
-    getUniqueCollections(products).slice(0, 6);
-
-  if (collections.length === 0) {
-    homeElements.collectionsGrid.innerHTML =
-      createStatusMarkup(
-        "home-empty",
-        "No hay colecciones disponibles por el momento.",
-      );
-
-    return;
-  }
-
-  homeElements.collectionsGrid.innerHTML =
-    collections
-      .map((collection, index) => {
-        return createCollectionCard(
-          collection,
-          index,
-        );
-      })
-      .join("");
-}
-
-/* =====================================================
-   OBTENER COLECCIONES ÚNICAS
-===================================================== */
-
-function getUniqueCollections(products) {
-  const collectionsMap = new Map();
-
-  products.forEach((product) => {
-    const brandName = normalizeText(product.brand);
-
-    if (!brandName) {
-      return;
-    }
-
-    const brandKey = normalizeKey(brandName);
-
-    if (!collectionsMap.has(brandKey)) {
-      collectionsMap.set(brandKey, {
-        name: brandName,
-        image: getProductImage(product),
-        productCount: 1,
-      });
-
-      return;
-    }
-
-    const existingCollection = collectionsMap.get(brandKey);
-
-    existingCollection.productCount += 1;
-
-    if (!existingCollection.image && getProductImage(product)) {
-      existingCollection.image = getProductImage(product);
-    }
-  });
-
-  return Array.from(collectionsMap.values()).sort((a, b) => {
-    return a.name.localeCompare(b.name, "es", {
-      sensitivity: "base",
-    });
-  });
-}
-
-/* =====================================================
-   CREAR COLECCIÓN EDITORIAL
-===================================================== */
-
-function createCollectionCard(collection, index) {
-  const collectionName = formatDisplayText(
-    collection.name,
-  );
-
-  const collectionURL = createCatalogUrl({
-    marca: collection.name,
-  });
-
-  const productCount =
-    Number(collection.productCount) || 0;
-
-  const productCountText =
-    productCount === 1
-      ? "1 producto"
-      : `${productCount} productos`;
-
-  return `
-    <a
-      href="${escapeAttribute(collectionURL)}"
-      class="home-collection-editorial"
-      aria-label="Explorar colección ${escapeAttribute(
-        collectionName,
-      )}"
-    >
-      <span class="home-collection-editorial__number">
-        ${formatCounter(index + 1)}
-      </span>
-
-      <div class="home-collection-editorial__content">
-        <span class="home-collection-editorial__label">
-          Colección Spiegelau
-        </span>
-
-        <h3>
-          ${escapeHTML(collectionName)}
-        </h3>
-      </div>
-
-      <span class="home-collection-editorial__count">
-        ${escapeHTML(productCountText)}
-      </span>
-
-      <span
-        class="home-collection-editorial__arrow"
-        aria-hidden="true"
-      >
-        <span class="material-symbols-outlined">
-          arrow_forward
-        </span>
-      </span>
-    </a>
-  `;
-}
-/* =====================================================
    TIPOS DE BEBIDA
 ===================================================== */
 
@@ -641,7 +488,7 @@ function createDrinkLink(drink, index) {
         class="material-symbols-outlined"
         aria-hidden="true"
       >
-        north_east
+        arrow_forward
       </i>
     </a>
   `;

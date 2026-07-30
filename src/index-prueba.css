@@ -348,33 +348,11 @@
 
 .home-product-slide .catalog-product-card {
   width: 100%;
-  min-height: var(--catalog-feature-height);
+  height: auto;
 
   flex: none;
 }
 
-.home-product-slide .catalog-product-image {
-  width: 100%;
-  height: var(--section-content-height);
-
-  margin-bottom: var(--carousel-gap);
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-}
-
-.home-product-slide .catalog-product-image img {
-  display: block;
-  width: auto;
-  max-width: 88%;
-  height: auto;
-  max-height: 100%;
-  margin: 0 auto;
-  object-fit: contain;
-  object-position: center;
-}
 .home-product-slide.is-previous,
 .home-product-slide.is-next {
   opacity: 1;
@@ -1606,27 +1584,17 @@
     transform var(--transition-fast);
 }
 
-/* Flecha decorativa */
+/* Flecha */
 
-.featured-showcase__links > a::after,
-.featured-showcase__links > button::after {
-  content: "→";
-
-  position: absolute;
-  top: 50%;
-  right: 13px;
+.featured-showcase__links .material-symbols-outlined {
+  margin-left: auto;
 
   color: var(--color-primary);
 
-  font-size: 14px;
+  font-size: 18px;
+  font-style: normal;
 
-  opacity: 0;
-
-  transform: translate(-5px, -50%);
-
-  transition:
-    opacity var(--transition-fast),
-    transform var(--transition-fast);
+  transition: transform var(--transition-normal);
 }
 
 /* =====================================================
@@ -1650,11 +1618,15 @@
   transform: translateX(1px);
 }
 
-.featured-showcase__links > a:hover::after,
-.featured-showcase__links > button:hover::after {
-  opacity: 1;
-
-  transform: translate(0, -50%);
+.featured-showcase__links > a:hover
+  .material-symbols-outlined,
+.featured-showcase__links > button:hover
+  .material-symbols-outlined,
+.featured-showcase__links > a:focus-visible
+  .material-symbols-outlined,
+.featured-showcase__links > button:focus-visible
+  .material-symbols-outlined {
+  transform: rotate(-35deg);
 }
 
 .featured-showcase__links > a:focus-visible,
@@ -1684,13 +1656,11 @@
   border-radius: var(--radius-pill);
 }
 
-.featured-showcase__links > a.is-active::after,
-.featured-showcase__links > button.is-active::after {
+.featured-showcase__links > a.is-active
+  .material-symbols-outlined,
+.featured-showcase__links > button.is-active
+  .material-symbols-outlined {
   color: var(--color-white);
-
-  opacity: 1;
-
-  transform: translate(0, -50%);
 }
 
 /* =====================================================
@@ -1705,436 +1675,13 @@
   .featured-showcase__links > button,
   .featured-showcase__links > a::before,
   .featured-showcase__links > button::before,
-  .featured-showcase__links > a::after,
-  .featured-showcase__links > button::after {
+  .featured-showcase__links .material-symbols-outlined {
     transition: none;
   }
 
   .featured-showcase:hover .featured-showcase__image img {
     transform: none;
   }
-}
-
-/* =====================================================
-   COLECCIONES EDITORIALES
-===================================================== */
-
-.home-collections-editorial {
-  width: 100%;
-
-  padding: var(--section-padding-large);
-
-  background: var(--color-black);
-  color: var(--color-white);
-}
-
-/* =====================================================
-   ESTRUCTURA
-===================================================== */
-
-.home-collections-editorial__layout {
-  width: 100%;
-
-  display: grid;
-  grid-template-columns:
-    minmax(260px, 0.75fr)
-    minmax(0, 1.25fr);
-
-  align-items: start;
-
-  gap: calc(var(--grid-gap) * 2);
-}
-
-/* =====================================================
-   INTRODUCCIÓN
-===================================================== */
-
-.home-collections-editorial__intro {
-  position: sticky;
-  top: 125px;
-
-  max-width: 410px;
-}
-
-.home-collections-editorial__eyebrow {
-  display: inline-flex;
-  align-items: center;
-
-  gap: 10px;
-
-  margin-bottom: var(--grid-gap);
-
-  color: var(--color-accent);
-
-  font-family: var(--font-main);
-  font-size: var(--font-size-small);
-  font-weight: var(--font-weight-semibold);
-
-  text-transform: uppercase;
-
-  letter-spacing: 1.5px;
-}
-
-.home-collections-editorial__eyebrow::before {
-  content: "";
-
-  width: 34px;
-  height: 2px;
-
-  flex-shrink: 0;
-
-  background: var(--color-accent);
-}
-
-.home-collections-editorial__intro h2 {
-  max-width: 390px;
-
-  margin-bottom: var(--grid-gap);
-
-  color: var(--color-white);
-
-  font-family: var(--font-main);
-  font-size: var(--font-size-title-large);
-  font-weight: var(--font-weight-light);
-
-  line-height: 1.1;
-
-  letter-spacing: -0.7px;
-}
-
-.home-collections-editorial__intro p {
-  max-width: 390px;
-
-  margin-bottom: calc(var(--grid-gap) * 1.5);
-
-  color: var(--color-white);
-
-  font-family: var(--font-main);
-  font-size: var(--font-size-base);
-
-  line-height: 1.75;
-
-  opacity: 0.72;
-}
-
-/* =====================================================
-   ENLACE GENERAL
-===================================================== */
-
-.home-collections-editorial__link {
-  position: relative;
-
-  width: fit-content;
-
-  display: inline-flex;
-  align-items: center;
-
-  gap: 10px;
-
-  padding-bottom: 8px;
-
-  color: var(--color-white);
-
-  font-family: var(--font-main);
-  font-size: var(--font-size-small);
-  font-weight: var(--font-weight-semibold);
-
-  text-transform: uppercase;
-
-  letter-spacing: 1px;
-
-  transition:
-    color var(--transition-normal),
-    gap var(--transition-normal);
-}
-
-.home-collections-editorial__link::after {
-  content: "";
-
-  position: absolute;
-
-  left: 0;
-  bottom: 0;
-
-  width: 100%;
-  height: 1px;
-
-  background: var(--color-accent);
-}
-
-.home-collections-editorial__link
-  .material-symbols-outlined {
-  color: var(--color-accent);
-
-  font-size: 18px;
-
-  transition: transform var(--transition-normal);
-}
-
-.home-collections-editorial__link:hover {
-  gap: 14px;
-
-  color: var(--color-accent);
-}
-
-.home-collections-editorial__link:hover
-  .material-symbols-outlined {
-  transform: translate(2px, -2px);
-}
-
-/* =====================================================
-   LISTA
-===================================================== */
-
-.home-collections-editorial__list {
-  border-top: 1px solid rgba(255, 255, 255, 0.16);
-}
-
-/* =====================================================
-   COLECCIÓN
-===================================================== */
-
-.home-collection-editorial {
-  position: relative;
-
-  min-height: 94px;
-
-  display: grid;
-  grid-template-columns:
-    42px
-    minmax(0, 1fr)
-    auto
-    38px;
-
-  align-items: center;
-
-  gap: var(--grid-gap);
-
-  padding: 16px 12px;
-
-  overflow: hidden;
-
-  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
-
-  color: var(--color-white);
-
-  transition:
-    background-color var(--transition-normal),
-    color var(--transition-normal),
-    padding-left var(--transition-normal);
-}
-
-.home-collection-editorial::before {
-  content: "";
-
-  position: absolute;
-
-  inset: 0;
-
-  z-index: 0;
-
-  background: var(--color-white);
-
-  transform: scaleY(0);
-  transform-origin: bottom;
-
-  transition: transform var(--transition-medium);
-}
-
-.home-collection-editorial:hover::before {
-  transform: scaleY(1);
-}
-
-.home-collection-editorial:hover {
-  padding-left: var(--grid-gap);
-
-  color: var(--color-text);
-}
-
-/* =====================================================
-   NÚMERO
-===================================================== */
-
-.home-collection-editorial__number {
-  position: relative;
-
-  z-index: 1;
-
-  color: var(--color-accent);
-
-  font-family: var(--font-main);
-  font-size: var(--font-size-small);
-  font-weight: var(--font-weight-semibold);
-
-  letter-spacing: 1.2px;
-}
-
-/* =====================================================
-   CONTENIDO
-===================================================== */
-
-.home-collection-editorial__content {
-  position: relative;
-
-  z-index: 1;
-
-  min-width: 0;
-}
-
-.home-collection-editorial__label {
-  display: block;
-
-  margin-bottom: 5px;
-
-  color: var(--color-white);
-
-  font-family: var(--font-main);
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-semibold);
-
-  text-transform: uppercase;
-
-  letter-spacing: 1px;
-
-  opacity: 0.42;
-
-  transition:
-    color var(--transition-normal),
-    opacity var(--transition-normal);
-}
-
-.home-collection-editorial h3 {
-  overflow: hidden;
-
-  color: inherit;
-
-  font-family: var(--font-main);
-  font-size: var(--font-size-medium);
-  font-weight: var(--font-weight-regular);
-
-  line-height: 1.25;
-
-  text-overflow: ellipsis;
-  white-space: nowrap;
-
-  transition: transform var(--transition-normal);
-}
-
-.home-collection-editorial:hover h3 {
-  transform: translateX(3px);
-}
-
-.home-collection-editorial:hover
-  .home-collection-editorial__label {
-  color: var(--color-text-muted);
-
-  opacity: 1;
-}
-
-/* =====================================================
-   CANTIDAD
-===================================================== */
-
-.home-collection-editorial__count {
-  position: relative;
-
-  z-index: 1;
-
-  color: var(--color-white);
-
-  font-family: var(--font-main);
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-medium);
-
-  text-transform: uppercase;
-
-  letter-spacing: 0.8px;
-
-  opacity: 0.5;
-
-  white-space: nowrap;
-
-  transition:
-    color var(--transition-normal),
-    opacity var(--transition-normal);
-}
-
-.home-collection-editorial:hover
-  .home-collection-editorial__count {
-  color: var(--color-text-muted);
-
-  opacity: 1;
-}
-
-/* =====================================================
-   FLECHA
-===================================================== */
-
-.home-collection-editorial__arrow {
-  position: relative;
-
-  z-index: 1;
-
-  width: var(--icon-size);
-  height: var(--icon-size);
-
-  display: grid;
-  place-items: center;
-
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  border-radius: var(--radius-circle);
-
-  color: var(--color-white);
-
-  transition:
-    background-color var(--transition-normal),
-    border-color var(--transition-normal),
-    color var(--transition-normal),
-    transform var(--transition-normal);
-}
-
-.home-collection-editorial__arrow
-  .material-symbols-outlined {
-  font-size: var(--icon-font-size);
-}
-
-.home-collection-editorial:hover
-  .home-collection-editorial__arrow {
-  border-color: var(--color-accent);
-
-  background: var(--color-accent);
-  color: var(--color-white);
-
-  transform: rotate(-35deg);
-}
-
-/* =====================================================
-   ESTADOS
-===================================================== */
-
-.home-collections-editorial__list
-  .home-loading,
-.home-collections-editorial__list
-  .home-empty,
-.home-collections-editorial__list
-  .home-error {
-  min-height: calc(var(--section-content-height) / 2);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: var(--grid-gap);
-
-  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
-
-  color: var(--color-white);
-
-  font-size: var(--font-size-base);
-
-  text-align: center;
-
-  opacity: 0.65;
 }
 
 /* ==========================================
@@ -2146,8 +1693,7 @@
 }
 
 .home-categories,
-.home-featured-products,
-.home-collections-editorial {
+.home-featured-products {
   padding-inline: max(
     var(--page-padding),
     calc((100% - 1600px) / 2)
@@ -2285,13 +1831,6 @@
     padding-left: 12px;
   }
 
-  .home-collections-editorial__layout {
-    grid-template-columns:
-      minmax(230px, 0.7fr)
-      minmax(0, 1.3fr);
-
-    gap: 28px;
-  }
 }
 
 /* ==========================================
@@ -2318,8 +1857,7 @@
   }
 
   .home-categories,
-  .home-featured-products,
-  .home-collections-editorial {
+  .home-featured-products {
     padding: 34px 20px;
   }
 
@@ -2334,7 +1872,6 @@
   }
 
   .home-categories__intro h2,
-  .home-collections-editorial__intro h2,
   .home-featured-products__heading h2 {
     font-size: clamp(29px, 6vw, var(--font-size-title-large));
   }
@@ -2436,23 +1973,6 @@
     padding: 18px;
   }
 
-  .home-collections-editorial__layout {
-    grid-template-columns: minmax(0, 1fr);
-
-    gap: 30px;
-  }
-
-  .home-collections-editorial__intro {
-    position: static;
-
-    max-width: 620px;
-  }
-
-  .home-collections-editorial__intro p {
-    max-width: 560px;
-
-    margin-bottom: 22px;
-  }
 }
 
 /* ==========================================
@@ -2481,8 +2001,7 @@
   }
 
   .home-categories,
-  .home-featured-products,
-  .home-collections-editorial {
+  .home-featured-products {
     padding: 30px 16px;
   }
 
@@ -2568,11 +2087,6 @@
     padding: 9px 24px 9px 11px;
   }
 
-  .home-collection-editorial {
-    gap: 12px;
-
-    padding-inline: 8px;
-  }
 }
 
 /* ==========================================
@@ -2617,8 +2131,7 @@
   }
 
   .home-categories,
-  .home-featured-products,
-  .home-collections-editorial {
+  .home-featured-products {
     padding: 27px 14px;
   }
 
@@ -2653,14 +2166,6 @@
 
   .home-product-slide {
     width: min(100%, 320px);
-  }
-
-  .home-product-slide .catalog-product-card {
-    min-height: 420px;
-  }
-
-  .home-product-slide .catalog-product-image {
-    height: 255px;
   }
 
   .home-product-carousel__control {
@@ -2721,30 +2226,6 @@
     padding: 10px;
   }
 
-  .home-collections-editorial__layout {
-    gap: 24px;
-  }
-
-  .home-collection-editorial {
-    grid-template-columns:
-      34px
-      minmax(0, 1fr)
-      auto
-      34px;
-
-    gap: 9px;
-
-    min-height: 86px;
-  }
-
-  .home-collection-editorial h3 {
-    font-size: 16px;
-  }
-
-  .home-collection-editorial__arrow {
-    width: 34px;
-    height: 34px;
-  }
 }
 
 /* ==========================================
@@ -2773,8 +2254,7 @@
   }
 
   .home-categories,
-  .home-featured-products,
-  .home-collections-editorial {
+  .home-featured-products {
     padding: 24px 12px;
   }
 
@@ -2785,14 +2265,6 @@
 
   .home-product-slide {
     width: min(100%, 296px);
-  }
-
-  .home-product-slide .catalog-product-card {
-    min-height: 405px;
-  }
-
-  .home-product-slide .catalog-product-image {
-    height: 240px;
   }
 
   .home-product-carousel__control {
@@ -2847,33 +2319,6 @@
     border-bottom: 0;
   }
 
-  .home-collection-editorial {
-    grid-template-columns:
-      30px
-      minmax(0, 1fr)
-      34px;
-
-    row-gap: 5px;
-  }
-
-  .home-collection-editorial__count {
-    grid-column: 2;
-    grid-row: 2;
-
-    white-space: normal;
-  }
-
-  .home-collection-editorial__arrow {
-    grid-column: 3;
-    grid-row: 1 / span 2;
-  }
-
-  .home-collection-editorial h3 {
-    overflow: visible;
-
-    text-overflow: clip;
-    white-space: normal;
-  }
 }
 
 

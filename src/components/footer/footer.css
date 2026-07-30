@@ -32,7 +32,7 @@
 
   gap: 50px;
 
-  padding: 45px 0;
+  padding: 45px 0 22px;
 }
 
 /* =====================================================
@@ -42,7 +42,7 @@
 .footer-company {
   min-width: 0;
 
-  padding: 30px;
+  padding: 0 30px 24px;
 
   background: var(--color-footer-company-background);
 
