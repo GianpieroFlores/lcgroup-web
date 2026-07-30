@@ -47,6 +47,60 @@
   overflow: hidden;
 }
 
+/* =====================================================
+   ETIQUETAS DE ESTADO
+===================================================== */
+
+.catalog-product-badges {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 5;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+
+  max-width: calc(100% - 16px);
+
+  pointer-events: none;
+}
+
+.catalog-product-badge {
+  min-height: 22px;
+
+  display: inline-flex;
+  align-items: center;
+
+  padding: 4px 8px;
+
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-pill);
+
+  font-family: var(--font-main);
+  font-size: 8px;
+  font-weight: var(--font-weight-bold);
+
+  line-height: 1;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+
+  box-shadow: 0 5px 14px rgba(231, 24, 3, 0.14);
+}
+
+.catalog-product-badge--offer {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.catalog-product-badge--new {
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--color-primary);
+
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
 .catalog-product-image img {
   position: absolute;
   inset: 0;

@@ -105,6 +105,30 @@
             </button>
           </div>
 
+          <!-- SELECCIONES -->
+
+          <section class="filter-group">
+            <button
+              class="filter-group-title"
+              type="button"
+              aria-expanded="true"
+              aria-controls="selection-filter-content"
+            >
+              <span> Selecciones </span>
+
+              <span class="material-symbols-outlined"> remove </span>
+            </button>
+
+            <div id="selection-filter-content" class="filter-group-content">
+              <!--
+                Las selecciones se generan desde
+                los campos offer y new de products.json
+              -->
+
+              <div id="selection-filters"></div>
+            </div>
+          </section>
+
           <!-- CATEGORÍAS -->
 
           <section class="filter-group">
@@ -168,17 +192,30 @@
             </button>
 
             <div id="brand-filter-content" class="filter-group-content">
-              <label class="filter-search">
-                <input
-                  id="brand-search"
-                  type="search"
-                  placeholder="Buscar marca..."
-                  autocomplete="off"
-                  aria-label="Buscar marca"
-                />
+              <div id="brand-search-container" class="filter-brand-search">
+                <label class="filter-search">
+                  <input
+                    id="brand-search"
+                    type="search"
+                    placeholder="Buscar marca..."
+                    autocomplete="off"
+                    aria-label="Buscar marca"
+                    aria-autocomplete="list"
+                    aria-controls="brand-search-results"
+                    aria-expanded="false"
+                  />
 
-                <span class="material-symbols-outlined"> search </span>
-              </label>
+                  <span class="material-symbols-outlined"> search </span>
+                </label>
+
+                <div
+                  id="brand-search-results"
+                  class="filter-brand-search__results"
+                  role="listbox"
+                  aria-label="Marcas encontradas"
+                  hidden
+                ></div>
+              </div>
 
               <!--
             Las marcas serán generadas
@@ -204,61 +241,53 @@
             </button>
 
             <div id="price-filter-content" class="filter-group-content">
-              <div class="price-filter-fields">
-                <label class="price-filter-field">
-                  <span> Desde </span>
+              <div class="price-range-values" aria-live="polite">
+                <span>
+                  Desde
+                  <strong id="minimum-price-value">S/ 0.00</strong>
+                </span>
 
-                  <div class="price-input-wrapper">
-                    <span> S/ </span>
-
-                    <input
-                      id="minimum-price"
-                      type="number"
-                      min="0"
-                      step="0.10"
-                      placeholder="0.00"
-                      inputmode="decimal"
-                    />
-                  </div>
-                </label>
-
-                <label class="price-filter-field">
-                  <span> Hasta </span>
-
-                  <div class="price-input-wrapper">
-                    <span> S/ </span>
-
-                    <input
-                      id="maximum-price"
-                      type="number"
-                      min="0"
-                      step="0.10"
-                      placeholder="500.00"
-                      inputmode="decimal"
-                    />
-                  </div>
-                </label>
+                <span>
+                  Hasta
+                  <strong id="maximum-price-value">S/ 0.00</strong>
+                </span>
               </div>
 
-              <button
-                id="apply-price-filter"
-                class="price-filter-button"
-                type="button"
-              >
-                Aplicar precio
-              </button>
+              <div id="price-range-control" class="price-range-control">
+                <div class="price-range-track" aria-hidden="true"></div>
+
+                <input
+                  id="minimum-price"
+                  type="range"
+                  step="0.10"
+                  aria-label="Precio mínimo"
+                />
+
+                <input
+                  id="maximum-price"
+                  type="range"
+                  step="0.10"
+                  aria-label="Precio máximo"
+                />
+              </div>
+
+              <p class="price-range-help">
+                Desliza los controles para ajustar el rango.
+              </p>
             </div>
           </section>
 
           <!-- LIMPIAR FILTROS -->
 
-          <button
-            id="clear-filters"
-            class="catalog-clear-filters"
-            type="button"
-          >
-            Limpiar filtros
-          </button>
+          <div class="catalog-clear-filters-bar">
+            <button
+              id="clear-filters"
+              class="catalog-clear-filters"
+              type="button"
+            >
+              Limpiar filtros
+            </button>
+          </div>
         </aside>
 
         <!-- ==========================================

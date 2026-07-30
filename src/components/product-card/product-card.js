@@ -39,8 +39,32 @@ export async function createProductCard(product) {
 
   const productName = escapeHTML(product.name);
 
+  const badges = [
+    product.offer
+      ? `
+        <span class="catalog-product-badge catalog-product-badge--offer">
+          Oferta
+        </span>
+      `
+      : "",
+    product.new
+      ? `
+        <span class="catalog-product-badge catalog-product-badge--new">
+          Novedad
+        </span>
+      `
+      : "",
+  ]
+    .filter(Boolean)
+    .join("");
+
+  const badgesMarkup = badges
+    ? `<div class="catalog-product-badges">${badges}</div>`
+    : "";
+
   html = html
     .replace("{{id}}", () => escapeAttribute(product.id))
+    .replace("{{badges}}", () => badgesMarkup)
     .replace(
       "{{url}}",
       () =>

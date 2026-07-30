@@ -18,12 +18,18 @@ let filteredProducts = [];
 const selectedCategories = new Set();
 const selectedBrands = new Set();
 const selectedDrinks = new Set();
+const selectedSelections = new Set();
 
 let minimumPrice = null;
 let maximumPrice = null;
 let sortValue = "default";
 let searchQuery = "";
 let currentPage = 1;
+let catalogMinimumPrice = 0;
+let catalogMaximumPrice = 0;
+let priceFilterFrame = null;
+let availableBrandSuggestions = [];
+let activeBrandSuggestionIndex = -1;
 
 const PRODUCTS_PER_PAGE = 18;
 
@@ -33,6 +39,8 @@ const PRODUCTS_PER_PAGE = 18;
 
 const productGrid = document.getElementById("catalog-product-grid");
 
+const selectionFilters = document.getElementById("selection-filters");
+
 const categoryFilters = document.getElementById("category-filters");
 
 const brandFilters = document.getElementById("brand-filters");
@@ -41,12 +49,23 @@ const drinkFilters = document.getElementById("drink-filters");
 
 const brandSearch = document.getElementById("brand-search");
 
+const brandSearchContainer = document.getElementById(
+  "brand-search-container",
+);
+
+const brandSearchResults = document.getElementById(
+  "brand-search-results",
+);
+
 const minimumPriceInput = document.getElementById("minimum-price");
 
 const maximumPriceInput = document.getElementById("maximum-price");
 
-const applyPriceButton = document.getElementById("apply-price-filter");
+const minimumPriceValue = document.getElementById("minimum-price-value");
 
+const maximumPriceValue = document.getElementById("maximum-price-value");
+
+const priceRangeControl = document.getElementById("price-range-control");
 const clearFiltersButton = document.getElementById("clear-filters");
 
 const emptyClearFiltersButton = document.getElementById("empty-clear-filters");
@@ -89,6 +108,21 @@ function formatLabel(value) {
 }
 
 function productMatchesActiveFilters(product, ignoredFacet = "") {
+  const selectionMatches =
+    ignoredFacet === "selection" ||
+    selectedSelections.size === 0 ||
+    [...selectedSelections].some((selection) => {
+      if (selection === "ofertas") {
+        return product.offer === true;
+      }
+
+      if (selection === "novedades") {
+        return product.new === true;
+      }
+
+      return false;
+    });
+
   const categoryMatches =
     ignoredFacet === "category" ||
     selectedCategories.size === 0 ||
@@ -121,12 +155,37 @@ function productMatchesActiveFilters(product, ignoredFacet = "") {
     searchWords.every((word) => productSearchText.includes(word));
 
   return (
+    selectionMatches &&
     categoryMatches &&
     brandMatches &&
     drinkMatches &&
     minimumMatches &&
     maximumMatches &&
     searchMatches
+  );
+}
+
+function countSelections() {
+  return products.reduce(
+    (counts, product) => {
+      if (!productMatchesActiveFilters(product, "selection")) {
+        return counts;
+      }
+
+      if (product.offer === true) {
+        counts.ofertas += 1;
+      }
+
+      if (product.new === true) {
+        counts.novedades += 1;
+      }
+
+      return counts;
+    },
+    {
+      ofertas: 0,
+      novedades: 0,
+    },
   );
 }
 
@@ -264,6 +323,13 @@ async function loadProducts() {
 
   loadSetFromUrl(
     params,
+    "seleccion",
+    selectedSelections,
+    new Set(["ofertas", "novedades"]),
+  );
+
+  loadSetFromUrl(
+    params,
     "categoria",
     selectedCategories,
     new Set(products.map((product) => product.category)),
@@ -293,6 +359,54 @@ async function loadProducts() {
   loadPageFromUrl(params);
 
   applyFilters({ resetPage: false });
+}
+
+/* ==========================================
+   GENERAR SELECCIONES
+========================================== */
+
+function generateSelectionFilters() {
+  if (!selectionFilters) {
+    return;
+  }
+
+  const selectionCounts = countSelections();
+
+  const selections = [
+    {
+      value: "ofertas",
+      label: "Ofertas",
+    },
+    {
+      value: "novedades",
+      label: "Novedades",
+    },
+  ].filter((selection) => {
+    return (
+      selectionCounts[selection.value] > 0 ||
+      selectedSelections.has(selection.value)
+    );
+  });
+
+  selectionFilters.innerHTML = selections
+    .map((selection) => {
+      return `
+        <label class="filter-option">
+          <input
+            type="checkbox"
+            name="selection"
+            value="${selection.value}"
+          />
+
+          <span>${selection.label}</span>
+
+          <small>
+            (${selectionCounts[selection.value] || 0})
+          </small>
+        </label>
+      `;
+    })
+    .join("");
 }
 
 /* ==========================================
@@ -436,6 +550,8 @@ function generateBrandFilters() {
       `,
     )
     .join("");
+
+  availableBrandSuggestions = brands;
 }
 
 /* ==========================================
@@ -449,17 +565,104 @@ function configurePriceLimits() {
 
   const prices = products.map((product) => Number(product.price));
 
-  const lowestPrice = Math.floor(Math.min(...prices));
+  catalogMinimumPrice = Math.min(...prices);
+  catalogMaximumPrice = Math.max(...prices);
 
-  const highestPrice = Math.ceil(Math.max(...prices));
+  minimumPriceInput.min = String(catalogMinimumPrice);
+  minimumPriceInput.max = String(catalogMaximumPrice);
+  minimumPriceInput.value = String(catalogMinimumPrice);
 
-  minimumPriceInput.min = String(lowestPrice);
-  minimumPriceInput.max = String(highestPrice);
-  minimumPriceInput.placeholder = lowestPrice.toFixed(2);
+  maximumPriceInput.min = String(catalogMinimumPrice);
+  maximumPriceInput.max = String(catalogMaximumPrice);
+  maximumPriceInput.value = String(catalogMaximumPrice);
 
-  maximumPriceInput.min = String(lowestPrice);
-  maximumPriceInput.max = String(highestPrice);
-  maximumPriceInput.placeholder = highestPrice.toFixed(2);
+  updatePriceRangePresentation();
+}
+
+function formatPrice(value) {
+  return new Intl.NumberFormat("es-PE", {
+    style: "currency",
+    currency: "PEN",
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }).format(Number(value) || 0);
+}
+
+function updatePriceRangePresentation() {
+  if (
+    !minimumPriceInput ||
+    !maximumPriceInput ||
+    catalogMaximumPrice <= catalogMinimumPrice
+  ) {
+    return;
+  }
+
+  const selectedMinimum = Number(minimumPriceInput.value);
+  const selectedMaximum = Number(maximumPriceInput.value);
+  const priceDifference = catalogMaximumPrice - catalogMinimumPrice;
+
+  const minimumPosition =
+    ((selectedMinimum - catalogMinimumPrice) / priceDifference) * 100;
+  const maximumPosition =
+    ((selectedMaximum - catalogMinimumPrice) / priceDifference) * 100;
+
+  priceRangeControl?.style.setProperty(
+    "--range-start",
+    `${minimumPosition}%`,
+  );
+  priceRangeControl?.style.setProperty(
+    "--range-end",
+    `${maximumPosition}%`,
+  );
+
+  if (minimumPriceValue) {
+    minimumPriceValue.textContent = formatPrice(selectedMinimum);
+  }
+
+  if (maximumPriceValue) {
+    maximumPriceValue.textContent = formatPrice(selectedMaximum);
+  }
+}
+
+function schedulePriceFiltering() {
+  window.cancelAnimationFrame(priceFilterFrame);
+
+  priceFilterFrame = window.requestAnimationFrame(() => {
+    minimumPrice =
+      Number(minimumPriceInput?.value) <= catalogMinimumPrice
+        ? null
+        : Number(minimumPriceInput?.value);
+
+    maximumPrice =
+      Number(maximumPriceInput?.value) >= catalogMaximumPrice
+        ? null
+        : Number(maximumPriceInput?.value);
+
+    applyFilters();
+  });
+}
+
+function handlePriceRangeInput(event) {
+  if (!minimumPriceInput || !maximumPriceInput) {
+    return;
+  }
+
+  if (
+    event.target === minimumPriceInput &&
+    Number(minimumPriceInput.value) > Number(maximumPriceInput.value)
+  ) {
+    minimumPriceInput.value = maximumPriceInput.value;
+  }
+
+  if (
+    event.target === maximumPriceInput &&
+    Number(maximumPriceInput.value) < Number(minimumPriceInput.value)
+  ) {
+    maximumPriceInput.value = minimumPriceInput.value;
+  }
+
+  updatePriceRangePresentation();
+  schedulePriceFiltering();
 }
 
 /* ==========================================
@@ -491,13 +694,125 @@ function applyBrandSearch() {
 
     option.hidden = !brandName.includes(searchValue);
   });
+
+  renderBrandSearchResults(searchValue);
+}
+
+function closeBrandSearchResults() {
+  if (!brandSearch || !brandSearchResults) {
+    return;
+  }
+
+  brandSearchResults.hidden = true;
+  brandSearchResults.replaceChildren();
+  brandSearch.setAttribute("aria-expanded", "false");
+  brandSearch.removeAttribute("aria-activedescendant");
+  activeBrandSuggestionIndex = -1;
+}
+
+function getBrandResultElements() {
+  return [
+    ...(brandSearchResults?.querySelectorAll("[data-brand-suggestion]") || []),
+  ];
+}
+
+function updateActiveBrandSuggestion() {
+  const resultElements = getBrandResultElements();
+
+  resultElements.forEach((result, index) => {
+    const isActive = index === activeBrandSuggestionIndex;
+
+    result.classList.toggle("is-active", isActive);
+    result.setAttribute("aria-selected", String(isActive));
+  });
+
+  const activeResult = resultElements[activeBrandSuggestionIndex];
+
+  if (activeResult) {
+    brandSearch?.setAttribute("aria-activedescendant", activeResult.id);
+    activeResult.scrollIntoView({ block: "nearest" });
+  } else {
+    brandSearch?.removeAttribute("aria-activedescendant");
+  }
+}
+
+function renderBrandSearchResults(searchValue) {
+  if (!brandSearch || !brandSearchResults) {
+    return;
+  }
+
+  activeBrandSuggestionIndex = -1;
+
+  if (!searchValue) {
+    closeBrandSearchResults();
+    return;
+  }
+
+  const matchingBrands = availableBrandSuggestions.filter((brand) => {
+    return normalizeSearchText(brand).includes(searchValue);
+  });
+
+  if (matchingBrands.length === 0) {
+    brandSearchResults.innerHTML = `
+      <p class="filter-brand-search__empty">
+        No encontramos marcas con “${escapeHTML(brandSearch.value.trim())}”.
+      </p>
+    `;
+  } else {
+    brandSearchResults.innerHTML = matchingBrands
+      .map((brand, index) => {
+        return `
+          <button
+            id="brand-suggestion-${index}"
+            class="filter-brand-search__result"
+            type="button"
+            role="option"
+            aria-selected="false"
+            data-brand-suggestion="${escapeAttribute(brand)}"
+          >
+            <span>${escapeHTML(brand)}</span>
+          </button>
+        `;
+      })
+      .join("");
+  }
+
+  brandSearchResults.hidden = false;
+  brandSearch.setAttribute("aria-expanded", "true");
+}
+
+function selectBrandSuggestions(brands) {
+  const validBrands = brands.filter(Boolean);
+
+  if (validBrands.length === 0) {
+    return;
+  }
+
+  validBrands.forEach((brand) => {
+    selectedBrands.add(brand);
+  });
+
+  updateSetParameter("marca", selectedBrands);
+
+  if (brandSearch) {
+    brandSearch.value = "";
+  }
+
+  closeBrandSearchResults();
+  applyFilters();
+}
+
+function selectBrandSuggestion(brand) {
+  selectBrandSuggestions([brand]);
 }
 
 function updateAvailableFilters() {
+  generateSelectionFilters();
   generateCategoryFilters();
   generateBrandFilters();
   generateDrinkFilters();
 
+  syncCheckboxes(selectionFilters, "selection", selectedSelections);
   syncCheckboxes(categoryFilters, "category", selectedCategories);
   syncCheckboxes(brandFilters, "brand", selectedBrands);
   syncCheckboxes(drinkFilters, "drink", selectedDrinks);
@@ -817,6 +1132,13 @@ function setupSetFilter(
 }
 
 setupSetFilter(
+  selectionFilters,
+  "selection",
+  "seleccion",
+  selectedSelections,
+);
+
+setupSetFilter(
   categoryFilters,
   "category",
   "categoria",
@@ -845,33 +1167,85 @@ brandSearch?.addEventListener("input", () => {
   applyBrandSearch();
 });
 
+brandSearch?.addEventListener("focus", () => {
+  applyBrandSearch();
+});
+
+brandSearch?.addEventListener("keydown", (event) => {
+  const resultElements = getBrandResultElements();
+
+  if (event.key === "Escape") {
+    closeBrandSearchResults();
+    return;
+  }
+
+  if (resultElements.length === 0) {
+    return;
+  }
+
+  if (event.key === "ArrowDown") {
+    event.preventDefault();
+
+    activeBrandSuggestionIndex =
+      activeBrandSuggestionIndex < resultElements.length - 1
+        ? activeBrandSuggestionIndex + 1
+        : 0;
+
+    updateActiveBrandSuggestion();
+    return;
+  }
+
+  if (event.key === "ArrowUp") {
+    event.preventDefault();
+
+    activeBrandSuggestionIndex =
+      activeBrandSuggestionIndex > 0
+        ? activeBrandSuggestionIndex - 1
+        : resultElements.length - 1;
+
+    updateActiveBrandSuggestion();
+    return;
+  }
+
+  if (event.key === "Enter") {
+    event.preventDefault();
+
+    if (activeBrandSuggestionIndex >= 0) {
+      selectBrandSuggestion(
+        resultElements[activeBrandSuggestionIndex]?.dataset.brandSuggestion,
+      );
+      return;
+    }
+
+    selectBrandSuggestions(
+      resultElements.map((result) => result.dataset.brandSuggestion),
+    );
+  }
+});
+
+brandSearchResults?.addEventListener("click", (event) => {
+  const result = event.target.closest("[data-brand-suggestion]");
+
+  if (!result) {
+    return;
+  }
+
+  selectBrandSuggestion(result.dataset.brandSuggestion);
+});
+
+document.addEventListener("click", (event) => {
+  if (!brandSearchContainer?.contains(event.target)) {
+    closeBrandSearchResults();
+  }
+});
+
 /* ==========================================
    FILTRO DE PRECIO
 ========================================== */
 
-applyPriceButton?.addEventListener("click", () => {
-  const minimumValue = minimumPriceInput?.value.trim();
+minimumPriceInput?.addEventListener("input", handlePriceRangeInput);
 
-  const maximumValue = maximumPriceInput?.value.trim();
-
-  minimumPrice = minimumValue === "" ? null : Number(minimumValue);
-
-  maximumPrice = maximumValue === "" ? null : Number(maximumValue);
-
-  if (
-    minimumPrice !== null &&
-    maximumPrice !== null &&
-    minimumPrice > maximumPrice
-  ) {
-    [minimumPrice, maximumPrice] = [maximumPrice, minimumPrice];
-
-    minimumPriceInput.value = String(minimumPrice);
-
-    maximumPriceInput.value = String(maximumPrice);
-  }
-
-  applyFilters();
-});
+maximumPriceInput?.addEventListener("input", handlePriceRangeInput);
 
 /* ==========================================
    ORDENAMIENTO
@@ -888,6 +1262,7 @@ sortSelect?.addEventListener("change", () => {
 ========================================== */
 
 function clearFilters() {
+  selectedSelections.clear();
   selectedCategories.clear();
   selectedBrands.clear();
   selectedDrinks.clear();
@@ -904,11 +1279,11 @@ function clearFilters() {
     });
 
   if (minimumPriceInput) {
-    minimumPriceInput.value = "";
+    minimumPriceInput.value = String(catalogMinimumPrice);
   }
 
   if (maximumPriceInput) {
-    maximumPriceInput.value = "";
+    maximumPriceInput.value = String(catalogMaximumPrice);
   }
 
   if (brandSearch) {
@@ -922,6 +1297,9 @@ function clearFilters() {
   brandFilters?.querySelectorAll("[data-brand-option]").forEach((option) => {
     option.hidden = false;
   });
+
+  updatePriceRangePresentation();
+  updateSetParameter("seleccion", selectedSelections);
   updateSetParameter("categoria", selectedCategories);
   updateSetParameter("marca", selectedBrands);
   updateSetParameter("bebida", selectedDrinks);
