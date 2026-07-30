@@ -24,6 +24,7 @@ const homeState = {
   carouselMoving: false,
   carouselMovementTimer: null,
   resizeTimer: null,
+  ignoreFeaturedClickUntil: 0,
 };
 
 /* =====================================================
@@ -641,18 +642,25 @@ function initFeaturedCarousel() {
   if (!homeState.carouselReady) {
     homeElements.featuredPreviousButton?.addEventListener(
       "click",
-      showPreviousFeaturedProduct,
+      handleFeaturedPreviousClick,
     );
 
     homeElements.featuredNextButton?.addEventListener(
       "click",
-      showNextFeaturedProduct,
+      handleFeaturedNextClick,
     );
 
     homeElements.featuredPagination?.addEventListener(
       "click",
       handleFeaturedPaginationClick,
     );
+
+    homeElements.featuredTrack.addEventListener(
+      "click",
+      handleFeaturedSlideClick,
+    );
+
+    setupFeaturedCarouselSwipe();
 
     window.addEventListener("resize", handleFeaturedCarouselResize);
 
@@ -669,6 +677,106 @@ function initFeaturedCarousel() {
       updateFeaturedCarousel(false);
     });
   });
+}
+
+function handleFeaturedPreviousClick(event) {
+  event.preventDefault();
+  event.stopPropagation();
+
+  showPreviousFeaturedProduct();
+}
+
+function handleFeaturedNextClick(event) {
+  event.preventDefault();
+  event.stopPropagation();
+
+  showNextFeaturedProduct();
+}
+
+/* =====================================================
+   SELECCIONAR UNA TARJETA LATERAL
+===================================================== */
+
+function handleFeaturedSlideClick(event) {
+  if (Date.now() < homeState.ignoreFeaturedClickUntil) {
+    event.preventDefault();
+    event.stopPropagation();
+    return;
+  }
+
+  const slide = event.target.closest("[data-carousel-slide]");
+
+  if (!slide || slide.classList.contains("is-active")) {
+    return;
+  }
+
+  event.preventDefault();
+  event.stopPropagation();
+
+  goToFeaturedProduct(slide.dataset.realIndex);
+}
+
+/* =====================================================
+   DESLIZAR EL CARRUSEL EN PANTALLAS TÁCTILES
+===================================================== */
+
+function setupFeaturedCarouselSwipe() {
+  const viewport = homeElements.featuredViewport;
+
+  if (!viewport) {
+    return;
+  }
+
+  const minimumSwipeDistance = 48;
+
+  let touchStartX = 0;
+  let touchStartY = 0;
+
+  viewport.addEventListener(
+    "touchstart",
+    (event) => {
+      const touch = event.touches[0];
+
+      if (!touch) {
+        return;
+      }
+
+      touchStartX = touch.clientX;
+      touchStartY = touch.clientY;
+    },
+    { passive: true },
+  );
+
+  viewport.addEventListener(
+    "touchend",
+    (event) => {
+      const touch = event.changedTouches[0];
+
+      if (!touch) {
+        return;
+      }
+
+      const horizontalDistance = touch.clientX - touchStartX;
+      const verticalDistance = touch.clientY - touchStartY;
+
+      const isHorizontalSwipe =
+        Math.abs(horizontalDistance) >= minimumSwipeDistance &&
+        Math.abs(horizontalDistance) > Math.abs(verticalDistance);
+
+      if (!isHorizontalSwipe) {
+        return;
+      }
+
+      homeState.ignoreFeaturedClickUntil = Date.now() + 500;
+
+      if (horizontalDistance < 0) {
+        showNextFeaturedProduct();
+      } else {
+        showPreviousFeaturedProduct();
+      }
+    },
+    { passive: true },
+  );
 }
 
 /* =====================================================
@@ -1010,7 +1118,7 @@ function positionFeaturedSlide(slide, distance, measurements, animate) {
   slide.style.filter = `blur(${blur}px)`;
   slide.style.zIndex = String(zIndex);
 
-  slide.style.pointerEvents = isActive ? "auto" : "none";
+  slide.style.pointerEvents = opacity > 0 ? "auto" : "none";
   slide.style.visibility = opacity === 0 ? "hidden" : "visible";
 
   slide.setAttribute("aria-hidden", isActive ? "false" : "true");

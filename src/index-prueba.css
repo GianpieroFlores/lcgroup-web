@@ -317,6 +317,7 @@
   width: 100%;
   overflow: visible;
   padding: 24px 0 20px;
+  touch-action: pan-y;
 }
 
 .home-product-carousel__track {
@@ -358,6 +359,45 @@
   opacity: 1;
 }
 
+.home-product-slide:not(.is-active):not(.is-hidden) {
+  cursor: pointer;
+}
+
+/*
+ * Las tarjetas laterales solo seleccionan la posición del carrusel.
+ * Sus controles y efectos vuelven a estar disponibles al llegar al centro.
+ */
+
+.home-product-slide:not(.is-active) .catalog-product-card {
+  pointer-events: none;
+
+  transform: none;
+  box-shadow: none;
+}
+
+.home-product-slide:not(.is-active)
+  .catalog-product-image__primary {
+  opacity: 1;
+}
+
+.home-product-slide:not(.is-active)
+  .catalog-product-image__secondary {
+  opacity: 0;
+}
+
+.home-product-slide:not(.is-active)
+  .catalog-product-image img {
+  transform: none;
+}
+
+.home-product-slide:not(.is-active)
+  .catalog-cart-button {
+  background: var(--color-white);
+  color: var(--color-accent);
+
+  transform: none;
+}
+
 .home-product-slide.is-active {
   z-index: 100;
   opacity: 1;
@@ -371,7 +411,7 @@
 .home-product-carousel__control {
   position: absolute;
   top: 46%;
-  z-index: 10;
+  z-index: 200;
   display: grid;
   width: 48px;
   height: 48px;
@@ -382,6 +422,8 @@
   color: var(--color-black);
   box-shadow: var(--shadow-card);
   cursor: pointer;
+  pointer-events: auto;
+  touch-action: manipulation;
   transform: translateY(-50%);
   transition:
     color var(--transition-normal),

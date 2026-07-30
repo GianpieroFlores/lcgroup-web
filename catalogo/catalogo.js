@@ -23,6 +23,9 @@ let minimumPrice = null;
 let maximumPrice = null;
 let sortValue = "default";
 let searchQuery = "";
+let currentPage = 1;
+
+const PRODUCTS_PER_PAGE = 18;
 
 /* ==========================================
    ELEMENTOS DEL DOM
@@ -54,6 +57,8 @@ const resultsCount = document.getElementById("catalog-results-count");
 
 const emptyState = document.getElementById("catalog-empty-state");
 
+const pagination = document.getElementById("catalog-pagination");
+
 const sidebar = document.getElementById("catalog-sidebar");
 
 const filterOpenButton = document.querySelector(".catalog-filter-button");
@@ -83,8 +88,54 @@ function formatLabel(value) {
     .replace(/\b\w/g, (letter) => letter.toUpperCase());
 }
 
-function countByProperty(property) {
+function productMatchesActiveFilters(product, ignoredFacet = "") {
+  const categoryMatches =
+    ignoredFacet === "category" ||
+    selectedCategories.size === 0 ||
+    selectedCategories.has(product.category);
+
+  const brandMatches =
+    ignoredFacet === "brand" ||
+    selectedBrands.size === 0 ||
+    selectedBrands.has(product.brand);
+
+  const productDrinks = Array.isArray(product.recommendedFor)
+    ? product.recommendedFor
+    : [];
+
+  const drinkMatches =
+    ignoredFacet === "drink" ||
+    selectedDrinks.size === 0 ||
+    [...selectedDrinks].some((drink) => productDrinks.includes(drink));
+
+  const price = Number(product.price);
+
+  const minimumMatches = minimumPrice === null || price >= minimumPrice;
+  const maximumMatches = maximumPrice === null || price <= maximumPrice;
+
+  const searchWords = searchQuery.split(/\s+/).filter(Boolean);
+  const productSearchText = getProductSearchText(product);
+
+  const searchMatches =
+    searchWords.length === 0 ||
+    searchWords.every((word) => productSearchText.includes(word));
+
+  return (
+    categoryMatches &&
+    brandMatches &&
+    drinkMatches &&
+    minimumMatches &&
+    maximumMatches &&
+    searchMatches
+  );
+}
+
+function countByProperty(property, ignoredFacet) {
   return products.reduce((counts, product) => {
+    if (!productMatchesActiveFilters(product, ignoredFacet)) {
+      return counts;
+    }
+
     const value = product[property];
 
     if (!value) {
@@ -99,6 +150,10 @@ function countByProperty(property) {
 
 function countRecommendedDrinks() {
   return products.reduce((counts, product) => {
+    if (!productMatchesActiveFilters(product, "drink")) {
+      return counts;
+    }
+
     if (!Array.isArray(product.recommendedFor)) {
       return counts;
     }
@@ -153,6 +208,15 @@ function loadSearchFromUrl(params) {
   searchQuery = normalizeSearchText(params.get("search") || "");
 }
 
+function loadPageFromUrl(params) {
+  const requestedPage = Number.parseInt(params.get("pagina"), 10);
+
+  currentPage =
+    Number.isInteger(requestedPage) && requestedPage > 0
+      ? requestedPage
+      : 1;
+}
+
 /* ==========================================
    SINCRONIZAR CHECKBOX DE CATEGORÍAS
 ========================================== */
@@ -194,9 +258,6 @@ async function loadProducts() {
 
   products = await response.json();
 
-  generateCategoryFilters();
-  generateBrandFilters();
-  generateDrinkFilters();
   configurePriceLimits();
 
   const params = new URLSearchParams(window.location.search);
@@ -229,12 +290,9 @@ async function loadProducts() {
   );
 
   loadSearchFromUrl(params);
+  loadPageFromUrl(params);
 
-  syncCheckboxes(categoryFilters, "category", selectedCategories);
-  syncCheckboxes(brandFilters, "brand", selectedBrands);
-  syncCheckboxes(drinkFilters, "drink", selectedDrinks);
-
-  applyFilters();
+  applyFilters({ resetPage: false });
 }
 
 /* ==========================================
@@ -246,13 +304,18 @@ function generateCategoryFilters() {
     return;
   }
 
-  const categoryCounts = countByProperty("category");
+  const categoryCounts = countByProperty("category", "category");
 
-  const categories = Object.keys(categoryCounts).sort((a, b) =>
-    a.localeCompare(b, "es", {
-      sensitivity: "base",
-    }),
-  );
+  const categories = [
+    ...new Set([
+      ...Object.keys(categoryCounts),
+      ...selectedCategories,
+    ]),
+  ].sort((a, b) =>
+      a.localeCompare(b, "es", {
+        sensitivity: "base",
+      }),
+    );
 
   categoryFilters.innerHTML = categories
     .map(
@@ -269,7 +332,7 @@ function generateCategoryFilters() {
           </span>
 
           <small>
-            (${categoryCounts[category]})
+            (${categoryCounts[category] || 0})
           </small>
         </label>
       `,
@@ -288,7 +351,12 @@ function generateDrinkFilters() {
 
   const drinkCounts = countRecommendedDrinks();
 
-  const drinks = Object.keys(drinkCounts).sort((a, b) => {
+  const drinks = [
+    ...new Set([
+      ...Object.keys(drinkCounts),
+      ...selectedDrinks,
+    ]),
+  ].sort((a, b) => {
     return formatDrinkLabel(a, formatLabel).localeCompare(
       formatDrinkLabel(b, formatLabel),
       "es",
@@ -313,7 +381,7 @@ function generateDrinkFilters() {
           </span>
 
           <small>
-            (${drinkCounts[drink]})
+            (${drinkCounts[drink] || 0})
           </small>
         </label>
       `,
@@ -330,13 +398,18 @@ function generateBrandFilters() {
     return;
   }
 
-  const brandCounts = countByProperty("brand");
+  const brandCounts = countByProperty("brand", "brand");
 
-  const brands = Object.keys(brandCounts).sort((a, b) =>
-    a.localeCompare(b, "es", {
-      sensitivity: "base",
-    }),
-  );
+  const brands = [
+    ...new Set([
+      ...Object.keys(brandCounts),
+      ...selectedBrands,
+    ]),
+  ].sort((a, b) =>
+      a.localeCompare(b, "es", {
+        sensitivity: "base",
+      }),
+    );
 
   brandFilters.innerHTML = brands
     .map(
@@ -357,7 +430,7 @@ function generateBrandFilters() {
           </span>
 
           <small>
-            (${brandCounts[brand]})
+            (${brandCounts[brand] || 0})
           </small>
         </label>
       `,
@@ -393,50 +466,43 @@ function configurePriceLimits() {
    FILTRAR PRODUCTOS
 ========================================== */
 
-function applyFilters() {
-  const searchWords = searchQuery.split(/\s+/).filter(Boolean);
+function applyFilters({ resetPage = true } = {}) {
+  if (resetPage) {
+    currentPage = 1;
+  }
 
   filteredProducts = products.filter((product) => {
-    const categoryMatches =
-      selectedCategories.size === 0 || selectedCategories.has(product.category);
-
-    const brandMatches =
-      selectedBrands.size === 0 || selectedBrands.has(product.brand);
-
-    const productDrinks = Array.isArray(product.recommendedFor)
-      ? product.recommendedFor
-      : [];
-
-    const drinkMatches =
-      selectedDrinks.size === 0 ||
-      [...selectedDrinks].some((drink) => {
-        return productDrinks.includes(drink);
-      });
-
-    const price = Number(product.price);
-
-    const minimumMatches = minimumPrice === null || price >= minimumPrice;
-
-    const maximumMatches = maximumPrice === null || price <= maximumPrice;
-
-    const productSearchText = getProductSearchText(product);
-
-    const searchMatches =
-      searchWords.length === 0 ||
-      searchWords.every((word) => productSearchText.includes(word));
-
-    return (
-      categoryMatches &&
-      brandMatches &&
-      drinkMatches &&
-      minimumMatches &&
-      maximumMatches &&
-      searchMatches
-    );
+    return productMatchesActiveFilters(product);
   });
 
   sortProducts();
+  updateAvailableFilters();
+
+  currentPage = Math.min(currentPage, getTotalPages());
+  updatePageParameter();
   renderProducts();
+}
+
+function applyBrandSearch() {
+  const searchValue = normalizeSearchText(brandSearch?.value || "");
+
+  brandFilters?.querySelectorAll("[data-brand-option]").forEach((option) => {
+    const brandName = option.dataset.brandName || "";
+
+    option.hidden = !brandName.includes(searchValue);
+  });
+}
+
+function updateAvailableFilters() {
+  generateCategoryFilters();
+  generateBrandFilters();
+  generateDrinkFilters();
+
+  syncCheckboxes(categoryFilters, "category", selectedCategories);
+  syncCheckboxes(brandFilters, "brand", selectedBrands);
+  syncCheckboxes(drinkFilters, "drink", selectedDrinks);
+
+  applyBrandSearch();
 }
 
 /* ==========================================
@@ -493,25 +559,234 @@ async function renderProducts() {
     return;
   }
 
-  resultsCount.textContent = `Mostrando ${filteredProducts.length} producto${
-    filteredProducts.length === 1 ? "" : "s"
-  }`;
-
   if (filteredProducts.length === 0) {
+    resultsCount.textContent = "Mostrando 0 productos";
     productGrid.innerHTML = "";
     emptyState.hidden = false;
+    renderPagination();
 
     return;
   }
 
   emptyState.hidden = true;
 
+  const firstProductIndex = (currentPage - 1) * PRODUCTS_PER_PAGE;
+  const lastProductIndex = Math.min(
+    firstProductIndex + PRODUCTS_PER_PAGE,
+    filteredProducts.length,
+  );
+
+  const visibleProducts = filteredProducts.slice(
+    firstProductIndex,
+    lastProductIndex,
+  );
+
+  resultsCount.textContent =
+    `Mostrando ${firstProductIndex + 1}–${lastProductIndex} ` +
+    `de ${filteredProducts.length} productos`;
+
   const cards = await Promise.all(
-    filteredProducts.map((product) => createProductCard(product)),
+    visibleProducts.map((product) => createProductCard(product)),
   );
 
   productGrid.innerHTML = cards.join("");
+  renderPagination();
 }
+
+/* ==========================================
+   PAGINACIÓN
+========================================== */
+
+function getTotalPages() {
+  return Math.max(
+    1,
+    Math.ceil(filteredProducts.length / PRODUCTS_PER_PAGE),
+  );
+}
+
+function updatePageParameter() {
+  const url = new URL(window.location.href);
+
+  if (currentPage <= 1) {
+    url.searchParams.delete("pagina");
+  } else {
+    url.searchParams.set("pagina", String(currentPage));
+  }
+
+  window.history.replaceState({}, "", `${url.pathname}${url.search}`);
+}
+
+function getVisiblePageNumbers(totalPages) {
+  if (totalPages <= 5) {
+    return Array.from({ length: totalPages }, (_, index) => index + 1);
+  }
+
+  let pages;
+
+  if (currentPage <= 3) {
+    pages = [1, 2, 3, totalPages];
+  } else if (currentPage >= totalPages - 2) {
+    pages = [1, totalPages - 2, totalPages - 1, totalPages];
+  } else {
+    pages = [
+      1,
+      currentPage - 1,
+      currentPage,
+      currentPage + 1,
+      totalPages,
+    ];
+  }
+
+  return [...new Set(pages)]
+    .filter((page) => page >= 1 && page <= totalPages)
+    .sort((a, b) => a - b);
+}
+
+function renderPagination() {
+  if (!pagination) {
+    return;
+  }
+
+  const totalPages = getTotalPages();
+
+  if (filteredProducts.length === 0 || totalPages <= 1) {
+    pagination.replaceChildren();
+    pagination.hidden = true;
+    return;
+  }
+
+  pagination.hidden = false;
+
+  const pageNumbers = getVisiblePageNumbers(totalPages);
+
+  const numberButtons = pageNumbers
+    .map((page, index) => {
+      const previousPage = pageNumbers[index - 1];
+      const separator =
+        previousPage && page - previousPage > 1
+          ? '<span class="catalog-pagination__ellipsis" aria-hidden="true">…</span>'
+          : "";
+
+      return `
+        ${separator}
+        <button
+          class="catalog-pagination__page${page === currentPage ? " is-active" : ""}"
+          type="button"
+          data-page="${page}"
+          aria-label="Ir a la página ${page}"
+          ${page === currentPage ? 'aria-current="page"' : ""}
+        >
+          ${page}
+        </button>
+      `;
+    })
+    .join("");
+
+  pagination.innerHTML = `
+    <div class="catalog-pagination__navigation">
+      <button
+        class="catalog-pagination__arrow"
+        type="button"
+        data-page="${currentPage - 1}"
+        aria-label="Página anterior"
+        ${currentPage === 1 ? "disabled" : ""}
+      >
+        <span class="material-symbols-outlined" aria-hidden="true">
+          arrow_back
+        </span>
+      </button>
+
+      <div class="catalog-pagination__pages">
+        ${numberButtons}
+      </div>
+
+      <button
+        class="catalog-pagination__arrow"
+        type="button"
+        data-page="${currentPage + 1}"
+        aria-label="Página siguiente"
+        ${currentPage === totalPages ? "disabled" : ""}
+      >
+        <span class="material-symbols-outlined" aria-hidden="true">
+          arrow_forward
+        </span>
+      </button>
+    </div>
+
+    <form class="catalog-pagination__jump" data-page-form>
+      <label for="catalog-page-input">Página</label>
+
+      <input
+        id="catalog-page-input"
+        name="pagina"
+        type="number"
+        min="1"
+        max="${totalPages}"
+        value="${currentPage}"
+        inputmode="numeric"
+        aria-label="Número de página"
+      />
+
+      <span>de ${totalPages}</span>
+
+      <button type="submit">Ir</button>
+    </form>
+  `;
+}
+
+function goToPage(page, { scroll = true } = {}) {
+  const requestedPage = Number.parseInt(page, 10);
+  const totalPages = getTotalPages();
+
+  if (!Number.isInteger(requestedPage)) {
+    renderPagination();
+    return;
+  }
+
+  const nextPage = Math.min(Math.max(requestedPage, 1), totalPages);
+
+  if (nextPage === currentPage) {
+    renderPagination();
+    return;
+  }
+
+  currentPage = nextPage;
+  updatePageParameter();
+  renderProducts();
+
+  if (scroll) {
+    productGrid?.scrollIntoView({
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? "auto"
+        : "smooth",
+      block: "start",
+    });
+  }
+}
+
+pagination?.addEventListener("click", (event) => {
+  const pageButton = event.target.closest("[data-page]");
+
+  if (!pageButton || pageButton.disabled) {
+    return;
+  }
+
+  goToPage(pageButton.dataset.page);
+});
+
+pagination?.addEventListener("submit", (event) => {
+  const form = event.target.closest("[data-page-form]");
+
+  if (!form) {
+    return;
+  }
+
+  event.preventDefault();
+
+  const pageInput = form.elements.namedItem("pagina");
+
+  goToPage(pageInput?.value);
+});
 
 /* ==========================================
    EVENTOS DE CATEGORÍAS
@@ -567,13 +842,7 @@ setupSetFilter(
 ========================================== */
 
 brandSearch?.addEventListener("input", () => {
-  const searchValue = normalizeSearchText(brandSearch.value);
-
-  brandFilters?.querySelectorAll("[data-brand-option]").forEach((option) => {
-    const brandName = option.dataset.brandName || "";
-
-    option.hidden = !brandName.includes(searchValue);
-  });
+  applyBrandSearch();
 });
 
 /* ==========================================

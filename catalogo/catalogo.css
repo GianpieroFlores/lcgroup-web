@@ -572,9 +572,181 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 7px;
+  flex-wrap: wrap;
+  gap: 18px 28px;
 
   margin-top: 42px;
+  padding-top: 26px;
+
+  border-top: 1px solid var(--color-border-card);
+}
+
+.catalog-pagination[hidden] {
+  display: none;
+}
+
+.catalog-pagination__navigation,
+.catalog-pagination__pages,
+.catalog-pagination__jump {
+  display: flex;
+  align-items: center;
+}
+
+.catalog-pagination__navigation {
+  gap: 8px;
+}
+
+.catalog-pagination__pages {
+  gap: 6px;
+}
+
+.catalog-pagination__arrow,
+.catalog-pagination__page {
+  width: 40px;
+  height: 40px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid var(--color-border-card);
+  border-radius: var(--radius-small);
+
+  background: var(--color-white);
+  color: var(--color-text);
+
+  font-family: var(--font-main);
+  font-size: 12px;
+  font-weight: var(--font-weight-semibold);
+
+  cursor: pointer;
+
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.catalog-pagination__arrow:hover,
+.catalog-pagination__page:hover {
+  border-color: var(--color-primary);
+
+  color: var(--color-primary);
+
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card);
+}
+
+.catalog-pagination__page.is-active {
+  border-color: var(--color-primary);
+
+  background: var(--color-primary);
+  color: var(--color-white);
+
+  box-shadow: 0 8px 20px rgba(231, 24, 3, 0.18);
+}
+
+.catalog-pagination__arrow:disabled {
+  border-color: var(--color-border-card);
+
+  background: var(--color-background-soft);
+  color: var(--color-placeholder);
+
+  cursor: not-allowed;
+  opacity: 0.55;
+  transform: none;
+  box-shadow: none;
+}
+
+.catalog-pagination__arrow .material-symbols-outlined {
+  font-size: 18px;
+}
+
+.catalog-pagination__ellipsis {
+  width: 20px;
+
+  color: var(--color-text-muted);
+
+  font-size: 14px;
+  text-align: center;
+}
+
+.catalog-pagination__jump {
+  min-height: 46px;
+
+  gap: 9px;
+
+  padding: 5px 6px 5px 14px;
+
+  border: 1px solid var(--color-border-card);
+  border-radius: var(--radius-medium);
+
+  background: var(--color-background-soft);
+  color: var(--color-text-muted);
+
+  font-size: 11px;
+}
+
+.catalog-pagination__jump input {
+  width: 52px;
+  height: 34px;
+
+  padding: 0 6px;
+
+  border: 1px solid var(--color-border-card);
+  border-radius: var(--radius-small);
+
+  background: var(--color-white);
+  color: var(--color-text);
+
+  font-family: var(--font-main);
+  font-size: 12px;
+  font-weight: var(--font-weight-semibold);
+
+  text-align: center;
+  appearance: textfield;
+}
+
+.catalog-pagination__jump input::-webkit-inner-spin-button,
+.catalog-pagination__jump input::-webkit-outer-spin-button {
+  margin: 0;
+  appearance: none;
+}
+
+.catalog-pagination__jump button {
+  height: 34px;
+
+  padding: 0 13px;
+
+  border: 1px solid var(--color-black);
+  border-radius: var(--radius-small);
+
+  background: var(--color-black);
+  color: var(--color-white);
+
+  font-family: var(--font-main);
+  font-size: 11px;
+  font-weight: var(--font-weight-semibold);
+
+  cursor: pointer;
+
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.catalog-pagination__jump button:hover {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+}
+
+.catalog-pagination__arrow:focus-visible,
+.catalog-pagination__page:focus-visible,
+.catalog-pagination__jump input:focus-visible,
+.catalog-pagination__jump button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
 }
 
 /* =====================================================
@@ -889,7 +1061,36 @@
   }
 
   .catalog-pagination {
+    gap: 16px;
+
     margin-top: 30px;
+    padding-top: 22px;
+  }
+
+  .catalog-pagination__navigation {
+    width: 100%;
+
+    justify-content: center;
+
+    gap: 5px;
+  }
+
+  .catalog-pagination__pages {
+    gap: 4px;
+  }
+
+  .catalog-pagination__arrow,
+  .catalog-pagination__page {
+    width: 36px;
+    height: 36px;
+  }
+
+  .catalog-pagination__ellipsis {
+    width: 12px;
+  }
+
+  .catalog-pagination__jump {
+    justify-content: center;
   }
 }
 
@@ -951,5 +1152,17 @@
 
   .catalog-empty-state {
     min-height: 260px;
+  }
+
+  .catalog-pagination__arrow,
+  .catalog-pagination__page {
+    width: 33px;
+    height: 34px;
+  }
+
+  .catalog-pagination__jump {
+    width: 100%;
+
+    padding-left: 10px;
   }
 }
