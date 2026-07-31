@@ -27,50 +27,19 @@
   position: relative;
 
   width: 100%;
-  height: var(--hero-height);
 
-  padding: var(--section-padding-large);
+  padding: 32px var(--page-padding);
 
   display: flex;
   align-items: center;
 
   overflow: hidden;
 
-  background: var(--color-black);
+  border-bottom: 1px solid var(--color-border);
 
-  color: var(--color-white);
+  background: var(--color-white);
 
-  isolation: isolate;
-}
-
-.contact-hero::before {
-  position: absolute;
-
-  top: -140px;
-  right: -120px;
-
-  width: var(--catalog-feature-height);
-  height: var(--catalog-feature-height);
-
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: var(--radius-circle);
-
-  content: "";
-}
-
-.contact-hero::after {
-  position: absolute;
-
-  right: var(--page-padding);
-  bottom: -170px;
-
-  width: var(--section-content-height);
-  height: var(--section-content-height);
-
-  border: 60px solid rgba(231, 24, 3, 0.14);
-  border-radius: var(--radius-circle);
-
-  content: "";
+  color: var(--color-text);
 }
 
 .contact-hero .container {
@@ -86,7 +55,7 @@
 
   gap: 10px;
 
-  margin-bottom: var(--grid-gap);
+  margin-bottom: 12px;
 
   color: var(--color-primary);
 
@@ -111,31 +80,31 @@
 .contact-hero h1 {
   max-width: 720px;
 
-  margin: 0 0 var(--grid-gap);
+  margin: 0 0 7px;
 
-  color: var(--color-white);
+  color: var(--color-text);
 
   font-family: var(--font-main);
 
-  font-size: clamp(var(--font-size-title-large), 4vw, 56px);
+  font-size: var(--font-size-title);
 
-  font-weight: var(--font-weight-light);
+  font-weight: var(--font-weight-semibold);
 
-  line-height: 1;
+  line-height: 1.1;
 
-  letter-spacing: -2px;
+  letter-spacing: normal;
 }
 
 .contact-hero p {
   max-width: 680px;
 
-  color: rgba(255, 255, 255, 0.76);
+  color: var(--color-text-muted);
 
   font-size: var(--font-size-base);
 
   font-weight: var(--font-weight-light);
 
-  line-height: 1.75;
+  line-height: 1.55;
 }
 
 /* =====================================================
@@ -568,7 +537,7 @@
   position: relative;
 
   width: 100%;
-  height: var(--catalog-feature-height);
+  height: 360px;
 
   overflow: hidden;
 
@@ -625,11 +594,6 @@
   max-width: 1600px;
 }
 
-.contact-hero::before,
-.contact-hero::after {
-  pointer-events: none;
-}
-
 /* ==========================================
    ESCRITORIO REDUCIDO
 ========================================== */
@@ -662,25 +626,7 @@
 
 @media (max-width: 1024px) {
   .contact-hero {
-    height: 400px;
-  }
-
-  .contact-hero::before {
-    top: -130px;
-    right: -100px;
-
-    width: 390px;
-    height: 390px;
-  }
-
-  .contact-hero::after {
-    right: 6%;
-    bottom: -155px;
-
-    width: 255px;
-    height: 255px;
-
-    border-width: 52px;
+    padding: 28px var(--page-padding);
   }
 
   .contact-grid {
@@ -703,7 +649,7 @@
   }
 
   .map-wrapper {
-    height: 400px;
+    height: 330px;
   }
 }
 
@@ -713,10 +659,7 @@
 
 @media (max-width: 768px) {
   .contact-hero {
-    height: auto;
-    min-height: 360px;
-
-    padding: 38px 20px;
+    padding: 26px 20px;
   }
 
   .contact-hero .container,
@@ -725,33 +668,10 @@
     width: 100%;
   }
 
-  .contact-hero h1,
   .contact-info > h2,
   .contact-form-wrapper > h2,
   .map-header h2 {
     font-size: clamp(29px, 6vw, var(--font-size-title-large));
-  }
-
-  .contact-hero h1 {
-    letter-spacing: -1.4px;
-  }
-
-  .contact-hero::before {
-    top: -105px;
-    right: -85px;
-
-    width: 310px;
-    height: 310px;
-  }
-
-  .contact-hero::after {
-    right: 20px;
-    bottom: -125px;
-
-    width: 210px;
-    height: 210px;
-
-    border-width: 44px;
   }
 
   .contact-content {
@@ -795,7 +715,7 @@
   }
 
   .map-wrapper {
-    height: clamp(280px, 48vh, 390px);
+    height: 300px;
   }
 }
 
@@ -805,35 +725,15 @@
 
 @media (max-width: 600px) {
   .contact-hero {
-    min-height: 340px;
-
-    padding: 34px 16px;
+    padding: 24px 16px;
   }
 
   .contact-hero h1 {
-    font-size: clamp(30px, 8vw, 40px);
+    font-size: clamp(27px, 5vw, var(--font-size-title));
   }
 
   .contact-hero p {
     line-height: 1.65;
-  }
-
-  .contact-hero::before {
-    top: -80px;
-    right: -75px;
-
-    width: 250px;
-    height: 250px;
-  }
-
-  .contact-hero::after {
-    right: 10px;
-    bottom: -95px;
-
-    width: 170px;
-    height: 170px;
-
-    border-width: 36px;
   }
 
   .contact-content {
@@ -893,7 +793,7 @@
   }
 
   .map-wrapper {
-    height: clamp(270px, 46vh, 360px);
+    height: 280px;
   }
 }
 
@@ -903,37 +803,17 @@
 
 @media (max-width: 480px) {
   .contact-hero {
-    min-height: 320px;
-
-    padding: 30px 14px;
+    padding: 22px 14px;
   }
 
   .contact-hero h1 {
-    font-size: clamp(29px, 9vw, 36px);
+    font-size: clamp(27px, 7vw, var(--font-size-title));
   }
 
   .contact-hero .section-label {
     margin-bottom: 14px;
 
     letter-spacing: 2.4px;
-  }
-
-  .contact-hero::before {
-    top: -65px;
-    right: -65px;
-
-    width: 205px;
-    height: 205px;
-  }
-
-  .contact-hero::after {
-    right: 5px;
-    bottom: -75px;
-
-    width: 140px;
-    height: 140px;
-
-    border-width: 30px;
   }
 
   .contact-content {
@@ -984,7 +864,7 @@
   }
 
   .map-wrapper {
-    height: clamp(260px, 44vh, 330px);
+    height: 260px;
   }
 }
 
@@ -994,36 +874,16 @@
 
 @media (max-width: 380px) {
   .contact-hero {
-    min-height: 300px;
-
-    padding: 26px 12px;
+    padding: 20px 12px;
   }
 
   .contact-hero h1 {
-    font-size: clamp(28px, 9vw, 33px);
+    font-size: clamp(26px, 8vw, var(--font-size-title));
   }
 
   .contact-hero p {
     font-size: 13px;
     line-height: 1.6;
-  }
-
-  .contact-hero::before {
-    top: -55px;
-    right: -55px;
-
-    width: 175px;
-    height: 175px;
-  }
-
-  .contact-hero::after {
-    right: 0;
-    bottom: -62px;
-
-    width: 115px;
-    height: 115px;
-
-    border-width: 24px;
   }
 
   .contact-content {
@@ -1053,10 +913,7 @@
 
 @media (max-width: 1024px) and (max-height: 600px) and (orientation: landscape) {
   .contact-hero {
-    height: auto;
-    min-height: 280px;
-
-    padding-block: 28px;
+    padding-block: 20px;
   }
 
   .map-wrapper {

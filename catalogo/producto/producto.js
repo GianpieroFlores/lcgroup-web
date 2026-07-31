@@ -6,6 +6,7 @@ import { findProductById } from "../../src/utils/products.js";
 
 
 let product = null;
+const MAX_REQUEST_QUANTITY = 99;
 
 /*=========================================
 =            OBTENER ID URL               =
@@ -93,7 +94,7 @@ function renderProduct(products) {
     .join("");
 
   if (product.stock > 0) {
-    stock.textContent = `${product.stock} disponibles`;
+    stock.textContent = "Disponible · stock sujeto a confirmación";
 
     stock.classList.remove("out-of-stock");
     addCartButton.disabled = false;
@@ -105,7 +106,7 @@ function renderProduct(products) {
 
 
   } else {
-    stock.textContent = "Sin stock";
+    stock.textContent = "No disponible";
 
     stock.classList.add("out-of-stock");
     addCartButton.disabled = true;
@@ -180,9 +181,7 @@ function normalizeQuantity() {
   }
 
 
-  if (product && quantity > product.stock) {
-    quantity = product.stock;
-  }
+  quantity = Math.min(quantity, MAX_REQUEST_QUANTITY);
 
 
   quantityInput.value = quantity;
@@ -214,7 +213,7 @@ increaseButton.addEventListener("click", () => {
   const quantity = normalizeQuantity();
 
 
-  if (product && quantity >= product.stock) {
+  if (quantity >= MAX_REQUEST_QUANTITY) {
     return;
   }
 
