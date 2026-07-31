@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Libro de Reclamaciones | LC Group</title>
+    <meta
+      name="description"
+      content="Plantilla del Libro de Reclamaciones de LC Group."
+    />
+    <link rel="icon" type="image/jpeg" href="/src/assets/images/logo-header.jpg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,300,0,0"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div id="header-container"></div>
+
+    <main class="information-page">
+      <header class="information-hero">
+        <div class="container information-hero__content">
+          <nav class="information-breadcrumb" aria-label="Migas de pan">
+            <a href="/">Inicio</a>
+            <span class="material-symbols-outlined" aria-hidden="true">chevron_right</span>
+            <span>Libro de Reclamaciones</span>
+          </nav>
+          <h1>Libro de Reclamaciones</h1>
+          <p>
+            Espacio destinado a registrar reclamos o quejas relacionados con
+            los productos y la atención brindada por LC Group.
+          </p>
+        </div>
+      </header>
+
+      <div class="container information-layout">
+        <aside class="information-nav" aria-label="Contenido de la página">
+          <strong>Información</strong>
+          <a href="#orientacion">Antes de comenzar</a>
+          <a href="#formulario">Formulario</a>
+          <a href="#diferencias">Reclamo o queja</a>
+        </aside>
+
+        <div class="information-content">
+          <div class="information-notice">
+            <span class="material-symbols-outlined" aria-hidden="true">warning</span>
+            <p>
+              <strong>Plantilla no operativa:</strong> este formulario todavía
+              no registra, almacena ni envía una hoja de reclamación. Debe
+              conectarse a un sistema que genere constancia y remita una copia
+              al consumidor antes de publicarse como canal oficial.
+            </p>
+          </div>
+
+          <section id="orientacion" class="information-section">
+            <span class="information-section__number">01 — ORIENTACIÓN</span>
+            <h2>Antes de registrar tu solicitud</h2>
+            <p>
+              Completa tus datos de contacto, identifica el producto o servicio
+              relacionado y describe claramente lo ocurrido y la solución que
+              solicitas.
+            </p>
+            <p>
+              Información del proveedor pendiente de completar: razón social,
+              RUC y domicilio fiscal de LC Group.
+            </p>
+          </section>
+
+          <form id="formulario" class="claim-form" data-claim-form>
+            <div class="claim-form__heading">
+              <h2>Hoja de reclamación</h2>
+              <p>Los campos marcados con * son obligatorios en esta demostración.</p>
+            </div>
+
+            <div class="claim-form__grid">
+              <div class="claim-field">
+                <label for="claim-name">Nombres y apellidos *</label>
+                <input id="claim-name" name="name" type="text" autocomplete="name" required />
+              </div>
+
+              <div class="claim-field">
+                <label for="claim-document">DNI / CE *</label>
+                <input id="claim-document" name="document" type="text" inputmode="numeric" required />
+              </div>
+
+              <div class="claim-field">
+                <label for="claim-email">Correo electrónico *</label>
+                <input id="claim-email" name="email" type="email" autocomplete="email" required />
+              </div>
+
+              <div class="claim-field">
+                <label for="claim-phone">Teléfono *</label>
+                <input id="claim-phone" name="phone" type="tel" autocomplete="tel" required />
+              </div>
+
+              <div class="claim-field claim-field--full">
+                <label for="claim-address">Domicilio</label>
+                <input id="claim-address" name="address" type="text" autocomplete="street-address" />
+              </div>
+
+              <fieldset class="claim-choice">
+                <legend>Tipo de solicitud *</legend>
+                <label><input type="radio" name="claimType" value="reclamo" required /> Reclamo</label>
+                <label><input type="radio" name="claimType" value="queja" required /> Queja</label>
+              </fieldset>
+
+              <div class="claim-field">
+                <label for="claim-subject">Producto o servicio *</label>
+                <select id="claim-subject" name="subject" required>
+                  <option value="">Selecciona una opción</option>
+                  <option value="producto">Producto</option>
+                  <option value="servicio">Servicio o atención</option>
+                </select>
+              </div>
+
+              <div class="claim-field">
+                <label for="claim-order">Número de pedido o comprobante</label>
+                <input id="claim-order" name="order" type="text" />
+              </div>
+
+              <div class="claim-field claim-field--full">
+                <label for="claim-detail">Detalle del reclamo o queja *</label>
+                <textarea id="claim-detail" name="detail" required></textarea>
+              </div>
+
+              <div class="claim-field claim-field--full">
+                <label for="claim-request">Pedido concreto del consumidor *</label>
+                <textarea id="claim-request" name="request" required></textarea>
+              </div>
+
+              <div class="claim-form__actions">
+                <button class="claim-form__button" type="submit">
+                  Revisar funcionamiento
+                </button>
+                <p
+                  class="claim-form__status"
+                  data-claim-status
+                  tabindex="-1"
+                  role="status"
+                  aria-live="polite"
+                >
+                  El botón no enviará información mientras la plantilla no tenga backend.
+                </p>
+              </div>
+            </div>
+          </form>
+
+          <section id="diferencias" class="information-section">
+            <span class="information-section__number">02 — DEFINICIONES</span>
+            <h2>Diferencia entre reclamo y queja</h2>
+            <h3>Reclamo</h3>
+            <p>
+              Expresa una disconformidad relacionada con los productos o
+              servicios contratados.
+            </p>
+            <h3>Queja</h3>
+            <p>
+              Expresa malestar respecto de la atención recibida, sin referirse
+              necesariamente al producto o servicio adquirido.
+            </p>
+            <p>
+              La presentación de una hoja no impide recurrir a otras vías de
+              solución de controversias.
+            </p>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <div id="footer-container"></div>
+    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/libro-de-reclamaciones/libro-de-reclamaciones.js"></script>
+  </body>
+</html>

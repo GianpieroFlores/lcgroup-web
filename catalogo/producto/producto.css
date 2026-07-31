@@ -76,7 +76,7 @@
   align-items: start;
 
   margin: 0 auto;
-  padding: 70px var(--page-padding) 80px;
+  padding: 46px var(--page-padding) 64px;
 }
 
 /* =====================================================
@@ -164,7 +164,7 @@
   position: relative;
 
   width: 100%;
-  min-height: 540px;
+  min-height: 440px;
 
   display: flex;
   align-items: center;
@@ -183,8 +183,8 @@
   display: block;
 
   width: 100%;
-  max-width: 500px;
-  height: 470px;
+  max-width: 410px;
+  height: 370px;
 
   object-fit: contain;
   object-position: center;
@@ -385,8 +385,8 @@
 
   border-radius: var(--radius-pill);
 
-  background: rgba(0, 87, 200, 0.07);
-  color: var(--color-primary);
+  background: rgba(24, 138, 78, 0.1);
+  color: #188a4e;
 
   font-size: var(--font-size-small);
   font-weight: var(--font-weight-medium);
@@ -402,8 +402,8 @@
 }
 
 .product-stock.out-of-stock {
-  background: rgba(185, 138, 67, 0.1);
-  color: var(--color-accent-dark);
+  background: rgba(196, 37, 37, 0.1);
+  color: #c42525;
 }
 
 .product-description {
@@ -522,10 +522,15 @@
 }
 
 .product-cart-button:hover {
-  border-color: var(--color-primary-dark);
-  background: var(--color-primary-dark);
-  box-shadow: 0 10px 22px rgba(0, 87, 200, 0.18);
+  border-color: var(--color-accent-dark);
+  background: var(--color-accent-dark);
+  box-shadow: 0 10px 22px rgba(231, 24, 3, 0.22);
   transform: translateY(-1px);
+}
+
+.product-cart-button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
 }
 
 .product-cart-button:active {
@@ -747,11 +752,11 @@
   }
 
   .product-main-image {
-    min-height: 500px;
+    min-height: 420px;
   }
 
   .product-main-image img {
-    height: 430px;
+    height: 350px;
   }
 
   .related-products-grid {
@@ -782,11 +787,11 @@
   }
 
   .product-main-image {
-    min-height: 520px;
+    min-height: 420px;
   }
 
   .product-main-image img {
-    height: 450px;
+    height: 350px;
   }
 
   .product-information {

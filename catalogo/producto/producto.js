@@ -94,7 +94,7 @@ function renderProduct(products) {
     .join("");
 
   if (product.stock > 0) {
-    stock.textContent = "Disponible · stock sujeto a confirmación";
+    stock.textContent = "Stock disponible · sujeto a confirmación";
 
     stock.classList.remove("out-of-stock");
     addCartButton.disabled = false;
@@ -106,7 +106,7 @@ function renderProduct(products) {
 
 
   } else {
-    stock.textContent = "No disponible";
+    stock.textContent = "Stock agotado";
 
     stock.classList.add("out-of-stock");
     addCartButton.disabled = true;

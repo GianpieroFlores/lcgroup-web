@@ -95,6 +95,12 @@ const REVEAL_GROUPS = [
     variant: "motion-card-up",
   },
   {
+    selector: ".information-hero__content",
+    variant: "motion-hero-left",
+    children: TEXT_ITEM_SELECTOR,
+    stagger: 85,
+  },
+  {
     selector: ".map-header > .section-label",
     variant: "motion-section-left",
   },
@@ -176,6 +182,11 @@ const STAGGER_GROUPS = [
   {
     container: ".about-service__grid",
     items: ".about-service-card",
+    variant: "motion-card-up",
+  },
+  {
+    container: ".information-content",
+    items: ":scope > *",
     variant: "motion-card-up",
   },
   {
