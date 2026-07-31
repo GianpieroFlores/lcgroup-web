@@ -68,8 +68,10 @@ const REVEAL_GROUPS = [
     variant: "motion-card-up",
   },
   {
-    selector: ".about-intro__content",
-    variant: "motion-section-right",
+    selector: ".about-hero__content",
+    variant: "motion-hero-left",
+    children: TEXT_ITEM_SELECTOR,
+    stagger: 85,
   },
   {
     selector: ".about-presentation__content",
@@ -177,11 +179,6 @@ const STAGGER_GROUPS = [
   {
     container: ".about-values__grid",
     items: ".about-value-card",
-    variant: "motion-card-up",
-  },
-  {
-    container: ".about-service__grid",
-    items: ".about-service-card",
     variant: "motion-card-up",
   },
   {

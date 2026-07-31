@@ -7,6 +7,8 @@ import {
   getPrimaryProductImage,
 } from "./utils/products.js";
 import { createCatalogUrl } from "./utils/urls.js";
+
+const FEATURED_AUTOPLAY_DELAY = 2_000;
 /* =====================================================
    PÁGINA DE INICIO
 ===================================================== */
@@ -22,6 +24,8 @@ const homeState = {
   carouselReady: false,
   carouselMoving: false,
   carouselMovementTimer: null,
+  featuredAutoplayTimer: null,
+  featuredAutoplayStoppedByClick: false,
   resizeTimer: null,
   ignoreFeaturedClickUntil: 0,
 };
@@ -636,9 +640,29 @@ function initFeaturedCarousel() {
       handleFeaturedPreviousClick,
     );
 
+    homeElements.featuredPreviousButton?.addEventListener(
+      "mouseenter",
+      stopFeaturedAutoplay,
+    );
+
+    homeElements.featuredPreviousButton?.addEventListener(
+      "mouseleave",
+      startFeaturedAutoplay,
+    );
+
     homeElements.featuredNextButton?.addEventListener(
       "click",
       handleFeaturedNextClick,
+    );
+
+    homeElements.featuredNextButton?.addEventListener(
+      "mouseenter",
+      stopFeaturedAutoplay,
+    );
+
+    homeElements.featuredNextButton?.addEventListener(
+      "mouseleave",
+      startFeaturedAutoplay,
     );
 
     homeElements.featuredPagination?.addEventListener(
@@ -651,9 +675,27 @@ function initFeaturedCarousel() {
       handleFeaturedSlideClick,
     );
 
+    homeElements.featuredTrack.addEventListener(
+      "mouseover",
+      handleFeaturedActiveSlideMouseOver,
+    );
+
+    homeElements.featuredTrack.addEventListener(
+      "mouseout",
+      handleFeaturedActiveSlideMouseOut,
+    );
+
     setupFeaturedCarouselSwipe();
 
     window.addEventListener("resize", handleFeaturedCarouselResize);
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) {
+        stopFeaturedAutoplay();
+      } else {
+        startFeaturedAutoplay();
+      }
+    });
 
     homeState.carouselReady = true;
   }
@@ -668,20 +710,58 @@ function initFeaturedCarousel() {
       updateFeaturedCarousel(false);
     });
   });
+
+  startFeaturedAutoplay();
 }
 
 function handleFeaturedPreviousClick(event) {
   event.preventDefault();
   event.stopPropagation();
 
+  homeState.featuredAutoplayStoppedByClick = false;
   showPreviousFeaturedProduct();
+
+  if (!event.currentTarget.matches(":hover")) {
+    startFeaturedAutoplay();
+  }
 }
 
 function handleFeaturedNextClick(event) {
   event.preventDefault();
   event.stopPropagation();
 
+  homeState.featuredAutoplayStoppedByClick = false;
   showNextFeaturedProduct();
+
+  if (!event.currentTarget.matches(":hover")) {
+    startFeaturedAutoplay();
+  }
+}
+
+/* =====================================================
+   REPRODUCCIÓN AUTOMÁTICA DEL CARRUSEL
+===================================================== */
+
+function stopFeaturedAutoplay() {
+  window.clearTimeout(homeState.featuredAutoplayTimer);
+  homeState.featuredAutoplayTimer = null;
+}
+
+function startFeaturedAutoplay() {
+  stopFeaturedAutoplay();
+
+  if (
+    document.hidden ||
+    homeState.featuredAutoplayStoppedByClick ||
+    homeState.featuredProducts.length <= 1
+  ) {
+    return;
+  }
+
+  homeState.featuredAutoplayTimer = window.setTimeout(() => {
+    showNextFeaturedProduct();
+    startFeaturedAutoplay();
+  }, FEATURED_AUTOPLAY_DELAY);
 }
 
 /* =====================================================
@@ -697,7 +777,13 @@ function handleFeaturedSlideClick(event) {
 
   const slide = event.target.closest("[data-carousel-slide]");
 
-  if (!slide || slide.classList.contains("is-active")) {
+  if (!slide) {
+    return;
+  }
+
+  if (slide.classList.contains("is-active")) {
+    homeState.featuredAutoplayStoppedByClick = true;
+    stopFeaturedAutoplay();
     return;
   }
 
@@ -705,6 +791,30 @@ function handleFeaturedSlideClick(event) {
   event.stopPropagation();
 
   goToFeaturedProduct(slide.dataset.realIndex);
+}
+
+function handleFeaturedActiveSlideMouseOver(event) {
+  const activeSlide = event.target.closest(
+    "[data-carousel-slide].is-active",
+  );
+
+  if (!activeSlide || activeSlide.contains(event.relatedTarget)) {
+    return;
+  }
+
+  stopFeaturedAutoplay();
+}
+
+function handleFeaturedActiveSlideMouseOut(event) {
+  const activeSlide = event.target.closest(
+    "[data-carousel-slide].is-active",
+  );
+
+  if (!activeSlide || activeSlide.contains(event.relatedTarget)) {
+    return;
+  }
+
+  startFeaturedAutoplay();
 }
 
 /* =====================================================

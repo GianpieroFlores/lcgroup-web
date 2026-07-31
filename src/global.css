@@ -129,6 +129,7 @@
 
   --section-content-height: 285px;
   --catalog-feature-height: 440px;
+  --about-section-height: 285px;
 
   --header-offset: 105px;
 }
@@ -204,6 +205,103 @@ select {
   font: inherit;
 
   outline: none;
+}
+
+/* =====================================================
+   BOTÓN FLOTANTE DE WHATSAPP
+===================================================== */
+
+.whatsapp-float {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 950;
+
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  overflow: hidden;
+
+  border-radius: var(--radius-pill);
+  background: #25d366;
+  color: var(--color-white);
+  box-shadow: 0 8px 24px rgba(9, 94, 42, 0.28);
+
+  transition:
+    width var(--transition-medium),
+    transform var(--transition-normal),
+    background-color var(--transition-normal),
+    box-shadow var(--transition-normal);
+}
+
+.whatsapp-float:hover,
+.whatsapp-float:focus-visible {
+  width: 255px;
+
+  background: #1fbd59;
+  box-shadow: 0 12px 30px rgba(9, 94, 42, 0.38);
+  transform: translateY(-3px);
+}
+
+.whatsapp-float:focus-visible {
+  outline: 3px solid rgba(37, 211, 102, 0.3);
+  outline-offset: 4px;
+}
+
+.whatsapp-float__message {
+  max-width: 0;
+
+  overflow: hidden;
+
+  font-size: 13px;
+  font-weight: var(--font-weight-semibold);
+  white-space: nowrap;
+
+  opacity: 0;
+  transform: translateX(12px);
+
+  transition:
+    max-width var(--transition-medium),
+    opacity var(--transition-normal),
+    transform var(--transition-medium);
+}
+
+.whatsapp-float:hover .whatsapp-float__message,
+.whatsapp-float:focus-visible .whatsapp-float__message {
+  max-width: 185px;
+
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.whatsapp-float__icon {
+  width: 58px;
+  height: 58px;
+
+  flex: 0 0 58px;
+
+  display: grid;
+  place-items: center;
+
+  font-size: 31px;
+}
+
+@media (max-width: 600px) {
+  .whatsapp-float {
+    right: 16px;
+    bottom: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-float,
+  .whatsapp-float__message {
+    transition: none;
+  }
 }
 
 /* =====================================================
