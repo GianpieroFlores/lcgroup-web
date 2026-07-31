@@ -21,7 +21,7 @@ import { createProductUrl } from "../../utils/urls.js";
 ===================================================== */
 
 const CART_STORAGE_KEY = "lcgroup-shopping-cart";
-const WHATSAPP_NUMBER = "51955730008";
+const WHATSAPP_NUMBER = "51983276061";
 
 /* =====================================================
    ESTADO DEL CARRITO
