@@ -3,6 +3,7 @@
 ===================================================== */
 
 import "./cart.css";
+import cartHTML from "./cart.html?raw";
 
 /* =====================================================
    DATOS DE PRODUCTOS
@@ -21,8 +22,6 @@ import { createProductUrl } from "../../utils/urls.js";
 
 const CART_STORAGE_KEY = "lcgroup-shopping-cart";
 const WHATSAPP_NUMBER = "51955730008";
-
-const CART_HTML_URL = new URL("./cart.html", import.meta.url);
 
 /* =====================================================
    ESTADO DEL CARRITO
@@ -92,9 +91,7 @@ function loadCartFromStorage() {
             item.image ||
             getPrimaryProductImage(
               findProductById(products, item.id),
-              "/src/assets/images/product-placeholder.png",
-            ) ||
-            "/src/assets/images/product-placeholder.png",
+            ),
           price: Number(item.price) || 0,
           quantity: Math.max(1, Number(item.quantity) || 1),
         };
@@ -199,19 +196,7 @@ async function loadCartHTML() {
     return;
   }
 
-  try {
-    const response = await fetch(CART_HTML_URL);
-
-    if (!response.ok) {
-      throw new Error(`No se pudo cargar cart.html: ${response.status}`);
-    }
-
-    const cartHTML = await response.text();
-
-    document.body.insertAdjacentHTML("beforeend", cartHTML);
-  } catch (error) {
-    console.error("Error cargando el carrito:", error);
-  }
+  document.body.insertAdjacentHTML("beforeend", cartHTML);
 }
 
 /* =====================================================
@@ -357,7 +342,6 @@ export function addProductToCart(product, quantity = 1) {
       variant: product.variant || "",
       image: getPrimaryProductImage(
         product,
-        "/src/assets/images/product-placeholder.png",
       ),
       price: Number(product.price) || 0,
       quantity: requestedQuantity,
@@ -470,7 +454,11 @@ function createCartProductElement(item) {
   cartProduct.dataset.cartProductId = item.id;
 
   if (image) {
-    image.src = item.image;
+    if (item.image) {
+      image.src = item.image;
+    } else {
+      image.removeAttribute("src");
+    }
     image.alt = item.name;
   }
 

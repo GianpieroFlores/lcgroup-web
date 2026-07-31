@@ -1,4 +1,5 @@
 import "./header.css";
+import headerHTML from "./header.html?raw";
 import products from "../../data/products.json";
 import { escapeAttribute, escapeHTML } from "../../utils/escape.js";
 import {
@@ -42,17 +43,7 @@ export async function loadHeader() {
   }
 
   try {
-    const response = await fetch("/src/components/header/header.html");
-
-    if (!response.ok) {
-      throw new Error(
-        `No se pudo cargar el header. Código: ${response.status}`,
-      );
-    }
-
-    const html = await response.text();
-
-    headerContainer.innerHTML = html;
+    headerContainer.innerHTML = headerHTML;
     await loadCategories(); 
 
 
@@ -452,8 +443,8 @@ function initHeaderSearch() {
 
     const fragment = document.createDocumentFragment();
 
-    visibleProducts.forEach((product, index) => {
-      fragment.append(createSearchResult(product, index));
+    visibleProducts.forEach((product) => {
+      fragment.append(createSearchResult(product));
     });
 
     searchResults.append(fragment);
@@ -530,15 +521,6 @@ function initHeaderSearch() {
         return;
       }
 
-      if (event.key === "Enter" && activeResultIndex >= 0) {
-        event.preventDefault();
-
-        const selectedResult = resultElements[activeResultIndex];
-
-        if (selectedResult) {
-          selectedResult.click();
-        }
-      }
     },
     { signal },
   );
@@ -553,34 +535,12 @@ function initHeaderSearch() {
       event.preventDefault();
 
       const query = searchInput.value.trim();
-      const resultElements = getResultElements();
 
       if (!query) {
         searchInput.focus();
         return;
       }
 
-    /*
-     * Si se seleccionó un producto usando las flechas,
-     * se abre dicho producto.
-     */
-      if (activeResultIndex >= 0 && resultElements[activeResultIndex]) {
-        resultElements[activeResultIndex].click();
-        return;
-      }
-
-    /*
-     * Si solo existe un resultado, se abre directamente.
-     */
-      if (visibleProducts.length === 1) {
-        goToProduct(visibleProducts[0].id);
-        return;
-      }
-
-    /*
-     * Si existen varios resultados, se dirige al catálogo
-     * con el texto buscado.
-     */
       window.location.href = createCatalogUrl({
         search: query,
       });
@@ -588,27 +548,7 @@ function initHeaderSearch() {
     { signal },
   );
 
-  /* ===================================================
-     SELECCIÓN CON EL MOUSE
-  =================================================== */
-
-  searchResults.addEventListener(
-    "mouseover",
-    (event) => {
-      const resultElement = event.target.closest(".search-result");
-
-      if (!resultElement) {
-        return;
-      }
-
-      activeResultIndex = Number(resultElement.dataset.resultIndex);
-
-      updateActiveResult();
-    },
-    { signal },
-  );
-
-  /* ===================================================
+/* ===================================================
      CERRAR AL HACER CLIC FUERA
   =================================================== */
 
@@ -693,13 +633,11 @@ function searchProducts(query) {
    TEXTO UTILIZADO PARA BUSCAR
 ===================================================== */
 
-function createSearchResult(product, index) {
+function createSearchResult(product) {
   const resultLink = document.createElement("a");
 
   resultLink.className = "search-result";
   resultLink.href = createProductUrl(product.id);
-
-  resultLink.dataset.resultIndex = String(index);
 
   resultLink.setAttribute("role", "option");
   resultLink.setAttribute("aria-selected", "false");
@@ -709,10 +647,7 @@ function createSearchResult(product, index) {
   const image = document.createElement("img");
 
   image.className = "search-result-image";
-  image.src = getPrimaryProductImage(
-    product,
-    "/src/assets/images/product-placeholder.png",
-  );
+  image.src = getPrimaryProductImage(product);
   image.alt = product.name || "Producto";
   image.width = 52;
   image.height = 52;
@@ -797,10 +732,3 @@ function formatPrice(price) {
   return priceFormatter.format(numericPrice);
 }
 
-/* =====================================================
-   IR AL PRODUCTO
-===================================================== */
-
-function goToProduct(productId) {
-  window.location.href = createProductUrl(productId);
-}

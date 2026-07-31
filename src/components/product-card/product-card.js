@@ -1,4 +1,5 @@
 import "./product-card.css";
+import productCardHTML from "./product-card.html?raw";
 import { escapeAttribute, escapeHTML } from "../../utils/escape.js";
 import { getPrimaryProductImage } from "../../utils/products.js";
 import { createProductUrl } from "../../utils/urls.js";
@@ -12,15 +13,7 @@ let template = null;
 async function loadTemplate() {
   if (template) return template;
 
-  const response = await fetch(
-    "/src/components/product-card/product-card.html",
-  );
-
-  if (!response.ok) {
-    throw new Error("No se pudo cargar product-card.html");
-  }
-
-  template = await response.text();
+  template = productCardHTML;
 
   return template;
 }

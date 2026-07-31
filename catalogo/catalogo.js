@@ -1,4 +1,5 @@
 import "./catalogo.css";
+import productsData from "../src/data/products.json";
 
 import { createProductCard } from "../src/components/product-card/product-card.js";
 import { escapeAttribute, escapeHTML } from "../src/utils/escape.js";
@@ -309,13 +310,7 @@ function updateSetParameter(parameterName, selectedValues) {
 ========================================== */
 
 async function loadProducts() {
-  const response = await fetch("/src/data/products.json");
-
-  if (!response.ok) {
-    throw new Error("No se pudieron cargar los productos.");
-  }
-
-  products = await response.json();
+  products = productsData;
 
   configurePriceLimits();
 

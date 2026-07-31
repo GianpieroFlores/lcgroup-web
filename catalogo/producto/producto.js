@@ -1,4 +1,5 @@
 import "./producto.css";
+import products from "../../src/data/products.json";
 import { createProductCard } from "../../src/components/product-card/product-card.js";
 import { addProductToCart } from "../../src/components/cart/cart.js";
 import { escapeAttribute, escapeHTML } from "../../src/utils/escape.js";
@@ -31,11 +32,7 @@ async function loadProduct() {
     return;
   }
 
-  const response = await fetch("/src/data/products.json");
-
-  const products = await response.json();
-
-  product = findProductById(products, id);
+product = findProductById(products, id);
 
   if (!product) {
     window.location.href = "/catalogo/";

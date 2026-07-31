@@ -1,8 +1,8 @@
 import "./footer.css";
+import footerHTML from "./footer.html?raw";
+import products from "../../data/products.json";
 import { escapeAttribute, escapeHTML } from "../../utils/escape.js";
 import { createCatalogUrl } from "../../utils/urls.js";
-
-const FOOTER_PRODUCTS_URL = "/src/data/products.json";
 
 function formatFooterCategory(category) {
   return String(category)
@@ -59,41 +59,8 @@ function renderFooterCategories(products) {
     .join("");
 }
 
-async function loadFooterCategories() {
-  const categoryList = document.getElementById(
-    "footer-category-list",
-  );
-
-  if (!categoryList) {
-    return;
-  }
-
-  try {
-    const response = await fetch(FOOTER_PRODUCTS_URL);
-
-    if (!response.ok) {
-      throw new Error(
-        "No se pudieron cargar las categorías del footer.",
-      );
-    }
-
-    const products = await response.json();
-
-    renderFooterCategories(products);
-  } catch (error) {
-    console.error(
-      "Error al cargar las categorías del footer:",
-      error,
-    );
-
-    categoryList.innerHTML = `
-      <li>
-        <a href="/catalogo/">
-          Ver productos
-        </a>
-      </li>
-    `;
-  }
+function loadFooterCategories() {
+  renderFooterCategories(products);
 }
 
 export async function loadFooter() {
@@ -106,21 +73,9 @@ export async function loadFooter() {
   }
 
   try {
-    const response = await fetch(
-      "/src/components/footer/footer.html",
-    );
+    footerContainer.innerHTML = footerHTML;
 
-    if (!response.ok) {
-      throw new Error(
-        "No se pudo cargar footer.html",
-      );
-    }
-
-    const footerHtml = await response.text();
-
-    footerContainer.innerHTML = footerHtml;
-
-    await loadFooterCategories();
+    loadFooterCategories();
   } catch (error) {
     console.error(
       "Error al cargar el footer:",

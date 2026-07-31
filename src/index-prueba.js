@@ -1,4 +1,5 @@
 import "./index-prueba.css";
+import productsData from "./data/products.json";
 import { createProductCard } from "./components/product-card/product-card.js";
 import { escapeAttribute, escapeHTML } from "./utils/escape.js";
 import {
@@ -9,8 +10,6 @@ import { createCatalogUrl } from "./utils/urls.js";
 /* =====================================================
    PÁGINA DE INICIO
 ===================================================== */
-
-const HOME_PRODUCTS_URL = "/src/data/products.json";
 
 /* =====================================================
    ESTADO GENERAL
@@ -171,15 +170,7 @@ function isHomePage() {
 ===================================================== */
 
 async function loadProducts() {
-  const response = await fetch(HOME_PRODUCTS_URL);
-
-  if (!response.ok) {
-    throw new Error(
-      `No se pudo cargar products.json. Código: ${response.status}`,
-    );
-  }
-
-  const data = await response.json();
+  const data = productsData;
 
   if (!Array.isArray(data)) {
     throw new TypeError(
@@ -1359,10 +1350,7 @@ function circularModulo(value, divisor) {
 ===================================================== */
 
 function getProductImage(product) {
-  return getPrimaryProductImage(
-    product,
-    "/src/assets/images/product-placeholder.png",
-  );
+  return getPrimaryProductImage(product);
 }
 
 /* =====================================================
@@ -1377,8 +1365,11 @@ function createImageMarkup({
   loading = "lazy",
   fetchPriority = "auto",
 }) {
-  const safeSource =
-    normalizeText(src) || "/src/assets/images/product-placeholder.png";
+  const safeSource = normalizeText(src);
+
+  if (!safeSource) {
+    return "";
+  }
 
   const safeAlt = normalizeText(alt) || "Producto Spiegelau";
 
