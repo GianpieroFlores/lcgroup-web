@@ -1003,6 +1003,7 @@
 }
 
 .home-collection-card__text {
+  flex: 1 1 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1015,7 +1016,9 @@
   font-size: var(--font-size-small);
   font-weight: var(--font-weight-semibold);
   line-height: 1.2;
-  overflow-wrap: anywhere;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
   white-space: normal;
 }
 
@@ -1032,6 +1035,7 @@
 }
 
 .home-collection-card > .material-symbols-outlined {
+  flex: 0 0 auto;
   color: var(--color-primary);
   font-size: 18px;
   transition: transform var(--transition-normal);
@@ -1083,9 +1087,68 @@
   padding-inline: max(var(--page-padding), calc((100% - 1600px) / 2));
 }
 
+@media (max-width: 1500px) and (min-width: 1201px) {
+  .home-categories__collections {
+    grid-template-columns: minmax(250px, 0.58fr) minmax(0, 2.42fr);
+  }
+
+  .home-categories__collections-header {
+    padding-inline: 28px;
+  }
+}
+
 @media (max-width: 1200px) {
   .home-categories__hero {
     grid-template-columns: minmax(280px, 0.72fr) minmax(500px, 1.28fr);
+  }
+
+  .home-categories__grid {
+    grid-auto-rows: minmax(250px, auto);
+    gap: 12px;
+    padding: 18px;
+  }
+
+  .home-category-card,
+  .home-category-card__link {
+    min-height: 250px;
+  }
+
+  .home-category-card__link {
+    padding: 14px;
+  }
+
+  .home-category-card__content {
+    padding-top: 24px;
+  }
+
+  .home-categories__collections {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .home-categories__collections-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 24px 30px;
+  }
+
+  .home-categories__collections-header::after {
+    display: none;
+  }
+
+  .home-categories__collections-header > span {
+    margin-bottom: 0;
+  }
+
+  .home-categories__collections-header h3 {
+    max-width: none;
+    font-size: clamp(22px, 2.5vw, var(--font-size-title));
+    text-align: right;
+  }
+
+  .home-categories__collection-grid {
+    padding: 18px 22px;
   }
 
   .home-collection-card {
@@ -1128,6 +1191,48 @@
 
   .home-categories__collections-header {
     padding: 28px 30px;
+  }
+}
+
+@media (max-width: 960px) {
+  .home-categories__collection-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 16px;
+  }
+
+  .home-collection-card,
+  .home-collection-card:nth-child(5n),
+  .home-collection-card:nth-child(n + 6) {
+    border-right: 1px solid var(--color-border-card);
+    border-bottom: 1px solid var(--color-border-card);
+  }
+
+  .home-collection-card:nth-child(2n) {
+    border-right: 0;
+  }
+
+  .home-collection-card:nth-last-child(-n + 2) {
+    border-bottom: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .home-categories__hero {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+  }
+
+  .home-categories__hero-content {
+    width: min(560px, calc(100% - 72px));
+    margin-left: 9%;
+    padding: 40px 0;
+  }
+
+  .home-categories__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: minmax(250px, auto);
+    padding: 0 24px 24px;
+    gap: 14px;
   }
 }
 
@@ -1176,13 +1281,14 @@
 
   .home-categories__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: minmax(250px, auto);
     padding: 0 24px 24px;
     gap: 14px;
   }
 
   .home-category-card,
   .home-category-card__link {
-    min-height: 220px;
+    min-height: 250px;
   }
 
   .home-categories__collections {
@@ -1305,11 +1411,15 @@
 
   .home-category-card,
   .home-category-card__link {
-    min-height: 210px;
+    min-height: 245px;
   }
 
   .home-category-card__link {
-    padding: 16px;
+    padding: 14px;
+  }
+
+  .home-category-card__content {
+    padding-top: 20px;
   }
 
   .home-category-card__content p {
@@ -1317,7 +1427,18 @@
   }
 
   .home-categories__collections-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
     padding: 24px;
+  }
+
+  .home-categories__collections-header > span {
+    margin-bottom: 9px;
+  }
+
+  .home-categories__collections-header h3 {
+    text-align: left;
   }
 
   .home-featured-products__header {
@@ -1400,9 +1521,13 @@
     grid-template-columns: minmax(0, 1fr);
   }
 
+  .home-categories__grid {
+    grid-auto-rows: minmax(220px, auto);
+  }
+
   .home-category-card,
   .home-category-card__link {
-    min-height: 200px;
+    min-height: 220px;
   }
 
   .home-category-card__content h3,
@@ -1488,7 +1613,7 @@
 
   .home-category-card,
   .home-category-card__link {
-    min-height: 225px;
+    min-height: 210px;
   }
 
   .home-collection-card {
