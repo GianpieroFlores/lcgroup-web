@@ -74,7 +74,7 @@ function loadCategories() {
     ...new Set(
       products.map((product) => product.category),
     ),
-  ].sort();
+  ].filter(Boolean).sort();
 
 
   const categoryItems = categories
@@ -100,6 +100,11 @@ function loadCategories() {
       </a>
     </li>
     ${categoryItems}
+    <li>
+      <a href="/catalogo/?vista=colecciones">
+        Colecciones
+      </a>
+    </li>
   `;
   });
 }
@@ -588,8 +593,8 @@ function searchProducts(query) {
       const nameA = normalizeSearchText(productA.name);
       const nameB = normalizeSearchText(productB.name);
 
-      const brandA = normalizeSearchText(productA.brand);
-      const brandB = normalizeSearchText(productB.brand);
+      const collectionA = normalizeSearchText(productA.collection);
+      const collectionB = normalizeSearchText(productB.collection);
 
       const nameStartsA = nameA.startsWith(normalizedQuery);
       const nameStartsB = nameB.startsWith(normalizedQuery);
@@ -613,14 +618,14 @@ function searchProducts(query) {
         return 1;
       }
 
-      const brandStartsA = brandA.startsWith(normalizedQuery);
-      const brandStartsB = brandB.startsWith(normalizedQuery);
+      const collectionStartsA = collectionA.startsWith(normalizedQuery);
+      const collectionStartsB = collectionB.startsWith(normalizedQuery);
 
-      if (brandStartsA && !brandStartsB) {
+      if (collectionStartsA && !collectionStartsB) {
         return -1;
       }
 
-      if (!brandStartsA && brandStartsB) {
+      if (!collectionStartsA && collectionStartsB) {
         return 1;
       }
 
@@ -672,7 +677,7 @@ function createSearchResult(product) {
 
   productMeta.className = "search-result-meta";
 
-  const metaValues = [product.brand, product.variant].filter(Boolean);
+  const metaValues = [product.collection, product.presentation].filter(Boolean);
 
   productMeta.textContent = metaValues.join(" · ");
 

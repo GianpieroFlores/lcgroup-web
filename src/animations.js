@@ -1,26 +1,25 @@
-import "./animations.css";
+﻿import "./animations.css";
 
 const MOTION_VISIBLE_CLASS = "is-motion-visible";
 const MOTION_REVEAL_CLASS = "motion-reveal";
 
 const TEXT_ITEM_SELECTOR = [
   ":scope > .home-eyebrow",
-  ":scope > .home-categories__eyebrow",
+  ":scope > .home-categories__hero-eyebrow",
   ":scope > .about-eyebrow",
   ":scope > .section-label",
-  ":scope > .product-brand",
+  ":scope > .product-collection",
   ":scope > h1",
   ":scope > h2",
   ":scope > p",
-  ":scope > .product-variant",
+  ":scope > .product-presentation",
   ":scope > .product-sku",
   ":scope > .product-price",
   ":scope > .product-stock",
   ":scope > .home-hero__actions > .button",
   ":scope > .products-breadcrumb",
   ":scope > .home-link",
-  ":scope > .home-categories__link",
-  ":scope > .featured-showcase__button",
+  ":scope > .home-categories__hero-button",
   ":scope > .about-link",
   ":scope > .product-actions",
   ":scope > .contact-form",
@@ -34,7 +33,7 @@ const REVEAL_GROUPS = [
     variant: "motion-hero-left",
   },
   {
-    selector: ".home-categories__intro",
+    selector: ".home-categories__hero-content",
     variant: "motion-section-left",
   },
   {
@@ -46,11 +45,7 @@ const REVEAL_GROUPS = [
     variant: "motion-section-right",
   },
   {
-    selector: ".featured-showcase__content",
-    variant: "motion-section-left",
-  },
-  {
-    selector: ".featured-showcase__drinks-header",
+    selector: ".home-categories__collections-header",
     variant: "motion-section-left",
   },
   {
@@ -62,6 +57,10 @@ const REVEAL_GROUPS = [
   {
     selector: ".product-information",
     variant: "motion-section-right",
+  },
+  {
+    selector: ".catalog-feature-banner__content",
+    variant: "motion-section-left",
   },
   {
     selector: ".related-products .section-header",
@@ -79,11 +78,11 @@ const REVEAL_GROUPS = [
   },
   {
     selector:
-      ".about-values > .about-section-heading, .about-service > .about-section-heading",
+      ".about-values > .about-section-heading",
     variant: "motion-card-up",
   },
   {
-    selector: ".about-quality__content",
+    selector: ".about-partnership__content",
     variant: "motion-section-right",
   },
   {
@@ -122,11 +121,15 @@ const MEDIA_GROUPS = [
     variant: "motion-image-scale",
   },
   {
-    selector: ".featured-showcase__image",
+    selector: ".home-categories__hero-media",
     variant: "motion-image-up",
   },
   {
     selector: ".product-gallery",
+    variant: "motion-image-scale",
+  },
+  {
+    selector: ".catalog-feature-banner",
     variant: "motion-image-scale",
   },
   {
@@ -137,7 +140,7 @@ const MEDIA_GROUPS = [
 
 const INTERACTIVE_SELECTOR = [
   ".home-page .button",
-  ".featured-showcase__button",
+  ".home-categories__hero-button",
   ".about-link",
   ".about-page .button",
   ".product-cart-button",
@@ -152,7 +155,7 @@ const STAGGER_GROUPS = [
     items: ":scope > *",
   },
   {
-    container: ".home-categories",
+    container: ".home-categories__grid",
     items: ".home-category-card",
     variant: "motion-card-up",
   },
@@ -162,8 +165,8 @@ const STAGGER_GROUPS = [
     variant: "motion-product-card",
   },
   {
-    container: ".featured-showcase__links",
-    items: ":scope > a, :scope > button",
+    container: ".home-categories__collection-grid",
+    items: ".home-collection-card",
     variant: "motion-card-up",
   },
   {
@@ -173,6 +176,11 @@ const STAGGER_GROUPS = [
   },
   {
     container: ".related-products-grid",
+    items: ".catalog-product-card",
+    variant: "motion-product-card",
+  },
+  {
+    container: ".catalog-collection-group__products",
     items: ".catalog-product-card",
     variant: "motion-product-card",
   },
@@ -227,7 +235,6 @@ function queryIncludingRoot(root, selector) {
 
   return elements;
 }
-
 function revealElement(element) {
   if (
     !reducedMotionQuery.matches &&

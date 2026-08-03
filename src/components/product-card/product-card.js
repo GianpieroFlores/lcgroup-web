@@ -68,8 +68,8 @@ export async function createProductCard(product) {
     .replace("{{primaryImage}}", () => escapeAttribute(primaryImage))
     .replace("{{secondaryImage}}", () => escapeAttribute(secondaryImage))
     .replaceAll("{{name}}", () => productName)
-    .replace("{{brand}}", () => escapeHTML(product.brand))
-    .replace("{{variant}}", () => escapeHTML(product.variant))
+    .replace("{{collection}}", () => escapeHTML(product.collection))
+    .replace("{{presentation}}", () => escapeHTML(product.presentation))
     .replace(
       "{{price}}",
       () => Number(product.price).toFixed(2),

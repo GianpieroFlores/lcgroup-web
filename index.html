@@ -99,39 +99,41 @@
      CATEGORÍAS
 ====================================================== -->
 
-<section class="home-categories">
-  <!-- INTRODUCCIÓN -->
+<section class="home-categories" aria-labelledby="home-categories-title">
+  <div class="home-categories__hero">
+    <div class="home-categories__hero-media">
+      <img
+        src="/assets/images/banner-copas.webp"
+        alt=""
+        width="1600"
+        height="700"
+        loading="lazy"
+      />
+    </div>
 
-  <div class="home-categories__intro">
-    <span class="home-categories__eyebrow">
-      Explora
-    </span>
-
-    <h2>
-      Nuestras
-      <br />
-      categorías
-    </h2>
-
-    <p>
-      Descubre nuestra colección de cristalería para el hogar,
-      restaurantes, hoteles y eventos.
-    </p>
-
-    <a
-      href="/catalogo/"
-      class="home-categories__link"
-    >
-      Ver todo el catálogo
-
-      <span
-        class="material-symbols-outlined"
-        aria-hidden="true"
-      >
-        arrow_forward
+    <div class="home-categories__hero-content">
+      <span class="home-categories__hero-eyebrow">
+        CALIDAD • DISEÑO • ELEGANCIA
       </span>
-    </a>
-  </div>
+
+      <h2 id="home-categories-title">
+        Cristalería para
+        <br />
+        cada ocasión
+      </h2>
+
+      <p>
+        Descubre una selección de copas, vasos, jarras y accesorios
+        diseñados para realzar cada bebida y convertir cada momento en una
+        experiencia elegante.
+      </p>
+
+      <a href="/catalogo/" class="home-categories__hero-button">
+        Explorar catálogo
+      </a>
+    </div>
+
+    <div class="home-categories__grid">
 
   <!-- COPAS -->
 
@@ -332,6 +334,26 @@
       </div>
     </a>
   </article>
+    </div>
+  </div>
+
+  <aside class="home-categories__collections">
+    <div class="home-categories__collections-header">
+      <span>Compra según tu bebida</span>
+      <h3>Encuentra la copa ideal</h3>
+    </div>
+
+    <nav
+      id="home-collection-examples"
+      class="home-categories__collection-grid"
+      aria-label="Colecciones destacadas"
+    >
+      <!--
+        EJEMPLOS TEMPORALES: este bloque se genera desde products.json y debe
+        sustituirse por las 10 colecciones estáticas definitivas del cliente.
+      -->
+    </nav>
+  </aside>
 </section>
       <!-- =====================================================
        CARRUSEL DE PRODUCTOS DESTACADOS
@@ -432,62 +454,6 @@
         </div>
       </section>
 
-      <!-- =====================================================
-     BANNER + COMPRA SEGÚN TU BEBIDA
-====================================================== -->
-
-      <section class="featured-showcase">
-        <!-- IMAGEN -->
-
-        <div class="featured-showcase__image">
-          <img
-            src="/assets/images/banner-copas.webp"
-            alt="Colección de cristalería premium"
-          />
-        </div>
-
-        <!-- CONTENIDO -->
-
-        <div class="featured-showcase__content">
-          <span class="featured-showcase__subtitle">
-            CALIDAD • DISEÑO • ELEGANCIA
-          </span>
-
-          <h2>
-            Cristalería para
-            <br />
-            cada ocasión
-          </h2>
-
-          <p>
-            Descubre una selección de copas, vasos, jarras y accesorios
-            diseñados para realzar cada bebida y convertir cada momento en una
-            experiencia elegante.
-          </p>
-
-          <a href="/catalogo/" class="featured-showcase__button">
-            Explorar catálogo
-          </a>
-        </div>
-
-        <!-- PANEL DE BEBIDAS -->
-
-        <aside class="featured-showcase__drinks">
-          <div class="featured-showcase__drinks-header">
-            <span>Compra según tu bebida</span>
-
-            <h3>Encuentra la copa ideal</h3>
-          </div>
-
-          <nav
-            id="featured-showcase-drinks"
-            class="featured-showcase__links"
-            aria-label="Comprar según el tipo de bebida"
-          >
-            <!-- Las opciones se generan automáticamente desde products.json -->
-          </nav>
-        </aside>
-      </section>
     </main>
 
     <div id="footer-container"></div>

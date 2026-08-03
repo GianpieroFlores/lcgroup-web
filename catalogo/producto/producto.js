@@ -52,11 +52,13 @@ function renderProduct(products) {
 
   document.getElementById("breadcrumb-product").textContent = product.name;
 
-  document.getElementById("product-brand").textContent = product.brand;
+  document.getElementById("product-collection").textContent =
+    product.collection;
 
   document.getElementById("product-name").textContent = product.name;
 
-  document.getElementById("product-variant").textContent = product.variant;
+  document.getElementById("product-presentation").textContent =
+    product.presentation;
 
   document.getElementById("product-sku").textContent = `SKU: ${product.sku}`;
 

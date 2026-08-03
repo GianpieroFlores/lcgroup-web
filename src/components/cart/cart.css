@@ -412,7 +412,7 @@ body.cart-open {
 }
 
 
-.cart-product__brand {
+.cart-product__collection {
   display: block;
 
 
@@ -458,7 +458,7 @@ body.cart-open {
 }
 
 
-.cart-product__variant {
+.cart-product__presentation {
   display: -webkit-box;
 
 

@@ -325,18 +325,6 @@
   padding-top: 12px;
 }
 
-.product-brand {
-  display: block;
-  margin-bottom: 13px;
-
-  color: var(--color-primary);
-  font-size: var(--font-size-small);
-  font-weight: var(--font-weight-semibold);
-  letter-spacing: 0.22em;
-  line-height: 1.4;
-  text-transform: uppercase;
-}
-
 .product-name {
   max-width: 620px;
   margin: 0 0 12px;
@@ -348,7 +336,19 @@
   line-height: 1.15;
 }
 
-.product-variant {
+.product-collection {
+  display: block;
+  margin-bottom: 13px;
+
+  color: var(--color-primary);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.22em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.product-presentation {
   margin: 0 0 12px;
 
   color: var(--color-text-muted);
@@ -705,9 +705,9 @@
    ESTADO DE CARGA
 ===================================================== */
 
-.product-page.is-loading .product-brand,
+.product-page.is-loading .product-collection,
 .product-page.is-loading .product-name,
-.product-page.is-loading .product-variant,
+.product-page.is-loading .product-presentation,
 .product-page.is-loading .product-sku,
 .product-page.is-loading .product-price,
 .product-page.is-loading .product-description {
@@ -963,12 +963,12 @@
     bottom: 12px;
   }
 
-  .product-brand {
-    margin-bottom: 10px;
-  }
-
   .product-name {
     font-size: clamp(27px, 7vw, 34px);
+  }
+
+  .product-collection {
+    margin-bottom: 10px;
   }
 
   .product-sku {
@@ -1175,7 +1175,8 @@
     font-size: clamp(25px, 8vw, 30px);
   }
 
-  .product-variant,
+  .product-collection,
+  .product-presentation,
   .product-description {
     overflow-wrap: anywhere;
   }

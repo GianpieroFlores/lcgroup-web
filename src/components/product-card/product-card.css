@@ -166,7 +166,7 @@
   flex: 1;
 }
 
-.catalog-product-brand {
+.catalog-product-collection {
   margin-bottom: 6px;
 
   color: var(--color-accent);
@@ -198,7 +198,7 @@
   text-transform: uppercase;
 }
 
-.catalog-product-variant {
+.catalog-product-presentation {
   margin-bottom: 14px;
 
   color: var(--color-text-light);

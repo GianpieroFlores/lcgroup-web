@@ -17,7 +17,7 @@ let products = [];
 let filteredProducts = [];
 
 const selectedCategories = new Set();
-const selectedBrands = new Set();
+const selectedCollections = new Set();
 const selectedDrinks = new Set();
 const selectedSelections = new Set();
 
@@ -29,10 +29,71 @@ let currentPage = 1;
 let catalogMinimumPrice = 0;
 let catalogMaximumPrice = 0;
 let priceFilterFrame = null;
-let availableBrandSuggestions = [];
-let activeBrandSuggestionIndex = -1;
+let availableCollectionSuggestions = [];
+let activeCollectionSuggestionIndex = -1;
+let productsPerPage = 18;
+let catalogResizeTimer = null;
+let viewMode = "normal";
+let productRenderVersion = 0;
 
-const PRODUCTS_PER_PAGE = 18;
+const BASE_PRODUCTS_PER_PAGE = 18;
+
+/*
+ * Configuración temporal de banners.
+ * El cliente podrá reemplazar imágenes, títulos, textos y orden sin tocar
+ * products.json ni la lógica de agrupación.
+ */
+const CATEGORY_BANNERS = {
+  copas: {
+    image: "/assets/images/banner-copas.webp",
+    description: "Cristalería diseñada para realzar cada estilo de vino.",
+  },
+  vasos: {
+    image: "/assets/images/product81-1.webp",
+    description: "Diseño y funcionalidad para distintas bebidas y ocasiones.",
+  },
+  decantadores: {
+    image: "/assets/images/decantadores.jpg",
+    description: "Piezas creadas para servir y disfrutar el vino con elegancia.",
+  },
+  kits: {
+    image: "/assets/images/kits.jpg",
+    description: "Selecciones de cristalería para experiencias completas.",
+  },
+};
+
+const COLLECTION_BANNERS = {
+  winelovers: {
+    image: "/assets/images/banner-copas.webp",
+    description: "Formas versátiles para descubrir el carácter de cada vino.",
+  },
+  "beer classics": {
+    image: "/assets/images/kits.jpg",
+    description: "Cristalería desarrollada para distintos estilos de cerveza.",
+  },
+  "special glasses": {
+    image: "/assets/images/nosotros-presentation.png",
+    description: "Diseños especializados para cócteles y destilados.",
+  },
+  "authentis casual": {
+    image: "/assets/images/product81-1.webp",
+    description: "Elegancia contemporánea para disfrutar todos los días.",
+  },
+};
+
+const COLLECTION_ORDER = [
+  "winelovers",
+  "authentis casual",
+  "definition",
+  "definition pro",
+  "beer classics",
+  "special glasses",
+];
+
+const DEFAULT_BANNER = {
+  image: "/assets/images/nosotros-presentation.png",
+  description: "Descubre los productos disponibles en esta selección Spiegelau.",
+};
 
 /* ==========================================
    ELEMENTOS DEL DOM
@@ -44,18 +105,18 @@ const selectionFilters = document.getElementById("selection-filters");
 
 const categoryFilters = document.getElementById("category-filters");
 
-const brandFilters = document.getElementById("brand-filters");
+const collectionFilters = document.getElementById("collection-filters");
 
 const drinkFilters = document.getElementById("drink-filters");
 
-const brandSearch = document.getElementById("brand-search");
+const collectionSearch = document.getElementById("collection-search");
 
-const brandSearchContainer = document.getElementById(
-  "brand-search-container",
+const collectionSearchContainer = document.getElementById(
+  "collection-search-container",
 );
 
-const brandSearchResults = document.getElementById(
-  "brand-search-results",
+const collectionSearchResults = document.getElementById(
+  "collection-search-results",
 );
 
 const minimumPriceInput = document.getElementById("minimum-price");
@@ -68,6 +129,7 @@ const maximumPriceValue = document.getElementById("maximum-price-value");
 
 const priceRangeControl = document.getElementById("price-range-control");
 const clearFiltersButton = document.getElementById("clear-filters");
+const applyFiltersButton = document.getElementById("apply-filters");
 
 const emptyClearFiltersButton = document.getElementById("empty-clear-filters");
 
@@ -78,6 +140,14 @@ const resultsCount = document.getElementById("catalog-results-count");
 const emptyState = document.getElementById("catalog-empty-state");
 
 const pagination = document.getElementById("catalog-pagination");
+
+const categoryView = document.getElementById(
+  "catalog-category-view",
+);
+
+const collectionsView = document.getElementById(
+  "catalog-collections-view",
+);
 
 const sidebar = document.getElementById("catalog-sidebar");
 
@@ -108,6 +178,19 @@ function formatLabel(value) {
     .replace(/\b\w/g, (letter) => letter.toUpperCase());
 }
 
+function normalizeFacetValue(value = "") {
+  return normalizeSearchText(value)
+    .replace(/[-_]+/g, " ")
+    .replace(/\s+/g, " ");
+}
+
+function isCollectionsViewActive() {
+  return (
+    selectedCategories.size === 0 &&
+    (viewMode === "collections" || selectedCollections.size > 0)
+  );
+}
+
 function productMatchesActiveFilters(product, ignoredFacet = "") {
   const selectionMatches =
     ignoredFacet === "selection" ||
@@ -129,10 +212,10 @@ function productMatchesActiveFilters(product, ignoredFacet = "") {
     selectedCategories.size === 0 ||
     selectedCategories.has(product.category);
 
-  const brandMatches =
-    ignoredFacet === "brand" ||
-    selectedBrands.size === 0 ||
-    selectedBrands.has(product.brand);
+  const collectionMatches =
+    ignoredFacet === "collection" ||
+    selectedCollections.size === 0 ||
+    selectedCollections.has(product.collection);
 
   const productDrinks = Array.isArray(product.recommendedFor)
     ? product.recommendedFor
@@ -158,7 +241,7 @@ function productMatchesActiveFilters(product, ignoredFacet = "") {
   return (
     selectionMatches &&
     categoryMatches &&
-    brandMatches &&
+    collectionMatches &&
     drinkMatches &&
     minimumMatches &&
     maximumMatches &&
@@ -242,6 +325,11 @@ function loadSetFromUrl(
   availableValues,
 ) {
   const parameterValue = params.get(parameterName);
+  const normalizedAvailableValues = new Map(
+    [...availableValues]
+      .filter(Boolean)
+      .map((value) => [normalizeFacetValue(value), value]),
+  );
 
   selectedValues.clear();
 
@@ -254,8 +342,12 @@ function loadSetFromUrl(
     .map((value) => value.trim())
     .filter(Boolean)
     .forEach((value) => {
-      if (availableValues.has(value)) {
-        selectedValues.add(value);
+      const availableValue = normalizedAvailableValues.get(
+        normalizeFacetValue(value),
+      );
+
+      if (availableValue) {
+        selectedValues.add(availableValue);
       }
     });
 }
@@ -300,6 +392,11 @@ function updateSetParameter(parameterName, selectedValues) {
     url.searchParams.delete(parameterName);
   } else {
     url.searchParams.set(parameterName, [...selectedValues].join(","));
+
+    if (parameterName === "coleccion") {
+      url.searchParams.delete("vista");
+      viewMode = "normal";
+    }
   }
 
   window.history.replaceState({}, "", `${url.pathname}${url.search}`);
@@ -315,6 +412,10 @@ async function loadProducts() {
   configurePriceLimits();
 
   const params = new URLSearchParams(window.location.search);
+
+  viewMode = params.get("vista") === "colecciones"
+    ? "collections"
+    : "normal";
 
   loadSetFromUrl(
     params,
@@ -332,9 +433,9 @@ async function loadProducts() {
 
   loadSetFromUrl(
     params,
-    "marca",
-    selectedBrands,
-    new Set(products.map((product) => product.brand)),
+    "coleccion",
+    selectedCollections,
+    new Set(products.map((product) => product.collection)),
   );
 
   loadSetFromUrl(
@@ -499,54 +600,56 @@ function generateDrinkFilters() {
 }
 
 /* ==========================================
-   GENERAR MARCAS
+   GENERAR COLECCIONES
 ========================================== */
 
-function generateBrandFilters() {
-  if (!brandFilters) {
+function generateCollectionFilters() {
+  if (!collectionFilters) {
     return;
   }
 
-  const brandCounts = countByProperty("brand", "brand");
+  const collectionCounts = countByProperty("collection", "collection");
 
-  const brands = [
+  const collections = [
     ...new Set([
-      ...Object.keys(brandCounts),
-      ...selectedBrands,
+      ...Object.keys(collectionCounts),
+      ...selectedCollections,
     ]),
-  ].sort((a, b) =>
+  ]
+    .filter(Boolean)
+    .sort((a, b) =>
       a.localeCompare(b, "es", {
         sensitivity: "base",
       }),
     );
 
-  brandFilters.innerHTML = brands
+  collectionFilters.innerHTML = collections
     .map(
-      (brand) => `
+      (collection) => `
         <label
           class="filter-option"
-          data-brand-option
-          data-brand-name="${escapeAttribute(normalizeSearchText(brand))}"
+          data-collection-option
+          data-collection-name="${escapeAttribute(normalizeSearchText(collection))}"
         >
           <input
             type="checkbox"
-            name="brand"
-            value="${escapeAttribute(brand)}"
+            name="collection"
+            value="${escapeAttribute(collection)}"
           />
 
           <span>
-            ${escapeHTML(brand)}
+            ${escapeHTML(collection)}
           </span>
 
           <small>
-            (${brandCounts[brand] || 0})
+            (${collectionCounts[collection] || 0})
           </small>
         </label>
       `,
     )
     .join("");
 
-  availableBrandSuggestions = brands;
+  availableCollectionSuggestions = collections;
 }
 
 /* ==========================================
@@ -676,143 +779,161 @@ function applyFilters({ resetPage = true } = {}) {
   sortProducts();
   updateAvailableFilters();
 
+  if (isCollectionsViewActive()) {
+    currentPage = 1;
+  }
+
   currentPage = Math.min(currentPage, getTotalPages());
   updatePageParameter();
+  updateApplyFiltersButton();
   renderProducts();
 }
 
-function applyBrandSearch() {
-  const searchValue = normalizeSearchText(brandSearch?.value || "");
-
-  brandFilters?.querySelectorAll("[data-brand-option]").forEach((option) => {
-    const brandName = option.dataset.brandName || "";
-
-    option.hidden = !brandName.includes(searchValue);
-  });
-
-  renderBrandSearchResults(searchValue);
-}
-
-function closeBrandSearchResults() {
-  if (!brandSearch || !brandSearchResults) {
+function updateApplyFiltersButton() {
+  if (!applyFiltersButton) {
     return;
   }
 
-  brandSearchResults.hidden = true;
-  brandSearchResults.replaceChildren();
-  brandSearch.setAttribute("aria-expanded", "false");
-  brandSearch.removeAttribute("aria-activedescendant");
-  activeBrandSuggestionIndex = -1;
+  const productLabel = filteredProducts.length === 1
+    ? "producto"
+    : "productos";
+
+  applyFiltersButton.textContent =
+    `Aplicar filtros · ${filteredProducts.length} ${productLabel}`;
 }
 
-function getBrandResultElements() {
+function applyCollectionSearch() {
+  const searchValue = normalizeSearchText(collectionSearch?.value || "");
+
+  collectionFilters?.querySelectorAll("[data-collection-option]").forEach((option) => {
+    const collectionName = option.dataset.collectionName || "";
+
+    option.hidden = !collectionName.includes(searchValue);
+  });
+
+  renderCollectionSearchResults(searchValue);
+}
+
+function closeCollectionSearchResults() {
+  if (!collectionSearch || !collectionSearchResults) {
+    return;
+  }
+
+  collectionSearchResults.hidden = true;
+  collectionSearchResults.replaceChildren();
+  collectionSearch.setAttribute("aria-expanded", "false");
+  collectionSearch.removeAttribute("aria-activedescendant");
+  activeCollectionSuggestionIndex = -1;
+}
+
+function getCollectionResultElements() {
   return [
-    ...(brandSearchResults?.querySelectorAll("[data-brand-suggestion]") || []),
+    ...(collectionSearchResults?.querySelectorAll("[data-collection-suggestion]") || []),
   ];
 }
 
-function updateActiveBrandSuggestion() {
-  const resultElements = getBrandResultElements();
+function updateActiveCollectionSuggestion() {
+  const resultElements = getCollectionResultElements();
 
   resultElements.forEach((result, index) => {
-    const isActive = index === activeBrandSuggestionIndex;
+    const isActive = index === activeCollectionSuggestionIndex;
 
     result.classList.toggle("is-active", isActive);
     result.setAttribute("aria-selected", String(isActive));
   });
 
-  const activeResult = resultElements[activeBrandSuggestionIndex];
+  const activeResult = resultElements[activeCollectionSuggestionIndex];
 
   if (activeResult) {
-    brandSearch?.setAttribute("aria-activedescendant", activeResult.id);
+    collectionSearch?.setAttribute("aria-activedescendant", activeResult.id);
     activeResult.scrollIntoView({ block: "nearest" });
   } else {
-    brandSearch?.removeAttribute("aria-activedescendant");
+    collectionSearch?.removeAttribute("aria-activedescendant");
   }
 }
 
-function renderBrandSearchResults(searchValue) {
-  if (!brandSearch || !brandSearchResults) {
+function renderCollectionSearchResults(searchValue) {
+  if (!collectionSearch || !collectionSearchResults) {
     return;
   }
 
-  activeBrandSuggestionIndex = -1;
+  activeCollectionSuggestionIndex = -1;
 
   if (!searchValue) {
-    closeBrandSearchResults();
+    closeCollectionSearchResults();
     return;
   }
 
-  const matchingBrands = availableBrandSuggestions.filter((brand) => {
-    return normalizeSearchText(brand).includes(searchValue);
+  const matchingCollections = availableCollectionSuggestions.filter((collection) => {
+    return normalizeSearchText(collection).includes(searchValue);
   });
 
-  if (matchingBrands.length === 0) {
-    brandSearchResults.innerHTML = `
-      <p class="filter-brand-search__empty">
-        No encontramos marcas con “${escapeHTML(brandSearch.value.trim())}”.
+  if (matchingCollections.length === 0) {
+    collectionSearchResults.innerHTML = `
+      <p class="filter-collection-search__empty">
+        No encontramos colecciones con “${escapeHTML(collectionSearch.value.trim())}”.
       </p>
     `;
   } else {
-    brandSearchResults.innerHTML = matchingBrands
-      .map((brand, index) => {
+    collectionSearchResults.innerHTML = matchingCollections
+      .map((collection, index) => {
         return `
           <button
-            id="brand-suggestion-${index}"
-            class="filter-brand-search__result"
+            id="collection-suggestion-${index}"
+            class="filter-collection-search__result"
             type="button"
             role="option"
             aria-selected="false"
-            data-brand-suggestion="${escapeAttribute(brand)}"
+            data-collection-suggestion="${escapeAttribute(collection)}"
           >
-            <span>${escapeHTML(brand)}</span>
+            <span>${escapeHTML(collection)}</span>
           </button>
         `;
       })
       .join("");
   }
 
-  brandSearchResults.hidden = false;
-  brandSearch.setAttribute("aria-expanded", "true");
+  collectionSearchResults.hidden = false;
+  collectionSearch.setAttribute("aria-expanded", "true");
 }
 
-function selectBrandSuggestions(brands) {
-  const validBrands = brands.filter(Boolean);
+function selectCollectionSuggestions(collections) {
+  const validCollections = collections.filter(Boolean);
 
-  if (validBrands.length === 0) {
+  if (validCollections.length === 0) {
     return;
   }
 
-  validBrands.forEach((brand) => {
-    selectedBrands.add(brand);
+  validCollections.forEach((collection) => {
+    selectedCollections.add(collection);
   });
 
-  updateSetParameter("marca", selectedBrands);
+  updateSetParameter("coleccion", selectedCollections);
 
-  if (brandSearch) {
-    brandSearch.value = "";
+  if (collectionSearch) {
+    collectionSearch.value = "";
   }
 
-  closeBrandSearchResults();
+  closeCollectionSearchResults();
   applyFilters();
 }
 
-function selectBrandSuggestion(brand) {
-  selectBrandSuggestions([brand]);
+function selectCollectionSuggestion(collection) {
+  selectCollectionSuggestions([collection]);
 }
 
 function updateAvailableFilters() {
   generateSelectionFilters();
   generateCategoryFilters();
-  generateBrandFilters();
+  generateCollectionFilters();
   generateDrinkFilters();
 
   syncCheckboxes(selectionFilters, "selection", selectedSelections);
   syncCheckboxes(categoryFilters, "category", selectedCategories);
-  syncCheckboxes(brandFilters, "brand", selectedBrands);
+  syncCheckboxes(collectionFilters, "collection", selectedCollections);
   syncCheckboxes(drinkFilters, "drink", selectedDrinks);
 
-  applyBrandSearch();
+  applyCollectionSearch();
 }
 
 /* ==========================================
@@ -864,7 +985,281 @@ function sortProducts() {
    MOSTRAR PRODUCTOS
 ========================================== */
 
+function getBannerConfiguration(type, name) {
+  const normalizedName = normalizeFacetValue(name);
+  const configurations = type === "category"
+    ? CATEGORY_BANNERS
+    : COLLECTION_BANNERS;
+
+  return configurations[normalizedName] || DEFAULT_BANNER;
+}
+
+function createCatalogBanner({ type, name, title }) {
+  const configuration = getBannerConfiguration(type, name);
+  const banner = document.createElement("div");
+  const image = document.createElement("img");
+  const overlay = document.createElement("div");
+  const content = document.createElement("div");
+  const eyebrow = document.createElement("span");
+  const heading = document.createElement("h2");
+  const description = document.createElement("p");
+
+  banner.className = `catalog-feature-banner catalog-feature-banner--${type}`;
+  image.src = configuration.image;
+  image.alt = `${type === "category" ? "Categoría" : "Colección"} ${title}`;
+  image.width = 1600;
+  image.height = 600;
+  image.loading = "lazy";
+  overlay.className = "catalog-feature-banner__overlay";
+  content.className = "catalog-feature-banner__content";
+  eyebrow.textContent = type === "category" ? "Categoría" : "Colección";
+  heading.textContent = title;
+  description.textContent = configuration.description;
+
+  content.append(eyebrow, heading, description);
+  banner.append(image, overlay, content);
+
+  return banner;
+}
+
+function hideCatalogFeatureViews() {
+  if (categoryView) {
+    categoryView.hidden = true;
+    categoryView.replaceChildren();
+  }
+
+  if (collectionsView) {
+    collectionsView.hidden = true;
+    collectionsView.replaceChildren();
+  }
+}
+
+function renderCategoryView() {
+  if (!categoryView) {
+    return;
+  }
+
+  const categories = [...selectedCategories];
+  const banners = categories.map((categoryName) => {
+    return createCatalogBanner({
+      type: "category",
+      name: categoryName,
+      title: formatLabel(categoryName),
+    });
+  });
+
+  categoryView.replaceChildren(...banners);
+  categoryView.hidden = false;
+}
+
+async function createCategoryGroup(categoryName, categoryProducts) {
+  const section = document.createElement("section");
+  const productsContainer = document.createElement("div");
+  const cards = await Promise.all(
+    categoryProducts.map((product) => createProductCard(product)),
+  );
+
+  section.className = "catalog-category-group";
+  section.dataset.category = categoryName;
+  productsContainer.className =
+    "catalog-product-grid catalog-category-group__products";
+  productsContainer.innerHTML = cards.join("");
+  section.append(
+    createCatalogBanner({
+      type: "category",
+      name: categoryName,
+      title: formatLabel(categoryName),
+    }),
+    productsContainer,
+  );
+
+  return section;
+}
+
+async function renderCategoryGroupsView(renderVersion) {
+  if (!categoryView || !resultsCount || !pagination) {
+    return;
+  }
+
+  const groups = [...selectedCategories]
+    .map((categoryName) => ({
+      name: categoryName,
+      products: filteredProducts.filter(
+        (product) => product.category === categoryName,
+      ),
+    }))
+    .filter((group) => group.products.length > 0);
+  const sections = await Promise.all(
+    groups.map((group) => createCategoryGroup(group.name, group.products)),
+  );
+
+  if (renderVersion !== productRenderVersion) {
+    return;
+  }
+
+  categoryView.replaceChildren(...sections);
+  categoryView.hidden = false;
+  resultsCount.textContent =
+    `Mostrando ${filteredProducts.length} productos en ${groups.length} categorías`;
+  pagination.replaceChildren();
+  pagination.hidden = true;
+}
+
+function groupProductsByCollection(productsToGroup) {
+  const groups = new Map();
+
+  productsToGroup.forEach((product) => {
+    const collectionName = product.collection?.trim();
+
+    if (!collectionName) {
+      return;
+    }
+
+    const key = normalizeFacetValue(collectionName);
+
+    if (!groups.has(key)) {
+      groups.set(key, {
+        key,
+        name: collectionName,
+        products: [],
+      });
+    }
+
+    groups.get(key).products.push(product);
+  });
+
+  const orderIndexes = new Map(
+    COLLECTION_ORDER.map((collection, index) => [collection, index]),
+  );
+
+  return [...groups.values()].sort((groupA, groupB) => {
+    const indexA = orderIndexes.get(groupA.key) ?? Number.MAX_SAFE_INTEGER;
+    const indexB = orderIndexes.get(groupB.key) ?? Number.MAX_SAFE_INTEGER;
+
+    if (indexA !== indexB) {
+      return indexA - indexB;
+    }
+
+    return groupA.name.localeCompare(groupB.name, "es", {
+      sensitivity: "base",
+    });
+  });
+}
+
+async function createCollectionGroup(group) {
+  const section = document.createElement("section");
+  const productsContainer = document.createElement("div");
+  const cards = await Promise.all(
+    group.products.map((product) => createProductCard(product)),
+  );
+
+  section.className = "catalog-collection-group";
+  section.dataset.collection = group.name;
+  productsContainer.className =
+    "catalog-product-grid catalog-collection-group__products";
+  productsContainer.innerHTML = cards.join("");
+  section.append(
+    createCatalogBanner({
+      type: "collection",
+      name: group.name,
+      title: group.name,
+    }),
+    productsContainer,
+  );
+
+  return section;
+}
+
+async function renderCollectionsView(renderVersion) {
+  if (!collectionsView || !resultsCount || !pagination) {
+    return;
+  }
+
+  const groups = groupProductsByCollection(filteredProducts);
+  const groupedProductCount = groups.reduce((total, group) => {
+    return total + group.products.length;
+  }, 0);
+
+  if (groups.length === 0) {
+    collectionsView.hidden = true;
+    collectionsView.replaceChildren();
+    resultsCount.textContent = "Mostrando 0 productos";
+    emptyState.hidden = false;
+    pagination.replaceChildren();
+    pagination.hidden = true;
+    return;
+  }
+
+  const sections = await Promise.all(groups.map(createCollectionGroup));
+
+  if (renderVersion !== productRenderVersion) {
+    return;
+  }
+
+  const fragment = document.createDocumentFragment();
+  sections.forEach((section) => fragment.append(section));
+
+  collectionsView.replaceChildren(fragment);
+  collectionsView.hidden = false;
+  resultsCount.textContent =
+    `Mostrando ${groupedProductCount} productos en ${groups.length} colecciones`;
+  pagination.replaceChildren();
+  pagination.hidden = true;
+}
+
 async function renderProducts() {
+  const renderVersion = ++productRenderVersion;
+
+  if (!productGrid || !resultsCount || !emptyState) {
+    return;
+  }
+
+  if (filteredProducts.length === 0) {
+    hideCatalogFeatureViews();
+    productGrid.innerHTML = "";
+    productGrid.hidden = true;
+    resultsCount.textContent = "Mostrando 0 productos";
+    emptyState.hidden = false;
+    renderPagination();
+    return;
+  }
+
+  emptyState.hidden = true;
+
+  if (selectedCategories.size > 0) {
+    collectionsView?.replaceChildren();
+    if (collectionsView) collectionsView.hidden = true;
+
+    if (selectedCategories.size > 1) {
+      productGrid.innerHTML = "";
+      productGrid.hidden = true;
+      await renderCategoryGroupsView(renderVersion);
+      return;
+    }
+
+    renderCategoryView();
+    productGrid.hidden = false;
+    await renderPaginatedProducts(renderVersion);
+    return;
+  }
+
+  if (isCollectionsViewActive()) {
+    if (categoryView) {
+      categoryView.hidden = true;
+      categoryView.replaceChildren();
+    }
+    productGrid.innerHTML = "";
+    productGrid.hidden = true;
+    await renderCollectionsView(renderVersion);
+    return;
+  }
+
+  hideCatalogFeatureViews();
+  productGrid.hidden = false;
+  await renderPaginatedProducts(renderVersion);
+}
+
+async function renderPaginatedProducts(renderVersion) {
   if (!productGrid || !resultsCount || !emptyState) {
     return;
   }
@@ -880,9 +1275,9 @@ async function renderProducts() {
 
   emptyState.hidden = true;
 
-  const firstProductIndex = (currentPage - 1) * PRODUCTS_PER_PAGE;
+  const firstProductIndex = (currentPage - 1) * productsPerPage;
   const lastProductIndex = Math.min(
-    firstProductIndex + PRODUCTS_PER_PAGE,
+    firstProductIndex + productsPerPage,
     filteredProducts.length,
   );
 
@@ -899,6 +1294,10 @@ async function renderProducts() {
     visibleProducts.map((product) => createProductCard(product)),
   );
 
+  if (renderVersion !== productRenderVersion) {
+    return;
+  }
+
   productGrid.innerHTML = cards.join("");
   renderPagination();
 }
@@ -910,8 +1309,58 @@ async function renderProducts() {
 function getTotalPages() {
   return Math.max(
     1,
-    Math.ceil(filteredProducts.length / PRODUCTS_PER_PAGE),
+    Math.ceil(filteredProducts.length / productsPerPage),
   );
+}
+
+function getCatalogColumnCount() {
+  if (!productGrid) {
+    return 1;
+  }
+
+  const gridTemplateColumns = window
+    .getComputedStyle(productGrid)
+    .gridTemplateColumns.trim();
+
+  if (!gridTemplateColumns || gridTemplateColumns === "none") {
+    return 1;
+  }
+
+  return gridTemplateColumns.split(/\s+/).length;
+}
+
+function calculateProductsPerPage() {
+  const columnCount = getCatalogColumnCount();
+
+  return Math.ceil(BASE_PRODUCTS_PER_PAGE / columnCount) * columnCount;
+}
+
+function updateProductsPerPage({ rerender = true } = {}) {
+  const nextProductsPerPage = calculateProductsPerPage();
+
+  if (nextProductsPerPage === productsPerPage) {
+    return;
+  }
+
+  const firstVisibleProductIndex =
+    (currentPage - 1) * productsPerPage;
+
+  productsPerPage = nextProductsPerPage;
+  currentPage = Math.floor(firstVisibleProductIndex / productsPerPage) + 1;
+  currentPage = Math.min(currentPage, getTotalPages());
+
+  if (rerender && products.length > 0) {
+    updatePageParameter();
+    renderProducts();
+  }
+}
+
+function handleCatalogResize() {
+  window.clearTimeout(catalogResizeTimer);
+
+  catalogResizeTimer = window.setTimeout(() => {
+    updateProductsPerPage();
+  }, 120);
 }
 
 function updatePageParameter() {
@@ -1141,10 +1590,10 @@ setupSetFilter(
 );
 
 setupSetFilter(
-  brandFilters,
-  "brand",
-  "marca",
-  selectedBrands,
+  collectionFilters,
+  "collection",
+  "coleccion",
+  selectedCollections,
 );
 
 setupSetFilter(
@@ -1155,22 +1604,22 @@ setupSetFilter(
 );
 
 /* ==========================================
-   BUSCAR MARCAS
+   BUSCAR COLECCIONES
 ========================================== */
 
-brandSearch?.addEventListener("input", () => {
-  applyBrandSearch();
+collectionSearch?.addEventListener("input", () => {
+  applyCollectionSearch();
 });
 
-brandSearch?.addEventListener("focus", () => {
-  applyBrandSearch();
+collectionSearch?.addEventListener("focus", () => {
+  applyCollectionSearch();
 });
 
-brandSearch?.addEventListener("keydown", (event) => {
-  const resultElements = getBrandResultElements();
+collectionSearch?.addEventListener("keydown", (event) => {
+  const resultElements = getCollectionResultElements();
 
   if (event.key === "Escape") {
-    closeBrandSearchResults();
+    closeCollectionSearchResults();
     return;
   }
 
@@ -1181,56 +1630,56 @@ brandSearch?.addEventListener("keydown", (event) => {
   if (event.key === "ArrowDown") {
     event.preventDefault();
 
-    activeBrandSuggestionIndex =
-      activeBrandSuggestionIndex < resultElements.length - 1
-        ? activeBrandSuggestionIndex + 1
+    activeCollectionSuggestionIndex =
+      activeCollectionSuggestionIndex < resultElements.length - 1
+        ? activeCollectionSuggestionIndex + 1
         : 0;
 
-    updateActiveBrandSuggestion();
+    updateActiveCollectionSuggestion();
     return;
   }
 
   if (event.key === "ArrowUp") {
     event.preventDefault();
 
-    activeBrandSuggestionIndex =
-      activeBrandSuggestionIndex > 0
-        ? activeBrandSuggestionIndex - 1
+    activeCollectionSuggestionIndex =
+      activeCollectionSuggestionIndex > 0
+        ? activeCollectionSuggestionIndex - 1
         : resultElements.length - 1;
 
-    updateActiveBrandSuggestion();
+    updateActiveCollectionSuggestion();
     return;
   }
 
   if (event.key === "Enter") {
     event.preventDefault();
 
-    if (activeBrandSuggestionIndex >= 0) {
-      selectBrandSuggestion(
-        resultElements[activeBrandSuggestionIndex]?.dataset.brandSuggestion,
+    if (activeCollectionSuggestionIndex >= 0) {
+      selectCollectionSuggestion(
+        resultElements[activeCollectionSuggestionIndex]?.dataset.collectionSuggestion,
       );
       return;
     }
 
-    selectBrandSuggestions(
-      resultElements.map((result) => result.dataset.brandSuggestion),
+    selectCollectionSuggestions(
+      resultElements.map((result) => result.dataset.collectionSuggestion),
     );
   }
 });
 
-brandSearchResults?.addEventListener("click", (event) => {
-  const result = event.target.closest("[data-brand-suggestion]");
+collectionSearchResults?.addEventListener("click", (event) => {
+  const result = event.target.closest("[data-collection-suggestion]");
 
   if (!result) {
     return;
   }
 
-  selectBrandSuggestion(result.dataset.brandSuggestion);
+  selectCollectionSuggestion(result.dataset.collectionSuggestion);
 });
 
 document.addEventListener("click", (event) => {
-  if (!brandSearchContainer?.contains(event.target)) {
-    closeBrandSearchResults();
+  if (!collectionSearchContainer?.contains(event.target)) {
+    closeCollectionSearchResults();
   }
 });
 
@@ -1259,7 +1708,7 @@ sortSelect?.addEventListener("change", () => {
 function clearFilters() {
   selectedSelections.clear();
   selectedCategories.clear();
-  selectedBrands.clear();
+  selectedCollections.clear();
   selectedDrinks.clear();
 
   minimumPrice = null;
@@ -1281,22 +1730,22 @@ function clearFilters() {
     maximumPriceInput.value = String(catalogMaximumPrice);
   }
 
-  if (brandSearch) {
-    brandSearch.value = "";
+  if (collectionSearch) {
+    collectionSearch.value = "";
   }
 
   if (sortSelect) {
     sortSelect.value = "default";
   }
 
-  brandFilters?.querySelectorAll("[data-brand-option]").forEach((option) => {
+  collectionFilters?.querySelectorAll("[data-collection-option]").forEach((option) => {
     option.hidden = false;
   });
 
   updatePriceRangePresentation();
   updateSetParameter("seleccion", selectedSelections);
   updateSetParameter("categoria", selectedCategories);
-  updateSetParameter("marca", selectedBrands);
+  updateSetParameter("coleccion", selectedCollections);
   updateSetParameter("bebida", selectedDrinks);
 
   const url = new URL(window.location.href);
@@ -1314,19 +1763,81 @@ emptyClearFiltersButton?.addEventListener("click", clearFilters);
    ACORDEÓN DE FILTROS
 ========================================== */
 
-document.querySelectorAll(".filter-group-title").forEach((button) => {
+const filterGroupButtons = Array.from(
+  document.querySelectorAll(".filter-group-title"),
+);
+
+function isDesktopFilterBar() {
+  return window.matchMedia("(min-width: 1025px)").matches;
+}
+
+function setFilterGroupExpanded(button, isExpanded) {
+  button.setAttribute("aria-expanded", String(isExpanded));
+
+  const icon = button.querySelector(".material-symbols-outlined");
+
+  if (icon) {
+    icon.textContent = isExpanded
+      ? isDesktopFilterBar()
+        ? "expand_less"
+        : "remove"
+      : isDesktopFilterBar()
+        ? "expand_more"
+        : "add";
+  }
+}
+
+function closeDesktopFilterGroups(exceptButton = null) {
+  filterGroupButtons.forEach((button) => {
+    if (button !== exceptButton) {
+      setFilterGroupExpanded(button, false);
+    }
+  });
+}
+
+filterGroupButtons.forEach((button) => {
   button.addEventListener("click", () => {
     const isExpanded = button.getAttribute("aria-expanded") === "true";
 
-    button.setAttribute("aria-expanded", String(!isExpanded));
-
-    const icon = button.querySelector(".material-symbols-outlined");
-
-    if (icon) {
-      icon.textContent = isExpanded ? "add" : "remove";
+    if (isDesktopFilterBar()) {
+      closeDesktopFilterGroups(button);
     }
+
+    setFilterGroupExpanded(button, !isExpanded);
   });
 });
+
+document.addEventListener("click", (event) => {
+  if (
+    isDesktopFilterBar() &&
+    event.target instanceof Node &&
+    !sidebar?.contains(event.target)
+  ) {
+    closeDesktopFilterGroups();
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key !== "Escape" || !isDesktopFilterBar()) {
+    return;
+  }
+
+  const expandedButton = filterGroupButtons.find((button) => {
+    return button.getAttribute("aria-expanded") === "true";
+  });
+
+  if (!expandedButton) {
+    return;
+  }
+
+  event.preventDefault();
+  closeDesktopFilterGroups();
+  expandedButton.focus();
+});
+
+function syncFilterGroupPresentation() {
+  closeDesktopFilterGroups();
+}
 
 /* ==========================================
    FILTROS EN MÓVIL
@@ -1467,6 +1978,7 @@ filterOpenButton?.addEventListener("click", openMobileFilters);
 filterCloseButton?.addEventListener("click", closeMobileFilters);
 
 filterBackdrop?.addEventListener("click", closeMobileFilters);
+applyFiltersButton?.addEventListener("click", closeMobileFilters);
 
 document.addEventListener("keydown", (event) => {
   if (!sidebar?.classList.contains("open")) {
@@ -1483,8 +1995,11 @@ document.addEventListener("keydown", (event) => {
 });
 
 window.addEventListener("resize", syncMobileFilterAccessibility);
+window.addEventListener("resize", syncFilterGroupPresentation);
+window.addEventListener("resize", handleCatalogResize);
 
 syncMobileFilterAccessibility();
+syncFilterGroupPresentation();
 
 /* ==========================================
    INICIALIZAR
@@ -1492,6 +2007,7 @@ syncMobileFilterAccessibility();
 
 async function initializeCatalog() {
   try {
+    updateProductsPerPage({ rerender: false });
     await loadProducts();
   } catch (error) {
     console.error("Error al inicializar el catálogo:", error);

@@ -82,15 +82,19 @@ function loadCartFromStorage() {
         return item && item.id !== undefined && Number(item.quantity) > 0;
       })
       .map((item) => {
+        const sourceProduct = findProductById(products, item.id);
+
         return {
           id: item.id,
           name: item.name || "Producto",
-          brand: item.brand || "",
-          variant: item.variant || "",
+          sku: item.sku || sourceProduct?.sku || "",
+          collection: sourceProduct?.collection || item.collection || "",
+          presentation:
+            sourceProduct?.presentation || item.presentation || "",
           image:
             item.image ||
             getPrimaryProductImage(
-              findProductById(products, item.id),
+              sourceProduct,
             ),
           price: Number(item.price) || 0,
           quantity: Math.max(1, Number(item.quantity) || 1),
@@ -338,8 +342,8 @@ export function addProductToCart(product, quantity = 1) {
       id: product.id,
       sku: product.sku || "",
       name: product.name || "Producto",
-      brand: product.brand || "",
-      variant: product.variant || "",
+      collection: product.collection || "",
+      presentation: product.presentation || "",
       image: getPrimaryProductImage(
         product,
       ),
@@ -435,11 +439,13 @@ function createCartProductElement(item) {
 
   const image = fragment.querySelector("[data-cart-product-image]");
 
-  const brand = fragment.querySelector("[data-cart-product-brand]");
+  const collection = fragment.querySelector("[data-cart-product-collection]");
 
   const name = fragment.querySelector("[data-cart-product-name]");
 
-  const variant = fragment.querySelector("[data-cart-product-variant]");
+  const presentation = fragment.querySelector(
+    "[data-cart-product-presentation]",
+  );
 
   const quantity = fragment.querySelector("[data-cart-product-quantity]");
 
@@ -462,8 +468,8 @@ function createCartProductElement(item) {
     image.alt = item.name;
   }
 
-  if (brand) {
-    brand.textContent = item.brand;
+  if (collection) {
+    collection.textContent = item.collection;
   }
   if (sku) {
     sku.textContent = `SKU: ${item.sku}`;
@@ -473,8 +479,8 @@ function createCartProductElement(item) {
     name.textContent = item.name;
   }
 
-  if (variant) {
-    variant.textContent = item.variant;
+  if (presentation) {
+    presentation.textContent = item.presentation;
   }
 
   if (quantity) {
@@ -599,12 +605,12 @@ function generateWhatsappMessage() {
       lines.push(`SKU: ${item.sku}`);
     }
 
-    if (item.brand) {
-      lines.push(`Marca: ${item.brand}`);
+    if (item.collection) {
+      lines.push(`Colección: ${item.collection}`);
     }
 
-    if (item.variant) {
-      lines.push(`Presentación: ${item.variant}`);
+    if (item.presentation) {
+      lines.push(`Presentación: ${item.presentation}`);
     }
 
     lines.push(

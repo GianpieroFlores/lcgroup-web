@@ -8,6 +8,15 @@ export function normalizeSearchText(value = "") {
 
 export function getProductSearchText(product) {
   return normalizeSearchText(
-    [product.name, product.brand, product.sku].filter(Boolean).join(" "),
+    [
+      product.name,
+      product.sku,
+      product.collection,
+      product.category,
+      product.description,
+      ...(Array.isArray(product.recommendedFor) ? product.recommendedFor : []),
+    ]
+      .filter(Boolean)
+      .join(" "),
   );
 }

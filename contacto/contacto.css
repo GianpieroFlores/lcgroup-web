@@ -206,7 +206,8 @@
   border-color: var(--color-primary);
 }
 
-.info-card .material-symbols-outlined {
+.info-card .material-symbols-outlined,
+.info-card .contact-whatsapp-icon {
   width: calc(var(--icon-size) + 12px);
   height: calc(var(--icon-size) + 12px);
 
@@ -232,7 +233,8 @@
     transform var(--transition-fast);
 }
 
-.info-card:hover .material-symbols-outlined {
+.info-card:hover .material-symbols-outlined,
+.info-card:hover .contact-whatsapp-icon {
   background-color: var(--color-primary);
 
   color: var(--color-white);
@@ -638,6 +640,7 @@
 @media (prefers-reduced-motion: reduce) {
   .info-card,
   .info-card .material-symbols-outlined,
+  .info-card .contact-whatsapp-icon,
   .contact-form .btn-primary,
   .form-group input,
   .form-group textarea {
@@ -897,7 +900,8 @@
     padding-block: 11px;
   }
 
-  .info-card .material-symbols-outlined {
+  .info-card .material-symbols-outlined,
+  .info-card .contact-whatsapp-icon {
     width: 44px;
     height: 44px;
   }

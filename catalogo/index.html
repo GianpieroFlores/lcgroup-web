@@ -94,7 +94,12 @@
           tabindex="-1"
         >
           <div class="catalog-sidebar-header">
-            <h2>Filtros</h2>
+            <h2>
+              <span class="material-symbols-outlined" aria-hidden="true">
+                tune
+              </span>
+              Filtros
+            </h2>
 
             <button
               class="catalog-filter-close"
@@ -111,12 +116,12 @@
             <button
               class="filter-group-title"
               type="button"
-              aria-expanded="true"
+              aria-expanded="false"
               aria-controls="selection-filter-content"
             >
-              <span> Selecciones </span>
+              <span> Destacados </span>
 
-              <span class="material-symbols-outlined"> remove </span>
+              <span class="material-symbols-outlined"> expand_more </span>
             </button>
 
             <div id="selection-filter-content" class="filter-group-content">
@@ -135,12 +140,12 @@
             <button
               class="filter-group-title"
               type="button"
-              aria-expanded="true"
+              aria-expanded="false"
               aria-controls="category-filter-content"
             >
-              <span> Categorías </span>
+              <span> Categoría </span>
 
-              <span class="material-symbols-outlined"> remove </span>
+              <span class="material-symbols-outlined"> expand_more </span>
             </button>
 
             <div id="category-filter-content" class="filter-group-content">
@@ -159,12 +164,12 @@
             <button
               class="filter-group-title"
               type="button"
-              aria-expanded="true"
+              aria-expanded="false"
               aria-controls="drink-filter-content"
             >
               <span>Tipo de bebida</span>
 
-              <span class="material-symbols-outlined">remove</span>
+              <span class="material-symbols-outlined">expand_more</span>
             </button>
 
             <div id="drink-filter-content" class="filter-group-content">
@@ -177,31 +182,31 @@
               <div id="drink-filters"></div>
             </div>
           </section>
-          <!-- MARCAS -->
+          <!-- COLECCIONES -->
 
           <section class="filter-group">
             <button
               class="filter-group-title"
               type="button"
-              aria-expanded="true"
-              aria-controls="brand-filter-content"
+              aria-expanded="false"
+              aria-controls="collection-filter-content"
             >
-              <span> Marcas </span>
+              <span> Colección </span>
 
-              <span class="material-symbols-outlined"> remove </span>
+              <span class="material-symbols-outlined"> expand_more </span>
             </button>
 
-            <div id="brand-filter-content" class="filter-group-content">
-              <div id="brand-search-container" class="filter-brand-search">
+            <div id="collection-filter-content" class="filter-group-content">
+              <div id="collection-search-container" class="filter-collection-search">
                 <label class="filter-search">
                   <input
-                    id="brand-search"
+                    id="collection-search"
                     type="search"
-                    placeholder="Buscar marca..."
+                    placeholder="Buscar colección..."
                     autocomplete="off"
-                    aria-label="Buscar marca"
+                    aria-label="Buscar colección"
                     aria-autocomplete="list"
-                    aria-controls="brand-search-results"
+                    aria-controls="collection-search-results"
                     aria-expanded="false"
                   />
 
@@ -209,20 +214,20 @@
                 </label>
 
                 <div
-                  id="brand-search-results"
-                  class="filter-brand-search__results"
+                  id="collection-search-results"
+                  class="filter-collection-search__results"
                   role="listbox"
-                  aria-label="Marcas encontradas"
+                  aria-label="Colecciones encontradas"
                   hidden
                 ></div>
               </div>
 
               <!--
-            Las marcas serán generadas
+            Las colecciones serán generadas
             dinámicamente desde products.json
           -->
 
-              <div id="brand-filters"></div>
+              <div id="collection-filters"></div>
             </div>
           </section>
 
@@ -232,12 +237,12 @@
             <button
               class="filter-group-title"
               type="button"
-              aria-expanded="true"
+              aria-expanded="false"
               aria-controls="price-filter-content"
             >
-              <span> Rango de precio </span>
+              <span> Precio </span>
 
-              <span class="material-symbols-outlined"> remove </span>
+              <span class="material-symbols-outlined"> expand_more </span>
             </button>
 
             <div id="price-filter-content" class="filter-group-content">
@@ -280,6 +285,14 @@
           <!-- LIMPIAR FILTROS -->
 
           <div class="catalog-clear-filters-bar">
+            <button
+              id="apply-filters"
+              class="catalog-apply-filters"
+              type="button"
+            >
+              Aplicar filtros
+            </button>
+
             <button
               id="clear-filters"
               class="catalog-clear-filters"
@@ -343,6 +356,20 @@
             id="active-filters"
             class="active-filters"
             aria-live="polite"
+          ></div>
+
+          <!-- MODOS VISUALES DEL CATÁLOGO -->
+
+          <div
+            id="catalog-category-view"
+            class="catalog-category-view"
+            hidden
+          ></div>
+
+          <div
+            id="catalog-collections-view"
+            class="catalog-collections-view"
+            hidden
           ></div>
 
           <!-- PRODUCTOS -->

@@ -185,7 +185,8 @@
   line-height: 1.55;
 }
 
-.footer-contact-list .material-symbols-outlined {
+.footer-contact-list .material-symbols-outlined,
+.footer-contact-list .footer-whatsapp-icon {
   flex-shrink: 0;
 
   color: var(--color-footer-accent);

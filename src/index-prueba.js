@@ -2,10 +2,6 @@ import "./index-prueba.css";
 import productsData from "./data/products.json";
 import { createProductCard } from "./components/product-card/product-card.js";
 import { escapeAttribute, escapeHTML } from "./utils/escape.js";
-import {
-  formatDrinkLabel,
-  getPrimaryProductImage,
-} from "./utils/products.js";
 import { createCatalogUrl } from "./utils/urls.js";
 
 const FEATURED_AUTOPLAY_DELAY = 2_000;
@@ -36,8 +32,7 @@ const homeState = {
 
 const homeElements = {
   heroVideo: null,
-  categoriesGrid: null,
-  drinksLinks: null,
+  collectionExamples: null,
   featuredCarousel: null,
   featuredViewport: null,
   featuredTrack: null,
@@ -69,8 +64,7 @@ async function initHomePage() {
 
     homeState.products = products;
 
-    renderHomeCategories(products);
-    renderHomeDrinks(products);
+    renderTemporaryCollections(products);
     await renderFeaturedProducts(products);
 
     initFeaturedCarousel();
@@ -88,10 +82,8 @@ async function initHomePage() {
 function getHomeElements() {
   homeElements.heroVideo = document.querySelector(".home-hero__video-element");
 
-  homeElements.categoriesGrid = document.querySelector("#home-categories-grid");
-
-  homeElements.drinksLinks = document.querySelector(
-    "#featured-showcase-drinks",
+  homeElements.collectionExamples = document.querySelector(
+    "#home-collection-examples",
   );
   homeElements.featuredCarousel = document.querySelector(
     "#home-featured-carousel",
@@ -163,8 +155,7 @@ function initializeHeroVideoMotionPreference() {
 
 function isHomePage() {
   return Boolean(
-    homeElements.categoriesGrid ||
-    homeElements.drinksLinks ||
+    homeElements.collectionExamples ||
     homeElements.featuredTrack,
   );
 }
@@ -210,17 +201,10 @@ function isValidProduct(product) {
 ===================================================== */
 
 function showInitialLoadingStates() {
-  if (homeElements.categoriesGrid) {
-    homeElements.categoriesGrid.innerHTML = createStatusMarkup(
+  if (homeElements.collectionExamples) {
+    homeElements.collectionExamples.innerHTML = createStatusMarkup(
       "home-loading",
-      "Cargando categorías...",
-    );
-  }
-
-  if (homeElements.drinksLinks) {
-    homeElements.drinksLinks.innerHTML = createStatusMarkup(
-      "home-loading",
-      "Cargando tipos de bebida...",
+      "Cargando colecciones...",
     );
   }
 
@@ -240,15 +224,8 @@ function showHomeLoadingError() {
   const message =
     "No fue posible cargar los productos. Revisa la ruta de products.json.";
 
-  if (homeElements.categoriesGrid) {
-    homeElements.categoriesGrid.innerHTML = createStatusMarkup(
-      "home-error",
-      message,
-    );
-  }
-
-  if (homeElements.drinksLinks) {
-    homeElements.drinksLinks.innerHTML = createStatusMarkup(
+  if (homeElements.collectionExamples) {
+    homeElements.collectionExamples.innerHTML = createStatusMarkup(
       "home-error",
       message,
     );
@@ -277,227 +254,88 @@ function createStatusMarkup(className, message) {
 }
 
 /* =====================================================
-   CATEGORÍAS
+   COLECCIONES TEMPORALES
 ===================================================== */
 
-function renderHomeCategories(products) {
-  if (!homeElements.categoriesGrid) {
+function renderTemporaryCollections(products) {
+  if (!homeElements.collectionExamples) {
     return;
   }
 
-  const categories = getUniqueCategories(products);
+  const collections = getTemporaryCollections(products);
 
-  if (categories.length === 0) {
-    homeElements.categoriesGrid.innerHTML = createStatusMarkup(
+  if (collections.length === 0) {
+    homeElements.collectionExamples.innerHTML = createStatusMarkup(
       "home-empty",
-      "No hay categorías disponibles por el momento.",
+      "No hay colecciones disponibles por el momento.",
     );
-
     return;
   }
 
-  homeElements.categoriesGrid.innerHTML = categories
-    .map((category, index) => {
-      return createCategoryCard(category, index);
+  homeElements.collectionExamples.innerHTML = collections
+    .map((collection, index) => {
+      return createTemporaryCollectionCard(collection, index);
     })
     .join("");
 }
 
-/* =====================================================
-   OBTENER CATEGORÍAS ÚNICAS
-===================================================== */
-
-function getUniqueCategories(products) {
-  const categoriesMap = new Map();
-
-  products.forEach((product) => {
-    const categoryName = normalizeText(product.category);
-
-    if (!categoryName) {
-      return;
-    }
-
-    const categoryKey = normalizeKey(categoryName);
-
-    if (!categoriesMap.has(categoryKey)) {
-      categoriesMap.set(categoryKey, {
-        name: categoryName,
-        slug: slugify(categoryName),
-        image: getProductImage(product),
-        productCount: 1,
-      });
-
-      return;
-    }
-
-    const existingCategory = categoriesMap.get(categoryKey);
-
-    existingCategory.productCount += 1;
-
-    if (!existingCategory.image && getProductImage(product)) {
-      existingCategory.image = getProductImage(product);
-    }
-  });
-
-  return Array.from(categoriesMap.values()).sort((a, b) => {
-    return a.name.localeCompare(b.name, "es", {
-      sensitivity: "base",
-    });
-  });
-}
-
-/* =====================================================
-   CREAR TARJETA DE CATEGORÍA
-===================================================== */
-
-function createCategoryCard(category, index) {
-  const categoryNumber = formatCounter(index + 1);
-  const categoryName = formatDisplayText(category.name);
-  const categoryURL = createCatalogUrl({
-    categoria: category.slug,
-  });
-
-  const imageMarkup = createImageMarkup({
-    src: category.image,
-    alt: `Categoría ${categoryName}`,
-    width: 600,
-    height: 750,
-    loading: "lazy",
-  });
-
-  return `
-    <article class="home-category-card">
-      <a href="${escapeAttribute(categoryURL)}">
-        <div class="home-category-card__media">
-          ${imageMarkup}
-        </div>
-
-        <div class="home-category-card__overlay"></div>
-
-        <div class="home-category-card__content">
-          <span class="home-category-card__number">
-            ${categoryNumber}
-          </span>
-
-          <h3>
-            ${escapeHTML(categoryName)}
-          </h3>
-
-          <span class="home-category-card__action">
-            Ver productos
-
-            <span
-              class="material-symbols-outlined"
-              aria-hidden="true"
-            >
-              arrow_forward
-            </span>
-          </span>
-        </div>
-      </a>
-    </article>
-  `;
-}
-
-/* =====================================================
-   TIPOS DE BEBIDA
-===================================================== */
-
-function renderHomeDrinks(products) {
-  if (!homeElements.drinksLinks) {
-    return;
-  }
-
-  const drinks = getUniqueRecommendedDrinks(products);
-
-  if (drinks.length === 0) {
-    homeElements.drinksLinks.innerHTML = createStatusMarkup(
-      "home-empty",
-      "No hay tipos de bebida disponibles por el momento.",
-    );
-
-    return;
-  }
-
-  homeElements.drinksLinks.innerHTML = drinks
-    .map((drink, index) => {
-      return createDrinkLink(drink, index);
-    })
-    .join("");
-}
-
-/* =====================================================
-   OBTENER TIPOS DE BEBIDA ÚNICOS
-===================================================== */
-
-function getUniqueRecommendedDrinks(products) {
-  const drinksMap = new Map();
+/*
+ * Datos provisionales para validar el diseño. Sustituir este generador y su
+ * renderizado por las 10 colecciones estáticas definitivas del cliente.
+ */
+function getTemporaryCollections(products) {
+  const uniqueCollections = new Map();
 
   products.forEach((product) => {
-    if (!Array.isArray(product.recommendedFor)) {
+    const collection = normalizeText(product.collection);
+    const category = normalizeText(product.category);
+
+    if (!collection || !category) {
       return;
     }
 
-    product.recommendedFor.forEach((drinkValue) => {
-      const normalizedDrink = normalizeText(drinkValue);
+    const key = [collection, category].map(normalizeKey).join("|");
 
-      if (!normalizedDrink) {
-        return;
-      }
+    if (uniqueCollections.has(key)) {
+      return;
+    }
 
-      const drinkSlug = slugify(normalizedDrink);
-
-      if (!drinkSlug || drinksMap.has(drinkSlug)) {
-        return;
-      }
-
-      drinksMap.set(drinkSlug, {
-        slug: drinkSlug,
-        name: formatDrinkName(drinkSlug),
-      });
+    uniqueCollections.set(key, {
+      title: `Colección ${formatDisplayText(collection)} ${formatDisplayText(category)}`,
+      collectionLabel: `Colección ${formatDisplayText(collection)}`,
+      categoryLabel: formatDisplayText(category),
+      collection,
+      category,
     });
   });
 
-  return Array.from(drinksMap.values());
+  return Array.from(uniqueCollections.values()).slice(0, 10);
 }
 
-/* =====================================================
-   CREAR ENLACE DE BEBIDA
-===================================================== */
-
-function createDrinkLink(drink, index) {
-  const drinkNumber = formatCounter(index + 1);
-
-  const drinkURL = createCatalogUrl({
-    bebida: drink.slug,
+function createTemporaryCollectionCard(collection, index) {
+  const url = createCatalogUrl({
+    coleccion: collection.collection,
+    categoria: collection.category,
   });
 
   return `
-    <a href="${escapeAttribute(drinkURL)}">
-      <span>${drinkNumber}</span>
-
-      <strong>
-        ${escapeHTML(drink.name)}
-      </strong>
-
-      <i
-        class="material-symbols-outlined"
-        aria-hidden="true"
-      >
+    <a
+      class="home-collection-card"
+      href="${escapeAttribute(url)}"
+      aria-label="Explorar ${escapeAttribute(collection.title)}"
+    >
+      <span class="home-collection-card__number">
+        ${formatCounter(index + 1)}
+      </span>
+      <span class="home-collection-card__text">
+        <strong>${escapeHTML(collection.collectionLabel)}</strong>
+        <span>${escapeHTML(collection.categoryLabel)}</span>
+      </span>
+      <span class="material-symbols-outlined" aria-hidden="true">
         arrow_forward
-      </i>
+      </span>
     </a>
   `;
-}
-
-/* =====================================================
-   FORMATEAR NOMBRE DE BEBIDA
-===================================================== */
-
-function formatDrinkName(drinkSlug) {
-  return formatDrinkLabel(drinkSlug, (value) => {
-    return formatDisplayText(value.replace(/-/g, " "));
-  });
 }
 
 /* =====================================================
@@ -1452,18 +1290,6 @@ function circularModulo(value, divisor) {
 }
 
 /* =====================================================
-   CREAR URL DEL CATÁLOGO
-===================================================== */
-
-/* =====================================================
-   OBTENER IMAGEN DEL PRODUCTO
-===================================================== */
-
-function getProductImage(product) {
-  return getPrimaryProductImage(product);
-}
-
-/* =====================================================
    CREAR IMAGEN
 ===================================================== */
 
@@ -1517,19 +1343,6 @@ function normalizeKey(value) {
     .toLocaleLowerCase("es")
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "");
-}
-
-/* =====================================================
-   CREAR SLUG
-===================================================== */
-
-function slugify(value) {
-  return normalizeText(value)
-    .toLocaleLowerCase("es")
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
 }
 
 /* =====================================================
