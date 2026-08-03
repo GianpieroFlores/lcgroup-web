@@ -3,6 +3,9 @@ import productCardHTML from "./product-card.html?raw";
 import { escapeAttribute, escapeHTML } from "../../utils/escape.js";
 import { getPrimaryProductImage } from "../../utils/products.js";
 import { createProductUrl } from "../../utils/urls.js";
+import products from "../../data/products.json";
+import { findProductById } from "../../utils/products.js";
+import { trackSelectItem } from "../../services/analytics.js";
 
 let template = null;
 
@@ -84,6 +87,17 @@ export async function createProductCard(product) {
 
 
 export function initProductCardNavigation(container = document) {
+  function trackCardSelection(card) {
+    const product = findProductById(products, card.dataset.productId);
+    if (!product) return;
+    trackSelectItem(product, {
+      listId: card.dataset.analyticsListId,
+      listName: card.dataset.analyticsListName,
+      index: card.dataset.analyticsIndex,
+      searchTerm: card.dataset.analyticsSearchTerm,
+    });
+  }
+
   container.addEventListener("click", (event) => {
     const card = event.target.closest(".catalog-product-card");
 
@@ -105,6 +119,7 @@ export function initProductCardNavigation(container = document) {
     }
 
 
+    trackCardSelection(card);
     window.location.href = card.dataset.productUrl;
   });
 
@@ -131,6 +146,7 @@ export function initProductCardNavigation(container = document) {
     }
 
 
+    trackCardSelection(card);
     window.location.href = card.dataset.productUrl;
   });
 }

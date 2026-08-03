@@ -48,9 +48,13 @@ function renderFooterCategories(products) {
 
       return `
         <li>
-          <a href="${escapeAttribute(
+          <a
+            href="${escapeAttribute(
             categoryUrl,
-          )}">
+          )}"
+            data-analytics-event="category_click"
+            data-analytics-value="${escapeAttribute(category)}"
+          >
             ${escapeHTML(formatFooterCategory(category))}
           </a>
         </li>

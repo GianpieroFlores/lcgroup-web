@@ -7,8 +7,10 @@ import {
   initProductCardNavigation,
 } from "./components/product-card/product-card.js";
 import { initAnimations } from "./animations.js";
+import { initGlobalAnalytics } from "./services/analytics.js";
 
 initProductCardNavigation();
+initGlobalAnalytics();
 
 function playEntryIntro() {
   const storageKey = "lcgroup-entry-intro-seen-v2";

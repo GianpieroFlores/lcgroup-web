@@ -8,6 +8,12 @@ import {
   getProductSearchText,
   normalizeSearchText,
 } from "../src/utils/search.js";
+import {
+  trackEvent,
+  trackFilter,
+  trackSort,
+  trackViewItemList,
+} from "../src/services/analytics.js";
 
 /* ==========================================
    ESTADO DEL CATÁLOGO
@@ -29,6 +35,7 @@ let currentPage = 1;
 let catalogMinimumPrice = 0;
 let catalogMaximumPrice = 0;
 let priceFilterFrame = null;
+let priceAnalyticsTimer = null;
 let availableCollectionSuggestions = [];
 let activeCollectionSuggestionIndex = -1;
 let productsPerPage = 18;
@@ -455,6 +462,16 @@ async function loadProducts() {
   loadPageFromUrl(params);
 
   applyFilters({ resetPage: false });
+
+  [
+    ["selection", "seleccion"],
+    ["category", "categoria"],
+    ["collection", "coleccion"],
+    ["drink_type", "bebida"],
+  ].forEach(([type, parameter]) => {
+    const value = params.get(parameter);
+    if (value) trackFilter(type, value, filteredProducts.length, "url");
+  });
 }
 
 /* ==========================================
@@ -761,6 +778,16 @@ function handlePriceRangeInput(event) {
 
   updatePriceRangePresentation();
   schedulePriceFiltering();
+
+  window.clearTimeout(priceAnalyticsTimer);
+  priceAnalyticsTimer = window.setTimeout(() => {
+    trackFilter(
+      "price",
+      `${minimumPriceInput.value}-${maximumPriceInput.value}`,
+      filteredProducts.length,
+      "user",
+    );
+  }, 500);
 }
 
 /* ==========================================
@@ -916,6 +943,13 @@ function selectCollectionSuggestions(collections) {
 
   closeCollectionSearchResults();
   applyFilters();
+  validCollections.forEach((collection) => {
+    trackFilter("collection", collection, filteredProducts.length, "user");
+    trackEvent("collection_click", {
+      collection_name: collection,
+      link_url: `${window.location.origin}${window.location.pathname}`,
+    });
+  });
 }
 
 function selectCollectionSuggestion(collection) {
@@ -1103,6 +1137,15 @@ async function renderCategoryGroupsView(renderVersion) {
     `Mostrando ${filteredProducts.length} productos en ${groups.length} categorías`;
   pagination.replaceChildren();
   pagination.hidden = true;
+  sections.forEach((section, index) => {
+    trackViewItemList(
+      section.querySelector(".catalog-product-grid"),
+      groups[index].products,
+      `category_${groups[index].name}`,
+      `Categoría ${formatLabel(groups[index].name)}`,
+      searchQuery,
+    );
+  });
 }
 
 function groupProductsByCollection(productsToGroup) {
@@ -1205,6 +1248,15 @@ async function renderCollectionsView(renderVersion) {
     `Mostrando ${groupedProductCount} productos en ${groups.length} colecciones`;
   pagination.replaceChildren();
   pagination.hidden = true;
+  sections.forEach((section, index) => {
+    trackViewItemList(
+      section.querySelector(".catalog-product-grid"),
+      groups[index].products,
+      `collection_${groups[index].key}`,
+      `Colección ${groups[index].name}`,
+      searchQuery,
+    );
+  });
 }
 
 async function renderProducts() {
@@ -1299,6 +1351,13 @@ async function renderPaginatedProducts(renderVersion) {
   }
 
   productGrid.innerHTML = cards.join("");
+  trackViewItemList(
+    productGrid,
+    visibleProducts,
+    `catalog_results_page_${currentPage}`,
+    "Resultados del catálogo",
+    searchQuery,
+  );
   renderPagination();
 }
 
@@ -1572,6 +1631,19 @@ function setupSetFilter(
 
     updateSetParameter(parameterName, selectedValues);
     applyFilters();
+    trackFilter(inputName, checkbox.value, filteredProducts.length, "user");
+    if (checkbox.checked && ["category", "collection", "drink"].includes(inputName)) {
+      const eventNames = {
+        category: ["category_click", "category_name"],
+        collection: ["collection_click", "collection_name"],
+        drink: ["drink_type_click", "drink_type"],
+      };
+      const [eventName, valueName] = eventNames[inputName];
+      trackEvent(eventName, {
+        [valueName]: checkbox.value,
+        link_url: `${window.location.origin}${window.location.pathname}`,
+      });
+    }
   });
 }
 
@@ -1699,6 +1771,7 @@ sortSelect?.addEventListener("change", () => {
   sortValue = sortSelect.value;
 
   applyFilters();
+  trackSort(sortValue, filteredProducts.length);
 });
 
 /* ==========================================

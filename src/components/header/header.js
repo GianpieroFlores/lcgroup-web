@@ -13,6 +13,7 @@ import {
   createCatalogUrl,
   createProductUrl,
 } from "../../utils/urls.js";
+import { trackSearch, trackSelectItem } from "../../services/analytics.js";
 
 /* =====================================================
    CONFIGURACIÓN DEL BUSCADOR
@@ -83,7 +84,10 @@ function loadCategories() {
         <li>
           <a href="${escapeAttribute(
             createCatalogUrl({ categoria: category }),
-          )}">
+          )}"
+            data-analytics-event="category_click"
+            data-analytics-value="${escapeAttribute(category)}"
+          >
             ${escapeHTML(formatCategory(category))}
           </a>
         </li>
@@ -448,8 +452,8 @@ function initHeaderSearch() {
 
     const fragment = document.createDocumentFragment();
 
-    visibleProducts.forEach((product) => {
-      fragment.append(createSearchResult(product));
+    visibleProducts.forEach((product, index) => {
+      fragment.append(createSearchResult(product, cleanQuery, index));
     });
 
     searchResults.append(fragment);
@@ -546,6 +550,8 @@ function initHeaderSearch() {
         return;
       }
 
+      trackSearch(query, searchProducts(query, false).length, "header");
+
       window.location.href = createCatalogUrl({
         search: query,
       });
@@ -572,7 +578,7 @@ function initHeaderSearch() {
    BUSCAR PRODUCTOS
 ===================================================== */
 
-function searchProducts(query) {
+function searchProducts(query, limitResults = true) {
   const normalizedQuery = normalizeSearchText(query);
 
   if (!normalizedQuery) {
@@ -581,7 +587,7 @@ function searchProducts(query) {
 
   const queryWords = normalizedQuery.split(/\s+/).filter(Boolean);
 
-  return products
+  const results = products
     .filter((product) => {
       const productText = getProductSearchText(product);
 
@@ -630,15 +636,16 @@ function searchProducts(query) {
       }
 
       return nameA.localeCompare(nameB, "es");
-    })
-    .slice(0, MAX_RESULTS);
+    });
+
+  return limitResults ? results.slice(0, MAX_RESULTS) : results;
 }
 
 /* =====================================================
    TEXTO UTILIZADO PARA BUSCAR
 ===================================================== */
 
-function createSearchResult(product) {
+function createSearchResult(product, searchTerm = "", index = 0) {
   const resultLink = document.createElement("a");
 
   resultLink.className = "search-result";
@@ -646,6 +653,14 @@ function createSearchResult(product) {
 
   resultLink.setAttribute("role", "option");
   resultLink.setAttribute("aria-selected", "false");
+  resultLink.addEventListener("click", () => {
+    trackSelectItem(product, {
+      listId: "header_search_results",
+      listName: "Resultados del buscador",
+      index: index + 1,
+      searchTerm,
+    });
+  });
 
   /* IMAGEN */
 

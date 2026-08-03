@@ -15,6 +15,13 @@ import {
   getPrimaryProductImage,
 } from "../../utils/products.js";
 import { createProductUrl } from "../../utils/urls.js";
+import {
+  trackAddToCart,
+  trackBeginCheckout,
+  trackRemoveFromCart,
+  trackViewCart,
+  trackWhatsappClick,
+} from "../../services/analytics.js";
 
 /* =====================================================
    CONFIGURACIÓN
@@ -89,6 +96,9 @@ function loadCartFromStorage() {
           name: item.name || "Producto",
           sku: item.sku || sourceProduct?.sku || "",
           collection: sourceProduct?.collection || item.collection || "",
+          brand: sourceProduct?.brand || item.brand || "",
+          category: sourceProduct?.category || item.category || "",
+          variant: sourceProduct?.variant || item.variant || "",
           presentation:
             sourceProduct?.presentation || item.presentation || "",
           image:
@@ -229,6 +239,8 @@ function openCart() {
 
   document.body.classList.add("cart-open");
 
+  trackViewCart(getCartItems(), getTotalPrice());
+
   window.requestAnimationFrame(() => {
     cartCloseButton?.focus();
   });
@@ -343,6 +355,9 @@ export function addProductToCart(product, quantity = 1) {
       sku: product.sku || "",
       name: product.name || "Producto",
       collection: product.collection || "",
+      brand: product.brand || "",
+      category: product.category || "",
+      variant: product.variant || "",
       presentation: product.presentation || "",
       image: getPrimaryProductImage(
         product,
@@ -353,6 +368,7 @@ export function addProductToCart(product, quantity = 1) {
   }
 
   updateCart();
+  trackAddToCart(product, requestedQuantity);
 
   document.dispatchEvent(
     new CustomEvent("cart:product-added", {
@@ -369,11 +385,20 @@ export function addProductToCart(product, quantity = 1) {
 ===================================================== */
 
 function removeProductFromCart(productId) {
+  const removedItem = findCartItem(productId);
+
+  if (!removedItem) return;
+
+  const removedQuantity = removedItem.quantity;
+
   cartItems = cartItems.filter((item) => {
     return String(item.id) !== String(productId);
   });
 
   updateCart();
+  trackRemoveFromCart(removedItem, removedQuantity, {
+    removal_type: "Eliminación completa",
+  });
 }
 
 /* =====================================================
@@ -390,6 +415,7 @@ function increaseProductQuantity(productId) {
   item.quantity += 1;
 
   updateCart();
+  trackAddToCart(item, 1);
 }
 
 /* =====================================================
@@ -411,6 +437,9 @@ function decreaseProductQuantity(productId) {
   item.quantity -= 1;
 
   updateCart();
+  trackRemoveFromCart(item, 1, {
+    removal_type: "Disminución de cantidad",
+  });
 }
 
 /* =====================================================
@@ -700,6 +729,18 @@ function setupCartPanelEvents() {
   cartOverlay?.addEventListener("click", closeCart);
 
   cartContinueShoppingButton?.addEventListener("click", closeCart);
+
+  cartWhatsappButton?.addEventListener("click", () => {
+    if (cartWhatsappButton.getAttribute("aria-disabled") === "true") return;
+    const items = getCartItems();
+    const value = getTotalPrice();
+    trackBeginCheckout(items, value);
+    trackWhatsappClick("cart", {
+      button_name: "Finalizar pedido por WhatsApp",
+      button_text: cartWhatsappButton.textContent?.trim().replace(/\s+/g, " "),
+      link_url: cartWhatsappButton.href,
+    });
+  });
 
   document.addEventListener("keydown", (event) => {
     if (!cartPanel?.classList.contains("is-open")) {

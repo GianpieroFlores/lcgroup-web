@@ -4,6 +4,11 @@ import { createProductCard } from "../../src/components/product-card/product-car
 import { addProductToCart } from "../../src/components/cart/cart.js";
 import { escapeAttribute, escapeHTML } from "../../src/utils/escape.js";
 import { findProductById } from "../../src/utils/products.js";
+import {
+  trackProductNotFound,
+  trackViewItem,
+  trackViewItemList,
+} from "../../src/services/analytics.js";
 
 
 let product = null;
@@ -24,9 +29,11 @@ function getProductId() {
 =========================================*/
 
 async function loadProduct() {
+  const requestedId = new URLSearchParams(window.location.search).get("id");
   const id = getProductId();
 
   if (!id) {
+    trackProductNotFound(requestedId);
     window.location.href = "/catalogo/";
 
     return;
@@ -35,6 +42,7 @@ async function loadProduct() {
 product = findProductById(products, id);
 
   if (!product) {
+    trackProductNotFound(requestedId);
     window.location.href = "/catalogo/";
 
     return;
@@ -49,6 +57,12 @@ product = findProductById(products, id);
 
 function renderProduct(products) {
   document.title = `${product.name} | LC Group`;
+  const productPage = document.querySelector(".product-page");
+  if (productPage) {
+    productPage.dataset.analyticsProductId = String(product.sku || product.id);
+    productPage.dataset.analyticsProductName = product.name;
+  }
+  trackViewItem(product);
 
   document.getElementById("breadcrumb-product").textContent = product.name;
 
@@ -147,6 +161,12 @@ async function renderRelatedProducts(products) {
   );
 
   relatedContainer.innerHTML = relatedCards.join("");
+  trackViewItemList(
+    relatedContainer,
+    relatedProducts,
+    "related_products",
+    "Productos relacionados",
+  );
 }
 
 /*=========================================

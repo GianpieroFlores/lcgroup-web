@@ -3,6 +3,7 @@ import productsData from "./data/products.json";
 import { createProductCard } from "./components/product-card/product-card.js";
 import { escapeAttribute, escapeHTML } from "./utils/escape.js";
 import { createCatalogUrl } from "./utils/urls.js";
+import { trackViewItemList } from "./services/analytics.js";
 
 const FEATURED_AUTOPLAY_DELAY = 2_000;
 /* =====================================================
@@ -323,6 +324,8 @@ function createTemporaryCollectionCard(collection, index) {
       class="home-collection-card"
       href="${escapeAttribute(url)}"
       aria-label="Explorar ${escapeAttribute(collection.title)}"
+      data-analytics-event="collection_click"
+      data-analytics-value="${escapeAttribute(collection.collection)}"
     >
       <span class="home-collection-card__number">
         ${formatCounter(index + 1)}
@@ -391,6 +394,13 @@ async function renderFeaturedProducts(products) {
   );
 
   homeElements.featuredTrack.innerHTML = productCards.join("");
+
+  trackViewItemList(
+    homeElements.featuredTrack,
+    homeState.featuredProducts,
+    "home_featured_products",
+    "Productos destacados",
+  );
 
   prepareCircularCarouselStructure();
   renderFeaturedPagination();
