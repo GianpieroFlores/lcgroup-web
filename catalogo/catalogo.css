@@ -719,7 +719,7 @@
 
 .catalog-feature-banner {
   position: relative;
-  min-height: 175px;
+  min-height: 120px;
   overflow: hidden;
   background: var(--color-black);
 }
@@ -750,11 +750,11 @@
   position: relative;
   z-index: 1;
   width: min(600px, 68%);
-  min-height: 175px;
+  min-height: 150px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 22px 32px;
+  padding: 18px 32px;
   color: var(--color-white);
 }
 
@@ -1554,12 +1554,12 @@
 
   .catalog-feature-banner,
   .catalog-feature-banner__content {
-    min-height: 160px;
+    min-height: 140px;
   }
 
   .catalog-feature-banner__content {
     width: min(560px, 78%);
-    padding: 20px 26px;
+    padding: 16px 26px;
   }
 }
 
@@ -1665,12 +1665,12 @@
 
   .catalog-feature-banner,
   .catalog-feature-banner__content {
-    min-height: 150px;
+    min-height: 132px;
   }
 
   .catalog-feature-banner__content {
     width: 100%;
-    padding: 18px 20px;
+    padding: 14px 20px;
   }
 
   .catalog-feature-banner__overlay {
@@ -1723,11 +1723,11 @@
 
   .catalog-feature-banner,
   .catalog-feature-banner__content {
-    min-height: 145px;
+    min-height: 125px;
   }
 
   .catalog-feature-banner__content {
-    padding: 16px 18px;
+    padding: 12px 18px;
   }
 
   .catalog-feature-banner h2 {
