@@ -1,31 +1,62 @@
 [
   {
-    "id": 1,
-    "sku": "MECOSP53",
-    "collection": "",
-    "name": " SPIEGELAU VINO BLANCO STYLE",
-    "presentation": "Una caja contiene 12 unidades.",
-    "category": "copas",
-    "shortDescription": " ",
-    "description": "...",
-    "specifications": [],
-    "price": 39.9,
-    "stock": 48,
-    "featured": true,
-    "new": true,
-    "offer": true,
-    "recommendedFor": [],
-    "gallery": [
-      {
-        "image": "/assets/images/product01.jpg",
-        "alt": "Vista principal"
-      },
-      {
-        "image": "/assets/images/product01-1.jpg",
-        "alt": "Vista total de la Copa Bordeaux"
-      }
-    ]
-  },
+  "id": 1,
+  "sku": "MECOSP53",
+  "collection": "Style",
+  "name": "SPIEGELAU VINO BLANCO STYLE",
+  "presentation": "Una caja contiene 12 unidades.",
+  "category": "copas",
+  "shortDescription": "Set de 12 copas SPIEGELAU Style para vino blanco, elaboradas en cristal de alta calidad. Su diseño elegante y funcional realza los aromas, la frescura y el equilibrio de los vinos blancos, siendo ideales para uso profesional y doméstico.",
+  "description": "La copa para vino blanco SPIEGELAU Style ha sido diseñada para resaltar la frescura, los aromas y el equilibrio de los vinos blancos. Su cáliz amplio permite una óptima circulación del aire, favoreciendo el desarrollo del perfil aromático del vino y potenciando su sabor para una experiencia de degustación más completa. Su forma elegante y perfectamente equilibrada convierte cada servicio en un momento de sofisticación.\n\nFabricada en cristal de alta calidad, esta copa combina brillo, transparencia y resistencia con un diseño moderno de líneas limpias y refinadas. Gracias al exclusivo proceso Platinum Glass de SPIEGELAU, ofrece una claridad excepcional y una gran resistencia al desgaste, manteniendo su brillo incluso después de numerosos lavados.\n\nLa colección SPIEGELAU Style destaca por sus formas versátiles y contemporáneas, diseñadas para realzar una amplia variedad de bebidas. Su fabricación a máquina garantiza uniformidad, precisión y una excelente relación calidad-precio, convirtiéndola en una elección ideal tanto para restaurantes, hoteles y bares como para el hogar.\n\nCada copa ha sido sometida a rigurosas pruebas de calidad, demostrando conservar su transparencia y brillo incluso después de más de 1,500 ciclos de lavado en lavavajillas. Su equilibrio, ligereza y resistencia facilitan un servicio elegante y seguro en cualquier ocasión.\n\nInformación importante:\n\n• Este producto está fabricado en cristal y puede romperse si se cae o recibe un impacto fuerte, generando fragmentos afilados.",
+  "specifications": [
+    {
+      "label": "Opciones de color",
+      "value": "Cristal claro"
+    },
+    {
+      "label": "Fabricación",
+      "value": "Hecho a máquina"
+    },
+    {
+      "label": "Colección",
+      "value": "Style"
+    },
+    {
+      "label": "Material",
+      "value": "Cristal"
+    },
+    {
+      "label": "Recomendado para limpiabotellas",
+      "value": "No"
+    },
+    {
+      "label": "Diámetro máximo",
+      "value": "86 mm"
+    },
+    {
+      "label": "Altura",
+      "value": "222 mm"
+    }
+  ],
+  "price": 39.9,
+  "stock": 48,
+  "featured": true,
+  "new": true,
+  "offer": true,
+  "recommendedFor": [
+    "vino-blanco"
+  ],
+  "gallery": [
+    {
+      "image": "/assets/images/product01.jpg",
+      "alt": "Vista principal"
+    },
+    {
+      "image": "/assets/images/product01-1.jpg",
+      "alt": "Vista total de la copa"
+    }
+  ]
+},
   {
     "id": 2,
     "sku": "MECOSP71",
@@ -3244,8 +3275,8 @@
       "espumosos"
     ],
     "gallery": [
-      {
-        "image": "/assets/images/product52.jpg",
+       {
+        "image": "/assets/images/product52-3.jpg",
         "alt": "Vista principal"
       },
       {
@@ -3255,40 +3286,79 @@
       {
         "image": "/assets/images/product52-2.jpg",
         "alt": "Detalle de la copa"
-      }
-    ]
-  },
-  {
-    "id": 53,
-    "sku": "MECOSP05",
-    "collection": "Salute",
-    "name": "SPIEGELAU PAR VINO BLANCO (SALUTE) ",
-    "presentation": "Una caja contiene 4 unidades.",
-    "category": "",
-    "shortDescription": "",
-    "description": "",
-    "specifications": [],
-    "price": 0,
-    "stock": 39,
-    "featured": false,
-    "new": false,
-    "offer": false,
-    "recommendedFor": [],
-    "gallery": [
-      {
-        "image": "/assets/images/product53.jpg",
+      },
+            {
+        "image": "/assets/images/product52.jpg",
         "alt": "Vista principal"
-      },
-      {
-        "image": "/assets/images/product53-1.jpg",
-        "alt": "Vista lateral"
-      },
-      {
-        "image": "/assets/images/product53-2.jpg",
-        "alt": "Detalle de la copa"
       }
     ]
   },
+{
+  "id": 53,
+  "sku": "MECOSP05",
+  "collection": "Salute",
+  "name": "SPIEGELAU PAR VINO BLANCO (SALUTE)",
+  "presentation": "Una caja contiene 4 unidades.",
+  "category": "copas",
+  "shortDescription": "Set de 4 copas SPIEGELAU Salute para vino blanco, elaboradas en cristal de alta calidad. Diseñadas para resaltar la frescura, los aromas y la elegancia de los vinos blancos, ofreciendo una experiencia de degustación refinada tanto en el hogar como en entornos profesionales.",
+  "description": "La copa de vino blanco SPIEGELAU Salute está diseñada para resaltar la frescura, la finura y el carácter aromático de los vinos blancos. Sus proporciones refinadas equilibran la fruta, la acidez y la mineralidad, asegurando que cada sorbo refleje la elegancia del vino. Ya sea al disfrutar de un vibrante Sauvignon Blanc, un intenso Chardonnay o un delicado Pinot Grigio, esta copa transforma cada momento en un ritual de estilo, cultura y refinamiento.\n\nPura y elegante, la cristalería transparente atrae todas las miradas. Fabricada en cristal de alta calidad, combina brillo, claridad y durabilidad con un diseño atemporal, convirtiéndose en una excelente opción para el entretenimiento, la gastronomía y el uso diario. La copa con tallo ofrece un equilibrio perfecto y una sofisticación refinada, ideal tanto para el hogar como para restaurantes y hoteles.\n\nLa colección Salute destaca por su fabricación a máquina con altos estándares de calidad, proporcionando uniformidad, resistencia y una excelente relación calidad-precio. Su diseño elegante realza la presentación del vino y garantiza un rendimiento confiable en cada uso.\n\nEste set de 4 copas SPIEGELAU se presenta en un empaque oficial de la marca con imagen del producto, ideal para regalo o para complementar una colección. Además, es apto para lavavajillas, conservando su brillo y transparencia incluso después de numerosos ciclos de lavado.\n\nInformación importante:\n\n• Este producto está fabricado en cristal y puede romperse si se cae o recibe un impacto fuerte, generando fragmentos afilados.",
+  "specifications": [
+    {
+      "label": "Opciones de color",
+      "value": "Cristal claro"
+    },
+    {
+      "label": "Fabricación",
+      "value": "Hecho a máquina"
+    },
+    {
+      "label": "Colección",
+      "value": "Salute"
+    },
+    {
+      "label": "Material",
+      "value": "Cristal"
+    },
+    {
+      "label": "Recomendado para limpiabotellas",
+      "value": "No"
+    },
+    {
+      "label": "Diámetro máximo",
+      "value": "87 mm"
+    },
+    {
+      "label": "Altura",
+      "value": "239 mm"
+    }
+  ],
+  "price": 0,
+  "stock": 39,
+  "featured": false,
+  "new": false,
+  "offer": false,
+  "recommendedFor": [
+    "vino-blanco"
+  ],
+  "gallery": [
+    {
+      "image": "/assets/images/product53.jpg",
+      "alt": "Vista principal"
+    },
+    {
+      "image": "/assets/images/product53-1.jpg",
+      "alt": "Vista lateral"
+    },
+    {
+      "image": "/assets/images/product53-2.jpg",
+      "alt": "Detalle de la copa"
+    },
+    {
+      "image": "/assets/images/product53-3.jpg",
+      "alt": "Detalle de la copa"
+    }
+  ]
+},
   {
     "id": 54,
     "sku": "MECOSP04",
@@ -3337,9 +3407,9 @@
       "vino-tinto"
     ],
     "gallery": [
-      {
-        "image": "/assets/images/product54.jpg",
-        "alt": "Vista principal"
+            {
+        "image": "/assets/images/product54-3.jpg",
+        "alt": "Detalle de la copa"
       },
       {
         "image": "/assets/images/product54-1.jpg",
@@ -3348,6 +3418,10 @@
       {
         "image": "/assets/images/product54-2.jpg",
         "alt": "Detalle de la copa"
+      },
+       {
+        "image": "/assets/images/product54.jpg",
+        "alt": "Vista principal"
       }
     ]
   },
@@ -3399,16 +3473,21 @@
       "vino-blanco"
     ],
     "gallery": [
-      {
-        "image": "/assets/images/product55.jpg",
+            {
+        "image": "/assets/images/product55-3.jpg",
         "alt": "Vista principal"
       },
+    
       {
         "image": "/assets/images/product55-1.jpg",
         "alt": "Vista principal"
       },
       {
         "image": "/assets/images/product55-2.jpg",
+        "alt": "Vista principal"
+      },
+        {
+        "image": "/assets/images/product55.jpg",
         "alt": "Vista principal"
       }
     ]
@@ -3461,8 +3540,8 @@
       "vino-blanco"
     ],
     "gallery": [
-      {
-        "image": "/assets/images/product56.jpg",
+       {
+        "image": "/assets/images/product56-3.jpg",
         "alt": "Vista principal"
       },
       {
@@ -3471,6 +3550,10 @@
       },
       {
         "image": "/assets/images/product56-2.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/assets/images/product56.jpg",
         "alt": "Vista principal"
       }
     ]
@@ -3524,7 +3607,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product57.jpg",
+        "image": "/assets/images/product57-3.jpg",
         "alt": "Vista principal"
       },
       {
@@ -3533,6 +3616,10 @@
       },
       {
         "image": "/assets/images/product57-2.jpg",
+        "alt": "Vista principal"
+      },
+       {
+        "image": "/assets/images/product57.jpg",
         "alt": "Vista principal"
       }
     ]
@@ -3585,8 +3672,9 @@
       "vino-tinto"
     ],
     "gallery": [
+
       {
-        "image": "/assets/images/product58.jpg",
+        "image": "/assets/images/product58-3.jpg",
         "alt": "Vista principal"
       },
       {
@@ -3595,6 +3683,10 @@
       },
       {
         "image": "/assets/images/product58-2.jpg",
+        "alt": "Vista principal"
+      },
+            {
+        "image": "/assets/images/product58.jpg",
         "alt": "Vista principal"
       }
     ]
@@ -3647,8 +3739,8 @@
       "espumosos"
     ],
     "gallery": [
-      {
-        "image": "/assets/images/product59.webp",
+            {
+        "image": "/assets/images/product59-3.jpg",
         "alt": "Vista principal"
       },
       {
@@ -3656,7 +3748,11 @@
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product59-2.webp",
+        "image": "/assets/images/product59-2.jpg",
+        "alt": "Vista principal"
+      },
+            {
+        "image": "/assets/images/product59.webp",
         "alt": "Vista principal"
       }
     ]
@@ -3710,8 +3806,8 @@
       "pisco"
     ],
     "gallery": [
-      {
-        "image": "/assets/images/product60.webp",
+            {
+        "image": "/assets/images/product60-3.jpg",
         "alt": "Vista principal"
       },
       {
@@ -3719,42 +3815,82 @@
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product60-2.webp",
+        "image": "/assets/images/product60-2.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/assets/images/product60.webp",
         "alt": "Vista principal"
       }
     ]
   },
   {
-    "id": 61,
-    "sku": "MECOSP06",
-    "collection": "Salute",
-    "name": "SPIEGELAU PARA CHAMPAGNE",
-    "presentation": "",
-    "category": "",
-    "shortDescription": "",
-    "description": "",
-    "specifications": [],
-    "price": 0,
-    "stock": 83,
-    "featured": false,
-    "new": false,
-    "offer": false,
-    "recommendedFor": [],
-    "gallery": [
-      {
-        "image": "/assets/images/product61.jpg",
-        "alt": "Vista principal"
-      },
-      {
-        "image": "/assets/images/product61-1.jpg",
-        "alt": "Vista principal"
-      },
-      {
-        "image": "/assets/images/product61-2.jpg",
-        "alt": "Vista principal"
-      }
-    ]
-  },
+  "id": 61,
+  "sku": "MECOSP06",
+  "collection": "Salute",
+  "name": "SPIEGELAU PARA CHAMPAGNE",
+  "presentation": "Una caja contiene 4 unidades.",
+  "category": "copas",
+  "shortDescription": "Set de 4 copas flauta SPIEGELAU Salute para champagne y vinos espumosos, elaboradas en cristal de alta calidad. Diseñadas para preservar la efervescencia y resaltar la frescura, los aromas y la elegancia de cada brindis.",
+  "description": "La copa flauta para Champagne SPIEGELAU Salute representa la elegancia y la celebración. Está diseñada especialmente para Champagne, Prosecco y vinos espumosos ligeros, frescos y secos. Su forma estilizada favorece una formación constante y fina de burbujas, preservando la frescura, la delicadeza y el carácter del vino. Incorpora el exclusivo SPIEGELAU Perlage Driver, un punto mousse cuidadosamente diseñado para promover una perlage fina y continua, mejorando la experiencia sensorial y la presentación de cada copa.\n\nPura y elegante, la cristalería transparente atrae todas las miradas. Fabricada en cristal de alta calidad, combina brillo, claridad y durabilidad con un diseño atemporal, convirtiéndose en una excelente opción para reuniones, celebraciones y el uso diario. Su copa con tallo ofrece un equilibrio perfecto y una sofisticación refinada, ideal tanto para el hogar como para restaurantes y hoteles.\n\nLa colección SPIEGELAU Salute reúne copas elegantes diseñadas para el disfrute moderno del vino. Sus proporciones refinadas, el cristal brillante y sus formas versátiles ofrecen una combinación perfecta de estilo, funcionalidad y calidad. La fabricación a máquina garantiza uniformidad, resistencia y una excelente relación calidad-precio.\n\nEl set de 4 copas SPIEGELAU se presenta en el empaque oficial de la marca con imagen del producto, ideal para uso personal o como regalo. Además, es apto para lavavajillas y está diseñado para conservar su brillo y transparencia incluso después de numerosos ciclos de lavado.\n\nInformación importante:\n\n• Este producto está fabricado en cristal y puede romperse si se cae o recibe un impacto fuerte, generando fragmentos afilados.",
+  "specifications": [
+    {
+      "label": "Opciones de color",
+      "value": "Cristal claro"
+    },
+    {
+      "label": "Fabricación",
+      "value": "Hecho a máquina"
+    },
+    {
+      "label": "Colección",
+      "value": "Salute"
+    },
+    {
+      "label": "Material",
+      "value": "Cristal"
+    },
+    {
+      "label": "Recomendado para limpiabotellas",
+      "value": "No"
+    },
+    {
+      "label": "Diámetro máximo",
+      "value": "68 mm"
+    },
+    {
+      "label": "Altura",
+      "value": "245 mm"
+    }
+  ],
+  "price": 0,
+  "stock": 83,
+  "featured": false,
+  "new": false,
+  "offer": false,
+  "recommendedFor": [
+    "champagne",
+    "espumantes"
+  ],
+  "gallery": [
+    {
+      "image": "/assets/images/product61.jpg",
+      "alt": "Vista principal"
+    },
+    {
+      "image": "/assets/images/product61-1.jpg",
+      "alt": "Vista principal"
+    },
+    {
+      "image": "/assets/images/product61-2.jpg",
+      "alt": "Vista principal"
+    },
+    {
+      "image": "/assets/images/product61-3.jpg",
+      "alt": "Vista principal"
+    }
+  ]
+},
   {
     "id": 62,
     "sku": "MECOSP12",
@@ -3805,7 +3941,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product62.webp",
+        "image": "/assets/images/product62-3.jpg",
         "alt": "Vista principal"
       },
       {
@@ -3813,7 +3949,11 @@
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product62-2.webp",
+        "image": "/assets/images/product62-2.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/assets/images/product62.webp",
         "alt": "Vista principal"
       }
     ]
@@ -3867,8 +4007,8 @@
       "cocteles"
     ],
     "gallery": [
-      {
-        "image": "/assets/images/product63.webp",
+       {
+        "image": "/assets/images/product63-3.jpg",
         "alt": "Vista principal"
       },
       {
@@ -3876,7 +4016,11 @@
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product63-2.webp",
+        "image": "/assets/images/product63-2.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/assets/images/product63.webp",
         "alt": "Vista principal"
       }
     ]
@@ -3930,7 +4074,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product64.webp",
+        "image": "/assets/images/product64-3.jpg",
         "alt": "Vista principal"
       },
       {
@@ -3938,7 +4082,11 @@
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product64-2.webp",
+        "image": "/assets/images/product64-2.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/assets/images/product64.webp",
         "alt": "Vista principal"
       }
     ]
@@ -3992,7 +4140,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product65.webp",
+        "image": "/assets/images/product65-3.jpg",
         "alt": "Vista principal"
       },
       {
@@ -4000,7 +4148,11 @@
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product65-2.webp",
+        "image": "/assets/images/product65-2.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/assets/images/product65.webp",
         "alt": "Vista principal"
       }
     ]
