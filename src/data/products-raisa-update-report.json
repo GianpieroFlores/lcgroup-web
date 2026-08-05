@@ -1,0 +1,1640 @@
+{
+    "summary":  {
+                    "totalJsonProducts":  108,
+                    "totalExcelRows":  116,
+                    "matchedByCode":  108,
+                    "updatedNames":  97,
+                    "updatedCollections":  98,
+                    "unchanged":  10,
+                    "ambiguous":  0,
+                    "notFoundInExcel":  0,
+                    "excelRowsWithoutJsonMatch":  8,
+                    "invalidExcelValues":  18
+                },
+    "updated":  [
+                    {
+                        "code":  "MECOSP53",
+                        "oldName":  "SPIEGELAU VINO BLANCO STYLE",
+                        "newName":  "COPA VINO BLANCO STYLE",
+                        "oldCollection":  "Style",
+                        "newCollection":  "STYLE",
+                        "excelDescription":  "C/C SPIEGELAU VINO BLANCO STYLE (4678002)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "blanco",
+                                            "style",
+                                            "vino"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP71",
+                        "oldName":  "SPIEGELAU BORDEAUX DEFINITION",
+                        "newName":  "COPA BORDEAUX DEFINITION",
+                        "oldCollection":  "Definition Pro",
+                        "newCollection":  "DEFINITION",
+                        "excelDescription":  "C/C SPIEGELAU BORDEAUX DEFINITION (1350335)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "bordeaux",
+                                            "definition"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP39",
+                        "oldName":  "COPA SPIEGELAU BORDEAUX SALUTE",
+                        "newName":  "COPA BORDEAUX SALUTE",
+                        "oldCollection":  "Salute Pro",
+                        "newCollection":  "SALUTE",
+                        "excelDescription":  "C/C SPIEGELAU BORDEAUX SALUTE (4728035)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "bordeaux",
+                                            "salute"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP72",
+                        "oldName":  "COPA SPIEGELAU BURGUNDY DEFINITION",
+                        "newName":  "COPA BURGUNDY DEFINITION",
+                        "oldCollection":  "SPIEGELAU Definition Pro",
+                        "newCollection":  "DEFINITION",
+                        "excelDescription":  "C/C SPIEGELAU BURGUNDY DEFINITION (1350300)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "burgundy",
+                                            "definition"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP38",
+                        "oldName":  "COPA SPIEGELAU Salute Pro Copa Borgoña",
+                        "newName":  "COPA BURGUNDY SALUTE",
+                        "oldCollection":  "Salute Pro",
+                        "newCollection":  "SALUTE",
+                        "excelDescription":  "C/C SPIEGELAU BURGUNDY SALUTE (4728000)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "burgundy",
+                                            "salute"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP41",
+                        "oldName":  "COPA SPIEGELAU BURGUNDY STYLE",
+                        "newName":  "COPA BURGUNDY STYLE",
+                        "oldCollection":  "Style Pro",
+                        "newCollection":  "STYLE",
+                        "excelDescription":  "C/C SPIEGELAU BURGUNDY STYLE (4678000)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "burgundy",
+                                            "style"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP55",
+                        "oldName":  "COPA SPIEGELAU CATA FESTIVAL",
+                        "newName":  "COPA CATA FESTIVAL",
+                        "oldCollection":  "Festival",
+                        "newCollection":  "FESTIVAL",
+                        "excelDescription":  "C/C SPIEGELAU CATA FESTIVAL (4028003)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "cata",
+                                            "festival"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP10",
+                        "oldName":  "COPA SPIEGELAU CHAMPAGNE",
+                        "newName":  "COPA CHAMPAGNE WINELOVERS",
+                        "oldCollection":  "Winelovers Pro",
+                        "newCollection":  "WINELOVERS",
+                        "excelDescription":  "C/C SPIEGELAU CHAMPAGNE (WINELOVERS) (4098007)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "champagne",
+                                            "winelovers"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP36",
+                        "oldName":  "COPA SPIEGELAU COCKTAIL VINO GRANDE",
+                        "newName":  "COPA COCKTAIL VINO GRANDE",
+                        "oldCollection":  "Vino Grande Pro",
+                        "newCollection":  "VINO GRANDE",
+                        "excelDescription":  "C/C SPIEGELAU COCKTAIL VINO GRANDE (4518025)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "cocktail",
+                                            "grande",
+                                            "vino"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP68",
+                        "oldName":  "COPA SPIEGELAU SPRITZ APERO",
+                        "newName":  "COPA SPRITZ APERO",
+                        "oldCollection":  "Apero Pro",
+                        "newCollection":  "APERO",
+                        "excelDescription":  "C/C SPIEGELAU COPA SPRITZ APERO(4268039)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "apero",
+                                            "spritz"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP69",
+                        "oldName":  "COPA SPIEGELAU UNIVERSAL APERO",
+                        "newName":  "COPA UNIVERSAL APERO",
+                        "oldCollection":  "Apero Pro",
+                        "newCollection":  "APERO",
+                        "excelDescription":  "C/C SPIEGELAU COPA UNIVERSAL APERO(4268032)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "apero",
+                                            "universal"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP37",
+                        "oldName":  "COPA SPIEGELAU COÑAC SOIREE",
+                        "newName":  "COPA COÑAC SOIRE",
+                        "oldCollection":  "Soiree Pro",
+                        "newCollection":  "SOIRE",
+                        "excelDescription":  "C/C SPIEGELAU COÑAC SOIREE (4078018)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "conac",
+                                            "soiree"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP44",
+                        "oldName":  "COPA SPIEGELAU DIGESTIVO VINO GRANDE",
+                        "newName":  "COPA DIGESTIVO VINO GRANDE",
+                        "oldCollection":  "Vino Grande Pro",
+                        "newCollection":  "VINO GRANDE",
+                        "excelDescription":  "C/C SPIEGELAU DIGESTIVO VINO GRANDE (4518023)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "digestivo",
+                                            "grande",
+                                            "vino"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP43",
+                        "oldName":  "COPA SPIEGELAU FLAUTE DE CHAMPAN STYLE",
+                        "newName":  "COPA CHAMPAGNE STYLE",
+                        "oldCollection":  "Style Pro",
+                        "newCollection":  "STYLE",
+                        "excelDescription":  "C/C SPIEGELAU COPA CHAMPAGNE STYLE (4678007)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "champagne",
+                                            "style"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP13",
+                        "oldName":  "COPA SPIEGELAU GIN (GIN\u0026TONIC)",
+                        "newName":  "COPA GIN \u0026 TÓNIC",
+                        "oldCollection":  "Special Glasses Pro",
+                        "newCollection":  "COCKTAIL",
+                        "excelDescription":  "C/C SPIEGELAU GIN (GIN\u0026TONIC) (4398039)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "gin",
+                                            "tonic"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP19",
+                        "oldName":  "COPA SPIEGELAU PERFECT COUPETTE MARGARITA",
+                        "newName":  "COPA COUPETTE PERFECT SERVE",
+                        "oldCollection":  "Perfect Serve Collection Pro",
+                        "newCollection":  "PERFECT SERVE",
+                        "excelDescription":  "C/C SPIEGELAU PERFECT COUPETTE MARGARITA (4508008)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "coupette",
+                                            "margarita",
+                                            "perfect",
+                                            "serve"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP20",
+                        "oldName":  "COPA SPIEGELAU PERFECT NOSING COÑAC",
+                        "newName":  "COPA COÑAC PERFECT SERVE",
+                        "oldCollection":  "Perfect Serve",
+                        "newCollection":  "PERFECT SERVE",
+                        "excelDescription":  "C/C SPIEGELAU PERFECT NOSING COÑAC (4508018)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "conac",
+                                            "nosing",
+                                            "perfect",
+                                            "serve"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP70",
+                        "oldName":  "COPA SPIEGELAU UNIVERSAL DEFINITION",
+                        "newName":  "COPA UNIVERSAL DEFINITION",
+                        "oldCollection":  "Definition Pro",
+                        "newCollection":  "DEFINITION",
+                        "excelDescription":  "C/C SPIEGELAU UNIVERSAL DEFINITION (1350301)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "definition",
+                                            "universal"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP73",
+                        "oldName":  "COPA SPIEGELAU UNIVERSAL FESTINO",
+                        "newName":  "COPA UNIVERSAL FESTINO",
+                        "oldCollection":  "Festino Pro",
+                        "newCollection":  "FESTINO",
+                        "excelDescription":  "C/C SPIEGELAU UNIVERSAL FESTINO (4000132)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "festino",
+                                            "universal"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP09",
+                        "oldName":  "COPA SPIEGELAU VINO BLANCO (WINELOVERS)",
+                        "newName":  "COPA VINO BLANCO WINELOVERS",
+                        "oldCollection":  "Winelovers Pro",
+                        "newCollection":  "WINELOVERS",
+                        "excelDescription":  "C/C SPIEGELAU VINO BLANCO (WINELOVERS) (4098002)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "blanco",
+                                            "vino",
+                                            "winelovers"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP07",
+                        "oldName":  "COPA SPIEGELAU VINO TINTO MAGNUN/BORDEAUX",
+                        "newName":  "COPA BORDEAUX WINELOVERS",
+                        "oldCollection":  "Winelovers Pro",
+                        "newCollection":  "WINELOVERS",
+                        "excelDescription":  "C/C SPIEGELAU COPA BORDEAUX (WINELOVERS) (4098035)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "bordeaux",
+                                            "winelovers"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP40",
+                        "oldName":  "COPA SPIEGELAU VINO TINTO SALUTE",
+                        "newName":  "COPA VINO TINTO SALUTE",
+                        "oldCollection":  "Salute Pro",
+                        "newCollection":  "SALUTE",
+                        "excelDescription":  "C/C SPIEGELAU VINO TINTO SALUTE (4728001)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "salute",
+                                            "tinto",
+                                            "vino"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP42",
+                        "oldName":  "COPA SPIEGELAU VINO TINTO STYLE",
+                        "newName":  "COPA VINO TINTO STYLE",
+                        "oldCollection":  "Style Pro",
+                        "newCollection":  "STYLE",
+                        "excelDescription":  "C/C SPIEGELAU VINO TINTO STYLE (4678001)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "style",
+                                            "tinto",
+                                            "vino"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP08",
+                        "oldName":  "SPIEGELAU VINO TINTO/AGUA",
+                        "newName":  "COPA VINO TINTO WINELOVERS",
+                        "oldCollection":  "Winelovers Pro",
+                        "newCollection":  "WINELOVERS",
+                        "excelDescription":  "C/C SPIEGELAU VINO TINTO/AGUA (WINELOVERS) (4098001)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "agua",
+                                            "tinto",
+                                            "vino",
+                                            "winelovers"
+                                        ]
+                    },
+                    {
+                        "code":  "MEDESP09",
+                        "oldName":  "DECANTADOR SPIEGELAU (CASUAL ENTERTAINING)",
+                        "newName":  "DECANTADOR CASUAL",
+                        "oldCollection":  "Casual Entertaining",
+                        "newCollection":  "CASUAL",
+                        "excelDescription":  "DECANTADOR SPIEGELAU (CASUAL ENTERTAINING) (4800188)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "casual",
+                                            "decantador",
+                                            "entertaining"
+                                        ]
+                    },
+                    {
+                        "code":  "MEJASP01",
+                        "oldName":  "DECANTADOR SPIEGELAU (LOOP)",
+                        "newName":  "DECANTADOR LOOP",
+                        "oldCollection":  "Loop",
+                        "newCollection":  "LOOP",
+                        "excelDescription":  "DECANTADOR SPIEGELAU (LOOP) (8900187)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "decantador",
+                                            "loop"
+                                        ]
+                    },
+                    {
+                        "code":  "MEJASP02",
+                        "oldName":  "DECANTADOR SPIEGELAU (RED \u0026 WHITE)",
+                        "newName":  "DECANTADOR RED \u0026 WHITE",
+                        "oldCollection":  "Red \u0026 White",
+                        "newCollection":  "RED \u0026 WHITE",
+                        "excelDescription":  "DECANTADOR SPIEGELAU (RED\u0026WHITE) (8920188)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "decantador",
+                                            "red",
+                                            "white"
+                                        ]
+                    },
+                    {
+                        "code":  "MEDESP25",
+                        "oldName":  "DECANTADOR SPIEGELAU (WILLSB. ANNIVERSARY) ",
+                        "newName":  "DECANTADOR WILLSB. ANNIVERSARY",
+                        "oldCollection":  "",
+                        "newCollection":  "DECANTER",
+                        "excelDescription":  "DECANTADOR SPIEGELAU (WILLSB. ANNIVERSARY) (1416159)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "anniversary",
+                                            "decantador",
+                                            "willsb"
+                                        ]
+                    },
+                    {
+                        "code":  "MEDESP26",
+                        "oldName":  "DECANTADOR SPIEGELAU STYLE",
+                        "newName":  "DECANTADOR STYLE",
+                        "oldCollection":  "Style",
+                        "newCollection":  "DECANTER",
+                        "excelDescription":  "DECANTADOR SPIEGELAU STYLE (4670157)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "decantador",
+                                            "style"
+                                        ]
+                    },
+                    {
+                        "code":  "MEDESP03",
+                        "oldName":  "DECANTADOR SPIEGELAU (PISA)",
+                        "newName":  "DECANTADOR PISA",
+                        "oldCollection":  "Pisa",
+                        "newCollection":  "DECANTER",
+                        "excelDescription":  "DECANTADOR SPIEGELAU(PISA) (7930057)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "decantador",
+                                            "pisa"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP58",
+                        "oldName":  "SET SPIEGELAU (TIN, BCO, AGUA) AUT. CASUAL",
+                        "newName":  "SET X 12 COPAS AUTHENTIS",
+                        "oldCollection":  "Authentis Casual",
+                        "newCollection":  "AUTHENTIS",
+                        "excelDescription":  "SET X 12 C/C SPIEGELAU (TIN, BCO, AGUA) AUT. CASUAL(4400194)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "agua",
+                                            "aut",
+                                            "authentis",
+                                            "bco",
+                                            "casual",
+                                            "tin"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP61",
+                        "oldName":  "COPA SPIEGELAU (TINTO, BCO) STYLE",
+                        "newName":  "SET X 12 COPAS STYLE",
+                        "oldCollection":  "Style",
+                        "newCollection":  "STYLE",
+                        "excelDescription":  "SET X 12 C/C SPIEGELAU(TINTO, BCO) STYLE(4670194)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "bco",
+                                            "style",
+                                            "tinto"
+                                        ]
+                    },
+                    {
+                        "code":  "MEVASP19",
+                        "oldName":  "SET SPIEGELAU STARTER (KIT P/BARMAN)",
+                        "newName":  "SET X 12 KIT BARMAN",
+                        "oldCollection":  "Perfect Serve",
+                        "newCollection":  "PERFECT SERVE",
+                        "excelDescription":  "SET X 12 SPIEGELAU STARTER (KIT P/BARMAN) (4500195)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "barman",
+                                            "kit",
+                                            "perfect",
+                                            "serve",
+                                            "starter"
+                                        ]
+                    },
+                    {
+                        "code":  "MEVASP43",
+                        "oldName":  "SPIEGELAU (LONG 6 + TUMBLER 6) ELEGANCE",
+                        "newName":  "SET X 12 VASOS ELEGANCE",
+                        "oldCollection":  "Elegance",
+                        "newCollection":  "ELEGANCE",
+                        "excelDescription":  "SET X 12 V/C SPIEGELAU(LONG 6+TUMBLER 6) ELEGANCE(2750194)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "elegance",
+                                            "long",
+                                            "tumbler"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP57",
+                        "oldName":  "COPA SPIEGELAU STYLE TINTO, BCO Y CHAMPG.",
+                        "newName":  "SET X 18 COPAS STYLE",
+                        "oldCollection":  "Style",
+                        "newCollection":  "STYLE",
+                        "excelDescription":  "SET X 18 C/C SPIEGELAU STYLE TINTO, BCO Y CHAMPG. (4670198)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "bco",
+                                            "champg",
+                                            "style",
+                                            "tinto"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP60",
+                        "oldName":  "SPIEGELAU APEROL SPRITZ",
+                        "newName":  "SET X 2 COPAS APEROL SPRITZ",
+                        "oldCollection":  "Special Glasses Cocktail",
+                        "newCollection":  "COCKTAIL",
+                        "excelDescription":  "SET X 2 C/C SPIEGELAU APEROL SPRITZ (4670261)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "aperol",
+                                            "cocktail",
+                                            "spritz"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP67",
+                        "oldName":  "SPIEGELAU BORDEAUX DEFINITION",
+                        "newName":  "SET X 2 COPA BORDEAUX DEFENITION",
+                        "oldCollection":  "SPIEGELAU Definition",
+                        "newCollection":  "DEFINITION",
+                        "excelDescription":  "SET X 2 C/C SPIEGELAU BORDEAUX DEFINITION(1350165)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "bordeaux",
+                                            "definition"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP59",
+                        "oldName":  "SPIEGELAU COPA GIN TONIC",
+                        "newName":  "SET X 2 COPAS GIN \u0026 TONIC",
+                        "oldCollection":  "Special Glasses Cocktail",
+                        "newCollection":  "COCKTAIL",
+                        "excelDescription":  "SET X 2 C/C SPIEGELAU COPA GIN TONIC 4670260)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "cocktail",
+                                            "gin",
+                                            "tonic"
+                                        ]
+                    },
+                    {
+                        "code":  "MEVASP50",
+                        "oldName":  "SPIEGELAU CERVEZA HEFEWEIZEN",
+                        "newName":  "SET X 2 VASO HEFEWEIZEN BEER",
+                        "oldCollection":  "Beer Classics",
+                        "newCollection":  "BEER CLASSIC",
+                        "excelDescription":  "SET X 2 V/C SPIEGELAU CERVEZA HEFEWEIZEN (4991685)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "beer",
+                                            "cerveza",
+                                            "hefeweizen"
+                                        ]
+                    },
+                    {
+                        "code":  "MEVASP51",
+                        "oldName":  "SPIEGELAU CERVEZA IPA",
+                        "newName":  "SET X 2 VASO IPA BEER",
+                        "oldCollection":  "Beer Classics",
+                        "newCollection":  "CRAFT BEER",
+                        "excelDescription":  "SET X 2 V/C SPIEGELAU CERVEZA IPA (4992662)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "beer",
+                                            "cerveza",
+                                            "ipa"
+                                        ]
+                    },
+                    {
+                        "code":  "MEVASP52",
+                        "oldName":  "SPIEGELAU CERVEZA PILSNER",
+                        "newName":  "SET X 2 VASO PILSNER BEER CLASSIC",
+                        "oldCollection":  "Beer Classics",
+                        "newCollection":  "BEER CLASSIC",
+                        "excelDescription":  "SET X 2 V/C SPIEGELAU CERVEZA PILSNER (4991680)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "beer",
+                                            "cerveza",
+                                            "pilsner"
+                                        ]
+                    },
+                    {
+                        "code":  "MEDESP27",
+                        "oldName":  "DECANTADOR SPIEGELAU + 2 COPAS STYLE",
+                        "newName":  "SET X 3 DECANT + 2 COPAS STYLE",
+                        "oldCollection":  "LifeStyle",
+                        "newCollection":  "STYLE",
+                        "excelDescription":  "SET X 3 DECANTADOR SPIEGELAU+2 COPAS STYLE(4450193)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "decantador",
+                                            "style"
+                                        ]
+                    },
+                    {
+                        "code":  "MEVASP38",
+                        "oldName":  "SPIEGELAU CERVEZA LAGER",
+                        "newName":  "SET X 4 VASO LAGER",
+                        "oldCollection":  "Beer Classics",
+                        "newCollection":  "BEER CLASSIC",
+                        "excelDescription":  "SET X 4 V/C SPIEGELAU CERVEZA LAGER (4991971)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "beer",
+                                            "cerveza",
+                                            "lager"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP21",
+                        "oldName":  "SPIEGELAU BORDEAUX WINELOVERS",
+                        "newName":  "SET X 4 COPA BORDEAUX WINELOVERS",
+                        "oldCollection":  "Winelovers",
+                        "newCollection":  "WINELOVERS",
+                        "excelDescription":  "SET X 4 C/C SPIEGELAU BORDEAUX WINELOVERS (4090177)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "bordeaux",
+                                            "winelovers"
+                                        ]
+                    },
+                    {
+                        "code":  "MEVASP12",
+                        "oldName":  "SPIEGELAU COPA DE GIN \u0026 VODKA SUMMER DRINKS",
+                        "newName":  "SET X 4 COPA SUMMER DRINKS",
+                        "oldCollection":  "Special Glasses",
+                        "newCollection":  "COCKTAIL",
+                        "excelDescription":  "SET X 4 C/C SPIEGELAU COPA SUMMER DRINKS (4670171)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "drinks",
+                                            "summer"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP46",
+                        "oldName":  "SPIEGELAU FLAUTE DE CHAMPAN STYLE",
+                        "newName":  "SET X 4 COPA CHAMPAGNE STYLE",
+                        "oldCollection":  "Style",
+                        "newCollection":  "STYLE",
+                        "excelDescription":  "SET X 4 C/C SPIEGELAU COPA CHAMPAGNE STYLE (4670187)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "champagne",
+                                            "style"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP05",
+                        "oldName":  "SPIEGELAU PAR VINO BLANCO (SALUTE)",
+                        "newName":  "SET X 4 COPA VINO BCO SALUTE",
+                        "oldCollection":  "Salute",
+                        "newCollection":  "SALUTE",
+                        "excelDescription":  "SET X 4 C/C SPIEGELAU PAR VINO BLANCO (SALUTE) (4720172)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "blanco",
+                                            "par",
+                                            "salute",
+                                            "vino"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP04",
+                        "oldName":  "SPIEGELAU PARA VINO TINTO",
+                        "newName":  "SET X 4 COPA CHAMPAGNE SALUTE",
+                        "oldCollection":  "Salute",
+                        "newCollection":  "SALUTE",
+                        "excelDescription":  "SET X 4 C/C SPIEGELAU PARA VINO TINTO (SALUTE) (4720171)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "salute",
+                                            "tinto",
+                                            "vino"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP45",
+                        "oldName":  "SPIEGELAU VINO BLANCO STYLE",
+                        "newName":  "SET X 4 COPA VINO BLANCO STYLE",
+                        "oldCollection":  "Style",
+                        "newCollection":  "STYLE",
+                        "excelDescription":  "SET X 4 C/C SPIEGELAU VINO BLANCO STYLE (4670182)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "blanco",
+                                            "style",
+                                            "vino"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP22",
+                        "oldName":  "SPIEGELAU VINO BLANCO WINELOVERS",
+                        "newName":  "SET X 4 COPA VINO BLANCO WINELOVERS",
+                        "oldCollection":  "Winelovers",
+                        "newCollection":  "WINELOVERS",
+                        "excelDescription":  "SET X 4 C/C SPIEGELAU VINO BLANCO WINELOVERS (4090182)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "blanco",
+                                            "vino",
+                                            "winelovers"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP47",
+                        "oldName":  "SPIEGELAU BURGUNDY SALUTE",
+                        "newName":  "SET X 4 COPA BURGUNDY SALUTE",
+                        "oldCollection":  "Salute",
+                        "newCollection":  "SALUTE",
+                        "excelDescription":  "SET X 4 C/C SPIEGELAU BURGUNDY SALUTE (4720170)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "burgundy",
+                                            "salute"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP48",
+                        "oldName":  "SPIEGELAU BURGUNDY STYLE",
+                        "newName":  "SET X 4 COPA BURGUNDY STYLE",
+                        "oldCollection":  "Style",
+                        "newCollection":  "STYLE",
+                        "excelDescription":  "SET X 4 C/C SPIEGELAU BURGUNDY STYLE (4670180)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "burgundy",
+                                            "style"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP27",
+                        "oldName":  "SPIEGELAU CHAMPAGNE WINELOVERS",
+                        "newName":  "SET X 4 COPA CHAMPAGNE WINELOVERS",
+                        "oldCollection":  "Winelovers",
+                        "newCollection":  "WINELOVERS",
+                        "excelDescription":  "SET X 4 C/C SPIEGELAU CHAMPAGNE WINELOVERS (4090187)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "champagne",
+                                            "winelovers"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP14",
+                        "oldName":  "SPIEGELAU DIGESTIVE / PISCO",
+                        "newName":  "SET X 4 COPA DIGESTIVE / PISCO",
+                        "oldCollection":  "Special Glasses",
+                        "newCollection":  "GIFT SETS",
+                        "excelDescription":  "SET X 4 C/C SPIEGELAU DIGESTIVE / PISCO (4510173)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "digestive",
+                                            "pisco"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP06",
+                        "oldName":  "SPIEGELAU PARA CHAMPAGNE",
+                        "newName":  "SET X 4 COPA CHAMPAGNE SALUTE",
+                        "oldCollection":  "Salute",
+                        "newCollection":  "SALUTE",
+                        "excelDescription":  "SET X 4 C/C SPIEGELAU PARA CHAMPAGNE (SALUTE) (4720175)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "champagne",
+                                            "salute"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP12",
+                        "oldName":  "SPIEGELAU PARA GIN \u0026 TONIC",
+                        "newName":  "SET X 4 COPA GIN \u0026 TÓNIC",
+                        "oldCollection":  "Special Glasses",
+                        "newCollection":  "GIFT SETS",
+                        "excelDescription":  "SET X 4 C/C SPIEGELAU GIN \u0026 TONIC (4390179)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "gin",
+                                            "tonic"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP54",
+                        "oldName":  "SPIEGELAU PARA GIN \u0026 TONIC SIN TALLO",
+                        "newName":  "SET X 4 COPA GIN \u0026 TÓNIC SIN TALLO",
+                        "oldCollection":  "Special Glasses",
+                        "newCollection":  "GIFT SETS",
+                        "excelDescription":  "SET X 4 C/C SPIEGELAU GIN \u0026 TONIC SIN TALLO (4810180)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "gin",
+                                            "tallo",
+                                            "tonic"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP33",
+                        "oldName":  "SPIEGELAU PARA VINO TINTO BORDEUX",
+                        "newName":  "SET X 4 COPA BORDEAUX SALUTE",
+                        "oldCollection":  "Salute",
+                        "newCollection":  "SALUTE",
+                        "excelDescription":  "SET X 4 C/C SPIEGELAU COPA BORDEUX (SALUTE) (4720177)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "bordeux",
+                                            "salute"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP15",
+                        "oldName":  "SPIEGELAU PERFECT COCKTAIL MARTINI",
+                        "newName":  "SET X 4 COPA COCKTAIL PERFECT",
+                        "oldCollection":  "Perfect Serve Collection",
+                        "newCollection":  "PERFECT SERVE",
+                        "excelDescription":  "SET X 4 C/C SPIEGELAU PERFECT COCKTAIL MARTINI (4500175)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "cocktail",
+                                            "martini",
+                                            "perfect",
+                                            "serve"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP17",
+                        "oldName":  "SPIEGELAU PERFECT COUPETTE MARGARITA",
+                        "newName":  "SPIEGELAU PERFECT COUPETTE MARGARITA",
+                        "oldCollection":  "Perfect Serve Collection",
+                        "newCollection":  "PERFECT SERVE",
+                        "excelDescription":  "SET X 4 C/C SPIEGELAU PERFECT COUPETTE (4500174)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "coupette",
+                                            "perfect",
+                                            "serve"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP56",
+                        "oldName":  "SPIEGELAU PROSECCO",
+                        "newName":  "SET X 4 COPA PROSECCO",
+                        "oldCollection":  "Special Glasses",
+                        "newCollection":  "SPECIAL GLASSES",
+                        "excelDescription":  "SET X 4 C/C SPIEGELAU PROSECCO (4400275)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "glasses",
+                                            "prosecco",
+                                            "special"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP24",
+                        "oldName":  "SPIEGELAU VINO TINTO STYLE",
+                        "newName":  "SET X 4 COPAS TINTO STYLE",
+                        "oldCollection":  "",
+                        "newCollection":  "STYLE",
+                        "excelDescription":  "SET X 4 C/C SPIEGELAU VINO TINTO STYLE (4670181)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "style",
+                                            "tinto",
+                                            "vino"
+                                        ]
+                    },
+                    {
+                        "code":  "MEVASP39",
+                        "oldName":  "SPIEGELAU CERVEZA BARREL",
+                        "newName":  "SET X 4 VASOS BARREL BEER",
+                        "oldCollection":  "",
+                        "newCollection":  "CRAFT BEER",
+                        "excelDescription":  "SET X 4 V/C SPIEGELAU CERVEZA BARREL (4991380)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "barrel",
+                                            "cerveza"
+                                        ]
+                    },
+                    {
+                        "code":  "MEVASP35",
+                        "oldName":  "SPIEGELAU CERVEZA PILSNER CRAFT BEER",
+                        "newName":  "SET X 4 VASOS PILSNER CRAFT BEER",
+                        "oldCollection":  "",
+                        "newCollection":  "CRAFT BEER",
+                        "excelDescription":  "SET X 4 V/C SPIEGELAU CERVEZA PILSNER CRAFT BEER (4991385)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "beer",
+                                            "cerveza",
+                                            "craft",
+                                            "pilsner"
+                                        ]
+                    },
+                    {
+                        "code":  "MEVASP08",
+                        "oldName":  "SPIEGELAU KIT CERVEZA SURTIDO",
+                        "newName":  "SET X 4 VASOS KIT BEER CLASSIC",
+                        "oldCollection":  "Beer Classics",
+                        "newCollection":  "BEER CLASSIC",
+                        "excelDescription":  "SET X 4 V/C SPIEGELAU KIT CERVEZA (BEER CLASSICS) (4991695)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "beer",
+                                            "cerveza",
+                                            "classics",
+                                            "kit"
+                                        ]
+                    },
+                    {
+                        "code":  "MEVASP24",
+                        "oldName":  "SPIEGELAU KIT CRAFT BEER",
+                        "newName":  "SET X 4 VASOS KIT CRAFT BEER",
+                        "oldCollection":  "",
+                        "newCollection":  "CRAFT BEER",
+                        "excelDescription":  "SET X 4 V/C SPIEGELAU KIT CRAFT BEER (4991697)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "beer",
+                                            "craft",
+                                            "kit"
+                                        ]
+                    },
+                    {
+                        "code":  "MEVASP17",
+                        "oldName":  "SPIEGELAU LONGDRINK CLASSIC BAR",
+                        "newName":  "SET X 4 VASO LONGDRINK CLASSIC BAR",
+                        "oldCollection":  "Classic Bar",
+                        "newCollection":  "CLASSIC BAR",
+                        "excelDescription":  "SET X 4 V/C SPIEGELAU LONGDRINK CLASSIC BAR (9000172)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "bar",
+                                            "classic",
+                                            "longdrink"
+                                        ]
+                    },
+                    {
+                        "code":  "MEVASP36",
+                        "oldName":  "VASO SPIEGELAU MIXDRINKS",
+                        "newName":  "SET X 4 VASO MIXDRINKS",
+                        "oldCollection":  "",
+                        "newCollection":  "GIFT SETS",
+                        "excelDescription":  "SET X 4 V/C SPIEGELAU MIXDRINKS (2660176)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "mixdrinks"
+                                        ]
+                    },
+                    {
+                        "code":  "MEVASP09",
+                        "oldName":  "VASO SPIEGELAU PARA CERVEZA IPA",
+                        "newName":  "SET X 4 VASOS IPA BEER",
+                        "oldCollection":  "",
+                        "newCollection":  "CRAFT BEER",
+                        "excelDescription":  "SET X 4 V/C SPIEGELAU CERVEZA IPA (BEER CLASSICS) (4991382)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "cerveza",
+                                            "ipa"
+                                        ]
+                    },
+                    {
+                        "code":  "MEVASP10",
+                        "oldName":  "SPIEGELAU PARA CERVEZA STOUT",
+                        "newName":  "SET X 4 VASOS STOUT BEER",
+                        "oldCollection":  "",
+                        "newCollection":  "CRAFT BEER",
+                        "excelDescription":  "SET X 4 V/C SPIEGELAU CERVEZA STOUT (ARTESANAL) (4991381)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "cerveza",
+                                            "stout"
+                                        ]
+                    },
+                    {
+                        "code":  "MEVASP18",
+                        "oldName":  "SPIEGELAU PARA CERVEZA TULIP",
+                        "newName":  "SET X 4 VASO BEER TULIP",
+                        "oldCollection":  "Beer Classics",
+                        "newCollection":  "BEER TULIP",
+                        "excelDescription":  "SET X 4 V/C SPIEGELAU PARA CERVEZA TULIP (4991974)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "beer",
+                                            "cerveza",
+                                            "tulip"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP23",
+                        "oldName":  "SPIEGELAU TUMBLER CLASSIC BAR",
+                        "newName":  "SET X 4 VASO TUMBLER CLASSIC BAR",
+                        "oldCollection":  "Classic Bar",
+                        "newCollection":  "CLASSIC BAR",
+                        "excelDescription":  "SET X 4 V/C SPIEGELAU TUMBLER CLASSIC BAR (9000175)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "bar",
+                                            "classic",
+                                            "tumbler"
+                                        ]
+                    },
+                    {
+                        "code":  "MEVASP07",
+                        "oldName":  "SPIEGELAU TUMBLER L ",
+                        "newName":  "SET X 4 VASOS TUMBLER L A. CASUAL",
+                        "oldCollection":  "",
+                        "newCollection":  "AUTHENTIS CASUAL",
+                        "excelDescription":  "SET X 4 V/C SPIEGELAU TUMBLER L (AUT CASUAL) (4800281)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "tumbler"
+                                        ]
+                    },
+                    {
+                        "code":  "MEVASP31",
+                        "oldName":  "VASO SPIEGELAU TUMBLER XXL",
+                        "newName":  "SET X 4 VASO TUMBLER XXL AUT. CASUAL",
+                        "oldCollection":  "Authentis Casual",
+                        "newCollection":  "AUTHENTIS CASUAL",
+                        "excelDescription":  "SET X 4 V/C SPIEGELAU TUMBLER XXL (AUT. CASUAL) (4800277)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "authentis",
+                                            "casual",
+                                            "tumbler",
+                                            "xxl"
+                                        ]
+                    },
+                    {
+                        "code":  "MEVASP42",
+                        "oldName":  "VASO SPIEGELAU UNIVERSAL XL",
+                        "newName":  "SET X 4 VASO UNIVERSAL XL AUT. CASUAL",
+                        "oldCollection":  "Authentis Casual",
+                        "newCollection":  "AUTHENTIS CASUAL",
+                        "excelDescription":  "SET X 4 V/C SPIEGELAU UNIVERSAL XL(4800280)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "authentis",
+                                            "casual",
+                                            "universal",
+                                            "xl"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP49",
+                        "oldName":  "COPA SPIEGELAU BURGUNDY DEFINITION",
+                        "newName":  "SET X 6 COPA BURGUNDY DEFINITION",
+                        "oldCollection":  "",
+                        "newCollection":  "DEFINITION",
+                        "excelDescription":  "SET X 6 C/C SPIEGELAU BURGUNDY DEFINITION (1350100)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "burgundy",
+                                            "definition"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP52",
+                        "oldName":  "COPA SPIEGELAU CHAMPAN DEFINITION",
+                        "newName":  "SET X 6 COPA CHAMPAGNE DEFINITION",
+                        "oldCollection":  "",
+                        "newCollection":  "DEFINITION",
+                        "excelDescription":  "SET X 6 C/C SPIEGELAU CHAMPAN DEFINITION (1350129)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "champagne",
+                                            "definition"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP62",
+                        "oldName":  "COPA SPIEGELAU DIGESTIVO PIZA",
+                        "newName":  "SET X 6 COPA DIGESTIVO PIZA",
+                        "oldCollection":  "SPIEGELAU Definition Pro",
+                        "newCollection":  "DIFINITION",
+                        "excelDescription":  "SET X 6 C/C SPIEGELAU DIGESTIVO PIZA (1350326)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "digestivo",
+                                            "piza"
+                                        ]
+                    },
+                    {
+                        "code":  "MEVASP32",
+                        "oldName":  "VASO SPIEGELAU BBQ \u0026 DRINKS SOFT DRINK",
+                        "newName":  "SET X 6 VASOS SOFT BBQ \u0026 DRINKS",
+                        "oldCollection":  "",
+                        "newCollection":  "BBQ \u0026 DRINKS",
+                        "excelDescription":  "SET X 6 V/C SPIEGELAU BBQ \u0026 DRINKS SOFT DRINK (4501786)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "bbq",
+                                            "drink",
+                                            "drinks",
+                                            "soft"
+                                        ]
+                    },
+                    {
+                        "code":  "MEVASP45",
+                        "oldName":  "VASO SPIEGELAU SUMMERDRINKS A.CASUAL",
+                        "newName":  "SET X 6 VASO SUMMER DRINKS A. CASUAL",
+                        "oldCollection":  "Authentis Casual",
+                        "newCollection":  "AUTHENTIS CASUAL",
+                        "excelDescription":  "SET X 6 V/C SPIEGELAU VASO SUMMERDRINKS A.CASUAL(4800292)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "authentis",
+                                            "casual",
+                                            "summerdrinks"
+                                        ]
+                    },
+                    {
+                        "code":  "MEVASP44",
+                        "oldName":  "VASO SPIEGELAU UNIVERSAL A.CASUAL",
+                        "newName":  "SET X 6 VASO UNIVERSAL AUT. CASUAL",
+                        "oldCollection":  "Authentis Casual",
+                        "newCollection":  "AUTHENTIS CASUAL",
+                        "excelDescription":  "SET X 6 V/C SPIEGELAU VASO UNIVERSAL A.CASUAL(4800291)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "authentis",
+                                            "casual",
+                                            "universal"
+                                        ]
+                    },
+                    {
+                        "code":  "MEVASP41",
+                        "oldName":  "SET SPIEGELAU (TUMB+ LONG D) BECHER ELEGANCE",
+                        "newName":  "SET X 8 VASOS T \u0026 L - BECHER",
+                        "oldCollection":  "",
+                        "newCollection":  "BECHER",
+                        "excelDescription":  "SET X 8 V/C SPIEGELAU (TUMB+ LONG D) BECHER (2750198)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "becher",
+                                            "long",
+                                            "tumb"
+                                        ]
+                    },
+                    {
+                        "code":  "MEVASP37",
+                        "oldName":  "SPIEGELAU CERVEZA IPA C/E",
+                        "newName":  "SET X 1 VASO IPA BEER C/EST.",
+                        "oldCollection":  "",
+                        "newCollection":  "CRAFT BEER",
+                        "excelDescription":  "V/C SPIEGELAU CERVEZA IPA C/E (4992552)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "cerveza",
+                                            "ipa"
+                                        ]
+                    },
+                    {
+                        "code":  "MEVASP40",
+                        "oldName":  "SPIEGELAU CERVEZA WHEAT BEER C/ESTUCHE",
+                        "newName":  "SET X 1 VASO WHEAT BEER C/ESTUCHE",
+                        "oldCollection":  "",
+                        "newCollection":  "CRAFT BEER",
+                        "excelDescription":  "V/C SPIEGELAU CERVEZA WHEAT BEER C/ESTUCHE (4992553)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "beer",
+                                            "cerveza",
+                                            "estuche",
+                                            "wheat"
+                                        ]
+                    },
+                    {
+                        "code":  "MEVASP01",
+                        "oldName":  "VASO SPIEGELAU LONG DRINK",
+                        "newName":  "VASO LONG DRINK CLASSIC BAR",
+                        "oldCollection":  "Classic Bar Pro",
+                        "newCollection":  "CLASSIC BAR",
+                        "excelDescription":  "V/C SPIEGELAU LONG DRINK (CLASIC BAR) (9008012)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "bar",
+                                            "classic",
+                                            "drink",
+                                            "long"
+                                        ]
+                    },
+                    {
+                        "code":  "MEVASP28",
+                        "oldName":  "VASO SPIEGELAU PARA CERVEZA HEFEWEIZEN",
+                        "newName":  "VASO HEFEWEIZEN BEER",
+                        "oldCollection":  "Beer Classics Pro",
+                        "newCollection":  "BEER CLASSIC",
+                        "excelDescription":  "V/C SPIEGELAU CERVEZA HEFEWEIZEN (4998055)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "beer",
+                                            "cerveza",
+                                            "hefeweizen"
+                                        ]
+                    },
+                    {
+                        "code":  "MEVASP29",
+                        "oldName":  "VASO SPIEGELAU PARA CERVEZA TULIP",
+                        "newName":  "VASO CERVEZA TULIP",
+                        "oldCollection":  "",
+                        "newCollection":  "BEER CLASSIC",
+                        "excelDescription":  "V/C SPIEGELAU PARA CERVEZA TULIP (4998024)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "cerveza",
+                                            "tulip"
+                                        ]
+                    },
+                    {
+                        "code":  "MEVASP21",
+                        "oldName":  "VASO SPIEGELAU PERFECT LONDRINK",
+                        "newName":  "VASO LONGDRINK PERFECT",
+                        "oldCollection":  "",
+                        "newCollection":  "PERFECT SERVE",
+                        "excelDescription":  "V/C SPIEGELAU PERFECT LONGDRINK (4508019)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "longdrink",
+                                            "perfect"
+                                        ]
+                    },
+                    {
+                        "code":  "MEVASP23",
+                        "oldName":  "SPIEGELAU PERFECT MIXING",
+                        "newName":  "VASO MIXING PERFECT",
+                        "oldCollection":  "",
+                        "newCollection":  "PERFECT SERVE",
+                        "excelDescription":  "V/C SPIEGELAU PERFECT MIXING (4500152)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "mixing",
+                                            "perfect"
+                                        ]
+                    },
+                    {
+                        "code":  "MEVASP22",
+                        "oldName":  "VASO SPIEGELAU PERFECT S.O.F. CORTO",
+                        "newName":  "VASO S.O.F. PERFECT SERVE",
+                        "oldCollection":  "Perfect Serve Collection Pro",
+                        "newCollection":  "PERFECT SERVE",
+                        "excelDescription":  "V/C SPIEGELAU PERFECT S.O.F. CORTO (4508017)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "corto",
+                                            "perfect",
+                                            "serve"
+                                        ]
+                    },
+                    {
+                        "code":  "MEVASP05",
+                        "oldName":  "VASO SPIEGELAU PILSNER PARA CERVEZA",
+                        "newName":  "VASO PILSNER BEER CLASSIC",
+                        "oldCollection":  "Beer Classics Pro",
+                        "newCollection":  "BEER CLASSIC",
+                        "excelDescription":  "V/C SPIEGELAU PILSNER CERVEZA (BEER CLASSICS) (4998050)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "beer",
+                                            "cerveza",
+                                            "classics",
+                                            "pilsner"
+                                        ]
+                    },
+                    {
+                        "code":  "MEVASP27",
+                        "oldName":  "VASO SPIEGELAU SHOT VINO GRANDE",
+                        "newName":  "VASO SHOT VINO GRANDE",
+                        "oldCollection":  "",
+                        "newCollection":  "VINO GRANDE",
+                        "excelDescription":  "V/C SPIEGELAU SHOT VINO GRANDE (4518020)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "grande",
+                                            "shot",
+                                            "vino"
+                                        ]
+                    },
+                    {
+                        "code":  "MEVASP03",
+                        "oldName":  "VASO SPIEGELAU TUMBLER",
+                        "newName":  "VASO TUMBLER CLASSIC BAR",
+                        "oldCollection":  "Classic Bar Pro",
+                        "newCollection":  "CLASSIC BAR",
+                        "excelDescription":  "V/C SPIEGELAU TUMBLER (CLASSIC BAR) (9008015)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "bar",
+                                            "classic",
+                                            "tumbler"
+                                        ]
+                    },
+                    {
+                        "code":  "MECOSP02",
+                        "oldName":  "VASO SPIEGELAU TUMBLER L",
+                        "newName":  "VASO TUMBLER L - AUT. CASUAL",
+                        "oldCollection":  "Authentis Casual Pro",
+                        "newCollection":  "AUTHENTIS CASUAL",
+                        "excelDescription":  "V/C SPIEGELAU TUMBLER L (AUTHENTIS CASUAL) (4808001)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "authentis",
+                                            "casual",
+                                            "tumbler"
+                                        ]
+                    },
+                    {
+                        "code":  "MEVASP02",
+                        "oldName":  "VASO SPIEGELAU TUMBLER XL",
+                        "newName":  "VASO TUMBLER XL CLASSIC BAR",
+                        "oldCollection":  "",
+                        "newCollection":  "CLASSIC BAR",
+                        "excelDescription":  "V/C SPIEGELAU TUMBLER XL (CLASIC BAR) (9008016)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "tumbler",
+                                            "xl"
+                                        ]
+                    },
+                    {
+                        "code":  "MEVASP49",
+                        "oldName":  "VASO SPIEGELAU LONGDRINKS LINEAR",
+                        "newName":  "VASO LONGDRINKS LINEAR",
+                        "oldCollection":  "SPIEGELAU Linear Pro",
+                        "newCollection":  "LINEAR",
+                        "excelDescription":  "V/C SPIEGELAU VASO LONGDRINKS LINEAR(4948009)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "linear",
+                                            "longdrinks"
+                                        ]
+                    },
+                    {
+                        "code":  "MEVASP48",
+                        "oldName":  "VASO SPIEGELAU WHISKY GRANDE LINEAR",
+                        "newName":  "VASO WHISKY LINEAR",
+                        "oldCollection":  "",
+                        "newCollection":  "LINEAR",
+                        "excelDescription":  "V/C SPIEGELAU VASO WHISKY GRANDE LINEAR(4948016)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "grande",
+                                            "linear",
+                                            "whisky"
+                                        ]
+                    },
+                    {
+                        "code":  "MEDESP22",
+                        "oldName":  "DECANTADOR SPIEGELAU  CARAF",
+                        "newName":  "DECANTADOR CARAF",
+                        "oldCollection":  "SPIEGELAU Definition Pro",
+                        "newCollection":  "DECANTER",
+                        "excelDescription":  "DECANTADOR SPIEGELAU CARAF (1350157)",
+                        "matchValidation":  "code-and-description",
+                        "commonTerms":  [
+                                            "caraf",
+                                            "decantador"
+                                        ]
+                    }
+                ],
+    "ambiguous":  [
+
+                  ],
+    "notFoundInExcel":  [
+
+                        ],
+    "excelRowsWithoutJsonMatch":  [
+                                      {
+                                          "code":  "MEVASP30",
+                                          "excelRow":  90,
+                                          "excelDescription":  "SET X 4 V/C SPIEGELAU KIT CERVEZA (BEER CLASSICS) (4991695)",
+                                          "excelName":  "SET X 4 KIT BEER CLASSIC",
+                                          "excelCollection":  "BEER CLASSIC"
+                                      },
+                                      {
+                                          "code":  "MECOST04",
+                                          "excelRow":  100,
+                                          "excelDescription":  "SPIEGELAU COPA GIN \u0026 TONIC C/ESTUCHE (4398039)",
+                                          "excelName":  "AGOTADO",
+                                          "excelCollection":  "AGOTADO"
+                                      },
+                                      {
+                                          "code":  "MEVAST01",
+                                          "excelRow":  101,
+                                          "excelDescription":  "SPIEGELAU VASO LONG DRINK C/ ESTUCHE (9008012)",
+                                          "excelName":  "AGOTADO",
+                                          "excelCollection":  "AGOTADO"
+                                      },
+                                      {
+                                          "code":  "PUCASP05",
+                                          "excelRow":  113,
+                                          "excelDescription":  "ESTUCHE SPIEGELAU TUMBLER XXL (AUTHENTIS CASUAL)",
+                                          "excelName":  "AGOTADO",
+                                          "excelCollection":  "AGOTADO"
+                                      },
+                                      {
+                                          "code":  "PUCASP02",
+                                          "excelRow":  114,
+                                          "excelDescription":  "ESTUCHE GIN TONIC SPIEGELAU X 2 COPAS",
+                                          "excelName":  "AGOTADO",
+                                          "excelCollection":  "AGOTADO"
+                                      },
+                                      {
+                                          "code":  "PUCASP01",
+                                          "excelRow":  115,
+                                          "excelDescription":  "ESTUCHE GIN TONIC SPIEGELAU X 4 COPAS",
+                                          "excelName":  "AGOTADO",
+                                          "excelCollection":  "AGOTADO"
+                                      },
+                                      {
+                                          "code":  "PUESSP02",
+                                          "excelRow":  116,
+                                          "excelDescription":  "EST. CARTON SPIEGELAU TINTO/AGUA SET X 3 4098001N",
+                                          "excelName":  "AGOTADO",
+                                          "excelCollection":  "AGOTADO"
+                                      },
+                                      {
+                                          "code":  "PUCASP03",
+                                          "excelRow":  117,
+                                          "excelDescription":  "ESTUCHE SPIEGELAU MULTIUSOS",
+                                          "excelName":  "AGOTADO",
+                                          "excelCollection":  "AGOTADO"
+                                      }
+                                  ],
+    "invalidExcelValues":  [
+                               {
+                                   "code":  "MECOSP28",
+                                   "excelRow":  3,
+                                   "excelDescription":  "C/C SPIEGELAU BORDEAUX FESTIVAL (4028035)",
+                                   "excelName":  "AGOTADO",
+                                   "excelCollection":  "AGOTADO",
+                                   "invalidFields":  [
+                                                         "name",
+                                                         "collection"
+                                                     ]
+                               },
+                               {
+                                   "code":  "MECOSP16",
+                                   "excelRow":  23,
+                                   "excelDescription":  "SET X 4 C/C SPIEGELAU PERFECT NOSING COÑAC (4500178)",
+                                   "excelName":  "AGOTADO",
+                                   "excelCollection":  "AGOTADO",
+                                   "invalidFields":  [
+                                                         "name",
+                                                         "collection"
+                                                     ]
+                               },
+                               {
+                                   "code":  "MECOSP34",
+                                   "excelRow":  32,
+                                   "excelDescription":  "SET X 6 C/C SPIEGELAU BBQ \u0026 DRINKS GIN TONIC (4391780)",
+                                   "excelName":  "AGOTADO",
+                                   "excelCollection":  "AGOTADO",
+                                   "invalidFields":  [
+                                                         "name",
+                                                         "collection"
+                                                     ]
+                               },
+                               {
+                                   "code":  "MECOSP31",
+                                   "excelRow":  45,
+                                   "excelDescription":  "C/C SPIEGELAU BORDEAUX JUMBO POKIL (7210139)",
+                                   "excelName":  "AGOTADO",
+                                   "excelCollection":  "AGOTADO",
+                                   "invalidFields":  [
+                                                         "name",
+                                                         "collection"
+                                                     ]
+                               },
+                               {
+                                   "code":  "MECOST11",
+                                   "excelRow":  49,
+                                   "excelDescription":  "C/C SPIEGELAU CATA FESTIVAL CON ESTUCHE (4028003)",
+                                   "excelName":  "AGOTADO",
+                                   "excelCollection":  "AGOTADO",
+                                   "invalidFields":  [
+                                                         "name",
+                                                         "collection"
+                                                     ]
+                               },
+                               {
+                                   "code":  "MECOSP30",
+                                   "excelRow":  56,
+                                   "excelDescription":  "C/C SPIEGELAU JUMBO KELCH GLATI (7190039)",
+                                   "excelName":  "AGOTADO",
+                                   "excelCollection":  "AGOTADO",
+                                   "invalidFields":  [
+                                                         "name",
+                                                         "collection"
+                                                     ]
+                               },
+                               {
+                                   "code":  "MECOST06",
+                                   "excelRow":  64,
+                                   "excelDescription":  "C/C SPIEGELAU VINO TINTO/AGUA (WINELOVERS) CON ESTUCHE",
+                                   "excelName":  "AGOTADO",
+                                   "excelCollection":  "AGOTADO",
+                                   "invalidFields":  [
+                                                         "name",
+                                                         "collection"
+                                                     ]
+                               },
+                               {
+                                   "code":  "MEDESP04",
+                                   "excelRow":  65,
+                                   "excelDescription":  "DECANTADOR SPIEGELAU (WILLSB. ANNIVERSARY) (1416159)",
+                                   "excelName":  "AGOTADO",
+                                   "excelCollection":  "AGOTADO",
+                                   "invalidFields":  [
+                                                         "name",
+                                                         "collection"
+                                                     ]
+                               },
+                               {
+                                   "code":  "MECOSP17",
+                                   "excelRow":  88,
+                                   "excelDescription":  "SET X 4 C/C SPIEGELAU PERFECT COUPETTE (4500174)",
+                                   "excelName":  "AGOTADO",
+                                   "excelCollection":  "PERFECT SERVE",
+                                   "invalidFields":  [
+                                                         "name"
+                                                     ]
+                               },
+                               {
+                                   "code":  "MECOST04",
+                                   "excelRow":  100,
+                                   "excelDescription":  "SPIEGELAU COPA GIN \u0026 TONIC C/ESTUCHE (4398039)",
+                                   "excelName":  "AGOTADO",
+                                   "excelCollection":  "AGOTADO",
+                                   "invalidFields":  [
+                                                         "name",
+                                                         "collection"
+                                                     ]
+                               },
+                               {
+                                   "code":  "MEVAST01",
+                                   "excelRow":  101,
+                                   "excelDescription":  "SPIEGELAU VASO LONG DRINK C/ ESTUCHE (9008012)",
+                                   "excelName":  "AGOTADO",
+                                   "excelCollection":  "AGOTADO",
+                                   "invalidFields":  [
+                                                         "name",
+                                                         "collection"
+                                                     ]
+                               },
+                               {
+                                   "code":  "MEVASP25",
+                                   "excelRow":  102,
+                                   "excelDescription":  "V/C SPIEGELAU CERVEZA IPA XXL (7990152)",
+                                   "excelName":  "AGOTADO",
+                                   "excelCollection":  "AGOTADO",
+                                   "invalidFields":  [
+                                                         "name",
+                                                         "collection"
+                                                     ]
+                               },
+                               {
+                                   "code":  "MEVASP04",
+                                   "excelRow":  111,
+                                   "excelDescription":  "V/C SPIEGELAU WHEAT BEER CERVEZA DE TRIGO (4998053)",
+                                   "excelName":  "AGOTADO",
+                                   "excelCollection":  "AGOTADO",
+                                   "invalidFields":  [
+                                                         "name",
+                                                         "collection"
+                                                     ]
+                               },
+                               {
+                                   "code":  "PUCASP05",
+                                   "excelRow":  113,
+                                   "excelDescription":  "ESTUCHE SPIEGELAU TUMBLER XXL (AUTHENTIS CASUAL)",
+                                   "excelName":  "AGOTADO",
+                                   "excelCollection":  "AGOTADO",
+                                   "invalidFields":  [
+                                                         "name",
+                                                         "collection"
+                                                     ]
+                               },
+                               {
+                                   "code":  "PUCASP02",
+                                   "excelRow":  114,
+                                   "excelDescription":  "ESTUCHE GIN TONIC SPIEGELAU X 2 COPAS",
+                                   "excelName":  "AGOTADO",
+                                   "excelCollection":  "AGOTADO",
+                                   "invalidFields":  [
+                                                         "name",
+                                                         "collection"
+                                                     ]
+                               },
+                               {
+                                   "code":  "PUCASP01",
+                                   "excelRow":  115,
+                                   "excelDescription":  "ESTUCHE GIN TONIC SPIEGELAU X 4 COPAS",
+                                   "excelName":  "AGOTADO",
+                                   "excelCollection":  "AGOTADO",
+                                   "invalidFields":  [
+                                                         "name",
+                                                         "collection"
+                                                     ]
+                               },
+                               {
+                                   "code":  "PUESSP02",
+                                   "excelRow":  116,
+                                   "excelDescription":  "EST. CARTON SPIEGELAU TINTO/AGUA SET X 3 4098001N",
+                                   "excelName":  "AGOTADO",
+                                   "excelCollection":  "AGOTADO",
+                                   "invalidFields":  [
+                                                         "name",
+                                                         "collection"
+                                                     ]
+                               },
+                               {
+                                   "code":  "PUCASP03",
+                                   "excelRow":  117,
+                                   "excelDescription":  "ESTUCHE SPIEGELAU MULTIUSOS",
+                                   "excelName":  "AGOTADO",
+                                   "excelCollection":  "AGOTADO",
+                                   "invalidFields":  [
+                                                         "name",
+                                                         "collection"
+                                                     ]
+                               }
+                           ],
+    "verification":  {
+                         "matchedByCodeNotPosition":  true,
+                         "descriptionsValidated":  true,
+                         "duplicateExcelCodes":  [
+
+                                                 ],
+                         "excelRowsAssignedToMultipleJsonProducts":  [
+
+                                                                     ],
+                         "immutableFieldDifferences":  [
+
+                                                       ],
+                         "residualDifferences":  [
+
+                                                 ],
+                         "jsonValid":  true
+                     }
+}

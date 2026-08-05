@@ -98,7 +98,6 @@ function loadCartFromStorage() {
           collection: sourceProduct?.collection || item.collection || "",
           brand: sourceProduct?.brand || item.brand || "",
           category: sourceProduct?.category || item.category || "",
-          variant: sourceProduct?.variant || item.variant || "",
           presentation:
             sourceProduct?.presentation || item.presentation || "",
           image:
@@ -357,7 +356,6 @@ export function addProductToCart(product, quantity = 1) {
       collection: product.collection || "",
       brand: product.brand || "",
       category: product.category || "",
-      variant: product.variant || "",
       presentation: product.presentation || "",
       image: getPrimaryProductImage(
         product,

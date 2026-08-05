@@ -159,7 +159,7 @@ export function createAnalyticsItem(product, index, quantity) {
     item_brand: itemBrand,
     item_category: friendlyValue(product.category),
     item_category2: friendlyValue(product.collection),
-    item_variant: cleanText(product.variant || product.presentation),
+    item_variant: cleanText(product.presentation),
     price: Number(product.price) || 0,
     index,
     quantity,
