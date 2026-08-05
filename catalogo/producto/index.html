@@ -77,15 +77,18 @@
 <div class="product-gallery">
   <!-- MINIATURAS -->
 
-  <div
-    id="product-thumbnails"
-    class="product-thumbnails"
-    aria-label="Imágenes del producto"
-  >
-    <!--
-      JavaScript generará aquí una miniatura
-      por cada imagen disponible en el JSON.
-    -->
+  <div class="product-thumbnail-navigation">
+    <button id="product-thumbnails-previous" class="product-thumbnail-control product-thumbnail-control--previous" type="button" aria-label="Ver miniaturas anteriores">
+      <span class="material-symbols-outlined" aria-hidden="true">expand_less</span>
+    </button>
+
+    <div id="product-thumbnails" class="product-thumbnails" aria-label="Imágenes del producto">
+      <!-- JavaScript genera una miniatura por cada imagen disponible. -->
+    </div>
+
+    <button id="product-thumbnails-next" class="product-thumbnail-control product-thumbnail-control--next" type="button" aria-label="Ver miniaturas siguientes">
+      <span class="material-symbols-outlined" aria-hidden="true">expand_more</span>
+    </button>
   </div>
 
   <!-- IMAGEN PRINCIPAL -->

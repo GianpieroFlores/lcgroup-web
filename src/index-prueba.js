@@ -1300,39 +1300,6 @@ function circularModulo(value, divisor) {
 }
 
 /* =====================================================
-   CREAR IMAGEN
-===================================================== */
-
-function createImageMarkup({
-  src,
-  alt,
-  width,
-  height,
-  loading = "lazy",
-  fetchPriority = "auto",
-}) {
-  const safeSource = normalizeText(src);
-
-  if (!safeSource) {
-    return "";
-  }
-
-  const safeAlt = normalizeText(alt) || "Producto Spiegelau";
-
-  return `
-    <img
-      src="${escapeAttribute(safeSource)}"
-      alt="${escapeAttribute(safeAlt)}"
-      width="${Number(width) || 600}"
-      height="${Number(height) || 600}"
-      loading="${escapeAttribute(loading)}"
-      fetchpriority="${escapeAttribute(fetchPriority)}"
-      decoding="async"
-    />
-  `;
-}
-
-/* =====================================================
    NORMALIZAR TEXTO
 ===================================================== */
 
