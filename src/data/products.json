@@ -1768,266 +1768,266 @@
     "recommendedFor": [],
     "gallery": []
   },
-{
-  "id": 30,
-  "sku": "MEDESP09",
-  "collection": "Casual Entertaining",
-  "name": "DECANTADOR SPIEGELAU (CASUAL ENTERTAINING)",
-  "presentation": "Una caja contiene 1 unidades.",
-  "category": "decantadores",
-  "shortDescription": "El Decantador SPIEGELAU Casual Entertaining está diseñado para servir y oxigenar vinos con elegancia. Su capacidad para una botella estándar de 750 ml permite que el vino respire, potenciando sus aromas, suavizando los taninos y realzando todo su carácter.",
-  "description": "El Decantador SPIEGELAU Casual Entertaining combina un diseño elegante con una funcionalidad excepcional, ofreciendo una forma refinada de servir vino, agua y otras bebidas. Su silueta equilibrada proporciona un vertido suave y preciso, garantizando comodidad durante el servicio y una excelente experiencia de uso tanto en el hogar como en entornos profesionales.\n\nFabricado en cristal transparente de alta calidad, destaca por su brillo, claridad y resistencia. Su diseño atemporal se adapta fácilmente a cualquier mesa, desde reuniones informales hasta ocasiones especiales.\n\nLa colección SPIEGELAU Casual Entertaining ha sido creada para disfrutar del vino de manera práctica y elegante. Fabricada mediante tecnología de producción mecánica de alta precisión, ofrece una calidad uniforme, gran durabilidad y una excelente relación calidad-precio. Además, es apta para lavavajillas, conservando su brillo incluso después de numerosos ciclos de lavado.\n\nDiseñado para contener una botella estándar de vino de 750 ml, este decantador proporciona el espacio ideal para oxigenar el vino, permitiendo que sus aromas se desarrollen plenamente, suavizando los taninos y resaltando todas las características de cada cosecha.\n\nInformación importante:\n\n• Este producto está fabricado en cristal. Puede romperse si se cae o recibe un impacto, generando fragmentos afilados. Manipúlelo con cuidado.",
-  "specifications": [
-    {
-      "label": "Opciones de color",
-      "value": "Cristal claro"
-    },
-    {
-      "label": "Fabricación",
-      "value": "Hecho a máquina"
-    },
-    {
-      "label": "Colección",
-      "value": "Casual Entertaining"
-    },
-    {
-      "label": "Material",
-      "value": "Cristal"
-    },
-    {
-      "label": "Recomendado para limpiabotellas",
-      "value": "No"
-    },
-    {
-      "label": "Diámetro máximo",
-      "value": "135 mm"
-    },
-    {
-      "label": "Altura",
-      "value": "240 mm"
-    }
-  ],
-  "price": 0,
-  "stock": 353,
-  "featured": false,
-  "new": false,
-  "offer": false,
-  "recommendedFor": [
-    "vino-tinto",
-    "vino-blanco",
-    "decantación"
-  ],
-  "gallery": [
-    {
-      "image": "/assets/images/product30.jpg",
-      "alt": "Vista principal"
-    },
-    {
-      "image": "/assets/images/product30-1.jpg",
-      "alt": "Vista lateral"
-    },
-    {
-      "image": "/assets/images/product30-2.jpg",
-      "alt": "Detalle del decantador"
-    },
-    {
-      "image": "/assets/images/product30-3.jpg",
-      "alt": "Vista del decantador"
-    }
-  ]
-},
- {
-  "id": 31,
-  "sku": "MEJASP01",
-  "collection": "Loop",
-  "name": "DECANTADOR SPIEGELAU (LOOP)",
-  "presentation": "Una caja contiene 1 unidades.",
-  "category": "decantadores",
-  "shortDescription": "El Decantador SPIEGELAU Loop combina un diseño moderno y elegante con la calidad del cristal premium sin plomo. Su capacidad de 1 litro lo convierte en la opción ideal para decantar y servir vino, realzando su presentación y permitiendo una mejor oxigenación.",
-  "description": "El Decantador SPIEGELAU Loop ha sido diseñado para ofrecer una experiencia de servicio elegante y funcional. Su distintiva silueta contemporánea aporta un toque sofisticado a cualquier mesa, mientras que su amplia capacidad favorece la correcta oxigenación del vino, permitiendo que sus aromas y sabores se desarrollen plenamente antes de servir.\n\nFabricado en Alemania con cristal premium sin plomo, ofrece una excelente transparencia, brillo y resistencia, características que distinguen a la cristalería SPIEGELAU. Su diseño es ideal tanto para ocasiones especiales como para el uso diario, complementando cualquier colección de copas de vino.\n\nEste decantador se presenta en una elegante caja de regalo original de SPIEGELAU, convirtiéndolo en una excelente opción para obsequios o para quienes buscan accesorios de alta calidad para el servicio del vino.\n\nInformación importante:\n\n• Este producto está fabricado en cristal. Puede romperse si se cae o recibe un impacto, generando fragmentos afilados. Manipúlelo con cuidado.",
-  "specifications": [
-    {
-      "label": "Opciones de color",
-      "value": "Cristal claro"
-    },
-    {
-      "label": "Fabricación",
-      "value": "No especificado"
-    },
-    {
-      "label": "Colección",
-      "value": "Loop"
-    },
-    {
-      "label": "Material",
-      "value": "Cristal sin plomo"
-    },
-    {
-      "label": "Recomendado para limpiabotellas",
-      "value": "No especificado"
-    },
-    {
-      "label": "Diámetro máximo",
-      "value": "160 mm"
-    },
-    {
-      "label": "Altura",
-      "value": "370 mm"
-    }
-  ],
-  "price": 0,
-  "stock": 1,
-  "featured": false,
-  "new": false,
-  "offer": false,
-  "recommendedFor": [
-    "vino-tinto",
-    "vino-blanco",
-    "decantación"
-  ],
-  "gallery": [
-    {
-      "image": "/assets/images/product31.jpg",
-      "alt": "Vista principal"
-    },
-    {
-      "image": "/assets/images/product31-2.webp",
-      "alt": "Vista lateral"
-    },
-    {
-      "image": "/assets/images/product31-1.jpg",
-      "alt": "Detalle del decantador"
-    }
-  ]
-},
-{
-  "id": 32,
-  "sku": "MEJASP02",
-  "collection": "Red & White",
-  "name": "DECANTADOR SPIEGELAU (RED & WHITE)",
-  "presentation": "Una caja contiene 1 unidades.",
-  "category": "decantadores",
-  "shortDescription": "El Decantador SPIEGELAU Red & White destaca por su innovador diseño de doble cámara, que permite mantener la temperatura ideal tanto para vinos tintos como blancos. Fabricado en cristal sin plomo, combina elegancia, funcionalidad y una excelente presentación para cualquier ocasión.",
-  "description": "El Decantador SPIEGELAU Red & White ha sido diseñado para ofrecer una experiencia de servicio superior tanto para vinos tintos como blancos. Su innovador diseño incorpora una cámara cóncava en la base que puede llenarse con hielo, permitiendo mantener los vinos blancos fríos durante más tiempo y llevar los vinos tintos a una temperatura óptima de servicio.\n\nFabricado en Alemania con cristal premium sin plomo, combina una transparencia excepcional, gran resistencia y un diseño contemporáneo que aporta elegancia a cualquier mesa. Su capacidad de 1 litro es ideal para decantar una botella estándar de vino, favoreciendo la oxigenación y el desarrollo completo de sus aromas y sabores.\n\nEste decantador ofrece una combinación perfecta entre estética y funcionalidad, convirtiéndose en una excelente opción para sommeliers, restaurantes, hoteles y amantes del vino que buscan una presentación sofisticada y un servicio profesional.\n\nInformación importante:\n\n• Este producto está fabricado en cristal. Puede romperse si se cae o recibe un impacto, generando fragmentos afilados. Manipúlelo con cuidado.",
-  "specifications": [
-    {
-      "label": "Opciones de color",
-      "value": "Cristal claro"
-    },
-    {
-      "label": "Fabricación",
-      "value": "Hecho a máquina"
-    },
-    {
-      "label": "Colección",
-      "value": "Red & White"
-    },
-    {
-      "label": "Material",
-      "value": "Cristal sin plomo"
-    },
-    {
-      "label": "Recomendado para limpiabotellas",
-      "value": "No especificado"
-    },
-    {
-      "label": "Diámetro máximo",
-      "value": "214 mm"
-    },
-    {
-      "label": "Altura",
-      "value": "271 mm"
-    }
-  ],
-  "price": 0,
-  "stock": 54,
-  "featured": false,
-  "new": false,
-  "offer": false,
-  "recommendedFor": [
-    "vino-tinto",
-    "vino-blanco",
-    "decantación"
-  ],
-  "gallery": [
-    {
-      "image": "/assets/images/product32.jpg",
-      "alt": "Vista principal"
-    },
-    {
-      "image": "/assets/images/product32-2.jpg",
-      "alt": "Vista lateral"
-    },
-    {
-      "image": "/assets/images/product32-1.jpg",
-      "alt": "Detalle del decantador"
-    }
-  ]
-},
-{
-  "id": 33,
-  "sku": "MEDESP04",
-  "collection": "Willsberger Anniversary",
-  "name": "DECANTADOR SPIEGELAU (WILLSB. ANNIVERSARY)",
-  "presentation": "Una caja contiene 1 unidades.",
-  "category": "decantadores",
-  "shortDescription": "El Decantador SPIEGELAU Willsberger Anniversary está elaborado artesanalmente mediante la técnica de soplado a boca por maestros vidrieros. Su elegante diseño permite oxigenar el vino de forma óptima, realzando sus aromas y sabores con una presentación sofisticada.",
-  "description": "El Decantador SPIEGELAU Willsberger Anniversary pertenece a una de las colecciones más prestigiosas de la marca. Elaborado mediante la tradicional técnica de soplado a boca por maestros artesanos del cristal, cada pieza refleja un alto nivel de precisión, calidad y elegancia.\n\nSu diseño favorece una correcta oxigenación del vino, permitiendo que los aromas se desarrollen plenamente y que los taninos se suavicen antes del servicio. Con una capacidad de 1 litro, es ideal para decantar una botella estándar de vino, ofreciendo una experiencia de degustación superior tanto en el hogar como en restaurantes y eventos especiales.\n\nFabricado en cristal de alta calidad, combina brillo, transparencia y una estética atemporal que convierte cada servicio en una experiencia elegante.\n\nInformación importante:\n\n• Este producto está fabricado en cristal. Puede romperse si se cae o recibe un impacto, generando fragmentos afilados. Manipúlelo con cuidado.",
-  "specifications": [
-    {
-      "label": "Opciones de color",
-      "value": "Cristal claro"
-    },
-    {
-      "label": "Fabricación",
-      "value": "Soplado a boca"
-    },
-    {
-      "label": "Colección",
-      "value": "Willsberger Anniversary"
-    },
-    {
-      "label": "Material",
-      "value": "Cristal"
-    },
-    {
-      "label": "Recomendado para limpiabotellas",
-      "value": "No especificado"
-    },
-    {
-      "label": "Diámetro máximo",
-      "value": "160 mm"
-    },
-    {
-      "label": "Altura",
-      "value": "270 mm"
-    }
-  ],
-  "price": 0,
-  "stock": 1,
-  "featured": false,
-  "new": false,
-  "offer": false,
-  "recommendedFor": [
-    "vino-tinto",
-    "vino-blanco",
-    "decantación"
-  ],
-  "gallery": [
-    {
-      "image": "/assets/images/product33.jpg",
-      "alt": "Vista principal"
-    },
-    {
-      "image": "/assets/images/product33-2.jpg",
-      "alt": "Vista lateral"
-    },
-    {
-      "image": "/assets/images/product33-1.jpg",
-      "alt": "Detalle del decantador"
-    }
-  ]
-},
+  {
+    "id": 30,
+    "sku": "MEDESP09",
+    "collection": "Casual Entertaining",
+    "name": "DECANTADOR SPIEGELAU (CASUAL ENTERTAINING)",
+    "presentation": "Una caja contiene 1 unidades.",
+    "category": "decantadores",
+    "shortDescription": "El Decantador SPIEGELAU Casual Entertaining está diseñado para servir y oxigenar vinos con elegancia. Su capacidad para una botella estándar de 750 ml permite que el vino respire, potenciando sus aromas, suavizando los taninos y realzando todo su carácter.",
+    "description": "El Decantador SPIEGELAU Casual Entertaining combina un diseño elegante con una funcionalidad excepcional, ofreciendo una forma refinada de servir vino, agua y otras bebidas. Su silueta equilibrada proporciona un vertido suave y preciso, garantizando comodidad durante el servicio y una excelente experiencia de uso tanto en el hogar como en entornos profesionales.\n\nFabricado en cristal transparente de alta calidad, destaca por su brillo, claridad y resistencia. Su diseño atemporal se adapta fácilmente a cualquier mesa, desde reuniones informales hasta ocasiones especiales.\n\nLa colección SPIEGELAU Casual Entertaining ha sido creada para disfrutar del vino de manera práctica y elegante. Fabricada mediante tecnología de producción mecánica de alta precisión, ofrece una calidad uniforme, gran durabilidad y una excelente relación calidad-precio. Además, es apta para lavavajillas, conservando su brillo incluso después de numerosos ciclos de lavado.\n\nDiseñado para contener una botella estándar de vino de 750 ml, este decantador proporciona el espacio ideal para oxigenar el vino, permitiendo que sus aromas se desarrollen plenamente, suavizando los taninos y resaltando todas las características de cada cosecha.\n\nInformación importante:\n\n• Este producto está fabricado en cristal. Puede romperse si se cae o recibe un impacto, generando fragmentos afilados. Manipúlelo con cuidado.",
+    "specifications": [
+      {
+        "label": "Opciones de color",
+        "value": "Cristal claro"
+      },
+      {
+        "label": "Fabricación",
+        "value": "Hecho a máquina"
+      },
+      {
+        "label": "Colección",
+        "value": "Casual Entertaining"
+      },
+      {
+        "label": "Material",
+        "value": "Cristal"
+      },
+      {
+        "label": "Recomendado para limpiabotellas",
+        "value": "No"
+      },
+      {
+        "label": "Diámetro máximo",
+        "value": "135 mm"
+      },
+      {
+        "label": "Altura",
+        "value": "240 mm"
+      }
+    ],
+    "price": 0,
+    "stock": 353,
+    "featured": false,
+    "new": false,
+    "offer": false,
+    "recommendedFor": [
+      "vino-tinto",
+      "vino-blanco",
+      "decantación"
+    ],
+    "gallery": [
+      {
+        "image": "/assets/images/product30.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/assets/images/product30-1.jpg",
+        "alt": "Vista lateral"
+      },
+      {
+        "image": "/assets/images/product30-2.jpg",
+        "alt": "Detalle del decantador"
+      },
+      {
+        "image": "/assets/images/product30-3.jpg",
+        "alt": "Vista del decantador"
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "sku": "MEJASP01",
+    "collection": "Loop",
+    "name": "DECANTADOR SPIEGELAU (LOOP)",
+    "presentation": "Una caja contiene 1 unidades.",
+    "category": "decantadores",
+    "shortDescription": "El Decantador SPIEGELAU Loop combina un diseño moderno y elegante con la calidad del cristal premium sin plomo. Su capacidad de 1 litro lo convierte en la opción ideal para decantar y servir vino, realzando su presentación y permitiendo una mejor oxigenación.",
+    "description": "El Decantador SPIEGELAU Loop ha sido diseñado para ofrecer una experiencia de servicio elegante y funcional. Su distintiva silueta contemporánea aporta un toque sofisticado a cualquier mesa, mientras que su amplia capacidad favorece la correcta oxigenación del vino, permitiendo que sus aromas y sabores se desarrollen plenamente antes de servir.\n\nFabricado en Alemania con cristal premium sin plomo, ofrece una excelente transparencia, brillo y resistencia, características que distinguen a la cristalería SPIEGELAU. Su diseño es ideal tanto para ocasiones especiales como para el uso diario, complementando cualquier colección de copas de vino.\n\nEste decantador se presenta en una elegante caja de regalo original de SPIEGELAU, convirtiéndolo en una excelente opción para obsequios o para quienes buscan accesorios de alta calidad para el servicio del vino.\n\nInformación importante:\n\n• Este producto está fabricado en cristal. Puede romperse si se cae o recibe un impacto, generando fragmentos afilados. Manipúlelo con cuidado.",
+    "specifications": [
+      {
+        "label": "Opciones de color",
+        "value": "Cristal claro"
+      },
+      {
+        "label": "Fabricación",
+        "value": "No especificado"
+      },
+      {
+        "label": "Colección",
+        "value": "Loop"
+      },
+      {
+        "label": "Material",
+        "value": "Cristal sin plomo"
+      },
+      {
+        "label": "Recomendado para limpiabotellas",
+        "value": "No especificado"
+      },
+      {
+        "label": "Diámetro máximo",
+        "value": "160 mm"
+      },
+      {
+        "label": "Altura",
+        "value": "370 mm"
+      }
+    ],
+    "price": 0,
+    "stock": 1,
+    "featured": false,
+    "new": false,
+    "offer": false,
+    "recommendedFor": [
+      "vino-tinto",
+      "vino-blanco",
+      "decantación"
+    ],
+    "gallery": [
+      {
+        "image": "/assets/images/product31.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/assets/images/product31-2.webp",
+        "alt": "Vista lateral"
+      },
+      {
+        "image": "/assets/images/product31-1.jpg",
+        "alt": "Detalle del decantador"
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "sku": "MEJASP02",
+    "collection": "Red & White",
+    "name": "DECANTADOR SPIEGELAU (RED & WHITE)",
+    "presentation": "Una caja contiene 1 unidades.",
+    "category": "decantadores",
+    "shortDescription": "El Decantador SPIEGELAU Red & White destaca por su innovador diseño de doble cámara, que permite mantener la temperatura ideal tanto para vinos tintos como blancos. Fabricado en cristal sin plomo, combina elegancia, funcionalidad y una excelente presentación para cualquier ocasión.",
+    "description": "El Decantador SPIEGELAU Red & White ha sido diseñado para ofrecer una experiencia de servicio superior tanto para vinos tintos como blancos. Su innovador diseño incorpora una cámara cóncava en la base que puede llenarse con hielo, permitiendo mantener los vinos blancos fríos durante más tiempo y llevar los vinos tintos a una temperatura óptima de servicio.\n\nFabricado en Alemania con cristal premium sin plomo, combina una transparencia excepcional, gran resistencia y un diseño contemporáneo que aporta elegancia a cualquier mesa. Su capacidad de 1 litro es ideal para decantar una botella estándar de vino, favoreciendo la oxigenación y el desarrollo completo de sus aromas y sabores.\n\nEste decantador ofrece una combinación perfecta entre estética y funcionalidad, convirtiéndose en una excelente opción para sommeliers, restaurantes, hoteles y amantes del vino que buscan una presentación sofisticada y un servicio profesional.\n\nInformación importante:\n\n• Este producto está fabricado en cristal. Puede romperse si se cae o recibe un impacto, generando fragmentos afilados. Manipúlelo con cuidado.",
+    "specifications": [
+      {
+        "label": "Opciones de color",
+        "value": "Cristal claro"
+      },
+      {
+        "label": "Fabricación",
+        "value": "Hecho a máquina"
+      },
+      {
+        "label": "Colección",
+        "value": "Red & White"
+      },
+      {
+        "label": "Material",
+        "value": "Cristal sin plomo"
+      },
+      {
+        "label": "Recomendado para limpiabotellas",
+        "value": "No especificado"
+      },
+      {
+        "label": "Diámetro máximo",
+        "value": "214 mm"
+      },
+      {
+        "label": "Altura",
+        "value": "271 mm"
+      }
+    ],
+    "price": 0,
+    "stock": 54,
+    "featured": false,
+    "new": false,
+    "offer": false,
+    "recommendedFor": [
+      "vino-tinto",
+      "vino-blanco",
+      "decantación"
+    ],
+    "gallery": [
+      {
+        "image": "/assets/images/product32.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/assets/images/product32-2.jpg",
+        "alt": "Vista lateral"
+      },
+      {
+        "image": "/assets/images/product32-1.jpg",
+        "alt": "Detalle del decantador"
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "sku": "MEDESP04",
+    "collection": "Willsberger Anniversary",
+    "name": "DECANTADOR SPIEGELAU (WILLSB. ANNIVERSARY)",
+    "presentation": "Una caja contiene 1 unidades.",
+    "category": "decantadores",
+    "shortDescription": "El Decantador SPIEGELAU Willsberger Anniversary está elaborado artesanalmente mediante la técnica de soplado a boca por maestros vidrieros. Su elegante diseño permite oxigenar el vino de forma óptima, realzando sus aromas y sabores con una presentación sofisticada.",
+    "description": "El Decantador SPIEGELAU Willsberger Anniversary pertenece a una de las colecciones más prestigiosas de la marca. Elaborado mediante la tradicional técnica de soplado a boca por maestros artesanos del cristal, cada pieza refleja un alto nivel de precisión, calidad y elegancia.\n\nSu diseño favorece una correcta oxigenación del vino, permitiendo que los aromas se desarrollen plenamente y que los taninos se suavicen antes del servicio. Con una capacidad de 1 litro, es ideal para decantar una botella estándar de vino, ofreciendo una experiencia de degustación superior tanto en el hogar como en restaurantes y eventos especiales.\n\nFabricado en cristal de alta calidad, combina brillo, transparencia y una estética atemporal que convierte cada servicio en una experiencia elegante.\n\nInformación importante:\n\n• Este producto está fabricado en cristal. Puede romperse si se cae o recibe un impacto, generando fragmentos afilados. Manipúlelo con cuidado.",
+    "specifications": [
+      {
+        "label": "Opciones de color",
+        "value": "Cristal claro"
+      },
+      {
+        "label": "Fabricación",
+        "value": "Soplado a boca"
+      },
+      {
+        "label": "Colección",
+        "value": "Willsberger Anniversary"
+      },
+      {
+        "label": "Material",
+        "value": "Cristal"
+      },
+      {
+        "label": "Recomendado para limpiabotellas",
+        "value": "No especificado"
+      },
+      {
+        "label": "Diámetro máximo",
+        "value": "160 mm"
+      },
+      {
+        "label": "Altura",
+        "value": "270 mm"
+      }
+    ],
+    "price": 0,
+    "stock": 1,
+    "featured": false,
+    "new": false,
+    "offer": false,
+    "recommendedFor": [
+      "vino-tinto",
+      "vino-blanco",
+      "decantación"
+    ],
+    "gallery": [
+      {
+        "image": "/assets/images/product33.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/assets/images/product33-2.jpg",
+        "alt": "Vista lateral"
+      },
+      {
+        "image": "/assets/images/product33-1.jpg",
+        "alt": "Detalle del decantador"
+      }
+    ]
+  },
   {
     "id": 34,
     "sku": "MEDESP25",
@@ -2099,7 +2099,7 @@
       "vino-blanco"
     ],
     "gallery": [
-            {
+      {
         "image": "/assets/images/product35-3.jpg",
         "alt": "Vista principal"
       },
@@ -2111,7 +2111,7 @@
         "image": "/assets/images/product35-2.jpg",
         "alt": "Detalle del decantador"
       },
-            {
+      {
         "image": "/assets/images/product35.jpg",
         "alt": "Vista principal"
       }
@@ -2169,7 +2169,7 @@
       "vino-tinto"
     ],
     "gallery": [
-            {
+      {
         "image": "/assets/images/product36-3.jpg",
         "alt": "Vista principal"
       },
@@ -2187,441 +2187,441 @@
       }
     ]
   },
-{
-  "id": 37,
-  "sku": "MECOSP58",
-  "collection": "Authentis Casual",
-  "name": "SET SPIEGELAU (TIN, BCO, AGUA) AUT. CASUAL",
-  "presentation": "Una caja contiene un set de 12 piezas: 4 copas, 4 copas y 4 vasos tumbler.",
-  "category": "kits",
-  "shortDescription": "El Set SPIEGELAU Authentis Casual incluye 12 piezas elaboradas en cristal sin plomo: cuatro copas para vino tinto, cuatro copas para vino blanco y cuatro vasos tumbler. Diseñado para brindar una experiencia de degustación elegante y completa tanto en el hogar como en el ámbito profesional.",
-  "description": "El Set SPIEGELAU Authentis Casual reúne una selección de cristalería premium diseñada para disfrutar una amplia variedad de bebidas con la máxima calidad. El set incluye cuatro copas para vino tinto, cuatro copas para vino blanco y cuatro vasos tumbler universales, ofreciendo una solución completa para reuniones, cenas y celebraciones.\n\nFabricado en cristal sin plomo de alta calidad, cada pieza destaca por su excepcional transparencia, resistencia y brillo. Sus bordes finos, cortados con láser y pulidos, proporcionan una agradable sensación al beber y permiten apreciar plenamente los aromas y sabores de cada bebida.\n\nLa colección Authentis combina procesos modernos de fabricación con un profundo conocimiento de la degustación del vino, logrando copas que resaltan el bouquet y las características de cada variedad. Gracias a su gran resistencia, todas las piezas son aptas para lavavajillas y mantienen su brillo incluso después de un uso frecuente.\n\nEste set es ideal para el hogar, restaurantes, hoteles y como un elegante regalo para amantes del vino y la cristalería premium.",
-  "specifications": [
-    {
-      "label": "Opciones de color",
-      "value": "Cristal claro"
-    },
-    {
-      "label": "Fabricación",
-      "value": "Hecho a máquina"
-    },
-    {
-      "label": "Colección",
-      "value": "Authentis Casual"
-    },
-    {
-      "label": "Material",
-      "value": "Cristal sin plomo"
-    },
-    {
-      "label": "Recomendado para limpiabotellas",
-      "value": "No"
-    },
-    {
-      "label": "Cantidad de piezas",
-      "value": "12 piezas"
-    },
-    {
-      "label": "Contenido",
-      "value": "4 copas vino tinto (480 ml), 4 copas vino blanco (420 ml) y 4 vasos tumbler (460 ml)"
-    }
-  ],
-  "price": 0,
-  "stock": 54,
-  "featured": false,
-  "new": false,
-  "offer": false,
-  "recommendedFor": [
-    "vino-tinto",
-    "vino-blanco",
-    "agua",
-    "cocteles"
-  ],
-  "gallery": [
-    {
-      "image": "/assets/images/product37.jpg",
-      "alt": "Vista principal"
-    },
-    {
-      "image": "/assets/images/product37-1.jpg",
-      "alt": "Vista del set"
-    },
-    {
-      "image": "/assets/images/product37-3.jpg",
-      "alt": "Copas incluidas"
-    },
-    {
-      "image": "/assets/images/product37-2.jpg",
-      "alt": "Detalle del set"
-    },
-    {
-      "image": "/assets/images/product37-4.webp",
-      "alt": "Empaque del producto"
-    }
-  ]
-},
-{
-  "id": 38,
-  "sku": "MECOSP61",
-  "collection": "Style",
-  "name": "COPA SPIEGELAU (TINTO, BCO) STYLE",
-  "presentation": "Una caja contiene un set de 12 piezas: 6 copas para vino tinto y 6 copas para vino blanco.",
-  "category": "kits",
-  "shortDescription": "El Set SPIEGELAU Style reúne 12 copas de cristal premium: seis copas para vino tinto y seis para vino blanco. Su diseño elegante y funcional realza los aromas, el equilibrio y la estructura de cada vino, siendo ideal para el hogar y el servicio profesional.",
-  "description": "El Set SPIEGELAU Style ha sido diseñado para ofrecer una experiencia de degustación completa tanto para vinos tintos como blancos. Incluye seis copas para vino tinto y seis copas para vino blanco, cuyas formas cuidadosamente desarrolladas potencian los aromas, la estructura, la frescura y el equilibrio de cada variedad.\n\nLas copas para vino tinto cuentan con un cáliz amplio que favorece la oxigenación y el desarrollo de aromas complejos, mientras que las copas para vino blanco presentan una forma más estilizada que ayuda a conservar la frescura, la acidez y los aromas delicados. Sus bordes finos permiten una experiencia de degustación más agradable y refinada.\n\nFabricadas en cristal transparente mediante tecnología de producción mecánica de alta precisión, las piezas ofrecen un brillo excepcional, gran resistencia y una calidad uniforme. La colección SPIEGELAU Style combina un diseño contemporáneo con una excelente funcionalidad, siendo perfecta tanto para el uso diario como para restaurantes, hoteles y eventos especiales.\n\nEste set es apto para lavavajillas y está diseñado para conservar su transparencia y brillo incluso después de numerosos ciclos de lavado, ofreciendo un rendimiento duradero y una presentación elegante en cualquier ocasión.\n\nInformación importante:\n\n• Este producto está fabricado en cristal. Puede romperse si se cae o recibe un impacto, generando fragmentos afilados. Manipúlelo con cuidado.",
-  "specifications": [
-    {
-      "label": "Opciones de color",
-      "value": "Cristal claro"
-    },
-    {
-      "label": "Fabricación",
-      "value": "Hecho a máquina"
-    },
-    {
-      "label": "Colección",
-      "value": "Style"
-    },
-    {
-      "label": "Material",
-      "value": "Cristal"
-    },
-    {
-      "label": "Recomendado para limpiabotellas",
-      "value": "No"
-    },
-    {
-      "label": "Cantidad de piezas",
-      "value": "12 piezas"
-    },
-    {
-      "label": "Contenido",
-      "value": "6 copas para vino tinto y 6 copas para vino blanco"
-    }
-  ],
-  "price": 0,
-  "stock": 33,
-  "featured": false,
-  "new": false,
-  "offer": false,
-  "recommendedFor": [
-    "vino-tinto",
-    "vino-blanco"
-  ],
-  "gallery": [
-    {
-      "image": "/assets/images/product38-1.jpg",
-      "alt": "Vista principal"
-    },
-    {
-      "image": "/assets/images/product38-2.jpg",
-      "alt": "Vista del set"
-    },
-    {
-      "image": "/assets/images/product38.jpg",
-      "alt": "Detalle de las copas"
-    },
-    {
-      "image": "/assets/images/product38-3.jpg",
-      "alt": "Empaque del producto"
-    }
-  ]
-},
-{
-  "id": 39,
-  "sku": "MEVASP19",
-  "collection": "Perfect Serve",
-  "name": "SET SPIEGELAU STARTER (KIT P/BARMAN)",
-  "presentation": "Una caja contiene un set de 12 piezas: 2 copas Coupette, 2 copas para cóctel, 2 vasos universales para cóctel, 2 vasos long drink, 1 vaso mezclador, 1 colador, 1 cuchara de bar y 1 medidor (jigger).",
-  "category": "kits",
-  "shortDescription": "El Set SPIEGELAU Perfect Serve Starter es un completo kit de bar profesional de 12 piezas, desarrollado en colaboración con el reconocido bartender Stephan Hinz. Incluye la cristalería y los accesorios esenciales para preparar y servir cócteles con la máxima calidad y elegancia.",
-  "description": "El Set SPIEGELAU Perfect Serve Starter ha sido diseñado para quienes buscan equipar un bar con cristalería y accesorios de calidad profesional. Desarrollado junto al reconocido bartender Stephan Hinz, este completo kit reúne doce piezas cuidadosamente seleccionadas para preparar, mezclar y servir una amplia variedad de cócteles y bebidas.\n\nEl set incluye copas para cóctel, vasos universales, vasos long drink, un vaso mezclador y las herramientas indispensables para la coctelería, ofreciendo una experiencia completa tanto para bartenders profesionales como para aficionados exigentes.\n\nFabricado en Alemania con cristal de alta calidad mediante el exclusivo proceso Platinum Glass de SPIEGELAU, proporciona un brillo excepcional, gran transparencia y una alta resistencia al uso continuo. Todas las piezas de cristal son aptas para lavavajillas y mantienen su claridad incluso después de numerosos ciclos de lavado.\n\nSu diseño moderno y funcional convierte este set en la opción ideal para bares, restaurantes, hoteles o para crear un bar en casa con acabados de nivel profesional.",
-  "specifications": [
-    {
-      "label": "Opciones de color",
-      "value": "Cristal claro"
-    },
-    {
-      "label": "Fabricación",
-      "value": "Hecho a máquina"
-    },
-    {
-      "label": "Colección",
-      "value": "Perfect Serve"
-    },
-    {
-      "label": "Material",
-      "value": "Cristal"
-    },
-    {
-      "label": "Apto para lavavajillas",
-      "value": "Sí"
-    },
-    {
-      "label": "Cantidad de piezas",
-      "value": "12 piezas"
-    },
-    {
-      "label": "Contenido",
-      "value": "2 copas Coupette, 2 copas para cóctel, 2 vasos universales para cóctel, 2 vasos long drink, 1 vaso mezclador, 1 colador, 1 cuchara de bar y 1 medidor (jigger)"
-    }
-  ],
-  "price": 0,
-  "stock": 7,
-  "featured": false,
-  "new": false,
-  "offer": false,
-  "recommendedFor": [
-    "cocteles",
-    "mixología",
-    "bar",
-    "bartender"
-  ],
-  "gallery": [
-    {
-      "image": "/assets/images/product39.jpg",
-      "alt": "Vista principal"
-    },
-    {
-      "image": "/assets/images/product39-1.jpg",
-      "alt": "Kit completo"
-    },
-    {
-      "image": "/assets/images/product39-2.jpg",
-      "alt": "Detalle de las copas"
-    },
-    {
-      "image": "/assets/images/product39-4.jpg",
-      "alt": "Accesorios del kit"
-    },
-    {
-      "image": "/assets/images/product39-5.jpg",
-      "alt": "Vasos incluidos"
-    },
-    {
-      "image": "/assets/images/product39-6.jpg",
-      "alt": "Vista lateral"
-    },
-    {
-      "image": "/assets/images/product39-7.jpg",
-      "alt": "Detalle del cristal"
-    },
-    {
-      "image": "/assets/images/product39-8.jpg",
-      "alt": "Presentación del set"
-    },
-    {
-      "image": "/assets/images/product39-9.jpg",
-      "alt": "Empaque original"
-    },
-    {
-      "image": "/assets/images/product39-3.jpg",
-      "alt": "Vista general"
-    }
-  ]
-},
-{
-  "id": 40,
-  "sku": "MEVASP43",
-  "collection": "Elegance",
-  "name": "SPIEGELAU (LONG 6 + TUMBLER 6) ELEGANCE",
-  "presentation": "Una caja contiene un set de 12 piezas: 6 vasos tumbler (345 ml) y 6 vasos long drink (445 ml).",
-  "category": "kits",
-  "shortDescription": "El Set SPIEGELAU Elegance reúne 12 vasos de cristal premium: seis vasos tumbler y seis vasos long drink. Diseñado para brindar elegancia, resistencia y versatilidad, es ideal para servir agua, whisky, refrescos, jugos y cócteles en cualquier ocasión.",
-  "description": "El Set SPIEGELAU Elegance combina diseño contemporáneo, funcionalidad y la reconocida calidad de la cristalería alemana. Incluye seis vasos tumbler de 345 ml y seis vasos long drink de 445 ml, ofreciendo una solución completa para servir una amplia variedad de bebidas con estilo y distinción.\n\nFabricados en cristal de alta calidad, los vasos destacan por su extraordinaria transparencia, brillo y resistencia a las roturas, proporcionando una excelente durabilidad tanto para el uso doméstico como profesional. Su diseño elegante y versátil se adapta perfectamente a reuniones familiares, celebraciones, restaurantes, hoteles y bares.\n\nLa colección Elegance ha sido desarrollada para ofrecer una presentación sofisticada sin sacrificar funcionalidad. Gracias a su acabado de alta calidad, cada pieza conserva su brillo y claridad incluso después de un uso frecuente, convirtiéndose en una excelente opción para el servicio diario y ocasiones especiales.",
-  "specifications": [
-    {
-      "label": "Opciones de color",
-      "value": "Cristal claro"
-    },
-    {
-      "label": "Fabricación",
-      "value": "Hecho a máquina"
-    },
-    {
-      "label": "Colección",
-      "value": "Elegance"
-    },
-    {
-      "label": "Material",
-      "value": "Cristal"
-    },
-    {
-      "label": "Características",
-      "value": "Alta resistencia a las roturas"
-    },
-    {
-      "label": "Cantidad de piezas",
-      "value": "12 piezas"
-    },
-    {
-      "label": "Contenido",
-      "value": "6 vasos tumbler (345 ml) y 6 vasos long drink (445 ml)"
-    }
-  ],
-  "price": 0,
-  "stock": 48,
-  "featured": false,
-  "new": false,
-  "offer": false,
-  "recommendedFor": [
-    "agua",
-    "whisky",
-    "cocteles",
-    "refrescos",
-    "jugos"
-  ],
-  "gallery": [
-    {
-      "image": "/assets/images/product40.jpg",
-      "alt": "Vista principal"
-    },
-    {
-      "image": "/assets/images/product40-3.jpg",
-      "alt": "Vista del set"
-    },
-    {
-      "image": "/assets/images/product40-1.jpg",
-      "alt": "Detalle de los vasos"
-    },
-    {
-      "image": "/assets/images/product40-2.jpg",
-      "alt": "Empaque del producto"
-    }
-  ]
-},
-{
-  "id": 41,
-  "sku": "MECOSP57",
-  "collection": "Style",
-  "name": "COPA SPIEGELAU STYLE TINTO, BCO Y CHAMPG.",
-  "presentation": "Una caja contiene un set de 18 piezas: 6 copas para vino tinto, 6 copas para vino blanco y 6 copas para champagne.",
-  "category": "kits",
-  "shortDescription": "El Set SPIEGELAU Style de 18 piezas reúne copas para vino tinto, vino blanco y champagne, elaboradas en cristal transparente de alta calidad. Su diseño elegante realza los aromas y sabores de cada bebida, convirtiéndose en la opción ideal para disfrutar del vino con estilo en cualquier ocasión.",
-  "description": "El Set SPIEGELAU Style de 18 piezas ha sido diseñado para ofrecer una experiencia completa de degustación para los amantes del vino. Incluye seis copas para vino tinto, seis copas para vino blanco y seis copas para champagne, cada una con una forma cuidadosamente desarrollada para resaltar las características de cada tipo de bebida.\n\nLas copas para vino tinto permiten una mayor oxigenación y potencian los aromas complejos, mientras que las de vino blanco conservan la frescura y los aromas delicados. Las copas para champagne favorecen una efervescencia fina y constante, proporcionando una experiencia elegante en cada brindis.\n\nFabricadas en cristal transparente de alta calidad mediante procesos de precisión, las piezas destacan por su brillo, claridad y excelente durabilidad. La colección SPIEGELAU Style combina un diseño moderno con una funcionalidad excepcional, siendo perfecta para el hogar, restaurantes, hoteles y ocasiones especiales.\n\nAdemás de su excelente desempeño durante la degustación, estas copas aportan una presentación sofisticada a cualquier mesa y constituyen un regalo ideal para los amantes del vino. Todas las piezas son aptas para lavavajillas y mantienen su transparencia y brillo incluso después de un uso frecuente.",
-  "specifications": [
-    {
-      "label": "Opciones de color",
-      "value": "Cristal claro"
-    },
-    {
-      "label": "Fabricación",
-      "value": "Hecho a máquina"
-    },
-    {
-      "label": "Colección",
-      "value": "Style"
-    },
-    {
-      "label": "Material",
-      "value": "Cristal"
-    },
-    {
-      "label": "Apto para lavavajillas",
-      "value": "Sí"
-    },
-    {
-      "label": "Cantidad de piezas",
-      "value": "18 piezas"
-    },
-    {
-      "label": "Contenido",
-      "value": "6 copas para vino tinto, 6 copas para vino blanco y 6 copas para champagne"
-    }
-  ],
-  "price": 0,
-  "stock": 105,
-  "featured": false,
-  "new": false,
-  "offer": false,
-  "recommendedFor": [
-    "vino-tinto",
-    "vino-blanco",
-    "champagne"
-  ],
-  "gallery": [
-    {
-      "image": "/assets/images/product41.jpg",
-      "alt": "Vista principal"
-    },
-    {
-      "image": "/assets/images/product41-3.jpg",
-      "alt": "Vista del set"
-    },
-    {
-      "image": "/assets/images/product41-1.jpg",
-      "alt": "Detalle de las copas"
-    },
-    {
-      "image": "/assets/images/product41-2.jpg",
-      "alt": "Empaque del producto"
-    }
-  ]
-},
-{
-  "id": 42,
-  "sku": "MECOSP60",
-  "collection": "Special Glasses Cocktail",
-  "name": "SPIEGELAU APEROL SPRITZ",
-  "presentation": "Una caja contiene 2 copas para Aperol Spritz y otros cócteles.",
-  "category": "copas",
-  "shortDescription": "El set SPIEGELAU Aperol Spritz incluye dos copas de cristal diseñadas especialmente para disfrutar Aperol Spritz, rosé y otros cócteles refrescantes. Su diseño elegante y moderno realza la presentación y los aromas de cada bebida.",
-  "description": "Las copas SPIEGELAU Aperol Spritz han sido desarrolladas para ofrecer la mejor experiencia al disfrutar cócteles refrescantes como Aperol Spritz, Spritz de vino, rosé y otras bebidas aperitivas. Su cáliz amplio favorece la liberación de los aromas y proporciona espacio suficiente para hielo, frutas y otros ingredientes decorativos, logrando una presentación atractiva y sofisticada.\n\nPertenecientes a la colección Special Glasses Cocktail de SPIEGELAU, estas copas combinan un diseño moderno, ligero y elegante con una excelente funcionalidad. Son cómodas de sostener y resultan ideales tanto para reuniones informales como para celebraciones especiales.\n\nFabricadas en cristal de alta calidad mediante procesos de producción de precisión, ofrecen un brillo excepcional, gran transparencia y una elevada resistencia al uso diario. Además, son aptas para lavavajillas, conservando su claridad y brillo incluso después de numerosos ciclos de lavado.\n\nCon más de 500 años de tradición en la fabricación de cristalería, SPIEGELAU combina la artesanía bávara con la tecnología más avanzada para producir copas reconocidas y utilizadas por profesionales y aficionados alrededor del mundo.",
-  "specifications": [
-    {
-      "label": "Opciones de color",
-      "value": "Cristal claro"
-    },
-    {
-      "label": "Fabricación",
-      "value": "Hecho a máquina"
-    },
-    {
-      "label": "Colección",
-      "value": "Special Glasses Cocktail"
-    },
-    {
-      "label": "Material",
-      "value": "Cristal"
-    },
-    {
-      "label": "Apto para lavavajillas",
-      "value": "Sí"
-    },
-    {
-      "label": "Cantidad de piezas",
-      "value": "2 copas"
-    },
-    {
-      "label": "Contenido",
-      "value": "2 copas para Aperol Spritz y otros cócteles"
-    }
-  ],
-  "price": 0,
-  "stock": 60,
-  "featured": false,
-  "new": false,
-  "offer": false,
-  "recommendedFor": [
-    "cocteles",
-    "aperol-spritz",
-    "vino-rosado"
-  ],
-  "gallery": [
-    {
-      "image": "/assets/images/product42.jpg",
-      "alt": "Vista principal"
-    },
-    {
-      "image": "/assets/images/product42-1.jpg",
-      "alt": "Vista lateral"
-    },
-    {
-      "image": "/assets/images/product42-3.jpg",
-      "alt": "Detalle de las copas"
-    }
-  ]
-},
+  {
+    "id": 37,
+    "sku": "MECOSP58",
+    "collection": "Authentis Casual",
+    "name": "SET SPIEGELAU (TIN, BCO, AGUA) AUT. CASUAL",
+    "presentation": "Una caja contiene un set de 12 piezas: 4 copas, 4 copas y 4 vasos tumbler.",
+    "category": "kits",
+    "shortDescription": "El Set SPIEGELAU Authentis Casual incluye 12 piezas elaboradas en cristal sin plomo: cuatro copas para vino tinto, cuatro copas para vino blanco y cuatro vasos tumbler. Diseñado para brindar una experiencia de degustación elegante y completa tanto en el hogar como en el ámbito profesional.",
+    "description": "El Set SPIEGELAU Authentis Casual reúne una selección de cristalería premium diseñada para disfrutar una amplia variedad de bebidas con la máxima calidad. El set incluye cuatro copas para vino tinto, cuatro copas para vino blanco y cuatro vasos tumbler universales, ofreciendo una solución completa para reuniones, cenas y celebraciones.\n\nFabricado en cristal sin plomo de alta calidad, cada pieza destaca por su excepcional transparencia, resistencia y brillo. Sus bordes finos, cortados con láser y pulidos, proporcionan una agradable sensación al beber y permiten apreciar plenamente los aromas y sabores de cada bebida.\n\nLa colección Authentis combina procesos modernos de fabricación con un profundo conocimiento de la degustación del vino, logrando copas que resaltan el bouquet y las características de cada variedad. Gracias a su gran resistencia, todas las piezas son aptas para lavavajillas y mantienen su brillo incluso después de un uso frecuente.\n\nEste set es ideal para el hogar, restaurantes, hoteles y como un elegante regalo para amantes del vino y la cristalería premium.",
+    "specifications": [
+      {
+        "label": "Opciones de color",
+        "value": "Cristal claro"
+      },
+      {
+        "label": "Fabricación",
+        "value": "Hecho a máquina"
+      },
+      {
+        "label": "Colección",
+        "value": "Authentis Casual"
+      },
+      {
+        "label": "Material",
+        "value": "Cristal sin plomo"
+      },
+      {
+        "label": "Recomendado para limpiabotellas",
+        "value": "No"
+      },
+      {
+        "label": "Cantidad de piezas",
+        "value": "12 piezas"
+      },
+      {
+        "label": "Contenido",
+        "value": "4 copas vino tinto (480 ml), 4 copas vino blanco (420 ml) y 4 vasos tumbler (460 ml)"
+      }
+    ],
+    "price": 0,
+    "stock": 54,
+    "featured": false,
+    "new": false,
+    "offer": false,
+    "recommendedFor": [
+      "vino-tinto",
+      "vino-blanco",
+      "agua",
+      "cocteles"
+    ],
+    "gallery": [
+      {
+        "image": "/assets/images/product37.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/assets/images/product37-1.jpg",
+        "alt": "Vista del set"
+      },
+      {
+        "image": "/assets/images/product37-3.jpg",
+        "alt": "Copas incluidas"
+      },
+      {
+        "image": "/assets/images/product37-2.jpg",
+        "alt": "Detalle del set"
+      },
+      {
+        "image": "/assets/images/product37-4.webp",
+        "alt": "Empaque del producto"
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "sku": "MECOSP61",
+    "collection": "Style",
+    "name": "COPA SPIEGELAU (TINTO, BCO) STYLE",
+    "presentation": "Una caja contiene un set de 12 piezas: 6 copas para vino tinto y 6 copas para vino blanco.",
+    "category": "kits",
+    "shortDescription": "El Set SPIEGELAU Style reúne 12 copas de cristal premium: seis copas para vino tinto y seis para vino blanco. Su diseño elegante y funcional realza los aromas, el equilibrio y la estructura de cada vino, siendo ideal para el hogar y el servicio profesional.",
+    "description": "El Set SPIEGELAU Style ha sido diseñado para ofrecer una experiencia de degustación completa tanto para vinos tintos como blancos. Incluye seis copas para vino tinto y seis copas para vino blanco, cuyas formas cuidadosamente desarrolladas potencian los aromas, la estructura, la frescura y el equilibrio de cada variedad.\n\nLas copas para vino tinto cuentan con un cáliz amplio que favorece la oxigenación y el desarrollo de aromas complejos, mientras que las copas para vino blanco presentan una forma más estilizada que ayuda a conservar la frescura, la acidez y los aromas delicados. Sus bordes finos permiten una experiencia de degustación más agradable y refinada.\n\nFabricadas en cristal transparente mediante tecnología de producción mecánica de alta precisión, las piezas ofrecen un brillo excepcional, gran resistencia y una calidad uniforme. La colección SPIEGELAU Style combina un diseño contemporáneo con una excelente funcionalidad, siendo perfecta tanto para el uso diario como para restaurantes, hoteles y eventos especiales.\n\nEste set es apto para lavavajillas y está diseñado para conservar su transparencia y brillo incluso después de numerosos ciclos de lavado, ofreciendo un rendimiento duradero y una presentación elegante en cualquier ocasión.\n\nInformación importante:\n\n• Este producto está fabricado en cristal. Puede romperse si se cae o recibe un impacto, generando fragmentos afilados. Manipúlelo con cuidado.",
+    "specifications": [
+      {
+        "label": "Opciones de color",
+        "value": "Cristal claro"
+      },
+      {
+        "label": "Fabricación",
+        "value": "Hecho a máquina"
+      },
+      {
+        "label": "Colección",
+        "value": "Style"
+      },
+      {
+        "label": "Material",
+        "value": "Cristal"
+      },
+      {
+        "label": "Recomendado para limpiabotellas",
+        "value": "No"
+      },
+      {
+        "label": "Cantidad de piezas",
+        "value": "12 piezas"
+      },
+      {
+        "label": "Contenido",
+        "value": "6 copas para vino tinto y 6 copas para vino blanco"
+      }
+    ],
+    "price": 0,
+    "stock": 33,
+    "featured": false,
+    "new": false,
+    "offer": false,
+    "recommendedFor": [
+      "vino-tinto",
+      "vino-blanco"
+    ],
+    "gallery": [
+      {
+        "image": "/assets/images/product38-1.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/assets/images/product38-2.jpg",
+        "alt": "Vista del set"
+      },
+      {
+        "image": "/assets/images/product38.jpg",
+        "alt": "Detalle de las copas"
+      },
+      {
+        "image": "/assets/images/product38-3.jpg",
+        "alt": "Empaque del producto"
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "sku": "MEVASP19",
+    "collection": "Perfect Serve",
+    "name": "SET SPIEGELAU STARTER (KIT P/BARMAN)",
+    "presentation": "Una caja contiene un set de 12 piezas: 2 copas Coupette, 2 copas para cóctel, 2 vasos universales para cóctel, 2 vasos long drink, 1 vaso mezclador, 1 colador, 1 cuchara de bar y 1 medidor (jigger).",
+    "category": "kits",
+    "shortDescription": "El Set SPIEGELAU Perfect Serve Starter es un completo kit de bar profesional de 12 piezas, desarrollado en colaboración con el reconocido bartender Stephan Hinz. Incluye la cristalería y los accesorios esenciales para preparar y servir cócteles con la máxima calidad y elegancia.",
+    "description": "El Set SPIEGELAU Perfect Serve Starter ha sido diseñado para quienes buscan equipar un bar con cristalería y accesorios de calidad profesional. Desarrollado junto al reconocido bartender Stephan Hinz, este completo kit reúne doce piezas cuidadosamente seleccionadas para preparar, mezclar y servir una amplia variedad de cócteles y bebidas.\n\nEl set incluye copas para cóctel, vasos universales, vasos long drink, un vaso mezclador y las herramientas indispensables para la coctelería, ofreciendo una experiencia completa tanto para bartenders profesionales como para aficionados exigentes.\n\nFabricado en Alemania con cristal de alta calidad mediante el exclusivo proceso Platinum Glass de SPIEGELAU, proporciona un brillo excepcional, gran transparencia y una alta resistencia al uso continuo. Todas las piezas de cristal son aptas para lavavajillas y mantienen su claridad incluso después de numerosos ciclos de lavado.\n\nSu diseño moderno y funcional convierte este set en la opción ideal para bares, restaurantes, hoteles o para crear un bar en casa con acabados de nivel profesional.",
+    "specifications": [
+      {
+        "label": "Opciones de color",
+        "value": "Cristal claro"
+      },
+      {
+        "label": "Fabricación",
+        "value": "Hecho a máquina"
+      },
+      {
+        "label": "Colección",
+        "value": "Perfect Serve"
+      },
+      {
+        "label": "Material",
+        "value": "Cristal"
+      },
+      {
+        "label": "Apto para lavavajillas",
+        "value": "Sí"
+      },
+      {
+        "label": "Cantidad de piezas",
+        "value": "12 piezas"
+      },
+      {
+        "label": "Contenido",
+        "value": "2 copas Coupette, 2 copas para cóctel, 2 vasos universales para cóctel, 2 vasos long drink, 1 vaso mezclador, 1 colador, 1 cuchara de bar y 1 medidor (jigger)"
+      }
+    ],
+    "price": 0,
+    "stock": 7,
+    "featured": false,
+    "new": false,
+    "offer": false,
+    "recommendedFor": [
+      "cocteles",
+      "mixología",
+      "bar",
+      "bartender"
+    ],
+    "gallery": [
+      {
+        "image": "/assets/images/product39.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/assets/images/product39-1.jpg",
+        "alt": "Kit completo"
+      },
+      {
+        "image": "/assets/images/product39-2.jpg",
+        "alt": "Detalle de las copas"
+      },
+      {
+        "image": "/assets/images/product39-4.jpg",
+        "alt": "Accesorios del kit"
+      },
+      {
+        "image": "/assets/images/product39-5.jpg",
+        "alt": "Vasos incluidos"
+      },
+      {
+        "image": "/assets/images/product39-6.jpg",
+        "alt": "Vista lateral"
+      },
+      {
+        "image": "/assets/images/product39-7.jpg",
+        "alt": "Detalle del cristal"
+      },
+      {
+        "image": "/assets/images/product39-8.jpg",
+        "alt": "Presentación del set"
+      },
+      {
+        "image": "/assets/images/product39-9.jpg",
+        "alt": "Empaque original"
+      },
+      {
+        "image": "/assets/images/product39-3.jpg",
+        "alt": "Vista general"
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "sku": "MEVASP43",
+    "collection": "Elegance",
+    "name": "SPIEGELAU (LONG 6 + TUMBLER 6) ELEGANCE",
+    "presentation": "Una caja contiene un set de 12 piezas: 6 vasos tumbler (345 ml) y 6 vasos long drink (445 ml).",
+    "category": "kits",
+    "shortDescription": "El Set SPIEGELAU Elegance reúne 12 vasos de cristal premium: seis vasos tumbler y seis vasos long drink. Diseñado para brindar elegancia, resistencia y versatilidad, es ideal para servir agua, whisky, refrescos, jugos y cócteles en cualquier ocasión.",
+    "description": "El Set SPIEGELAU Elegance combina diseño contemporáneo, funcionalidad y la reconocida calidad de la cristalería alemana. Incluye seis vasos tumbler de 345 ml y seis vasos long drink de 445 ml, ofreciendo una solución completa para servir una amplia variedad de bebidas con estilo y distinción.\n\nFabricados en cristal de alta calidad, los vasos destacan por su extraordinaria transparencia, brillo y resistencia a las roturas, proporcionando una excelente durabilidad tanto para el uso doméstico como profesional. Su diseño elegante y versátil se adapta perfectamente a reuniones familiares, celebraciones, restaurantes, hoteles y bares.\n\nLa colección Elegance ha sido desarrollada para ofrecer una presentación sofisticada sin sacrificar funcionalidad. Gracias a su acabado de alta calidad, cada pieza conserva su brillo y claridad incluso después de un uso frecuente, convirtiéndose en una excelente opción para el servicio diario y ocasiones especiales.",
+    "specifications": [
+      {
+        "label": "Opciones de color",
+        "value": "Cristal claro"
+      },
+      {
+        "label": "Fabricación",
+        "value": "Hecho a máquina"
+      },
+      {
+        "label": "Colección",
+        "value": "Elegance"
+      },
+      {
+        "label": "Material",
+        "value": "Cristal"
+      },
+      {
+        "label": "Características",
+        "value": "Alta resistencia a las roturas"
+      },
+      {
+        "label": "Cantidad de piezas",
+        "value": "12 piezas"
+      },
+      {
+        "label": "Contenido",
+        "value": "6 vasos tumbler (345 ml) y 6 vasos long drink (445 ml)"
+      }
+    ],
+    "price": 0,
+    "stock": 48,
+    "featured": false,
+    "new": false,
+    "offer": false,
+    "recommendedFor": [
+      "agua",
+      "whisky",
+      "cocteles",
+      "refrescos",
+      "jugos"
+    ],
+    "gallery": [
+      {
+        "image": "/assets/images/product40.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/assets/images/product40-3.jpg",
+        "alt": "Vista del set"
+      },
+      {
+        "image": "/assets/images/product40-1.jpg",
+        "alt": "Detalle de los vasos"
+      },
+      {
+        "image": "/assets/images/product40-2.jpg",
+        "alt": "Empaque del producto"
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "sku": "MECOSP57",
+    "collection": "Style",
+    "name": "COPA SPIEGELAU STYLE TINTO, BCO Y CHAMPG.",
+    "presentation": "Una caja contiene un set de 18 piezas: 6 copas para vino tinto, 6 copas para vino blanco y 6 copas para champagne.",
+    "category": "kits",
+    "shortDescription": "El Set SPIEGELAU Style de 18 piezas reúne copas para vino tinto, vino blanco y champagne, elaboradas en cristal transparente de alta calidad. Su diseño elegante realza los aromas y sabores de cada bebida, convirtiéndose en la opción ideal para disfrutar del vino con estilo en cualquier ocasión.",
+    "description": "El Set SPIEGELAU Style de 18 piezas ha sido diseñado para ofrecer una experiencia completa de degustación para los amantes del vino. Incluye seis copas para vino tinto, seis copas para vino blanco y seis copas para champagne, cada una con una forma cuidadosamente desarrollada para resaltar las características de cada tipo de bebida.\n\nLas copas para vino tinto permiten una mayor oxigenación y potencian los aromas complejos, mientras que las de vino blanco conservan la frescura y los aromas delicados. Las copas para champagne favorecen una efervescencia fina y constante, proporcionando una experiencia elegante en cada brindis.\n\nFabricadas en cristal transparente de alta calidad mediante procesos de precisión, las piezas destacan por su brillo, claridad y excelente durabilidad. La colección SPIEGELAU Style combina un diseño moderno con una funcionalidad excepcional, siendo perfecta para el hogar, restaurantes, hoteles y ocasiones especiales.\n\nAdemás de su excelente desempeño durante la degustación, estas copas aportan una presentación sofisticada a cualquier mesa y constituyen un regalo ideal para los amantes del vino. Todas las piezas son aptas para lavavajillas y mantienen su transparencia y brillo incluso después de un uso frecuente.",
+    "specifications": [
+      {
+        "label": "Opciones de color",
+        "value": "Cristal claro"
+      },
+      {
+        "label": "Fabricación",
+        "value": "Hecho a máquina"
+      },
+      {
+        "label": "Colección",
+        "value": "Style"
+      },
+      {
+        "label": "Material",
+        "value": "Cristal"
+      },
+      {
+        "label": "Apto para lavavajillas",
+        "value": "Sí"
+      },
+      {
+        "label": "Cantidad de piezas",
+        "value": "18 piezas"
+      },
+      {
+        "label": "Contenido",
+        "value": "6 copas para vino tinto, 6 copas para vino blanco y 6 copas para champagne"
+      }
+    ],
+    "price": 0,
+    "stock": 105,
+    "featured": false,
+    "new": false,
+    "offer": false,
+    "recommendedFor": [
+      "vino-tinto",
+      "vino-blanco",
+      "champagne"
+    ],
+    "gallery": [
+      {
+        "image": "/assets/images/product41.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/assets/images/product41-3.jpg",
+        "alt": "Vista del set"
+      },
+      {
+        "image": "/assets/images/product41-1.jpg",
+        "alt": "Detalle de las copas"
+      },
+      {
+        "image": "/assets/images/product41-2.jpg",
+        "alt": "Empaque del producto"
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "sku": "MECOSP60",
+    "collection": "Special Glasses Cocktail",
+    "name": "SPIEGELAU APEROL SPRITZ",
+    "presentation": "Una caja contiene 2 copas para Aperol Spritz y otros cócteles.",
+    "category": "copas",
+    "shortDescription": "El set SPIEGELAU Aperol Spritz incluye dos copas de cristal diseñadas especialmente para disfrutar Aperol Spritz, rosé y otros cócteles refrescantes. Su diseño elegante y moderno realza la presentación y los aromas de cada bebida.",
+    "description": "Las copas SPIEGELAU Aperol Spritz han sido desarrolladas para ofrecer la mejor experiencia al disfrutar cócteles refrescantes como Aperol Spritz, Spritz de vino, rosé y otras bebidas aperitivas. Su cáliz amplio favorece la liberación de los aromas y proporciona espacio suficiente para hielo, frutas y otros ingredientes decorativos, logrando una presentación atractiva y sofisticada.\n\nPertenecientes a la colección Special Glasses Cocktail de SPIEGELAU, estas copas combinan un diseño moderno, ligero y elegante con una excelente funcionalidad. Son cómodas de sostener y resultan ideales tanto para reuniones informales como para celebraciones especiales.\n\nFabricadas en cristal de alta calidad mediante procesos de producción de precisión, ofrecen un brillo excepcional, gran transparencia y una elevada resistencia al uso diario. Además, son aptas para lavavajillas, conservando su claridad y brillo incluso después de numerosos ciclos de lavado.\n\nCon más de 500 años de tradición en la fabricación de cristalería, SPIEGELAU combina la artesanía bávara con la tecnología más avanzada para producir copas reconocidas y utilizadas por profesionales y aficionados alrededor del mundo.",
+    "specifications": [
+      {
+        "label": "Opciones de color",
+        "value": "Cristal claro"
+      },
+      {
+        "label": "Fabricación",
+        "value": "Hecho a máquina"
+      },
+      {
+        "label": "Colección",
+        "value": "Special Glasses Cocktail"
+      },
+      {
+        "label": "Material",
+        "value": "Cristal"
+      },
+      {
+        "label": "Apto para lavavajillas",
+        "value": "Sí"
+      },
+      {
+        "label": "Cantidad de piezas",
+        "value": "2 copas"
+      },
+      {
+        "label": "Contenido",
+        "value": "2 copas para Aperol Spritz y otros cócteles"
+      }
+    ],
+    "price": 0,
+    "stock": 60,
+    "featured": false,
+    "new": false,
+    "offer": false,
+    "recommendedFor": [
+      "cocteles",
+      "aperol-spritz",
+      "vino-rosado"
+    ],
+    "gallery": [
+      {
+        "image": "/assets/images/product42.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/assets/images/product42-1.jpg",
+        "alt": "Vista lateral"
+      },
+      {
+        "image": "/assets/images/product42-3.jpg",
+        "alt": "Detalle de las copas"
+      }
+    ]
+  },
   {
     "id": 43,
     "sku": "MECOSP67",
@@ -2669,11 +2669,11 @@
     "recommendedFor": [
       "vino-tinto"
     ],
-    "gallery": [      {
+    "gallery": [
+      {
         "image": "/assets/images/product43-3.jpg",
         "alt": "Vista principal"
       },
-
       {
         "image": "/assets/images/product43-1.webp",
         "alt": "Vista en uso del producto"
@@ -2682,79 +2682,79 @@
         "image": "/assets/images/product43-2.jpg",
         "alt": "Vista de la caja del producto"
       },
-            {
+      {
         "image": "/assets/images/product43.jpg",
         "alt": "Vista principal"
       }
     ]
   },
-{
-  "id": 44,
-  "sku": "MECOSP59",
-  "collection": "Special Glasses Cocktail",
-  "name": "SPIEGELAU COPA GIN TONIC",
-  "presentation": "Una caja contiene 2 copas para Gin & Tonic.",
-  "category": "copas",
-  "shortDescription": "El set SPIEGELAU Gin & Tonic incluye dos copas de cristal diseñadas para realzar los aromas de las botánicas del gin y ofrecer la mejor experiencia al disfrutar gin tonic y otros cócteles premium.",
-  "description": "La copa SPIEGELAU Gin & Tonic ha sido diseñada especialmente para quienes desean disfrutar plenamente del carácter aromático del gin y sus botánicos. Su cáliz amplio permite una mejor oxigenación de la bebida y ofrece espacio suficiente para hielo, cítricos, especias y otros ingredientes que potencian la experiencia de degustación.\n\nForma parte de la colección SPIEGELAU Special Glasses Cocktail, una línea de copas desarrollada para perfeccionar la presentación y el disfrute de cócteles clásicos y contemporáneos. Su diseño elegante y funcional convierte cada bebida en una experiencia sofisticada, tanto en el hogar como en bares y restaurantes.\n\nFabricadas en cristal de alta calidad mediante procesos de producción de precisión, estas copas ofrecen una excelente transparencia, brillo y durabilidad. Son aptas para lavavajillas y conservan su claridad incluso después de numerosos ciclos de lavado.\n\nEste set incluye dos copas de cristal premium, ideales para Gin & Tonic, cócteles de autor y bebidas refrescantes servidas con hielo y botánicos.",
-  "specifications": [
-    {
-      "label": "Opciones de color",
-      "value": "Cristal claro"
-    },
-    {
-      "label": "Fabricación",
-      "value": "Hecho a máquina"
-    },
-    {
-      "label": "Colección",
-      "value": "Special Glasses Cocktail"
-    },
-    {
-      "label": "Material",
-      "value": "Cristal"
-    },
-    {
-      "label": "Apto para lavavajillas",
-      "value": "Sí"
-    },
-    {
-      "label": "Capacidad",
-      "value": "640 ml"
-    },
-    {
-      "label": "Altura",
-      "value": "225 mm"
-    }
-  ],
-  "price": 0,
-  "stock": 45,
-  "featured": false,
-  "new": false,
-  "offer": false,
-  "recommendedFor": [
-    "gin-tonic",
-    "cocteles"
-  ],
-  "gallery": [
-    {
-      "image": "/assets/images/product44.jpg",
-      "alt": "Vista principal"
-    },
-    {
-      "image": "/assets/images/product44-1.jpg",
-      "alt": "Vista en uso del producto"
-    },
-    {
-      "image": "/assets/images/product44-3.jpg",
-      "alt": "Detalle de la copa"
-    },
-    {
-      "image": "/assets/images/product44-4.jpg",
-      "alt": "Empaque del producto"
-    }
-  ]
-},
+  {
+    "id": 44,
+    "sku": "MECOSP59",
+    "collection": "Special Glasses Cocktail",
+    "name": "SPIEGELAU COPA GIN TONIC",
+    "presentation": "Una caja contiene 2 copas para Gin & Tonic.",
+    "category": "copas",
+    "shortDescription": "El set SPIEGELAU Gin & Tonic incluye dos copas de cristal diseñadas para realzar los aromas de las botánicas del gin y ofrecer la mejor experiencia al disfrutar gin tonic y otros cócteles premium.",
+    "description": "La copa SPIEGELAU Gin & Tonic ha sido diseñada especialmente para quienes desean disfrutar plenamente del carácter aromático del gin y sus botánicos. Su cáliz amplio permite una mejor oxigenación de la bebida y ofrece espacio suficiente para hielo, cítricos, especias y otros ingredientes que potencian la experiencia de degustación.\n\nForma parte de la colección SPIEGELAU Special Glasses Cocktail, una línea de copas desarrollada para perfeccionar la presentación y el disfrute de cócteles clásicos y contemporáneos. Su diseño elegante y funcional convierte cada bebida en una experiencia sofisticada, tanto en el hogar como en bares y restaurantes.\n\nFabricadas en cristal de alta calidad mediante procesos de producción de precisión, estas copas ofrecen una excelente transparencia, brillo y durabilidad. Son aptas para lavavajillas y conservan su claridad incluso después de numerosos ciclos de lavado.\n\nEste set incluye dos copas de cristal premium, ideales para Gin & Tonic, cócteles de autor y bebidas refrescantes servidas con hielo y botánicos.",
+    "specifications": [
+      {
+        "label": "Opciones de color",
+        "value": "Cristal claro"
+      },
+      {
+        "label": "Fabricación",
+        "value": "Hecho a máquina"
+      },
+      {
+        "label": "Colección",
+        "value": "Special Glasses Cocktail"
+      },
+      {
+        "label": "Material",
+        "value": "Cristal"
+      },
+      {
+        "label": "Apto para lavavajillas",
+        "value": "Sí"
+      },
+      {
+        "label": "Capacidad",
+        "value": "640 ml"
+      },
+      {
+        "label": "Altura",
+        "value": "225 mm"
+      }
+    ],
+    "price": 0,
+    "stock": 45,
+    "featured": false,
+    "new": false,
+    "offer": false,
+    "recommendedFor": [
+      "gin-tonic",
+      "cocteles"
+    ],
+    "gallery": [
+      {
+        "image": "/assets/images/product44.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/assets/images/product44-1.jpg",
+        "alt": "Vista en uso del producto"
+      },
+      {
+        "image": "/assets/images/product44-3.jpg",
+        "alt": "Detalle de la copa"
+      },
+      {
+        "image": "/assets/images/product44-4.jpg",
+        "alt": "Empaque del producto"
+      }
+    ]
+  },
   {
     "id": 45,
     "sku": "MEVASP50",
@@ -2803,7 +2803,7 @@
       "cerveza"
     ],
     "gallery": [
-            {
+      {
         "image": "/assets/images/product45-3.jpg",
         "alt": "Vista principal"
       },
@@ -2815,7 +2815,7 @@
         "image": "/assets/images/product45-2.jpg",
         "alt": "Detalle del vaso"
       },
-            {
+      {
         "image": "/assets/images/product45.jpg",
         "alt": "Vista principal"
       }
@@ -2881,7 +2881,7 @@
         "image": "/assets/images/product46-2.jpg",
         "alt": "Detalle del vaso"
       },
-            {
+      {
         "image": "/assets/images/product46.jpg",
         "alt": "Vista principal"
       }
@@ -2935,11 +2935,10 @@
       "cerveza"
     ],
     "gallery": [
-            {
+      {
         "image": "/assets/images/product47-3.jpg",
         "alt": "Vista principal"
       },
-
       {
         "image": "/assets/images/product47-1.webp",
         "alt": "Vista lateral"
@@ -2948,152 +2947,152 @@
         "image": "/assets/images/product47-2.jpg",
         "alt": "Detalle del vaso"
       },
-            {
+      {
         "image": "/assets/images/product47.jpg",
         "alt": "Vista principal"
       }
     ]
   },
-{
-  "id": 48,
-  "sku": "MEDESP27",
-  "collection": "LifeStyle",
-  "name": "DECANTADOR SPIEGELAU + 2 COPAS STYLE",
-  "presentation": "Una caja contiene un set de 3 piezas: 1 decantador y 2 copas para vino.",
-  "category": "kits",
-  "shortDescription": "El Set SPIEGELAU LifeStyle incluye un elegante decantador de cristal y dos copas para vino de gran capacidad. Diseñado para potenciar la oxigenación del vino y realzar sus aromas, ofrece una experiencia de degustación sofisticada tanto en el hogar como en entornos profesionales.",
-  "description": "El Set Decantador SPIEGELAU LifeStyle combina diseño contemporáneo, funcionalidad y la reconocida calidad de la cristalería alemana. El conjunto incluye un decantador de 2,9 litros y dos copas para vino de 630 ml, cuidadosamente diseñados para disfrutar al máximo vinos tintos y blancos.\n\nEl decantador incorpora un cuello delgado, una apertura inclinada y una amplia base que favorece la oxigenación del vino, permitiendo una mejor liberación de aromas y un bouquet más complejo. Su borde cortado con láser facilita un vertido preciso y sin goteos.\n\nLas copas de diseño tipo tulipán presentan paredes finas y un elegante relieve vertical característico de la colección LifeStyle. Su forma ha sido desarrollada en colaboración con sumilleres y expertos en vino para resaltar las cualidades aromáticas y el equilibrio de cada variedad.\n\nFabricado en cristal de alta calidad mediante el proceso Platinum Glass de SPIEGELAU, este set ofrece un brillo excepcional, gran transparencia y una excelente resistencia al uso diario. Todas las piezas son aptas para lavavajillas y mantienen su claridad incluso después de numerosos ciclos de lavado.\n\nIdeal para disfrutar del vino en casa, regalar o complementar el servicio en restaurantes y hoteles.",
-  "specifications": [
-    {
-      "label": "Opciones de color",
-      "value": "Cristal claro"
-    },
-    {
-      "label": "Fabricación",
-      "value": "Hecho a máquina"
-    },
-    {
-      "label": "Colección",
-      "value": "LifeStyle"
-    },
-    {
-      "label": "Material",
-      "value": "Cristal"
-    },
-    {
-      "label": "Apto para lavavajillas",
-      "value": "Sí"
-    },
-    {
-      "label": "Cantidad de piezas",
-      "value": "3 piezas"
-    },
-    {
-      "label": "Contenido",
-      "value": "1 decantador (2,9 L) y 2 copas para vino (630 ml)"
-    }
-  ],
-  "price": 0,
-  "stock": 66,
-  "featured": false,
-  "new": false,
-  "offer": false,
-  "recommendedFor": [
-    "vino-tinto",
-    "vino-blanco",
-    "decantación"
-  ],
-  "gallery": [
-    {
-      "image": "/assets/images/product48.jpg",
-      "alt": "Vista principal"
-    },
-    {
-      "image": "/assets/images/product48-1.jpg",
-      "alt": "Detalle del decantador"
-    },
-    {
-      "image": "/assets/images/product48-2.jpg",
-      "alt": "Copas incluidas"
-    },
-    {
-      "image": "/assets/images/product48-3.jpg",
-      "alt": "Vista del set"
-    },
-    {
-      "image": "/assets/images/product48-4.webp",
-      "alt": "Empaque del producto"
-    }
-  ]
-},
-{
-  "id": 49,
-  "sku": "MEVASP38",
-  "collection": "Beer Classics",
-  "name": "SPIEGELAU CERVEZA LAGER",
-  "presentation": "Una caja contiene 4 vasos para cerveza Lager.",
-  "category": "vasos",
-  "shortDescription": "El set SPIEGELAU Beer Classics Lager incluye cuatro vasos de cristal especialmente diseñados para resaltar los aromas, el sabor y la espuma de las cervezas tipo Lager, ofreciendo una experiencia de degustación superior.",
-  "description": "El vaso SPIEGELAU Beer Classics Lager ha sido desarrollado para realzar las características de las cervezas tipo Lager y Pilsner. Su diseño favorece la liberación del espectro completo de aromas y dirige los sabores de manera equilibrada hacia la nariz y el paladar, proporcionando una experiencia de degustación más intensa y agradable.\n\nEl borde fino mejora la percepción del sabor y la sensación en boca, mientras que su forma cuidadosamente diseñada ayuda a conservar la espuma y resaltar el color y la claridad de la cerveza.\n\nFabricado en cristal de alta calidad mediante procesos de precisión, este vaso ofrece una transparencia excepcional, gran resistencia a las roturas y una excelente durabilidad. Además, es apto para lavavajillas y mantiene su brillo incluso después de numerosos ciclos de lavado.\n\nLa colección SPIEGELAU Beer Classics ha sido creada para ofrecer copas y vasos específicos para cada estilo de cerveza, permitiendo disfrutar plenamente de sus características aromáticas y sensoriales tanto en el hogar como en bares y restaurantes.",
-  "specifications": [
-    {
-      "label": "Opciones de color",
-      "value": "Cristal claro"
-    },
-    {
-      "label": "Fabricación",
-      "value": "Hecho a máquina"
-    },
-    {
-      "label": "Colección",
-      "value": "Beer Classics"
-    },
-    {
-      "label": "Material",
-      "value": "Cristal"
-    },
-    {
-      "label": "Apto para lavavajillas",
-      "value": "Sí"
-    },
-    {
-      "label": "Capacidad",
-      "value": "425 ml"
-    },
-    {
-      "label": "Cantidad de piezas",
-      "value": "4 vasos"
-    }
-  ],
-  "price": 0,
-  "stock": 55,
-  "featured": false,
-  "new": false,
-  "offer": false,
-  "recommendedFor": [
-    "cerveza",
-    "lager",
-    "pilsner"
-  ],
-  "gallery": [
-    {
-      "image": "/assets/images/product49.jpg",
-      "alt": "Vista principal"
-    },
-    {
-      "image": "/assets/images/product49-1.jpg",
-      "alt": "Vista lateral"
-    },
-    {
-      "image": "/assets/images/product49-2.jpg",
-      "alt": "Detalle del vaso"
-    },
-    {
-      "image": "/assets/images/product49-3.jpg",
-      "alt": "Vista del set"
-    }
-  ]
-},
+  {
+    "id": 48,
+    "sku": "MEDESP27",
+    "collection": "LifeStyle",
+    "name": "DECANTADOR SPIEGELAU + 2 COPAS STYLE",
+    "presentation": "Una caja contiene un set de 3 piezas: 1 decantador y 2 copas para vino.",
+    "category": "kits",
+    "shortDescription": "El Set SPIEGELAU LifeStyle incluye un elegante decantador de cristal y dos copas para vino de gran capacidad. Diseñado para potenciar la oxigenación del vino y realzar sus aromas, ofrece una experiencia de degustación sofisticada tanto en el hogar como en entornos profesionales.",
+    "description": "El Set Decantador SPIEGELAU LifeStyle combina diseño contemporáneo, funcionalidad y la reconocida calidad de la cristalería alemana. El conjunto incluye un decantador de 2,9 litros y dos copas para vino de 630 ml, cuidadosamente diseñados para disfrutar al máximo vinos tintos y blancos.\n\nEl decantador incorpora un cuello delgado, una apertura inclinada y una amplia base que favorece la oxigenación del vino, permitiendo una mejor liberación de aromas y un bouquet más complejo. Su borde cortado con láser facilita un vertido preciso y sin goteos.\n\nLas copas de diseño tipo tulipán presentan paredes finas y un elegante relieve vertical característico de la colección LifeStyle. Su forma ha sido desarrollada en colaboración con sumilleres y expertos en vino para resaltar las cualidades aromáticas y el equilibrio de cada variedad.\n\nFabricado en cristal de alta calidad mediante el proceso Platinum Glass de SPIEGELAU, este set ofrece un brillo excepcional, gran transparencia y una excelente resistencia al uso diario. Todas las piezas son aptas para lavavajillas y mantienen su claridad incluso después de numerosos ciclos de lavado.\n\nIdeal para disfrutar del vino en casa, regalar o complementar el servicio en restaurantes y hoteles.",
+    "specifications": [
+      {
+        "label": "Opciones de color",
+        "value": "Cristal claro"
+      },
+      {
+        "label": "Fabricación",
+        "value": "Hecho a máquina"
+      },
+      {
+        "label": "Colección",
+        "value": "LifeStyle"
+      },
+      {
+        "label": "Material",
+        "value": "Cristal"
+      },
+      {
+        "label": "Apto para lavavajillas",
+        "value": "Sí"
+      },
+      {
+        "label": "Cantidad de piezas",
+        "value": "3 piezas"
+      },
+      {
+        "label": "Contenido",
+        "value": "1 decantador (2,9 L) y 2 copas para vino (630 ml)"
+      }
+    ],
+    "price": 0,
+    "stock": 66,
+    "featured": false,
+    "new": false,
+    "offer": false,
+    "recommendedFor": [
+      "vino-tinto",
+      "vino-blanco",
+      "decantación"
+    ],
+    "gallery": [
+      {
+        "image": "/assets/images/product48.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/assets/images/product48-1.jpg",
+        "alt": "Detalle del decantador"
+      },
+      {
+        "image": "/assets/images/product48-2.jpg",
+        "alt": "Copas incluidas"
+      },
+      {
+        "image": "/assets/images/product48-3.jpg",
+        "alt": "Vista del set"
+      },
+      {
+        "image": "/assets/images/product48-4.webp",
+        "alt": "Empaque del producto"
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "sku": "MEVASP38",
+    "collection": "Beer Classics",
+    "name": "SPIEGELAU CERVEZA LAGER",
+    "presentation": "Una caja contiene 4 vasos para cerveza Lager.",
+    "category": "vasos",
+    "shortDescription": "El set SPIEGELAU Beer Classics Lager incluye cuatro vasos de cristal especialmente diseñados para resaltar los aromas, el sabor y la espuma de las cervezas tipo Lager, ofreciendo una experiencia de degustación superior.",
+    "description": "El vaso SPIEGELAU Beer Classics Lager ha sido desarrollado para realzar las características de las cervezas tipo Lager y Pilsner. Su diseño favorece la liberación del espectro completo de aromas y dirige los sabores de manera equilibrada hacia la nariz y el paladar, proporcionando una experiencia de degustación más intensa y agradable.\n\nEl borde fino mejora la percepción del sabor y la sensación en boca, mientras que su forma cuidadosamente diseñada ayuda a conservar la espuma y resaltar el color y la claridad de la cerveza.\n\nFabricado en cristal de alta calidad mediante procesos de precisión, este vaso ofrece una transparencia excepcional, gran resistencia a las roturas y una excelente durabilidad. Además, es apto para lavavajillas y mantiene su brillo incluso después de numerosos ciclos de lavado.\n\nLa colección SPIEGELAU Beer Classics ha sido creada para ofrecer copas y vasos específicos para cada estilo de cerveza, permitiendo disfrutar plenamente de sus características aromáticas y sensoriales tanto en el hogar como en bares y restaurantes.",
+    "specifications": [
+      {
+        "label": "Opciones de color",
+        "value": "Cristal claro"
+      },
+      {
+        "label": "Fabricación",
+        "value": "Hecho a máquina"
+      },
+      {
+        "label": "Colección",
+        "value": "Beer Classics"
+      },
+      {
+        "label": "Material",
+        "value": "Cristal"
+      },
+      {
+        "label": "Apto para lavavajillas",
+        "value": "Sí"
+      },
+      {
+        "label": "Capacidad",
+        "value": "425 ml"
+      },
+      {
+        "label": "Cantidad de piezas",
+        "value": "4 vasos"
+      }
+    ],
+    "price": 0,
+    "stock": 55,
+    "featured": false,
+    "new": false,
+    "offer": false,
+    "recommendedFor": [
+      "cerveza",
+      "lager",
+      "pilsner"
+    ],
+    "gallery": [
+      {
+        "image": "/assets/images/product49.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/assets/images/product49-1.jpg",
+        "alt": "Vista lateral"
+      },
+      {
+        "image": "/assets/images/product49-2.jpg",
+        "alt": "Detalle del vaso"
+      },
+      {
+        "image": "/assets/images/product49-3.jpg",
+        "alt": "Vista del set"
+      }
+    ]
+  },
   {
     "id": 50,
     "sku": "MECOSP21",
@@ -3142,7 +3141,7 @@
       "vino-tinto"
     ],
     "gallery": [
-         {
+      {
         "image": "/assets/images/product50-3.jpg",
         "alt": "Detalle de la copa"
       },
@@ -3154,7 +3153,7 @@
         "image": "/assets/images/product50-2.jpg",
         "alt": "Detalle de la copa"
       },
-            {
+      {
         "image": "/assets/images/product50.jpg",
         "alt": "Vista principal"
       }
@@ -3209,7 +3208,7 @@
       "cocteles"
     ],
     "gallery": [
-            {
+      {
         "image": "/assets/images/product51-3.jpg",
         "alt": "Vista principal"
       },
@@ -3221,7 +3220,7 @@
         "image": "/assets/images/product51-2.jpg",
         "alt": "Detalle de la copa"
       },
-            {
+      {
         "image": "/assets/images/product51.jpg",
         "alt": "Vista principal"
       }
@@ -4207,7 +4206,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product66.webp",
+        "image": "/assets/images/product66-3.jpg",
         "alt": "Vista principal"
       },
       {
@@ -4215,7 +4214,11 @@
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product66-2.webp",
+        "image": "/assets/images/product66-2.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/assets/images/product66.jpg",
         "alt": "Vista principal"
       }
     ]
@@ -4225,11 +4228,40 @@
     "sku": "MECOSP16",
     "collection": "",
     "name": " SPIEGELAU PERFECT NOSING COÑAC",
-    "presentation": "",
-    "category": "",
-    "shortDescription": "",
-    "description": "",
-    "specifications": [],
+    "presentation": "Una caja contiene 4 copas.",
+    "category": "copas",
+    "shortDescription": "La copa SPIEGELAU Perfect Nosing de 205 ml está elaborada en cristal sin plomo de alta calidad y diseñada para potenciar los aromas y matices de whiskies, coñac, ron y otros destilados premium. Su cáliz cuidadosamente diseñado ofrece una experiencia de degustación refinada tanto para el hogar como para el uso profesional.",
+    "description": "La copa SPIEGELAU Perfect Nosing forma parte de la prestigiosa colección Perfect Serve, desarrollada en colaboración con el reconocido experto en coctelería Stephan Hinz para satisfacer las exigencias de la mixología y la degustación profesional. Su diseño ha sido cuidadosamente optimizado para concentrar los aromas y revelar toda la complejidad de los destilados premium.\n\nSu cáliz de dimensiones compactas dirige los aromas hacia la nariz, permitiendo apreciar con mayor intensidad las notas aromáticas del whisky, coñac, ron y otros licores de alta gama. El borde fino proporciona una sensación agradable en boca y favorece una experiencia de cata equilibrada y elegante.\n\nFabricada en cristal sin plomo de alta calidad mediante la exclusiva tecnología Platinum Glass de SPIEGELAU, ofrece una transparencia excepcional, un brillo duradero y una elevada resistencia al uso frecuente. Su acabado refinado realza el color y la pureza de cada destilado, convirtiéndola en una pieza ideal tanto para degustaciones profesionales como para disfrutar en casa.\n\nEsta copa es apta para lavavajillas y ha sido diseñada para conservar su brillo y transparencia incluso después de numerosos ciclos de lavado, ofreciendo una excelente combinación entre elegancia, durabilidad y facilidad de mantenimiento.\n\nSu capacidad de 205 ml proporciona el volumen ideal para servir y degustar destilados premium, permitiendo apreciar plenamente su aroma, textura y evolución en cada sorbo.\n\nInformación importante:\n\n- Este producto está fabricado en cristal sin plomo, por lo que puede romperse y generar fragmentos afilados en caso de golpes o caídas.",
+    "specifications": [
+      {
+        "label": "Opciones de color",
+        "value": "Cristal claro"
+      },
+      {
+        "label": "Fabricación",
+        "value": "Hecho a máquina"
+      },
+      {
+        "label": "Colección",
+        "value": "Perfect Serve"
+      },
+      {
+        "label": "Material",
+        "value": "Cristal sin plomo"
+      },
+      {
+        "label": "Recomendado para limpiabotellas",
+        "value": "No"
+      },
+      {
+        "label": "Diámetro máximo",
+        "value": "3.228 in"
+      },
+      {
+        "label": "Altura",
+        "value": "4.724 in"
+      }
+    ],
     "price": 0,
     "stock": 2,
     "featured": false,
@@ -4300,7 +4332,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product68.webp",
+        "image": "/assets/images/product68-3.jpg",
         "alt": "Vista principal"
       },
       {
@@ -4308,7 +4340,11 @@
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product68-2.webp",
+        "image": "/assets/images/product68-2.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/assets/images/product68.webp",
         "alt": "Vista principal"
       }
     ]
@@ -4318,11 +4354,40 @@
     "sku": "MECOSP24",
     "collection": "",
     "name": "SPIEGELAU VINO TINTO STYLE",
-    "presentation": "",
-    "category": "",
-    "shortDescription": "",
-    "description": "",
-    "specifications": [],
+    "presentation": "Una caja contiene 4 unidades.",
+    "category": "copas",
+    "shortDescription": "La copa SPIEGELAU Vino Tinto Style está elaborada en cristal de alta calidad y diseñada para realzar los aromas, la estructura y la complejidad de los vinos tintos. Su diseño moderno y equilibrado ofrece una experiencia de degustación elegante, siendo ideal tanto para el hogar como para el uso profesional.",
+    "description": "La copa SPIEGELAU Vino Tinto Style ha sido diseñada para realzar las cualidades de los vinos tintos, permitiendo que sus aromas y sabores se expresen plenamente en cada degustación. Su cáliz cuidadosamente proporcionado favorece una correcta oxigenación del vino, resaltando su complejidad, equilibrio y carácter en cada sorbo.\n\nSu elegante silueta con tallo combina ligereza, estabilidad y sofisticación, ofreciendo una experiencia de degustación cómoda y refinada. Su diseño moderno se adapta perfectamente tanto a mesas contemporáneas como a ocasiones especiales, convirtiéndose en una excelente opción para el hogar, restaurantes y eventos.\n\nFabricada en cristal de alta calidad, ofrece una transparencia excepcional, un brillo duradero y una excelente resistencia para el uso cotidiano. Su elaboración mediante procesos de fabricación de alta precisión garantiza una calidad uniforme y un rendimiento fiable durante toda su vida útil.\n\nLa colección SPIEGELAU Style reúne formas versátiles y equilibradas diseñadas para disfrutar una amplia variedad de bebidas con una presentación elegante. Esta copa es apta para lavavajillas y está diseñada para conservar su brillo y transparencia incluso después de numerosos ciclos de lavado, ofreciendo una excelente combinación entre durabilidad y facilidad de mantenimiento.\n\nSu diseño proporciona el equilibrio ideal entre estética y funcionalidad, permitiendo disfrutar plenamente de vinos tintos en reuniones, celebraciones o en el día a día con la calidad característica de SPIEGELAU.\n\nInformación importante:\n\n- Este producto está fabricado en cristal, por lo que puede romperse y generar fragmentos afilados en caso de golpes o caídas.",
+    "specifications": [
+      {
+        "label": "Opciones de color",
+        "value": "Cristal claro"
+      },
+      {
+        "label": "Fabricación",
+        "value": "Hecho a máquina"
+      },
+      {
+        "label": "Colección",
+        "value": "Style"
+      },
+      {
+        "label": "Material",
+        "value": "Cristal"
+      },
+      {
+        "label": "Recomendado para limpiabotellas",
+        "value": "No"
+      },
+      {
+        "label": "Diámetro máximo",
+        "value": "3.780 in"
+      },
+      {
+        "label": "Altura",
+        "value": "8.858 in"
+      }
+    ],
     "price": 0,
     "stock": 41,
     "featured": false,
@@ -4341,6 +4406,10 @@
       {
         "image": "/assets/images/product69-2.jpg",
         "alt": "Vista principal"
+      },
+      {
+        "image": "/assets/images/product69-3.webp",
+        "alt": "Vista principal"
       }
     ]
   },
@@ -4349,11 +4418,40 @@
     "sku": "MEVASP39",
     "collection": "",
     "name": "SPIEGELAU CERVEZA BARREL",
-    "presentation": "",
-    "category": "",
-    "shortDescription": "",
-    "description": "",
-    "specifications": [],
+    "presentation": "Una caja contiene 4 unidades.",
+    "category": "copas",
+    "shortDescription": "La copa SPIEGELAU Cerveza Barrel Aged de 480 ml está elaborada en cristal de alta calidad y diseñada para realzar los aromas, la complejidad y el carácter de las cervezas envejecidas en barrica. Desarrollada en colaboración con reconocidos maestros cerveceros, ofrece una experiencia de degustación excepcional tanto para el hogar como para el uso profesional.",
+    "description": "La copa SPIEGELAU Cerveza Barrel Aged forma parte de la prestigiosa colección Craft Beer Glasses y es el resultado de más de dos años de investigación y desarrollo en colaboración con reconocidos maestros cerveceros estadounidenses. Su diseño ha sido creado específicamente para potenciar las cualidades sensoriales de las cervezas envejecidas en barrica.\n\nSu cáliz cuidadosamente diseñado favorece la liberación de los aromas complejos procedentes de la madera, permitiendo apreciar plenamente las notas aportadas por barricas de whisky, bourbon, vino, ron, coñac y otros destilados. Su forma concentra los matices aromáticos y proporciona una experiencia de degustación equilibrada desde el primer hasta el último sorbo.\n\nFabricada en cristal de alta calidad, ofrece una transparencia excepcional, un brillo duradero y una elevada resistencia para el uso cotidiano. Sus paredes finas y su borde delicadamente trabajado mejoran la sensación en boca y permiten disfrutar plenamente del cuerpo, el aroma y el final característicos de estas cervezas especiales.\n\nEsta copa es apta para lavavajillas y ha sido diseñada para conservar su brillo y transparencia incluso después de numerosos ciclos de lavado, ofreciendo una excelente combinación entre durabilidad, facilidad de mantenimiento y rendimiento tanto en el hogar como en el uso profesional.\n\nSu capacidad de 480 ml proporciona el volumen ideal para servir cervezas Barrel Aged, Imperial Stout, Old Ale, Rauchbier, Lambic y otros estilos complejos que requieren una copa diseñada para potenciar todas sus características sensoriales.\n\nInformación importante:\n\n- Este producto está fabricado en cristal, por lo que puede romperse y generar fragmentos afilados en caso de golpes o caídas.",
+    "specifications": [
+      {
+        "label": "Opciones de color",
+        "value": "Cristal claro"
+      },
+      {
+        "label": "Fabricación",
+        "value": "Hecho a máquina"
+      },
+      {
+        "label": "Colección",
+        "value": "Craft Beer Glasses"
+      },
+      {
+        "label": "Material",
+        "value": "Cristal"
+      },
+      {
+        "label": "Recomendado para limpiabotellas",
+        "value": "No"
+      },
+      {
+        "label": "Diámetro máximo",
+        "value": "3.543 in"
+      },
+      {
+        "label": "Altura",
+        "value": "6.890 in"
+      }
+    ],
     "price": 0,
     "stock": 14,
     "featured": false,
@@ -4361,6 +4459,10 @@
     "offer": false,
     "recommendedFor": [],
     "gallery": [
+      {
+        "image": "/assets/images/product70-2.jpg",
+        "alt": "Vista principal"
+      },
       {
         "image": "/assets/images/product70.jpg",
         "alt": "Vista principal"
@@ -4376,11 +4478,40 @@
     "sku": "MEVASP35",
     "collection": "",
     "name": "SPIEGELAU CERVEZA PILSNER CRAFT BEER",
-    "presentation": "",
-    "category": "",
-    "shortDescription": "",
-    "description": "",
-    "specifications": [],
+    "presentation": "Una caja contiene 4 unidades.",
+    "category": "vasos",
+    "shortDescription": "El vaso SPIEGELAU Cerveza Pilsner Craft Beer de 12.8 oz está elaborado en cristal sin plomo de alta calidad y diseñado para realzar el aroma, la carbonatación y el sabor de las cervezas Pilsner y Lager. Su elegante diseño estilizado proporciona una experiencia de degustación superior tanto para el hogar como para el uso profesional.",
+    "description": "El vaso SPIEGELAU Cerveza Pilsner Craft Beer forma parte de la reconocida colección Beer Classics, desarrollada para ofrecer una experiencia de degustación excepcional en los estilos de cerveza más populares. Su forma estilizada ha sido diseñada para resaltar el equilibrio entre el aroma, el amargor y la frescura característicos de las cervezas tipo Pilsner y Lager.\n\nSu diseño ligeramente más ancho en la parte superior favorece la liberación de los aromas del lúpulo y ayuda a mantener una espuma estable, permitiendo apreciar plenamente el perfil sensorial de la cerveza. También resulta ideal para Pale Lager, German Helles, English Strong Ale y otros estilos de fermentación baja.\n\nFabricado en cristal sin plomo de alta calidad, ofrece una transparencia excepcional, un brillo duradero y una elevada resistencia para el uso cotidiano. Su acabado refinado realza el color y la carbonatación de la cerveza, proporcionando una presentación elegante en cualquier ocasión.\n\nEste vaso es apto para lavavajillas y ha sido diseñado para conservar su brillo y transparencia incluso después de numerosos ciclos de lavado, ofreciendo una excelente combinación entre durabilidad, facilidad de mantenimiento y rendimiento tanto en el hogar como en el uso profesional.\n\nSu capacidad de 12.8 oz (363 ml) proporciona el volumen ideal para servir cervezas Pilsner, Lager y otros estilos ligeros, favoreciendo una experiencia de degustación equilibrada y refrescante.\n\nInformación importante:\n\n- Este producto está fabricado en cristal sin plomo, por lo que puede romperse y generar fragmentos afilados en caso de golpes o caídas.",
+    "specifications": [
+      {
+        "label": "Opciones de color",
+        "value": "Cristal claro"
+      },
+      {
+        "label": "Fabricación",
+        "value": "Hecho a máquina"
+      },
+      {
+        "label": "Colección",
+        "value": "Beer Classics"
+      },
+      {
+        "label": "Material",
+        "value": "Cristal sin plomo"
+      },
+      {
+        "label": "Recomendado para limpiabotellas",
+        "value": "No"
+      },
+      {
+        "label": "Diámetro máximo",
+        "value": "2.717 in"
+      },
+      {
+        "label": "Altura",
+        "value": "6.102 in"
+      }
+    ],
     "price": 0,
     "stock": 166,
     "featured": false,
@@ -4388,6 +4519,10 @@
     "offer": false,
     "recommendedFor": [],
     "gallery": [
+      {
+        "image": "/assets/images/product71-2.jpg",
+        "alt": "Vista principal"
+      },
       {
         "image": "/assets/images/product71.jpg",
         "alt": "Vista principal"
@@ -4403,11 +4538,40 @@
     "sku": "MEVASP08",
     "collection": "Beer Classics",
     "name": "SPIEGELAU KIT CERVEZA SURTIDO",
-    "presentation": "",
+    "presentation": "Una caja contiene 4 vasos: IPA, Lager, Tall Pilsner y Wheat Beer.",
     "category": "kits",
-    "shortDescription": "",
-    "description": "",
-    "specifications": [],
+    "shortDescription": "El kit SPIEGELAU Cerveza Surtido reúne cuatro vasos especializados para disfrutar diferentes estilos de cerveza: IPA, Lager, Tall Pilsner y Wheat Beer. Elaborados en cristal sin plomo de alta calidad, cada diseño ayuda a realzar los aromas, la espuma y el sabor característicos de cada cerveza.",
+    "description": "El kit SPIEGELAU Cerveza Surtido ha sido creado para quienes desean descubrir cómo la forma del vaso influye en la experiencia de degustación. El conjunto incluye cuatro diseños especializados para cerveza IPA, Lager, Tall Pilsner y Wheat Beer, permitiendo disfrutar cada estilo en un recipiente adaptado a sus características.\n\nCada vaso presenta una forma cuidadosamente desarrollada para favorecer la correcta formación de espuma, concentrar los aromas y dirigir la cerveza hacia el paladar de manera equilibrada. Esta variedad permite apreciar con mayor claridad las diferencias de aroma, textura, carbonatación y sabor entre distintos estilos cerveceros.\n\nFabricados en cristal sin plomo de alta calidad, los vasos destacan por sus paredes finas, su borde delicado y su excelente transparencia. Estas características mejoran la sensación al beber, permiten apreciar el color de la cerveza y ayudan a mantener una temperatura adecuada durante la degustación.\n\nGracias al proceso Platinum Glass de SPIEGELAU, las piezas ofrecen un brillo duradero y una elevada resistencia al uso frecuente. Todos los vasos son aptos para lavavajillas y han sido diseñados para conservar su claridad incluso después de numerosos ciclos de lavado.\n\nEste kit es una excelente opción para degustaciones, reuniones, celebraciones o como regalo para aficionados a la cerveza. Al incluir cuatro formatos diferentes, permite comparar diversos estilos y disfrutar cada cerveza con el vaso más adecuado.\n\nInformación importante:\n\n- Este producto está fabricado en cristal sin plomo, por lo que puede romperse y generar fragmentos afilados en caso de golpes o caídas.",
+    "specifications": [
+      {
+        "label": "Opciones de color",
+        "value": "Cristal claro"
+      },
+      {
+        "label": "Fabricación",
+        "value": "Hecho a máquina"
+      },
+      {
+        "label": "Colección",
+        "value": "Beer Classics"
+      },
+      {
+        "label": "Material",
+        "value": "Cristal sin plomo"
+      },
+      {
+        "label": "Recomendado para limpiabotellas",
+        "value": "No"
+      },
+      {
+        "label": "Vasos incluidos",
+        "value": "IPA, Lager, Tall Pilsner y Wheat Beer"
+      },
+      {
+        "label": "Apto para lavavajillas",
+        "value": "Sí"
+      }
+    ],
     "price": 0,
     "stock": 2,
     "featured": false,
@@ -4415,6 +4579,26 @@
     "offer": false,
     "recommendedFor": [],
     "gallery": [
+      {
+        "image": "/assets/images/product72-2.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/assets/images/product72-3.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/assets/images/product72-4.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/assets/images/product72-5.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/assets/images/product72-1.jpg",
+        "alt": "Vista principal"
+      },
       {
         "image": "/assets/images/product72.jpg",
         "alt": "Vista principal"
@@ -4426,11 +4610,40 @@
     "sku": "MEVASP24",
     "collection": "",
     "name": "SPIEGELAU KIT CRAFT BEER",
-    "presentation": "",
-    "category": "",
-    "shortDescription": "",
-    "description": "",
-    "specifications": [],
+    "presentation": "Una caja contiene 4 vasos: IPA, Stout, Wheat Beer y Barrel Aged.",
+    "category": "kits",
+    "shortDescription": "El kit SPIEGELAU Craft Beer reúne cuatro vasos de cristal de alta calidad, cada uno diseñado específicamente para un estilo de cerveza artesanal: IPA, Stout, Wheat Beer y Barrel Aged. Desarrollado junto con expertos de la industria cervecera, ofrece una experiencia de degustación superior tanto para aficionados como para profesionales.",
+    "description": "El kit SPIEGELAU Craft Beer ha sido desarrollado para satisfacer las exigencias de los amantes de la cerveza artesanal, ofreciendo un vaso específico para cada uno de los estilos más representativos. Diseñado en colaboración con maestros cerveceros y especialistas de la industria, cada vaso ha sido cuidadosamente optimizado para potenciar los aromas, la espuma, la textura y el perfil de sabor de cada cerveza.\n\nEl set incluye un vaso para IPA, un vaso para Stout, un vaso para Wheat Beer y un vaso para Barrel Aged. Cada diseño presenta una forma única que favorece la liberación de aromas, la conservación de la temperatura y una experiencia de degustación más completa, permitiendo apreciar plenamente las características de cada estilo cervecero.\n\nFabricados en cristal de alta calidad mediante la exclusiva tecnología Platinum Glass de SPIEGELAU, los vasos ofrecen una transparencia excepcional, un brillo duradero y una elevada resistencia al rayado. El uso de materias primas de alta pureza garantiza una cristalería ligera, elegante y preparada para un uso continuo.\n\nTodas las piezas son aptas para lavavajillas y han sido diseñadas para conservar su claridad y brillo incluso después de numerosos ciclos de lavado, ofreciendo una excelente combinación entre durabilidad, facilidad de mantenimiento y rendimiento tanto en el hogar como en el uso profesional.\n\nEste completo kit proporciona la cristalería ideal para disfrutar diferentes estilos de cerveza artesanal con el vaso adecuado para cada uno, mejorando la percepción de aromas, sabores y sensaciones en cada degustación.\n\nInformación importante:\n\n- Este producto está fabricado en cristal, por lo que puede romperse y generar fragmentos afilados en caso de golpes o caídas.",
+    "specifications": [
+      {
+        "label": "Opciones de color",
+        "value": "Cristal claro"
+      },
+      {
+        "label": "Fabricación",
+        "value": "Hecho a máquina"
+      },
+      {
+        "label": "Colección principal",
+        "value": "Craft Beer Glasses"
+      },
+      {
+        "label": "Material",
+        "value": "Cristal"
+      },
+      {
+        "label": "Apto para lavavajillas",
+        "value": "Sí"
+      },
+      {
+        "label": "Vasos incluidos",
+        "value": "IPA (540 ml), Stout (600 ml), Wheat Beer (750 ml) y Barrel Aged (480 ml)"
+      },
+      {
+        "label": "Dimensiones",
+        "value": "IPA: 182 × 82 mm · Stout: 180 × 86 mm · Wheat Beer: 170 × 95 mm · Barrel Aged: 175 × 90 mm (Altura × Diámetro)"
+      }
+    ],
     "price": 0,
     "stock": 24,
     "featured": false,
@@ -4443,11 +4656,19 @@
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product73-1.jpg",
+        "image": "/assets/images/product73-2.jpg",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product73-2.jpg",
+        "image": "/assets/images/product73-4.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/assets/images/product73-5.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/assets/images/product73-1.jpg",
         "alt": "Vista principal"
       },
       {
@@ -4476,7 +4697,7 @@
       },
       {
         "label": "Colección",
-        "value": "Classic Bar"
+        "value": "Craft Beer Glasses"
       },
       {
         "label": "Material",
@@ -4488,11 +4709,11 @@
       },
       {
         "label": "Diámetro máximo",
-        "value": "2.717 in"
+        "value": "IPA: 3.228 in · Stout: 3.386 in · Wheat Beer: 3.740 in · Barrel Aged: 3.543 in"
       },
       {
         "label": "Altura",
-        "value": "6.102 in"
+        "value": "IPA: 7.165 in · Stout: 7.087 in · Wheat Beer: 6.693 in · Barrel Aged: 6.890 in"
       }
     ],
     "price": 30,
@@ -4506,15 +4727,19 @@
     ],
     "gallery": [
       {
+        "image": "/assets/images/product74-1.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/assets/images/product74-3.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/assets/images/product74-2.jpg",
+        "alt": "Vista principal"
+      },
+      {
         "image": "/assets/images/product74.webp",
-        "alt": "Vista principal"
-      },
-      {
-        "image": "/assets/images/product74-1.webp",
-        "alt": "Vista principal"
-      },
-      {
-        "image": "/assets/images/product74-2.webp",
         "alt": "Vista principal"
       }
     ]
@@ -4523,30 +4748,101 @@
     "id": 75,
     "sku": "MEVASP36",
     "collection": "",
-    "name": "SPIEGELAU MIXDRINKS",
-    "presentation": "",
-    "category": "",
-    "shortDescription": "",
-    "description": "",
-    "specifications": [],
+    "name": "VASO SPIEGELAU MIXDRINKS",
+    "presentation": "Una caja contiene 4 unidades.",
+    "category": "vasos",
+    "shortDescription": "El vaso SPIEGELAU Mixdrinks de 370 ml está elaborado en cristal de alta calidad y diseñado para servir cócteles, highballs y bebidas mezcladas con una presentación elegante. Su diseño contemporáneo y su borde fino ofrecen una experiencia de degustación superior, siendo ideal tanto para el hogar como para el uso profesional.",
+    "description": "El vaso SPIEGELAU Mixdrinks ha sido diseñado para realzar la presentación y el disfrute de cócteles, highballs y bebidas mezcladas. Su diseño moderno combina elegancia y funcionalidad, convirtiéndolo en una excelente opción para bares, restaurantes y reuniones donde la calidad de la cristalería marca la diferencia.\n\nSu forma estilizada proporciona el espacio ideal para servir bebidas con hielo, mezcladores y guarniciones, permitiendo una presentación equilibrada y atractiva. El borde fino, cortado con láser y cuidadosamente pulido, ofrece una sensación agradable al beber y mejora la percepción del sabor en cada sorbo.\n\nFabricado en cristal de alta calidad en Alemania, ofrece una transparencia excepcional, un brillo duradero y una elevada resistencia a las roturas. Su acabado refinado realza el color y la presentación de cada bebida, manteniendo la elegancia característica de la cristalería SPIEGELAU.\n\nEste vaso es apto para lavavajillas y ha sido diseñado para conservar su claridad y brillo incluso después de numerosos ciclos de lavado, proporcionando una excelente combinación entre durabilidad, facilidad de mantenimiento y rendimiento tanto en el hogar como en el uso profesional.\n\nSu capacidad de 370 ml proporciona el volumen ideal para servir cócteles clásicos, highballs, refrescos y otras bebidas mezcladas con una presentación elegante y equilibrada.\n\nInformación importante:\n\n- Este producto está fabricado en cristal, por lo que puede romperse y generar fragmentos afilados en caso de golpes o caídas.",
+    "specifications": [
+      {
+        "label": "Opciones de color",
+        "value": "Cristal claro"
+      },
+      {
+        "label": "Fabricación",
+        "value": "Hecho a máquina"
+      },
+      {
+        "label": "Colección principal",
+        "value": "Special Glasses"
+      },
+      {
+        "label": "Material",
+        "value": "Cristal"
+      },
+      {
+        "label": "Limpiador de botellas recomendado",
+        "value": "No"
+      },
+      {
+        "label": "Diámetro máximo",
+        "value": "3.504 in"
+      },
+      {
+        "label": "Altura exterior",
+        "value": "7.008 in"
+      }
+    ],
     "price": 0,
     "stock": 53,
     "featured": false,
     "new": false,
     "offer": false,
     "recommendedFor": [],
-    "gallery": []
+    "gallery": [
+      {
+        "image": "/assets/images/product75.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/assets/images/product75-1.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/assets/images/product75-2.jpg",
+        "alt": "Vista principal"
+      }
+    ]
   },
   {
     "id": 76,
     "sku": "MEVASP09",
     "collection": "",
-    "name": "SPIEGELAU PARA CERVEZA IPA",
+    "name": "VASO SPIEGELAU PARA CERVEZA IPA",
     "presentation": "Una caja contiene 4 unidades.",
-    "category": "",
-    "shortDescription": "",
-    "description": "",
-    "specifications": [],
+    "category": "vasos",
+    "shortDescription": "El vaso SPIEGELAU para Cerveza IPA de 540 ml está elaborado en cristal de alta calidad y diseñado específicamente para potenciar los aromas, la espuma y el sabor de las cervezas IPA y otras cervezas artesanales. Su diseño moderno ofrece una experiencia de degustación superior tanto para el hogar como para el uso profesional.",
+    "description": "El vaso SPIEGELAU para Cerveza IPA forma parte de la reconocida colección Craft Beer Glasses, desarrollada en colaboración con maestros cerveceros y especialistas de la industria para ofrecer una experiencia de degustación excepcional. Su diseño ha sido cuidadosamente optimizado para resaltar el carácter aromático y el perfil de sabor de las cervezas India Pale Ale y otros estilos artesanales.\n\nSu forma estilizada favorece el desarrollo de la espuma y permite concentrar los aromas del lúpulo, mejorando la percepción de las notas frutales, cítricas y florales características de este estilo de cerveza. El diseño proporciona además un agarre cómodo y una presentación elegante en cualquier ocasión.\n\nFabricado en cristal de alta calidad, ofrece una transparencia excepcional, un brillo duradero y una elevada resistencia al rayado. El uso de materias primas de alta pureza garantiza una pieza ligera, elegante y preparada para un uso continuo, conservando las cualidades visuales de la cerveza en cada servicio.\n\nEste vaso es apto para lavavajillas y ha sido diseñado para mantener su brillo y transparencia incluso después de numerosos ciclos de lavado, ofreciendo una excelente combinación entre durabilidad, facilidad de mantenimiento y rendimiento tanto para el uso doméstico como profesional.\n\nSu capacidad de 540 ml proporciona el volumen ideal para servir cervezas IPA y otras variedades artesanales, permitiendo una correcta formación de espuma y una óptima liberación de aromas durante la degustación.\n\nInformación importante:\n\n- Este producto está fabricado en cristal, por lo que puede romperse y generar fragmentos afilados en caso de golpes o caídas.",
+    "specifications": [
+      {
+        "label": "Opciones de color",
+        "value": "Cristal claro"
+      },
+      {
+        "label": "Fabricación",
+        "value": "Hecho a máquina"
+      },
+      {
+        "label": "Colección principal",
+        "value": "Craft Beer Glasses"
+      },
+      {
+        "label": "Material",
+        "value": "Cristal"
+      },
+      {
+        "label": "Limpiador de botellas recomendado",
+        "value": "No"
+      },
+      {
+        "label": "Diámetro máximo",
+        "value": "3.228 in"
+      },
+      {
+        "label": "Altura exterior",
+        "value": "7.323 in"
+      }
+    ],
     "price": 0,
     "stock": 20,
     "featured": false,
@@ -4554,6 +4850,14 @@
     "offer": false,
     "recommendedFor": [],
     "gallery": [
+      {
+        "image": "/assets/images/product76-2.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/assets/images/product76-1.jpg",
+        "alt": "Vista principal"
+      },
       {
         "image": "/assets/images/product76.jpg",
         "alt": "Vista principal"
@@ -4566,10 +4870,39 @@
     "collection": "",
     "name": "SPIEGELAU PARA CERVEZA STOUT",
     "presentation": "Una caja contiene 4 unidades.",
-    "category": "",
-    "shortDescription": "",
-    "description": "",
-    "specifications": [],
+    "category": "vasos",
+    "shortDescription": "La copa SPIEGELAU para Cerveza Stout de 600 ml está elaborada en cristal de alta calidad y diseñada específicamente para realzar el aroma, la textura y el sabor de las cervezas Stout. Su innovador diseño favorece la aireación y ofrece una experiencia de degustación excepcional tanto para el hogar como para el uso profesional.",
+    "description": "La copa SPIEGELAU para Cerveza Stout forma parte de la reconocida colección Craft Beer Glasses, desarrollada en colaboración con maestros cerveceros y especialistas de la industria para ofrecer una experiencia de degustación superior. Su diseño ha sido cuidadosamente optimizado para resaltar las características de las cervezas Stout y otros estilos intensos y complejos.\n\nSu cáliz de paredes finas incorpora un innovador diseño que favorece la aireación de la cerveza durante el servicio, permitiendo una mejor liberación de los aromas y una espuma más estable. La amplia apertura dirige la cerveza hacia el centro del paladar, resaltando el equilibrio entre las notas tostadas, el cuerpo y la suavidad características de este estilo.\n\nFabricada en cristal de alta calidad mediante la exclusiva tecnología Platinum Glass de SPIEGELAU, ofrece una transparencia excepcional, un brillo duradero y una elevada resistencia al rayado. El uso de materias primas de alta pureza garantiza una pieza ligera, elegante y preparada para un uso continuo.\n\nEsta copa es apta para lavavajillas y ha sido diseñada para conservar su claridad y brillo incluso después de numerosos ciclos de lavado, proporcionando una excelente combinación entre elegancia, durabilidad y facilidad de mantenimiento.\n\nSu capacidad de 600 ml ofrece el volumen ideal para servir cervezas Stout y otras cervezas artesanales de gran cuerpo, favoreciendo el desarrollo de sus aromas y una presentación impecable en cada degustación.\n\nInformación importante:\n\n- Este producto está fabricado en cristal, por lo que puede romperse y generar fragmentos afilados en caso de golpes o caídas.",
+    "specifications": [
+      {
+        "label": "Opciones de color",
+        "value": "Cristal claro"
+      },
+      {
+        "label": "Fabricación",
+        "value": "Hecho a máquina"
+      },
+      {
+        "label": "Colección principal",
+        "value": "Craft Beer Glasses"
+      },
+      {
+        "label": "Material",
+        "value": "Cristal"
+      },
+      {
+        "label": "Limpiador de botellas recomendado",
+        "value": "No"
+      },
+      {
+        "label": "Diámetro máximo",
+        "value": "3.382 in"
+      },
+      {
+        "label": "Altura exterior",
+        "value": "7.091 in"
+      }
+    ],
     "price": 0,
     "stock": 1,
     "featured": false,
@@ -4577,6 +4910,14 @@
     "offer": false,
     "recommendedFor": [],
     "gallery": [
+      {
+        "image": "/assets/images/product77-2.webp",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/assets/images/product77-1.jpg",
+        "alt": "Vista principal"
+      },
       {
         "image": "/assets/images/product77.jpg",
         "alt": "Vista principal"
@@ -6101,7 +6442,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product102.webp",
+        "image": "/assets/images/product102-3.jpg",
         "alt": "Vista principal"
       },
       {
@@ -6110,6 +6451,10 @@
       },
       {
         "image": "/assets/images/product102-1.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/assets/images/product102.webp",
         "alt": "Vista principal"
       }
     ]
