@@ -1,0 +1,111 @@
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: #080808;
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity 0.45s ease,
+    visibility 0.45s ease;
+}
+
+body.is-page-loading {
+  overflow: hidden;
+}
+
+.loading-screen .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.loading-screen.is-finished {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loading-screen__logo {
+  position: relative;
+  width: min(72vw, 390px);
+  overflow: hidden;
+}
+
+.loading-screen__logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.loading-screen__logo-base {
+  filter: brightness(0.42);
+  opacity: 0.95;
+}
+
+.loading-screen__logo-light {
+  position: absolute;
+  inset: 0;
+  display: block;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent 25%,
+    #000 50%,
+    transparent 75%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent 25%,
+    #000 50%,
+    transparent 75%,
+    transparent 100%
+  );
+  -webkit-mask-position: -180% 0;
+  mask-position: -180% 0;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 55% 100%;
+  mask-size: 55% 100%;
+  animation: loading-logo-light 1.55s ease-in-out infinite;
+}
+
+.loading-screen__logo-light img {
+  filter: brightness(1.25);
+  opacity: 1;
+}
+
+@keyframes loading-logo-light {
+  from {
+    -webkit-mask-position: -180% 0;
+    mask-position: -180% 0;
+  }
+
+  to {
+    -webkit-mask-position: 280% 0;
+    mask-position: 280% 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .loading-screen__logo {
+    width: min(78vw, 310px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loading-screen__logo-light {
+    animation: none;
+    opacity: 0;
+  }
+}

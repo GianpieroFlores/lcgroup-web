@@ -2,6 +2,7 @@
   {
   "id": 1,
   "sku": "MECOSP53",
+  "channel": "ON TRADE",
   "collection": "STYLE",
   "name": "COPA VINO BLANCO STYLE",
   "presentation": "Caja con 12 unidades",
@@ -60,6 +61,7 @@
   {
     "id": 2,
     "sku": "MECOSP71",
+    "channel": "ON TRADE",
     "collection": "DEFINITION",
     "name": "COPA BORDEAUX DEFINITION",
     "presentation": "Caja con 6 unidades",
@@ -126,6 +128,7 @@
   {
     "id": 3,
     "sku": "MECOSP28",
+    "channel": "AGOTADO",
     "collection": "Festival",
     "name": "SPIEGELAU BORDEAUX FESTIVAL (AGOTADO)",
     "presentation": "Caja con 12 unidades",
@@ -168,8 +171,7 @@
     "new": false,
     "offer": false,
     "recommendedFor": [
-      "vino-tinto",
-      "bordeaux"
+      "vino-tinto"
     ],
     "gallery": [
       {
@@ -185,6 +187,7 @@
   {
     "id": 4,
     "sku": "MECOSP31",
+    "channel": "AGOTADO",
     "collection": "Grand Glass",
     "name": "SPIEGELAU BORDEAUX JUMBO POKIL (AGOTADO)",
     "presentation": "1 unidad",
@@ -247,6 +250,7 @@
   {
     "id": 5,
     "sku": "MECOSP39",
+    "channel": "ON TRADE",
     "collection": "SALUTE",
     "name": "COPA BORDEAUX SALUTE",
     "presentation": "Caja con 12 unidades",
@@ -313,6 +317,7 @@
   {
     "id": 6,
     "sku": "MECOSP72",
+    "channel": "ON TRADE",
     "collection": "DEFINITION",
     "name": "COPA BURGUNDY DEFINITION",
     "presentation": "Caja con 6 unidades",
@@ -355,8 +360,7 @@
     "new": false,
     "offer": false,
     "recommendedFor": [
-      "vino-tinto",
-      "borgoña"
+      "vino-tinto"
     ],
     "gallery": [
       {
@@ -380,6 +384,7 @@
   {
     "id": 7,
     "sku": "MECOSP38",
+    "channel": "ON TRADE",
     "collection": "SALUTE",
     "name": "COPA BURGUNDY SALUTE",
     "presentation": "Caja con 12 unidades",
@@ -446,6 +451,7 @@
   {
     "id": 8,
     "sku": "MECOSP41",
+    "channel": "ON TRADE",
     "collection": "STYLE",
     "name": "COPA BURGUNDY STYLE",
     "presentation": "Caja con 12 unidades",
@@ -512,6 +518,7 @@
   {
     "id": 9,
     "sku": "MECOSP55",
+    "channel": "ON TRADE",
     "collection": "FESTIVAL",
     "name": "COPA CATA FESTIVAL",
     "presentation": "Caja con 12 unidades",
@@ -566,6 +573,7 @@
   {
     "id": 10,
     "sku": "MECOST11",
+    "channel": "AGOTADO",
     "collection": "",
     "name": "SPIEGELAU CATA FESTIVAL CON ESTUCHE (AGOTADO)",
     "presentation": "",
@@ -578,12 +586,15 @@
     "featured": false,
     "new": false,
     "offer": true,
-    "recommendedFor": [],
+    "recommendedFor": [
+      "vino-blanco"
+    ],
     "gallery": []
   },
   {
     "id": 11,
     "sku": "MECOSP10",
+    "channel": "ON TRADE",
     "collection": "WINELOVERS",
     "name": "COPA CHAMPAGNE WINELOVERS",
     "presentation": "Caja con 12 unidades",
@@ -626,9 +637,7 @@
     "new": false,
     "offer": false,
     "recommendedFor": [
-      "champagne",
-      "prosecco",
-      "vino-espumoso"
+      "espumantes"
     ],
     "gallery": [
       {
@@ -652,6 +661,7 @@
   {
     "id": 12,
     "sku": "MECOSP36",
+    "channel": "ON TRADE",
     "collection": "VINO GRANDE",
     "name": "COPA COCKTAIL VINO GRANDE",
     "presentation": "Caja con 12 unidades",
@@ -714,6 +724,7 @@
   {
     "id": 13,
     "sku": "MECOSP68",
+    "channel": "ON TRADE",
     "collection": "APERO",
     "name": "COPA SPRITZ APERO",
     "presentation": "Caja con 12 unidades",
@@ -780,6 +791,7 @@
   {
     "id": 14,
     "sku": "MECOSP69",
+    "channel": "ON TRADE",
     "collection": "APERO",
     "name": "COPA UNIVERSAL APERO",
     "presentation": "Caja con 12 unidades",
@@ -847,6 +859,7 @@
   {
     "id": 15,
     "sku": "MECOSP37",
+    "channel": "ON TRADE",
     "collection": "SOIRE",
     "name": "COPA COÑAC SOIRE",
     "presentation": "Caja con 12 unidades",
@@ -889,8 +902,6 @@
     "new": false,
     "offer": false,
     "recommendedFor": [
-      "coñac",
-      "brandy",
       "destilados"
     ],
     "gallery": [
@@ -907,6 +918,7 @@
   {
     "id": 16,
     "sku": "MECOSP44",
+    "channel": "ON TRADE",
     "collection": "VINO GRANDE",
     "name": "COPA DIGESTIVO VINO GRANDE",
     "presentation": "Caja con 12 unidades",
@@ -949,7 +961,7 @@
     "new": false,
     "offer": false,
     "recommendedFor": [
-      "digestivos"
+      "destilados"
     ],
     "gallery": [
       {
@@ -969,6 +981,7 @@
   {
     "id": 17,
     "sku": "MECOSP43",
+    "channel": "ON TRADE",
     "collection": "STYLE",
     "name": "COPA CHAMPAGNE STYLE",
     "presentation": "Caja con 12 unidades",
@@ -1011,7 +1024,7 @@
     "new": true,
     "offer": false,
     "recommendedFor": [
-      "espumosos"
+      "espumantes"
     ],
     "gallery": [
       {
@@ -1035,6 +1048,7 @@
   {
     "id": 18,
     "sku": "MECOSP13",
+    "channel": "ON TRADE",
     "collection": "COCKTAIL",
     "name": "COPA GIN \u0026 TÓNIC",
     "presentation": "Caja con 12 unidades",
@@ -1077,7 +1091,6 @@
     "new": false,
     "offer": true,
     "recommendedFor": [
-      "gin",
       "cocteles"
     ],
     "gallery": [
@@ -1102,6 +1115,7 @@
   {
     "id": 19,
     "sku": "MECOSP30",
+    "channel": "AGOTADO",
     "collection": "Grand Glass",
     "name": "COPA SPIEGELAU JUMBO KELCH GLATI (AGOTADO)",
     "presentation": "1 unidad",
@@ -1168,6 +1182,7 @@
   {
     "id": 20,
     "sku": "MECOSP19",
+    "channel": "ON TRADE",
     "collection": "PERFECT SERVE",
     "name": "COPA COUPETTE PERFECT SERVE",
     "presentation": "Caja con 12 unidades",
@@ -1210,8 +1225,8 @@
     "new": true,
     "offer": false,
     "recommendedFor": [
-      "cocteles",
-      "espumosos"
+      "espumantes",
+      "cocteles"
     ],
     "gallery": [
       {
@@ -1235,6 +1250,7 @@
   {
     "id": 21,
     "sku": "MECOSP20",
+    "channel": "ON TRADE",
     "collection": "PERFECT SERVE",
     "name": "COPA COÑAC PERFECT SERVE",
     "presentation": "Caja con 12 unidades",
@@ -1277,10 +1293,7 @@
     "new": false,
     "offer": false,
     "recommendedFor": [
-      "coñac",
-      "brandy",
-      "ron",
-      "whisky"
+      "destilados"
     ],
     "gallery": [
       {
@@ -1296,6 +1309,7 @@
   {
     "id": 22,
     "sku": "MECOSP70",
+    "channel": "ON TRADE",
     "collection": "DEFINITION",
     "name": "COPA UNIVERSAL DEFINITION",
     "presentation": "Caja con 6 unidades",
@@ -1363,6 +1377,7 @@
   {
     "id": 23,
     "sku": "MECOSP73",
+    "channel": "ON TRADE",
     "collection": "FESTINO",
     "name": "COPA UNIVERSAL FESTINO",
     "presentation": "Caja con 6 unidades",
@@ -1426,6 +1441,7 @@
   {
     "id": 24,
     "sku": "MECOSP09",
+    "channel": "ON TRADE",
     "collection": "WINELOVERS",
     "name": "COPA VINO BLANCO WINELOVERS",
     "presentation": "Caja con 12 unidades",
@@ -1468,10 +1484,7 @@
     "new": false,
     "offer": false,
     "recommendedFor": [
-      "vino-blanco",
-      "sauvignon-blanc",
-      "chardonnay",
-      "pinot-grigio"
+      "vino-blanco"
     ],
     "gallery": [
       {
@@ -1495,6 +1508,7 @@
   {
     "id": 25,
     "sku": "MECOSP07",
+    "channel": "ON TRADE",
     "collection": "WINELOVERS",
     "name": "COPA BORDEAUX WINELOVERS",
     "presentation": "Caja con 12 unidades",
@@ -1561,6 +1575,7 @@
   {
     "id": 26,
     "sku": "MECOSP40",
+    "channel": "ON TRADE",
     "collection": "SALUTE",
     "name": "COPA VINO TINTO SALUTE",
     "presentation": "Caja con 12 unidades",
@@ -1627,6 +1642,7 @@
   {
     "id": 27,
     "sku": "MECOSP42",
+    "channel": "ON TRADE",
     "collection": "STYLE",
     "name": "COPA VINO TINTO STYLE",
     "presentation": "Caja con 12 unidades",
@@ -1690,6 +1706,7 @@
   {
     "id": 28,
     "sku": "MECOSP08",
+    "channel": "ON TRADE",
     "collection": "WINELOVERS",
     "name": "COPA VINO TINTO WINELOVERS",
     "presentation": "Caja con 12 unidades",
@@ -1753,6 +1770,7 @@
   {
     "id": 29,
     "sku": "MECOST06",
+    "channel": "AGOTADO",
     "collection": "",
     "name": "SPIEGELAU VINO TINTO/AGUA (WINELOVERS) CON ESTUCHE (AGOTADO)",
     "presentation": "1 unidad",
@@ -1765,12 +1783,16 @@
     "featured": false,
     "new": false,
     "offer": false,
-    "recommendedFor": [],
+    "recommendedFor": [
+      "vino-tinto",
+      "agua"
+    ],
     "gallery": []
   },
   {
     "id": 30,
     "sku": "MEDESP09",
+    "channel": "RETAIL",
     "collection": "CASUAL",
     "name": "DECANTADOR CASUAL",
     "presentation": "1 unidad",
@@ -1814,8 +1836,7 @@
     "offer": false,
     "recommendedFor": [
       "vino-tinto",
-      "vino-blanco",
-      "decantación"
+      "vino-blanco"
     ],
     "gallery": [
       {
@@ -1839,6 +1860,7 @@
   {
     "id": 31,
     "sku": "MEJASP01",
+    "channel": "RETAIL",
     "collection": "LOOP",
     "name": "DECANTADOR LOOP",
     "presentation": "1 unidad",
@@ -1882,8 +1904,7 @@
     "offer": false,
     "recommendedFor": [
       "vino-tinto",
-      "vino-blanco",
-      "decantación"
+      "vino-blanco"
     ],
     "gallery": [
       {
@@ -1903,6 +1924,7 @@
   {
     "id": 32,
     "sku": "MEJASP02",
+    "channel": "RETAIL",
     "collection": "RED \u0026 WHITE",
     "name": "DECANTADOR RED \u0026 WHITE",
     "presentation": "1 unidad",
@@ -1946,8 +1968,7 @@
     "offer": false,
     "recommendedFor": [
       "vino-tinto",
-      "vino-blanco",
-      "decantación"
+      "vino-blanco"
     ],
     "gallery": [
       {
@@ -1967,6 +1988,7 @@
   {
     "id": 33,
     "sku": "MEDESP25",
+    "channel": "RETAIL",
     "collection": "DECANTER",
     "name": "DECANTADOR WILLSB. ANNIVERSARY",
     "presentation": "1 unidad",
@@ -2010,8 +2032,7 @@
     "offer": false,
     "recommendedFor": [
       "vino-tinto",
-      "vino-blanco",
-      "decantación"
+      "vino-blanco"
     ],
     "gallery": [
       {
@@ -2031,6 +2052,7 @@
   {
     "id": 34,
     "sku": "MEDESP04",
+    "channel": "AGOTADO",
     "collection": "DECANTER",
     "name": "DECANTADOR SPIEGELAU (WILLSB. ANNIVERSARY) (AGOTADO)",
     "presentation": "Caja con 4 unidades",
@@ -2043,12 +2065,16 @@
     "featured": false,
     "new": false,
     "offer": false,
-    "recommendedFor": [],
+    "recommendedFor": [
+      "vino-tinto",
+      "vino-blanco"
+    ],
     "gallery": []
   },
   {
     "id": 35,
     "sku": "MEDESP26",
+    "channel": "RETAIL",
     "collection": "DECANTER",
     "name": "DECANTADOR STYLE",
     "presentation": "Caja con 4 unidades",
@@ -2120,6 +2146,7 @@
   {
     "id": 36,
     "sku": "MEDESP03",
+    "channel": "RETAIL",
     "collection": "DECANTER",
     "name": "DECANTADOR PISA",
     "presentation": "1 unidad",
@@ -2190,6 +2217,7 @@
   {
     "id": 37,
     "sku": "MECOSP58",
+    "channel": "RETAIL",
     "collection": "AUTHENTIS",
     "name": "SET X 12 COPAS AUTHENTIS",
     "presentation": "Una caja contiene un set de 12 piezas: 4 copas, 4 copas y 4 vasos tumbler.",
@@ -2233,9 +2261,7 @@
     "offer": false,
     "recommendedFor": [
       "vino-tinto",
-      "vino-blanco",
-      "agua",
-      "cocteles"
+      "vino-blanco"
     ],
     "gallery": [
       {
@@ -2263,6 +2289,7 @@
   {
     "id": 38,
     "sku": "MECOSP61",
+    "channel": "RETAIL",
     "collection": "STYLE",
     "name": "SET X 12 COPAS STYLE",
     "presentation": "Una caja contiene un set de 12 piezas: 6 copas para vino tinto y 6 copas para vino blanco.",
@@ -2330,6 +2357,7 @@
   {
     "id": 39,
     "sku": "MEVASP19",
+    "channel": "RETAIL",
     "collection": "PERFECT SERVE",
     "name": "SET X 12 KIT BARMAN",
     "presentation": "Una caja contiene un set de 12 piezas: 2 copas Coupette, 2 copas para cóctel, 2 vasos universales para cóctel, 2 vasos long drink, 1 vaso mezclador, 1 colador, 1 cuchara de bar y 1 medidor (jigger).",
@@ -2372,10 +2400,7 @@
     "new": false,
     "offer": false,
     "recommendedFor": [
-      "cocteles",
-      "mixología",
-      "bar",
-      "bartender"
+      "cocteles"
     ],
     "gallery": [
       {
@@ -2423,6 +2448,7 @@
   {
     "id": 40,
     "sku": "MEVASP43",
+    "channel": "RETAIL",
     "collection": "ELEGANCE",
     "name": "SET X 12 VASOS ELEGANCE",
     "presentation": "Una caja contiene un set de 12 piezas: 6 vasos tumbler (345 ml) y 6 vasos long drink (445 ml).",
@@ -2465,11 +2491,9 @@
     "new": false,
     "offer": false,
     "recommendedFor": [
-      "agua",
-      "whisky",
       "cocteles",
-      "refrescos",
-      "jugos"
+      "destilados",
+      "agua"
     ],
     "gallery": [
       {
@@ -2493,6 +2517,7 @@
   {
     "id": 41,
     "sku": "MECOSP57",
+    "channel": "RETAIL",
     "collection": "STYLE",
     "name": "SET X 18 COPAS STYLE",
     "presentation": "Una caja contiene un set de 18 piezas: 6 copas para vino tinto, 6 copas para vino blanco y 6 copas para champagne.",
@@ -2537,7 +2562,7 @@
     "recommendedFor": [
       "vino-tinto",
       "vino-blanco",
-      "champagne"
+      "espumantes"
     ],
     "gallery": [
       {
@@ -2561,6 +2586,7 @@
   {
     "id": 42,
     "sku": "MECOSP60",
+    "channel": "RETAIL",
     "collection": "COCKTAIL",
     "name": "SET X 2 COPAS APEROL SPRITZ",
     "presentation": "Caja con 2 unidades",
@@ -2603,9 +2629,8 @@
     "new": false,
     "offer": false,
     "recommendedFor": [
-      "cocteles",
-      "aperol-spritz",
-      "vino-rosado"
+      "vino-rosado",
+      "cocteles"
     ],
     "gallery": [
       {
@@ -2625,6 +2650,7 @@
   {
     "id": 43,
     "sku": "MECOSP67",
+    "channel": "RETAIL",
     "collection": "DEFINITION",
     "name": "SET X 2 COPA BORDEAUX DEFENITION",
     "presentation": "Caja con 2 unidades",
@@ -2691,6 +2717,7 @@
   {
     "id": 44,
     "sku": "MECOSP59",
+    "channel": "RETAIL",
     "collection": "COCKTAIL",
     "name": "SET X 2 COPAS GIN \u0026 TONIC",
     "presentation": "Caja con 2 unidades",
@@ -2733,7 +2760,6 @@
     "new": false,
     "offer": false,
     "recommendedFor": [
-      "gin-tonic",
       "cocteles"
     ],
     "gallery": [
@@ -2758,6 +2784,7 @@
   {
     "id": 45,
     "sku": "MEVASP50",
+    "channel": "RETAIL",
     "collection": "BEER CLASSIC",
     "name": "SET X 2 VASO HEFEWEIZEN BEER",
     "presentation": "Caja con 2 unidades",
@@ -2824,6 +2851,7 @@
   {
     "id": 46,
     "sku": "MEVASP51",
+    "channel": "RETAIL",
     "collection": "CRAFT BEER",
     "name": "SET X 2 VASO IPA BEER",
     "presentation": "Caja con 2 unidades",
@@ -2890,6 +2918,7 @@
   {
     "id": 47,
     "sku": "MEVASP52",
+    "channel": "RETAIL",
     "collection": "BEER CLASSIC",
     "name": "SET X 2 VASO PILSNER BEER CLASSIC",
     "presentation": "Caja con 2 unidades",
@@ -2956,6 +2985,7 @@
   {
     "id": 48,
     "sku": "MEDESP27",
+    "channel": "RETAIL",
     "collection": "STYLE",
     "name": "SET X 3 DECANT + 2 COPAS STYLE",
     "presentation": "Una caja contiene un set de 3 piezas: 1 decantador y 2 copas para vino.",
@@ -2999,8 +3029,7 @@
     "offer": false,
     "recommendedFor": [
       "vino-tinto",
-      "vino-blanco",
-      "decantación"
+      "vino-blanco"
     ],
     "gallery": [
       {
@@ -3028,6 +3057,7 @@
   {
     "id": 49,
     "sku": "MEVASP38",
+    "channel": "RETAIL",
     "collection": "BEER CLASSIC",
     "name": "SET X 4 VASO LAGER",
     "presentation": "Caja con 4 unidades",
@@ -3070,9 +3100,7 @@
     "new": false,
     "offer": false,
     "recommendedFor": [
-      "cerveza",
-      "lager",
-      "pilsner"
+      "cerveza"
     ],
     "gallery": [
       {
@@ -3096,6 +3124,7 @@
   {
     "id": 50,
     "sku": "MECOSP21",
+    "channel": "RETAIL",
     "collection": "WINELOVERS",
     "name": "SET X 4 COPA BORDEAUX WINELOVERS",
     "presentation": "Caja con 4 unidades",
@@ -3162,6 +3191,7 @@
   {
     "id": 51,
     "sku": "MEVASP12",
+    "channel": "RETAIL",
     "collection": "COCKTAIL",
     "name": "SET X 4 COPA SUMMER DRINKS",
     "presentation": "Caja con 4 unidades",
@@ -3204,7 +3234,6 @@
     "new": false,
     "offer": false,
     "recommendedFor": [
-      "gin",
       "cocteles"
     ],
     "gallery": [
@@ -3229,6 +3258,7 @@
   {
     "id": 52,
     "sku": "MECOSP46",
+    "channel": "RETAIL",
     "collection": "STYLE",
     "name": "SET X 4 COPA CHAMPAGNE STYLE",
     "presentation": "Caja con 4 unidades",
@@ -3271,7 +3301,7 @@
     "new": false,
     "offer": true,
     "recommendedFor": [
-      "espumosos"
+      "espumantes"
     ],
     "gallery": [
        {
@@ -3295,6 +3325,7 @@
 {
   "id": 53,
   "sku": "MECOSP05",
+  "channel": "RETAIL",
   "collection": "SALUTE",
   "name": "SET X 4 COPA VINO BCO SALUTE",
   "presentation": "Caja con 4 unidades",
@@ -3361,6 +3392,7 @@
   {
     "id": 54,
     "sku": "MECOSP04",
+    "channel": "RETAIL",
     "collection": "SALUTE",
     "name": "SET X 4 COPA CHAMPAGNE SALUTE",
     "presentation": "Caja con 4 unidades",
@@ -3427,6 +3459,7 @@
   {
     "id": 55,
     "sku": "MECOSP45",
+    "channel": "RETAIL",
     "collection": "STYLE",
     "name": "SET X 4 COPA VINO BLANCO STYLE",
     "presentation": "Caja con 4 unidades",
@@ -3494,6 +3527,7 @@
   {
     "id": 56,
     "sku": "MECOSP22",
+    "channel": "RETAIL",
     "collection": "WINELOVERS",
     "name": "SET X 4 COPA VINO BLANCO WINELOVERS",
     "presentation": "Caja con 4 unidades",
@@ -3560,6 +3594,7 @@
   {
     "id": 57,
     "sku": "MECOSP47",
+    "channel": "RETAIL",
     "collection": "SALUTE",
     "name": "SET X 4 COPA BURGUNDY SALUTE",
     "presentation": "Caja con 4 unidades",
@@ -3626,6 +3661,7 @@
   {
     "id": 58,
     "sku": "MECOSP48",
+    "channel": "RETAIL",
     "collection": "STYLE",
     "name": "SET X 4 COPA BURGUNDY STYLE",
     "presentation": "Caja con 4 unidades",
@@ -3693,6 +3729,7 @@
   {
     "id": 59,
     "sku": "MECOSP27",
+    "channel": "RETAIL",
     "collection": "WINELOVERS",
     "name": "SET X 4 COPA CHAMPAGNE WINELOVERS",
     "presentation": "Caja con 4 unidades",
@@ -3735,7 +3772,7 @@
     "new": false,
     "offer": true,
     "recommendedFor": [
-      "espumosos"
+      "espumantes"
     ],
     "gallery": [
             {
@@ -3759,6 +3796,7 @@
   {
     "id": 60,
     "sku": "MECOSP14",
+    "channel": "RETAIL",
     "collection": "GIFT SETS",
     "name": "SET X 4 COPA DIGESTIVE / PISCO",
     "presentation": "Caja con 4 unidades",
@@ -3801,8 +3839,7 @@
     "new": false,
     "offer": true,
     "recommendedFor": [
-      "digestivos",
-      "pisco"
+      "destilados"
     ],
     "gallery": [
             {
@@ -3826,6 +3863,7 @@
   {
   "id": 61,
   "sku": "MECOSP06",
+  "channel": "RETAIL",
   "collection": "SALUTE",
   "name": "SET X 4 COPA CHAMPAGNE SALUTE",
   "presentation": "Caja con 4 unidades",
@@ -3868,9 +3906,8 @@
   "new": false,
   "offer": false,
   "recommendedFor": [
-    "champagne",
-    "espumantes"
-  ],
+      "espumantes"
+    ],
   "gallery": [
     {
       "image": "/assets/images/product61.jpg",
@@ -3893,6 +3930,7 @@
   {
     "id": 62,
     "sku": "MECOSP12",
+    "channel": "RETAIL",
     "collection": "GIFT SETS",
     "name": "SET X 4 COPA GIN \u0026 TÓNIC",
     "presentation": "Caja con 4 unidades",
@@ -3935,7 +3973,6 @@
     "new": false,
     "offer": true,
     "recommendedFor": [
-      "gin",
       "cocteles"
     ],
     "gallery": [
@@ -3960,6 +3997,7 @@
   {
     "id": 63,
     "sku": "MECOSP54",
+    "channel": "RETAIL",
     "collection": "GIFT SETS",
     "name": "SET X 4 COPA GIN \u0026 TÓNIC SIN TALLO",
     "presentation": "Caja con 4 unidades",
@@ -4002,7 +4040,6 @@
     "new": false,
     "offer": true,
     "recommendedFor": [
-      "gin",
       "cocteles"
     ],
     "gallery": [
@@ -4027,6 +4064,7 @@
   {
     "id": 64,
     "sku": "MECOSP33",
+    "channel": "RETAIL",
     "collection": "SALUTE",
     "name": "SET X 4 COPA BORDEAUX SALUTE",
     "presentation": "Caja con 4 unidades",
@@ -4093,6 +4131,7 @@
   {
     "id": 65,
     "sku": "MECOSP15",
+    "channel": "RETAIL",
     "collection": "PERFECT SERVE",
     "name": "SET X 4 COPA COCKTAIL PERFECT",
     "presentation": "Caja con 4 unidades",
@@ -4159,6 +4198,7 @@
   {
     "id": 66,
     "sku": "MECOSP17",
+    "channel": "AGOTADO",
     "collection": "PERFECT SERVE",
     "name": "SPIEGELAU PERFECT COUPETTE MARGARITA (AGOTADO)",
     "presentation": "Caja con 4 unidades",
@@ -4201,8 +4241,8 @@
     "new": false,
     "offer": true,
     "recommendedFor": [
-      "cocteles",
-      "espumosos"
+      "espumantes",
+      "cocteles"
     ],
     "gallery": [
       {
@@ -4226,6 +4266,7 @@
   {
     "id": 67,
     "sku": "MECOSP16",
+    "channel": "AGOTADO",
     "collection": "",
     "name": " SPIEGELAU PERFECT NOSING COÑAC (AGOTADO)",
     "presentation": "Caja con 4 unidades",
@@ -4267,7 +4308,9 @@
     "featured": false,
     "new": false,
     "offer": false,
-    "recommendedFor": [],
+    "recommendedFor": [
+      "destilados"
+    ],
     "gallery": [
       {
         "image": "/assets/images/product67.jpg",
@@ -4286,6 +4329,7 @@
   {
     "id": 68,
     "sku": "MECOSP56",
+    "channel": "RETAIL",
     "collection": "SPECIAL GLASSES",
     "name": "SET X 4 COPA PROSECCO",
     "presentation": "Caja con 4 unidades",
@@ -4328,7 +4372,7 @@
     "new": false,
     "offer": true,
     "recommendedFor": [
-      "espumosos"
+      "espumantes"
     ],
     "gallery": [
       {
@@ -4352,6 +4396,7 @@
   {
     "id": 69,
     "sku": "MECOSP24",
+    "channel": "RETAIL",
     "collection": "STYLE",
     "name": "SET X 4 COPAS TINTO STYLE",
     "presentation": "Caja con 4 unidades",
@@ -4393,7 +4438,9 @@
     "featured": false,
     "new": false,
     "offer": false,
-    "recommendedFor": [],
+    "recommendedFor": [
+      "vino-tinto"
+    ],
     "gallery": [
       {
         "image": "/assets/images/product69.jpg",
@@ -4416,6 +4463,7 @@
   {
     "id": 70,
     "sku": "MEVASP39",
+    "channel": "RETAIL",
     "collection": "CRAFT BEER",
     "name": "SET X 4 VASOS BARREL BEER",
     "presentation": "Caja con 4 unidades",
@@ -4457,7 +4505,9 @@
     "featured": false,
     "new": false,
     "offer": false,
-    "recommendedFor": [],
+    "recommendedFor": [
+      "cerveza"
+    ],
     "gallery": [
       {
         "image": "/assets/images/product70-2.jpg",
@@ -4476,6 +4526,7 @@
   {
     "id": 71,
     "sku": "MEVASP35",
+    "channel": "RETAIL",
     "collection": "CRAFT BEER",
     "name": "SET X 4 VASOS PILSNER CRAFT BEER",
     "presentation": "Caja con 4 unidades",
@@ -4517,7 +4568,9 @@
     "featured": false,
     "new": false,
     "offer": false,
-    "recommendedFor": [],
+    "recommendedFor": [
+      "cerveza"
+    ],
     "gallery": [
       {
         "image": "/assets/images/product71-2.jpg",
@@ -4536,6 +4589,7 @@
   {
     "id": 72,
     "sku": "MEVASP08",
+    "channel": "RETAIL",
     "collection": "BEER CLASSIC",
     "name": "SET X 4 VASOS KIT BEER CLASSIC",
     "presentation": "Caja con 4 unidades",
@@ -4577,7 +4631,9 @@
     "featured": false,
     "new": false,
     "offer": false,
-    "recommendedFor": [],
+    "recommendedFor": [
+      "cerveza"
+    ],
     "gallery": [
       {
         "image": "/assets/images/product72-2.jpg",
@@ -4608,6 +4664,7 @@
   {
     "id": 73,
     "sku": "MEVASP24",
+    "channel": "RETAIL",
     "collection": "CRAFT BEER",
     "name": "SET X 4 VASOS KIT CRAFT BEER",
     "presentation": "Caja con 4 unidades",
@@ -4649,7 +4706,9 @@
     "featured": false,
     "new": false,
     "offer": false,
-    "recommendedFor": [],
+    "recommendedFor": [
+      "cerveza"
+    ],
     "gallery": [
       {
         "image": "/assets/images/product73.jpg",
@@ -4680,6 +4739,7 @@
   {
     "id": 74,
     "sku": "MEVASP17",
+    "channel": "RETAIL",
     "collection": "CLASSIC BAR",
     "name": "SET X 4 VASO LONGDRINK CLASSIC BAR",
     "presentation": "Caja con 4 unidades",
@@ -4722,8 +4782,7 @@
     "new": false,
     "offer": false,
     "recommendedFor": [
-      "cocteles",
-      "agua"
+      "cocteles"
     ],
     "gallery": [
       {
@@ -4747,6 +4806,7 @@
   {
     "id": 75,
     "sku": "MEVASP36",
+    "channel": "RETAIL",
     "collection": "GIFT SETS",
     "name": "SET X 4 VASO MIXDRINKS",
     "presentation": "Caja con 4 unidades",
@@ -4788,7 +4848,9 @@
     "featured": false,
     "new": false,
     "offer": false,
-    "recommendedFor": [],
+    "recommendedFor": [
+      "cocteles"
+    ],
     "gallery": [
       {
         "image": "/assets/images/product75.jpg",
@@ -4807,6 +4869,7 @@
   {
     "id": 76,
     "sku": "MEVASP09",
+    "channel": "RETAIL",
     "collection": "CRAFT BEER",
     "name": "SET X 4 VASOS IPA BEER",
     "presentation": "Caja con 4 unidades",
@@ -4848,7 +4911,9 @@
     "featured": false,
     "new": false,
     "offer": false,
-    "recommendedFor": [],
+    "recommendedFor": [
+      "cerveza"
+    ],
     "gallery": [
       {
         "image": "/assets/images/product76-2.jpg",
@@ -4867,6 +4932,7 @@
   {
     "id": 77,
     "sku": "MEVASP10",
+    "channel": "RETAIL",
     "collection": "CRAFT BEER",
     "name": "SET X 4 VASOS STOUT BEER",
     "presentation": "Caja con 4 unidades",
@@ -4908,7 +4974,9 @@
     "featured": false,
     "new": false,
     "offer": false,
-    "recommendedFor": [],
+    "recommendedFor": [
+      "cerveza"
+    ],
     "gallery": [
       {
         "image": "/assets/images/product77-2.webp",
@@ -4927,6 +4995,7 @@
   {
     "id": 78,
     "sku": "MEVASP18",
+    "channel": "RETAIL",
     "collection": "BEER TULIP",
     "name": "SET X 4 VASO BEER TULIP",
     "presentation": "Caja con 4 unidades",
@@ -4993,6 +5062,7 @@
   {
     "id": 79,
     "sku": "MECOSP23",
+    "channel": "RETAIL",
     "collection": "CLASSIC BAR",
     "name": "SET X 4 VASO TUMBLER CLASSIC BAR",
     "presentation": "Caja con 4 unidades",
@@ -5035,8 +5105,7 @@
     "new": false,
     "offer": true,
     "recommendedFor": [
-      "cocteles",
-      "agua"
+      "cocteles"
     ],
     "gallery": [
       {
@@ -5060,6 +5129,7 @@
   {
     "id": 80,
     "sku": "MEVASP07",
+    "channel": "RETAIL",
     "collection": "AUTHENTIS CASUAL",
     "name": "SET X 4 VASOS TUMBLER L A. CASUAL",
     "presentation": "Caja con 4 unidades",
@@ -5101,7 +5171,11 @@
     "featured": false,
     "new": false,
     "offer": false,
-    "recommendedFor": [],
+    "recommendedFor": [
+      "vino-tinto",
+      "vino-blanco",
+      "vino-rosado"
+    ],
     "gallery": [
       {
         "image": "/assets/images/product80.jpg",
@@ -5124,6 +5198,7 @@
   {
     "id": 81,
     "sku": "MEVASP31",
+    "channel": "RETAIL",
     "collection": "AUTHENTIS CASUAL",
     "name": "SET X 4 VASO TUMBLER XXL AUT. CASUAL",
     "presentation": "Caja con 4 unidades",
@@ -5166,8 +5241,7 @@
     "new": false,
     "offer": false,
     "recommendedFor": [
-      "cocteles",
-      "agua"
+      "cocteles"
     ],
     "gallery": [
       {
@@ -5191,6 +5265,7 @@
   {
     "id": 82,
     "sku": "MEVASP42",
+    "channel": "RETAIL",
     "collection": "AUTHENTIS CASUAL",
     "name": "SET X 4 VASO UNIVERSAL XL AUT. CASUAL",
     "presentation": "Caja con 4 unidades",
@@ -5233,8 +5308,7 @@
     "new": false,
     "offer": false,
     "recommendedFor": [
-      "cocteles",
-      "agua"
+      "cocteles"
     ],
     "gallery": [
       {
@@ -5258,6 +5332,7 @@
   {
     "id": 83,
     "sku": "MECOSP34",
+    "channel": "AGOTADO",
     "collection": "",
     "name": "COPA SPIEGELAU BBQ \u0026 DRINKS GIN TONIC (AGOTADO)",
     "presentation": "Caja con 6 unidades",
@@ -5299,7 +5374,9 @@
     "featured": false,
     "new": false,
     "offer": false,
-    "recommendedFor": [],
+    "recommendedFor": [
+      "cocteles"
+    ],
     "gallery": [
       {
         "image": "/assets/images/product83.jpg",
@@ -5318,6 +5395,7 @@
   {
     "id": 84,
     "sku": "MECOSP49",
+    "channel": "RETAIL",
     "collection": "DEFINITION",
     "name": "SET X 6 COPA BURGUNDY DEFINITION",
     "presentation": "Caja con 6 unidades",
@@ -5359,7 +5437,9 @@
     "featured": false,
     "new": false,
     "offer": false,
-    "recommendedFor": [],
+    "recommendedFor": [
+      "vino-tinto"
+    ],
     "gallery": [
       {
         "image": "/assets/images/product84.jpg",
@@ -5378,6 +5458,7 @@
   {
     "id": 85,
     "sku": "MECOSP52",
+    "channel": "RETAIL",
     "collection": "DEFINITION",
     "name": "SET X 6 COPA CHAMPAGNE DEFINITION",
     "presentation": "Caja con 6 unidades",
@@ -5419,7 +5500,9 @@
     "featured": false,
     "new": false,
     "offer": false,
-    "recommendedFor": [],
+    "recommendedFor": [
+      "espumantes"
+    ],
     "gallery": [
       {
         "image": "/assets/images/product85.jpg",
@@ -5438,6 +5521,7 @@
   {
     "id": 86,
     "sku": "MECOSP62",
+    "channel": "RETAIL",
     "collection": "DIFINITION",
     "name": "SET X 6 COPA DIGESTIVO PIZA",
     "presentation": "Caja con 6 unidades",
@@ -5480,7 +5564,7 @@
     "new": false,
     "offer": true,
     "recommendedFor": [
-      "digestivos"
+      "destilados"
     ],
     "gallery": [
       {
@@ -5504,6 +5588,7 @@
   {
     "id": 87,
     "sku": "MEVASP32",
+    "channel": "RETAIL",
     "collection": "BBQ \u0026 DRINKS",
     "name": "SET X 6 VASOS SOFT BBQ \u0026 DRINKS",
     "presentation": "Caja con 6 unidades",
@@ -5545,7 +5630,9 @@
     "featured": false,
     "new": false,
     "offer": false,
-    "recommendedFor": [],
+    "recommendedFor": [
+      "agua"
+    ],
     "gallery": [
       {
         "image": "/assets/images/product87.jpg",
@@ -5564,6 +5651,7 @@
   {
     "id": 88,
     "sku": "MEVASP45",
+    "channel": "RETAIL",
     "collection": "AUTHENTIS CASUAL",
     "name": "SET X 6 VASO SUMMER DRINKS A. CASUAL",
     "presentation": "Caja con 6 unidades",
@@ -5606,8 +5694,7 @@
     "new": false,
     "offer": false,
     "recommendedFor": [
-      "cocteles",
-      "agua"
+      "cocteles"
     ],
     "gallery": [
       {
@@ -5631,6 +5718,7 @@
   {
     "id": 89,
     "sku": "MEVASP44",
+    "channel": "RETAIL",
     "collection": "AUTHENTIS CASUAL",
     "name": "SET X 6 VASO UNIVERSAL AUT. CASUAL",
     "presentation": "Caja con 6 unidades",
@@ -5673,8 +5761,7 @@
     "new": false,
     "offer": false,
     "recommendedFor": [
-      "cocteles",
-      "agua"
+      "cocteles"
     ],
     "gallery": [
       {
@@ -5698,6 +5785,7 @@
   {
     "id": 90,
     "sku": "MEVASP41",
+    "channel": "RETAIL",
     "collection": "BECHER",
     "name": "SET X 8 VASOS T \u0026 L - BECHER",
     "presentation": "El set consta de 4 vasos, 4 vasos altos, 4 pajitas cortas y 4 pajitas largas.",
@@ -5739,7 +5827,10 @@
     "featured": false,
     "new": false,
     "offer": false,
-    "recommendedFor": [],
+    "recommendedFor": [
+      "cocteles",
+      "destilados"
+    ],
     "gallery": [
       {
         "image": "/assets/images/product90.jpg",
@@ -5766,6 +5857,7 @@
   {
     "id": 91,
     "sku": "MEVASP37",
+    "channel": "RETAIL",
     "collection": "CRAFT BEER",
     "name": "SET X 1 VASO IPA BEER C/EST.",
     "presentation": "Una caja contiene 12 unidades.",
@@ -5807,7 +5899,9 @@
     "featured": false,
     "new": false,
     "offer": false,
-    "recommendedFor": [],
+    "recommendedFor": [
+      "cerveza"
+    ],
     "gallery": [
       {
         "image": "/assets/images/product91-1.jpg",
@@ -5826,6 +5920,7 @@
   {
     "id": 92,
     "sku": "MEVASP25",
+    "channel": "AGOTADO",
     "collection": "",
     "name": "VASO SPIEGELAU CERVEZA IPA XXL (AGOTADO)",
     "presentation": "Caja con 12 unidades",
@@ -5867,7 +5962,9 @@
     "featured": false,
     "new": false,
     "offer": false,
-    "recommendedFor": [],
+    "recommendedFor": [
+      "cerveza"
+    ],
     "gallery": [
       {
         "image": "/assets/images/product92.webp",
@@ -5882,6 +5979,7 @@
   {
     "id": 93,
     "sku": "MEVASP40",
+    "channel": "RETAIL",
     "collection": "CRAFT BEER",
     "name": "SET X 1 VASO WHEAT BEER C/ESTUCHE",
     "presentation": "1 unidad",
@@ -5894,12 +5992,15 @@
     "featured": false,
     "new": false,
     "offer": false,
-    "recommendedFor": [],
+    "recommendedFor": [
+      "cerveza"
+    ],
     "gallery": []
   },
   {
     "id": 94,
     "sku": "MEVASP01",
+    "channel": "ON TRADE",
     "collection": "CLASSIC BAR",
     "name": "VASO LONG DRINK CLASSIC BAR",
     "presentation": "Caja con 12 unidades",
@@ -5942,8 +6043,7 @@
     "new": false,
     "offer": false,
     "recommendedFor": [
-      "cocteles",
-      "agua"
+      "cocteles"
     ],
     "gallery": [
       {
@@ -5967,6 +6067,7 @@
   {
     "id": 95,
     "sku": "MEVASP28",
+    "channel": "ON TRADE",
     "collection": "BEER CLASSIC",
     "name": "VASO HEFEWEIZEN BEER",
     "presentation": "Caja con 12 unidades",
@@ -6033,6 +6134,7 @@
   {
     "id": 96,
     "sku": "MEVASP29",
+    "channel": "ON TRADE",
     "collection": "BEER CLASSIC",
     "name": "VASO CERVEZA TULIP",
     "presentation": "Caja con 12 unidades",
@@ -6074,7 +6176,9 @@
     "featured": false,
     "new": false,
     "offer": false,
-    "recommendedFor": [],
+    "recommendedFor": [
+      "cerveza"
+    ],
     "gallery": [
       {
         "image": "/assets/images/product96.jpg",
@@ -6089,6 +6193,7 @@
   {
     "id": 97,
     "sku": "MEVASP21",
+    "channel": "ON TRADE",
     "collection": "PERFECT SERVE",
     "name": "VASO LONGDRINK PERFECT",
     "presentation": "Caja con 12 unidades",
@@ -6130,7 +6235,9 @@
     "featured": false,
     "new": false,
     "offer": false,
-    "recommendedFor": [],
+    "recommendedFor": [
+      "cocteles"
+    ],
     "gallery": [
       {
         "image": "/assets/images/product97.jpg",
@@ -6145,6 +6252,7 @@
   {
     "id": 98,
     "sku": "MEVASP23",
+    "channel": "ON TRADE",
     "collection": "PERFECT SERVE",
     "name": "VASO MIXING PERFECT",
     "presentation": "1 unidad",
@@ -6186,7 +6294,9 @@
     "featured": false,
     "new": false,
     "offer": false,
-    "recommendedFor": [],
+    "recommendedFor": [
+      "cocteles"
+    ],
     "gallery": [
       {
         "image": "/assets/images/product98.jpg",
@@ -6205,6 +6315,7 @@
   {
     "id": 99,
     "sku": "MEVASP22",
+    "channel": "ON TRADE",
     "collection": "PERFECT SERVE",
     "name": "VASO S.O.F. PERFECT SERVE",
     "presentation": "Caja con 12 unidades",
@@ -6247,9 +6358,7 @@
     "new": false,
     "offer": false,
     "recommendedFor": [
-      "cocteles",
-      "whisky",
-      "agua"
+      "cocteles"
     ],
     "gallery": [
       {
@@ -6273,6 +6382,7 @@
   {
     "id": 100,
     "sku": "MEVASP05",
+    "channel": "ON TRADE",
     "collection": "BEER CLASSIC",
     "name": "VASO PILSNER BEER CLASSIC",
     "presentation": "Caja con 12 unidades",
@@ -6339,6 +6449,7 @@
   {
     "id": 101,
     "sku": "MEVASP27",
+    "channel": "ON TRADE",
     "collection": "VINO GRANDE",
     "name": "VASO SHOT VINO GRANDE",
     "presentation": "Caja con 12 unidades",
@@ -6380,7 +6491,9 @@
     "featured": false,
     "new": false,
     "offer": false,
-    "recommendedFor": [],
+    "recommendedFor": [
+      "destilados"
+    ],
     "gallery": [
       {
         "image": "/assets/images/product101.jpg",
@@ -6395,6 +6508,7 @@
   {
     "id": 102,
     "sku": "MEVASP03",
+    "channel": "ON TRADE",
     "collection": "CLASSIC BAR",
     "name": "VASO TUMBLER CLASSIC BAR",
     "presentation": "Caja con 12 unidades",
@@ -6437,8 +6551,7 @@
     "new": false,
     "offer": false,
     "recommendedFor": [
-      "cocteles",
-      "agua"
+      "cocteles"
     ],
     "gallery": [
       {
@@ -6462,6 +6575,7 @@
   {
     "id": 103,
     "sku": "MECOSP02",
+    "channel": "ON TRADE",
     "collection": "AUTHENTIS CASUAL",
     "name": "VASO TUMBLER L - AUT. CASUAL",
     "presentation": "Caja con 12 unidades",
@@ -6504,8 +6618,7 @@
     "new": false,
     "offer": true,
     "recommendedFor": [
-      "cocteles",
-      "agua"
+      "cocteles"
     ],
     "gallery": [
       {
@@ -6529,6 +6642,7 @@
   {
     "id": 104,
     "sku": "MEVASP02",
+    "channel": "ON TRADE",
     "collection": "CLASSIC BAR",
     "name": "VASO TUMBLER XL CLASSIC BAR",
     "presentation": "Caja con 12 unidades",
@@ -6570,7 +6684,10 @@
     "featured": false,
     "new": false,
     "offer": false,
-    "recommendedFor": [],
+    "recommendedFor": [
+      "cocteles",
+      "destilados"
+    ],
     "gallery": [
       {
         "image": "/assets/images/product104.jpg",
@@ -6581,6 +6698,7 @@
   {
     "id": 105,
     "sku": "MEVASP49",
+    "channel": "ON TRADE",
     "collection": "LINEAR",
     "name": "VASO LONGDRINKS LINEAR",
     "presentation": "Caja con 12 unidades",
@@ -6623,8 +6741,7 @@
     "new": false,
     "offer": false,
     "recommendedFor": [
-      "cocteles",
-      "agua"
+      "cocteles"
     ],
     "gallery": [
       {
@@ -6648,6 +6765,7 @@
   {
     "id": 106,
     "sku": "MEVASP48",
+    "channel": "ON TRADE",
     "collection": "LINEAR",
     "name": "VASO WHISKY LINEAR",
     "presentation": "",
@@ -6689,7 +6807,11 @@
     "featured": false,
     "new": false,
     "offer": false,
-    "recommendedFor": [],
+    "recommendedFor": [
+      "cocteles",
+      "destilados",
+      "agua"
+    ],
     "gallery": [
       {
         "image": "/assets/images/product106.jpg",
@@ -6704,6 +6826,7 @@
   {
     "id": 107,
     "sku": "MEVASP04",
+    "channel": "AGOTADO",
     "collection": "",
     "name": "VASO SPIEGELAU WHEAT BEER CERVEZA DE TRIGO (AGOTADO)",
     "presentation": "",
@@ -6745,7 +6868,9 @@
     "featured": false,
     "new": false,
     "offer": false,
-    "recommendedFor": [],
+    "recommendedFor": [
+      "cerveza"
+    ],
     "gallery": [
       {
         "image": "/assets/images/product107.jpg",
@@ -6760,6 +6885,7 @@
   {
     "id": 108,
     "sku": "MEDESP22",
+    "channel": "RETAIL",
     "collection": "DECANTER",
     "name": "DECANTADOR CARAF",
     "presentation": "1 unidad",
@@ -6802,9 +6928,9 @@
     "new": false,
     "offer": false,
     "recommendedFor": [
-      "agua",
       "vino-tinto",
-      "vino-blanco"
+      "vino-blanco",
+      "agua"
     ],
     "gallery": [
       {

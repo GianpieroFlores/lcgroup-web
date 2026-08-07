@@ -18,8 +18,8 @@
     <meta name="theme-color" content="#0F6B4B" />
     <link
       rel="icon"
-      type="image/jpeg"
-      href="/assets/images/logo-header.jpg"
+      type="image/png"
+      href="/assets/images/logo-icon.png"
     />
 
     <!-- ==========================
@@ -93,6 +93,19 @@
             </div>
           </div>
         </div>
+
+        <button
+          class="home-hero__sound-button"
+          id="home-hero-sound-button"
+          type="button"
+          aria-pressed="false"
+          aria-label="Activar sonido del video"
+        >
+          <span class="material-symbols-outlined" aria-hidden="true">
+            volume_off
+          </span>
+          <span data-hero-sound-label>Activar sonido</span>
+        </button>
       </section>
 
 <!-- =====================================================
@@ -128,9 +141,16 @@
         experiencia elegante.
       </p>
 
-      <a href="/catalogo/" class="home-categories__hero-button" data-analytics-event="button_click" data-analytics-name="explorar_catalogo_categorias">
-        Explorar catálogo
-      </a>
+      <div class="home-categories__hero-actions">
+        <a href="/catalogo/?seleccion=ofertas" class="home-categories__hero-button" data-analytics-event="button_click" data-analytics-name="ver_ofertas_categorias">
+          <span class="material-symbols-outlined" aria-hidden="true">sell</span>
+          Ver ofertas
+        </a>
+
+        <a href="/catalogo/" class="home-categories__hero-button home-categories__hero-button--secondary" data-analytics-event="button_click" data-analytics-name="explorar_catalogo_categorias">
+          Explorar catálogo
+        </a>
+      </div>
     </div>
 
     <div class="home-categories__grid">
@@ -146,12 +166,14 @@
       data-analytics-value="copas"
     >
       <div class="home-category-card__icon">
-        <span
-          class="material-symbols-outlined"
+        <img
+          class="home-category-card__icon-image"
+          src="/assets/images/copa-icon-thick.png"
+          alt=""
+          width="24"
+          height="24"
           aria-hidden="true"
-        >
-          wine_bar
-        </span>
+        />
       </div>
 
       <div class="home-category-card__content">
@@ -198,12 +220,14 @@
       data-analytics-value="vasos"
     >
       <div class="home-category-card__icon">
-        <span
-          class="material-symbols-outlined"
+        <img
+          class="home-category-card__icon-image home-category-card__icon-image--compact"
+          src="/assets/images/vaso-icon-thick.png"
+          alt=""
+          width="24"
+          height="24"
           aria-hidden="true"
-        >
-          local_bar
-        </span>
+        />
       </div>
 
       <div class="home-category-card__content">
@@ -250,12 +274,14 @@
       data-analytics-value="decantadores"
     >
       <div class="home-category-card__icon">
-        <span
-          class="material-symbols-outlined"
+        <img
+          class="home-category-card__icon-image"
+          src="/assets/images/decantador-icon-thick.png"
+          alt=""
+          width="24"
+          height="24"
           aria-hidden="true"
-        >
-          wine_bar
-        </span>
+        />
       </div>
 
       <div class="home-category-card__content">
@@ -302,12 +328,14 @@
       data-analytics-value="kits"
     >
       <div class="home-category-card__icon">
-        <span
-          class="material-symbols-outlined"
+        <img
+          class="home-category-card__icon-image home-category-card__icon-image--compact"
+          src="/assets/images/kit-icon-thick.png"
+          alt=""
+          width="24"
+          height="24"
           aria-hidden="true"
-        >
-          inventory_2
-        </span>
+        />
       </div>
 
       <div class="home-category-card__content">

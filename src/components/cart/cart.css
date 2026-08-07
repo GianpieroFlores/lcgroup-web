@@ -799,20 +799,32 @@ body.cart-open {
   position: relative;
   z-index: 2;
 
-
-  padding: 21px 24px 24px;
+  margin-top: 8px;
+  padding: 21px 0 0;
 
 
   border-top: 1px solid var(--color-border-card);
   background-color: var(--color-white);
 
 
-  box-shadow: 0 -10px 25px rgba(0, 0, 0, 0.035);
+  box-shadow: none;
 }
 
 
 /* Ocultar el pie cuando el carrito está vacío */
 .cart-footer.is-hidden {
+  display: none;
+}
+
+.cart-checkout {
+  position: relative;
+  z-index: 2;
+  padding: 0 24px 20px;
+  background-color: var(--color-white);
+  box-shadow: 0 -10px 25px rgba(0, 0, 0, 0.035);
+}
+
+.cart-checkout.is-hidden {
   display: none;
 }
 
@@ -849,10 +861,31 @@ body.cart-open {
   font-weight: var(--font-weight-semibold);
 }
 
+.cart-summary__row strong.is-free-delivery {
+  color: var(--color-primary);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+}
+
+.cart-summary__delivery-message {
+  margin: 1px 0 2px;
+  padding: 9px 11px;
+  border-left: 2px solid var(--color-primary);
+  background: var(--color-background-soft);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-small);
+  line-height: 1.4;
+}
+
+.cart-summary__delivery-message.is-complete {
+  color: var(--color-text);
+  font-weight: var(--font-weight-medium);
+}
+
 
 .cart-summary__row--total {
-  margin-top: 3px;
   padding-top: 15px;
+  margin-bottom: 14px;
 
 
   border-top: 1px solid var(--color-border-card);

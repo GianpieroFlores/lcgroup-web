@@ -1121,15 +1121,16 @@
   }
 
   .catalog-sidebar {
-    position: relative;
+    position: sticky;
+    top: var(--header-offset);
     z-index: 100;
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr)) 132px;
     align-items: center;
     gap: 10px;
     min-width: 0;
-    padding: 0;
-    background-color: transparent;
+    padding: 10px 0;
+    background-color: var(--color-background-soft);
   }
 
   .catalog-sidebar-header {

@@ -6,6 +6,8 @@ import { createCatalogUrl } from "./utils/urls.js";
 import { trackViewItemList } from "./services/analytics.js";
 
 const FEATURED_AUTOPLAY_DELAY = 2_000;
+// Volumen del video del hero: usa un valor entre 0 (silencio) y 1 (máximo).
+const HERO_VIDEO_VOLUME = 0.20;
 /* =====================================================
    PÁGINA DE INICIO
 ===================================================== */
@@ -33,6 +35,7 @@ const homeState = {
 
 const homeElements = {
   heroVideo: null,
+  heroSoundButton: null,
   collectionExamples: null,
   featuredCarousel: null,
   featuredViewport: null,
@@ -82,6 +85,9 @@ async function initHomePage() {
 
 function getHomeElements() {
   homeElements.heroVideo = document.querySelector(".home-hero__video-element");
+  homeElements.heroSoundButton = document.querySelector(
+    "#home-hero-sound-button",
+  );
 
   homeElements.collectionExamples = document.querySelector(
     "#home-collection-examples",
@@ -130,6 +136,59 @@ function initializeHeroVideoMotionPreference() {
     "(prefers-reduced-motion: reduce)",
   );
 
+  homeElements.heroVideo.volume = HERO_VIDEO_VOLUME;
+  homeElements.heroVideo.muted = true;
+
+  const updateSoundButton = () => {
+    if (!homeElements.heroSoundButton) return;
+
+    const soundIsActive = !homeElements.heroVideo.muted;
+    const icon = homeElements.heroSoundButton.querySelector(
+      ".material-symbols-outlined",
+    );
+    const label = homeElements.heroSoundButton.querySelector(
+      "[data-hero-sound-label]",
+    );
+
+    homeElements.heroSoundButton.setAttribute(
+      "aria-pressed",
+      String(soundIsActive),
+    );
+    homeElements.heroSoundButton.setAttribute(
+      "aria-label",
+      soundIsActive
+        ? "Silenciar video"
+        : "Activar sonido del video desde el inicio",
+    );
+
+    if (icon) {
+      icon.textContent = soundIsActive ? "volume_up" : "volume_off";
+    }
+
+    if (label) {
+      label.textContent = soundIsActive ? "Silenciar" : "Activar sonido";
+    }
+  };
+
+  homeElements.heroSoundButton?.addEventListener("click", () => {
+    if (homeElements.heroVideo.muted) {
+      homeElements.heroVideo.currentTime = 0;
+      homeElements.heroVideo.volume = HERO_VIDEO_VOLUME;
+      homeElements.heroVideo.muted = false;
+
+      const playPromise = homeElements.heroVideo.play();
+
+      playPromise?.catch(() => {
+        homeElements.heroVideo.muted = true;
+        updateSoundButton();
+      });
+    } else {
+      homeElements.heroVideo.muted = true;
+    }
+
+    updateSoundButton();
+  });
+
   const updateVideoPlayback = () => {
     if (reducedMotionQuery.matches) {
       homeElements.heroVideo.pause();
@@ -147,6 +206,7 @@ function initializeHeroVideoMotionPreference() {
   };
 
   updateVideoPlayback();
+  updateSoundButton();
   reducedMotionQuery.addEventListener("change", updateVideoPlayback);
 }
 

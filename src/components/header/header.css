@@ -4,7 +4,7 @@
 
 .header {
   position: fixed;
-  top: 0;
+  top: var(--delivery-banner-visible-height);
   left: 0;
 
   width: 100%;

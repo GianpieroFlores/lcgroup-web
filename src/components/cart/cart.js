@@ -16,6 +16,10 @@ import {
 } from "../../utils/products.js";
 import { createProductUrl } from "../../utils/urls.js";
 import {
+  FREE_DELIVERY_THRESHOLD,
+  getDeliveryTotals,
+} from "../../config/delivery.js";
+import {
   trackAddToCart,
   trackBeginCheckout,
   trackRemoveFromCart,
@@ -28,7 +32,7 @@ import {
 ===================================================== */
 
 const CART_STORAGE_KEY = "lcgroup-shopping-cart";
-const WHATSAPP_NUMBER = "51983276061";
+const WHATSAPP_NUMBER = "51966420414";
 
 /* =====================================================
    ESTADO DEL CARRITO
@@ -51,9 +55,13 @@ let cartProductsContainer = null;
 let cartProductTemplate = null;
 let cartEmpty = null;
 let cartFooter = null;
+let cartCheckout = null;
 
 let cartTotalItems = null;
 let cartSummaryItems = null;
+let cartSubtotalPrice = null;
+let cartDeliveryPrice = null;
+let cartDeliveryMessage = null;
 let cartTotalPrice = null;
 let cartWhatsappButton = null;
 
@@ -170,6 +178,10 @@ function getTotalPrice() {
   }, 0);
 }
 
+function getCartTotals() {
+  return getDeliveryTotals(getTotalPrice());
+}
+
 /* =====================================================
    OBTENER ELEMENTOS DEL CARRITO
 ===================================================== */
@@ -190,10 +202,17 @@ function getCartElements() {
 
   cartEmpty = document.querySelector("#cart-empty");
   cartFooter = document.querySelector("#cart-footer");
+  cartCheckout = document.querySelector("#cart-checkout");
 
   cartTotalItems = document.querySelector("#cart-total-items");
 
   cartSummaryItems = document.querySelector("#cart-summary-items");
+
+  cartSubtotalPrice = document.querySelector("#cart-subtotal-price");
+
+  cartDeliveryPrice = document.querySelector("#cart-delivery-price");
+
+  cartDeliveryMessage = document.querySelector("#cart-delivery-message");
 
   cartTotalPrice = document.querySelector("#cart-total-price");
 
@@ -562,6 +581,7 @@ function updateEmptyState() {
   cartEmpty?.classList.toggle("is-visible", cartIsEmpty);
 
   cartFooter?.classList.toggle("is-hidden", cartIsEmpty);
+  cartCheckout?.classList.toggle("is-hidden", cartIsEmpty);
 
   if (cartProductsContainer) {
     cartProductsContainer.hidden = cartIsEmpty;
@@ -574,7 +594,13 @@ function updateEmptyState() {
 
 function updateCartSummary() {
   const totalQuantity = getTotalQuantity();
-  const totalPrice = getTotalPrice();
+  const {
+    subtotal,
+    delivery,
+    total,
+    hasFreeDelivery,
+    amountUntilFreeDelivery,
+  } = getCartTotals();
 
   if (cartTotalItems) {
     cartTotalItems.textContent = totalQuantity;
@@ -584,8 +610,36 @@ function updateCartSummary() {
     cartSummaryItems.textContent = totalQuantity;
   }
 
+  if (cartSubtotalPrice) {
+    cartSubtotalPrice.textContent = formatPrice(subtotal);
+  }
+
+  if (cartDeliveryPrice) {
+    cartDeliveryPrice.textContent =
+      subtotal > 0 && hasFreeDelivery ? "GRATIS" : formatPrice(delivery);
+    cartDeliveryPrice.classList.toggle(
+      "is-free-delivery",
+      subtotal > 0 && hasFreeDelivery,
+    );
+  }
+
+  if (cartDeliveryMessage) {
+    if (subtotal === 0) {
+      cartDeliveryMessage.textContent =
+        `Delivery gratis en compras mayores a S/ ${FREE_DELIVERY_THRESHOLD}.`;
+    } else if (hasFreeDelivery) {
+      cartDeliveryMessage.textContent = "¡Tienes delivery gratis!";
+    } else {
+      cartDeliveryMessage.textContent =
+        `Te faltan ${formatPrice(amountUntilFreeDelivery)} ` +
+        "para obtener delivery gratis.";
+    }
+
+    cartDeliveryMessage.classList.toggle("is-complete", hasFreeDelivery);
+  }
+
   if (cartTotalPrice) {
-    cartTotalPrice.textContent = formatPrice(totalPrice);
+    cartTotalPrice.textContent = formatPrice(total);
   }
 }
 
@@ -623,7 +677,7 @@ function updateHeaderCartBadge() {
 
 function generateWhatsappMessage() {
   const totalQuantity = getTotalQuantity();
-  const totalPrice = getTotalPrice();
+  const { subtotal, delivery, total, hasFreeDelivery } = getCartTotals();
 
   const lines = ["Hola, deseo realizar el siguiente pedido:", ""];
 
@@ -654,7 +708,9 @@ function generateWhatsappMessage() {
   lines.push(
     "------------------------------",
     `Cantidad total: ${totalQuantity}`,
-    `Total del pedido: ${formatPrice(totalPrice)}`,
+    `Subtotal: ${formatPrice(subtotal)}`,
+    `Delivery: ${hasFreeDelivery ? "GRATIS" : formatPrice(delivery)}`,
+    `Total: ${formatPrice(total)}`,
     "",
     "Quedo atento a la confirmación de disponibilidad. Gracias.",
   );
@@ -706,6 +762,8 @@ function renderCartState() {
 ===================================================== */
 
 function updateCart() {
+  const totals = getCartTotals();
+
   saveCartToStorage();
   renderCartState();
 
@@ -714,7 +772,10 @@ function updateCart() {
       detail: {
         items: getCartItems(),
         totalQuantity: getTotalQuantity(),
-        totalPrice: getTotalPrice(),
+        totalPrice: totals.subtotal,
+        subtotal: totals.subtotal,
+        delivery: totals.delivery,
+        orderTotal: totals.total,
       },
     }),
   );

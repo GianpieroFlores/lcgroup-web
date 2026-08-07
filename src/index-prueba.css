@@ -262,6 +262,69 @@
   margin-top: 22px;
 }
 
+.home-hero__sound-button {
+  position: absolute;
+  top: 18px;
+  right: var(--page-padding);
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 38px;
+  padding: 0 14px;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: var(--radius-pill);
+  background: rgba(0, 0, 0, 0.38);
+  color: var(--color-white);
+  font-family: var(--font-main);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-medium);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  transition:
+    border-color var(--transition-fast),
+    background-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.home-hero__sound-button:hover,
+.home-hero__sound-button[aria-pressed="true"] {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary);
+}
+
+.home-hero__sound-button:hover {
+  transform: translateY(-2px);
+}
+
+.home-hero__sound-button:focus-visible {
+  outline: 2px solid var(--color-white);
+  outline-offset: 3px;
+}
+
+.home-hero__sound-button .material-symbols-outlined {
+  font-size: 18px;
+}
+
+@media (max-width: 480px) {
+  .home-hero__sound-button {
+    top: 12px;
+    right: 14px;
+    width: 38px;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .home-hero__sound-button [data-hero-sound-label] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+}
+
 /* =====================================================
    PRODUCTOS DESTACADOS
 ===================================================== */
@@ -688,12 +751,20 @@
   text-shadow: 0 2px 13px rgba(0, 0, 0, 0.3);
 }
 
+.home-categories__hero-actions {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 28px;
+}
+
 .home-categories__hero-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-height: 46px;
-  margin-top: 28px;
+  margin-top: 0;
   padding: 0 25px;
   background-color: var(--color-primary);
   color: var(--color-white);
@@ -706,6 +777,31 @@
   line-height: 1;
   text-transform: uppercase;
   transition: background-color var(--transition-normal), color var(--transition-normal), border-color var(--transition-normal), transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.home-categories__hero-button > .material-symbols-outlined {
+  font-size: 16px;
+}
+
+.home-categories__hero-button--secondary {
+  min-width: 174px;
+  gap: 8px;
+  border-color: rgba(255, 255, 255, 0.72);
+  background-color: rgba(0, 0, 0, 0.25);
+  color: var(--color-white);
+  box-shadow: none;
+  backdrop-filter: blur(5px);
+}
+
+.home-categories__hero-button--secondary .material-symbols-outlined {
+  font-size: 16px;
+}
+
+.home-categories__hero-button--secondary:hover {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  box-shadow: 0 12px 27px rgba(231, 24, 3, 0.22);
 }
 
 .home-categories__hero-button:hover {
@@ -805,6 +901,23 @@
     border-color var(--transition-normal),
     color var(--transition-normal),
     transform var(--transition-normal);
+}
+
+.home-category-card__icon-image {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  transition: transform var(--transition-normal);
+}
+
+.home-category-card__icon-image--compact {
+  width: 20px;
+  height: 20px;
+}
+
+.home-category-card:hover .home-category-card__icon-image {
+  transform: scale(1.06);
 }
 
 .home-category-card:hover .home-category-card__icon {
@@ -1513,7 +1626,26 @@
   }
 
   .home-categories__hero-button {
+    margin-top: 0;
+  }
+
+  .home-categories__hero-actions {
+    width: 100%;
+    gap: 8px;
     margin-top: 22px;
+  }
+
+  .home-categories__hero-actions .home-categories__hero-button {
+    flex: 1 1 0;
+    min-width: 0;
+    padding-inline: 10px;
+    font-size: 9px;
+    letter-spacing: 0.55px;
+    white-space: nowrap;
+  }
+
+  .home-categories__hero-button--secondary .material-symbols-outlined {
+    font-size: 14px;
   }
 
   .home-categories__grid,

@@ -44,6 +44,7 @@ let viewMode = "normal";
 let productRenderVersion = 0;
 
 const BASE_PRODUCTS_PER_PAGE = 18;
+const CATALOG_BANNER_IMAGE = "/assets/images/Bannerproductos.png";
 
 /*
  * Configuración temporal de banners.
@@ -52,38 +53,30 @@ const BASE_PRODUCTS_PER_PAGE = 18;
  */
 const CATEGORY_BANNERS = {
   copas: {
-    image: "/assets/images/banner-copas.webp",
     description: "Cristalería diseñada para realzar cada estilo de vino.",
   },
   vasos: {
-    image: "/assets/images/product81-1.webp",
     description: "Diseño y funcionalidad para distintas bebidas y ocasiones.",
   },
   decantadores: {
-    image: "/assets/images/decantadores.jpg",
     description: "Piezas creadas para servir y disfrutar el vino con elegancia.",
   },
   kits: {
-    image: "/assets/images/kits.jpg",
     description: "Selecciones de cristalería para experiencias completas.",
   },
 };
 
 const COLLECTION_BANNERS = {
   winelovers: {
-    image: "/assets/images/banner-copas.webp",
     description: "Formas versátiles para descubrir el carácter de cada vino.",
   },
   "beer classics": {
-    image: "/assets/images/kits.jpg",
     description: "Cristalería desarrollada para distintos estilos de cerveza.",
   },
   "special glasses": {
-    image: "/assets/images/nosotros-presentation.png",
     description: "Diseños especializados para cócteles y destilados.",
   },
   "authentis casual": {
-    image: "/assets/images/product81-1.webp",
     description: "Elegancia contemporánea para disfrutar todos los días.",
   },
 };
@@ -98,7 +91,6 @@ const COLLECTION_ORDER = [
 ];
 
 const DEFAULT_BANNER = {
-  image: "/assets/images/nosotros-presentation.png",
   description: "Descubre los productos disponibles en esta selección Spiegelau.",
 };
 
@@ -1028,7 +1020,13 @@ function getBannerConfiguration(type, name) {
   return configurations[normalizedName] || DEFAULT_BANNER;
 }
 
-function createCatalogBanner({ type, name, title }) {
+function createCatalogBanner({
+  type,
+  name,
+  title,
+  eyebrowText = "",
+  descriptionText = "",
+}) {
   const configuration = getBannerConfiguration(type, name);
   const banner = document.createElement("div");
   const image = document.createElement("img");
@@ -1039,21 +1037,117 @@ function createCatalogBanner({ type, name, title }) {
   const description = document.createElement("p");
 
   banner.className = `catalog-feature-banner catalog-feature-banner--${type}`;
-  image.src = configuration.image;
-  image.alt = `${type === "category" ? "Categoría" : "Colección"} ${title}`;
+  image.src = CATALOG_BANNER_IMAGE;
+  image.alt =
+    type === "combined"
+      ? `Colección y categoría ${title}`
+      : `${type === "category" ? "Categoría" : "Colección"} ${title}`;
   image.width = 1600;
   image.height = 600;
   image.loading = "lazy";
   overlay.className = "catalog-feature-banner__overlay";
   content.className = "catalog-feature-banner__content";
-  eyebrow.textContent = type === "category" ? "Categoría" : "Colección";
+  eyebrow.textContent =
+    eyebrowText || (type === "category" ? "Categoría" : "Colección");
   heading.textContent = title;
-  description.textContent = configuration.description;
+  description.textContent = descriptionText || configuration.description;
 
   content.append(eyebrow, heading, description);
   banner.append(image, overlay, content);
 
   return banner;
+}
+
+function formatBannerTitle(value) {
+  return String(value)
+    .replace(/[-_]+/g, " ")
+    .toLocaleLowerCase("es")
+    .replace(/(^|\s)\p{L}/gu, (letter) => letter.toLocaleUpperCase("es"));
+}
+
+function formatBannerValues(values) {
+  return values.map(formatBannerTitle).join(", ");
+}
+
+function createCombinedFilterBanner(categoryName) {
+  const collections = [...selectedCollections];
+  const collectionNames = formatBannerValues(collections);
+  const categoryTitle = formatBannerTitle(categoryName);
+  const collectionPrefix = collections.length === 1
+    ? "Colección"
+    : "Colecciones";
+
+  return createCatalogBanner({
+    type: "combined",
+    name: collections[0],
+    title:
+      `${collectionPrefix} ${collectionNames} - ` +
+      categoryTitle,
+    eyebrowText: "Colección y categoría",
+    descriptionText:
+      `Explora los productos de ${collectionNames} ` +
+      `disponibles en ${categoryTitle}.`,
+  });
+}
+
+async function createCombinedCategoryGroup(categoryName, categoryProducts) {
+  const section = document.createElement("section");
+  const productsContainer = document.createElement("div");
+  const cards = await Promise.all(
+    categoryProducts.map((product) => createProductCard(product)),
+  );
+
+  section.className = "catalog-category-group";
+  section.dataset.category = categoryName;
+  productsContainer.className =
+    "catalog-product-grid catalog-category-group__products";
+  productsContainer.innerHTML = cards.join("");
+  section.append(
+    createCombinedFilterBanner(categoryName),
+    productsContainer,
+  );
+
+  return section;
+}
+
+async function renderCombinedCategoryGroupsView(renderVersion) {
+  if (!categoryView || !resultsCount || !pagination) {
+    return;
+  }
+
+  const groups = [...selectedCategories]
+    .map((categoryName) => ({
+      name: categoryName,
+      products: filteredProducts.filter(
+        (product) => product.category === categoryName,
+      ),
+    }))
+    .filter((group) => group.products.length > 0);
+  const sections = await Promise.all(
+    groups.map((group) => (
+      createCombinedCategoryGroup(group.name, group.products)
+    )),
+  );
+
+  if (renderVersion !== productRenderVersion) {
+    return;
+  }
+
+  categoryView.replaceChildren(...sections);
+  categoryView.hidden = false;
+  resultsCount.textContent =
+    `Mostrando ${filteredProducts.length} productos en ${groups.length} categorías`;
+  pagination.replaceChildren();
+  pagination.hidden = true;
+  sections.forEach((section, index) => {
+    trackViewItemList(
+      section.querySelector(".catalog-product-grid"),
+      groups[index].products,
+      `collection_category_${groups[index].name}`,
+      `Colección y categoría ${groups[index].name}`,
+      searchQuery,
+    );
+  });
 }
 
 function hideCatalogFeatureViews() {
@@ -1277,6 +1371,16 @@ async function renderProducts() {
   }
 
   emptyState.hidden = true;
+
+  if (selectedCategories.size > 0 && selectedCollections.size > 0) {
+    collectionsView?.replaceChildren();
+    if (collectionsView) collectionsView.hidden = true;
+
+    productGrid.innerHTML = "";
+    productGrid.hidden = true;
+    await renderCombinedCategoryGroupsView(renderVersion);
+    return;
+  }
 
   if (selectedCategories.size > 0) {
     collectionsView?.replaceChildren();
