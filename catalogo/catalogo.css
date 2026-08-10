@@ -1480,6 +1480,10 @@
   }
 
   .catalog-toolbar {
+    position: sticky;
+    top: var(--header-offset);
+    z-index: 70;
+
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: stretch;
