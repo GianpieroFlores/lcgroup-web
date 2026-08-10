@@ -56,7 +56,7 @@ product = findProductById(products, id);
 =========================================*/
 
 function renderProduct(products) {
-  document.title = `${product.name} | LC Group`;
+  document.title = `${product.name} | SPIEGELAU`;
   const productPage = document.querySelector(".product-page");
   if (productPage) {
     productPage.dataset.analyticsProductId = String(product.sku || product.id);
