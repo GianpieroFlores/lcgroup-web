@@ -133,6 +133,8 @@ const applyFiltersButton = document.getElementById("apply-filters");
 const emptyClearFiltersButton = document.getElementById("empty-clear-filters");
 
 const sortSelect = document.getElementById("catalog-sort-select");
+let customSortButton = null;
+let customSortOptions = [];
 
 const resultsCount = document.getElementById("catalog-results-count");
 
@@ -464,6 +466,133 @@ async function loadProducts() {
     const value = params.get(parameter);
     if (value) trackFilter(type, value, filteredProducts.length, "url");
   });
+}
+
+function syncCustomSortSelect() {
+  if (!sortSelect || !customSortButton) return;
+
+  const selectedOption = sortSelect.options[sortSelect.selectedIndex];
+  customSortButton.querySelector(".catalog-sort-custom__value").textContent =
+    selectedOption?.textContent.trim() || "Recomendados";
+
+  customSortOptions.forEach((option) => {
+    const isSelected = option.dataset.value === sortSelect.value;
+    option.classList.toggle("is-selected", isSelected);
+    option.setAttribute("aria-selected", String(isSelected));
+  });
+}
+
+function initCustomSortSelect() {
+  if (!sortSelect || sortSelect.dataset.customSelectReady === "true") return;
+
+  sortSelect.dataset.customSelectReady = "true";
+  sortSelect.classList.add("catalog-sort__native");
+
+  const customSelect = document.createElement("div");
+  customSelect.className = "catalog-sort-custom";
+  customSelect.innerHTML = `
+    <button
+      class="catalog-sort-custom__trigger"
+      type="button"
+      aria-haspopup="listbox"
+      aria-expanded="false"
+    >
+      <span class="catalog-sort-custom__value"></span>
+      <span class="material-symbols-outlined" aria-hidden="true">expand_more</span>
+    </button>
+    <div class="catalog-sort-custom__menu" role="listbox" aria-label="Ordenar productos" hidden></div>
+  `;
+
+  customSortButton = customSelect.querySelector(".catalog-sort-custom__trigger");
+  const menu = customSelect.querySelector(".catalog-sort-custom__menu");
+
+  [...sortSelect.options].forEach((nativeOption) => {
+    const option = document.createElement("button");
+    option.className = "catalog-sort-custom__option";
+    option.type = "button";
+    option.setAttribute("role", "option");
+    option.dataset.value = nativeOption.value;
+    option.innerHTML = `
+      <span>${escapeHTML(nativeOption.textContent.trim())}</span>
+      <span class="material-symbols-outlined" aria-hidden="true">check</span>
+    `;
+    menu.append(option);
+  });
+
+  customSortOptions = [...menu.querySelectorAll(".catalog-sort-custom__option")];
+  sortSelect.insertAdjacentElement("afterend", customSelect);
+
+  const closeMenu = ({ restoreFocus = false } = {}) => {
+    if (menu.hidden) return;
+    menu.hidden = true;
+    customSelect.classList.remove("is-open");
+    customSortButton.setAttribute("aria-expanded", "false");
+    if (restoreFocus) customSortButton.focus();
+  };
+
+  const openMenu = () => {
+    menu.hidden = false;
+    customSelect.classList.add("is-open");
+    customSortButton.setAttribute("aria-expanded", "true");
+  };
+
+  customSortButton.addEventListener("click", () => {
+    if (menu.hidden) {
+      openMenu();
+      return;
+    }
+    closeMenu();
+  });
+
+  customSortButton.addEventListener("keydown", (event) => {
+    if (!["ArrowDown", "ArrowUp"].includes(event.key)) return;
+    event.preventDefault();
+    openMenu();
+    const selectedIndex = Math.max(
+      0,
+      customSortOptions.findIndex((option) => option.classList.contains("is-selected")),
+    );
+    customSortOptions[selectedIndex]?.focus();
+  });
+
+  menu.addEventListener("click", (event) => {
+    const option = event.target.closest(".catalog-sort-custom__option");
+    if (!option) return;
+
+    sortSelect.value = option.dataset.value;
+    syncCustomSortSelect();
+    sortSelect.dispatchEvent(new Event("change", { bubbles: true }));
+    closeMenu({ restoreFocus: true });
+  });
+
+  menu.addEventListener("keydown", (event) => {
+    const currentIndex = customSortOptions.indexOf(document.activeElement);
+
+    if (event.key === "Escape") {
+      event.preventDefault();
+      closeMenu({ restoreFocus: true });
+      return;
+    }
+
+    if (!["ArrowDown", "ArrowUp", "Home", "End"].includes(event.key)) return;
+    event.preventDefault();
+
+    let nextIndex = currentIndex;
+    if (event.key === "Home") nextIndex = 0;
+    if (event.key === "End") nextIndex = customSortOptions.length - 1;
+    if (event.key === "ArrowDown") nextIndex = (currentIndex + 1) % customSortOptions.length;
+    if (event.key === "ArrowUp") {
+      nextIndex = (currentIndex - 1 + customSortOptions.length) % customSortOptions.length;
+    }
+    customSortOptions[nextIndex]?.focus();
+  });
+
+  sortSelect.addEventListener("change", syncCustomSortSelect);
+  document.addEventListener("click", (event) => {
+    if (!customSelect.contains(event.target)) closeMenu();
+  });
+
+  syncCustomSortSelect();
 }
 
 /* ==========================================
@@ -1913,6 +2042,7 @@ function clearFilters() {
 
   if (sortSelect) {
     sortSelect.value = "default";
+    syncCustomSortSelect();
   }
 
   collectionFilters?.querySelectorAll("[data-collection-option]").forEach((option) => {
@@ -2177,6 +2307,7 @@ window.addEventListener("resize", handleCatalogResize);
 
 syncMobileFilterAccessibility();
 syncFilterGroupPresentation();
+initCustomSortSelect();
 
 /* ==========================================
    INICIALIZAR
