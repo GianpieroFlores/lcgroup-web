@@ -18,6 +18,8 @@
     class="catalog-product-image__primary"
     src="{{primaryImage}}"
     alt="{{name}}"
+    width="600"
+    height="600"
     loading="lazy"
   />
 
@@ -25,6 +27,8 @@
     class="catalog-product-image__secondary"
     src="{{secondaryImage}}"
     alt=""
+    width="600"
+    height="600"
     loading="lazy"
     aria-hidden="true"
   />
@@ -35,7 +39,7 @@
   <div class="catalog-product-info">
     <span class="catalog-product-collection"> {{collection}} </span>
 
-    <h3 class="catalog-product-name">{{name}}</h3>
+    <h3 class="catalog-product-name"><a href="{{url}}">{{name}}</a></h3>
 
     <p class="catalog-product-presentation">{{presentation}}</p>
 

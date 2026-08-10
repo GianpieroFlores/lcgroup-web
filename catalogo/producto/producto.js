@@ -4,6 +4,8 @@ import { createProductCard } from "../../src/components/product-card/product-car
 import { addProductToCart } from "../../src/components/cart/cart.js";
 import { escapeAttribute, escapeHTML } from "../../src/utils/escape.js";
 import { findProductById } from "../../src/utils/products.js";
+import { findProductBySlug } from "../../src/utils/product-slugs.js";
+import { createCatalogUrl, createProductUrl } from "../../src/utils/urls.js";
 import {
   trackProductNotFound,
   trackViewItem,
@@ -15,35 +17,33 @@ let product = null;
 const MAX_REQUEST_QUANTITY = 99;
 
 /*=========================================
-=            OBTENER ID URL               =
-=========================================*/
-
-function getProductId() {
-  const params = new URLSearchParams(window.location.search);
-
-  return Number(params.get("id"));
-}
-
-/*=========================================
 =            CARGAR JSON                  =
 =========================================*/
 
 async function loadProduct() {
   const requestedId = new URLSearchParams(window.location.search).get("id");
-  const id = getProductId();
+  const pathMatch = window.location.pathname.match(/^\/productos\/([^/]+)\/?$/i);
 
-  if (!id) {
-    trackProductNotFound(requestedId);
-    window.location.href = "/catalogo/";
+  if (requestedId) {
+    const legacyProduct = findProductById(products, requestedId);
 
+    if (!legacyProduct) {
+      trackProductNotFound(requestedId);
+      window.location.replace("/catalogo/");
+      return;
+    }
+
+    window.location.replace(createProductUrl(legacyProduct));
     return;
   }
 
-product = findProductById(products, id);
+  product = pathMatch
+    ? findProductBySlug(products, decodeURIComponent(pathMatch[1]))
+    : null;
 
   if (!product) {
-    trackProductNotFound(requestedId);
-    window.location.href = "/catalogo/";
+    trackProductNotFound(pathMatch?.[1] || requestedId);
+    window.location.replace("/catalogo/");
 
     return;
   }
@@ -65,6 +65,11 @@ function renderProduct(products) {
   trackViewItem(product);
 
   document.getElementById("breadcrumb-product").textContent = product.name;
+  const categoryBreadcrumb = document.querySelector(".product-breadcrumb a:nth-of-type(2)");
+  if (categoryBreadcrumb) {
+    categoryBreadcrumb.href = createCatalogUrl({ categoria: product.category });
+    categoryBreadcrumb.textContent = product.category;
+  }
 
   document.getElementById("product-collection").textContent =
     product.collection;

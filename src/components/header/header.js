@@ -105,7 +105,7 @@ function loadCategories() {
     </li>
     ${categoryItems}
     <li>
-      <a href="/catalogo/?vista=colecciones">
+      <a href="/colecciones/">
         Colecciones
       </a>
     </li>
@@ -649,7 +649,7 @@ function createSearchResult(product, searchTerm = "", index = 0) {
   const resultLink = document.createElement("a");
 
   resultLink.className = "search-result";
-  resultLink.href = createProductUrl(product.id);
+  resultLink.href = createProductUrl(product);
 
   resultLink.setAttribute("role", "option");
   resultLink.setAttribute("aria-selected", "false");

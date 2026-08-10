@@ -1,28 +1,38 @@
+import products from "../data/products.json";
+import { findProductById } from "./products.js";
+import { createProductSlug, normalizeSlug } from "./product-slugs.js";
+
 const CATALOG_PATH = "/catalogo/";
-const PRODUCT_PATH = "/catalogo/producto/";
 
-export function createProductUrl(productId) {
-  const url = new URL(PRODUCT_PATH, window.location.origin);
+export function createProductUrl(productOrId) {
+  const product = typeof productOrId === "object"
+    ? productOrId
+    : findProductById(products, productOrId);
 
-  url.searchParams.set("id", String(productId));
-
-  return `${url.pathname}${url.search}`;
+  if (!product) return CATALOG_PATH;
+  return `/productos/${createProductSlug(product, products)}/`;
 }
 
 export function createCatalogUrl(parameters = {}) {
+  const entries = Object.entries(parameters).filter(([, value]) => (
+    value !== undefined && value !== null && String(value).trim() !== ""
+  ));
+
+  if (entries.length === 1 && entries[0][0] === "categoria") {
+    return `/catalogo/${normalizeSlug(entries[0][1])}/`;
+  }
+
+  if (entries.length === 1 && entries[0][0] === "coleccion") {
+    return `/colecciones/${normalizeSlug(entries[0][1])}/`;
+  }
+
+  if (entries.length === 1 && entries[0][0] === "vista" && entries[0][1] === "colecciones") {
+    return "/colecciones/";
+  }
+
   const url = new URL(CATALOG_PATH, window.location.origin);
-
-  Object.entries(parameters).forEach(([parameterName, value]) => {
-    if (
-      value === undefined ||
-      value === null ||
-      String(value).trim() === ""
-    ) {
-      return;
-    }
-
+  entries.forEach(([parameterName, value]) => {
     url.searchParams.set(parameterName, String(value).trim());
   });
-
   return `${url.pathname}${url.search}`;
 }

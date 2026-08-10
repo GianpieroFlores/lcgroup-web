@@ -504,7 +504,7 @@ function createCartProductElement(item) {
 
   const productLinks = fragment.querySelectorAll("[data-cart-product-link]");
 
-  const productUrl = createProductUrl(item.id);
+  const productUrl = createProductUrl(item);
 
   cartProduct.dataset.cartProductId = item.id;
 

@@ -1,8 +1,29 @@
 import { resolve } from "node:path";
 import { defineConfig } from "vite";
 
+function cleanSeoRoutes() {
+  return {
+    name: "clean-seo-routes",
+    configureServer(server) {
+      server.middlewares.use((request, _response, next) => {
+        const pathname = new URL(request.url, "http://localhost").pathname;
+        if (/^\/productos\/[^/.]+\/?$/.test(pathname)) {
+          request.url = "/catalogo/producto/index.html";
+        } else if (
+          /^\/catalogo\/[^/.]+\/?$/.test(pathname) ||
+          /^\/colecciones(?:\/[^/.]+)?\/?$/.test(pathname)
+        ) {
+          request.url = "/catalogo/index.html";
+        }
+        next();
+      });
+    },
+  };
+}
+
 export default defineConfig({
   base: "/",
+  plugins: [cleanSeoRoutes()],
   build: {
     rollupOptions: {
       input: {

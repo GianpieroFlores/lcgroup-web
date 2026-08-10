@@ -1,4 +1,3 @@
-import "./catalogo.css";
 import productsData from "../src/data/products.json";
 
 import { createProductCard } from "../src/components/product-card/product-card.js";
@@ -8,6 +7,7 @@ import {
   getProductSearchText,
   normalizeSearchText,
 } from "../src/utils/search.js";
+import { normalizeSlug } from "../src/utils/product-slugs.js";
 import {
   trackEvent,
   trackFilter,
@@ -183,6 +183,39 @@ function normalizeFacetValue(value = "") {
   return normalizeSearchText(value)
     .replace(/[-_]+/g, " ")
     .replace(/\s+/g, " ");
+}
+
+function applyCleanCatalogRoute(params) {
+  const segments = window.location.pathname.split("/").filter(Boolean);
+
+  if (segments[0] === "catalogo" && segments[1]) {
+    const category = [...new Set(products.map((item) => item.category))]
+      .find((value) => normalizeSlug(value) === normalizeSlug(segments[1]));
+    if (category) params.set("categoria", category);
+  }
+
+  if (segments[0] === "colecciones") {
+    if (!segments[1]) {
+      params.set("vista", "colecciones");
+      return;
+    }
+
+    const routeCollections = [...new Set(products.map((item) => item.collection))]
+      .filter((value) => normalizeSlug(value) === normalizeSlug(segments[1]));
+    if (routeCollections.length) params.set("coleccion", routeCollections.join(","));
+  }
+}
+
+function markTechnicalFilterUrl(params) {
+  if ([...params.keys()].length === 0) return;
+
+  let robots = document.querySelector('meta[name="robots"]');
+  if (!robots) {
+    robots = document.createElement("meta");
+    robots.name = "robots";
+    document.head.append(robots);
+  }
+  robots.content = "noindex,follow";
 }
 
 function isCollectionsViewActive() {
@@ -413,6 +446,8 @@ async function loadProducts() {
   configurePriceLimits();
 
   const params = new URLSearchParams(window.location.search);
+  applyCleanCatalogRoute(params);
+  markTechnicalFilterUrl(new URLSearchParams(window.location.search));
 
   viewMode = params.get("vista") === "colecciones"
     ? "collections"

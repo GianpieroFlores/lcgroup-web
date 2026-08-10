@@ -61,11 +61,11 @@ export async function createProductCard(product) {
   html = html
     .replace("{{id}}", () => escapeAttribute(product.id))
     .replace("{{badges}}", () => badgesMarkup)
-    .replace(
+    .replaceAll(
       "{{url}}",
       () =>
         escapeAttribute(
-          createProductUrl(product.id),
+          createProductUrl(product),
         ),
     )
     .replace("{{primaryImage}}", () => escapeAttribute(primaryImage))
@@ -109,6 +109,12 @@ export function initProductCardNavigation(container = document) {
 
     /* No navegar si se hizo click en un control */
 
+
+    const productLink = event.target.closest(".catalog-product-name a");
+    if (productLink) {
+      trackCardSelection(card);
+      return;
+    }
 
     if (
       event.target.closest(

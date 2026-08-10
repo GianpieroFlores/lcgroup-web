@@ -56,7 +56,10 @@ function safePagePath() {
 
 function pageName() {
   const path = window.location.pathname.replace(/index\.html$/, "");
-  if (path.includes("/catalogo/producto/")) return "Detalle de producto";
+  if (path.includes("/catalogo/producto/") || path.includes("/productos/")) {
+    return "Detalle de producto";
+  }
+  if (path.includes("/colecciones/")) return "Colecciones";
   if (path.includes("/catalogo/")) {
     return new URLSearchParams(window.location.search).get("vista") === "colecciones"
       ? "Colecciones" : "Catálogo";
