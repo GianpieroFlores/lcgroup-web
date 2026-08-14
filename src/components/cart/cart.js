@@ -9,10 +9,13 @@ import cartHTML from "./cart.html?raw";
    DATOS DE PRODUCTOS
 ===================================================== */
 
-import products from "../../data/products.json";
+import allProducts from "../../data/products.json";
 import {
   findProductById,
+  getEffectiveProductPrice,
   getPrimaryProductImage,
+  getVisibleProducts,
+  isProductVisible,
 } from "../../utils/products.js";
 import { createProductUrl } from "../../utils/urls.js";
 import {
@@ -32,6 +35,7 @@ import {
 ===================================================== */
 
 const CART_STORAGE_KEY = "lcgroup-shopping-cart";
+const products = getVisibleProducts(allProducts);
 const WHATSAPP_NUMBER = "51966420414";
 
 /* =====================================================
@@ -94,7 +98,12 @@ function loadCartFromStorage() {
 
     return parsedCart
       .filter((item) => {
-        return item && item.id !== undefined && Number(item.quantity) > 0;
+        return (
+          item &&
+          item.id !== undefined &&
+          Number(item.quantity) > 0 &&
+          Boolean(findProductById(products, item.id))
+        );
       })
       .map((item) => {
         const sourceProduct = findProductById(products, item.id);
@@ -113,7 +122,9 @@ function loadCartFromStorage() {
             getPrimaryProductImage(
               sourceProduct,
             ),
-          price: Number(item.price) || 0,
+          price: sourceProduct
+            ? getEffectiveProductPrice(sourceProduct)
+            : (Number(item.price) || 0),
           quantity: Math.max(1, Number(item.quantity) || 1),
         };
       });
@@ -355,7 +366,7 @@ function keepFocusInsideCart(event) {
 ===================================================== */
 
 export function addProductToCart(product, quantity = 1) {
-  if (!product || product.id === undefined) {
+  if (!product || product.id === undefined || !isProductVisible(product)) {
     console.error("No se puede agregar un producto sin ID.");
 
     return;
@@ -379,7 +390,7 @@ export function addProductToCart(product, quantity = 1) {
       image: getPrimaryProductImage(
         product,
       ),
-      price: Number(product.price) || 0,
+      price: getEffectiveProductPrice(product),
       quantity: requestedQuantity,
     });
   }

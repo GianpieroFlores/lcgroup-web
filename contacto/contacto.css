@@ -439,14 +439,29 @@
    ESTADOS DE VALIDACIÓN
 ===================================================== */
 
-.form-group input:invalid:not(:placeholder-shown),
-.form-group textarea:invalid:not(:placeholder-shown) {
+.form-group input.is-invalid,
+.form-group textarea.is-invalid {
   border-color: var(--color-primary);
+  box-shadow: 0 1px 0 rgba(231, 24, 3, 0.35);
 }
 
-.form-group input:valid:not(:placeholder-shown),
-.form-group textarea:valid:not(:placeholder-shown) {
-  border-color: var(--color-text-muted);
+.form-group input.is-invalid:focus,
+.form-group textarea.is-invalid:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 2px 0 var(--color-primary);
+}
+
+.field-error {
+  margin-top: -4px;
+  color: var(--color-primary);
+  font-size: 0.72rem;
+  font-weight: var(--font-weight-medium);
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+}
+
+.field-error[hidden] {
+  display: none;
 }
 
 /* =====================================================

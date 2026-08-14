@@ -1,13 +1,20 @@
 import "./product-card.css";
 import productCardHTML from "./product-card.html?raw";
 import { escapeAttribute, escapeHTML } from "../../utils/escape.js";
-import { getPrimaryProductImage } from "../../utils/products.js";
+import {
+  getPrimaryProductImage,
+  getOfferPrice,
+  getProductDiscountPercentage,
+  getVisibleProducts,
+  isProductVisible,
+} from "../../utils/products.js";
 import { createProductUrl } from "../../utils/urls.js";
-import products from "../../data/products.json";
+import allProducts from "../../data/products.json";
 import { findProductById } from "../../utils/products.js";
 import { trackSelectItem } from "../../services/analytics.js";
 
 let template = null;
+const products = getVisibleProducts(allProducts);
 
 /* ==========================================
    CARGAR TEMPLATE
@@ -26,6 +33,8 @@ async function loadTemplate() {
 ========================================== */
 
 export async function createProductCard(product) {
+  if (!isProductVisible(product)) return "";
+
   let html = await loadTemplate();
 
   const primaryImage = getPrimaryProductImage(product);
@@ -34,6 +43,15 @@ export async function createProductCard(product) {
     product.gallery?.[1]?.image || primaryImage;
 
   const productName = escapeHTML(product.name);
+  const offerPrice = getOfferPrice(product);
+  const discountPercentage = getProductDiscountPercentage(product);
+  const priceMarkup = offerPrice === null
+    ? `<strong class="catalog-product-price">S/ ${Number(product.price).toFixed(2)}</strong>`
+    : `<span class="catalog-product-price catalog-product-price--regular">S/ ${Number(product.price).toFixed(2)}</span>
+       <span class="catalog-product-offer-row">
+         <strong class="catalog-product-price catalog-product-price--offer">S/ ${offerPrice.toFixed(2)}</strong>
+         <span class="catalog-product-discount">-${discountPercentage}%</span>
+       </span>`;
 
   const badges = [
     product.offer
@@ -73,10 +91,7 @@ export async function createProductCard(product) {
     .replaceAll("{{name}}", () => productName)
     .replace("{{collection}}", () => escapeHTML(product.collection))
     .replace("{{presentation}}", () => escapeHTML(product.presentation))
-    .replace(
-      "{{price}}",
-      () => Number(product.price).toFixed(2),
-    );
+    .replace("{{priceMarkup}}", () => priceMarkup);
 
   return html;
 }

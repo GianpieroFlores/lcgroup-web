@@ -2,7 +2,11 @@ import productsData from "../src/data/products.json";
 
 import { createProductCard } from "../src/components/product-card/product-card.js";
 import { escapeAttribute, escapeHTML } from "../src/utils/escape.js";
-import { formatDrinkLabel } from "../src/utils/products.js";
+import {
+  formatDrinkLabel,
+  getEffectiveProductPrice,
+  getVisibleProducts,
+} from "../src/utils/products.js";
 import {
   getProductSearchText,
   normalizeSearchText,
@@ -260,7 +264,7 @@ function productMatchesActiveFilters(product, ignoredFacet = "") {
     selectedDrinks.size === 0 ||
     [...selectedDrinks].some((drink) => productDrinks.includes(drink));
 
-  const price = Number(product.price);
+  const price = getEffectiveProductPrice(product);
 
   const minimumMatches = minimumPrice === null || price >= minimumPrice;
   const maximumMatches = maximumPrice === null || price <= maximumPrice;
@@ -441,7 +445,7 @@ function updateSetParameter(parameterName, selectedValues) {
 ========================================== */
 
 async function loadProducts() {
-  products = productsData;
+  products = getVisibleProducts(productsData);
 
   configurePriceLimits();
 
@@ -834,7 +838,7 @@ function configurePriceLimits() {
     return;
   }
 
-  const prices = products.map((product) => Number(product.price));
+  const prices = products.map(getEffectiveProductPrice);
 
   catalogMinimumPrice = Math.min(...prices);
   catalogMaximumPrice = Math.max(...prices);
@@ -1133,11 +1137,15 @@ function updateAvailableFilters() {
 function sortProducts() {
   switch (sortValue) {
     case "price-asc":
-      filteredProducts.sort((a, b) => Number(a.price) - Number(b.price));
+      filteredProducts.sort(
+        (a, b) => getEffectiveProductPrice(a) - getEffectiveProductPrice(b),
+      );
       break;
 
     case "price-desc":
-      filteredProducts.sort((a, b) => Number(b.price) - Number(a.price));
+      filteredProducts.sort(
+        (a, b) => getEffectiveProductPrice(b) - getEffectiveProductPrice(a),
+      );
       break;
 
     case "name-asc":

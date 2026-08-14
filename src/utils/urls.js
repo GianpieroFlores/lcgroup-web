@@ -1,15 +1,20 @@
-import products from "../data/products.json";
-import { findProductById } from "./products.js";
+import allProducts from "../data/products.json";
+import {
+  findProductById,
+  getVisibleProducts,
+  isProductVisible,
+} from "./products.js";
 import { createProductSlug, normalizeSlug } from "./product-slugs.js";
 
 const CATALOG_PATH = "/catalogo/";
+const products = getVisibleProducts(allProducts);
 
 export function createProductUrl(productOrId) {
   const product = typeof productOrId === "object"
     ? productOrId
     : findProductById(products, productOrId);
 
-  if (!product) return CATALOG_PATH;
+  if (!product || !isProductVisible(product)) return CATALOG_PATH;
   return `/productos/${createProductSlug(product, products)}/`;
 }
 

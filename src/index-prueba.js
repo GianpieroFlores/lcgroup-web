@@ -1,5 +1,6 @@
 import "./index-prueba.css";
 import productsData from "./data/products.json";
+import { getVisibleProducts } from "./utils/products.js";
 import { createProductCard } from "./components/product-card/product-card.js";
 import { escapeAttribute, escapeHTML } from "./utils/escape.js";
 import { createCatalogUrl } from "./utils/urls.js";
@@ -226,7 +227,7 @@ function isHomePage() {
 ===================================================== */
 
 async function loadProducts() {
-  const data = productsData;
+  const data = getVisibleProducts(productsData);
 
   if (!Array.isArray(data)) {
     throw new TypeError(

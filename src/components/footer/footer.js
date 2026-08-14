@@ -1,8 +1,11 @@
 import "./footer.css";
 import footerHTML from "./footer.html?raw";
-import products from "../../data/products.json";
+import allProducts from "../../data/products.json";
 import { escapeAttribute, escapeHTML } from "../../utils/escape.js";
+import { getVisibleProducts } from "../../utils/products.js";
 import { createCatalogUrl } from "../../utils/urls.js";
+
+const products = getVisibleProducts(allProducts);
 
 function formatFooterCategory(category) {
   return String(category)

@@ -1,63 +1,65 @@
 [
   {
-  "id": 1,
-  "sku": "MECOSP53",
-  "channel": "ON TRADE",
-  "collection": "STYLE",
-  "name": "COPA VINO BLANCO STYLE",
-  "presentation": "Caja con 12 unidades",
-  "category": "copas",
-  "shortDescription": "Set de 12 copas SPIEGELAU Style para vino blanco, elaboradas en cristal de alta calidad. Su diseño elegante y funcional realza los aromas, la frescura y el equilibrio de los vinos blancos, siendo ideales para uso profesional y doméstico.",
-  "description": "La copa para vino blanco SPIEGELAU Style ha sido diseñada para resaltar la frescura, los aromas y el equilibrio de los vinos blancos. Su cáliz amplio permite una óptima circulación del aire, favoreciendo el desarrollo del perfil aromático del vino y potenciando su sabor para una experiencia de degustación más completa. Su forma elegante y perfectamente equilibrada convierte cada servicio en un momento de sofisticación.\n\nFabricada en cristal de alta calidad, esta copa combina brillo, transparencia y resistencia con un diseño moderno de líneas limpias y refinadas. Gracias al exclusivo proceso Platinum Glass de SPIEGELAU, ofrece una claridad excepcional y una gran resistencia al desgaste, manteniendo su brillo incluso después de numerosos lavados.\n\nLa colección SPIEGELAU Style destaca por sus formas versátiles y contemporáneas, diseñadas para realzar una amplia variedad de bebidas. Su fabricación a máquina garantiza uniformidad, precisión y una excelente relación calidad-precio, convirtiéndola en una elección ideal tanto para restaurantes, hoteles y bares como para el hogar.\n\nCada copa ha sido sometida a rigurosas pruebas de calidad, demostrando conservar su transparencia y brillo incluso después de más de 1,500 ciclos de lavado en lavavajillas. Su equilibrio, ligereza y resistencia facilitan un servicio elegante y seguro en cualquier ocasión.\n\nInformación importante:\n\n• Este producto está fabricado en cristal y puede romperse si se cae o recibe un impacto fuerte, generando fragmentos afilados.",
-  "specifications": [
-    {
-      "label": "Opciones de color",
-      "value": "Cristal claro"
-    },
-    {
-      "label": "Fabricación",
-      "value": "Hecho a máquina"
-    },
-    {
-      "label": "Colección",
-      "value": "Style"
-    },
-    {
-      "label": "Material",
-      "value": "Cristal"
-    },
-    {
-      "label": "Recomendado para limpiabotellas",
-      "value": "No"
-    },
-    {
-      "label": "Diámetro máximo",
-      "value": "86 mm"
-    },
-    {
-      "label": "Altura",
-      "value": "222 mm"
-    }
-  ],
-  "price": 39.9,
-  "stock": 48,
-  "featured": true,
-  "new": true,
-  "offer": true,
-  "recommendedFor": [
-    "vino-blanco"
-  ],
-  "gallery": [
-    {
-      "image": "/assets/images/product01.jpg",
-      "alt": "Vista principal"
-    },
-    {
-      "image": "/assets/images/product01-1.jpg",
-      "alt": "Vista total de la copa"
-    }
-  ]
-},
+    "id": 1,
+    "sku": "MECOSP53",
+    "channel": "ON TRADE",
+    "collection": "STYLE",
+    "name": "COPA VINO BLANCO STYLE",
+    "presentation": "Caja con 12 unidades",
+    "category": "copas",
+    "shortDescription": "Set de 12 copas SPIEGELAU Style para vino blanco, elaboradas en cristal de alta calidad. Su diseño elegante y funcional realza los aromas, la frescura y el equilibrio de los vinos blancos, siendo ideales para uso profesional y doméstico.",
+    "description": "La copa para vino blanco SPIEGELAU Style ha sido diseñada para resaltar la frescura, los aromas y el equilibrio de los vinos blancos. Su cáliz amplio permite una óptima circulación del aire, favoreciendo el desarrollo del perfil aromático del vino y potenciando su sabor para una experiencia de degustación más completa. Su forma elegante y perfectamente equilibrada convierte cada servicio en un momento de sofisticación.\n\nFabricada en cristal de alta calidad, esta copa combina brillo, transparencia y resistencia con un diseño moderno de líneas limpias y refinadas. Gracias al exclusivo proceso Platinum Glass de SPIEGELAU, ofrece una claridad excepcional y una gran resistencia al desgaste, manteniendo su brillo incluso después de numerosos lavados.\n\nLa colección SPIEGELAU Style destaca por sus formas versátiles y contemporáneas, diseñadas para realzar una amplia variedad de bebidas. Su fabricación a máquina garantiza uniformidad, precisión y una excelente relación calidad-precio, convirtiéndola en una elección ideal tanto para restaurantes, hoteles y bares como para el hogar.\n\nCada copa ha sido sometida a rigurosas pruebas de calidad, demostrando conservar su transparencia y brillo incluso después de más de 1,500 ciclos de lavado en lavavajillas. Su equilibrio, ligereza y resistencia facilitan un servicio elegante y seguro en cualquier ocasión.\n\nInformación importante:\n\n• Este producto está fabricado en cristal y puede romperse si se cae o recibe un impacto fuerte, generando fragmentos afilados.",
+    "specifications": [
+      {
+        "label": "Opciones de color",
+        "value": "Cristal claro"
+      },
+      {
+        "label": "Fabricación",
+        "value": "Hecho a máquina"
+      },
+      {
+        "label": "Colección",
+        "value": "Style"
+      },
+      {
+        "label": "Material",
+        "value": "Cristal"
+      },
+      {
+        "label": "Recomendado para limpiabotellas",
+        "value": "No"
+      },
+      {
+        "label": "Diámetro máximo",
+        "value": "86 mm"
+      },
+      {
+        "label": "Altura",
+        "value": "222 mm"
+      }
+    ],
+    "price": 420,
+    "stock": 48,
+    "featured": true,
+    "new": true,
+    "offer": true,
+    "offerPrice": 336,
+    "recommendedFor": [
+      "vino-blanco"
+    ],
+    "gallery": [
+      {
+        "image": "/assets/images/product01.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/assets/images/product01-1.jpg",
+        "alt": "Vista total de la copa"
+      }
+    ],
+    "visible": true
+  },
   {
     "id": 2,
     "sku": "MECOSP71",
@@ -98,11 +100,12 @@
         "value": "9.567 in"
       }
     ],
-    "price": 34.9,
+    "price": 680,
     "stock": 31,
     "featured": true,
     "new": false,
     "offer": true,
+    "offerPrice": 544,
     "recommendedFor": [
       "vino-tinto"
     ],
@@ -116,14 +119,15 @@
         "alt": "Vista total de la Copa Bordeaux"
       },
       {
-        "image": "/assets/images/product02-2.webp",
+        "image": "/assets/images/product02-2.jpg",
         "alt": "Vista de la caja de la copa Bordeauz"
       },
       {
         "image": "/assets/images/product02.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 3,
@@ -170,6 +174,7 @@
     "featured": false,
     "new": false,
     "offer": false,
+    "offerPrice": null,
     "recommendedFor": [
       "vino-tinto"
     ],
@@ -182,7 +187,8 @@
         "image": "/assets/images/product03-1.jpg",
         "alt": "Vista total de la Copa Bordeaux"
       }
-    ]
+    ],
+    "visible": false
   },
   {
     "id": 4,
@@ -224,11 +230,12 @@
         "value": "15.551 in"
       }
     ],
-    "price": 22.9,
+    "price": 0,
     "stock": 42,
     "featured": true,
     "new": false,
     "offer": false,
+    "offerPrice": null,
     "recommendedFor": [
       "vino-tinto"
     ],
@@ -245,7 +252,8 @@
         "image": "/assets/images/product04.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": false
   },
   {
     "id": 5,
@@ -287,11 +295,12 @@
         "value": "10 in"
       }
     ],
-    "price": 24.9,
+    "price": 450,
     "stock": 1,
     "featured": true,
     "new": true,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 360,
     "recommendedFor": [
       "vino-tinto"
     ],
@@ -312,7 +321,8 @@
         "image": "/assets/images/product05.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 6,
@@ -354,11 +364,12 @@
         "value": "235 mm"
       }
     ],
-    "price": 0,
+    "price": 680,
     "stock": 22,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 544,
     "recommendedFor": [
       "vino-tinto"
     ],
@@ -372,14 +383,15 @@
         "alt": "Vista lateral"
       },
       {
-        "image": "/assets/images/product06-3.webp",
+        "image": "/assets/images/product06-3.jpg",
         "alt": "Detalle de la copa"
       },
       {
         "image": "/assets/images/product06.jpg",
         "alt": "Vista del empaque"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 7,
@@ -421,11 +433,12 @@
         "value": "9.724 in"
       }
     ],
-    "price": 49.9,
+    "price": 450,
     "stock": 20,
     "featured": true,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 360,
     "recommendedFor": [
       "vino-tinto"
     ],
@@ -446,7 +459,8 @@
         "image": "/assets/images/product07.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 8,
@@ -488,11 +502,12 @@
         "value": "8.858 in"
       }
     ],
-    "price": 29.9,
+    "price": 420,
     "stock": 19,
     "featured": true,
     "new": false,
     "offer": true,
+    "offerPrice": 336,
     "recommendedFor": [
       "vino-tinto"
     ],
@@ -513,7 +528,8 @@
         "image": "/assets/images/product08.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 9,
@@ -555,11 +571,12 @@
         "value": "151 - 200 mm"
       }
     ],
-    "price": 0,
+    "price": 360,
     "stock": 366,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 288,
     "recommendedFor": [
       "vino-blanco"
     ],
@@ -568,7 +585,8 @@
         "image": "/assets/images/product09.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 10,
@@ -585,11 +603,13 @@
     "stock": 64,
     "featured": false,
     "new": false,
-    "offer": true,
+    "offer": false,
+    "offerPrice": null,
     "recommendedFor": [
       "vino-blanco"
     ],
-    "gallery": []
+    "gallery": [],
+    "visible": false
   },
   {
     "id": 11,
@@ -631,11 +651,12 @@
         "value": "219 mm"
       }
     ],
-    "price": 0,
+    "price": 375,
     "stock": 85,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 300,
     "recommendedFor": [
       "espumantes"
     ],
@@ -656,7 +677,8 @@
         "image": "/assets/images/product11-2.jpg",
         "alt": "Vista del empaque"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 12,
@@ -698,11 +720,12 @@
         "value": "6.89 in"
       }
     ],
-    "price": 18.9,
+    "price": 360,
     "stock": 6,
     "featured": true,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 288,
     "recommendedFor": [
       "cocteles"
     ],
@@ -719,7 +742,8 @@
         "image": "/assets/images/product12-2.jpg",
         "alt": "Detalle de la copa"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 13,
@@ -761,11 +785,12 @@
         "value": "9.449 in"
       }
     ],
-    "price": 44.9,
+    "price": 420,
     "stock": 30,
     "featured": false,
     "new": true,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 336,
     "recommendedFor": [
       "cocteles"
     ],
@@ -786,7 +811,8 @@
         "image": "/assets/images/product13.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 14,
@@ -828,11 +854,12 @@
         "value": "9.252 in"
       }
     ],
-    "price": 42.9,
+    "price": 420,
     "stock": 38,
     "featured": false,
     "new": false,
     "offer": true,
+    "offerPrice": 336,
     "recommendedFor": [
       "vino-tinto",
       "vino-blanco"
@@ -854,7 +881,8 @@
         "image": "/assets/images/product14.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 15,
@@ -896,11 +924,12 @@
         "value": "137 mm"
       }
     ],
-    "price": 0,
+    "price": 360,
     "stock": 27,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 288,
     "recommendedFor": [
       "destilados"
     ],
@@ -913,7 +942,8 @@
         "image": "/assets/images/product15-2.webp",
         "alt": "Detalle de la copa"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 16,
@@ -955,11 +985,12 @@
         "value": "7.756 in"
       }
     ],
-    "price": 19.9,
+    "price": 360,
     "stock": 20,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 288,
     "recommendedFor": [
       "destilados"
     ],
@@ -976,7 +1007,8 @@
         "image": "/assets/images/product16-1.jpg",
         "alt": "Vista lateral"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 17,
@@ -1018,11 +1050,12 @@
         "value": "8.858 in"
       }
     ],
-    "price": 36.9,
+    "price": 420,
     "stock": 22,
     "featured": false,
     "new": true,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 336,
     "recommendedFor": [
       "espumantes"
     ],
@@ -1043,14 +1076,15 @@
         "image": "/assets/images/product17.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 18,
     "sku": "MECOSP13",
     "channel": "ON TRADE",
     "collection": "COCKTAIL",
-    "name": "COPA GIN \u0026 TÓNIC",
+    "name": "COPA GIN & TÓNIC",
     "presentation": "Caja con 12 unidades",
     "category": "copas",
     "shortDescription": "La SPIEGELAU Special Glasses Pro Copa Gin & Tonic está diseñada para realzar los aromas y la presentación de gin tonics y otros cócteles premium. Fabricada en cristal de alta calidad, combina elegancia, resistencia y excelente rendimiento para cualquier ocasión.",
@@ -1085,11 +1119,12 @@
         "value": "7.677 in"
       }
     ],
-    "price": 54.9,
+    "price": 420,
     "stock": 64,
     "featured": false,
     "new": false,
     "offer": true,
+    "offerPrice": 336,
     "recommendedFor": [
       "cocteles"
     ],
@@ -1110,7 +1145,8 @@
         "image": "/assets/images/product18.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 19,
@@ -1152,11 +1188,12 @@
         "value": "29.528 in"
       }
     ],
-    "price": 32.9,
+    "price": 0,
     "stock": 1,
     "featured": false,
     "new": false,
     "offer": false,
+    "offerPrice": null,
     "recommendedFor": [
       "vino-tinto"
     ],
@@ -1177,7 +1214,8 @@
         "image": "/assets/images/product19.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": false
   },
   {
     "id": 20,
@@ -1219,11 +1257,12 @@
         "value": "5.512 in"
       }
     ],
-    "price": 21.9,
+    "price": 480,
     "stock": 46,
     "featured": false,
     "new": true,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 384,
     "recommendedFor": [
       "espumantes",
       "cocteles"
@@ -1245,7 +1284,8 @@
         "image": "/assets/images/product20.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 21,
@@ -1287,11 +1327,12 @@
         "value": "4.75 in (121 mm)"
       }
     ],
-    "price": 0,
+    "price": 480,
     "stock": 150,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 384,
     "recommendedFor": [
       "destilados"
     ],
@@ -1304,7 +1345,8 @@
         "image": "/assets/images/product21-1.jpg",
         "alt": "Detalle de la copa"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 22,
@@ -1346,11 +1388,12 @@
         "value": "9.331 in"
       }
     ],
-    "price": 27.9,
+    "price": 680,
     "stock": 74,
     "featured": false,
     "new": false,
     "offer": true,
+    "offerPrice": 544,
     "recommendedFor": [
       "vino-tinto",
       "vino-blanco"
@@ -1372,7 +1415,8 @@
         "image": "/assets/images/product22.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 23,
@@ -1414,11 +1458,12 @@
         "value": "8.583 in"
       }
     ],
-    "price": 89.9,
+    "price": 375,
     "stock": 1113,
     "featured": false,
     "new": true,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 300,
     "recommendedFor": [
       "vino-tinto",
       "vino-blanco"
@@ -1436,7 +1481,8 @@
         "image": "/assets/images/product23.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 24,
@@ -1478,11 +1524,12 @@
         "value": "209 mm"
       }
     ],
-    "price": 0,
+    "price": 375,
     "stock": 95,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 300,
     "recommendedFor": [
       "vino-blanco"
     ],
@@ -1503,7 +1550,8 @@
         "image": "/assets/images/product24-2.jpg",
         "alt": "Vista del empaque"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 25,
@@ -1545,11 +1593,12 @@
         "value": "8.898 in"
       }
     ],
-    "price": 59.9,
+    "price": 375,
     "stock": 327,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 300,
     "recommendedFor": [
       "vino-tinto"
     ],
@@ -1570,7 +1619,8 @@
         "image": "/assets/images/product25.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 26,
@@ -1612,11 +1662,12 @@
         "value": "9.724 in"
       }
     ],
-    "price": 23.9,
+    "price": 450,
     "stock": 415,
     "featured": false,
     "new": false,
     "offer": true,
+    "offerPrice": 360,
     "recommendedFor": [
       "vino-tinto"
     ],
@@ -1637,7 +1688,8 @@
         "image": "/assets/images/product26.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 27,
@@ -1679,11 +1731,12 @@
         "value": "8.858 in"
       }
     ],
-    "price": 46.9,
+    "price": 420,
     "stock": 169,
     "featured": false,
     "new": true,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 336,
     "recommendedFor": [
       "vino-tinto",
       "agua"
@@ -1701,7 +1754,8 @@
         "image": "/assets/images/product27.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 28,
@@ -1743,11 +1797,12 @@
         "value": "8.543 in"
       }
     ],
-    "price": 33.9,
+    "price": 375,
     "stock": 106,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 300,
     "recommendedFor": [
       "vino-tinto",
       "agua"
@@ -1765,7 +1820,8 @@
         "image": "/assets/images/product29-1.jpg",
         "alt": "Vista lateral de la Copa Bordeaux"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 29,
@@ -1783,11 +1839,13 @@
     "featured": false,
     "new": false,
     "offer": false,
+    "offerPrice": null,
     "recommendedFor": [
       "vino-tinto",
       "agua"
     ],
-    "gallery": []
+    "gallery": [],
+    "visible": false
   },
   {
     "id": 30,
@@ -1829,11 +1887,12 @@
         "value": "240 mm"
       }
     ],
-    "price": 0,
+    "price": 180,
     "stock": 353,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 144,
     "recommendedFor": [
       "vino-tinto",
       "vino-blanco"
@@ -1855,7 +1914,8 @@
         "image": "/assets/images/product30-3.jpg",
         "alt": "Vista del decantador"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 31,
@@ -1902,6 +1962,7 @@
     "featured": false,
     "new": false,
     "offer": false,
+    "offerPrice": null,
     "recommendedFor": [
       "vino-tinto",
       "vino-blanco"
@@ -1919,14 +1980,15 @@
         "image": "/assets/images/product31-1.jpg",
         "alt": "Detalle del decantador"
       }
-    ]
+    ],
+    "visible": false
   },
   {
     "id": 32,
     "sku": "MEJASP02",
     "channel": "RETAIL",
-    "collection": "RED \u0026 WHITE",
-    "name": "DECANTADOR RED \u0026 WHITE",
+    "collection": "RED & WHITE",
+    "name": "DECANTADOR RED & WHITE",
     "presentation": "1 unidad",
     "category": "decantadores",
     "shortDescription": "El Decantador SPIEGELAU Red & White destaca por su innovador diseño de doble cámara, que permite mantener la temperatura ideal tanto para vinos tintos como blancos. Fabricado en cristal sin plomo, combina elegancia, funcionalidad y una excelente presentación para cualquier ocasión.",
@@ -1961,11 +2023,12 @@
         "value": "271 mm"
       }
     ],
-    "price": 0,
+    "price": 520,
     "stock": 54,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 416,
     "recommendedFor": [
       "vino-tinto",
       "vino-blanco"
@@ -1983,7 +2046,8 @@
         "image": "/assets/images/product32-1.jpg",
         "alt": "Detalle del decantador"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 33,
@@ -2025,11 +2089,12 @@
         "value": "270 mm"
       }
     ],
-    "price": 0,
+    "price": 320,
     "stock": 1,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 256,
     "recommendedFor": [
       "vino-tinto",
       "vino-blanco"
@@ -2047,7 +2112,8 @@
         "image": "/assets/images/product33-1.jpg",
         "alt": "Detalle del decantador"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 34,
@@ -2065,11 +2131,13 @@
     "featured": false,
     "new": false,
     "offer": false,
+    "offerPrice": null,
     "recommendedFor": [
       "vino-tinto",
       "vino-blanco"
     ],
-    "gallery": []
+    "gallery": [],
+    "visible": false
   },
   {
     "id": 35,
@@ -2115,11 +2183,12 @@
         "value": "1 litro"
       }
     ],
-    "price": 0,
+    "price": 280,
     "stock": 28,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 224,
     "recommendedFor": [
       "vino-tinto",
       "vino-blanco"
@@ -2141,7 +2210,8 @@
         "image": "/assets/images/product35.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 36,
@@ -2187,11 +2257,12 @@
         "value": "1 litro"
       }
     ],
-    "price": 0,
+    "price": 540,
     "stock": 28,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 432,
     "recommendedFor": [
       "vino-tinto"
     ],
@@ -2212,7 +2283,8 @@
         "image": "/assets/images/product36.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 37,
@@ -2254,11 +2326,12 @@
         "value": "4 copas vino tinto (480 ml), 4 copas vino blanco (420 ml) y 4 vasos tumbler (460 ml)"
       }
     ],
-    "price": 0,
+    "price": 560,
     "stock": 54,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 448,
     "recommendedFor": [
       "vino-tinto",
       "vino-blanco"
@@ -2284,7 +2357,8 @@
         "image": "/assets/images/product37-4.webp",
         "alt": "Empaque del producto"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 38,
@@ -2326,11 +2400,12 @@
         "value": "6 copas para vino tinto y 6 copas para vino blanco"
       }
     ],
-    "price": 0,
+    "price": 500,
     "stock": 33,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 400,
     "recommendedFor": [
       "vino-tinto",
       "vino-blanco"
@@ -2352,7 +2427,8 @@
         "image": "/assets/images/product38-3.jpg",
         "alt": "Empaque del producto"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 39,
@@ -2394,11 +2470,12 @@
         "value": "2 copas Coupette, 2 copas para cóctel, 2 vasos universales para cóctel, 2 vasos long drink, 1 vaso mezclador, 1 colador, 1 cuchara de bar y 1 medidor (jigger)"
       }
     ],
-    "price": 0,
+    "price": 400,
     "stock": 7,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 320,
     "recommendedFor": [
       "cocteles"
     ],
@@ -2443,7 +2520,8 @@
         "image": "/assets/images/product39-3.jpg",
         "alt": "Vista general"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 40,
@@ -2485,11 +2563,12 @@
         "value": "6 vasos tumbler (345 ml) y 6 vasos long drink (445 ml)"
       }
     ],
-    "price": 0,
+    "price": 400,
     "stock": 48,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 320,
     "recommendedFor": [
       "cocteles",
       "destilados",
@@ -2512,7 +2591,8 @@
         "image": "/assets/images/product40-2.jpg",
         "alt": "Empaque del producto"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 41,
@@ -2554,11 +2634,12 @@
         "value": "6 copas para vino tinto, 6 copas para vino blanco y 6 copas para champagne"
       }
     ],
-    "price": 0,
+    "price": 600,
     "stock": 105,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 480,
     "recommendedFor": [
       "vino-tinto",
       "vino-blanco",
@@ -2581,7 +2662,8 @@
         "image": "/assets/images/product41-2.jpg",
         "alt": "Empaque del producto"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 42,
@@ -2623,11 +2705,12 @@
         "value": "2 copas para Aperol Spritz y otros cócteles"
       }
     ],
-    "price": 0,
+    "price": 130,
     "stock": 60,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 104,
     "recommendedFor": [
       "vino-rosado",
       "cocteles"
@@ -2645,7 +2728,8 @@
         "image": "/assets/images/product42-3.jpg",
         "alt": "Detalle de las copas"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 43,
@@ -2687,11 +2771,12 @@
         "value": "9.567 in"
       }
     ],
-    "price": 33.9,
+    "price": 230,
     "stock": 5,
     "featured": false,
     "new": false,
     "offer": true,
+    "offerPrice": 184,
     "recommendedFor": [
       "vino-tinto"
     ],
@@ -2712,14 +2797,15 @@
         "image": "/assets/images/product43.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 44,
     "sku": "MECOSP59",
     "channel": "RETAIL",
     "collection": "COCKTAIL",
-    "name": "SET X 2 COPAS GIN \u0026 TONIC",
+    "name": "SET X 2 COPAS GIN & TONIC",
     "presentation": "Caja con 2 unidades",
     "category": "copas",
     "shortDescription": "El set SPIEGELAU Gin & Tonic incluye dos copas de cristal diseñadas para realzar los aromas de las botánicas del gin y ofrecer la mejor experiencia al disfrutar gin tonic y otros cócteles premium.",
@@ -2754,11 +2840,12 @@
         "value": "225 mm"
       }
     ],
-    "price": 0,
+    "price": 130,
     "stock": 45,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 104,
     "recommendedFor": [
       "cocteles"
     ],
@@ -2779,7 +2866,8 @@
         "image": "/assets/images/product44-4.jpg",
         "alt": "Empaque del producto"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 45,
@@ -2821,11 +2909,12 @@
         "value": "9.37 in"
       }
     ],
-    "price": 0,
+    "price": 90,
     "stock": 36,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 72,
     "recommendedFor": [
       "cerveza"
     ],
@@ -2846,7 +2935,8 @@
         "image": "/assets/images/product45.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 46,
@@ -2888,11 +2978,12 @@
         "value": "7.323 in"
       }
     ],
-    "price": 0,
+    "price": 90,
     "stock": 28,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 72,
     "recommendedFor": [
       "cerveza"
     ],
@@ -2913,7 +3004,8 @@
         "image": "/assets/images/product46.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 47,
@@ -2955,11 +3047,12 @@
         "value": "8.661 in"
       }
     ],
-    "price": 0,
+    "price": 90,
     "stock": 39,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 72,
     "recommendedFor": [
       "cerveza"
     ],
@@ -2980,7 +3073,8 @@
         "image": "/assets/images/product47.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 48,
@@ -3022,11 +3116,12 @@
         "value": "1 decantador (2,9 L) y 2 copas para vino (630 ml)"
       }
     ],
-    "price": 0,
+    "price": 360,
     "stock": 66,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 288,
     "recommendedFor": [
       "vino-tinto",
       "vino-blanco"
@@ -3052,7 +3147,8 @@
         "image": "/assets/images/product48-4.webp",
         "alt": "Empaque del producto"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 49,
@@ -3094,11 +3190,12 @@
         "value": "4 vasos"
       }
     ],
-    "price": 0,
+    "price": 180,
     "stock": 55,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 144,
     "recommendedFor": [
       "cerveza"
     ],
@@ -3119,7 +3216,8 @@
         "image": "/assets/images/product49-3.jpg",
         "alt": "Vista del set"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 50,
@@ -3161,11 +3259,12 @@
         "value": "8.898 in"
       }
     ],
-    "price": 18.9,
+    "price": 150,
     "stock": 134,
     "featured": false,
     "new": true,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 120,
     "recommendedFor": [
       "vino-tinto"
     ],
@@ -3179,14 +3278,15 @@
         "alt": "Vista lateral"
       },
       {
-        "image": "/assets/images/product50-2.jpg",
+        "image": "/assets/images/product50-2.png",
         "alt": "Detalle de la copa"
       },
       {
         "image": "/assets/images/product50.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 51,
@@ -3228,11 +3328,12 @@
         "value": "8.858 in"
       }
     ],
-    "price": 0,
+    "price": 200,
     "stock": 13,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 160,
     "recommendedFor": [
       "cocteles"
     ],
@@ -3253,7 +3354,8 @@
         "image": "/assets/images/product51.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 52,
@@ -3295,16 +3397,17 @@
         "value": "8.858 in"
       }
     ],
-    "price": 51.9,
+    "price": 162.5,
     "stock": 73,
     "featured": false,
     "new": false,
     "offer": true,
+    "offerPrice": 130,
     "recommendedFor": [
       "espumantes"
     ],
     "gallery": [
-       {
+      {
         "image": "/assets/images/product52-3.jpg",
         "alt": "Vista principal"
       },
@@ -3316,79 +3419,82 @@
         "image": "/assets/images/product52-2.jpg",
         "alt": "Detalle de la copa"
       },
-            {
+      {
         "image": "/assets/images/product52.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
-{
-  "id": 53,
-  "sku": "MECOSP05",
-  "channel": "RETAIL",
-  "collection": "SALUTE",
-  "name": "SET X 4 COPA VINO BCO SALUTE",
-  "presentation": "Caja con 4 unidades",
-  "category": "copas",
-  "shortDescription": "Set de 4 copas SPIEGELAU Salute para vino blanco, elaboradas en cristal de alta calidad. Diseñadas para resaltar la frescura, los aromas y la elegancia de los vinos blancos, ofreciendo una experiencia de degustación refinada tanto en el hogar como en entornos profesionales.",
-  "description": "La copa de vino blanco SPIEGELAU Salute está diseñada para resaltar la frescura, la finura y el carácter aromático de los vinos blancos. Sus proporciones refinadas equilibran la fruta, la acidez y la mineralidad, asegurando que cada sorbo refleje la elegancia del vino. Ya sea al disfrutar de un vibrante Sauvignon Blanc, un intenso Chardonnay o un delicado Pinot Grigio, esta copa transforma cada momento en un ritual de estilo, cultura y refinamiento.\n\nPura y elegante, la cristalería transparente atrae todas las miradas. Fabricada en cristal de alta calidad, combina brillo, claridad y durabilidad con un diseño atemporal, convirtiéndose en una excelente opción para el entretenimiento, la gastronomía y el uso diario. La copa con tallo ofrece un equilibrio perfecto y una sofisticación refinada, ideal tanto para el hogar como para restaurantes y hoteles.\n\nLa colección Salute destaca por su fabricación a máquina con altos estándares de calidad, proporcionando uniformidad, resistencia y una excelente relación calidad-precio. Su diseño elegante realza la presentación del vino y garantiza un rendimiento confiable en cada uso.\n\nEste set de 4 copas SPIEGELAU se presenta en un empaque oficial de la marca con imagen del producto, ideal para regalo o para complementar una colección. Además, es apto para lavavajillas, conservando su brillo y transparencia incluso después de numerosos ciclos de lavado.\n\nInformación importante:\n\n• Este producto está fabricado en cristal y puede romperse si se cae o recibe un impacto fuerte, generando fragmentos afilados.",
-  "specifications": [
-    {
-      "label": "Opciones de color",
-      "value": "Cristal claro"
-    },
-    {
-      "label": "Fabricación",
-      "value": "Hecho a máquina"
-    },
-    {
-      "label": "Colección",
-      "value": "Salute"
-    },
-    {
-      "label": "Material",
-      "value": "Cristal"
-    },
-    {
-      "label": "Recomendado para limpiabotellas",
-      "value": "No"
-    },
-    {
-      "label": "Diámetro máximo",
-      "value": "87 mm"
-    },
-    {
-      "label": "Altura",
-      "value": "239 mm"
-    }
-  ],
-  "price": 0,
-  "stock": 39,
-  "featured": false,
-  "new": false,
-  "offer": false,
-  "recommendedFor": [
-    "vino-blanco"
-  ],
-  "gallery": [
-    {
-      "image": "/assets/images/product53.jpg",
-      "alt": "Vista principal"
-    },
-    {
-      "image": "/assets/images/product53-1.jpg",
-      "alt": "Vista lateral"
-    },
-    {
-      "image": "/assets/images/product53-2.jpg",
-      "alt": "Detalle de la copa"
-    },
-    {
-      "image": "/assets/images/product53-3.jpg",
-      "alt": "Detalle de la copa"
-    }
-  ]
-},
+  {
+    "id": 53,
+    "sku": "MECOSP05",
+    "channel": "RETAIL",
+    "collection": "SALUTE",
+    "name": "SET X 4 COPA VINO BCO SALUTE",
+    "presentation": "Caja con 4 unidades",
+    "category": "copas",
+    "shortDescription": "Set de 4 copas SPIEGELAU Salute para vino blanco, elaboradas en cristal de alta calidad. Diseñadas para resaltar la frescura, los aromas y la elegancia de los vinos blancos, ofreciendo una experiencia de degustación refinada tanto en el hogar como en entornos profesionales.",
+    "description": "La copa de vino blanco SPIEGELAU Salute está diseñada para resaltar la frescura, la finura y el carácter aromático de los vinos blancos. Sus proporciones refinadas equilibran la fruta, la acidez y la mineralidad, asegurando que cada sorbo refleje la elegancia del vino. Ya sea al disfrutar de un vibrante Sauvignon Blanc, un intenso Chardonnay o un delicado Pinot Grigio, esta copa transforma cada momento en un ritual de estilo, cultura y refinamiento.\n\nPura y elegante, la cristalería transparente atrae todas las miradas. Fabricada en cristal de alta calidad, combina brillo, claridad y durabilidad con un diseño atemporal, convirtiéndose en una excelente opción para el entretenimiento, la gastronomía y el uso diario. La copa con tallo ofrece un equilibrio perfecto y una sofisticación refinada, ideal tanto para el hogar como para restaurantes y hoteles.\n\nLa colección Salute destaca por su fabricación a máquina con altos estándares de calidad, proporcionando uniformidad, resistencia y una excelente relación calidad-precio. Su diseño elegante realza la presentación del vino y garantiza un rendimiento confiable en cada uso.\n\nEste set de 4 copas SPIEGELAU se presenta en un empaque oficial de la marca con imagen del producto, ideal para regalo o para complementar una colección. Además, es apto para lavavajillas, conservando su brillo y transparencia incluso después de numerosos ciclos de lavado.\n\nInformación importante:\n\n• Este producto está fabricado en cristal y puede romperse si se cae o recibe un impacto fuerte, generando fragmentos afilados.",
+    "specifications": [
+      {
+        "label": "Opciones de color",
+        "value": "Cristal claro"
+      },
+      {
+        "label": "Fabricación",
+        "value": "Hecho a máquina"
+      },
+      {
+        "label": "Colección",
+        "value": "Salute"
+      },
+      {
+        "label": "Material",
+        "value": "Cristal"
+      },
+      {
+        "label": "Recomendado para limpiabotellas",
+        "value": "No"
+      },
+      {
+        "label": "Diámetro máximo",
+        "value": "87 mm"
+      },
+      {
+        "label": "Altura",
+        "value": "239 mm"
+      }
+    ],
+    "price": 175,
+    "stock": 39,
+    "featured": false,
+    "new": false,
+    "offer": true,
+    "offerPrice": 140,
+    "recommendedFor": [
+      "vino-blanco"
+    ],
+    "gallery": [
+      {
+        "image": "/assets/images/product53.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/assets/images/product53-1.jpg",
+        "alt": "Vista lateral"
+      },
+      {
+        "image": "/assets/images/product53-2.jpg",
+        "alt": "Detalle de la copa"
+      },
+      {
+        "image": "/assets/images/product53-3.jpg",
+        "alt": "Detalle de la copa"
+      }
+    ],
+    "visible": true
+  },
   {
     "id": 54,
     "sku": "MECOSP04",
@@ -3429,16 +3535,17 @@
         "value": "9.724 in"
       }
     ],
-    "price": 35.9,
+    "price": 175,
     "stock": 18,
     "featured": false,
     "new": true,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 140,
     "recommendedFor": [
       "vino-tinto"
     ],
     "gallery": [
-            {
+      {
         "image": "/assets/images/product54-3.jpg",
         "alt": "Detalle de la copa"
       },
@@ -3447,14 +3554,15 @@
         "alt": "Vista lateral"
       },
       {
-        "image": "/assets/images/product54-2.jpg",
+        "image": "/assets/images/product54-2.png",
         "alt": "Detalle de la copa"
       },
-       {
+      {
         "image": "/assets/images/product54.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 55,
@@ -3496,33 +3604,34 @@
         "value": "8.74 in"
       }
     ],
-    "price": 109.9,
+    "price": 162.5,
     "stock": 52,
     "featured": false,
     "new": false,
     "offer": true,
+    "offerPrice": 130,
     "recommendedFor": [
       "vino-blanco"
     ],
     "gallery": [
-            {
+      {
         "image": "/assets/images/product55-3.jpg",
         "alt": "Vista principal"
       },
-    
       {
         "image": "/assets/images/product55-1.jpg",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product55-2.jpg",
+        "image": "/assets/images/product55-2.png",
         "alt": "Vista principal"
       },
-        {
+      {
         "image": "/assets/images/product55.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 56,
@@ -3564,16 +3673,17 @@
         "value": "8.228 in"
       }
     ],
-    "price": 45.9,
+    "price": 150,
     "stock": 64,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 120,
     "recommendedFor": [
       "vino-blanco"
     ],
     "gallery": [
-       {
+      {
         "image": "/assets/images/product56-3.jpg",
         "alt": "Vista principal"
       },
@@ -3589,7 +3699,8 @@
         "image": "/assets/images/product56.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 57,
@@ -3631,11 +3742,12 @@
         "value": "9.724 in"
       }
     ],
-    "price": 30.9,
+    "price": 175,
     "stock": 63,
     "featured": false,
     "new": true,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 140,
     "recommendedFor": [
       "vino-tinto"
     ],
@@ -3652,11 +3764,12 @@
         "image": "/assets/images/product57-2.jpg",
         "alt": "Vista principal"
       },
-       {
+      {
         "image": "/assets/images/product57.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 58,
@@ -3698,16 +3811,16 @@
         "value": "8.858 in"
       }
     ],
-    "price": 29.9,
+    "price": 162.5,
     "stock": 23,
     "featured": false,
     "new": false,
     "offer": true,
+    "offerPrice": 130,
     "recommendedFor": [
       "vino-tinto"
     ],
     "gallery": [
-
       {
         "image": "/assets/images/product58-3.jpg",
         "alt": "Vista principal"
@@ -3720,11 +3833,12 @@
         "image": "/assets/images/product58-2.jpg",
         "alt": "Vista principal"
       },
-            {
+      {
         "image": "/assets/images/product58.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 59,
@@ -3766,16 +3880,17 @@
         "value": "8.622 in"
       }
     ],
-    "price": 29.9,
+    "price": 150,
     "stock": 19,
     "featured": false,
     "new": false,
     "offer": true,
+    "offerPrice": 120,
     "recommendedFor": [
       "espumantes"
     ],
     "gallery": [
-            {
+      {
         "image": "/assets/images/product59-3.jpg",
         "alt": "Vista principal"
       },
@@ -3787,11 +3902,12 @@
         "image": "/assets/images/product59-2.jpg",
         "alt": "Vista principal"
       },
-            {
+      {
         "image": "/assets/images/product59.webp",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 60,
@@ -3833,16 +3949,17 @@
         "value": "7.756 in"
       }
     ],
-    "price": 29.9,
+    "price": 180,
     "stock": 20,
     "featured": false,
     "new": false,
     "offer": true,
+    "offerPrice": 144,
     "recommendedFor": [
       "destilados"
     ],
     "gallery": [
-            {
+      {
         "image": "/assets/images/product60-3.jpg",
         "alt": "Vista principal"
       },
@@ -3858,81 +3975,84 @@
         "image": "/assets/images/product60.webp",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
-  "id": 61,
-  "sku": "MECOSP06",
-  "channel": "RETAIL",
-  "collection": "SALUTE",
-  "name": "SET X 4 COPA CHAMPAGNE SALUTE",
-  "presentation": "Caja con 4 unidades",
-  "category": "copas",
-  "shortDescription": "Set de 4 copas flauta SPIEGELAU Salute para champagne y vinos espumosos, elaboradas en cristal de alta calidad. Diseñadas para preservar la efervescencia y resaltar la frescura, los aromas y la elegancia de cada brindis.",
-  "description": "La copa flauta para Champagne SPIEGELAU Salute representa la elegancia y la celebración. Está diseñada especialmente para Champagne, Prosecco y vinos espumosos ligeros, frescos y secos. Su forma estilizada favorece una formación constante y fina de burbujas, preservando la frescura, la delicadeza y el carácter del vino. Incorpora el exclusivo SPIEGELAU Perlage Driver, un punto mousse cuidadosamente diseñado para promover una perlage fina y continua, mejorando la experiencia sensorial y la presentación de cada copa.\n\nPura y elegante, la cristalería transparente atrae todas las miradas. Fabricada en cristal de alta calidad, combina brillo, claridad y durabilidad con un diseño atemporal, convirtiéndose en una excelente opción para reuniones, celebraciones y el uso diario. Su copa con tallo ofrece un equilibrio perfecto y una sofisticación refinada, ideal tanto para el hogar como para restaurantes y hoteles.\n\nLa colección SPIEGELAU Salute reúne copas elegantes diseñadas para el disfrute moderno del vino. Sus proporciones refinadas, el cristal brillante y sus formas versátiles ofrecen una combinación perfecta de estilo, funcionalidad y calidad. La fabricación a máquina garantiza uniformidad, resistencia y una excelente relación calidad-precio.\n\nEl set de 4 copas SPIEGELAU se presenta en el empaque oficial de la marca con imagen del producto, ideal para uso personal o como regalo. Además, es apto para lavavajillas y está diseñado para conservar su brillo y transparencia incluso después de numerosos ciclos de lavado.\n\nInformación importante:\n\n• Este producto está fabricado en cristal y puede romperse si se cae o recibe un impacto fuerte, generando fragmentos afilados.",
-  "specifications": [
-    {
-      "label": "Opciones de color",
-      "value": "Cristal claro"
-    },
-    {
-      "label": "Fabricación",
-      "value": "Hecho a máquina"
-    },
-    {
-      "label": "Colección",
-      "value": "Salute"
-    },
-    {
-      "label": "Material",
-      "value": "Cristal"
-    },
-    {
-      "label": "Recomendado para limpiabotellas",
-      "value": "No"
-    },
-    {
-      "label": "Diámetro máximo",
-      "value": "68 mm"
-    },
-    {
-      "label": "Altura",
-      "value": "245 mm"
-    }
-  ],
-  "price": 0,
-  "stock": 83,
-  "featured": false,
-  "new": false,
-  "offer": false,
-  "recommendedFor": [
+    "id": 61,
+    "sku": "MECOSP06",
+    "channel": "RETAIL",
+    "collection": "SALUTE",
+    "name": "SET X 4 COPA CHAMPAGNE SALUTE",
+    "presentation": "Caja con 4 unidades",
+    "category": "copas",
+    "shortDescription": "Set de 4 copas flauta SPIEGELAU Salute para champagne y vinos espumosos, elaboradas en cristal de alta calidad. Diseñadas para preservar la efervescencia y resaltar la frescura, los aromas y la elegancia de cada brindis.",
+    "description": "La copa flauta para Champagne SPIEGELAU Salute representa la elegancia y la celebración. Está diseñada especialmente para Champagne, Prosecco y vinos espumosos ligeros, frescos y secos. Su forma estilizada favorece una formación constante y fina de burbujas, preservando la frescura, la delicadeza y el carácter del vino. Incorpora el exclusivo SPIEGELAU Perlage Driver, un punto mousse cuidadosamente diseñado para promover una perlage fina y continua, mejorando la experiencia sensorial y la presentación de cada copa.\n\nPura y elegante, la cristalería transparente atrae todas las miradas. Fabricada en cristal de alta calidad, combina brillo, claridad y durabilidad con un diseño atemporal, convirtiéndose en una excelente opción para reuniones, celebraciones y el uso diario. Su copa con tallo ofrece un equilibrio perfecto y una sofisticación refinada, ideal tanto para el hogar como para restaurantes y hoteles.\n\nLa colección SPIEGELAU Salute reúne copas elegantes diseñadas para el disfrute moderno del vino. Sus proporciones refinadas, el cristal brillante y sus formas versátiles ofrecen una combinación perfecta de estilo, funcionalidad y calidad. La fabricación a máquina garantiza uniformidad, resistencia y una excelente relación calidad-precio.\n\nEl set de 4 copas SPIEGELAU se presenta en el empaque oficial de la marca con imagen del producto, ideal para uso personal o como regalo. Además, es apto para lavavajillas y está diseñado para conservar su brillo y transparencia incluso después de numerosos ciclos de lavado.\n\nInformación importante:\n\n• Este producto está fabricado en cristal y puede romperse si se cae o recibe un impacto fuerte, generando fragmentos afilados.",
+    "specifications": [
+      {
+        "label": "Opciones de color",
+        "value": "Cristal claro"
+      },
+      {
+        "label": "Fabricación",
+        "value": "Hecho a máquina"
+      },
+      {
+        "label": "Colección",
+        "value": "Salute"
+      },
+      {
+        "label": "Material",
+        "value": "Cristal"
+      },
+      {
+        "label": "Recomendado para limpiabotellas",
+        "value": "No"
+      },
+      {
+        "label": "Diámetro máximo",
+        "value": "68 mm"
+      },
+      {
+        "label": "Altura",
+        "value": "245 mm"
+      }
+    ],
+    "price": 175,
+    "stock": 83,
+    "featured": false,
+    "new": false,
+    "offer": true,
+    "offerPrice": 140,
+    "recommendedFor": [
       "espumantes"
     ],
-  "gallery": [
-    {
-      "image": "/assets/images/product61.jpg",
-      "alt": "Vista principal"
-    },
-    {
-      "image": "/assets/images/product61-1.jpg",
-      "alt": "Vista principal"
-    },
-    {
-      "image": "/assets/images/product61-2.jpg",
-      "alt": "Vista principal"
-    },
-    {
-      "image": "/assets/images/product61-3.jpg",
-      "alt": "Vista principal"
-    }
-  ]
-},
+    "gallery": [
+      {
+        "image": "/assets/images/product61.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/assets/images/product61-1.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/assets/images/product61-2.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/assets/images/product61-3.jpg",
+        "alt": "Vista principal"
+      }
+    ],
+    "visible": true
+  },
   {
     "id": 62,
     "sku": "MECOSP12",
     "channel": "RETAIL",
     "collection": "GIFT SETS",
-    "name": "SET X 4 COPA GIN \u0026 TÓNIC",
+    "name": "SET X 4 COPA GIN & TÓNIC",
     "presentation": "Caja con 4 unidades",
     "category": "copas",
     "shortDescription": "El set SPIEGELAU Special Glasses para Gin & Tonic incluye 4 copas de cristal de alta calidad, diseñadas para realzar los aromas y sabores del gin & tonic y otros cócteles. Su diseño elegante, resistente y perfectamente equilibrado ofrece una experiencia de degustación superior, ideal para el hogar o uso profesional.",
@@ -3967,11 +4087,12 @@
         "value": "7.677 in"
       }
     ],
-    "price": 29.9,
+    "price": 225,
     "stock": 64,
     "featured": false,
     "new": false,
     "offer": true,
+    "offerPrice": 180,
     "recommendedFor": [
       "cocteles"
     ],
@@ -3992,14 +4113,15 @@
         "image": "/assets/images/product62.webp",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 63,
     "sku": "MECOSP54",
     "channel": "RETAIL",
     "collection": "GIFT SETS",
-    "name": "SET X 4 COPA GIN \u0026 TÓNIC SIN TALLO",
+    "name": "SET X 4 COPA GIN & TÓNIC SIN TALLO",
     "presentation": "Caja con 4 unidades",
     "category": "vasos",
     "shortDescription": "El set SPIEGELAU Special Glasses para Gin & Tonic sin tallo incluye 4 vasos de cristal de alta calidad, diseñados para realzar los aromas y sabores del gin & tonic y otros cócteles. Su diseño moderno, resistente y funcional ofrece una experiencia de degustación refinada, ideal para el hogar o uso profesional.",
@@ -4034,16 +4156,17 @@
         "value": "4.685 in"
       }
     ],
-    "price": 29.9,
+    "price": 180,
     "stock": 63,
     "featured": false,
     "new": false,
     "offer": true,
+    "offerPrice": 144,
     "recommendedFor": [
       "cocteles"
     ],
     "gallery": [
-       {
+      {
         "image": "/assets/images/product63-3.jpg",
         "alt": "Vista principal"
       },
@@ -4059,7 +4182,8 @@
         "image": "/assets/images/product63.webp",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 64,
@@ -4101,11 +4225,12 @@
         "value": "10 in"
       }
     ],
-    "price": 29.9,
+    "price": 175,
     "stock": 4,
     "featured": false,
     "new": false,
     "offer": true,
+    "offerPrice": 140,
     "recommendedFor": [
       "vino-tinto"
     ],
@@ -4126,7 +4251,8 @@
         "image": "/assets/images/product64.webp",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 65,
@@ -4168,11 +4294,12 @@
         "value": "5.512 in"
       }
     ],
-    "price": 29.9,
+    "price": 200,
     "stock": 19,
     "featured": false,
     "new": false,
     "offer": true,
+    "offerPrice": 160,
     "recommendedFor": [
       "cocteles"
     ],
@@ -4193,7 +4320,8 @@
         "image": "/assets/images/product65.webp",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 66,
@@ -4235,11 +4363,12 @@
         "value": "5.512 in"
       }
     ],
-    "price": 29.9,
+    "price": 0,
     "stock": 2,
     "featured": false,
     "new": false,
-    "offer": true,
+    "offer": false,
+    "offerPrice": null,
     "recommendedFor": [
       "espumantes",
       "cocteles"
@@ -4261,7 +4390,8 @@
         "image": "/assets/images/product66.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": false
   },
   {
     "id": 67,
@@ -4308,6 +4438,7 @@
     "featured": false,
     "new": false,
     "offer": false,
+    "offerPrice": null,
     "recommendedFor": [
       "destilados"
     ],
@@ -4324,7 +4455,8 @@
         "image": "/assets/images/product67-2.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": false
   },
   {
     "id": 68,
@@ -4366,11 +4498,12 @@
         "value": "8.661 in"
       }
     ],
-    "price": 29.9,
+    "price": 150,
     "stock": 21,
     "featured": false,
     "new": false,
     "offer": true,
+    "offerPrice": 120,
     "recommendedFor": [
       "espumantes"
     ],
@@ -4391,7 +4524,8 @@
         "image": "/assets/images/product68.webp",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 69,
@@ -4433,11 +4567,12 @@
         "value": "8.858 in"
       }
     ],
-    "price": 0,
+    "price": 162.5,
     "stock": 41,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 130,
     "recommendedFor": [
       "vino-tinto"
     ],
@@ -4458,7 +4593,8 @@
         "image": "/assets/images/product69-3.webp",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 70,
@@ -4500,11 +4636,12 @@
         "value": "6.890 in"
       }
     ],
-    "price": 0,
+    "price": 180,
     "stock": 14,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 144,
     "recommendedFor": [
       "cerveza"
     ],
@@ -4521,7 +4658,8 @@
         "image": "/assets/images/product70-1.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 71,
@@ -4563,11 +4701,12 @@
         "value": "6.102 in"
       }
     ],
-    "price": 0,
+    "price": 180,
     "stock": 166,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 144,
     "recommendedFor": [
       "cerveza"
     ],
@@ -4584,7 +4723,8 @@
         "image": "/assets/images/product71-1.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 72,
@@ -4626,11 +4766,12 @@
         "value": "Sí"
       }
     ],
-    "price": 0,
+    "price": 190,
     "stock": 2,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 152,
     "recommendedFor": [
       "cerveza"
     ],
@@ -4659,7 +4800,8 @@
         "image": "/assets/images/product72.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 73,
@@ -4701,11 +4843,12 @@
         "value": "IPA: 182 × 82 mm · Stout: 180 × 86 mm · Wheat Beer: 170 × 95 mm · Barrel Aged: 175 × 90 mm (Altura × Diámetro)"
       }
     ],
-    "price": 0,
+    "price": 190,
     "stock": 24,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 152,
     "recommendedFor": [
       "cerveza"
     ],
@@ -4734,7 +4877,8 @@
         "image": "/assets/images/product73-3.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 74,
@@ -4776,11 +4920,12 @@
         "value": "IPA: 7.165 in · Stout: 7.087 in · Wheat Beer: 6.693 in · Barrel Aged: 6.890 in"
       }
     ],
-    "price": 30,
+    "price": 139,
     "stock": 55,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 111.2,
     "recommendedFor": [
       "cocteles"
     ],
@@ -4801,7 +4946,8 @@
         "image": "/assets/images/product74.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 75,
@@ -4843,11 +4989,12 @@
         "value": "7.008 in"
       }
     ],
-    "price": 0,
+    "price": 150,
     "stock": 53,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 120,
     "recommendedFor": [
       "cocteles"
     ],
@@ -4864,7 +5011,8 @@
         "image": "/assets/images/product75-2.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 76,
@@ -4906,11 +5054,12 @@
         "value": "7.323 in"
       }
     ],
-    "price": 0,
+    "price": 180,
     "stock": 20,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 144,
     "recommendedFor": [
       "cerveza"
     ],
@@ -4927,7 +5076,8 @@
         "image": "/assets/images/product76.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 77,
@@ -4974,6 +5124,7 @@
     "featured": false,
     "new": false,
     "offer": false,
+    "offerPrice": null,
     "recommendedFor": [
       "cerveza"
     ],
@@ -4990,7 +5141,8 @@
         "image": "/assets/images/product77.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": false
   },
   {
     "id": 78,
@@ -5032,11 +5184,12 @@
         "value": "6.102 in"
       }
     ],
-    "price": 20,
+    "price": 180,
     "stock": 64,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 144,
     "recommendedFor": [
       "cerveza"
     ],
@@ -5050,14 +5203,15 @@
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product78-2.webp",
+        "image": "/assets/images/product78-2.jpg",
         "alt": "Vista principal"
       },
       {
         "image": "/assets/images/product78.webp",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 79,
@@ -5099,11 +5253,12 @@
         "value": "3.701 in"
       }
     ],
-    "price": 29.9,
+    "price": 139,
     "stock": 38,
     "featured": false,
     "new": false,
     "offer": true,
+    "offerPrice": 111.2,
     "recommendedFor": [
       "cocteles"
     ],
@@ -5117,14 +5272,15 @@
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product79-2.webp",
+        "image": "/assets/images/product79-2.png",
         "alt": "Vista principal"
       },
       {
         "image": "/assets/images/product79.webp",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 80,
@@ -5166,11 +5322,12 @@
         "value": "Set de 4 unidades"
       }
     ],
-    "price": 0,
+    "price": 150,
     "stock": 5,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 120,
     "recommendedFor": [
       "vino-tinto",
       "vino-blanco",
@@ -5193,7 +5350,8 @@
         "image": "/assets/images/product80-1.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 81,
@@ -5235,11 +5393,12 @@
         "value": "5.079 in"
       }
     ],
-    "price": 20,
+    "price": 150,
     "stock": 41,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 120,
     "recommendedFor": [
       "cocteles"
     ],
@@ -5253,14 +5412,15 @@
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product81-2.webp",
+        "image": "/assets/images/product81-2.jpg",
         "alt": "Vista principal"
       },
       {
         "image": "/assets/images/product81.webp",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 82,
@@ -5302,11 +5462,12 @@
         "value": "4.685 in"
       }
     ],
-    "price": 20,
+    "price": 150,
     "stock": 51,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 120,
     "recommendedFor": [
       "cocteles"
     ],
@@ -5320,21 +5481,22 @@
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product82-2.webp",
+        "image": "/assets/images/product82-2.jpg",
         "alt": "Vista principal"
       },
       {
         "image": "/assets/images/product82.webp",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 83,
     "sku": "MECOSP34",
     "channel": "AGOTADO",
     "collection": "",
-    "name": "COPA SPIEGELAU BBQ \u0026 DRINKS GIN TONIC (AGOTADO)",
+    "name": "COPA SPIEGELAU BBQ & DRINKS GIN TONIC (AGOTADO)",
     "presentation": "Caja con 6 unidades",
     "category": "copas",
     "shortDescription": "La copa SPIEGELAU BBQ & Drinks Gin & Tonic de 630 ml está elaborada en cristal sin plomo de alta calidad y diseñada para disfrutar Gin & Tonic, Aperol Spritz, Hugo y otros cócteles de gran formato. Su amplio cáliz realza los aromas y ofrece una presentación elegante, siendo ideal para reuniones, barbacoas y ocasiones especiales.",
@@ -5374,6 +5536,7 @@
     "featured": false,
     "new": false,
     "offer": false,
+    "offerPrice": null,
     "recommendedFor": [
       "cocteles"
     ],
@@ -5390,7 +5553,8 @@
         "image": "/assets/images/product83-1.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": false
   },
   {
     "id": 84,
@@ -5432,11 +5596,12 @@
         "value": "23.5 cm"
       }
     ],
-    "price": 0,
+    "price": 680,
     "stock": 1,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 544,
     "recommendedFor": [
       "vino-tinto"
     ],
@@ -5453,7 +5618,8 @@
         "image": "/assets/images/product84-2.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 85,
@@ -5500,6 +5666,7 @@
     "featured": false,
     "new": false,
     "offer": false,
+    "offerPrice": null,
     "recommendedFor": [
       "espumantes"
     ],
@@ -5516,7 +5683,8 @@
         "image": "/assets/images/product85-2.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": false
   },
   {
     "id": 86,
@@ -5558,11 +5726,12 @@
         "value": "8.583 in"
       }
     ],
-    "price": 29.9,
+    "price": 680,
     "stock": 24,
     "featured": false,
     "new": false,
     "offer": true,
+    "offerPrice": 544,
     "recommendedFor": [
       "destilados"
     ],
@@ -5576,21 +5745,22 @@
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product86-2.webp",
+        "image": "/assets/images/product86-2.jpg",
         "alt": "Vista principal"
       },
       {
         "image": "/assets/images/product86.webp",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 87,
     "sku": "MEVASP32",
     "channel": "RETAIL",
-    "collection": "BBQ \u0026 DRINKS",
-    "name": "SET X 6 VASOS SOFT BBQ \u0026 DRINKS",
+    "collection": "BBQ & DRINKS",
+    "name": "SET X 6 VASOS SOFT BBQ & DRINKS",
     "presentation": "Caja con 6 unidades",
     "category": "vasos",
     "shortDescription": "El set SPIEGELAU Soft Drink de 6 piezas está elaborado en cristal de alta calidad y diseñado para servir refrescos, agua, zumos y otras bebidas con una presentación elegante. Desarrollado en colaboración con Weber BBQ & Drinks, es ideal para reuniones, barbacoas y el uso diario.",
@@ -5625,11 +5795,12 @@
         "value": "6 vasos"
       }
     ],
-    "price": 0,
+    "price": 180,
     "stock": 14,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 144,
     "recommendedFor": [
       "agua"
     ],
@@ -5646,7 +5817,8 @@
         "image": "/assets/images/product87-1.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 88,
@@ -5688,11 +5860,12 @@
         "value": "6.102 in"
       }
     ],
-    "price": 0,
+    "price": 150,
     "stock": 33,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 120,
     "recommendedFor": [
       "cocteles"
     ],
@@ -5713,7 +5886,8 @@
         "image": "/assets/images/product88.webp",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 89,
@@ -5755,11 +5929,12 @@
         "value": "4.409 in"
       }
     ],
-    "price": 0,
+    "price": 150,
     "stock": 40,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 120,
     "recommendedFor": [
       "cocteles"
     ],
@@ -5780,14 +5955,15 @@
         "image": "/assets/images/product89.webp",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 90,
     "sku": "MEVASP41",
     "channel": "RETAIL",
     "collection": "BECHER",
-    "name": "SET X 8 VASOS T \u0026 L - BECHER",
+    "name": "SET X 8 VASOS T & L - BECHER",
     "presentation": "El set consta de 4 vasos, 4 vasos altos, 4 pajitas cortas y 4 pajitas largas.",
     "category": "kits",
     "shortDescription": "El set SPIEGELAU Becher Elegance combina 4 vasos bajos, 4 vasos altos y un juego de pajitas de cristal para ofrecer una presentación elegante y versátil. Fabricado en cristal de alta calidad, es ideal para servir whisky, cócteles, long drinks, refrescos y otras bebidas tanto en el hogar como en entornos profesionales.",
@@ -5822,11 +5998,12 @@
         "value": "445 ml"
       }
     ],
-    "price": 0,
+    "price": 360,
     "stock": 6,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 288,
     "recommendedFor": [
       "cocteles",
       "destilados"
@@ -5852,7 +6029,8 @@
         "image": "/assets/images/product90-4.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 91,
@@ -5894,11 +6072,12 @@
         "value": "7.5 in"
       }
     ],
-    "price": 0,
+    "price": 480,
     "stock": 76,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 384,
     "recommendedFor": [
       "cerveza"
     ],
@@ -5915,7 +6094,8 @@
         "image": "/assets/images/product91.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 92,
@@ -5962,6 +6142,7 @@
     "featured": false,
     "new": false,
     "offer": false,
+    "offerPrice": null,
     "recommendedFor": [
       "cerveza"
     ],
@@ -5974,7 +6155,8 @@
         "image": "/assets/images/product92-1.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": false
   },
   {
     "id": 93,
@@ -5984,18 +6166,66 @@
     "name": "SET X 1 VASO WHEAT BEER C/ESTUCHE",
     "presentation": "1 unidad",
     "category": "vasos",
-    "shortDescription": "",
-    "description": "",
-    "specifications": [],
-    "price": 0,
+    "shortDescription": "El vaso SPIEGELAU Wheat Beer de 750 ml está diseñado específicamente para realzar los aromas, la espuma y el carácter de las cervezas de trigo American Wheat Beer y Witbier. Fabricado en cristal de alta calidad, combina paredes finas, una forma redondeada y gran capacidad para ofrecer una experiencia de degustación equilibrada y refinada.",
+    "description": "El vaso SPIEGELAU Wheat Beer ha sido diseñado específicamente para disfrutar de cervezas de trigo American Wheat Beer y Witbier. Su generosa capacidad y forma redondeada ofrecen el espacio necesario para que la cerveza desarrolle plenamente sus aromas, mientras que la amplia abertura favorece la percepción de sus notas características y permite disfrutar de una experiencia de degustación más expresiva.\n\nDesarrollado en colaboración con reconocidos maestros cerveceros y especialistas de la industria, su diseño incorpora curvas especialmente adaptadas para favorecer el equilibrio de los aromas y mantener una corona de espuma duradera. Sus paredes finas contribuyen además a conservar adecuadamente la temperatura de la bebida y realzan la apariencia de la cerveza.\n\nFabricado en cristal de alta calidad, ofrece una excelente transparencia, brillo y resistencia. El proceso de fabricación utilizado por SPIEGELAU permite conservar la claridad del cristal incluso después de numerosos ciclos de lavado, combinando durabilidad con una presentación elegante.\n\nEste vaso es apto para lavavajillas y está pensado para ofrecer un rendimiento fiable tanto en el uso doméstico como en ocasiones especiales. Su capacidad de 750 ml permite servir cómodamente cervezas de trigo, mientras que su presentación individual en estuche original lo convierte también en una alternativa atractiva para regalo.\n\nInformación importante:\n\n- Este producto está fabricado en cristal, por lo que puede romperse y generar fragmentos afilados en caso de golpes o caídas.",
+    "specifications": [
+      {
+        "label": "Opciones de color",
+        "value": "Cristal claro"
+      },
+      {
+        "label": "Fabricación",
+        "value": "Cristal de alta calidad"
+      },
+      {
+        "label": "Colección principal",
+        "value": "Craft Beer"
+      },
+      {
+        "label": "Material",
+        "value": "Cristal sin plomo"
+      },
+      {
+        "label": "Capacidad",
+        "value": "750 ml"
+      },
+      {
+        "label": "Apto para lavavajillas",
+        "value": "Sí"
+      },
+      {
+        "label": "Diámetro máximo",
+        "value": "9.5 cm"
+      },
+      {
+        "label": "Altura exterior",
+        "value": "17 cm"
+      }
+    ],
+    "price": 480,
     "stock": 31,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 384,
     "recommendedFor": [
       "cerveza"
     ],
-    "gallery": []
+    "gallery": [
+      {
+        "image": "/assets/images/product93.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/assets/images/product93-1.jpg",
+        "alt": "Vista principal"
+      },
+      {
+        "image": "/assets/images/product93-2.png",
+        "alt": "Vista principal"
+      }
+    ],
+    "visible": true
   },
   {
     "id": 94,
@@ -6037,11 +6267,12 @@
         "value": "6.102 in"
       }
     ],
-    "price": 0,
+    "price": 420,
     "stock": 54,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 336,
     "recommendedFor": [
       "cocteles"
     ],
@@ -6062,7 +6293,8 @@
         "image": "/assets/images/product94.webp",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 95,
@@ -6104,11 +6336,12 @@
         "value": "9.37 in"
       }
     ],
-    "price": 0,
+    "price": 480,
     "stock": 12,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 384,
     "recommendedFor": [
       "cerveza"
     ],
@@ -6129,7 +6362,8 @@
         "image": "/assets/images/product95.webp",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 96,
@@ -6171,11 +6405,12 @@
         "value": "6 1/8 in"
       }
     ],
-    "price": 0,
+    "price": 480,
     "stock": 15,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 384,
     "recommendedFor": [
       "cerveza"
     ],
@@ -6188,7 +6423,8 @@
         "image": "/assets/images/product96-1.webp",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 97,
@@ -6230,11 +6466,12 @@
         "value": "6 in"
       }
     ],
-    "price": 0,
+    "price": 480,
     "stock": 51,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 384,
     "recommendedFor": [
       "cocteles"
     ],
@@ -6247,7 +6484,8 @@
         "image": "/assets/images/product97-1.webp",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 98,
@@ -6289,11 +6527,12 @@
         "value": "15.8 cm"
       }
     ],
-    "price": 0,
+    "price": 90,
     "stock": 58,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 72,
     "recommendedFor": [
       "cocteles"
     ],
@@ -6310,7 +6549,8 @@
         "image": "/assets/images/product98-2.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 99,
@@ -6352,11 +6592,12 @@
         "value": "3.228 in"
       }
     ],
-    "price": 0,
+    "price": 489,
     "stock": 53,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 384,
     "recommendedFor": [
       "cocteles"
     ],
@@ -6377,7 +6618,8 @@
         "image": "/assets/images/product99.webp",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 100,
@@ -6419,11 +6661,12 @@
         "value": "8.661 in"
       }
     ],
-    "price": 0,
+    "price": 480,
     "stock": 32,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 384,
     "recommendedFor": [
       "cerveza"
     ],
@@ -6444,7 +6687,8 @@
         "image": "/assets/images/product100.webp",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 101,
@@ -6486,11 +6730,12 @@
         "value": "2.5 in"
       }
     ],
-    "price": 0,
+    "price": 360,
     "stock": 30,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 288,
     "recommendedFor": [
       "destilados"
     ],
@@ -6503,7 +6748,8 @@
         "image": "/assets/images/product101-1.webp",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 102,
@@ -6545,11 +6791,12 @@
         "value": "3.701 in"
       }
     ],
-    "price": 0,
+    "price": 420,
     "stock": 62,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 336,
     "recommendedFor": [
       "cocteles"
     ],
@@ -6570,7 +6817,8 @@
         "image": "/assets/images/product102.webp",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 103,
@@ -6612,11 +6860,12 @@
         "value": "4.409 in"
       }
     ],
-    "price": 29.9,
+    "price": 360,
     "stock": 240,
     "featured": false,
     "new": false,
     "offer": true,
+    "offerPrice": 288,
     "recommendedFor": [
       "cocteles"
     ],
@@ -6637,7 +6886,8 @@
         "image": "/assets/images/product103.webp",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 104,
@@ -6679,11 +6929,12 @@
         "value": "107 mm"
       }
     ],
-    "price": 0,
+    "price": 420,
     "stock": 41,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 336,
     "recommendedFor": [
       "cocteles",
       "destilados"
@@ -6693,7 +6944,8 @@
         "image": "/assets/images/product104.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 105,
@@ -6735,11 +6987,12 @@
         "value": "5.118 in"
       }
     ],
-    "price": 0,
+    "price": 360,
     "stock": 50,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 288,
     "recommendedFor": [
       "cocteles"
     ],
@@ -6760,7 +7013,8 @@
         "image": "/assets/images/product105-2.webp",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 106,
@@ -6768,7 +7022,7 @@
     "channel": "ON TRADE",
     "collection": "LINEAR",
     "name": "VASO WHISKY LINEAR",
-    "presentation": "",
+    "presentation": "Una caja contiene 12 unidades.",
     "category": "vasos",
     "shortDescription": "El vaso SPIEGELAU Whisky Grande Linear de 34.5 cl está elaborado en cristal de alta calidad y destaca por su diseño contemporáneo de líneas elegantes. Su formato versátil es ideal para servir whisky, cócteles, destilados, agua y otras bebidas, tanto en el hogar como en entornos profesionales.",
     "description": "El vaso SPIEGELAU Whisky Grande Linear combina un diseño minimalista con la reconocida calidad de la cristalería Spiegelau. Sus líneas limpias y proporciones equilibradas aportan una estética contemporánea que realza la presentación de cualquier bebida, convirtiéndolo en una excelente elección para mesas modernas, bares y restaurantes.\n\nSu formato bajo y amplio resulta ideal para disfrutar whisky solo, con hielo o en cócteles clásicos, además de adaptarse perfectamente al servicio de agua, refrescos y otras bebidas. Su diseño proporciona un agarre cómodo y una experiencia de degustación agradable en cualquier ocasión.\n\nFabricado en cristal de alta calidad, ofrece una transparencia y un brillo excepcionales que permiten apreciar el color y la claridad de cada bebida. Su acabado refinado combina elegancia, resistencia y funcionalidad para un uso cotidiano o profesional.\n\nEste vaso es apto para lavavajillas y está diseñado para conservar su brillo y transparencia incluso después de numerosos ciclos de lavado, ofreciendo una durabilidad prolongada con un mantenimiento sencillo.\n\nSu capacidad de 34.5 cl proporciona el equilibrio perfecto entre comodidad y versatilidad, siendo adecuada para una amplia variedad de bebidas y estilos de servicio.\n\nInformación importante:\n\n- Este producto está fabricado en cristal, por lo que puede romperse y generar fragmentos afilados en caso de golpes o caídas.",
@@ -6802,11 +7056,12 @@
         "value": "8.5 cm"
       }
     ],
-    "price": 0,
+    "price": 360,
     "stock": 35,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 288,
     "recommendedFor": [
       "cocteles",
       "destilados",
@@ -6821,7 +7076,8 @@
         "image": "/assets/images/product106-1.jpg",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   },
   {
     "id": 107,
@@ -6868,6 +7124,7 @@
     "featured": false,
     "new": false,
     "offer": false,
+    "offerPrice": null,
     "recommendedFor": [
       "cerveza"
     ],
@@ -6880,7 +7137,8 @@
         "image": "/assets/images/product107-1.webp",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": false
   },
   {
     "id": 108,
@@ -6922,11 +7180,12 @@
         "value": "10.709 in"
       }
     ],
-    "price": 0,
+    "price": 850,
     "stock": 56,
     "featured": false,
     "new": false,
-    "offer": false,
+    "offer": true,
+    "offerPrice": 680,
     "recommendedFor": [
       "vino-tinto",
       "vino-blanco",
@@ -6942,13 +7201,14 @@
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product108-2.webp",
+        "image": "/assets/images/product108-2.jpg",
         "alt": "Vista principal"
       },
       {
         "image": "/assets/images/product108.webp",
         "alt": "Vista principal"
       }
-    ]
+    ],
+    "visible": true
   }
 ]

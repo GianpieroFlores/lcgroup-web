@@ -2,11 +2,18 @@ import { readFile, writeFile, mkdir, rm, access } from "node:fs/promises";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { createProductSlug, normalizeSlug } from "../src/utils/product-slugs.js";
+import {
+  getEffectiveProductPrice,
+  getOfferPrice,
+  getProductDiscountPercentage,
+  getVisibleProducts,
+} from "../src/utils/products.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DIST = join(ROOT, "dist");
 const DOMAIN = "https://spiegelau.com.pe";
-const products = JSON.parse(await readFile(join(ROOT, "src/data/products.json"), "utf8"));
+const allProducts = JSON.parse(await readFile(join(ROOT, "src/data/products.json"), "utf8"));
+const products = getVisibleProducts(allProducts);
 
 const htmlEscape = (value = "") => String(value)
   .replaceAll("&", "&amp;")
@@ -73,6 +80,8 @@ function productItemMarkup(product) {
   const images = product.gallery?.filter((item) => item?.image).map((item) => item.image) || [];
   const primaryImage = images[0] || "";
   const secondaryImage = images[1] || primaryImage;
+  const offerPrice = getOfferPrice(product);
+  const discountPercentage = getProductDiscountPercentage(product);
   const badges = [
     product.offer
       ? '<span class="catalog-product-badge catalog-product-badge--offer">Oferta</span>'
@@ -92,7 +101,10 @@ function productItemMarkup(product) {
       <h3 class="catalog-product-name"><a href="/productos/${slug}/">${htmlEscape(product.name)}</a></h3>
       <p class="catalog-product-presentation">${htmlEscape(product.presentation)}</p>
       <div class="catalog-product-footer">
-        <strong class="catalog-product-price">S/ ${Number(product.price).toFixed(2)}</strong>
+        <div class="catalog-product-pricing">${offerPrice === null
+          ? `<strong class="catalog-product-price">S/ ${Number(product.price).toFixed(2)}</strong>`
+          : `<span class="catalog-product-price catalog-product-price--regular">S/ ${Number(product.price).toFixed(2)}</span><span class="catalog-product-offer-row"><strong class="catalog-product-price catalog-product-price--offer">S/ ${offerPrice.toFixed(2)}</strong><span class="catalog-product-discount">-${discountPercentage}%</span></span>`}
+        </div>
         <button class="catalog-cart-button" type="button" aria-label="Agregar ${htmlEscape(product.name)} al carrito"><span class="material-symbols-outlined">shopping_bag</span></button>
       </div>
     </div>
@@ -128,12 +140,12 @@ function productSchemas(product, url, image) {
     url,
   };
   if (image) schema.image = unique(product.gallery.map((item) => item?.image).filter(Boolean).map(absoluteUrl));
-  if (Number(product.price) > 0) {
+  if (getEffectiveProductPrice(product) > 0) {
     schema.offers = {
       "@type": "Offer",
       url,
       priceCurrency: "PEN",
-      price: Number(product.price).toFixed(2),
+      price: getEffectiveProductPrice(product).toFixed(2),
       availability: Number(product.stock) > 0
         ? "https://schema.org/InStock"
         : "https://schema.org/OutOfStock",
@@ -155,13 +167,20 @@ function productSchemas(product, url, image) {
 function injectProductContent(html, product) {
   const image = productImage(product);
   const gallery = product.gallery?.filter((item) => item?.image) || [];
+  const offerPrice = getOfferPrice(product);
   let output = replaceElementContent(html, "breadcrumb-product", htmlEscape(product.name));
   output = output.replace(/<a href="\/catalogo\/">\s*Cristalería\s*<\/a>/i, `<a href="/catalogo/${normalizeSlug(product.category)}/">${htmlEscape(product.category)}</a>`);
   output = replaceElementContent(output, "product-collection", htmlEscape(product.collection));
   output = replaceElementContent(output, "product-name", htmlEscape(product.name));
   output = replaceElementContent(output, "product-presentation", htmlEscape(product.presentation));
   output = replaceElementContent(output, "product-sku", `SKU: ${htmlEscape(product.sku)}`);
-  output = replaceElementContent(output, "product-price", Number(product.price) > 0 ? `S/ ${Number(product.price).toFixed(2)}` : "");
+  output = replaceElementContent(
+    output,
+    "product-price",
+    offerPrice === null
+      ? (Number(product.price) > 0 ? `S/ ${Number(product.price).toFixed(2)}` : "")
+      : `<span class="product-price__regular">S/ ${Number(product.price).toFixed(2)}</span><span class="product-price__offer-row"><strong class="product-price__offer">S/ ${offerPrice.toFixed(2)}</strong><span class="product-price__discount">-${getProductDiscountPercentage(product)}%</span></span>`,
+  );
   output = replaceElementContent(output, "product-stock", Number(product.stock) > 0 ? "Stock disponible · sujeto a confirmación" : "Stock agotado");
   output = replaceElementContent(output, "product-short-description", htmlEscape(product.shortDescription));
   output = replaceElementContent(output, "tab-description", plainText(product.description).split("\n").filter(Boolean).map((paragraph) => `<p>${htmlEscape(paragraph)}</p>`).join(""));

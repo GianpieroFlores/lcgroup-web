@@ -153,7 +153,7 @@ export function trackEvent(eventName, parameters = {}) {
 }
 
 export function createAnalyticsItem(product, index, quantity) {
-  if (!product) return null;
+  if (!product || !isProductVisible(product)) return null;
   const itemName = cleanText(product.name) || "Producto";
   const itemBrand = cleanText(product.brand) || (/spiegelau/i.test(itemName) ? "SPIEGELAU" : "");
   return cleanValue({
@@ -163,7 +163,7 @@ export function createAnalyticsItem(product, index, quantity) {
     item_category: friendlyValue(product.category),
     item_category2: friendlyValue(product.collection),
     item_variant: cleanText(product.presentation),
-    price: Number(product.price) || 0,
+    price: getEffectiveProductPrice(product),
     index,
     quantity,
   });
@@ -375,3 +375,7 @@ export function trackWhatsappClick(source, data = {}) {
 export function trackProductNotFound(requestedId) {
   trackEvent("product_not_found", { requested_product_id: String(requestedId || "") });
 }
+import {
+  getEffectiveProductPrice,
+  isProductVisible,
+} from "../utils/products.js";

@@ -4,6 +4,8 @@
 
 `products.json` continúa siendo la fuente única. `npm run build` ejecuta Vite y después `scripts/generate-seo.mjs`, que genera en `dist/`:
 
+Cada producto incluye `visible`. Cuando su valor es `false`, el producto se excluye del inicio, catálogo, filtros, buscador, relacionados, carrito, páginas SEO, sitemap y redirecciones generadas. Para publicarlo nuevamente basta cambiarlo a `true` y reconstruir el proyecto.
+
 - una página HTML por producto en `/productos/{slug}/`;
 - páginas de las categorías reales en `/catalogo/{categoria}/`;
 - índice y páginas de colecciones en `/colecciones/`;

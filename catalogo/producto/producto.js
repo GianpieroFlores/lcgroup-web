@@ -1,9 +1,15 @@
 import "./producto.css";
-import products from "../../src/data/products.json";
+import allProducts from "../../src/data/products.json";
 import { createProductCard } from "../../src/components/product-card/product-card.js";
 import { addProductToCart } from "../../src/components/cart/cart.js";
 import { escapeAttribute, escapeHTML } from "../../src/utils/escape.js";
-import { findProductById } from "../../src/utils/products.js";
+import {
+  findProductById,
+  getEffectiveProductPrice,
+  getOfferPrice,
+  getProductDiscountPercentage,
+  getVisibleProducts,
+} from "../../src/utils/products.js";
 import { findProductBySlug } from "../../src/utils/product-slugs.js";
 import { createCatalogUrl, createProductUrl } from "../../src/utils/urls.js";
 import {
@@ -14,6 +20,7 @@ import {
 
 
 let product = null;
+const products = getVisibleProducts(allProducts);
 const MAX_REQUEST_QUANTITY = 99;
 
 /*=========================================
@@ -81,8 +88,21 @@ function renderProduct(products) {
 
   document.getElementById("product-sku").textContent = `SKU: ${product.sku}`;
 
-  document.getElementById("product-price").textContent =
-    `S/ ${product.price.toFixed(2)}`;
+  const productPrice = document.getElementById("product-price");
+  const offerPrice = getOfferPrice(product);
+  productPrice.replaceChildren();
+
+  if (offerPrice === null) {
+    productPrice.textContent = `S/ ${getEffectiveProductPrice(product).toFixed(2)}`;
+  } else {
+    productPrice.innerHTML = `
+      <span class="product-price__regular">S/ ${Number(product.price).toFixed(2)}</span>
+      <span class="product-price__offer-row">
+        <strong class="product-price__offer">S/ ${offerPrice.toFixed(2)}</strong>
+        <span class="product-price__discount">-${getProductDiscountPercentage(product)}%</span>
+      </span>
+    `;
+  }
 
   document.getElementById("product-short-description").textContent =
     product.shortDescription;

@@ -1,9 +1,11 @@
 import "./header.css";
 import headerHTML from "./header.html?raw";
-import products from "../../data/products.json";
+import allProducts from "../../data/products.json";
 import { escapeAttribute, escapeHTML } from "../../utils/escape.js";
 import {
+  getEffectiveProductPrice,
   getPrimaryProductImage,
+  getVisibleProducts,
 } from "../../utils/products.js";
 import {
   getProductSearchText,
@@ -20,6 +22,7 @@ import { trackSearch, trackSelectItem } from "../../services/analytics.js";
 ===================================================== */
 
 const MAX_RESULTS = 6;
+const products = getVisibleProducts(allProducts);
 
 const priceFormatter = new Intl.NumberFormat("es-PE", {
   style: "currency",
@@ -701,7 +704,7 @@ function createSearchResult(product, searchTerm = "", index = 0) {
   const productPrice = document.createElement("strong");
 
   productPrice.className = "search-result-price";
-  productPrice.textContent = formatPrice(product.price);
+  productPrice.textContent = formatPrice(getEffectiveProductPrice(product));
 
   content.append(productName);
 
