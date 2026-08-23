@@ -231,7 +231,7 @@ for (const page of generalPages) {
     html = html.replace(/(<h1[^>]*id="home-hero-title"[^>]*>)[\s\S]*?(<\/h1>)/i, "$1Cristalería Spiegelau en Perú para cada experiencia$2");
   }
   if (page.path === "/catalogo/") {
-    html = injectCatalogContent(html, products, "Cristalería Spiegelau en Perú", "Explora copas, vasos, decantadores y sets de cristal para cada bebida, ocasión y espacio profesional.");
+    html = injectCatalogContent(html, products, "Cristalería Spiegelau", "Explora copas, vasos, decantadores y sets de cristal para cada bebida, ocasión y espacio profesional.");
   }
   html = applyHead(html, {
     title: page.title, description: page.description, canonical: `${DOMAIN}${page.path}`,
@@ -246,7 +246,7 @@ const categoryCopy = {
   copas: ["Copas de cristal en Perú | Spiegelau", "Descubre copas de cristal Spiegelau para vino tinto, vino blanco, espumantes y coctelería en hogares y negocios de Perú."],
   vasos: ["Vasos de cristal en Perú | Spiegelau", "Explora vasos de cristal Spiegelau para agua, cerveza, whisky, coctelería y servicio profesional en Perú."],
   decantadores: ["Decantadores de vino en Perú | Spiegelau", "Descubre decantadores Spiegelau diseñados para airear y servir el vino con elegancia en Perú."],
-  kits: ["Sets de cristalería en Perú | Spiegelau", "Encuentra sets y kits de cristalería Spiegelau para regalar, equipar el hogar o complementar un servicio profesional en Perú."],
+  estuches: ["Estuches de cristalería en Perú | Spiegelau", "Encuentra sets y estuches de cristalería Spiegelau para regalar, equipar el hogar o complementar un servicio profesional en Perú."],
 };
 
 for (const category of unique(products.map((product) => product.category))) {

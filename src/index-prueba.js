@@ -1,5 +1,6 @@
 import "./index-prueba.css";
 import productsData from "./data/products.json";
+import { getAvailableCollections } from "./data/collections.js";
 import { getVisibleProducts } from "./utils/products.js";
 import { createProductCard } from "./components/product-card/product-card.js";
 import { escapeAttribute, escapeHTML } from "./utils/escape.js";
@@ -346,7 +347,8 @@ function renderTemporaryCollections(products) {
  * renderizado por las 10 colecciones estáticas definitivas del cliente.
  */
 function getTemporaryCollections(products) {
-  const uniqueCollections = new Map();
+  const categoriesByCollection = new Map();
+  const categoryOrder = ["copas", "vasos", "decantadores", "estuches"];
 
   products.forEach((product) => {
     const collection = normalizeText(product.collection);
@@ -356,28 +358,29 @@ function getTemporaryCollections(products) {
       return;
     }
 
-    const key = [collection, category].map(normalizeKey).join("|");
-
-    if (uniqueCollections.has(key)) {
-      return;
+    if (!categoriesByCollection.has(normalizeKey(collection))) {
+      categoriesByCollection.set(normalizeKey(collection), new Set());
     }
 
-    uniqueCollections.set(key, {
-      title: `Colección ${formatDisplayText(collection)} ${formatDisplayText(category)}`,
-      collectionLabel: `Colección ${formatDisplayText(collection)}`,
-      categoryLabel: formatDisplayText(category),
-      collection,
-      category,
-    });
+    categoriesByCollection.get(normalizeKey(collection)).add(category);
   });
 
-  return Array.from(uniqueCollections.values()).slice(0, 10);
+  return getAvailableCollections(products).map((collection) => ({
+    title: `Colección ${formatDisplayText(collection)}`,
+    collectionLabel: `Colección ${formatDisplayText(collection)}`,
+    categoryLabel: [...(categoriesByCollection.get(normalizeKey(collection)) || [])]
+      .sort((categoryA, categoryB) => {
+        return categoryOrder.indexOf(categoryA) - categoryOrder.indexOf(categoryB);
+      })
+      .map(formatDisplayText)
+      .join(" · "),
+    collection,
+  }));
 }
 
 function createTemporaryCollectionCard(collection, index) {
   const url = createCatalogUrl({
     coleccion: collection.collection,
-    categoria: collection.category,
   });
 
   return `

@@ -107,6 +107,11 @@ function renderProduct(products) {
   document.getElementById("product-short-description").textContent =
     product.shortDescription;
 
+  const productNewBadge = document.getElementById("product-new-badge");
+  if (productNewBadge) {
+    productNewBadge.hidden = product.new !== true;
+  }
+
   initializeProductGallery(product);
 
   document.getElementById("tab-description").textContent = product.description;
@@ -169,7 +174,10 @@ async function renderRelatedProducts(products) {
 
   const relatedProducts = products
     .filter(
-      (item) => item.category === product.category && item.id !== product.id,
+      (item) =>
+        product.collection &&
+        item.collection === product.collection &&
+        item.id !== product.id,
     )
     .slice(0, 4);
 

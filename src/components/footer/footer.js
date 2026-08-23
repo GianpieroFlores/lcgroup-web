@@ -6,6 +6,7 @@ import { getVisibleProducts } from "../../utils/products.js";
 import { createCatalogUrl } from "../../utils/urls.js";
 
 const products = getVisibleProducts(allProducts);
+const FOOTER_CATEGORY_ORDER = ["copas", "vasos", "decantadores", "estuches"];
 
 function formatFooterCategory(category) {
   return String(category)
@@ -25,11 +26,12 @@ function getFooterCategories(products) {
     }
   });
 
-  return [...categories].sort((a, b) =>
-    a.localeCompare(b, "es", {
-      sensitivity: "base",
-    }),
-  );
+  return [...categories].sort((a, b) => {
+    const positionA = FOOTER_CATEGORY_ORDER.indexOf(a);
+    const positionB = FOOTER_CATEGORY_ORDER.indexOf(b);
+
+    return positionA - positionB;
+  });
 }
 
 function renderFooterCategories(products) {

@@ -22,6 +22,7 @@ import { trackSearch, trackSelectItem } from "../../services/analytics.js";
 ===================================================== */
 
 const MAX_RESULTS = 6;
+const HEADER_CATEGORY_ORDER = ["copas", "vasos", "decantadores", "estuches"];
 const products = getVisibleProducts(allProducts);
 
 const priceFormatter = new Intl.NumberFormat("es-PE", {
@@ -78,7 +79,12 @@ function loadCategories() {
     ...new Set(
       products.map((product) => product.category),
     ),
-  ].filter(Boolean).sort();
+  ].filter(Boolean).sort((categoryA, categoryB) => {
+    return (
+      HEADER_CATEGORY_ORDER.indexOf(categoryA) -
+      HEADER_CATEGORY_ORDER.indexOf(categoryB)
+    );
+  });
 
 
   const categoryItems = categories

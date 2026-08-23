@@ -247,6 +247,28 @@
   transform: scale(1.025);
 }
 
+.product-image-badge {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  z-index: 4;
+
+  padding: 7px 11px;
+
+  border-radius: var(--radius-pill);
+
+  background-color: var(--color-primary);
+  color: var(--color-white);
+
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.8px;
+  line-height: 1;
+  text-transform: uppercase;
+
+  box-shadow: var(--shadow-card);
+}
+
 /* =====================================================
    CONTROLES DE LA GALERÍA
 ===================================================== */

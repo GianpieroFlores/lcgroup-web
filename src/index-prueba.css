@@ -162,7 +162,7 @@
   height: var(--hero-height);
 
   display: flex;
-  align-items: flex-end;
+  align-items: center;
 
   overflow: hidden;
 
@@ -213,18 +213,27 @@
   width: calc(100% - (var(--page-padding) * 2));
 
   margin: 0 auto;
+
+  display: flex;
+  justify-content: flex-start;
 }
 
 .home-hero__content {
   max-width: 680px;
 
   padding: 45px 0;
+
+  margin: 0;
+
+  text-align: left;
 }
 
 .home-hero__content .home-eyebrow {
   margin-bottom: 14px;
 
   color: rgba(255, 255, 255, 0.8);
+
+  white-space: nowrap;
 }
 
 .home-hero__content h1 {
@@ -244,7 +253,7 @@
 .home-hero__content p {
   max-width: 520px;
 
-  margin-top: 16px;
+  margin: 16px 0 0;
 
   color: rgba(255, 255, 255, 0.78);
 
@@ -653,42 +662,10 @@
   align-items: center;
   min-height: 470px;
   overflow: hidden;
-  background-color: var(--color-black);
+  background-color: var(--color-primary);
   border: 1px solid var(--color-border-card);
   border-radius: var(--radius-large) var(--radius-large) 0 0;
   box-shadow: var(--shadow-card);
-}
-
-.home-categories__hero-media {
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-}
-
-.home-categories__hero-media img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  filter: brightness(0.94) contrast(1.04);
-  transition: transform var(--transition-slow), filter var(--transition-medium);
-}
-
-.home-categories__hero::after {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background:
-    linear-gradient(90deg, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.7) 34%, rgba(0, 0, 0, 0.2) 76%, rgba(0, 0, 0, 0.06) 100%),
-    linear-gradient(0deg, rgba(0, 0, 0, 0.58) 0%, transparent 58%);
-  content: "";
-  pointer-events: none;
-}
-
-.home-categories__hero:hover .home-categories__hero-media img {
-  transform: scale(1.025);
-  filter: brightness(0.9) contrast(1.06);
 }
 
 .home-categories__hero-content {
@@ -707,7 +684,7 @@
   bottom: 48px;
   left: -25px;
   width: 2px;
-  background: linear-gradient(180deg, transparent, var(--color-primary) 22%, var(--color-primary) 78%, transparent);
+  background: linear-gradient(180deg, transparent, var(--color-white) 22%, var(--color-white) 78%, transparent);
   border-radius: var(--radius-pill);
   content: "";
 }
@@ -717,7 +694,7 @@
   align-items: center;
   gap: 11px;
   margin-bottom: 18px;
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--color-white);
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-semibold);
   letter-spacing: 2.1px;
@@ -729,7 +706,7 @@
   width: 31px;
   height: 1px;
   flex-shrink: 0;
-  background-color: var(--color-primary);
+  background-color: var(--color-white);
   content: "";
 }
 
@@ -766,9 +743,9 @@
   min-height: 46px;
   margin-top: 0;
   padding: 0 25px;
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  border: 1px solid var(--color-primary);
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  border: 1px solid var(--color-white);
   border-radius: var(--radius-pill);
   box-shadow: 0 12px 27px rgba(231, 24, 3, 0.24);
   font-size: var(--font-size-small);
@@ -787,7 +764,7 @@
   min-width: 174px;
   gap: 8px;
   border-color: rgba(255, 255, 255, 0.72);
-  background-color: rgba(0, 0, 0, 0.25);
+  background-color: rgba(255, 255, 255, 0.12);
   color: var(--color-white);
   box-shadow: none;
   backdrop-filter: blur(5px);
@@ -798,17 +775,17 @@
 }
 
 .home-categories__hero-button--secondary:hover {
-  border-color: var(--color-primary);
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  box-shadow: 0 12px 27px rgba(231, 24, 3, 0.22);
+  border-color: var(--color-white);
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  box-shadow: 0 12px 27px rgba(0, 0, 0, 0.18);
 }
 
 .home-categories__hero-button:hover {
   transform: translateY(-2px);
-  background-color: var(--color-white);
-  color: var(--color-black);
-  border-color: var(--color-white);
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border-color: var(--color-black);
   box-shadow: var(--shadow-card-hover);
 }
 

@@ -1,4 +1,5 @@
 import productsData from "../src/data/products.json";
+import { getAvailableCollections } from "../src/data/collections.js";
 
 import { createProductCard } from "../src/components/product-card/product-card.js";
 import { escapeAttribute, escapeHTML } from "../src/utils/escape.js";
@@ -65,7 +66,7 @@ const CATEGORY_BANNERS = {
   decantadores: {
     description: "Piezas creadas para servir y disfrutar el vino con elegancia.",
   },
-  kits: {
+  estuches: {
     description: "Selecciones de cristalería para experiencias completas.",
   },
 };
@@ -787,18 +788,7 @@ function generateCollectionFilters() {
 
   const collectionCounts = countByProperty("collection", "collection");
 
-  const collections = [
-    ...new Set([
-      ...Object.keys(collectionCounts),
-      ...selectedCollections,
-    ]),
-  ]
-    .filter(Boolean)
-    .sort((a, b) =>
-      a.localeCompare(b, "es", {
-        sensitivity: "base",
-      }),
-    );
+  const collections = getAvailableCollections(products);
 
   collectionFilters.innerHTML = collections
     .map(
