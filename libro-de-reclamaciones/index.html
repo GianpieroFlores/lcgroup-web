@@ -130,6 +130,14 @@
                 <label for="claim-request">Pedido concreto del consumidor *</label>
                 <textarea id="claim-request" name="request" required></textarea>
               </div>
+<div class="claim-field claim-field--full">
+  <div
+    class="cf-turnstile"
+    data-sitekey="0x4AAAAAAEaolokNEhkAIiWh"
+  ></div>
+</div>
+
+
 
               <div class="claim-form__actions">
                 <button class="claim-form__button" type="submit">
@@ -153,5 +161,13 @@
     <div id="footer-container"></div>
     <script type="module" src="/src/main.js"></script>
     <script type="module" src="/libro-de-reclamaciones/libro-de-reclamaciones.js"></script>
+  <script
+  src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+  async
+  defer
+></script>
+
+
+
   </body>
 </html>
