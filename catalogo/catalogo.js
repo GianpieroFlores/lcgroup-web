@@ -955,6 +955,7 @@ function applyFilters({ resetPage = true } = {}) {
 
   sortProducts();
   updateAvailableFilters();
+  updateActiveFilterPresentation();
 
   if (isCollectionsViewActive()) {
     currentPage = 1;
@@ -977,6 +978,110 @@ function updateApplyFiltersButton() {
 
   applyFiltersButton.textContent =
     `Aplicar filtros · ${filteredProducts.length} ${productLabel}`;
+}
+
+function getActiveFilterCount() {
+  const hasPriceFilter = minimumPrice !== null || maximumPrice !== null;
+
+  return (
+    selectedSelections.size +
+    selectedCollections.size +
+    selectedCategories.size +
+    selectedDrinks.size +
+    Number(hasPriceFilter)
+  );
+}
+
+function getFilterSummary(defaultLabel, values, labelFormatter = formatLabel) {
+  if (values.size === 0) {
+    return defaultLabel;
+  }
+
+  if (values.size === 1) {
+    return labelFormatter([...values][0]);
+  }
+
+  return `${defaultLabel} (${values.size})`;
+}
+
+function updateFilterGroupSummary(controlId, summary, isActive) {
+  const button = document.querySelector(
+    `.filter-group-title[aria-controls="${controlId}"]`,
+  );
+  const label = button?.querySelector(".filter-group-title__label");
+
+  if (!button || !label) {
+    return;
+  }
+
+  label.textContent = summary;
+  button.classList.toggle("is-filtered", isActive);
+  button.title = isActive ? `Filtro aplicado: ${summary}` : "";
+  button.setAttribute(
+    "aria-label",
+    isActive ? `${summary}. Filtro aplicado` : button.dataset.filterDefault,
+  );
+}
+
+function updateActiveFilterPresentation() {
+  const selectionLabels = {
+    ofertas: "Ofertas",
+    novedades: "Novedades",
+  };
+  const hasPriceFilter = minimumPrice !== null || maximumPrice !== null;
+  const selectedPriceMinimum = minimumPrice ?? catalogMinimumPrice;
+  const selectedPriceMaximum = maximumPrice ?? catalogMaximumPrice;
+
+  updateFilterGroupSummary(
+    "selection-filter-content",
+    getFilterSummary(
+      "Destacados",
+      selectedSelections,
+      (value) => selectionLabels[value] || formatLabel(value),
+    ),
+    selectedSelections.size > 0,
+  );
+  updateFilterGroupSummary(
+    "collection-filter-content",
+    getFilterSummary("Colección", selectedCollections, (value) => value),
+    selectedCollections.size > 0,
+  );
+  updateFilterGroupSummary(
+    "category-filter-content",
+    getFilterSummary("Categoría", selectedCategories),
+    selectedCategories.size > 0,
+  );
+  updateFilterGroupSummary(
+    "drink-filter-content",
+    getFilterSummary(
+      "Tipo de bebida",
+      selectedDrinks,
+      (value) => formatDrinkLabel(value, formatLabel),
+    ),
+    selectedDrinks.size > 0,
+  );
+  updateFilterGroupSummary(
+    "price-filter-content",
+    hasPriceFilter
+      ? `${formatPrice(selectedPriceMinimum)} – ${formatPrice(selectedPriceMaximum)}`
+      : "Precio",
+    hasPriceFilter,
+  );
+
+  const activeFilterCount = getActiveFilterCount();
+
+  if (clearFiltersButton) {
+    clearFiltersButton.textContent = activeFilterCount > 0
+      ? `Limpiar filtros (${activeFilterCount})`
+      : "Limpiar filtros";
+    clearFiltersButton.disabled = activeFilterCount === 0;
+    clearFiltersButton.setAttribute(
+      "aria-label",
+      activeFilterCount > 0
+        ? `Limpiar ${activeFilterCount} ${activeFilterCount === 1 ? "filtro activo" : "filtros activos"}`
+        : "No hay filtros activos",
+    );
+  }
 }
 
 function applyCollectionSearch() {

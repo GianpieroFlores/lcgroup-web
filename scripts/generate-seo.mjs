@@ -31,6 +31,22 @@ const truncate = (value, maximum = 158) => {
 const absoluteUrl = (path = "/") => new URL(path, DOMAIN).href;
 const jsonLd = (data) => JSON.stringify(data).replaceAll("<", "\\u003c");
 const unique = (values) => [...new Set(values.filter(Boolean))];
+const normalizedProductNameCounts = products.reduce((counts, product) => {
+  const name = plainText(product.name).toLocaleLowerCase("es-PE");
+  counts.set(name, (counts.get(name) || 0) + 1);
+  return counts;
+}, new Map());
+
+function productSeoTitle(product) {
+  const name = plainText(product.name);
+  const isDuplicate = normalizedProductNameCounts.get(name.toLocaleLowerCase("es-PE")) > 1;
+  return `${name}${isDuplicate && product.sku ? ` (${plainText(product.sku)})` : ""} | SPIEGELAU`;
+}
+
+function productSeoDescription(product) {
+  const summary = plainText(product.shortDescription || product.description || "");
+  return truncate(`${plainText(product.name)}. ${summary || "Producto de cristal Spiegelau disponible en Perú."}`);
+}
 
 function replaceElementContent(html, id, content) {
   const pattern = new RegExp(`(<([a-z0-9]+)[^>]*id=["']${id}["'][^>]*>)[\\s\\S]*?(<\\/\\2>)`, "i");
@@ -181,7 +197,7 @@ function injectProductContent(html, product) {
       ? (Number(product.price) > 0 ? `S/ ${Number(product.price).toFixed(2)}` : "")
       : `<span class="product-price__regular">S/ ${Number(product.price).toFixed(2)}</span><span class="product-price__offer-row"><strong class="product-price__offer">S/ ${offerPrice.toFixed(2)}</strong><span class="product-price__discount">-${getProductDiscountPercentage(product)}%</span></span>`,
   );
-  output = replaceElementContent(output, "product-stock", Number(product.stock) > 0 ? "Stock disponible · sujeto a confirmación" : "Stock agotado");
+  output = replaceElementContent(output, "product-stock", Number(product.stock) > 0 ? "Stock sujeto a confirmación" : "Stock agotado");
   output = replaceElementContent(output, "product-short-description", htmlEscape(product.shortDescription));
   output = replaceElementContent(output, "tab-description", plainText(product.description).split("\n").filter(Boolean).map((paragraph) => `<p>${htmlEscape(paragraph)}</p>`).join(""));
   output = replaceElementContent(output, "tab-specifications", (product.specifications || []).map((spec) => `<div class="product-specification-row"><span class="product-specification-label">${htmlEscape(spec.label)}</span><span class="product-specification-value">${htmlEscape(spec.value)}</span></div>`).join(""));
@@ -298,10 +314,10 @@ for (const product of products) {
   const path = `/productos/${slug}/`;
   const canonical = `${DOMAIN}${path}`;
   const image = productImage(product);
-  const description = truncate(product.shortDescription || product.description || `${product.name} de Spiegelau.`);
+  const description = productSeoDescription(product);
   let html = injectProductContent(productTemplate, product);
   html = applyHead(html, {
-    title: `${plainText(product.name)} | SPIEGELAU`, description, canonical,
+    title: productSeoTitle(product), description, canonical,
     type: "product", image: image ? absoluteUrl(image) : "",
     imageAlt: product.gallery?.[0]?.alt || product.name,
   }, productSchemas(product, canonical, image));

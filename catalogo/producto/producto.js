@@ -137,7 +137,7 @@ function renderProduct(products) {
     .join("");
 
   if (product.stock > 0) {
-    stock.textContent = "Stock disponible · sujeto a confirmación";
+    stock.textContent = "Stock sujeto a confirmación";
 
     stock.classList.remove("out-of-stock");
     addCartButton.disabled = false;

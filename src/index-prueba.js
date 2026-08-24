@@ -29,6 +29,7 @@ const homeState = {
   featuredAutoplayStoppedByClick: false,
   resizeTimer: null,
   ignoreFeaturedClickUntil: 0,
+  collectionsExpanded: false,
 };
 
 /* =====================================================
@@ -39,6 +40,8 @@ const homeElements = {
   heroVideo: null,
   heroSoundButton: null,
   collectionExamples: null,
+  collectionsToggle: null,
+  collectionsCount: null,
   featuredCarousel: null,
   featuredViewport: null,
   featuredTrack: null,
@@ -64,6 +67,7 @@ async function initHomePage() {
 
   initializeHeroVideoMotionPreference();
   showInitialLoadingStates();
+  initializeCollectionsToggle();
 
   try {
     const products = await loadProducts();
@@ -93,6 +97,12 @@ function getHomeElements() {
 
   homeElements.collectionExamples = document.querySelector(
     "#home-collection-examples",
+  );
+  homeElements.collectionsToggle = document.querySelector(
+    "#home-collections-toggle",
+  );
+  homeElements.collectionsCount = document.querySelector(
+    "#home-collections-count",
   );
   homeElements.featuredCarousel = document.querySelector(
     "#home-featured-carousel",
@@ -137,6 +147,14 @@ function initializeHeroVideoMotionPreference() {
   const reducedMotionQuery = window.matchMedia(
     "(prefers-reduced-motion: reduce)",
   );
+  const videoSource = homeElements.heroVideo.querySelector("source[data-src]");
+  const prefersDataSaving = navigator.connection?.saveData === true;
+
+  const loadVideoSource = () => {
+    if (!videoSource || videoSource.src) return;
+    videoSource.src = videoSource.dataset.src;
+    homeElements.heroVideo.load();
+  };
 
   homeElements.heroVideo.volume = HERO_VIDEO_VOLUME;
   homeElements.heroVideo.muted = true;
@@ -173,6 +191,8 @@ function initializeHeroVideoMotionPreference() {
   };
 
   homeElements.heroSoundButton?.addEventListener("click", () => {
+    loadVideoSource();
+
     if (homeElements.heroVideo.muted) {
       homeElements.heroVideo.currentTime = 0;
       homeElements.heroVideo.volume = HERO_VIDEO_VOLUME;
@@ -192,10 +212,12 @@ function initializeHeroVideoMotionPreference() {
   });
 
   const updateVideoPlayback = () => {
-    if (reducedMotionQuery.matches) {
+    if (reducedMotionQuery.matches || prefersDataSaving) {
       homeElements.heroVideo.pause();
       return;
     }
+
+    loadVideoSource();
 
     const playPromise = homeElements.heroVideo.play();
 
@@ -207,9 +229,23 @@ function initializeHeroVideoMotionPreference() {
     });
   };
 
-  updateVideoPlayback();
   updateSoundButton();
   reducedMotionQuery.addEventListener("change", updateVideoPlayback);
+
+  const scheduleVideoPlayback = () => {
+    if ("requestIdleCallback" in window) {
+      window.requestIdleCallback(updateVideoPlayback, { timeout: 1800 });
+      return;
+    }
+
+    window.setTimeout(updateVideoPlayback, 800);
+  };
+
+  if (document.readyState === "complete") {
+    scheduleVideoPlayback();
+  } else {
+    window.addEventListener("load", scheduleVideoPlayback, { once: true });
+  }
 }
 
 /* =====================================================
@@ -340,6 +376,68 @@ function renderTemporaryCollections(products) {
       return createTemporaryCollectionCard(collection, index);
     })
     .join("");
+
+  if (homeElements.collectionsCount) {
+    homeElements.collectionsCount.textContent = `${collections.length} colecciones`;
+  }
+
+  updateCollectionsVisibility();
+}
+
+function getCollapsedCollectionLimit() {
+  if (window.matchMedia("(max-width: 600px)").matches) return 6;
+  if (window.matchMedia("(max-width: 768px)").matches) return 6;
+  if (window.matchMedia("(max-width: 1200px)").matches) return 9;
+  return 15;
+}
+
+function getCollectionColumnCount() {
+  if (window.matchMedia("(max-width: 600px)").matches) return 2;
+  if (window.matchMedia("(max-width: 768px)").matches) return 2;
+  if (window.matchMedia("(max-width: 1200px)").matches) return 3;
+  return 5;
+}
+
+function updateCollectionsVisibility() {
+  const cards = [
+    ...(homeElements.collectionExamples?.querySelectorAll(".home-collection-card") || []),
+  ];
+  const collapsedLimit = getCollapsedCollectionLimit();
+
+  cards.forEach((card, index) => {
+    card.hidden = !homeState.collectionsExpanded && index >= collapsedLimit;
+    card.classList.remove("is-last-visible-row");
+  });
+
+  const visibleCards = cards.filter((card) => !card.hidden);
+  const columnCount = getCollectionColumnCount();
+  const lastRowSize = visibleCards.length % columnCount || columnCount;
+
+  visibleCards.slice(-lastRowSize).forEach((card) => {
+    card.classList.add("is-last-visible-row");
+  });
+
+  if (!homeElements.collectionsToggle) return;
+
+  const hasHiddenCollections = cards.length > collapsedLimit;
+  homeElements.collectionsToggle.hidden = !hasHiddenCollections;
+  homeElements.collectionsToggle.setAttribute(
+    "aria-expanded",
+    String(homeState.collectionsExpanded),
+  );
+  homeElements.collectionsToggle.querySelector("span:first-child").textContent =
+    homeState.collectionsExpanded ? "Ver menos" : "Ver más";
+  homeElements.collectionsToggle.querySelector(".material-symbols-outlined").textContent =
+    homeState.collectionsExpanded ? "expand_less" : "expand_more";
+}
+
+function initializeCollectionsToggle() {
+  homeElements.collectionsToggle?.addEventListener("click", () => {
+    homeState.collectionsExpanded = !homeState.collectionsExpanded;
+    updateCollectionsVisibility();
+  });
+
+  window.addEventListener("resize", updateCollectionsVisibility);
 }
 
 /*

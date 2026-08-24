@@ -112,12 +112,12 @@ function loadCategories() {
         Todos los productos
       </a>
     </li>
-    ${categoryItems}
     <li>
       <a href="/colecciones/">
         Colecciones
       </a>
     </li>
+    ${categoryItems}
   `;
   });
 }

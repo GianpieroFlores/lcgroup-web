@@ -486,7 +486,7 @@
   background:
     radial-gradient(circle at 50% 50%, rgba(231, 24, 3, 0.12), transparent 45%),
     linear-gradient(135deg, #111111 0%, #050505 100%);
-  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .about-partnership__logo-slot {
@@ -856,6 +856,10 @@
   .about-partnership {
     height: auto;
     min-height: var(--about-section-height);
+    padding-inline: max(
+      var(--page-padding),
+      calc((100% - 1600px) / 2)
+    );
   }
 
   .about-intro__media,
@@ -881,7 +885,8 @@
   }
 
   .about-partnership__content {
-    padding: clamp(34px, 4vw, 64px) var(--page-padding);
+    padding: clamp(34px, 4vw, 64px) var(--page-padding)
+      clamp(34px, 4vw, 64px) 0;
     overflow: visible;
   }
 
@@ -935,6 +940,10 @@
 ========================================== */
 
 @media (max-width: 1024px) {
+  .about-hero {
+    padding: 28px var(--page-padding);
+  }
+
   .about-intro,
   .about-presentation,
   .about-partnership {
@@ -1009,6 +1018,10 @@
 ========================================== */
 
 @media (max-width: 768px) {
+  .about-hero {
+    padding: 26px 20px;
+  }
+
   .about-section-heading {
     margin-bottom: 30px;
   }
@@ -1071,6 +1084,10 @@
 ========================================== */
 
 @media (max-width: 600px) {
+  .about-hero {
+    padding: 24px 16px;
+  }
+
   .about-intro__media,
   .about-presentation__media,
   .about-partnership__media {
@@ -1122,6 +1139,10 @@
 ========================================== */
 
 @media (max-width: 480px) {
+  .about-hero {
+    padding: 22px 14px;
+  }
+
   .about-intro__media,
   .about-presentation__media,
   .about-partnership__media {
@@ -1188,6 +1209,10 @@
 ========================================== */
 
 @media (max-width: 380px) {
+  .about-hero {
+    padding: 20px 12px;
+  }
+
   .about-intro__media,
   .about-presentation__media,
   .about-partnership__media {

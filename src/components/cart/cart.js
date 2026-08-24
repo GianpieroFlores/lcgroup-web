@@ -396,8 +396,6 @@ export function addProductToCart(product, quantity = 1) {
   }
 
   updateCart();
-  console.log("Producto que se enviará a GA4:", product);
-
 trackAddToCart(product, 1);
   trackAddToCart(product, requestedQuantity);
 

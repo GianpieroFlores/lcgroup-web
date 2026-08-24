@@ -45,7 +45,7 @@ function renderFooterCategories(products) {
 
   const categories = getFooterCategories(products);
 
-  categoryList.innerHTML = categories
+  const categoryItems = categories
     .map((category) => {
       const categoryUrl = createCatalogUrl({
         categoria: category,
@@ -66,6 +66,15 @@ function renderFooterCategories(products) {
       `;
     })
     .join("");
+
+  categoryList.innerHTML = `
+    <li>
+      <a href="/colecciones/">
+        Colecciones
+      </a>
+    </li>
+    ${categoryItems}
+  `;
 }
 
 function loadFooterCategories() {

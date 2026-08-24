@@ -54,10 +54,11 @@
             muted
             loop
             playsinline
-            preload="metadata"
+            preload="none"
+            poster="/assets/images/Bannerproductos.png"
           >
             <source
-              src="/assets/images/banner-video.mp4"
+              data-src="/assets/images/banner-video.mp4"
               type="video/mp4"
             />
 
@@ -103,7 +104,7 @@
       </h2>
 
       <p>
-        Descubre una selección de copas, vasos, jarras y accesorios
+        Descubre una selección de copas, vasos, decantadores y estuches
         diseñados para realzar cada bebida y convertir cada momento en una
         experiencia elegante.
       </p>
@@ -342,8 +343,41 @@
 
   <aside class="home-categories__collections">
     <div class="home-categories__collections-header">
-      <span>Encuentra tu copa ideal</span>
-      <h3>Colecciones</h3>
+      <div class="home-categories__collections-heading">
+        <span>Encuentra tu copa ideal</span>
+        <h3>Colecciones</h3>
+        <p>
+          Explora nuestras colecciones y encuentra el diseño perfecto para
+          cada ocasión.
+        </p>
+      </div>
+
+      <div class="home-categories__collections-highlights" aria-label="Características de nuestras colecciones">
+        <div class="home-collection-highlight">
+          <span class="material-symbols-outlined" aria-hidden="true">wine_bar</span>
+          <span>
+            <strong id="home-collections-count">Colecciones</strong>
+            <small>Selección disponible</small>
+          </span>
+        </div>
+
+        <div class="home-collection-highlight">
+          <span class="material-symbols-outlined" aria-hidden="true">diamond</span>
+          <span>
+            <strong>Cristal</strong>
+            <small>Alta calidad</small>
+          </span>
+        </div>
+
+        <div class="home-collection-highlight">
+          <span class="material-symbols-outlined" aria-hidden="true">auto_awesome</span>
+          <span>
+            <strong>Diseños</strong>
+            <small>Para cada ocasión</small>
+          </span>
+        </div>
+
+      </div>
     </div>
 
     <nav
@@ -356,6 +390,18 @@
         sustituirse por las 10 colecciones estáticas definitivas del cliente.
       -->
     </nav>
+
+    <button
+      id="home-collections-toggle"
+      class="home-categories__collections-toggle"
+      type="button"
+      aria-controls="home-collection-examples"
+      aria-expanded="false"
+      hidden
+    >
+      <span>Ver más</span>
+      <span class="material-symbols-outlined" aria-hidden="true">expand_more</span>
+    </button>
   </aside>
 </section>
       <!-- =====================================================
