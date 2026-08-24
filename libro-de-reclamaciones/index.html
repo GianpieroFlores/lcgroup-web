@@ -1,173 +1,147 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Libro de Reclamaciones | SPIEGELAU</title>
-    <meta
-      name="description"
-      content="Libro de Reclamaciones de L.C. GROUP S.A.C."
-    />
-    <link rel="icon" type="image/webp" href="/assets/images/logo-icon.webp" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,300,0,0"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    />
-  </head>
-  <body class="claims-page">
-    <div id="header-container"></div>
 
-    <main class="information-page">
-      <header class="information-hero" data-analytics-section="claims_hero">
-        <div class="container information-hero__content">
-          <span class="information-hero__label">LC GROUP</span>
-          <h1>Libro de Reclamaciones</h1>
-          <p>
-            Espacio destinado a registrar reclamos o quejas relacionados con
-            los productos y la atención brindada por LC Group.
-          </p>
-        </div>
-      </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Libro de Reclamaciones | SPIEGELAU</title>
+  <meta name="description" content="Libro de Reclamaciones de L.C. GROUP S.A.C." />
+  <link rel="icon" type="image/webp" href="/assets/images/logo-icon.webp" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,300,0,0"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+</head>
 
-      <div class="container claims-layout" data-analytics-section="claims_content">
-          <form id="formulario" class="claim-form" data-claim-form>
-            <div class="claim-provider">
-              <h2>Libro de Reclamaciones</h2>
-              <div class="claim-provider__details">
-                <p><strong>Razón Social:</strong> L.C. GROUP S.A.C.</p>
-                <p><strong>RUC:</strong> 20341946531</p>
-                <p>Jr. Perseo Nro. 152, Urb. La Campiña, Chorrillos, Lima, Perú</p>
-              </div>
-            </div>
+<body class="claims-page">
+  <div id="header-container"></div>
 
-            <div class="claim-form__heading">
-              <h2>Hoja de reclamación</h2>
-              <p>Completa los campos obligatorios para registrar tu reclamo o queja.</p>
-            </div>
-
-            <div class="claim-form__grid">
-              <div class="claim-field">
-                <label for="claim-name">Nombres y apellidos *</label>
-                <input id="claim-name" name="name" type="text" autocomplete="name" required />
-              </div>
-
-              <div class="claim-field">
-                <label for="claim-document">DNI / CE *</label>
-                <input id="claim-document" name="document" type="text" inputmode="numeric" required />
-              </div>
-
-              <div class="claim-field">
-                <label for="claim-email">Correo electrónico *</label>
-                <input id="claim-email" name="email" type="email" autocomplete="email" required />
-              </div>
-
-              <div class="claim-field">
-                <label for="claim-phone">Teléfono *</label>
-                <input id="claim-phone" name="phone" type="tel" autocomplete="tel" required />
-              </div>
-
-              <div class="claim-field claim-field--full">
-                <label for="claim-address">Domicilio</label>
-                <input id="claim-address" name="address" type="text" autocomplete="street-address" />
-              </div>
-
-              <fieldset class="claim-choice">
-                <legend>Tipo de solicitud *</legend>
-                <label><input type="radio" name="claimType" value="reclamo" required /> Reclamo</label>
-                <label><input type="radio" name="claimType" value="queja" required /> Queja</label>
-              </fieldset>
-
-              <div class="claim-field">
-                <label id="claim-subject-label">Producto o servicio *</label>
-                <div class="claim-select" data-claim-select>
-                  <input id="claim-subject" name="subject" type="hidden" />
-                  <button
-                    class="claim-select__trigger"
-                    type="button"
-                    aria-labelledby="claim-subject-label claim-subject-value"
-                    aria-haspopup="listbox"
-                    aria-expanded="false"
-                    data-claim-select-trigger
-                  >
-                    <span id="claim-subject-value" data-claim-select-value>Selecciona una opción</span>
-                    <span class="material-symbols-outlined" aria-hidden="true">expand_more</span>
-                  </button>
-                  <div
-                    class="claim-select__menu"
-                    role="listbox"
-                    aria-labelledby="claim-subject-label"
-                    hidden
-                    data-claim-select-menu
-                  >
-                    <button type="button" role="option" aria-selected="false" data-value="producto">
-                      <span class="material-symbols-outlined" aria-hidden="true">wine_bar</span>
-                      <span><strong>Producto</strong><small>Compra, estado o características del producto</small></span>
-                    </button>
-                    <button type="button" role="option" aria-selected="false" data-value="servicio">
-                      <span class="material-symbols-outlined" aria-hidden="true">support_agent</span>
-                      <span><strong>Servicio o atención</strong><small>Asesoría, entrega o experiencia de atención</small></span>
-                    </button>
-                  </div>
-                  <p class="claim-field__error" data-claim-select-error hidden>Selecciona una opción.</p>
-                </div>
-              </div>
-
-              <div class="claim-field">
-                <label for="claim-order">Número de pedido o comprobante</label>
-                <input id="claim-order" name="order" type="text" />
-              </div>
-
-              <div class="claim-field claim-field--full">
-                <label for="claim-detail">Detalle del reclamo o queja *</label>
-                <textarea id="claim-detail" name="detail" required></textarea>
-              </div>
-
-              <div class="claim-field claim-field--full">
-                <label for="claim-request">Pedido concreto del consumidor *</label>
-                <textarea id="claim-request" name="request" required></textarea>
-              </div>
-<div class="claim-field claim-field--full">
-  <div
-    class="cf-turnstile"
-    data-sitekey="0x4AAAAAAEaolokNEhkAIiWh"
-  ></div>
-</div>
-
-
-
-              <div class="claim-form__actions">
-                <button class="claim-form__button" type="submit">
-                  Enviar hoja de reclamación
-                </button>
-                <p
-                  class="claim-form__status"
-                  data-claim-status
-                  tabindex="-1"
-                  role="status"
-                  aria-live="polite"
-                >
-                  Revisa que la información ingresada sea correcta antes de enviarla.
-                </p>
-              </div>
-            </div>
-          </form>
+  <main class="information-page">
+    <header class="information-hero" data-analytics-section="claims_hero">
+      <div class="container information-hero__content">
+        <span class="information-hero__label">LC GROUP</span>
+        <h1>Libro de Reclamaciones</h1>
+        <p>
+          Espacio destinado a registrar reclamos o quejas relacionados con
+          los productos y la atención brindada por LC Group.
+        </p>
       </div>
-    </main>
+    </header>
 
-    <div id="footer-container"></div>
-    <script type="module" src="/src/main.js"></script>
-    <script type="module" src="/libro-de-reclamaciones/libro-de-reclamaciones.js"></script>
-  <script
-  src="https://challenges.cloudflare.com/turnstile/v0/api.js"
-  async
-  defer
-></script>
+    <div class="container claims-layout" data-analytics-section="claims_content">
+      <form id="formulario" class="claim-form" data-claim-form>
+        <div class="claim-provider">
+          <h2>Libro de Reclamaciones</h2>
+          <div class="claim-provider__details">
+            <p><strong>Razón Social:</strong> L.C. GROUP S.A.C.</p>
+            <p><strong>RUC:</strong> 20341946531</p>
+            <p>Jr. Perseo Nro. 152, Urb. La Campiña, Chorrillos, Lima, Perú</p>
+          </div>
+        </div>
+
+        <div class="claim-form__heading">
+          <h2>Hoja de reclamación</h2>
+          <p>Completa los campos obligatorios para registrar tu reclamo o queja.</p>
+        </div>
+
+        <div class="claim-form__grid">
+          <div class="claim-field">
+            <label for="claim-name">Nombres y apellidos *</label>
+            <input id="claim-name" name="name" type="text" autocomplete="name" required />
+          </div>
+
+          <div class="claim-field">
+            <label for="claim-document">DNI / CE *</label>
+            <input id="claim-document" name="document" type="text" inputmode="numeric" required />
+          </div>
+
+          <div class="claim-field">
+            <label for="claim-email">Correo electrónico *</label>
+            <input id="claim-email" name="email" type="email" autocomplete="email" required />
+          </div>
+
+          <div class="claim-field">
+            <label for="claim-phone">Teléfono *</label>
+            <input id="claim-phone" name="phone" type="tel" autocomplete="tel" required />
+          </div>
+
+          <div class="claim-field claim-field--full">
+            <label for="claim-address">Domicilio</label>
+            <input id="claim-address" name="address" type="text" autocomplete="street-address" maxlength="250"
+              required />
+          </div>
+
+          <fieldset class="claim-choice">
+            <legend>Tipo de solicitud *</legend>
+            <label><input type="radio" name="claimType" value="reclamo" required /> Reclamo</label>
+            <label><input type="radio" name="claimType" value="queja" required /> Queja</label>
+          </fieldset>
+
+          <div class="claim-field">
+            <label id="claim-subject-label">Producto o servicio *</label>
+            <div class="claim-select" data-claim-select>
+              <input id="claim-subject" name="subject" type="hidden" />
+              <button class="claim-select__trigger" type="button"
+                aria-labelledby="claim-subject-label claim-subject-value" aria-haspopup="listbox" aria-expanded="false"
+                data-claim-select-trigger>
+                <span id="claim-subject-value" data-claim-select-value>Selecciona una opción</span>
+                <span class="material-symbols-outlined" aria-hidden="true">expand_more</span>
+              </button>
+              <div class="claim-select__menu" role="listbox" aria-labelledby="claim-subject-label" hidden
+                data-claim-select-menu>
+                <button type="button" role="option" aria-selected="false" data-value="producto">
+                  <span class="material-symbols-outlined" aria-hidden="true">wine_bar</span>
+                  <span><strong>Producto</strong><small>Compra, estado o características del producto</small></span>
+                </button>
+                <button type="button" role="option" aria-selected="false" data-value="servicio">
+                  <span class="material-symbols-outlined" aria-hidden="true">support_agent</span>
+                  <span><strong>Servicio o atención</strong><small>Asesoría, entrega o experiencia de
+                      atención</small></span>
+                </button>
+              </div>
+              <p class="claim-field__error" data-claim-select-error hidden>Selecciona una opción.</p>
+            </div>
+          </div>
+
+          <div class="claim-field">
+            <label for="claim-order">Número de pedido o comprobante</label>
+            <input id="claim-order" name="order" type="text" />
+          </div>
+
+          <div class="claim-field claim-field--full">
+            <label for="claim-detail">Detalle del reclamo o queja *</label>
+            <textarea id="claim-detail" name="detail" required></textarea>
+          </div>
+
+          <div class="claim-field claim-field--full">
+            <label for="claim-request">Pedido concreto del consumidor *</label>
+            <textarea id="claim-request" name="request" required></textarea>
+          </div>
+          <div class="claim-field claim-field--full">
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAAEaolokNEhkAIiWh"></div>
+          </div>
 
 
 
-  </body>
+          <div class="claim-form__actions">
+            <button class="claim-form__button" type="submit">
+              Enviar hoja de reclamación
+            </button>
+            <p class="claim-form__status" data-claim-status tabindex="-1" role="status" aria-live="polite">
+              Revisa que la información ingresada sea correcta antes de enviarla.
+            </p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+  <script type="module" src="/src/main.js"></script>
+  <script type="module" src="/libro-de-reclamaciones/libro-de-reclamaciones.js"></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+
+
+</body>
+
 </html>
