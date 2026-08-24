@@ -5,7 +5,7 @@ import "./contacto.css";
 // =====================================================
 
 const WORKER_URL =
-  "https://spiegelau-contact-api.pruebaform837.workers.dev";
+  "https://spiegelau-contact-api.spiegelauweb.workers.dev";
 
 const form = document.querySelector("#contact-form");
 const submitButton = document.querySelector("#contact-submit");
@@ -387,7 +387,14 @@ if (form && submitButton) {
       }
 
       if (!response.ok) {
-        console.error("Worker respondió:", result);
+        console.error(
+  "Worker respondió:",
+  response.status,
+  JSON.stringify(result, null, 2)
+);
+
+
+
 
         if (isTurnstileError(result)) {
           showContactNotice({
