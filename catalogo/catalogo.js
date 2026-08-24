@@ -49,7 +49,7 @@ let viewMode = "normal";
 let productRenderVersion = 0;
 
 const BASE_PRODUCTS_PER_PAGE = 18;
-const CATALOG_BANNER_IMAGE = "/assets/images/Bannerproductos.png";
+const CATALOG_BANNER_IMAGE = "/assets/images/Bannerproductos.webp";
 
 /*
  * Configuración temporal de banners.

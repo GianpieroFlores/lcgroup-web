@@ -50,11 +50,11 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product01.jpg",
+        "image": "/assets/images/product01.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product01-1.jpg",
+        "image": "/assets/images/product01-1.webp",
         "alt": "Vista total de la copa"
       }
     ],
@@ -111,7 +111,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product02-3.jpg",
+        "image": "/assets/images/product02-3.webp",
         "alt": "Vista total de la Copa Bordeaux"
       },
       {
@@ -119,11 +119,11 @@
         "alt": "Vista total de la Copa Bordeaux"
       },
       {
-        "image": "/assets/images/product02-2.jpg",
+        "image": "/assets/images/product02-2.webp",
         "alt": "Vista de la caja de la copa Bordeauz"
       },
       {
-        "image": "/assets/images/product02.jpg",
+        "image": "/assets/images/product02.webp",
         "alt": "Vista principal"
       }
     ],
@@ -180,11 +180,11 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product03.jpg",
+        "image": "/assets/images/product03.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product03-1.jpg",
+        "image": "/assets/images/product03-1.webp",
         "alt": "Vista total de la Copa Bordeaux"
       }
     ],
@@ -241,7 +241,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product04-1.jpg",
+        "image": "/assets/images/product04-1.webp",
         "alt": "Vista lateral"
       },
       {
@@ -249,7 +249,7 @@
         "alt": "Detalle de la copa"
       },
       {
-        "image": "/assets/images/product04.jpg",
+        "image": "/assets/images/product04.webp",
         "alt": "Vista principal"
       }
     ],
@@ -306,7 +306,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product05-3.jpg",
+        "image": "/assets/images/product05-3.webp",
         "alt": "Vista lateral"
       },
       {
@@ -314,11 +314,11 @@
         "alt": "Vista lateral"
       },
       {
-        "image": "/assets/images/product05-2.jpg",
+        "image": "/assets/images/product05-2.webp",
         "alt": "Detalle de la copa"
       },
       {
-        "image": "/assets/images/product05.jpg",
+        "image": "/assets/images/product05.webp",
         "alt": "Vista principal"
       }
     ],
@@ -375,7 +375,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product06-1.jpg",
+        "image": "/assets/images/product06-1.webp",
         "alt": "Vista principal"
       },
       {
@@ -383,11 +383,11 @@
         "alt": "Vista lateral"
       },
       {
-        "image": "/assets/images/product06-3.jpg",
+        "image": "/assets/images/product06-3.webp",
         "alt": "Detalle de la copa"
       },
       {
-        "image": "/assets/images/product06.jpg",
+        "image": "/assets/images/product06.webp",
         "alt": "Vista del empaque"
       }
     ],
@@ -444,7 +444,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product07-3.jpg",
+        "image": "/assets/images/product07-3.webp",
         "alt": "Vista principal"
       },
       {
@@ -452,11 +452,11 @@
         "alt": "Vista lateral"
       },
       {
-        "image": "/assets/images/product07-2.jpg",
+        "image": "/assets/images/product07-2.webp",
         "alt": "Detalle de la copa"
       },
       {
-        "image": "/assets/images/product07.jpg",
+        "image": "/assets/images/product07.webp",
         "alt": "Vista principal"
       }
     ],
@@ -513,7 +513,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product08-3.jpg",
+        "image": "/assets/images/product08-3.webp",
         "alt": "Vista principal"
       },
       {
@@ -521,11 +521,11 @@
         "alt": "Vista lateral"
       },
       {
-        "image": "/assets/images/product08-2.jpg",
+        "image": "/assets/images/product08-2.webp",
         "alt": "Detalle de la copa"
       },
       {
-        "image": "/assets/images/product08.jpg",
+        "image": "/assets/images/product08.webp",
         "alt": "Vista principal"
       }
     ],
@@ -582,7 +582,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product09.jpg",
+        "image": "/assets/images/product09.webp",
         "alt": "Vista principal"
       }
     ],
@@ -662,19 +662,19 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product11.jpg",
+        "image": "/assets/images/product11.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product11-1.jpg",
+        "image": "/assets/images/product11-1.webp",
         "alt": "Vista lateral"
       },
       {
-        "image": "/assets/images/product11-3.jpg",
+        "image": "/assets/images/product11-3.webp",
         "alt": "Detalle de la copa"
       },
       {
-        "image": "/assets/images/product11-2.jpg",
+        "image": "/assets/images/product11-2.webp",
         "alt": "Vista del empaque"
       }
     ],
@@ -731,7 +731,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product12.jpg",
+        "image": "/assets/images/product12.webp",
         "alt": "Vista principal"
       },
       {
@@ -739,7 +739,7 @@
         "alt": "Vista lateral"
       },
       {
-        "image": "/assets/images/product12-2.jpg",
+        "image": "/assets/images/product12-2.webp",
         "alt": "Detalle de la copa"
       }
     ],
@@ -796,7 +796,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product13-3.jpg",
+        "image": "/assets/images/product13-3.webp",
         "alt": "Vista principal"
       },
       {
@@ -804,11 +804,11 @@
         "alt": "Vista lateral"
       },
       {
-        "image": "/assets/images/product13-2.jpg",
+        "image": "/assets/images/product13-2.webp",
         "alt": "Detalle de la copa"
       },
       {
-        "image": "/assets/images/product13.jpg",
+        "image": "/assets/images/product13.webp",
         "alt": "Vista principal"
       }
     ],
@@ -866,7 +866,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product14-3.jpg",
+        "image": "/assets/images/product14-3.webp",
         "alt": "Detalle de la copa"
       },
       {
@@ -874,11 +874,11 @@
         "alt": "Vista lateral"
       },
       {
-        "image": "/assets/images/product14-2.jpg",
+        "image": "/assets/images/product14-2.webp",
         "alt": "Detalle de la copa"
       },
       {
-        "image": "/assets/images/product14.jpg",
+        "image": "/assets/images/product14.webp",
         "alt": "Vista principal"
       }
     ],
@@ -935,7 +935,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product15.jpg",
+        "image": "/assets/images/product15.webp",
         "alt": "Vista principal"
       },
       {
@@ -996,7 +996,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product16.jpg",
+        "image": "/assets/images/product16.webp",
         "alt": "Vista principal"
       },
       {
@@ -1004,7 +1004,7 @@
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product16-1.jpg",
+        "image": "/assets/images/product16-1.webp",
         "alt": "Vista lateral"
       }
     ],
@@ -1061,7 +1061,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product17-3.jpg",
+        "image": "/assets/images/product17-3.webp",
         "alt": "Vista principal"
       },
       {
@@ -1069,11 +1069,11 @@
         "alt": "Vista lateral"
       },
       {
-        "image": "/assets/images/product17-2.jpg",
+        "image": "/assets/images/product17-2.webp",
         "alt": "Detalle de la copa"
       },
       {
-        "image": "/assets/images/product17.jpg",
+        "image": "/assets/images/product17.webp",
         "alt": "Vista principal"
       }
     ],
@@ -1130,7 +1130,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product18-3.jpg",
+        "image": "/assets/images/product18-3.webp",
         "alt": "Vista principal"
       },
       {
@@ -1138,11 +1138,11 @@
         "alt": "Vista lateral"
       },
       {
-        "image": "/assets/images/product18-2.jpg",
+        "image": "/assets/images/product18-2.webp",
         "alt": "Detalle de la copa"
       },
       {
-        "image": "/assets/images/product18.jpg",
+        "image": "/assets/images/product18.webp",
         "alt": "Vista principal"
       }
     ],
@@ -1199,19 +1199,19 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product19-1.jpg",
+        "image": "/assets/images/product19-1.webp",
         "alt": "Vista lateral"
       },
       {
-        "image": "/assets/images/product19-3.jpg",
+        "image": "/assets/images/product19-3.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product19-2.jpg",
+        "image": "/assets/images/product19-2.webp",
         "alt": "Detalle de la copa"
       },
       {
-        "image": "/assets/images/product19.jpg",
+        "image": "/assets/images/product19.webp",
         "alt": "Vista principal"
       }
     ],
@@ -1269,7 +1269,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product20-3.jpg",
+        "image": "/assets/images/product20-3.webp",
         "alt": "Vista principal"
       },
       {
@@ -1277,11 +1277,11 @@
         "alt": "Vista lateral"
       },
       {
-        "image": "/assets/images/product20-2.jpg",
+        "image": "/assets/images/product20-2.webp",
         "alt": "Detalle de la copa"
       },
       {
-        "image": "/assets/images/product20.jpg",
+        "image": "/assets/images/product20.webp",
         "alt": "Vista principal"
       }
     ],
@@ -1338,11 +1338,11 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product21.jpg",
+        "image": "/assets/images/product21.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product21-1.jpg",
+        "image": "/assets/images/product21-1.webp",
         "alt": "Detalle de la copa"
       }
     ],
@@ -1400,7 +1400,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product22-3.jpg",
+        "image": "/assets/images/product22-3.webp",
         "alt": "Vista principal"
       },
       {
@@ -1408,11 +1408,11 @@
         "alt": "Vista lateral"
       },
       {
-        "image": "/assets/images/product22-2.jpg",
+        "image": "/assets/images/product22-2.webp",
         "alt": "Detalle de la copa"
       },
       {
-        "image": "/assets/images/product22.jpg",
+        "image": "/assets/images/product22.webp",
         "alt": "Vista principal"
       }
     ],
@@ -1470,7 +1470,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product23-3.jpg",
+        "image": "/assets/images/product23-3.webp",
         "alt": "Vista principal"
       },
       {
@@ -1478,7 +1478,7 @@
         "alt": "Vista lateral"
       },
       {
-        "image": "/assets/images/product23.jpg",
+        "image": "/assets/images/product23.webp",
         "alt": "Vista principal"
       }
     ],
@@ -1535,19 +1535,19 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product24.jpg",
+        "image": "/assets/images/product24.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product24-1.jpg",
+        "image": "/assets/images/product24-1.webp",
         "alt": "Vista lateral"
       },
       {
-        "image": "/assets/images/product24-3.jpg",
+        "image": "/assets/images/product24-3.webp",
         "alt": "Detalle de la copa"
       },
       {
-        "image": "/assets/images/product24-2.jpg",
+        "image": "/assets/images/product24-2.webp",
         "alt": "Vista del empaque"
       }
     ],
@@ -1604,7 +1604,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product25-3.jpg",
+        "image": "/assets/images/product25-3.webp",
         "alt": "Vista principal"
       },
       {
@@ -1612,11 +1612,11 @@
         "alt": "Vista lateral"
       },
       {
-        "image": "/assets/images/product25-2.jpg",
+        "image": "/assets/images/product25-2.webp",
         "alt": "Detalle de la copa"
       },
       {
-        "image": "/assets/images/product25.jpg",
+        "image": "/assets/images/product25.webp",
         "alt": "Vista principal"
       }
     ],
@@ -1673,7 +1673,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product26-3.jpg",
+        "image": "/assets/images/product26-3.webp",
         "alt": "Detalle de la copa"
       },
       {
@@ -1681,11 +1681,11 @@
         "alt": "Vista lateral"
       },
       {
-        "image": "/assets/images/product26-2.jpg",
+        "image": "/assets/images/product26-2.webp",
         "alt": "Detalle de la copa"
       },
       {
-        "image": "/assets/images/product26.jpg",
+        "image": "/assets/images/product26.webp",
         "alt": "Vista principal"
       }
     ],
@@ -1743,7 +1743,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product27-3.jpg",
+        "image": "/assets/images/product27-3.webp",
         "alt": "Detalle de la copa"
       },
       {
@@ -1751,7 +1751,7 @@
         "alt": "Vista lateral"
       },
       {
-        "image": "/assets/images/product27.jpg",
+        "image": "/assets/images/product27.webp",
         "alt": "Vista principal"
       }
     ],
@@ -1809,15 +1809,15 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product28.jpg",
+        "image": "/assets/images/product28.webp",
         "alt": "Vista principal de la Copa Bordeaux"
       },
       {
-        "image": "/assets/images/product28-2.jpg",
+        "image": "/assets/images/product28-2.webp",
         "alt": "Vista principal de la Copa Bordeaux"
       },
       {
-        "image": "/assets/images/product29-1.jpg",
+        "image": "/assets/images/product29-1.webp",
         "alt": "Vista lateral de la Copa Bordeaux"
       }
     ],
@@ -1899,19 +1899,19 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product30.jpg",
+        "image": "/assets/images/product30.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product30-1.jpg",
+        "image": "/assets/images/product30-1.webp",
         "alt": "Vista lateral"
       },
       {
-        "image": "/assets/images/product30-2.jpg",
+        "image": "/assets/images/product30-2.webp",
         "alt": "Detalle del decantador"
       },
       {
-        "image": "/assets/images/product30-3.jpg",
+        "image": "/assets/images/product30-3.webp",
         "alt": "Vista del decantador"
       }
     ],
@@ -1969,7 +1969,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product31.jpg",
+        "image": "/assets/images/product31.webp",
         "alt": "Vista principal"
       },
       {
@@ -1977,7 +1977,7 @@
         "alt": "Vista lateral"
       },
       {
-        "image": "/assets/images/product31-1.jpg",
+        "image": "/assets/images/product31-1.webp",
         "alt": "Detalle del decantador"
       }
     ],
@@ -2035,15 +2035,15 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product32.jpg",
+        "image": "/assets/images/product32.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product32-2.jpg",
+        "image": "/assets/images/product32-2.webp",
         "alt": "Vista lateral"
       },
       {
-        "image": "/assets/images/product32-1.jpg",
+        "image": "/assets/images/product32-1.webp",
         "alt": "Detalle del decantador"
       }
     ],
@@ -2101,15 +2101,15 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product33.jpg",
+        "image": "/assets/images/product33.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product33-2.jpg",
+        "image": "/assets/images/product33-2.webp",
         "alt": "Vista lateral"
       },
       {
-        "image": "/assets/images/product33-1.jpg",
+        "image": "/assets/images/product33-1.webp",
         "alt": "Detalle del decantador"
       }
     ],
@@ -2195,7 +2195,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product35-3.jpg",
+        "image": "/assets/images/product35-3.webp",
         "alt": "Vista principal"
       },
       {
@@ -2203,11 +2203,11 @@
         "alt": "Vista lateral"
       },
       {
-        "image": "/assets/images/product35-2.jpg",
+        "image": "/assets/images/product35-2.webp",
         "alt": "Detalle del decantador"
       },
       {
-        "image": "/assets/images/product35.jpg",
+        "image": "/assets/images/product35.webp",
         "alt": "Vista principal"
       }
     ],
@@ -2268,7 +2268,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product36-3.jpg",
+        "image": "/assets/images/product36-3.webp",
         "alt": "Vista principal"
       },
       {
@@ -2276,11 +2276,11 @@
         "alt": "Vista lateral"
       },
       {
-        "image": "/assets/images/product36-2.jpg",
+        "image": "/assets/images/product36-2.webp",
         "alt": "Detalle del decantador"
       },
       {
-        "image": "/assets/images/product36.jpg",
+        "image": "/assets/images/product36.webp",
         "alt": "Vista principal"
       }
     ],
@@ -2338,19 +2338,19 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product37.jpg",
+        "image": "/assets/images/product37.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product37-1.jpg",
+        "image": "/assets/images/product37-1.webp",
         "alt": "Vista del set"
       },
       {
-        "image": "/assets/images/product37-3.jpg",
+        "image": "/assets/images/product37-3.webp",
         "alt": "Copas incluidas"
       },
       {
-        "image": "/assets/images/product37-2.jpg",
+        "image": "/assets/images/product37-2.webp",
         "alt": "Detalle del set"
       },
       {
@@ -2412,19 +2412,19 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product38-1.jpg",
+        "image": "/assets/images/product38-1.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product38-2.jpg",
+        "image": "/assets/images/product38-2.webp",
         "alt": "Vista del set"
       },
       {
-        "image": "/assets/images/product38.jpg",
+        "image": "/assets/images/product38.webp",
         "alt": "Detalle de las copas"
       },
       {
-        "image": "/assets/images/product38-3.jpg",
+        "image": "/assets/images/product38-3.webp",
         "alt": "Empaque del producto"
       }
     ],
@@ -2481,43 +2481,43 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product39.jpg",
+        "image": "/assets/images/product39.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product39-1.jpg",
+        "image": "/assets/images/product39-1.webp",
         "alt": "Kit completo"
       },
       {
-        "image": "/assets/images/product39-2.jpg",
+        "image": "/assets/images/product39-2.webp",
         "alt": "Detalle de las copas"
       },
       {
-        "image": "/assets/images/product39-4.jpg",
+        "image": "/assets/images/product39-4.webp",
         "alt": "Accesorios del kit"
       },
       {
-        "image": "/assets/images/product39-5.jpg",
+        "image": "/assets/images/product39-5.webp",
         "alt": "Vasos incluidos"
       },
       {
-        "image": "/assets/images/product39-6.jpg",
+        "image": "/assets/images/product39-6.webp",
         "alt": "Vista lateral"
       },
       {
-        "image": "/assets/images/product39-7.jpg",
+        "image": "/assets/images/product39-7.webp",
         "alt": "Detalle del cristal"
       },
       {
-        "image": "/assets/images/product39-8.jpg",
+        "image": "/assets/images/product39-8.webp",
         "alt": "Presentación del set"
       },
       {
-        "image": "/assets/images/product39-9.jpg",
+        "image": "/assets/images/product39-9.webp",
         "alt": "Empaque original"
       },
       {
-        "image": "/assets/images/product39-3.jpg",
+        "image": "/assets/images/product39-3.webp",
         "alt": "Vista general"
       }
     ],
@@ -2576,19 +2576,19 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product40.jpg",
+        "image": "/assets/images/product40.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product40-3.jpg",
+        "image": "/assets/images/product40-3.webp",
         "alt": "Vista del set"
       },
       {
-        "image": "/assets/images/product40-1.jpg",
+        "image": "/assets/images/product40-1.webp",
         "alt": "Detalle de los vasos"
       },
       {
-        "image": "/assets/images/product40-2.jpg",
+        "image": "/assets/images/product40-2.webp",
         "alt": "Empaque del producto"
       }
     ],
@@ -2647,19 +2647,19 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product41.jpg",
+        "image": "/assets/images/product41.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product41-3.jpg",
+        "image": "/assets/images/product41-3.webp",
         "alt": "Vista del set"
       },
       {
-        "image": "/assets/images/product41-1.jpg",
+        "image": "/assets/images/product41-1.webp",
         "alt": "Detalle de las copas"
       },
       {
-        "image": "/assets/images/product41-2.jpg",
+        "image": "/assets/images/product41-2.webp",
         "alt": "Empaque del producto"
       }
     ],
@@ -2717,15 +2717,15 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product42.jpg",
+        "image": "/assets/images/product42.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product42-1.jpg",
+        "image": "/assets/images/product42-1.webp",
         "alt": "Vista lateral"
       },
       {
-        "image": "/assets/images/product42-3.jpg",
+        "image": "/assets/images/product42-3.webp",
         "alt": "Detalle de las copas"
       }
     ],
@@ -2782,7 +2782,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product43-3.jpg",
+        "image": "/assets/images/product43-3.webp",
         "alt": "Vista principal"
       },
       {
@@ -2790,11 +2790,11 @@
         "alt": "Vista en uso del producto"
       },
       {
-        "image": "/assets/images/product43-2.jpg",
+        "image": "/assets/images/product43-2.webp",
         "alt": "Vista de la caja del producto"
       },
       {
-        "image": "/assets/images/product43.jpg",
+        "image": "/assets/images/product43.webp",
         "alt": "Vista principal"
       }
     ],
@@ -2851,19 +2851,19 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product44.jpg",
+        "image": "/assets/images/product44.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product44-1.jpg",
+        "image": "/assets/images/product44-1.webp",
         "alt": "Vista en uso del producto"
       },
       {
-        "image": "/assets/images/product44-3.jpg",
+        "image": "/assets/images/product44-3.webp",
         "alt": "Detalle de la copa"
       },
       {
-        "image": "/assets/images/product44-4.jpg",
+        "image": "/assets/images/product44-4.webp",
         "alt": "Empaque del producto"
       }
     ],
@@ -2920,19 +2920,19 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product45-3.jpg",
+        "image": "/assets/images/product45-3.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product45-4.jpg",
+        "image": "/assets/images/product45-4.webp",
         "alt": "Vista lateral"
       },
       {
-        "image": "/assets/images/product45-2.jpg",
+        "image": "/assets/images/product45-2.webp",
         "alt": "Detalle del vaso"
       },
       {
-        "image": "/assets/images/product45.jpg",
+        "image": "/assets/images/product45.webp",
         "alt": "Vista principal"
       }
     ],
@@ -2989,19 +2989,19 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product46-3.jpg",
+        "image": "/assets/images/product46-3.webp",
         "alt": "Detalle del vaso"
       },
       {
-        "image": "/assets/images/product46-1.jpg",
+        "image": "/assets/images/product46-1.webp",
         "alt": "Vista lateral"
       },
       {
-        "image": "/assets/images/product46-2.jpg",
+        "image": "/assets/images/product46-2.webp",
         "alt": "Detalle del vaso"
       },
       {
-        "image": "/assets/images/product46.jpg",
+        "image": "/assets/images/product46.webp",
         "alt": "Vista principal"
       }
     ],
@@ -3058,7 +3058,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product47-3.jpg",
+        "image": "/assets/images/product47-3.webp",
         "alt": "Vista principal"
       },
       {
@@ -3066,11 +3066,11 @@
         "alt": "Vista lateral"
       },
       {
-        "image": "/assets/images/product47-2.jpg",
+        "image": "/assets/images/product47-2.webp",
         "alt": "Detalle del vaso"
       },
       {
-        "image": "/assets/images/product47.jpg",
+        "image": "/assets/images/product47.webp",
         "alt": "Vista principal"
       }
     ],
@@ -3128,19 +3128,19 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product48.jpg",
+        "image": "/assets/images/product48.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product48-1.jpg",
+        "image": "/assets/images/product48-1.webp",
         "alt": "Detalle del decantador"
       },
       {
-        "image": "/assets/images/product48-2.jpg",
+        "image": "/assets/images/product48-2.webp",
         "alt": "Copas incluidas"
       },
       {
-        "image": "/assets/images/product48-3.jpg",
+        "image": "/assets/images/product48-3.webp",
         "alt": "Vista del set"
       },
       {
@@ -3201,19 +3201,19 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product49.jpg",
+        "image": "/assets/images/product49.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product49-1.jpg",
+        "image": "/assets/images/product49-1.webp",
         "alt": "Vista lateral"
       },
       {
-        "image": "/assets/images/product49-2.jpg",
+        "image": "/assets/images/product49-2.webp",
         "alt": "Detalle del vaso"
       },
       {
-        "image": "/assets/images/product49-3.jpg",
+        "image": "/assets/images/product49-3.webp",
         "alt": "Vista del set"
       }
     ],
@@ -3270,19 +3270,19 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product50-3.jpg",
+        "image": "/assets/images/product50-3.webp",
         "alt": "Detalle de la copa"
       },
       {
-        "image": "/assets/images/product50-1.jpg",
+        "image": "/assets/images/product50-1.webp",
         "alt": "Vista lateral"
       },
       {
-        "image": "/assets/images/product50-2.png",
+        "image": "/assets/images/product50-2.webp",
         "alt": "Detalle de la copa"
       },
       {
-        "image": "/assets/images/product50.jpg",
+        "image": "/assets/images/product50.webp",
         "alt": "Vista principal"
       }
     ],
@@ -3339,19 +3339,19 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product51-3.jpg",
+        "image": "/assets/images/product51-3.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product51-1.jpg",
+        "image": "/assets/images/product51-1.webp",
         "alt": "Vista lateral"
       },
       {
-        "image": "/assets/images/product51-2.jpg",
+        "image": "/assets/images/product51-2.webp",
         "alt": "Detalle de la copa"
       },
       {
-        "image": "/assets/images/product51.jpg",
+        "image": "/assets/images/product51.webp",
         "alt": "Vista principal"
       }
     ],
@@ -3408,19 +3408,19 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product52-3.jpg",
+        "image": "/assets/images/product52-3.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product52-1.jpg",
+        "image": "/assets/images/product52-1.webp",
         "alt": "Vista lateral"
       },
       {
-        "image": "/assets/images/product52-2.jpg",
+        "image": "/assets/images/product52-2.webp",
         "alt": "Detalle de la copa"
       },
       {
-        "image": "/assets/images/product52.jpg",
+        "image": "/assets/images/product52.webp",
         "alt": "Vista principal"
       }
     ],
@@ -3477,19 +3477,19 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product53.jpg",
+        "image": "/assets/images/product53.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product53-1.jpg",
+        "image": "/assets/images/product53-1.webp",
         "alt": "Vista lateral"
       },
       {
-        "image": "/assets/images/product53-2.jpg",
+        "image": "/assets/images/product53-2.webp",
         "alt": "Detalle de la copa"
       },
       {
-        "image": "/assets/images/product53-3.jpg",
+        "image": "/assets/images/product53-3.webp",
         "alt": "Detalle de la copa"
       }
     ],
@@ -3546,19 +3546,19 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product54-3.jpg",
+        "image": "/assets/images/product54-3.webp",
         "alt": "Detalle de la copa"
       },
       {
-        "image": "/assets/images/product54-1.jpg",
+        "image": "/assets/images/product54-1.webp",
         "alt": "Vista lateral"
       },
       {
-        "image": "/assets/images/product54-2.png",
+        "image": "/assets/images/product54-2.webp",
         "alt": "Detalle de la copa"
       },
       {
-        "image": "/assets/images/product54.jpg",
+        "image": "/assets/images/product54.webp",
         "alt": "Vista principal"
       }
     ],
@@ -3615,19 +3615,19 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product55-3.jpg",
+        "image": "/assets/images/product55-3.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product01-1.jpg",
+        "image": "/assets/images/product01-1.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product55-2.png",
+        "image": "/assets/images/product55-2.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product55.jpg",
+        "image": "/assets/images/product55.webp",
         "alt": "Vista principal"
       }
     ],
@@ -3684,19 +3684,19 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product56-3.jpg",
+        "image": "/assets/images/product56-3.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product56-1.jpg",
+        "image": "/assets/images/product56-1.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product56-2.jpg",
+        "image": "/assets/images/product56-2.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product56.jpg",
+        "image": "/assets/images/product56.webp",
         "alt": "Vista principal"
       }
     ],
@@ -3753,19 +3753,19 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product57-3.jpg",
+        "image": "/assets/images/product57-3.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product57-1.jpg",
+        "image": "/assets/images/product57-1.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product57-2.jpg",
+        "image": "/assets/images/product57-2.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product57.jpg",
+        "image": "/assets/images/product57.webp",
         "alt": "Vista principal"
       }
     ],
@@ -3822,19 +3822,19 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product58-3.jpg",
+        "image": "/assets/images/product58-3.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product58-1.jpg",
+        "image": "/assets/images/product58-1.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product58-2.jpg",
+        "image": "/assets/images/product58-2.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product58.jpg",
+        "image": "/assets/images/product58.webp",
         "alt": "Vista principal"
       }
     ],
@@ -3891,7 +3891,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product59-3.jpg",
+        "image": "/assets/images/product59-3.webp",
         "alt": "Vista principal"
       },
       {
@@ -3899,7 +3899,7 @@
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product59-2.jpg",
+        "image": "/assets/images/product59-2.webp",
         "alt": "Vista principal"
       },
       {
@@ -3960,7 +3960,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product60-3.jpg",
+        "image": "/assets/images/product60-3.webp",
         "alt": "Vista principal"
       },
       {
@@ -3968,7 +3968,7 @@
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product60-2.jpg",
+        "image": "/assets/images/product60-2.webp",
         "alt": "Vista principal"
       },
       {
@@ -4029,19 +4029,19 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product61.jpg",
+        "image": "/assets/images/product61.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product61-1.jpg",
+        "image": "/assets/images/product61-1.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product61-2.jpg",
+        "image": "/assets/images/product61-2.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product61-3.jpg",
+        "image": "/assets/images/product61-3.webp",
         "alt": "Vista principal"
       }
     ],
@@ -4098,7 +4098,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product62-3.jpg",
+        "image": "/assets/images/product62-3.webp",
         "alt": "Vista principal"
       },
       {
@@ -4106,7 +4106,7 @@
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product62-2.jpg",
+        "image": "/assets/images/product62-2.webp",
         "alt": "Vista principal"
       },
       {
@@ -4167,7 +4167,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product63-3.jpg",
+        "image": "/assets/images/product63-3.webp",
         "alt": "Vista principal"
       },
       {
@@ -4175,7 +4175,7 @@
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product63-2.jpg",
+        "image": "/assets/images/product63-2.webp",
         "alt": "Vista principal"
       },
       {
@@ -4236,7 +4236,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product64-3.jpg",
+        "image": "/assets/images/product64-3.webp",
         "alt": "Vista principal"
       },
       {
@@ -4244,7 +4244,7 @@
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product64-2.jpg",
+        "image": "/assets/images/product64-2.webp",
         "alt": "Vista principal"
       },
       {
@@ -4305,7 +4305,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product65-3.jpg",
+        "image": "/assets/images/product65-3.webp",
         "alt": "Vista principal"
       },
       {
@@ -4313,7 +4313,7 @@
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product65-2.jpg",
+        "image": "/assets/images/product65-2.webp",
         "alt": "Vista principal"
       },
       {
@@ -4375,7 +4375,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product66-3.jpg",
+        "image": "/assets/images/product66-3.webp",
         "alt": "Vista principal"
       },
       {
@@ -4383,11 +4383,11 @@
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product66-2.jpg",
+        "image": "/assets/images/product66-2.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product66.jpg",
+        "image": "/assets/images/product66.webp",
         "alt": "Vista principal"
       }
     ],
@@ -4444,15 +4444,15 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product67.jpg",
+        "image": "/assets/images/product67.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product67-1.jpg",
+        "image": "/assets/images/product67-1.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product67-2.jpg",
+        "image": "/assets/images/product67-2.webp",
         "alt": "Vista principal"
       }
     ],
@@ -4509,7 +4509,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product68-3.jpg",
+        "image": "/assets/images/product68-3.webp",
         "alt": "Vista principal"
       },
       {
@@ -4517,7 +4517,7 @@
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product68-2.jpg",
+        "image": "/assets/images/product68-2.webp",
         "alt": "Vista principal"
       },
       {
@@ -4578,15 +4578,15 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product69.jpg",
+        "image": "/assets/images/product69.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product41-1.jpg",
+        "image": "/assets/images/product41-1.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product69-2.jpg",
+        "image": "/assets/images/product69-2.webp",
         "alt": "Vista principal"
       },
       {
@@ -4647,15 +4647,15 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product70-2.jpg",
+        "image": "/assets/images/product70-2.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product70.jpg",
+        "image": "/assets/images/product70.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product70-1.jpg",
+        "image": "/assets/images/product70-1.webp",
         "alt": "Vista principal"
       }
     ],
@@ -4712,15 +4712,15 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product71-2.jpg",
+        "image": "/assets/images/product71-2.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product71.jpg",
+        "image": "/assets/images/product71.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product71-1.jpg",
+        "image": "/assets/images/product71-1.webp",
         "alt": "Vista principal"
       }
     ],
@@ -4777,27 +4777,27 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product72-2.jpg",
+        "image": "/assets/images/product72-2.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product72-3.jpg",
+        "image": "/assets/images/product72-3.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product72-4.jpg",
+        "image": "/assets/images/product72-4.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product72-5.jpg",
+        "image": "/assets/images/product72-5.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product72-1.jpg",
+        "image": "/assets/images/product72-1.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product72.jpg",
+        "image": "/assets/images/product72.webp",
         "alt": "Vista principal"
       }
     ],
@@ -4854,27 +4854,27 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product73.jpg",
+        "image": "/assets/images/product73.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product73-2.jpg",
+        "image": "/assets/images/product73-2.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product73-4.jpg",
+        "image": "/assets/images/product73-4.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product73-5.jpg",
+        "image": "/assets/images/product73-5.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product73-1.jpg",
+        "image": "/assets/images/product73-1.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product73-3.jpg",
+        "image": "/assets/images/product73-3.webp",
         "alt": "Vista principal"
       }
     ],
@@ -4931,19 +4931,19 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product74-1.jpg",
+        "image": "/assets/images/product74-1.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product74-3.jpg",
+        "image": "/assets/images/product74-3.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product74-2.jpg",
+        "image": "/assets/images/product74-2.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product74.jpg",
+        "image": "/assets/images/product74.webp",
         "alt": "Vista principal"
       }
     ],
@@ -5000,15 +5000,15 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product75.jpg",
+        "image": "/assets/images/product75.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product75-1.jpg",
+        "image": "/assets/images/product75-1.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product75-2.jpg",
+        "image": "/assets/images/product75-2.webp",
         "alt": "Vista principal"
       }
     ],
@@ -5065,15 +5065,15 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product76-2.jpg",
+        "image": "/assets/images/product76-2.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product76-1.jpg",
+        "image": "/assets/images/product76-1.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product76.jpg",
+        "image": "/assets/images/product76.webp",
         "alt": "Vista principal"
       }
     ],
@@ -5134,11 +5134,11 @@
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product77-1.jpg",
+        "image": "/assets/images/product77-1.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product77.jpg",
+        "image": "/assets/images/product77.webp",
         "alt": "Vista principal"
       }
     ],
@@ -5195,7 +5195,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product78-3.jpg",
+        "image": "/assets/images/product78-3.webp",
         "alt": "Vista principal"
       },
       {
@@ -5203,7 +5203,7 @@
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product78-2.jpg",
+        "image": "/assets/images/product78-2.webp",
         "alt": "Vista principal"
       },
       {
@@ -5264,15 +5264,15 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product79-3.jpg",
+        "image": "/assets/images/product79-3.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product79-1.jpg",
+        "image": "/assets/images/product79-1.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product79-2.png",
+        "image": "/assets/images/product79-2.webp",
         "alt": "Vista principal"
       },
       {
@@ -5335,19 +5335,19 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product80.jpg",
+        "image": "/assets/images/product80.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product80-2.jpg",
+        "image": "/assets/images/product80-2.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product80-3.jpg",
+        "image": "/assets/images/product80-3.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product80-1.jpg",
+        "image": "/assets/images/product80-1.webp",
         "alt": "Vista principal"
       }
     ],
@@ -5404,7 +5404,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product81-3.jpg",
+        "image": "/assets/images/product81-3.webp",
         "alt": "Vista principal"
       },
       {
@@ -5412,7 +5412,7 @@
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product81-2.jpg",
+        "image": "/assets/images/product81-2.webp",
         "alt": "Vista principal"
       },
       {
@@ -5473,7 +5473,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product82-3.jpg",
+        "image": "/assets/images/product82-3.webp",
         "alt": "Vista principal"
       },
       {
@@ -5481,7 +5481,7 @@
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product82-2.jpg",
+        "image": "/assets/images/product82-2.webp",
         "alt": "Vista principal"
       },
       {
@@ -5542,15 +5542,15 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product83.jpg",
+        "image": "/assets/images/product83.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product83-2.jpg",
+        "image": "/assets/images/product83-2.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product83-1.jpg",
+        "image": "/assets/images/product83-1.webp",
         "alt": "Vista principal"
       }
     ],
@@ -5607,15 +5607,15 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product84.jpg",
+        "image": "/assets/images/product84.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product84-1.jpg",
+        "image": "/assets/images/product84-1.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product84-2.jpg",
+        "image": "/assets/images/product84-2.webp",
         "alt": "Vista principal"
       }
     ],
@@ -5672,15 +5672,15 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product85.jpg",
+        "image": "/assets/images/product85.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product85-1.jpg",
+        "image": "/assets/images/product85-1.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product85-2.jpg",
+        "image": "/assets/images/product85-2.webp",
         "alt": "Vista principal"
       }
     ],
@@ -5737,7 +5737,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product86-3.jpg",
+        "image": "/assets/images/product86-3.webp",
         "alt": "Vista principal"
       },
       {
@@ -5745,7 +5745,7 @@
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product86-2.jpg",
+        "image": "/assets/images/product86-2.webp",
         "alt": "Vista principal"
       },
       {
@@ -5806,15 +5806,15 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product87.jpg",
+        "image": "/assets/images/product87.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product87-2.jpg",
+        "image": "/assets/images/product87-2.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product87-1.jpg",
+        "image": "/assets/images/product87-1.webp",
         "alt": "Vista principal"
       }
     ],
@@ -5871,7 +5871,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product88-3.jpg",
+        "image": "/assets/images/product88-3.webp",
         "alt": "Vista principal"
       },
       {
@@ -5940,7 +5940,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product89-3.jpg",
+        "image": "/assets/images/product89-3.webp",
         "alt": "Vista principal"
       },
       {
@@ -5948,7 +5948,7 @@
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product89-2.jpg",
+        "image": "/assets/images/product89-2.webp",
         "alt": "Vista principal"
       },
       {
@@ -6010,23 +6010,23 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product90.jpg",
+        "image": "/assets/images/product90.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product90-1.jpg",
+        "image": "/assets/images/product90-1.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product90-2.jpg",
+        "image": "/assets/images/product90-2.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product90-3.jpg",
+        "image": "/assets/images/product90-3.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product90-4.jpg",
+        "image": "/assets/images/product90-4.webp",
         "alt": "Vista principal"
       }
     ],
@@ -6083,15 +6083,15 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product91-1.jpg",
+        "image": "/assets/images/product91-1.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product91-2.jpg",
+        "image": "/assets/images/product91-2.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product91.jpg",
+        "image": "/assets/images/product91.webp",
         "alt": "Vista principal"
       }
     ],
@@ -6152,7 +6152,7 @@
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product92-1.jpg",
+        "image": "/assets/images/product92-1.webp",
         "alt": "Vista principal"
       }
     ],
@@ -6213,15 +6213,15 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product93.jpg",
+        "image": "/assets/images/product93.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product93-1.jpg",
+        "image": "/assets/images/product93-1.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product93-2.png",
+        "image": "/assets/images/product93-2.webp",
         "alt": "Vista principal"
       }
     ],
@@ -6286,7 +6286,7 @@
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product94-1.jpg",
+        "image": "/assets/images/product94-1.webp",
         "alt": "Vista principal"
       },
       {
@@ -6347,7 +6347,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product95-3.jpg",
+        "image": "/assets/images/product95-3.webp",
         "alt": "Vista principal"
       },
       {
@@ -6355,7 +6355,7 @@
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product95-2.jpg",
+        "image": "/assets/images/product95-2.webp",
         "alt": "Vista principal"
       },
       {
@@ -6416,7 +6416,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product96.jpg",
+        "image": "/assets/images/product96.webp",
         "alt": "Vista principal"
       },
       {
@@ -6477,7 +6477,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product97.jpg",
+        "image": "/assets/images/product97.webp",
         "alt": "Vista principal"
       },
       {
@@ -6538,15 +6538,15 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product98.jpg",
+        "image": "/assets/images/product98.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product98-1.jpg",
+        "image": "/assets/images/product98-1.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product98-2.jpg",
+        "image": "/assets/images/product98-2.webp",
         "alt": "Vista principal"
       }
     ],
@@ -6611,7 +6611,7 @@
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product99-2.jpg",
+        "image": "/assets/images/product99-2.webp",
         "alt": "Vista principal"
       },
       {
@@ -6680,7 +6680,7 @@
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product100-2.jpg",
+        "image": "/assets/images/product100-2.webp",
         "alt": "Vista principal"
       },
       {
@@ -6741,7 +6741,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product101.jpg",
+        "image": "/assets/images/product101.webp",
         "alt": "Vista principal"
       },
       {
@@ -6802,15 +6802,15 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product102-3.jpg",
+        "image": "/assets/images/product102-3.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product102-2.jpg",
+        "image": "/assets/images/product102-2.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product102-1.jpg",
+        "image": "/assets/images/product102-1.webp",
         "alt": "Vista principal"
       },
       {
@@ -6871,7 +6871,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product103-3.jpg",
+        "image": "/assets/images/product103-3.webp",
         "alt": "Vista principal"
       },
       {
@@ -6879,7 +6879,7 @@
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product103-2.jpg",
+        "image": "/assets/images/product103-2.webp",
         "alt": "Vista principal"
       },
       {
@@ -6941,7 +6941,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product104.jpg",
+        "image": "/assets/images/product104.webp",
         "alt": "Vista principal"
       }
     ],
@@ -6998,7 +6998,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product105-3.jpg",
+        "image": "/assets/images/product105-3.webp",
         "alt": "Vista principal"
       },
       {
@@ -7069,11 +7069,11 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product106.jpg",
+        "image": "/assets/images/product106.webp",
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product106-1.jpg",
+        "image": "/assets/images/product106-1.webp",
         "alt": "Vista principal"
       }
     ],
@@ -7130,7 +7130,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product107.jpg",
+        "image": "/assets/images/product107.webp",
         "alt": "Vista principal"
       },
       {
@@ -7193,7 +7193,7 @@
     ],
     "gallery": [
       {
-        "image": "/assets/images/product108-3.jpg",
+        "image": "/assets/images/product108-3.webp",
         "alt": "Vista principal"
       },
       {
@@ -7201,7 +7201,7 @@
         "alt": "Vista principal"
       },
       {
-        "image": "/assets/images/product108-2.jpg",
+        "image": "/assets/images/product108-2.webp",
         "alt": "Vista principal"
       },
       {

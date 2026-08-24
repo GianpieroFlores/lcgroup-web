@@ -31,6 +31,8 @@ const truncate = (value, maximum = 158) => {
 const absoluteUrl = (path = "/") => new URL(path, DOMAIN).href;
 const jsonLd = (data) => JSON.stringify(data).replaceAll("<", "\\u003c");
 const unique = (values) => [...new Set(values.filter(Boolean))];
+const ORGANIZATION_ID = `${DOMAIN}/#organization`;
+const WEBSITE_ID = `${DOMAIN}/#website`;
 const normalizedProductNameCounts = products.reduce((counts, product) => {
   const name = plainText(product.name).toLocaleLowerCase("es-PE");
   counts.set(name, (counts.get(name) || 0) + 1);
@@ -45,7 +47,28 @@ function productSeoTitle(product) {
 
 function productSeoDescription(product) {
   const summary = plainText(product.shortDescription || product.description || "");
-  return truncate(`${plainText(product.name)}. ${summary || "Producto de cristal Spiegelau disponible en Perú."}`);
+  return truncate(`${plainText(product.name)}. ${summary || "Producto de cristal Spiegelau disponible en Perú."}`, 150);
+}
+
+function meaningfulImageAlt(alt, productName, index = 0) {
+  const normalizedAlt = plainText(alt);
+  if (normalizedAlt && !/^vista principal$/i.test(normalizedAlt)) return normalizedAlt;
+  return index === 0
+    ? `${plainText(productName)} de cristal Spiegelau`
+    : `${plainText(productName)} de cristal Spiegelau, vista ${index + 1}`;
+}
+
+function breadcrumbSchema(items) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
 }
 
 function replaceElementContent(html, id, content) {
@@ -73,7 +96,7 @@ function applyHead(html, seo, schemas = []) {
     <title>${htmlEscape(seo.title)}</title>
     <meta name="description" content="${htmlEscape(seo.description)}" />
     <link rel="canonical" href="${htmlEscape(seo.canonical)}" />
-    <meta name="robots" content="${seo.robots || "index,follow,max-image-preview:large"}" />
+    <meta name="robots" content="${seo.robots || "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"}" />
     <meta property="og:locale" content="es_PE" />
     <meta property="og:type" content="${seo.type || "website"}" />
     <meta property="og:site_name" content="SPIEGELAU Perú" />
@@ -107,7 +130,7 @@ function productItemMarkup(product) {
       : "",
   ].filter(Boolean).join("");
   const imageMarkup = primaryImage
-    ? `<img class="catalog-product-image__primary" src="${htmlEscape(primaryImage)}" alt="${htmlEscape(product.name)}" loading="lazy" width="600" height="600" />
+    ? `<img class="catalog-product-image__primary" src="${htmlEscape(primaryImage)}" alt="${htmlEscape(`${plainText(product.name)} de cristal Spiegelau`)}" loading="lazy" width="600" height="600" />
       <img class="catalog-product-image__secondary" src="${htmlEscape(secondaryImage)}" alt="" loading="lazy" width="600" height="600" aria-hidden="true" />`
     : "";
   return `<article class="catalog-product-card" data-product-id="${htmlEscape(product.id)}" data-product-url="/productos/${slug}/" tabindex="0" role="link">
@@ -118,8 +141,8 @@ function productItemMarkup(product) {
       <p class="catalog-product-presentation">${htmlEscape(product.presentation)}</p>
       <div class="catalog-product-footer">
         <div class="catalog-product-pricing">${offerPrice === null
-          ? `<strong class="catalog-product-price">S/ ${Number(product.price).toFixed(2)}</strong>`
-          : `<span class="catalog-product-price catalog-product-price--regular">S/ ${Number(product.price).toFixed(2)}</span><span class="catalog-product-offer-row"><strong class="catalog-product-price catalog-product-price--offer">S/ ${offerPrice.toFixed(2)}</strong><span class="catalog-product-discount">-${discountPercentage}%</span></span>`}
+      ? `<strong class="catalog-product-price">S/ ${Number(product.price).toFixed(2)}</strong>`
+      : `<span class="catalog-product-price catalog-product-price--regular">S/ ${Number(product.price).toFixed(2)}</span><span class="catalog-product-offer-row"><strong class="catalog-product-price catalog-product-price--offer">S/ ${offerPrice.toFixed(2)}</strong><span class="catalog-product-discount">-${discountPercentage}%</span></span>`}
         </div>
         <button class="catalog-cart-button" type="button" aria-label="Agregar ${htmlEscape(product.name)} al carrito"><span class="material-symbols-outlined">shopping_bag</span></button>
       </div>
@@ -148,12 +171,14 @@ function productSchemas(product, url, image) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Product",
+    "@id": `${url}#product`,
     name: product.name,
     sku: String(product.sku || product.id),
     description: plainText(product.description || product.shortDescription),
     brand: { "@type": "Brand", name: "Spiegelau" },
     category: product.category,
     url,
+    mainEntityOfPage: url,
   };
   if (image) schema.image = unique(product.gallery.map((item) => item?.image).filter(Boolean).map(absoluteUrl));
   if (getEffectiveProductPrice(product) > 0) {
@@ -162,21 +187,19 @@ function productSchemas(product, url, image) {
       url,
       priceCurrency: "PEN",
       price: getEffectiveProductPrice(product).toFixed(2),
+      itemCondition: "https://schema.org/NewCondition",
       availability: Number(product.stock) > 0
         ? "https://schema.org/InStock"
         : "https://schema.org/OutOfStock",
+      seller: { "@id": ORGANIZATION_ID },
     };
   }
   const categoryUrl = `${DOMAIN}/catalogo/${normalizeSlug(product.category)}/`;
-  const breadcrumb = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Inicio", item: `${DOMAIN}/` },
-      { "@type": "ListItem", position: 2, name: product.category, item: categoryUrl },
-      { "@type": "ListItem", position: 3, name: product.name, item: url },
-    ],
-  };
+  const breadcrumb = breadcrumbSchema([
+    { name: "Inicio", url: `${DOMAIN}/` },
+    { name: product.category, url: categoryUrl },
+    { name: product.name, url },
+  ]);
   return [schema, breadcrumb];
 }
 
@@ -201,9 +224,9 @@ function injectProductContent(html, product) {
   output = replaceElementContent(output, "product-short-description", htmlEscape(product.shortDescription));
   output = replaceElementContent(output, "tab-description", plainText(product.description).split("\n").filter(Boolean).map((paragraph) => `<p>${htmlEscape(paragraph)}</p>`).join(""));
   output = replaceElementContent(output, "tab-specifications", (product.specifications || []).map((spec) => `<div class="product-specification-row"><span class="product-specification-label">${htmlEscape(spec.label)}</span><span class="product-specification-value">${htmlEscape(spec.value)}</span></div>`).join(""));
-  output = replaceElementContent(output, "product-thumbnails", gallery.map((item, index) => `<button class="product-thumbnail${index === 0 ? " active" : ""}" type="button" data-gallery-index="${index}" aria-label="Mostrar imagen ${index + 1} de ${gallery.length}"><img src="${htmlEscape(item.image)}" alt="${htmlEscape(item.alt || `${product.name} - imagen ${index + 1}`)}" loading="${index === 0 ? "eager" : "lazy"}" width="180" height="180" /></button>`).join(""));
+  output = replaceElementContent(output, "product-thumbnails", gallery.map((item, index) => `<button class="product-thumbnail${index === 0 ? " active" : ""}" type="button" data-gallery-index="${index}" aria-label="Mostrar imagen ${index + 1} de ${gallery.length}"><img src="${htmlEscape(item.image)}" alt="${htmlEscape(meaningfulImageAlt(item.alt, product.name, index))}" loading="${index === 0 ? "eager" : "lazy"}" width="180" height="180" /></button>`).join(""));
   if (image) {
-    output = output.replace(/(<img\s+id="product-image"[\s\S]*?)src=""([\s\S]*?)alt=""/i, `$1src="${htmlEscape(image)}"$2alt="${htmlEscape(gallery[0]?.alt || product.name)}"`);
+    output = output.replace(/(<img\s+id="product-image"[\s\S]*?)src=""([\s\S]*?)alt=""/i, `$1src="${htmlEscape(image)}"$2alt="${htmlEscape(meaningfulImageAlt(gallery[0]?.alt, product.name, 0))}"`);
   }
   const related = products.filter((item) => item.category === product.category && item.id !== product.id).slice(0, 4);
   return replaceElementContent(output, "related-products", related.map(productItemMarkup).join(""));
@@ -224,17 +247,20 @@ const sitemapUrls = [];
 
 const generalPages = [
   {
-    file: "index.html", path: "/", title: "Cristalería en Perú | Spiegelau Perú",
-    description: "Descubre cristalería premium Spiegelau en Perú: copas, vasos, decantadores y sets para vino, coctelería, restaurantes, hoteles y hogar.",
-    image: "/assets/images/Bannerproductos.png",
-    schemas: [{ "@context": "https://schema.org", "@type": "Organization", name: "LC Group", url: `${DOMAIN}/`, logo: `${DOMAIN}/assets/images/logo-header.jpg`, brand: { "@type": "Brand", name: "Spiegelau" } }],
+    file: "index.html", path: "/", title: "Cristalería alemana en Perú | Spiegelau",
+    description: "Cristalería alemana Spiegelau en Perú: compra copas, vasos, decantadores y sets de cristal para vino, coctelería, hogar y negocios.",
+    image: "/assets/images/Bannerproductos.webp",
+    schemas: [
+      { "@context": "https://schema.org", "@type": "Organization", "@id": ORGANIZATION_ID, name: "LC Group", url: `${DOMAIN}/`, logo: `${DOMAIN}/assets/images/logo-header.webp`, brand: { "@type": "Brand", name: "Spiegelau" } },
+      { "@context": "https://schema.org", "@type": "WebSite", "@id": WEBSITE_ID, url: `${DOMAIN}/`, name: "Spiegelau Perú", alternateName: ["SPIEGELAU Perú", "LC Group"], publisher: { "@id": ORGANIZATION_ID }, inLanguage: "es-PE" },
+    ],
   },
   {
-    file: "catalogo/index.html", path: "/catalogo/", title: "Comprar cristalería en Perú | Spiegelau",
-    description: "Compra cristalería Spiegelau en Perú. Explora copas, vasos, decantadores y sets de cristal para vino, coctelería, hogar y negocios.", image: "/assets/images/Bannerproductos.png",
+    file: "catalogo/index.html", path: "/catalogo/", title: "Comprar cristalería y copas en Perú | Spiegelau",
+    description: "Compra cristalería Spiegelau en Perú: copas, vasos, decantadores y sets de cristal alemán para vino, coctelería, hogar y negocios.", image: "/assets/images/Bannerproductos.webp",
   },
-  { file: "nosotros/index.html", path: "/nosotros/", title: "Nosotros | SPIEGELAU", description: "Conoce a LC Group y nuestra propuesta de cristalería Spiegelau para restaurantes, hoteles, bares, distribuidores y hogares en Perú.", image: "/assets/images/nosotros-presentation.png" },
-  { file: "contacto/index.html", path: "/contacto/", title: "Contacto | SPIEGELAU", description: "Contacta con LC Group para recibir asesoría sobre cristalería Spiegelau en Perú para restaurantes, hoteles, bares, distribuidores y hogar.", image: "/assets/images/logo-header.jpg" },
+  { file: "nosotros/index.html", path: "/nosotros/", title: "Nosotros | SPIEGELAU", description: "Conoce a LC Group y nuestra propuesta de cristalería Spiegelau para restaurantes, hoteles, bares, distribuidores y hogares en Perú.", image: "/assets/images/nosotros-presentation.webp" },
+  { file: "contacto/index.html", path: "/contacto/", title: "Contacto | SPIEGELAU", description: "Contacta con LC Group para recibir asesoría sobre cristalería Spiegelau en Perú para restaurantes, hoteles, bares, distribuidores y hogar.", image: "/assets/images/logo-header.webp" },
   { file: "preguntas-frecuentes/index.html", path: "/preguntas-frecuentes/", title: "Preguntas frecuentes | SPIEGELAU", description: "Consulta respuestas sobre productos, pedidos, disponibilidad y atención relacionada con la cristalería Spiegelau en Perú." },
   { file: "terminos-y-condiciones/index.html", path: "/terminos-y-condiciones/", title: "Términos y condiciones | SPIEGELAU", description: "Consulta los términos y condiciones aplicables al uso del sitio web y a las solicitudes de productos Spiegelau en Perú." },
   { file: "libro-de-reclamaciones/index.html", path: "/libro-de-reclamaciones/", title: "Libro de Reclamaciones | SPIEGELAU", description: "Accede al Libro de Reclamaciones de LC Group para registrar una solicitud relacionada con nuestra atención y productos." },
@@ -259,7 +285,7 @@ for (const page of generalPages) {
 }
 
 const categoryCopy = {
-  copas: ["Copas de cristal en Perú | Spiegelau", "Descubre copas de cristal Spiegelau para vino tinto, vino blanco, espumantes y coctelería en hogares y negocios de Perú."],
+  copas: ["Comprar copas de cristal en Perú | Spiegelau", "Compra copas de cristal Spiegelau para vino tinto, vino blanco, espumantes y coctelería, con atención especializada en Perú."],
   vasos: ["Vasos de cristal en Perú | Spiegelau", "Explora vasos de cristal Spiegelau para agua, cerveza, whisky, coctelería y servicio profesional en Perú."],
   decantadores: ["Decantadores de vino en Perú | Spiegelau", "Descubre decantadores Spiegelau diseñados para airear y servir el vino con elegancia en Perú."],
   estuches: ["Estuches de cristalería en Perú | Spiegelau", "Encuentra sets y estuches de cristalería Spiegelau para regalar, equipar el hogar o complementar un servicio profesional en Perú."],
@@ -269,9 +295,17 @@ for (const category of unique(products.map((product) => product.category))) {
   const slug = normalizeSlug(category);
   const categoryProducts = products.filter((product) => product.category === category);
   const [title, description] = categoryCopy[slug] || [`${category} de cristal | Spiegelau Perú`, `Explora la selección Spiegelau de ${category} disponible en Perú.`];
+  const heading = slug === "copas" ? "Copas de cristal en Perú" : title.split(" |")[0];
   const canonical = `${DOMAIN}/catalogo/${slug}/`;
-  let html = injectCatalogContent(catalogTemplate, categoryProducts, title.split(" |")[0], description);
-  html = applyHead(html, { title, description, canonical, image: absoluteUrl(productImage(categoryProducts[0]) || "/assets/images/Bannerproductos.png"), imageAlt: title }, [{ "@context": "https://schema.org", "@type": "CollectionPage", name: title.split(" |")[0], url: canonical }]);
+  let html = injectCatalogContent(catalogTemplate, categoryProducts, heading, description);
+  html = applyHead(html, { title, description, canonical, image: absoluteUrl(productImage(categoryProducts[0]) || "/assets/images/Bannerproductos.webp"), imageAlt: title }, [
+    { "@context": "https://schema.org", "@type": "CollectionPage", "@id": `${canonical}#collection`, name: heading, url: canonical, inLanguage: "es-PE" },
+    breadcrumbSchema([
+      { name: "Inicio", url: `${DOMAIN}/` },
+      { name: "Catálogo", url: `${DOMAIN}/catalogo/` },
+      { name: heading, url: canonical },
+    ]),
+  ]);
   generatedFiles.push(await writePage(`catalogo/${slug}`, html));
   sitemapUrls.push(canonical);
 }
@@ -290,7 +324,13 @@ const collections = [...collectionGroups.keys()];
   const title = "Colecciones de cristalería Spiegelau | Perú";
   const description = "Explora las colecciones de cristalería Spiegelau disponibles en Perú y encuentra copas, vasos, decantadores y sets para cada ocasión.";
   let html = injectCatalogContent(catalogTemplate, products, "Colecciones Spiegelau", description);
-  html = applyHead(html, { title, description, canonical: `${DOMAIN}/colecciones/`, image: absoluteUrl("/assets/images/Bannerproductos.png"), imageAlt: title }, [{ "@context": "https://schema.org", "@type": "CollectionPage", name: "Colecciones Spiegelau", url: `${DOMAIN}/colecciones/` }]);
+  html = applyHead(html, { title, description, canonical: `${DOMAIN}/colecciones/`, image: absoluteUrl("/assets/images/Bannerproductos.webp"), imageAlt: title }, [
+    { "@context": "https://schema.org", "@type": "CollectionPage", "@id": `${DOMAIN}/colecciones/#collection`, name: "Colecciones Spiegelau", url: `${DOMAIN}/colecciones/`, inLanguage: "es-PE" },
+    breadcrumbSchema([
+      { name: "Inicio", url: `${DOMAIN}/` },
+      { name: "Colecciones Spiegelau", url: `${DOMAIN}/colecciones/` },
+    ]),
+  ]);
   generatedFiles.push(await writePage("colecciones", html));
   sitemapUrls.push(`${DOMAIN}/colecciones/`);
 }
@@ -303,7 +343,14 @@ for (const slug of collections) {
   const description = truncate(`Descubre la colección ${plainText(collection)} de Spiegelau y sus ${collectionProducts.length} productos de cristalería disponibles para hogares y negocios en Perú.`);
   const canonical = `${DOMAIN}/colecciones/${slug}/`;
   let html = injectCatalogContent(catalogTemplate, collectionProducts, `Colección ${plainText(collection)}`, description);
-  html = applyHead(html, { title, description, canonical, image: productImage(collectionProducts[0]) ? absoluteUrl(productImage(collectionProducts[0])) : "", imageAlt: title }, [{ "@context": "https://schema.org", "@type": "CollectionPage", name: `Colección ${plainText(collection)}`, url: canonical }]);
+  html = applyHead(html, { title, description, canonical, image: productImage(collectionProducts[0]) ? absoluteUrl(productImage(collectionProducts[0])) : "", imageAlt: title }, [
+    { "@context": "https://schema.org", "@type": "CollectionPage", "@id": `${canonical}#collection`, name: `Colección ${plainText(collection)}`, url: canonical, inLanguage: "es-PE" },
+    breadcrumbSchema([
+      { name: "Inicio", url: `${DOMAIN}/` },
+      { name: "Colecciones", url: `${DOMAIN}/colecciones/` },
+      { name: `Colección ${plainText(collection)}`, url: canonical },
+    ]),
+  ]);
   generatedFiles.push(await writePage(`colecciones/${slug}`, html));
   sitemapUrls.push(canonical);
 }
