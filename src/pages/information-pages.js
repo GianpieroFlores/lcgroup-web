@@ -57,7 +57,8 @@ if (claimSelect) {
   });
 }
 
-if (claimForm && claimStatus) {
+// El formulario conectado al Worker gestiona su propio envío y validación.
+if (claimForm && claimStatus && !document.querySelector('.cf-turnstile')) {
   claimForm.addEventListener("submit", (event) => {
     event.preventDefault();
 

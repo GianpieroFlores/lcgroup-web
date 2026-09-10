@@ -158,6 +158,56 @@
       </div>
 
 
+      <div class="cart-delivery-zone">
+        <label id="cart-delivery-zone-label">Zona de entrega</label>
+        <div class="cart-delivery-zone__select">
+          <select id="cart-delivery-zone" tabindex="-1" aria-hidden="true">
+            <option value="zone1">Zona 1 — Lima Centro, La Molina, Surco y Chorrillos</option>
+            <option value="zone2">Zona 2 — Resto de Lima Metropolitana</option>
+            <option value="zone3">Zona 3 — Provincias</option>
+          </select>
+
+          <button
+            class="cart-delivery-zone__trigger"
+            id="cart-delivery-zone-trigger"
+            type="button"
+            aria-labelledby="cart-delivery-zone-label cart-delivery-zone-value"
+            aria-haspopup="listbox"
+            aria-controls="cart-delivery-zone-menu"
+            aria-expanded="false"
+          >
+            <span class="material-symbols-outlined cart-delivery-zone__location" aria-hidden="true">location_on</span>
+            <span id="cart-delivery-zone-value">Zona 1 — Lima Centro, La Molina, Surco y Chorrillos</span>
+            <span class="material-symbols-outlined cart-delivery-zone__arrow" aria-hidden="true">expand_more</span>
+          </button>
+
+          <div
+            class="cart-delivery-zone__menu"
+            id="cart-delivery-zone-menu"
+            role="listbox"
+            aria-labelledby="cart-delivery-zone-label"
+            hidden
+          >
+            <button class="cart-delivery-zone__option is-selected" type="button" role="option" data-zone="zone1" aria-selected="true">
+              <span class="cart-delivery-zone__badge">1</span>
+              <span class="cart-delivery-zone__option-copy"><strong>Zona 1</strong><small>Lima Centro, La Molina, Surco y Chorrillos</small></span>
+              <span class="material-symbols-outlined cart-delivery-zone__check" aria-hidden="true">check_circle</span>
+            </button>
+            <button class="cart-delivery-zone__option" type="button" role="option" data-zone="zone2" aria-selected="false">
+              <span class="cart-delivery-zone__badge">2</span>
+              <span class="cart-delivery-zone__option-copy"><strong>Zona 2</strong><small>Resto de Lima Metropolitana</small></span>
+              <span class="material-symbols-outlined cart-delivery-zone__check" aria-hidden="true">check_circle</span>
+            </button>
+            <button class="cart-delivery-zone__option" type="button" role="option" data-zone="zone3" aria-selected="false">
+              <span class="cart-delivery-zone__badge">3</span>
+              <span class="cart-delivery-zone__option-copy"><strong>Zona 3</strong><small>Provincias</small></span>
+              <span class="material-symbols-outlined cart-delivery-zone__check" aria-hidden="true">check_circle</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+
       <div class="cart-summary__row">
         <span>
           Delivery
@@ -185,7 +235,7 @@
     id="cart-checkout"
   >
     <div class="cart-summary__row cart-summary__row--total">
-      <span>
+      <span id="cart-total-label">
         Total
       </span>
 

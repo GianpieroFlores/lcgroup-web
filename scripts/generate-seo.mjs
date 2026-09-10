@@ -51,8 +51,6 @@ function productSeoDescription(product) {
 }
 
 function meaningfulImageAlt(alt, productName, index = 0) {
-  const normalizedAlt = plainText(alt);
-  if (normalizedAlt && !/^vista principal$/i.test(normalizedAlt)) return normalizedAlt;
   return index === 0
     ? `${plainText(productName)} de cristal Spiegelau`
     : `${plainText(productName)} de cristal Spiegelau, vista ${index + 1}`;
@@ -366,7 +364,7 @@ for (const product of products) {
   html = applyHead(html, {
     title: productSeoTitle(product), description, canonical,
     type: "product", image: image ? absoluteUrl(image) : "",
-    imageAlt: product.gallery?.[0]?.alt || product.name,
+    imageAlt: product.name,
   }, productSchemas(product, canonical, image));
   generatedFiles.push(await writePage(`productos/${slug}`, html));
   sitemapUrls.push(canonical);

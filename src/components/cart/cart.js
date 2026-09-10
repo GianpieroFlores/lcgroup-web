@@ -19,6 +19,7 @@ import {
 } from "../../utils/products.js";
 import { createProductUrl } from "../../utils/urls.js";
 import {
+  DEFAULT_DELIVERY_ZONE,
   FREE_DELIVERY_THRESHOLD,
   getDeliveryTotals,
 } from "../../config/delivery.js";
@@ -37,6 +38,11 @@ import {
 const CART_STORAGE_KEY = "lcgroup-shopping-cart";
 const products = getVisibleProducts(allProducts);
 const WHATSAPP_NUMBER = "51966420414";
+const DELIVERY_ZONE_LABELS = {
+  zone1: "Zona 1 — Lima Centro, La Molina, Surco y Chorrillos",
+  zone2: "Zona 2 — Resto de Lima Metropolitana",
+  zone3: "Zona 3 — Provincias",
+};
 
 /* =====================================================
    ESTADO DEL CARRITO
@@ -45,6 +51,7 @@ const WHATSAPP_NUMBER = "51966420414";
 let cartItems = [];
 let cartInitialized = false;
 let cartTriggerElement = null;
+let selectedDeliveryZone = DEFAULT_DELIVERY_ZONE;
 
 /* =====================================================
    REFERENCIAS DEL DOM
@@ -64,8 +71,13 @@ let cartCheckout = null;
 let cartTotalItems = null;
 let cartSummaryItems = null;
 let cartSubtotalPrice = null;
+let cartDeliveryZone = null;
+let cartDeliveryZoneTrigger = null;
+let cartDeliveryZoneValue = null;
+let cartDeliveryZoneMenu = null;
 let cartDeliveryPrice = null;
 let cartDeliveryMessage = null;
+let cartTotalLabel = null;
 let cartTotalPrice = null;
 let cartWhatsappButton = null;
 
@@ -190,7 +202,7 @@ function getTotalPrice() {
 }
 
 function getCartTotals() {
-  return getDeliveryTotals(getTotalPrice());
+  return getDeliveryTotals(getTotalPrice(), selectedDeliveryZone);
 }
 
 /* =====================================================
@@ -221,13 +233,86 @@ function getCartElements() {
 
   cartSubtotalPrice = document.querySelector("#cart-subtotal-price");
 
+  cartDeliveryZone = document.querySelector("#cart-delivery-zone");
+  cartDeliveryZoneTrigger = document.querySelector("#cart-delivery-zone-trigger");
+  cartDeliveryZoneValue = document.querySelector("#cart-delivery-zone-value");
+  cartDeliveryZoneMenu = document.querySelector("#cart-delivery-zone-menu");
+
   cartDeliveryPrice = document.querySelector("#cart-delivery-price");
 
   cartDeliveryMessage = document.querySelector("#cart-delivery-message");
 
+  cartTotalLabel = document.querySelector("#cart-total-label");
+
   cartTotalPrice = document.querySelector("#cart-total-price");
 
   cartWhatsappButton = document.querySelector("#cart-whatsapp-button");
+}
+
+function closeDeliveryZoneMenu({ restoreFocus = false } = {}) {
+  if (!cartDeliveryZoneMenu || !cartDeliveryZoneTrigger) return;
+
+  cartDeliveryZoneMenu.hidden = true;
+  cartDeliveryZoneTrigger.setAttribute("aria-expanded", "false");
+  cartDeliveryZoneTrigger.closest(".cart-delivery-zone__select")?.classList.remove("is-open");
+
+  if (restoreFocus) cartDeliveryZoneTrigger.focus();
+}
+
+function syncDeliveryZoneMenu() {
+  if (!cartDeliveryZone || !cartDeliveryZoneValue || !cartDeliveryZoneMenu) return;
+
+  cartDeliveryZoneValue.textContent = DELIVERY_ZONE_LABELS[selectedDeliveryZone];
+  cartDeliveryZone.value = selectedDeliveryZone;
+
+  cartDeliveryZoneMenu.querySelectorAll("[data-zone]").forEach((option) => {
+    const isSelected = option.dataset.zone === selectedDeliveryZone;
+    option.classList.toggle("is-selected", isSelected);
+    option.setAttribute("aria-selected", String(isSelected));
+  });
+}
+
+function setupDeliveryZoneMenu() {
+  if (!cartDeliveryZoneTrigger || !cartDeliveryZoneMenu || !cartDeliveryZone) return;
+
+  const options = [...cartDeliveryZoneMenu.querySelectorAll("[data-zone]")];
+
+  cartDeliveryZoneTrigger.addEventListener("click", () => {
+    const willOpen = cartDeliveryZoneMenu.hidden;
+
+    if (!willOpen) {
+      closeDeliveryZoneMenu();
+      return;
+    }
+
+    cartDeliveryZoneMenu.hidden = false;
+    cartDeliveryZoneTrigger.setAttribute("aria-expanded", "true");
+    cartDeliveryZoneTrigger.closest(".cart-delivery-zone__select")?.classList.add("is-open");
+    options.find((option) => option.dataset.zone === selectedDeliveryZone)?.focus();
+  });
+
+  options.forEach((option, index) => {
+    option.addEventListener("click", () => {
+      cartDeliveryZone.value = option.dataset.zone;
+      cartDeliveryZone.dispatchEvent(new Event("change", { bubbles: true }));
+      closeDeliveryZoneMenu({ restoreFocus: true });
+    });
+
+    option.addEventListener("keydown", (event) => {
+      if (event.key !== "ArrowDown" && event.key !== "ArrowUp") return;
+      event.preventDefault();
+      const direction = event.key === "ArrowDown" ? 1 : -1;
+      options[(index + direction + options.length) % options.length].focus();
+    });
+  });
+
+  document.addEventListener("pointerdown", (event) => {
+    if (!cartDeliveryZoneMenu.hidden && !cartDeliveryZoneMenu.parentElement?.contains(event.target)) {
+      closeDeliveryZoneMenu();
+    }
+  });
+
+  syncDeliveryZoneMenu();
 }
 
 /* =====================================================
@@ -609,6 +694,7 @@ function updateCartSummary() {
     total,
     hasFreeDelivery,
     amountUntilFreeDelivery,
+    deliveryRequiresCoordination,
   } = getCartTotals();
 
   if (cartTotalItems) {
@@ -624,8 +710,11 @@ function updateCartSummary() {
   }
 
   if (cartDeliveryPrice) {
-    cartDeliveryPrice.textContent =
-      subtotal > 0 && hasFreeDelivery ? "GRATIS" : formatPrice(delivery);
+    cartDeliveryPrice.textContent = deliveryRequiresCoordination
+      ? "Por coordinar"
+      : subtotal > 0 && hasFreeDelivery
+        ? "GRATIS"
+        : formatPrice(delivery);
     cartDeliveryPrice.classList.toggle(
       "is-free-delivery",
       subtotal > 0 && hasFreeDelivery,
@@ -633,18 +722,30 @@ function updateCartSummary() {
   }
 
   if (cartDeliveryMessage) {
-    if (subtotal === 0) {
+    if (deliveryRequiresCoordination) {
       cartDeliveryMessage.textContent =
-        `Delivery gratis en compras mayores a S/ ${FREE_DELIVERY_THRESHOLD}.`;
+        "El costo del delivery se coordinará al finalizar por WhatsApp.";
+    } else if (subtotal === 0) {
+      cartDeliveryMessage.textContent =
+        `Zona 1: delivery S/ 15 y gratis desde S/ ${FREE_DELIVERY_THRESHOLD}.`;
     } else if (hasFreeDelivery) {
-      cartDeliveryMessage.textContent = "¡Tienes delivery gratis!";
+      cartDeliveryMessage.textContent = "¡Tienes delivery gratis en Zona 1!";
     } else {
       cartDeliveryMessage.textContent =
-        `Te faltan ${formatPrice(amountUntilFreeDelivery)} ` +
+        `Delivery Zona 1: S/ 15. Te faltan ${formatPrice(amountUntilFreeDelivery)} ` +
         "para obtener delivery gratis.";
     }
 
-    cartDeliveryMessage.classList.toggle("is-complete", hasFreeDelivery);
+    cartDeliveryMessage.classList.toggle(
+      "is-complete",
+      hasFreeDelivery && !deliveryRequiresCoordination,
+    );
+  }
+
+  if (cartTotalLabel) {
+    cartTotalLabel.textContent = deliveryRequiresCoordination
+      ? "Total sin delivery"
+      : "Total";
   }
 
   if (cartTotalPrice) {
@@ -686,7 +787,18 @@ function updateHeaderCartBadge() {
 
 function generateWhatsappMessage() {
   const totalQuantity = getTotalQuantity();
-  const { subtotal, delivery, total, hasFreeDelivery } = getCartTotals();
+  const {
+    subtotal,
+    delivery,
+    total,
+    hasFreeDelivery,
+    deliveryRequiresCoordination,
+  } = getCartTotals();
+  const deliveryText = deliveryRequiresCoordination
+    ? "Por coordinar vía WhatsApp"
+    : hasFreeDelivery
+      ? "GRATIS"
+      : formatPrice(delivery);
 
   const lines = ["Hola, deseo realizar el siguiente pedido:", ""];
 
@@ -718,10 +830,15 @@ function generateWhatsappMessage() {
     "------------------------------",
     `Cantidad total: ${totalQuantity}`,
     `Subtotal: ${formatPrice(subtotal)}`,
-    `Delivery: ${hasFreeDelivery ? "GRATIS" : formatPrice(delivery)}`,
-    `Total: ${formatPrice(total)}`,
+    `Zona de entrega: ${DELIVERY_ZONE_LABELS[selectedDeliveryZone]}`,
+    `Delivery: ${deliveryText}`,
+    deliveryRequiresCoordination
+      ? `Total sin delivery: ${formatPrice(total)}`
+      : `Total: ${formatPrice(total)}`,
     "",
-    "Quedo atento a la confirmación de disponibilidad. Gracias.",
+    deliveryRequiresCoordination
+      ? "Deseo coordinar el costo del delivery. Quedo atento a la confirmación de disponibilidad. Gracias."
+      : "Quedo atento a la confirmación de disponibilidad. Gracias.",
   );
 
   return lines.join("\n");
@@ -801,6 +918,12 @@ function setupCartPanelEvents() {
 
   cartContinueShoppingButton?.addEventListener("click", closeCart);
 
+  cartDeliveryZone?.addEventListener("change", (event) => {
+    selectedDeliveryZone = event.target.value;
+    syncDeliveryZoneMenu();
+    renderCartState();
+  });
+
   cartWhatsappButton?.addEventListener("click", () => {
     if (cartWhatsappButton.getAttribute("aria-disabled") === "true") return;
     const items = getCartItems();
@@ -820,6 +943,10 @@ function setupCartPanelEvents() {
 
     if (event.key === "Escape") {
       event.preventDefault();
+      if (cartDeliveryZoneMenu && !cartDeliveryZoneMenu.hidden) {
+        closeDeliveryZoneMenu({ restoreFocus: true });
+        return;
+      }
       closeCart();
       return;
     }
@@ -975,6 +1102,7 @@ export async function initCart() {
   }
 
   setupCartPanelEvents();
+  setupDeliveryZoneMenu();
   setupCartProductEvents();
   setupOpenCartButtons();
   setupProductCardButtons();

@@ -400,7 +400,6 @@ function getProductGallery(product) {
         return {
           image: item?.image || "",
           alt:
-            item?.alt ||
             `${product.name} - imagen ${index + 1}`,
         };
       })

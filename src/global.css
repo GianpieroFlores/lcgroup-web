@@ -171,10 +171,6 @@ body {
   );
 }
 
-html.is-delivery-banner-hidden {
-  --delivery-banner-visible-height: 0px;
-}
-
 /*
  * Nosotros y las páginas informativas copian únicamente la alineación
  * horizontal de Productos y Contacto. Los banners de referencia no se tocan.

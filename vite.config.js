@@ -23,7 +23,17 @@ function cleanSeoRoutes() {
 
 export default defineConfig({
   base: "/",
-  plugins: [cleanSeoRoutes()],
+  plugins: [
+    cleanSeoRoutes(),
+    {
+      name: "remove-template-comments",
+      apply: "build",
+      transform(code, id) {
+        if (!id.endsWith(".html?raw")) return;
+        return { code: code.replace(/<!--[\s\S]*?-->/g, ""), map: null };
+      },
+    },
+  ],
   build: {
     rollupOptions: {
       input: {

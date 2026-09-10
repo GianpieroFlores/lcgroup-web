@@ -206,6 +206,23 @@
   color: var(--color-footer-accent);
 }
 
+.footer-phone-link {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 1px;
+  white-space: nowrap;
+}
+
+.footer-phone-link small {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+  line-height: 1.2;
+}
+
+.footer-phone-link:hover small {
+  color: var(--color-footer-accent);
+}
+
 /* =====================================================
    FOOTER INFERIOR
 ===================================================== */

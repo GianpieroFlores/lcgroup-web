@@ -2,13 +2,6 @@ import "./delivery-banner.css";
 import deliveryBannerHTML from "./delivery-banner.html?raw";
 import { FREE_DELIVERY_THRESHOLD } from "../../config/delivery.js";
 
-function updateDeliveryBannerVisibility() {
-  document.documentElement.classList.toggle(
-    "is-delivery-banner-hidden",
-    window.scrollY > 1,
-  );
-}
-
 export function loadDeliveryBanner() {
   if (document.querySelector(".delivery-banner")) {
     return;
@@ -26,9 +19,4 @@ export function loadDeliveryBanner() {
   );
 
   headerContainer.insertAdjacentHTML("beforebegin", bannerHTML);
-
-  updateDeliveryBannerVisibility();
-  window.addEventListener("scroll", updateDeliveryBannerVisibility, {
-    passive: true,
-  });
 }

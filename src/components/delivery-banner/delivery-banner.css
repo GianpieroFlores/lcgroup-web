@@ -13,10 +13,6 @@
   transition: transform var(--transition-normal);
 }
 
-.is-delivery-banner-hidden .delivery-banner {
-  transform: translateY(-100%);
-}
-
 .delivery-banner__content {
   display: flex;
   align-items: center;
